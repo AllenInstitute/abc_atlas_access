@@ -1,0 +1,6 @@
+anndata
+numpy
+matplotlib
+pandas
+plotly
+scipy
