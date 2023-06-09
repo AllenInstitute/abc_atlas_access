@@ -1,6 +1,6 @@
 # Whole mouse brain 10Xv2 single cell transcriptomes
 
-This dataset consists of 1.7 million single cell transcriptomes spanning the whole adult mouse brain using the 10Xv2 method. 
+This dataset consists of 1.7 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv2 chemistry. 
 It was used in the creation of a high resolution transcriptomic and spatial atlas of cell types describe in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
 
 The expression matrices and associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
