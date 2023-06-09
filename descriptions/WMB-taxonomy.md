@@ -1,7 +1,7 @@
 # Whole adult mouse brain taxonomy of cell types
 
 [Clustering analysis](WMB-10X.md) of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the [10Xv2](WMB-10Xv2.md) and [10Xv3](WMB-10Xv3.md) datasets 
-was conducted resulting in a set of 5196 clusters. A detailed analysis of the clusters were preformed as described in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
+was conducted resulting in a set of 5196 clusters. A detailed analysis of the clusters were preformed as described in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1). Cells from a [spatial transcriptomics](MERFISH-C57BL6J-638850.md) dataset spanning the whole mouse brain was mapped to the taxonomy to provide anatomical context.
 
 To organize the complex molecular relationships, a hierarchical representation of cell types was defined with 5 nested levels of classification: division, class, subclass, supertype and clusters.
 Further neurotransmitter identity was assigned to each cluster based on expression of canonical neurotransmitter transporter genes.
@@ -17,6 +17,7 @@ Related resources :
 * Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
 * Whole mouse brain 10Xv3 single cell transcriptomes ([WMB-10Xv3](WMB-10Xv3.md))
 * Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
+* Whole mouse brain MERFISH spatial transcriptomics dataset ([MERFISH-C57BL6J-638850](MERFISH-C57BL6J-638850.md))
 
 Associated notebooks:
 * [**Getting started**](notebooks/getting_started.ipynb): learn how to use the manifest.json file to faciliate data download and usage.
