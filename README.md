@@ -2,7 +2,7 @@
 
 The Allen Brain Cell Atlas (ABC Atlas) aims to empower researchers worldwide to explore and analyze multiple whole-brain datasets simultaneously. As the Allen Institute and its collaborators continue to add new modalities, species, and insights to the ABC Atlas, this groundbreaking platform will keep growing, opening up endless possibilities for groundbreaking discoveries and breakthroughs in neuroscience. With the ABC Atlas, researchers everywhere can gain new insights into the brain’s complex workings, advancing our understanding of this amazing organ in ways we never thought possible.
 
-Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset, [arn:aws:s3:::allen-brain-cell-atlas](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html). The purpose of this repo is to provide an overview of the available data, how to download and use it through example use cases.
+Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset, [arn:aws:s3:::allen-brain-cell-atlas](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html). No account or login is required for access. The purpose of this repo is to provide an overview of the available data, how to download and use it through example use cases.
 
 In the current release (Summer 2023), the ABC Atlas includes :
 * 1.7 million single cell transcriptomes spanning the whole adult mouse brain using the 10Xv2 method ([WMB-10Xv2](descriptions/WMB-10Xv2.md))
