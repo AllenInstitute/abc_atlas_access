@@ -8,7 +8,7 @@ In the current release (Summer 2023), the ABC Atlas includes :
 * 1.7 million single cell transcriptomes spanning the whole adult mouse brain using the 10Xv2 method ([WMB-10Xv2](descriptions/WMB-10Xv2.md))
 * 2.3 million single cell transcriptomes spanning the whole adult mouse brain using the 10Xv3 method ([WMB-10Xv3](descriptions/WMB-10Xv3.md))
 * Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2 and 10Xv3 datasets ([WMB-10X](descriptions/WMB-10X.md))
-* A five level whole adult mouse brain taxonomy of cell types ([WMB-taxonomy](descriptions/WMB-taxonomy))
+* A five level whole adult mouse brain taxonomy of cell types ([WMB-taxonomy](descriptions/WMB-taxonomy.md))
 * 4.0 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the whole mouse brain taxonomy ([MERFISH-C57BL6J-638850](descriptions/MERFISH-C57BL6J-638850.md))
 
 Each release has an associated **manifest.json** which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.
