@@ -1,6 +1,6 @@
 # Clustering analysis of whole adult mouse brain 10X single cell transcriptomes
 
-Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2 and 10Xv3 datasets, resulting in a set of 5196 clusters.
+Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the [10Xv2](WMB-10Xv2.md) and [10Xv3](WMB-10Xv3.md) datasets, resulting in a set of 5196 clusters.
 This is one of the steps towards creating a high resolution transcriptomic and spatial atlas of cell types describe in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
 
 The expression matrices and associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
@@ -10,8 +10,8 @@ The expression matrices and associated metadata is hosted on AWS S3 bucket as a 
 | Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-10X/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-10X/20230630/) |
 
 Related resources :
-* Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv3](WMB-10Xv3.md))
-* Whole mouse brain 10Xv3 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
+* Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
+* Whole mouse brain 10Xv3 single cell transcriptomes ([WMB-10Xv3](WMB-10Xv3.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 
 Associated notebooks:
