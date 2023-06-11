@@ -2,10 +2,10 @@
 
 A 4.0 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the [whole mouse brain taxonomy](WMB-taxonomy).
 
-| Component | Current Version |
-|---|--|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230630/) |
-| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230630/) |
+| Component | Current Version | Size |
+|---|--|---|
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230630/) | 14.28 GB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230630/) | 2.11 GB |
 
 Related resources :
 * Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
