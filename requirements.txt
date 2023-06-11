@@ -1,3 +1,4 @@
+requests
 anndata
 numpy
 matplotlib
