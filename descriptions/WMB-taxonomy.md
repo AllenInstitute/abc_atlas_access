@@ -9,9 +9,9 @@ Further neurotransmitter identity was assigned to each cluster based on expressi
 
 The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
-| Component | Current Version |
-|---|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-taxonomy/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20230630/) |
+| Component | Current Version | Size |
+|---|--|--|
+| Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-taxonomy/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20230630/) | 5.2 MB |
 
 Related resources :
 * Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
