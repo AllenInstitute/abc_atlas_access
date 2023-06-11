@@ -5,9 +5,9 @@ This is one of the steps towards creating a high resolution transcriptomic and s
 
 The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
-| Component | Current Version |
-|---|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-10X/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-10X/20230630/) |
+| Component | Current Version | Size |
+|---|--|--|
+| Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-10X/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-10X/20230630/) | 2.33 GB |
 
 Related resources :
 * Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))

@@ -5,9 +5,9 @@ It was used in the creation of a high resolution transcriptomic and spatial atla
 
 The expression matrices and associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
-| Component | Current Version |
-|---|--|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/WMB-10Xv3/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10Xv3/20230630/) |
+| Component | Current Version | Size |
+|---|--|--|
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/WMB-10Xv3/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10Xv3/20230630/) | 176.31 GB |
 
 Related resources :
 * Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
