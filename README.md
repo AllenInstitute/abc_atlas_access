@@ -14,7 +14,7 @@ In the current release (Summer 2023), the ABC Atlas includes :
 Each release has an associated **manifest.json** which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.
 
 Expression matrices are stored in the [anndata h5ad format](https://anndata.readthedocs.io/en/latest/) and needs to be downloaded to a local file system for usage. To make data transfer, download and access more efficient, 
-the transcriptomics datasets have been subdivided into smaller packages grouped by method, anatomical origin or brain slices. The notebook provide example code on how to access across these individual files.
+the 10x transcriptomics datasets have been subdivided into smaller packages grouped by method and anatomical origin. The notebooks provide example code on how to access data across these individual files.
 
 Available notebooks:
 
