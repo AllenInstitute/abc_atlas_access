@@ -4,7 +4,7 @@ A 4.0 million cell spatial transcriptomics dataset spanning a single adult mouse
 
 | Component | Current Version | Size |
 |---|--|---|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230630/) | 14.28 GB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850-combined/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850-combined/20230630/) | 14.28 GB |
 | Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230630/) | 2.11 GB |
 
 Related resources :
