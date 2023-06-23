@@ -1,6 +1,8 @@
+requests
 anndata
 numpy
 matplotlib
 pandas
 plotly
 scipy
+SimpleITK
