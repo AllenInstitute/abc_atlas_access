@@ -1,6 +1,8 @@
 # MERFISH spatial transcriptomics dataset of a single adult mouse brain
 
-A 4.0 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the [whole mouse brain taxonomy](WMB-taxonomy).
+A 4.0 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the [whole mouse brain taxonomy](WMB-taxonomy). It was used in the creation of a high resolution transcriptomic and spatial atlas of cell types describe in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
+
+The expression matrices and associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|---|
