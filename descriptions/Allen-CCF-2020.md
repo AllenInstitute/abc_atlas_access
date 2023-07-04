@@ -5,7 +5,8 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Allen-CCF-2020/20230630/) | 5.2 MB |
+| Image Volumes | [s3://allen-brain-cell-atlas/image_volumes/Allen-CCF-2020/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/Allen-CCF-2020/20230630/) | 379.1 MB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Allen-CCF-2020/20230630/) | 1.18 MB |
 
 Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
 
