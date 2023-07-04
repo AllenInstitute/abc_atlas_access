@@ -35,6 +35,6 @@ Available notebooks:
   * [**Part 2b**](notebooks/merfish_tutorial_part_2b.ipynb): explore the whole brain data through visualization and analyses of a set of genes of interest.
  * [**Cluster groups and embeddings**](notebooks/cluster_groups_and_embeddings_tutorial.ipynb): learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.
  * [**Allen CCFv3 parcellation and annotation**](notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
- * [**MERFISH CCF registration**](notebooks/merfish_ccf_registration_tutorial.ipynb): learn about how to download and use CCF mapped coordinates through some example use cases and visualization.
+ * [**MERFISH CCF mapped coordinates**](notebooks/merfish_ccf_registration_tutorial.ipynb): learn about how to download and use CCF mapped coordinates through some example use cases and visualization.
     
 
