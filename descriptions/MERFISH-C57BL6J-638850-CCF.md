@@ -10,8 +10,8 @@ Global and section-wise mappings from each of these registration steps were pres
 
 | Component | Current Version | Size |
 |---|--|---|
-| Image Volumes | [s3://allen-brain-cell-atlas/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/) | 379.1 MB |
-| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850-CCF/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850-CCF/20230630/) | 1.18 MB |
+| Image Volumes | [s3://allen-brain-cell-atlas/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/) | 115.4 MB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850-CCF/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850-CCF/20230630/) | 2.14 GB |
 
 Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
 
