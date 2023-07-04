@@ -7,5 +7,7 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 |---|--|--|
 | Metadata | [s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Allen-CCF-2020/20230630/) | 5.2 MB |
 
+Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
+
 Associated notebooks:
 * [**Allen CCFv3 parcellation and annotation**](notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
