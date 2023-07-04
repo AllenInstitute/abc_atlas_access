@@ -36,5 +36,7 @@ Available notebooks:
  * [**Cluster groups and embeddings**](notebooks/cluster_groups_and_embeddings_tutorial.ipynb): learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.
  * [**Allen CCFv3 parcellation and annotation**](notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
  * [**MERFISH CCF mapped coordinates**](notebooks/merfish_ccf_registration_tutorial.ipynb): learn about how to download and use CCF mapped coordinates through some example use cases and visualization.
-    
+
+## Level of support
+We are not currently supporting this code, but simply releasing it to the community AS IS. We are not able to provide any guarantees of support. The community is welcome to submit issues, but you should not expect an active response.
 
