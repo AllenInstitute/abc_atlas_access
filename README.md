@@ -6,7 +6,7 @@ Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an 
 
 Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
 
-During the summer/fall of 2023, the Allen Brain Cell Atlas plans to include:
+The summer 2023 public beta data release includes:
 * 1.7 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv2 chemistry ([WMB-10Xv2](descriptions/WMB-10Xv2.md))
 * 2.3 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv3 chemistry ([WMB-10Xv3](descriptions/WMB-10Xv3.md))
 * Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2 and 10Xv3 datasets ([WMB-10X](descriptions/WMB-10X.md))
