@@ -11,4 +11,4 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
 
 Associated notebooks:
-* [**Allen CCFv3 parcellation and annotation**](notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
+* [**Allen CCFv3 parcellation and annotation**](../notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
