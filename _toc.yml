@@ -1,0 +1,34 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: notebooks/getting_started
+  sections: 
+  - file: descriptions/WMB-10Xv2
+  - file: descriptions/WMB-10Xv3
+  - file: descriptions/WMB-10X
+  - file: descriptions/WMB-taxonomy
+  - file: descriptions/MERFISH-C57BL6J-638850
+  - file: descriptions/WMB-neighborhoods
+  - file: descriptions/Allen-CCF-2020
+  - file: descriptions/MERFISH-C57BL6J-638850-CCF
+- file: notebooks/cluster_annotation_tutorial
+- file: descriptions/10x_snRNASeq-tutorial
+  sections:
+  - file: notebooks/10x_snRNASeq_tutorial_part_1
+  - file: notebooks/10x_snRNASeq_tutorial_part_2a
+  - file: notebooks/10x_snRNASeq_tutorial_part_2b
+- file: descriptions/merfish-tutorial
+  sections:
+  - file: notebooks/merfish_tutorial_part_1
+  - file: notebooks/merfish_tutorial_part_2a
+  - file: notebooks/merfish_tutorial_part_2b
+- file: notebooks/cluster_groups_and_embeddings_tutorial
+- file: notebooks/cluster_neighborhood_gallery
+- file: notebooks/ccf_and_parcellation_annotation_tutorial
+- file: notebooks/merfish_ccf_registration_tutorial
+
+
+
