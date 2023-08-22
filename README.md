@@ -9,8 +9,9 @@ Data is being share under the [Allen Institute Terms of Use](https://alleninstit
 The summer 2023 public beta data release includes:
 * 1.7 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv2 chemistry ([WMB-10Xv2](descriptions/WMB-10Xv2.md))
 * 2.3 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv3 chemistry ([WMB-10Xv3](descriptions/WMB-10Xv3.md))
-* Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2 and 10Xv3 datasets ([WMB-10X](descriptions/WMB-10X.md))
-* A five level whole adult mouse brain taxonomy of cell types ([WMB-taxonomy](descriptions/WMB-taxonomy.md))
+* 1687 million single cell transcriptomes spanning the whole adult mouse brain using the 10X Multiome chemistry ([WMB-10XMulti](descriptions/WMB-10XMulti.md))
+* Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2, 10Xv3 and 10XMulti datasets ([WMB-10X](descriptions/WMB-10X.md))
+* A four level whole adult mouse brain taxonomy of cell types ([WMB-taxonomy](descriptions/WMB-taxonomy.md))
 * 4.0 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the whole mouse brain taxonomy ([MERFISH-C57BL6J-638850](descriptions/MERFISH-C57BL6J-638850.md))
 * Definition of 18 cell types neighborhoods and UMAP embeddings for fine grain visualization and analysis of neuronal types within and between brain regions ([WMB-neighborhoods](descriptions/WMB-neighborhoods.md))
 * An updated Allen CCFv3 with additional annotations for layers of Ammon's horns, main olfactory blub and a simplifed 5-level anatomical heirarchy ([Allen-CCF-2020](descriptions/Allen-CCF-2020.md))
