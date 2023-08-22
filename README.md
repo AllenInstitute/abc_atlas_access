@@ -4,8 +4,6 @@ The Allen Brain Cell Atlas (ABC Atlas) aims to empower researchers worldwide to 
 
 Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset, [arn:aws:s3:::allen-brain-cell-atlas](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html). No account or login is required for access. The purpose of this repo is to provide an overview of the available data, how to download and use it through example use cases.
 
-Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
-
 The summer 2023 public beta data release includes:
 * 1.7 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv2 chemistry ([WMB-10Xv2](descriptions/WMB-10Xv2.md))
 * 2.3 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv3 chemistry ([WMB-10Xv3](descriptions/WMB-10Xv3.md))
