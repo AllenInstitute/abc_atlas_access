@@ -12,8 +12,6 @@ The expression matrices and associated metadata is hosted on AWS S3 bucket as a 
 Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
 
 Related resources :
-* Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
-* Whole mouse brain 10Xv3 single cell transcriptomes ([WMB-10Xv3](WMB-10Xv3.md))
 * Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 
