@@ -8,7 +8,7 @@ The expression matrices and associated metadata is hosted on AWS S3 bucket as a 
 |---|--|---|
 | Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230630/) | 14.2 GB |
 | Expression Matrices (per section) | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/) | 14.27 GB |
-| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230630/) | 2.11 GB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230630/) | 2.11 GB |
 
 Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
 
