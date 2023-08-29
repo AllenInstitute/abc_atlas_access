@@ -9,10 +9,9 @@ The expression matrices and associated metadata is hosted on AWS S3 bucket as a 
 |---|--|--|
 | Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/WMB-10Xv3/20230630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10Xv3/20230630/) | 176.31 GB |
 
-Data is being share under the [Allen Institute Terms of Use](https://alleninstitute.org/terms-of-use/).
+Data is being share under the CC BY NC 4.0 license.
 
 Related resources :
-* Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
 * Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 
