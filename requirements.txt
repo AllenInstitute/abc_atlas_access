@@ -5,3 +5,5 @@ matplotlib
 pandas
 scipy
 SimpleITK
+ghp-import
+jupyter-book
