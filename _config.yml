@@ -22,7 +22,7 @@ execute:
   timeout: 3000
   exclude_patterns:
     - .github/*
-  execute_notebooks: auto
+  execute_notebooks: off
 
 only_build_toc_files: true
 ##############
