@@ -1,7 +1,7 @@
 # Whole adult mouse brain taxonomy of cell types
 
 [Clustering analysis](WMB-10X.md) of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the [10Xv2](WMB-10Xv2.md) and [10Xv3](WMB-10Xv3.md) datasets 
-was conducted resulting in a set of 5196 clusters. A detailed analysis of the clusters were preformed as described in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1). Cells from a [spatial transcriptomics](MERFISH-C57BL6J-638850.md) dataset spanning the whole mouse brain was mapped to the taxonomy to provide anatomical context.
+was conducted resulting in a set of 5196 clusters. A detailed analysis of the clusters were preformed as described in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1). Cells from a [spatial transcriptomics](MERFISH-C57BL6J-638850.md) dataset spanning the whole mouse brain were mapped to the taxonomy to provide anatomical context.
 
 To organize the complex molecular relationships, a hierarchical representation of cell types was defined with 5 nested levels of classification: division, class, subclass, supertype and clusters.
 Further neurotransmitter identity was assigned to each cluster based on expression of canonical neurotransmitter transporter genes.
@@ -27,9 +27,9 @@ Associated notebooks:
 * **10x scRNA-seq gene expression data**
   * [**Part 1**](../notebooks/10x_snRNASeq_tutorial_part_1.ipynb): learn about the 10x dataset through some example use cases and visualizations of cells in the thalamus.
   * [**Part 2a**](../notebooks/10x_snRNASeq_tutorial_part_2a.ipynb): learn how to iterate through all the data packages, to access data for whole brain example use cases in part 2b.
-  * [**Part 2b**](../notebooks/10x_snRNASeq_tutorial_part_2b.ipynb): Explore the whole brain data through visualization and analyses of a set of genes of interest.
+  * [**Part 2b**](../notebooks/10x_snRNASeq_tutorial_part_2b.ipynb): explore the whole brain data through visualization and analyses of a set of genes of interest.
 * **MERFISH whole brain spatial transcriptomics**
   * [**Part 1**](../notebooks/merfish_tutorial_part_1.ipynb): learn about the MERFISH dataset through some example use cases and visualizations for a single brain section.
   * [**Part 2a**](../notebooks/merfish_tutorial_part_2a.ipynb): learn to access data and prepare for whole brain example use cases in part 2b.
-  * [**Part 2b**](../notebooks/merfish_tutorial_part_2b.ipynb): Explore the whole brain data through visualization and analyses of a set of genes of interest.
+  * [**Part 2b**](../notebooks/merfish_tutorial_part_2b.ipynb): explore the whole brain data through visualization and analyses of a set of genes of interest.
 
