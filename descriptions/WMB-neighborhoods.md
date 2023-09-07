@@ -1,6 +1,6 @@
 # Cluster groups and neighborhood specific UMAP embeddings
 
-To further investigate the neuronal diversity within each major brain structure, [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1) created concept of cell types "neighborhoods" or groups and use them for visualization and analysis. For each neighborhood, they genereated re-embedded UMAPS to reveal fine-grained relationships between neuronal types ([WMB-taxonomy](WMB-taxonomy.md)) within and between brain regions.
+To further investigate the neuronal diversity within each major brain structure, [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1) created the concept of cell types "neighborhoods" or groups and used them for visualization and analysis. For each neighborhood, they generated re-embedded UMAPS to reveal fine-grained relationships between neuronal types ([WMB-taxonomy](WMB-taxonomy.md)) within and between brain regions.
 
 The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
