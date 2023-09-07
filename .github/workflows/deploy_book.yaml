@@ -34,7 +34,7 @@ jobs:
       run: |
         jupyter-book build .
     
-    - name: Change html download tag to 
+    - name: Remove html download tag 
       run: |
         ./scripts/remove_download.sh
 
