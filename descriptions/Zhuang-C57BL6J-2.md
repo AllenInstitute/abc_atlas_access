@@ -14,4 +14,4 @@ Data is being shared under the CC BY 4.0 license.
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to faciliate data download and usage.
-* [**MERFISH whole mouse brain spatial transcriptomics**](../notebooks/zhuang_merfish_tutorial.ipynb): learn about the MERFISH dataset through some example use cases and visualization
+* [**MERFISH whole mouse brain spatial transcriptomics**](../notebooks/zhuang_merfish_tutorial.ipynb): learn about the MERFISH dataset through some example use cases and visualization.
