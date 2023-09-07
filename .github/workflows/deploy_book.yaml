@@ -33,6 +33,10 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build .
+    
+    - name: Change html download tag to 
+      run: |
+        ./scripts/remove_download.sh
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
