@@ -19,7 +19,7 @@ Related resources :
 * Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 * Whole mouse brain MERFISH spatial transcriptomics dataset ([MERFISH-C57BL6J-638850](MERFISH-C57BL6J-638850.md))
-* Allen CCFv3 with a simplifed 5-level anatomical heirarchy ([Allen-CCF-2020](descriptions/Allen-CCF-2020.md))
+* Allen CCFv3 with a simplifed 5-level anatomical heirarchy ([Allen-CCF-2020](Allen-CCF-2020.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to faciliate data download and usage.
