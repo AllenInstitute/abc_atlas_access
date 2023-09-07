@@ -10,7 +10,7 @@ The expression matrices and associated metadata is hosted on AWS S3 bucket as a 
 | Metadata | [s3://allen-brain-cell-atlas/metadata/Zhuang-C57BL6J-1/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-C57BL6J-1/20230830/) | 1.27 GB |
 | CCF Coordinates | [s3://allen-brain-cell-atlas/metadata/Zhuang-C57BL6J-1-CCF/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-C57BL6J-1-CCF/20230830/) | 0.21 GB |
 
-Data is being share under the CC BY 4.0 license.
+Data is being shared under the CC BY 4.0 license.
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to faciliate data download and usage.

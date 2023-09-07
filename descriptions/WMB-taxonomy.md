@@ -13,7 +13,7 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 |---|--|--|
 | Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-taxonomy/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20230830/) | 5.2 MB |
 
-Data is being share under the CC BY NC 4.0 license.
+Data is being shared under the CC BY NC 4.0 license.
 
 Related resources :
 * Whole mouse brain 10Xv2 single cell transcriptomes ([WMB-10Xv2](WMB-10Xv2.md))
