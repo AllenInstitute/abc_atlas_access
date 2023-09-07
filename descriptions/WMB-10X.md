@@ -3,7 +3,7 @@
 Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the [10Xv2](WMB-10Xv2.md) and [10Xv3](WMB-10Xv3.md) datasets, resulting in a set of 5196 clusters.
 This is one of the steps towards creating a high resolution transcriptomic and spatial atlas of cell types describe in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
 
-The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
+The associated metadata is hosted on AWS S3 bucket as an AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|--|

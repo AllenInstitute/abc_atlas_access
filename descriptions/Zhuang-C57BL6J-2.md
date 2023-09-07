@@ -2,7 +2,7 @@
 
 1.2 million cell spatial transcriptomics dataset spanning 66 coronal sections with a 1122 gene panel and mapped to the  [whole mouse brain taxonomy](WMB-taxonomy.md) and [Allen-CCF-2020](Allen-CCF-2020.md). Refer to [Zhang et al, 2023](https://doi.org/10.1101/2023.03.06.531348) for more details.
 
-The expression matrices and associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
+The expression matrices and associated metadata is hosted on AWS S3 bucket as an AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|---|

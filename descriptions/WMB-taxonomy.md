@@ -7,7 +7,7 @@ To organize the complex molecular relationships, a hierarchical representation o
 Further neurotransmitter identity was assigned to each cluster based on expression of canonical neurotransmitter transporter genes.
 
 
-The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
+The associated metadata is hosted on AWS S3 bucket as an AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|--|
