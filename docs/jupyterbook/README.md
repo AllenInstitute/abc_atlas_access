@@ -18,12 +18,12 @@
 - This allows you to build the book locally. The command below will generate a fully-functioning HTML site using a static site generator.\
 Run the following command: ```jupyter-book build PATH_TO_BOOK_ROOT_FOLDER/```
 - **IMP**: If you have made many edits, it is recommended to first remove the _build directory then build.\
-Run the following command: ```jupyter-book clean -a PATH_TO_BOOK_ROOT_FOLDER/```. 
+Run the following command: ```jupyter-book clean -a PATH_TO_BOOK_ROOT_FOLDER/```
 
 ## Publishing The Book
-- **push** changes to **main** branch. 
-- Note: Do **not** push the _build directory 
-- Note: A GitHub Action is already created to automatically build the book and update the website when a **push** event happens on **main**. Nothing else needs to be done. 
+- **push** changes to **main** branch 
+- **Note**: Do **not** push the _build directory 
+- **Note**: A GitHub Action is already created to automatically build the book and update the website when a **push** event happens on **main**. Nothing else needs to be done. 
 
 ## Useful Resources
 - JupyterBook Documentation: https://jupyterbook.org/en/stable/intro.html
