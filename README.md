@@ -16,10 +16,10 @@ The fall 2023 public beta data release includes:
   * An updated Allen CCFv3 with additional annotations for layers of Ammon's horns, main olfactory blub and a simplifed 5-level anatomical heirarchy ([Allen-CCF-2020](descriptions/Allen-CCF-2020.md))
   * CCF mapped coordinates for cells in the whole brain spatial transcriptomics dataset ([MERFISH-C57BL6J-638850-CCF](descriptions/MERFISH-C57BL6J-638850-CCF.md))
 * **A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)**
-  * 2.8 million cell spatial transcriptomics dataset spanning 147 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-C57BL6J-1](descriptions/Zhuang-C57BL6J-1.md))
-  * 1.2 million cell spatial transcriptomics dataset spanning 66 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-C57BL6J-2](descriptions/Zhuang-C57BL6J-2.md))
-  * 1.5 million cell spatial transcriptomics dataset spanning 23 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-C57BL6J-3](descriptions/Zhuang-C57BL6J-3.md))
-  * 0.2 million cell spatial transcriptomics dataset spanning 3 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-C57BL6J-4](descriptions/Zhuang-C57BL6J-4.md))
+  * 2.8 million cell spatial transcriptomics dataset spanning 147 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-ABCA-1](descriptions/Zhuang-ABCA-1.md))
+  * 1.2 million cell spatial transcriptomics dataset spanning 66 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-ABCA-2](descriptions/Zhuang-ABCA-2.md))
+  * 1.5 million cell spatial transcriptomics dataset spanning 23 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-ABCA-3](descriptions/Zhuang-ABCA-3.md))
+  * 0.2 million cell spatial transcriptomics dataset spanning 3 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 ([Zhuang-ABCA-4](descriptions/Zhuang-ABCA-4.md))
 
 Each release has an associated **manifest.json** which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.
 
