@@ -1,0 +1,879 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Getting started &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/getting_started';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)" href="../descriptions/data_release_subtitle1.html" />
+    <link rel="prev" title="Allen Brain Cell Atlas - Data Access" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas - Data Access
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fnotebooks/getting_started.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/getting_started.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting started</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-file-manifest">Using the file manifest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files-for-the-tutorial-notebooks">Downloading files for the tutorial notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-metadata-directories">Downloading all metadata directories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-one-10x-expression-matrix">Downloading one 10x expression matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-merfish-expression-matrix">Downloading the MERFISH expression matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-image-volumes">Downloading all image volumes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<p>Data associated with the Allen Brain Cell Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset.
+No account or login is required. The S3 bucket is located here <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>. You will need to be connected to the internet to run this notebook.</p>
+<p>Each release has an associated <strong>manifest.json</strong> which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.</p>
+<p>Expression matrices are stored in the <a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and needs to be downloaded to a local file system for usage.</p>
+<p>The <strong>AWS Command Line Interface (<a class="reference external" href="https://aws.amazon.com/cli/">AWS CLI</a>)</strong> is a simple option to download specific directories and files from S3. Download and installation instructructions can be found here: <a class="reference external" href="https://aws.amazon.com/cli/">https://aws.amazon.com/cli/</a>.</p>
+<p>This notebook shows how to format AWS CLI commands to download the data required for the tutorials. You can copy those command onto a terminal shell or optionally you can run those command directly in this notebook by uncommenting the “subprocess.run” lines in the code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="using-the-file-manifest">
+<h2>Using the file manifest<a class="headerlink" href="#using-the-file-manifest" title="Permalink to this heading">#</a></h2>
+<p>Let’s open the manifest.json file associated with the current release.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;20230830&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/releases/</span><span class="si">%s</span><span class="s1">/manifest.json&#39;</span> <span class="o">%</span> <span class="n">version</span>
+<span class="n">manifest</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;version: &quot;</span><span class="p">,</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>version:  20230830
+</pre></div>
+</div>
+</div>
+</div>
+<p>At the top level, the manifest consists of the release <em>version</em> tag, S3 <em>resource_uri</em>,  dictionaries <em>directory_listing</em> and <em>file_listing</em>. A simple option to download data is to use the AWS CLI to download specific directories or files. All the example notebooks in this repository assumes that data has been downloaded locally in the same file organization as specified by the “relative_path” field in the manifest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">manifest</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;version:&quot;</span><span class="p">,</span><span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;resource_uri:&quot;</span><span class="p">,</span><span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>version: 20230830
+resource_uri: s3://allen-brain-cell-atlas/
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at the information associated with the spatial transcriptomics dataset <strong>MERFISH-C57BL6J-638850</strong>. This dataset has two related directories: <em>expression_matrices</em> containing a set of h5ad files and <em>metadata</em> containing a set of csv files. Use the <em>view_link</em> url to browse the directories on a web-browser.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">][</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expression_matrices</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expression_matrices</span><span class="p">[</span><span class="s1">&#39;view_link&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;version&#39;: &#39;20230830&#39;, &#39;relative_path&#39;: &#39;expression_matrices/MERFISH-C57BL6J-638850/20230830&#39;, &#39;url&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;view_link&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;total_size&#39;: 15255179148}
+https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230830/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">][</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;view_link&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;version&#39;: &#39;20230830&#39;, &#39;relative_path&#39;: &#39;metadata/MERFISH-C57BL6J-638850/20230830&#39;, &#39;url&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;view_link&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;total_size&#39;: 1942603772}
+https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230830/
+</pre></div>
+</div>
+</div>
+</div>
+<p>Directory sizes are also reported as part to the manifest.json. WARNING: the expression matrices directories can get very large &gt; 100 GB.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GB</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">]</span> <span class="p">:</span>    
+    <span class="n">r_dict</span> <span class="o">=</span>  <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">]</span> <span class="p">:</span>
+        <span class="n">d_dict</span> <span class="o">=</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">]</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">%0.2f</span><span class="s1"> GB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;total_size&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">GB</span><span class="p">))</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>expression_matrices/MERFISH-C57BL6J-638850/20230830 : 14.21 GB
+metadata/MERFISH-C57BL6J-638850/20230830 : 1.81 GB
+expression_matrices/MERFISH-C57BL6J-638850-sections/20230630 : 14.31 GB
+expression_matrices/WMB-10Xv2/20230630 : 104.16 GB
+expression_matrices/WMB-10Xv3/20230630 : 176.41 GB
+expression_matrices/WMB-10XMulti/20230830 : 0.21 GB
+metadata/WMB-10X/20230830 : 2.39 GB
+metadata/WMB-taxonomy/20230830 : 0.00 GB
+metadata/WMB-neighborhoods/20230830 : 3.00 GB
+image_volumes/Allen-CCF-2020/20230630 : 0.37 GB
+metadata/Allen-CCF-2020/20230630 : 0.00 GB
+image_volumes/MERFISH-C57BL6J-638850-CCF/20230630 : 0.11 GB
+metadata/MERFISH-C57BL6J-638850-CCF/20230830 : 0.59 GB
+expression_matrices/Zhuang-ABCA-1/20230830 : 3.09 GB
+metadata/Zhuang-ABCA-1/20230830 : 1.33 GB
+metadata/Zhuang-ABCA-1-CCF/20230830 : 0.21 GB
+expression_matrices/Zhuang-ABCA-2/20230830 : 1.30 GB
+metadata/Zhuang-ABCA-2/20230830 : 0.57 GB
+metadata/Zhuang-ABCA-2-CCF/20230830 : 0.08 GB
+expression_matrices/Zhuang-ABCA-3/20230830 : 1.69 GB
+metadata/Zhuang-ABCA-3/20230830 : 0.74 GB
+metadata/Zhuang-ABCA-3-CCF/20230830 : 0.12 GB
+expression_matrices/Zhuang-ABCA-4/20230830 : 0.16 GB
+metadata/Zhuang-ABCA-4/20230830 : 0.08 GB
+metadata/Zhuang-ABCA-4-CCF/20230830 : 0.01 GB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-files-for-the-tutorial-notebooks">
+<h2>Downloading files for the tutorial notebooks<a class="headerlink" href="#downloading-files-for-the-tutorial-notebooks" title="Permalink to this heading">#</a></h2>
+<p>Suppose you would like to download data to your local path <em>../abc_download_root</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="s1">&#39;../../abc_download_root&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="downloading-all-metadata-directories">
+<h3>Downloading all metadata directories<a class="headerlink" href="#downloading-all-metadata-directories" title="Permalink to this heading">#</a></h3>
+<p>Since the metadata directories are relatively small we will download all the metadata directories. We loop through the manifest and download each metadata directory using  <strong><a class="reference external" href="https://aws.amazon.com/cli/">AWS CLI</a></strong> sync command. This should take &lt; 5 minutes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">]</span> <span class="p">:</span>
+    
+    <span class="n">r_dict</span> <span class="o">=</span>  <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">]</span> <span class="p">:</span>
+        
+        <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="s1">&#39;metadata&#39;</span> <span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">d_dict</span> <span class="o">=</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">]</span>
+        <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">])</span>
+        <span class="n">local_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span> <span class="n">local_path</span> <span class="p">)</span>
+        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+        
+        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;aws s3 sync --no-sign-request </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+        <span class="c1"># Uncomment to download directories</span>
+        <span class="c1">#result = subprocess.run(command.split(),stdout=subprocess.PIPE)</span>
+        <span class="c1">#print(&quot;time taken: &quot;, time.process_time() - start)</span>
+  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230830 ../../abc_download_root/metadata/MERFISH-C57BL6J-638850/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/WMB-10X/20230830 ../../abc_download_root/metadata/WMB-10X/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/WMB-taxonomy/20230830 ../../abc_download_root/metadata/WMB-taxonomy/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/WMB-neighborhoods/20230830 ../../abc_download_root/metadata/WMB-neighborhoods/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630 ../../abc_download_root/metadata/Allen-CCF-2020/20230630
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850-CCF/20230830 ../../abc_download_root/metadata/MERFISH-C57BL6J-638850-CCF/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-1/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-1-CCF/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-2/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-2/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-2-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-2-CCF/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-3/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-3-CCF/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-4/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-4/20230830
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-4-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-4-CCF/20230830
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-one-10x-expression-matrix">
+<h3>Downloading one 10x expression matrix<a class="headerlink" href="#downloading-one-10x-expression-matrix" title="Permalink to this heading">#</a></h3>
+<p>The prerequisite to run the 10x part 1 notebook is to have downloaded the log2 version of the “‘WMB-10Xv2-TH’” matrix (4GB). Download takes ~ 1 min depending on your network speed.</p>
+<p>We define a simple helper function to create the require AWS command. You can copy the command into a terminal shell to run or optionally run it inside this notebook if you uncomment the “subprocess.run” line of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span> <span class="p">:</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">],</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+    <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">local_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span> <span class="n">local_path</span> <span class="p">)</span>
+    <span class="n">remote_path</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+
+    <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;aws s3 cp --no-sign-request </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+    <span class="c1"># Uncomment to download file</span>
+    <span class="c1">#result = subprocess.run(command.split(&#39; &#39;),stdout=subprocess.PIPE)</span>
+    <span class="c1">#print(&quot;time taken: &quot;, time.process_time() - start)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
+<span class="n">file_dict</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="s1">&#39;WMB-10Xv2-TH&#39;</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+<span class="n">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 4038679930
+expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad 4038679930
+aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad ../../abc_download_root/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-the-merfish-expression-matrix">
+<h3>Downloading the MERFISH expression matrix<a class="headerlink" href="#downloading-the-merfish-expression-matrix" title="Permalink to this heading">#</a></h3>
+<p>The prerequisite to run the MERFISH part 1 notebook is to have downloaded the log2 version of the “C57BL6J-638850” matrix (7GB). Download takes ~3 mins depending on tour network speed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datasets</span> <span class="p">:</span>
+    <span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
+    <span class="n">file_dict</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="s1">&#39;C57BL6J-638850&#39;</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+    <span class="n">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 7627589574
+expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad 7627589574
+aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad ../../abc_download_root/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad
+</pre></div>
+</div>
+</div>
+</div>
+<p>The prerequisite to run the Zhuang MERFISH notebook is to have downloaded the log2 version of the expression matrices of all 4 brain specimens</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Zhuang-ABCA-1&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-2&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-3&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-4&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datasets</span> <span class="p">:</span>
+    <span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
+    <span class="n">file_dict</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+    <span class="n">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 2128478610
+expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad 2128478610
+aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad
+size: 871420938
+expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad 871420938
+aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad
+size: 1160586154
+expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad 1160586154
+aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad
+size: 106739752
+expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad 106739752
+aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-all-image-volumes">
+<h3>Downloading all image volumes<a class="headerlink" href="#downloading-all-image-volumes" title="Permalink to this heading">#</a></h3>
+<p>The prerequisite to run the CCF and MERFISH to CCF registration notebooks is to have downloaded the two set of image volumes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">]</span> <span class="p">:</span>
+    
+    <span class="n">r_dict</span> <span class="o">=</span>  <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">]</span> <span class="p">:</span>
+        
+        <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="s1">&#39;image_volumes&#39;</span> <span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">d_dict</span> <span class="o">=</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">]</span>
+        <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">])</span>
+        <span class="n">local_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span> <span class="n">local_path</span> <span class="p">)</span>
+        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+        
+        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;aws s3 sync --no-sign-request </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+        <span class="c1"># Uncomment to download directories</span>
+        <span class="c1">#result = subprocess.run(command.split(),stdout=subprocess.PIPE)</span>
+        <span class="c1">#print(&quot;time taken: &quot;, time.process_time() - start)</span>
+  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/Allen-CCF-2020/20230630 ../../abc_download_root/image_volumes/Allen-CCF-2020/20230630
+aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630 ../../abc_download_root/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Allen Brain Cell Atlas - Data Access</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../descriptions/data_release_subtitle1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-file-manifest">Using the file manifest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files-for-the-tutorial-notebooks">Downloading files for the tutorial notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-metadata-directories">Downloading all metadata directories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-one-10x-expression-matrix">Downloading one 10x expression matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-merfish-expression-matrix">Downloading the MERFISH expression matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-image-volumes">Downloading all image volumes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
