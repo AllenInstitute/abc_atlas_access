@@ -1,0 +1,60 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: INTRODUCTION
+    chapters:
+      - file: notebooks/getting_started
+
+  - caption: DATA 
+    chapters:
+    - file: descriptions/data_release_subtitle1
+      sections:
+      - file: descriptions/WMB-10Xv2
+      - file: descriptions/WMB-10Xv3
+      - file: descriptions/WMB-10XMulti
+      - file: descriptions/WMB-10X
+      - file: descriptions/WMB-taxonomy
+      - file: descriptions/MERFISH-C57BL6J-638850
+      - file: descriptions/WMB-neighborhoods
+      - file: descriptions/Allen-CCF-2020
+      - file: descriptions/MERFISH-C57BL6J-638850-CCF
+    - file: descriptions/data_release_subtitle2
+      sections:
+      - file: descriptions/Zhuang-ABCA-1
+      - file: descriptions/Zhuang-ABCA-2
+      - file: descriptions/Zhuang-ABCA-3
+      - file: descriptions/Zhuang-ABCA-4
+
+  - caption: NOTEBOOKS
+    chapters:
+    - file: descriptions/notebook_subtitle1
+      sections:
+      - file: notebooks/cluster_annotation_tutorial
+      - file: descriptions/notebook_subtitle2
+        sections:
+        - file: notebooks/10x_snRNASeq_tutorial_part_1
+        - file: notebooks/10x_snRNASeq_tutorial_part_2a
+        - file: notebooks/10x_snRNASeq_tutorial_part_2b
+      - file: descriptions/notebook_subtitle3
+        sections:
+          - file: notebooks/merfish_tutorial_part_1
+          - file: notebooks/merfish_tutorial_part_2a
+          - file: notebooks/merfish_tutorial_part_2b
+      - file: notebooks/cluster_groups_and_embeddings_tutorial
+      - file: notebooks/cluster_neighborhood_gallery
+      - file: notebooks/ccf_and_parcellation_annotation_tutorial
+      - file: notebooks/merfish_ccf_registration_tutorial
+    - file: descriptions/notebook_subtitle4
+      sections:
+      - file: notebooks/zhuang_merfish_tutorial
+
+  - caption: ADDITIONAL RESOURCES
+    chapters:
+    - file: docs/README
+      sections:
+      - file: docs/gene_lists/README
+      - file: docs/cluster_annotations/README
+      - file: docs/parcellation_annotations/README
