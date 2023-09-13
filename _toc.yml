@@ -23,10 +23,10 @@ parts:
       - file: descriptions/MERFISH-C57BL6J-638850-CCF
     - file: descriptions/data_release_subtitle2
       sections:
-      - file: descriptions/Zhuang-C57BL6J-1
-      - file: descriptions/Zhuang-C57BL6J-2
-      - file: descriptions/Zhuang-C57BL6J-3
-      - file: descriptions/Zhuang-C57BL6J-4
+      - file: descriptions/Zhuang-ABCA-1
+      - file: descriptions/Zhuang-ABCA-2
+      - file: descriptions/Zhuang-ABCA-3
+      - file: descriptions/Zhuang-ABCA-4
 
   - caption: NOTEBOOKS
     chapters:
