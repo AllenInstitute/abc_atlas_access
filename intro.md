@@ -29,19 +29,32 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
 Available notebooks:
 
 * [**Getting started**](notebooks/getting_started.ipynb): learn how to use the manifest.json file to faciliate data download and usage.
+[*notebooks/getting_started.ipynb*]
 *  **Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)**
    * [**10x scRNA-seq clustering analysis and annotation**](notebooks/cluster_annotation_tutorial.ipynb): learn about the whole mouse brain taxonomy through some example use cases and visualization.
+[*notebooks/cluster_annotation_tutorial.ipynb*]
    * **10x scRNA-seq gene expression data**
      * [**Part 1**](notebooks/10x_snRNASeq_tutorial_part_1.ipynb): learn about the 10x dataset through some example use cases and visualization of cells in the thalamus.
+[*notebooks/10x_snRNASeq_tutorial_part_1.ipynb*]
      * [**Part 2a**](notebooks/10x_snRNASeq_tutorial_part_2a.ipynb): learn how to iterate through all the data packages, to access data for whole brain example use cases in part 2b.
+[*notebooks/10x_snRNASeq_tutorial_part_2a.ipynb*]
      * [**Part 2b**](notebooks/10x_snRNASeq_tutorial_part_2b.ipynb): explore the whole brain data through visualization and analyses of a set of genes of interest.
+[*notebooks/10x_snRNASeq_tutorial_part_2b.ipynb*]
    * **MERFISH whole brain spatial transcriptomics**
      * [**Part 1**](notebooks/merfish_tutorial_part_1.ipynb): learn about the MERFISH dataset through some example use cases and visualization for a single brain section.
+[*notebooks/merfish_tutorial_part_1.ipynb*]
      * [**Part 2a**](notebooks/merfish_tutorial_part_2a.ipynb): learn to access data and prepare for whole brain example use cases in part 2b.
+ [*notebooks/merfish_tutorial_part_2a.ipynb*]
      * [**Part 2b**](notebooks/merfish_tutorial_part_2b.ipynb): explore the whole brain data through visualization and analyses of a set of genes of interest.
+[*notebooks/merfish_tutorial_part_2b.ipynb*]
     * [**Cluster groups and embeddings**](notebooks/cluster_groups_and_embeddings_tutorial.ipynb): learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.
+[*notebooks/cluster_groups_and_embeddings_tutorial.ipynb*]
     * [**Cell type neighborhood gallery**](notebooks/cluster_neighborhood_gallery.ipynb): explore and visualize a set of cell types neighborhoods.
+[*notebooks/cluster_neighborhood_gallery.ipynb*]
     * [**Allen CCFv3 parcellation and annotation**](notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
+[*notebooks/ccf_and_parcellation_annotation_tutorial.ipynb*]
     * [**MERFISH CCF mapped coordinates**](notebooks/merfish_ccf_registration_tutorial.ipynb): learn about how to download and use CCF mapped coordinates through some example use cases and visualization.
+[*notebooks/merfish_ccf_registration_tutorial.ipynb*]
 * **A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)**
-  * [**MERFISH whole mouse brain spatial transcriptomics**](notebooks/zhuang_merfish_tutorial.ipynb): learn about the MERFISH dataset through some example use cases and visualization
+  * [**MERFISH whole mouse brain spatial transcriptomics**](notebooks/zhuang_merfish_tutorial.ipynb): learn about the MERFISH dataset through some example use cases and visualization.
+[*notebooks/zhuang_merfish_tutorial.ipynb*]
