@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -75,6 +76,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -371,10 +381,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -382,7 +392,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -444,33 +454,46 @@ document.write(`
 the 10x transcriptomics datasets have been subdivided into smaller packages grouped by method and anatomical origin. The notebooks provide example code on how to access data across these individual files.</p>
 <p>Available notebooks:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc"><strong>Getting started</strong></span></a>: learn how to use the manifest.json file to faciliate data download and usage.</p></li>
+<li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc"><strong>Getting started</strong></span></a>: learn how to use the manifest.json file to faciliate data download and usage.
+[<em>notebooks/getting_started.ipynb</em>]</p></li>
 <li><p><strong>Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html"><span class="doc std std-doc"><strong>10x scRNA-seq clustering analysis and annotation</strong></span></a>: learn about the whole mouse brain taxonomy through some example use cases and visualization.</p></li>
+<li><p><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html"><span class="doc std std-doc"><strong>10x scRNA-seq clustering analysis and annotation</strong></span></a>: learn about the whole mouse brain taxonomy through some example use cases and visualization.
+[<em>notebooks/cluster_annotation_tutorial.ipynb</em>]</p></li>
 <li><p><strong>10x scRNA-seq gene expression data</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the 10x dataset through some example use cases and visualization of cells in the thalamus.</p></li>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn how to iterate through all the data packages, to access data for whole brain example use cases in part 2b.</p></li>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.</p></li>
+<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the 10x dataset through some example use cases and visualization of cells in the thalamus.
+[<em>notebooks/10x_snRNASeq_tutorial_part_1.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn how to iterate through all the data packages, to access data for whole brain example use cases in part 2b.
+[<em>notebooks/10x_snRNASeq_tutorial_part_2a.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.
+[<em>notebooks/10x_snRNASeq_tutorial_part_2b.ipynb</em>]</p></li>
 </ul>
 </li>
 <li><p><strong>MERFISH whole brain spatial transcriptomics</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization for a single brain section.</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn to access data and prepare for whole brain example use cases in part 2b.</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.</p></li>
+<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization for a single brain section.
+[<em>notebooks/merfish_tutorial_part_1.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn to access data and prepare for whole brain example use cases in part 2b.
+[<em>notebooks/merfish_tutorial_part_2a.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.
+[<em>notebooks/merfish_tutorial_part_2b.ipynb</em>]</p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html"><span class="doc std std-doc"><strong>Cluster groups and embeddings</strong></span></a>: learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.</p></li>
-<li><p><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html"><span class="doc std std-doc"><strong>Cell type neighborhood gallery</strong></span></a>: explore and visualize a set of cell types neighborhoods.</p></li>
-<li><p><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html"><span class="doc std std-doc"><strong>Allen CCFv3 parcellation and annotation</strong></span></a>: learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_ccf_registration_tutorial.html"><span class="doc std std-doc"><strong>MERFISH CCF mapped coordinates</strong></span></a>: learn about how to download and use CCF mapped coordinates through some example use cases and visualization.</p></li>
+<li><p><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html"><span class="doc std std-doc"><strong>Cluster groups and embeddings</strong></span></a>: learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.
+[<em>notebooks/cluster_groups_and_embeddings_tutorial.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html"><span class="doc std std-doc"><strong>Cell type neighborhood gallery</strong></span></a>: explore and visualize a set of cell types neighborhoods.
+[<em>notebooks/cluster_neighborhood_gallery.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html"><span class="doc std std-doc"><strong>Allen CCFv3 parcellation and annotation</strong></span></a>: learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
+[<em>notebooks/ccf_and_parcellation_annotation_tutorial.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="notebooks/merfish_ccf_registration_tutorial.html"><span class="doc std std-doc"><strong>MERFISH CCF mapped coordinates</strong></span></a>: learn about how to download and use CCF mapped coordinates through some example use cases and visualization.
+[<em>notebooks/merfish_ccf_registration_tutorial.ipynb</em>]</p></li>
 </ul>
 </li>
 <li><p><strong>A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/zhuang_merfish_tutorial.html"><span class="doc std std-doc"><strong>MERFISH whole mouse brain spatial transcriptomics</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization</p></li>
+<li><p><a class="reference internal" href="notebooks/zhuang_merfish_tutorial.html"><span class="doc std std-doc"><strong>MERFISH whole mouse brain spatial transcriptomics</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization.
+[<em>notebooks/zhuang_merfish_tutorial.ipynb</em>]</p></li>
 </ul>
 </li>
 </ul>
@@ -509,11 +532,10 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="notebooks/getting_started.html"
@@ -524,10 +546,7 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -576,8 +595,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
