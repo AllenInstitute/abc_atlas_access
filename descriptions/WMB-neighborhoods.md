@@ -6,7 +6,7 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-neighborhoods/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-neighborhoods/20230830/) | 5.2 MB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/WMB-neighborhoods/20231215](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-neighborhoods/20231215/) | 3.00 GB |
 
 Data is being share under the CC BY NC 4.0 license.
 
