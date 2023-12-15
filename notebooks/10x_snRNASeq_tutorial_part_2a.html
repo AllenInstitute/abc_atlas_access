@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -139,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -151,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
   
   
 </a></div>
@@ -380,6 +382,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -389,6 +392,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -454,7 +458,7 @@ document.write(`
 <p>The prerequisite for running this notebook is that the data have been downloaded to local directory maintaining the organization from the manifest.json. <strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;20230830&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;20231215&#39;</span>
 <span class="n">download_base</span> <span class="o">=</span> <span class="s1">&#39;../../abc_download_root&#39;</span>
 
 <span class="n">use_local_cache</span> <span class="o">=</span> <span class="kc">False</span>
@@ -806,54 +810,54 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti
- - time taken:  1.9622096919999983
+ - time taken:  1.9875723679999986
 WMB-10Xv2-CTXsp
- - time taken:  1.7534853379999973
+ - time taken:  1.736294100000002
 WMB-10Xv2-HPF
- - time taken:  6.767831976
+ - time taken:  5.911806116000001
 WMB-10Xv2-HY
- - time taken:  2.9769649340000015
+ - time taken:  2.839109353999998
 WMB-10Xv2-Isocortex-1
- - time taken:  10.805219346000005
+ - time taken:  8.228330416999999
 WMB-10Xv2-Isocortex-2
- - time taken:  12.451479411999998
+ - time taken:  9.044668807999997
 WMB-10Xv2-Isocortex-3
- - time taken:  11.092032212000007
+ - time taken:  9.986195581999993
 WMB-10Xv2-Isocortex-4
- - time taken:  12.191183033000002
+ - time taken:  11.247832531
 WMB-10Xv2-MB
- - time taken:  0.9217969590000052
+ - time taken:  0.8962304950000117
 WMB-10Xv2-OLF
- - time taken:  6.6084268479999935
+ - time taken:  5.684649880000009
 WMB-10Xv2-TH
- - time taken:  4.5150405959999915
+ - time taken:  4.081716135999997
 WMB-10Xv3-CB
- - time taken:  7.923351416000003
+ - time taken:  7.552754073000003
 WMB-10Xv3-CTXsp
- - time taken:  3.9744392829999953
+ - time taken:  3.717788982000002
 WMB-10Xv3-HPF
- - time taken:  11.715912669999994
+ - time taken:  9.632554069000008
 WMB-10Xv3-HY
- - time taken:  10.542776168000003
+ - time taken:  8.718123004000006
 WMB-10Xv3-Isocortex-1
- - time taken:  17.62114658600001
+ - time taken:  15.792058513
 WMB-10Xv3-Isocortex-2
- - time taken:  11.949673215000018
+ - time taken:  9.76483662599999
 WMB-10Xv3-MB
- - time taken:  20.26076470999999
+ - time taken:  18.491481762000006
 WMB-10Xv3-MY
- - time taken:  9.379144964000005
+ - time taken:  6.938539325000022
 WMB-10Xv3-OLF
- - time taken:  3.1078892949999783
+ - time taken:  2.9817742030000147
 WMB-10Xv3-P
- - time taken:  6.396515713000014
+ - time taken:  4.906559042999987
 WMB-10Xv3-PAL
- - time taken:  4.734135684000023
+ - time taken:  4.105939183000004
 WMB-10Xv3-STR
- - time taken:  20.591621973000002
+ - time taken:  17.826632974000006
 WMB-10Xv3-TH
- - time taken:  8.585785503000011
-total time taken:  213.870688637
+ - time taken:  7.132106335000003
+total time taken:  184.041671802
 </pre></div>
 </div>
 </div>
@@ -914,7 +918,7 @@ total time taken:  213.870688637
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="10x_snRNASeq_tutorial_part_1.html"
@@ -972,6 +976,7 @@ By Allen Institute
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -998,8 +1003,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
