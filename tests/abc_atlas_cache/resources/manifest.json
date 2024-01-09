@@ -1,0 +1,2947 @@
+{
+  "directory_listing": {
+    "MERFISH-C57BL6J-638850": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230830",
+          "relative_path": "expression_matrices/MERFISH-C57BL6J-638850/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230830/",
+          "total_size": 15255179148
+        },
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/MERFISH-C57BL6J-638850/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20231215/",
+          "total_size": 1942629358
+        }
+      }
+    },
+    "MERFISH-C57BL6J-638850-sections": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230630",
+          "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/",
+          "total_size": 15363706998
+        }
+      }
+    },
+    "WMB-10Xv2": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230630",
+          "relative_path": "expression_matrices/WMB-10Xv2/20230630",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10Xv2/20230630/",
+          "total_size": 111838076296
+        }
+      }
+    },
+    "WMB-10Xv3": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230630",
+          "relative_path": "expression_matrices/WMB-10Xv3/20230630",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10Xv3/20230630/",
+          "total_size": 189424020276
+        }
+      }
+    },
+    "WMB-10XMulti": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230830",
+          "relative_path": "expression_matrices/WMB-10XMulti/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10XMulti/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10XMulti/20230830/",
+          "total_size": 221538526
+        }
+      }
+    },
+    "WMB-10X": {
+      "directories": {
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/WMB-10X/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-10X/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-10X/20231215/",
+          "total_size": 2564969043
+        }
+      }
+    },
+    "WMB-taxonomy": {
+      "directories": {
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/WMB-taxonomy/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-taxonomy/20231215/",
+          "total_size": 6578550
+        }
+      }
+    },
+    "WMB-neighborhoods": {
+      "directories": {
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/WMB-neighborhoods/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WMB-neighborhoods/20231215/",
+          "total_size": 3225141567
+        }
+      }
+    },
+    "Allen-CCF-2020": {
+      "directories": {
+        "image_volumes": {
+          "version": "20230630",
+          "relative_path": "image_volumes/Allen-CCF-2020/20230630",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/Allen-CCF-2020/20230630/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/Allen-CCF-2020/20230630/",
+          "total_size": 397520695
+        },
+        "metadata": {
+          "version": "20230630",
+          "relative_path": "metadata/Allen-CCF-2020/20230630",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Allen-CCF-2020/20230630/",
+          "total_size": 1327196
+        }
+      }
+    },
+    "MERFISH-C57BL6J-638850-CCF": {
+      "directories": {
+        "image_volumes": {
+          "version": "20230630",
+          "relative_path": "image_volumes/MERFISH-C57BL6J-638850-CCF/20230630",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/",
+          "total_size": 121046686
+        },
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/MERFISH-C57BL6J-638850-CCF/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850-CCF/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850-CCF/20231215/",
+          "total_size": 2158906904
+        }
+      }
+    },
+    "Zhuang-ABCA-1": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230830",
+          "relative_path": "expression_matrices/Zhuang-ABCA-1/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-1/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Zhuang-ABCA-1/20230830/",
+          "total_size": 3321931046
+        },
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/Zhuang-ABCA-1/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-1/20231215/",
+          "total_size": 1426880493
+        }
+      }
+    },
+    "Zhuang-ABCA-1-CCF": {
+      "directories": {
+        "metadata": {
+          "version": "20230830",
+          "relative_path": "metadata/Zhuang-ABCA-1-CCF/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1-CCF/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-1-CCF/20230830/",
+          "total_size": 220766326
+        }
+      }
+    },
+    "Zhuang-ABCA-2": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230830",
+          "relative_path": "expression_matrices/Zhuang-ABCA-2/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-2/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Zhuang-ABCA-2/20230830/",
+          "total_size": 1391805481
+        },
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/Zhuang-ABCA-2/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-2/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-2/20231215/",
+          "total_size": 616400790
+        }
+      }
+    },
+    "Zhuang-ABCA-2-CCF": {
+      "directories": {
+        "metadata": {
+          "version": "20230830",
+          "relative_path": "metadata/Zhuang-ABCA-2-CCF/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-2-CCF/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-2-CCF/20230830/",
+          "total_size": 89087322
+        }
+      }
+    },
+    "Zhuang-ABCA-3": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230830",
+          "relative_path": "expression_matrices/Zhuang-ABCA-3/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-3/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Zhuang-ABCA-3/20230830/",
+          "total_size": 1818891831
+        },
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/Zhuang-ABCA-3/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-3/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-3/20231215/",
+          "total_size": 799789185
+        }
+      }
+    },
+    "Zhuang-ABCA-3-CCF": {
+      "directories": {
+        "metadata": {
+          "version": "20230830",
+          "relative_path": "metadata/Zhuang-ABCA-3-CCF/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-3-CCF/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-3-CCF/20230830/",
+          "total_size": 132290292
+        }
+      }
+    },
+    "Zhuang-ABCA-4": {
+      "directories": {
+        "expression_matrices": {
+          "version": "20230830",
+          "relative_path": "expression_matrices/Zhuang-ABCA-4/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-4/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Zhuang-ABCA-4/20230830/",
+          "total_size": 170987244
+        },
+        "metadata": {
+          "version": "20231215",
+          "relative_path": "metadata/Zhuang-ABCA-4/20231215",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-4/20231215/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-4/20231215/",
+          "total_size": 82571697
+        }
+      }
+    },
+    "Zhuang-ABCA-4-CCF": {
+      "directories": {
+        "metadata": {
+          "version": "20230830",
+          "relative_path": "metadata/Zhuang-ABCA-4-CCF/20230830",
+          "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-4-CCF/20230830/",
+          "view_link": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-4-CCF/20230830/",
+          "total_size": 13750526
+        }
+      }
+    }
+  },
+  "file_listing": {
+    "MERFISH-C57BL6J-638850": {
+      "expression_matrices": {
+        "C57BL6J-638850": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad",
+                "size": 7627589574
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-raw.h5ad",
+                "size": 7627589574
+              }
+            }
+          }
+        }
+      },
+      "metadata": {
+        "cell_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850/20231215/cell_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20231215/cell_metadata.csv",
+              "size": 564158154
+            }
+          }
+        },
+        "gene": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850/20231215/gene.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20231215/gene.csv",
+              "size": 48416
+            }
+          }
+        },
+        "cell_metadata_with_cluster_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "size": 1018613800
+            }
+          }
+        },
+        "example_genes_all_cells_expression": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850/20231215/views/example_genes_all_cells_expression.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20231215/views/example_genes_all_cells_expression.csv",
+              "size": 359808988
+            }
+          }
+        }
+      }
+    },
+    "MERFISH-C57BL6J-638850-sections": {
+      "expression_matrices": {
+        "C57BL6J-638850.12": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.12-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.12-log2.h5ad",
+                "size": 81928610
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.12-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.12-raw.h5ad",
+                "size": 81928610
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.17": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.17-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.17-log2.h5ad",
+                "size": 119162580
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.17-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.17-raw.h5ad",
+                "size": 119162580
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.16": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.16-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.16-log2.h5ad",
+                "size": 159310013
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.16-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.16-raw.h5ad",
+                "size": 159310013
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.36": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.36-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.36-raw.h5ad",
+                "size": 236328644
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.36-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.36-log2.h5ad",
+                "size": 236328644
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.11": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.11-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.11-raw.h5ad",
+                "size": 75328030
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.11-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.11-log2.h5ad",
+                "size": 75328030
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.66": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.66-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.66-log2.h5ad",
+                "size": 54381124
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.66-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.66-raw.h5ad",
+                "size": 54381124
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.49": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.49-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.49-log2.h5ad",
+                "size": 222941377
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.49-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.49-raw.h5ad",
+                "size": 222941377
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.35": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.35-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.35-raw.h5ad",
+                "size": 164261726
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.35-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.35-log2.h5ad",
+                "size": 164261726
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.43": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.43-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.43-log2.h5ad",
+                "size": 206961043
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.43-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.43-raw.h5ad",
+                "size": 206961043
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.09": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.09-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.09-log2.h5ad",
+                "size": 98107726
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.09-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.09-raw.h5ad",
+                "size": 98107726
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.45": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.45-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.45-log2.h5ad",
+                "size": 211603172
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.45-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.45-raw.h5ad",
+                "size": 211603172
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.14": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.14-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.14-raw.h5ad",
+                "size": 145021182
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.14-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.14-log2.h5ad",
+                "size": 145021182
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.31": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.31-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.31-raw.h5ad",
+                "size": 189828566
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.31-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.31-log2.h5ad",
+                "size": 189828566
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.32": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.32-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.32-log2.h5ad",
+                "size": 196055357
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.32-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.32-raw.h5ad",
+                "size": 196055357
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.25": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.25-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.25-log2.h5ad",
+                "size": 154017087
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.25-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.25-raw.h5ad",
+                "size": 154017087
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.69": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.69-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.69-log2.h5ad",
+                "size": 23282141
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.69-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.69-raw.h5ad",
+                "size": 23282141
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.04": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.04-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.04-log2.h5ad",
+                "size": 76581317
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.04-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.04-raw.h5ad",
+                "size": 76581317
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.30": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.30-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.30-raw.h5ad",
+                "size": 195923025
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.30-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.30-log2.h5ad",
+                "size": 195923025
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.56": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.56-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.56-raw.h5ad",
+                "size": 125126457
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.56-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.56-log2.h5ad",
+                "size": 125126457
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.47": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.47-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.47-raw.h5ad",
+                "size": 155229197
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.47-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.47-log2.h5ad",
+                "size": 155229197
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.59": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.59-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.59-log2.h5ad",
+                "size": 85044597
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.59-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.59-raw.h5ad",
+                "size": 85044597
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.26": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.26-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.26-log2.h5ad",
+                "size": 174678642
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.26-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.26-raw.h5ad",
+                "size": 174678642
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.64": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.64-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.64-raw.h5ad",
+                "size": 41627769
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.64-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.64-log2.h5ad",
+                "size": 41627769
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.54": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.54-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.54-raw.h5ad",
+                "size": 149921458
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.54-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.54-log2.h5ad",
+                "size": 149921458
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.50": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.50-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.50-raw.h5ad",
+                "size": 198320116
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.50-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.50-log2.h5ad",
+                "size": 198320116
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.19": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.19-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.19-log2.h5ad",
+                "size": 132262555
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.19-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.19-raw.h5ad",
+                "size": 132262555
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.57": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.57-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.57-log2.h5ad",
+                "size": 110555539
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.57-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.57-raw.h5ad",
+                "size": 110555539
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.24": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.24-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.24-log2.h5ad",
+                "size": 121029087
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.24-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.24-raw.h5ad",
+                "size": 121029087
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.13": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.13-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.13-raw.h5ad",
+                "size": 109872469
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.13-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.13-log2.h5ad",
+                "size": 109872469
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.10": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.10-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.10-raw.h5ad",
+                "size": 69388096
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.10-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.10-log2.h5ad",
+                "size": 69388096
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.03": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.03-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.03-raw.h5ad",
+                "size": 62127188
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.03-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.03-log2.h5ad",
+                "size": 62127188
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.15": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.15-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.15-raw.h5ad",
+                "size": 139361580
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.15-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.15-log2.h5ad",
+                "size": 139361580
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.67": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.67-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.67-log2.h5ad",
+                "size": 54968893
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.67-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.67-raw.h5ad",
+                "size": 54968893
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.44": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.44-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.44-log2.h5ad",
+                "size": 208296020
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.44-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.44-raw.h5ad",
+                "size": 208296020
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.05": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.05-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.05-raw.h5ad",
+                "size": 78246710
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.05-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.05-log2.h5ad",
+                "size": 78246710
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.40": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.40-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.40-raw.h5ad",
+                "size": 194721499
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.40-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.40-log2.h5ad",
+                "size": 194721499
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.52": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.52-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.52-log2.h5ad",
+                "size": 196883664
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.52-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.52-raw.h5ad",
+                "size": 196883664
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.62": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.62-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.62-log2.h5ad",
+                "size": 63778578
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.62-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.62-raw.h5ad",
+                "size": 63778578
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.06": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.06-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.06-log2.h5ad",
+                "size": 80625475
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.06-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.06-raw.h5ad",
+                "size": 80625475
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.33": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.33-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.33-log2.h5ad",
+                "size": 174512202
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.33-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.33-raw.h5ad",
+                "size": 174512202
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.28": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.28-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.28-raw.h5ad",
+                "size": 175852940
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.28-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.28-log2.h5ad",
+                "size": 175852940
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.46": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.46-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.46-log2.h5ad",
+                "size": 192400641
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.46-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.46-raw.h5ad",
+                "size": 192400641
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.18": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.18-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.18-raw.h5ad",
+                "size": 82011600
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.18-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.18-log2.h5ad",
+                "size": 82011600
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.48": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.48-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.48-log2.h5ad",
+                "size": 138595422
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.48-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.48-raw.h5ad",
+                "size": 138595422
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.02": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.02-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.02-log2.h5ad",
+                "size": 46472958
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.02-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.02-raw.h5ad",
+                "size": 46472958
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.61": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.61-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.61-raw.h5ad",
+                "size": 65953853
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.61-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.61-log2.h5ad",
+                "size": 65953853
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.51": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.51-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.51-log2.h5ad",
+                "size": 183995249
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.51-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.51-raw.h5ad",
+                "size": 183995249
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.27": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.27-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.27-log2.h5ad",
+                "size": 117600726
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.27-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.27-raw.h5ad",
+                "size": 117600726
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.38": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.38-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.38-raw.h5ad",
+                "size": 260848215
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.38-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.38-log2.h5ad",
+                "size": 260848215
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.39": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.39-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.39-log2.h5ad",
+                "size": 122776618
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.39-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.39-raw.h5ad",
+                "size": 122776618
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.58": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.58-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.58-raw.h5ad",
+                "size": 97995010
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.58-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.58-log2.h5ad",
+                "size": 97995010
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.55": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.55-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.55-raw.h5ad",
+                "size": 137912485
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.55-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.55-log2.h5ad",
+                "size": 137912485
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.08": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.08-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.08-raw.h5ad",
+                "size": 78475029
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.08-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.08-log2.h5ad",
+                "size": 78475029
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.37": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.37-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.37-raw.h5ad",
+                "size": 162026110
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.37-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.37-log2.h5ad",
+                "size": 162026110
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.01": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.01-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.01-raw.h5ad",
+                "size": 45806409
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.01-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.01-log2.h5ad",
+                "size": 45806409
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.29": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.29-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.29-raw.h5ad",
+                "size": 172984776
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.29-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.29-log2.h5ad",
+                "size": 172984776
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.42": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.42-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.42-log2.h5ad",
+                "size": 154940626
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.42-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.42-raw.h5ad",
+                "size": 154940626
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.60": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.60-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.60-log2.h5ad",
+                "size": 76617022
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.60-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.60-raw.h5ad",
+                "size": 76617022
+              }
+            }
+          }
+        },
+        "C57BL6J-638850.68": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.68-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.68-log2.h5ad",
+                "size": 30987299
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.68-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850-sections/20230630/C57BL6J-638850.68-raw.h5ad",
+                "size": 30987299
+              }
+            }
+          }
+        }
+      }
+    },
+    "WMB-10Xv2": {
+      "expression_matrices": {
+        "WMB-10Xv2-Isocortex-2": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-raw.h5ad",
+                "size": 9444387082
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad",
+                "size": 9444387082
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-MB": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-MB-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-MB-log2.h5ad",
+                "size": 817433734
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-MB-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-MB-raw.h5ad",
+                "size": 811153174
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-TH": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad",
+                "size": 4038679930
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-raw.h5ad",
+                "size": 4038679930
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-CTXsp": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-log2.h5ad",
+                "size": 1740441622
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-CTXsp-raw.h5ad",
+                "size": 1734161062
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-Isocortex-4": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-4-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-4-raw.h5ad",
+                "size": 8692589466
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-4-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-4-log2.h5ad",
+                "size": 8692589466
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-HY": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HY-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HY-log2.h5ad",
+                "size": 2908443982
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HY-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HY-raw.h5ad",
+                "size": 2908443982
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-OLF": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-OLF-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-OLF-log2.h5ad",
+                "size": 5128120156
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-OLF-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-OLF-raw.h5ad",
+                "size": 5128120156
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-Isocortex-3": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-3-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-3-raw.h5ad",
+                "size": 8457819034
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-3-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-3-log2.h5ad",
+                "size": 8457819034
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-Isocortex-1": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-1-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-1-log2.h5ad",
+                "size": 8601133978
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-1-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-1-raw.h5ad",
+                "size": 8601133978
+              }
+            }
+          }
+        },
+        "WMB-10Xv2-HPF": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HPF-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HPF-log2.h5ad",
+                "size": 6096269724
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HPF-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-HPF-raw.h5ad",
+                "size": 6096269724
+              }
+            }
+          }
+        }
+      }
+    },
+    "WMB-10Xv3": {
+      "expression_matrices": {
+        "WMB-10Xv3-Isocortex-2": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-2-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-2-raw.h5ad",
+                "size": 8356210362
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-2-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-2-log2.h5ad",
+                "size": 8356210362
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-PAL": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-PAL-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-PAL-log2.h5ad",
+                "size": 4067049816
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-PAL-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-PAL-raw.h5ad",
+                "size": 4067049816
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-CTXsp": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CTXsp-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CTXsp-log2.h5ad",
+                "size": 3277343842
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CTXsp-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CTXsp-raw.h5ad",
+                "size": 3277343842
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-MB": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MB-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MB-raw.h5ad",
+                "size": 13726487690
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MB-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MB-log2.h5ad",
+                "size": 13726487690
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-CB": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CB-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CB-log2.h5ad",
+                "size": 5610691342
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CB-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-CB-raw.h5ad",
+                "size": 5610691342
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-Isocortex-1": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-1-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-1-log2.h5ad",
+                "size": 11768194128
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-1-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-Isocortex-1-raw.h5ad",
+                "size": 11768194128
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-OLF": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-OLF-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-OLF-log2.h5ad",
+                "size": 3114998442
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-OLF-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-OLF-raw.h5ad",
+                "size": 3114998442
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-MY": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MY-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MY-log2.h5ad",
+                "size": 7206054638
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MY-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-MY-raw.h5ad",
+                "size": 7206054638
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-TH": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-TH-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-TH-raw.h5ad",
+                "size": 5811140682
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-TH-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-TH-log2.h5ad",
+                "size": 5811140682
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-HY": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HY-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HY-raw.h5ad",
+                "size": 7248338584
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HY-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HY-log2.h5ad",
+                "size": 7248338584
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-STR": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-STR-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-STR-log2.h5ad",
+                "size": 11915297204
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-STR-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-STR-raw.h5ad",
+                "size": 11915297204
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-P": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-P-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-P-log2.h5ad",
+                "size": 5200570200
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-P-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-P-raw.h5ad",
+                "size": 5200570200
+              }
+            }
+          }
+        },
+        "WMB-10Xv3-HPF": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HPF-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HPF-raw.h5ad",
+                "size": 7409633208
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230630",
+                "relative_path": "expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HPF-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv3/20230630/WMB-10Xv3-HPF-log2.h5ad",
+                "size": 7409633208
+              }
+            }
+          }
+        }
+      }
+    },
+    "WMB-10XMulti": {
+      "expression_matrices": {
+        "WMB-10XMulti": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad",
+                "size": 89318511
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-raw.h5ad",
+                "size": 132220015
+              }
+            }
+          }
+        }
+      }
+    },
+    "WMB-10X": {
+      "metadata": {
+        "region_of_interest_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-10X/20231215/region_of_interest_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-10X/20231215/region_of_interest_metadata.csv",
+              "size": 1400
+            }
+          }
+        },
+        "cell_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-10X/20231215/cell_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-10X/20231215/cell_metadata.csv",
+              "size": 858447729
+            }
+          }
+        },
+        "gene": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-10X/20231215/gene.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-10X/20231215/gene.csv",
+              "size": 2297493
+            }
+          }
+        },
+        "cell_metadata_with_cluster_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-10X/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-10X/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "size": 1386430541
+            }
+          }
+        },
+        "example_genes_all_cells_expression": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-10X/20231215/views/example_genes_all_cells_expression.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-10X/20231215/views/example_genes_all_cells_expression.csv",
+              "size": 317791880
+            }
+          }
+        }
+      }
+    },
+    "WMB-taxonomy": {
+      "metadata": {
+        "cluster": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/cluster.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/cluster.csv",
+              "size": 130749
+            }
+          }
+        },
+        "cluster_annotation_term": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv",
+              "size": 861405
+            }
+          }
+        },
+        "cluster_annotation_term_set": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv",
+              "size": 1107
+            }
+          }
+        },
+        "cluster_to_cluster_annotation_membership": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv",
+              "size": 2208190
+            }
+          }
+        },
+        "cluster_to_cluster_annotation_membership_pivoted": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv",
+              "size": 530641
+            }
+          }
+        },
+        "cluster_to_cluster_annotation_membership_color": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv",
+              "size": 238744
+            }
+          }
+        },
+        "cluster_annotation_term_with_counts": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv",
+              "size": 902272
+            }
+          }
+        }
+      }
+    },
+    "WMB-neighborhoods": {
+      "metadata": {
+        "UMAP20230830-Subpallium-GABA": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-Subpallium-GABA.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-Subpallium-GABA.csv",
+              "size": 27659654
+            }
+          }
+        },
+        "UMAP20230830-WholeBrain": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-WholeBrain.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-WholeBrain.csv",
+              "size": 218945887
+            }
+          }
+        },
+        "UMAP20230830-MB-HB-CB-GABA": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-MB-HB-CB-GABA.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-MB-HB-CB-GABA.csv",
+              "size": 9321570
+            }
+          }
+        },
+        "cluster_group_membership": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/cluster_group_membership.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/cluster_group_membership.csv",
+              "size": 673963
+            }
+          }
+        },
+        "UMAP20230830-HY-EA-Glut-GABA": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-HY-EA-Glut-GABA.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-HY-EA-Glut-GABA.csv",
+              "size": 13744917
+            }
+          }
+        },
+        "UMAP20230830-MB-HB-Glut-Sero-Dopa": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-MB-HB-Glut-Sero-Dopa.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-MB-HB-Glut-Sero-Dopa.csv",
+              "size": 8419323
+            }
+          }
+        },
+        "UMAP20230830-TH-EPI-Glut": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-TH-EPI-Glut.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-TH-EPI-Glut.csv",
+              "size": 6456121
+            }
+          }
+        },
+        "cluster_group": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/cluster_group.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/cluster_group.csv",
+              "size": 1617
+            }
+          }
+        },
+        "UMAP20230830-Pallium-Glut": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-Pallium-Glut.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-Pallium-Glut.csv",
+              "size": 84486455
+            }
+          }
+        },
+        "UMAP20230830-NN-IMN-GC": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/UMAP20230830-NN-IMN-GC.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/UMAP20230830-NN-IMN-GC.csv",
+              "size": 83402000
+            }
+          }
+        },
+        "dimension_reduction": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/dimension_reduction.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/dimension_reduction.csv",
+              "size": 1678
+            }
+          }
+        },
+        "cluster_group_membership_pivoted": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/views/cluster_group_membership_pivoted.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/views/cluster_group_membership_pivoted.csv",
+              "size": 270192
+            }
+          }
+        },
+        "merfish_cell_metadata_with_group_membership": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/views/merfish_cell_metadata_with_group_membership.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/views/merfish_cell_metadata_with_group_membership.csv",
+              "size": 1199621480
+            }
+          }
+        },
+        "10x_cell_metadata_with_group_membership": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/WMB-neighborhoods/20231215/views/10x_cell_metadata_with_group_membership.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WMB-neighborhoods/20231215/views/10x_cell_metadata_with_group_membership.csv",
+              "size": 1572136710
+            }
+          }
+        }
+      }
+    },
+    "Allen-CCF-2020": {
+      "image_volumes": {
+        "average_template_10": {
+          "files": {
+            "nii.gz": {
+              "version": "20230630",
+              "relative_path": "image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz",
+              "size": 342560682
+            }
+          }
+        },
+        "annotation_boundary_10": {
+          "files": {
+            "nii.gz": {
+              "version": "20230630",
+              "relative_path": "image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz",
+              "size": 27420666
+            }
+          }
+        },
+        "annotation_10": {
+          "files": {
+            "nii.gz": {
+              "version": "20230630",
+              "relative_path": "image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz",
+              "size": 27539347
+            }
+          }
+        }
+      },
+      "metadata": {
+        "parcellation_to_parcellation_term_membership": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv",
+              "size": 679969
+            }
+          }
+        },
+        "parcellation_term_set_membership": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv",
+              "size": 114469
+            }
+          }
+        },
+        "parcellation_term": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/parcellation_term.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation_term.csv",
+              "size": 176626
+            }
+          }
+        },
+        "parcellation": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/parcellation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation.csv",
+              "size": 41197
+            }
+          }
+        },
+        "parcellation_term_set": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv",
+              "size": 628
+            }
+          }
+        },
+        "parcellation_to_parcellation_term_membership_red": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv",
+              "size": 15987
+            }
+          }
+        },
+        "parcellation_to_parcellation_term_membership_name": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv",
+              "size": 75830
+            }
+          }
+        },
+        "parcellation_term_with_counts": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv",
+              "size": 136866
+            }
+          }
+        },
+        "parcellation_to_parcellation_term_membership_blue": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv",
+              "size": 16353
+            }
+          }
+        },
+        "parcellation_to_parcellation_term_membership_acronym": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv",
+              "size": 22261
+            }
+          }
+        },
+        "parcellation_to_parcellation_term_membership_green": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv",
+              "size": 16545
+            }
+          }
+        },
+        "parcellation_to_parcellation_term_membership_color": {
+          "files": {
+            "csv": {
+              "version": "20230630",
+              "relative_path": "metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv",
+              "size": 30465
+            }
+          }
+        }
+      }
+    },
+    "MERFISH-C57BL6J-638850-CCF": {
+      "image_volumes": {
+        "resampled_annotation_boundary": {
+          "files": {
+            "nii.gz": {
+              "version": "20230630",
+              "relative_path": "image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz",
+              "size": 1548196
+            }
+          }
+        },
+        "resampled_average_template": {
+          "files": {
+            "nii.gz": {
+              "version": "20230630",
+              "relative_path": "image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_average_template.nii.gz",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_average_template.nii.gz",
+              "size": 117382681
+            }
+          }
+        },
+        "resampled_annotation": {
+          "files": {
+            "nii.gz": {
+              "version": "20230630",
+              "relative_path": "image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation.nii.gz",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation.nii.gz",
+              "size": 2115809
+            }
+          }
+        }
+      },
+      "metadata": {
+        "reconstructed_coordinates": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850-CCF/20231215/reconstructed_coordinates.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850-CCF/20231215/reconstructed_coordinates.csv",
+              "size": 256489776
+            }
+          }
+        },
+        "ccf_coordinates": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850-CCF/20231215/ccf_coordinates.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850-CCF/20231215/ccf_coordinates.csv",
+              "size": 295901193
+            }
+          }
+        },
+        "cell_metadata_with_parcellation_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/MERFISH-C57BL6J-638850-CCF/20231215/views/cell_metadata_with_parcellation_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850-CCF/20231215/views/cell_metadata_with_parcellation_annotation.csv",
+              "size": 1606515935
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-1": {
+      "expression_matrices": {
+        "Zhuang-ABCA-1": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad",
+                "size": 2128478610
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-raw.h5ad",
+                "size": 1193452436
+              }
+            }
+          }
+        }
+      },
+      "metadata": {
+        "cell_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-1/20231215/cell_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/cell_metadata.csv",
+              "size": 555748478
+            }
+          }
+        },
+        "gene": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-1/20231215/gene.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/gene.csv",
+              "size": 84677
+            }
+          }
+        },
+        "cell_metadata_with_cluster_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-1/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "size": 871047338
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-1-CCF": {
+      "metadata": {
+        "ccf_coordinates": {
+          "files": {
+            "csv": {
+              "version": "20230830",
+              "relative_path": "metadata/Zhuang-ABCA-1-CCF/20230830/ccf_coordinates.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-1-CCF/20230830/ccf_coordinates.csv",
+              "size": 220766326
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-2": {
+      "expression_matrices": {
+        "Zhuang-ABCA-2": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad",
+                "size": 871420938
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-raw.h5ad",
+                "size": 520384543
+              }
+            }
+          }
+        }
+      },
+      "metadata": {
+        "cell_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-2/20231215/cell_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-2/20231215/cell_metadata.csv",
+              "size": 240136030
+            }
+          }
+        },
+        "gene": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-2/20231215/gene.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-2/20231215/gene.csv",
+              "size": 84677
+            }
+          }
+        },
+        "cell_metadata_with_cluster_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-2/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-2/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "size": 376180083
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-2-CCF": {
+      "metadata": {
+        "ccf_coordinates": {
+          "files": {
+            "csv": {
+              "version": "20230830",
+              "relative_path": "metadata/Zhuang-ABCA-2-CCF/20230830/ccf_coordinates.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-2-CCF/20230830/ccf_coordinates.csv",
+              "size": 89087322
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-3": {
+      "expression_matrices": {
+        "Zhuang-ABCA-3": {
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad",
+                "size": 1160586154
+              }
+            }
+          },
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-raw.h5ad",
+                "size": 658305677
+              }
+            }
+          }
+        }
+      },
+      "metadata": {
+        "cell_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-3/20231215/cell_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-3/20231215/cell_metadata.csv",
+              "size": 310416537
+            }
+          }
+        },
+        "gene": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-3/20231215/gene.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-3/20231215/gene.csv",
+              "size": 84677
+            }
+          }
+        },
+        "cell_metadata_with_cluster_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-3/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-3/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "size": 489287971
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-3-CCF": {
+      "metadata": {
+        "ccf_coordinates": {
+          "files": {
+            "csv": {
+              "version": "20230830",
+              "relative_path": "metadata/Zhuang-ABCA-3-CCF/20230830/ccf_coordinates.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-3-CCF/20230830/ccf_coordinates.csv",
+              "size": 132290292
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-4": {
+      "expression_matrices": {
+        "Zhuang-ABCA-4": {
+          "raw": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-raw.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-raw.h5ad",
+                "size": 64247492
+              }
+            }
+          },
+          "log2": {
+            "files": {
+              "h5ad": {
+                "version": "20230830",
+                "relative_path": "expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad",
+                "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad",
+                "size": 106739752
+              }
+            }
+          }
+        }
+      },
+      "metadata": {
+        "cell_metadata": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-4/20231215/cell_metadata.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-4/20231215/cell_metadata.csv",
+              "size": 31941820
+            }
+          }
+        },
+        "gene": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-4/20231215/gene.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-4/20231215/gene.csv",
+              "size": 84677
+            }
+          }
+        },
+        "cell_metadata_with_cluster_annotation": {
+          "files": {
+            "csv": {
+              "version": "20231215",
+              "relative_path": "metadata/Zhuang-ABCA-4/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-4/20231215/views/cell_metadata_with_cluster_annotation.csv",
+              "size": 50545200
+            }
+          }
+        }
+      }
+    },
+    "Zhuang-ABCA-4-CCF": {
+      "metadata": {
+        "ccf_coordinates": {
+          "files": {
+            "csv": {
+              "version": "20230830",
+              "relative_path": "metadata/Zhuang-ABCA-4-CCF/20230830/ccf_coordinates.csv",
+              "url": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Zhuang-ABCA-4-CCF/20230830/ccf_coordinates.csv",
+              "size": 13750526
+            }
+          }
+        }
+      }
+    }
+  },
+  "resource_uri": "s3://allen-brain-cell-atlas/",
+  "version": "20231215"
+}
