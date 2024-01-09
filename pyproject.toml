@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "abc_atlas_access"
+version = "0.0.1"
+description = "A package for accessing/processing data from the ABC Atlas"
+dependencies = [
+  "requests",
+  "anndata",
+  "numpy",
+  "matplotlib",
+  "pandas",
+  "scipy",
+  "SimpleITK",
+  "ghp-import",
+  "pytest",
+  "pydantic"
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Christopher Morrison", email = "chris.morrison@allenintitute.org"},
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
