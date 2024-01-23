@@ -144,34 +144,6 @@ class Manifest(object):
         """
         return self._directory_list
 
-    def get_directory_size(self, directory: str) -> int:
-        """
-        Get the size of a directory in gigabytes.
-
-        Parameters
-        ----------
-        directory: str
-            The directory to get the size of.
-
-        Returns
-        -------
-        int
-            The size of the directory in bytes.
-        """
-        directory_data = self._data['file_listing'][directory]
-        total_size = 0
-        for sub_dir in directory_data.keys():
-            for file_name in directory_data[sub_dir].keys():
-                if "files" in directory_data[sub_dir][file_name].keys():
-                    total_size += directory_data[sub_dir][file_name][
-                        "files"]['h5ad']['size']
-                else:
-                    for kind in directory_data[sub_dir][file_name].keys():
-                        total_size += directory_data[sub_dir][file_name][
-                            kind]["files"]['h5ad']['size']
-        return total_size
-
-
     def list_metadata_files(self, directory: str) -> List[str]:
         """
         List all metadata files in the specified directory.
@@ -190,7 +162,7 @@ class Manifest(object):
 
     def list_data_files(self, directory: str) -> List[str]:
         """
-        List all data files that are not metadata in the specified directory.
+        List all data files that are not data in the specified directory.
 
         Parameters
         ----------
@@ -323,3 +295,79 @@ class Manifest(object):
         )
 
         return obj
+
+    def get_directory_metadata_size(
+            self,
+            directory: str,
+    ) -> str:
+        """
+        Get the size of a metadata directory in GB or MB.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+
+
+        Returns
+        -------
+        size: str
+            The size of the directory in either GB or MB.
+        """
+        file_list = self.list_metadata_files(directory=directory)
+        return self._get_directory_size(directory=directory,
+                                        file_list=file_list)
+
+    def get_directory_data_size(
+            self,
+            directory: str,
+    ) -> str:
+        """
+        Get the size of a data directory in the requested in GB or MB.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in either GB or MB.
+        """
+        file_list = self.list_data_files(directory=directory)
+        return self._get_directory_size(directory=directory,
+                                        file_list=file_list)
+
+    def _get_directory_size(
+            self,
+            directory: str,
+            file_list: List[str],
+    ) -> str:
+        """
+        Get the size of a directory in the requested in GB or MB.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in either GB or MB.
+        """
+        total_size = 0
+        unit_size = 1024 ** 3
+        unit = "GB"
+        for file_name in file_list:
+            file_attributes = self.get_file_attributes(
+                directory=directory,
+                file_name=file_name
+            )
+            total_size += file_attributes.file_size
+        total_size /= unit_size
+        if total_size < 1:
+            total_size *= 1024
+            unit = "MB"
+        return f"{round(total_size, 2)} {unit}"
