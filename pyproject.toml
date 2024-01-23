@@ -7,16 +7,19 @@ name = "abc_atlas_access"
 version = "0.0.1"
 description = "A package for accessing/processing data from the ABC Atlas"
 dependencies = [
-  "requests",
   "anndata",
-  "numpy",
+  "boto3",
+  "ghp-import",
   "matplotlib",
+  "moto",
+  "numpy",
   "pandas",
+  "pydantic",
+  "pytest",
+  "requests",
   "scipy",
   "SimpleITK",
-  "ghp-import",
-  "pytest",
-  "pydantic"
+  "tqdm",
 ]
 requires-python = ">=3.8"
 authors = [

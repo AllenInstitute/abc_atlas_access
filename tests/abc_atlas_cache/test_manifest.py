@@ -2,7 +2,10 @@ import json
 from pathlib import Path
 import pytest
 import unittest
-from abc_atlas_access.abc_atlas_cache.manifest import Manifest
+from abc_atlas_access.abc_atlas_cache.manifest import (
+    Manifest,
+    DataTypeNotInDirectory
+)
 
 class TestManifest(unittest.TestCase):
 
@@ -64,7 +67,7 @@ class TestManifest(unittest.TestCase):
         ]
 
         with pytest.raises(
-                KeyError,
+                DataTypeNotInDirectory,
                 match=r"No metadata files found in directory WMB-10Xv2."
         ):
             manifest.list_metadata_files("WMB-10Xv2")
@@ -85,7 +88,7 @@ class TestManifest(unittest.TestCase):
         ]
 
         with pytest.raises(
-                KeyError,
+                DataTypeNotInDirectory,
                 match=r"No data files found in directory WMB-10X."
         ):
             manifest.list_data_files("WMB-10X")
@@ -105,6 +108,8 @@ class TestManifest(unittest.TestCase):
         assert file_obj.file_size == 41197
         assert file_obj.local_path == cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv'
         assert file_obj.file_type == 'csv'
+        assert file_obj.relative_path == 'metadata/Allen-CCF-2020/20230630/parcellation.csv'
+        assert file_obj.file_hash == 'aea6f6925d7c84f4e5a2d022cbc9c7bb'
 
     def test_image_volume_file_attributes(self):
         """Test that Manifest.get_file_attributes returns the
@@ -123,6 +128,8 @@ class TestManifest(unittest.TestCase):
         assert file_obj.file_size == 1548196
         assert file_obj.local_path == cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'
         assert file_obj.file_type == 'nii.gz'
+        assert file_obj.relative_path == 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'
+        assert file_obj.file_hash == "1ce4be21528fa6cbfb462a117552477d"
 
     def test_expresion_matrix_file_attributes(self):
         """Test that Manifest.get_file_attributes returns the
@@ -141,6 +148,8 @@ class TestManifest(unittest.TestCase):
         assert file_obj.file_size == 9444387082
         assert file_obj.local_path == cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'
         assert file_obj.file_type == 'h5ad'
+        assert file_obj.relative_path == 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'
+        assert file_obj.file_hash == "6cf8b3556e625b090c196ff5bb5f6cdd"
 
         with pytest.raises(
                 KeyError,

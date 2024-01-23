@@ -1,4 +1,4 @@
-from typing import Dict, List, Any, Union, Tuple, Optional
+from typing import Dict, List, Any, Union
 import json
 import pathlib
 from abc_atlas_access.abc_atlas_cache.file_attributes import \
@@ -8,6 +8,10 @@ from abc_atlas_access.abc_atlas_cache.file_attributes import \
 the ABC atlas data. Adapted from
 https://github.com/AllenInstitute/AllenSDK/blob/master/allensdk/api/cloud_cache/manifest.py  # noqa: E501
 """
+
+
+class DataTypeNotInDirectory(Exception):
+    pass
 
 
 class Manifest(object):
@@ -81,7 +85,7 @@ class Manifest(object):
         sub_directories = self._data['file_listing'][directory]
         if is_metadata:
             if 'metadata' not in sub_directories.keys():
-                raise KeyError(
+                raise DataTypeNotInDirectory(
                     f"No metadata files found in directory {directory}. No "
                     "metadata sub-directory found."
                 )
@@ -102,12 +106,12 @@ class Manifest(object):
                         )
         output_data_list.sort()
         if len(output_data_list) == 0 and is_metadata:
-            raise KeyError(
+            raise DataTypeNotInDirectory(
                 f"No metadata files found in directory {directory}. Metadata "
                 "sub-directory is empty."
             )
         elif len(output_data_list) == 0 and not is_metadata:
-            raise KeyError(
+            raise DataTypeNotInDirectory(
                 f"No data files found in directory {directory}."
             )
         return output_data_list
@@ -139,6 +143,34 @@ class Manifest(object):
         List of all directories that are part of the dataset.
         """
         return self._directory_list
+
+    def get_directory_size(self, directory: str) -> int:
+        """
+        Get the size of a directory in gigabytes.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+
+        Returns
+        -------
+        int
+            The size of the directory in bytes.
+        """
+        directory_data = self._data['file_listing'][directory]
+        total_size = 0
+        for sub_dir in directory_data.keys():
+            for file_name in directory_data[sub_dir].keys():
+                if "files" in directory_data[sub_dir][file_name].keys():
+                    total_size += directory_data[sub_dir][file_name][
+                        "files"]['h5ad']['size']
+                else:
+                    for kind in directory_data[sub_dir][file_name].keys():
+                        total_size += directory_data[sub_dir][file_name][
+                            kind]["files"]['h5ad']['size']
+        return total_size
+
 
     def list_metadata_files(self, directory: str) -> List[str]:
         """
@@ -214,7 +246,8 @@ class Manifest(object):
                         size=files_data["files"][file_type]['size'],
                         relative_path=files_data["files"][file_type][
                             'relative_path'],
-                        file_type=file_type
+                        file_type=file_type,
+                        file_hash=files_data["files"][file_type]['file_hash']
                     )
                 elif kind in files_data.keys():
                     file_type = list(files_data[kind]['files'].keys())[0]
@@ -226,14 +259,15 @@ class Manifest(object):
                         size=files_data[kind]["files"][file_type]['size'],
                         relative_path=files_data[kind]["files"][file_type][
                             'relative_path'],
-                        file_type=file_type
+                        file_type=file_type,
+                        file_hash=files_data[kind]["files"][file_type]['file_hash']  # noqa: E501
                     )
                 elif kind is None and "files" not in files_data.keys():
                     raise KeyError(
                         f"File {file_name} found in directory but multiple "
                         f"files found: {list(files_data.keys())}. Please "
                         "specify the file name as one of "
-                        f"{['%s/%s' % (file_name, key) for key in files_data.keys()]}"
+                        f"{['%s/%s' % (file_name, key) for key in files_data.keys()]}"  # noqa: E501
                     )
         if file_attributes is None:
             raise KeyError(
@@ -247,7 +281,8 @@ class Manifest(object):
                                 version: str,
                                 size: int,
                                 relative_path: str,
-                                file_type: str
+                                file_type: str,
+                                file_hash: str
                                 ) -> CacheFileAttributes:
         """
         Create the cache_file_attributes describing a file.
@@ -265,6 +300,8 @@ class Manifest(object):
             The relative path to the file.
         file_type: str
             The type of file (e.g. 'csv' or 'h5ad')
+        file_hash: str
+            The hash of the file.
 
         Returns
         -------
@@ -280,7 +317,9 @@ class Manifest(object):
             version=version,
             local_path=local_path,
             file_size=size,
-            file_type=file_type
+            file_type=file_type,
+            relative_path=relative_path,
+            file_hash=file_hash
         )
 
         return obj
