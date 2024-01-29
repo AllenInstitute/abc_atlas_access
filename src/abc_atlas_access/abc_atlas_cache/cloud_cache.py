@@ -1,11 +1,9 @@
 from typing import List, Optional, Union
 from abc import ABC, abstractmethod
 from pathlib import Path
-from datetime import date
 import json
 import warnings
 import tqdm
-import pandas as pd
 import boto3
 from botocore import UNSIGNED
 from botocore.client import Config
@@ -50,6 +48,8 @@ class BasicLocalCache(ABC):
         cache_dir: Union[str, Path],
         ui_class_name: Optional[str] = None
     ):
+        if isinstance(cache_dir, str):
+            cache_dir = Path(cache_dir)
         cache_dir.mkdir(exist_ok=True, parents=True)
 
         # the class users are actually interacting with
@@ -110,7 +110,7 @@ class BasicLocalCache(ABC):
         str
             the filename whose semver string is the latest one
         """
-        return self._find_latest_file(self.manifest_file_names)
+        return max(self.manifest_file_names)
 
     @property
     def cache_dir(self) -> Path:
@@ -175,19 +175,6 @@ class BasicLocalCache(ABC):
         output.sort()
         return output
 
-    def _find_latest_file(self, file_name_list: List[str]) -> str:
-        """
-        Take a list of files named like
-
-        */<version>/manifest.json
-
-        and return the one with the latest version
-        """
-        ver_dates = [s.split("/")[-2] for s in file_name_list]
-        versions = [date.fromisoformat(ver) for ver in ver_dates]
-        imax = versions.index(max(versions))
-        return file_name_list[imax]
-
     def _load_manifest(
         self,
         manifest_name: str,
@@ -234,6 +221,40 @@ class BasicLocalCache(ABC):
         """
         self._manifest = self._load_manifest(manifest_name)
         self._manifest_name = manifest_name
+
+    def get_directory_metadata_size(self, directory: str) -> str:
+        """
+        Return the size of a metadata directory in gigabytes or megabytes,
+        which ever is appropriate.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the metadata files
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes
+        """
+        return self._manifest.get_directory_metadata_size(directory)
+
+    def get_directory_data_size(self, directory: str) -> str:
+        """
+        Return the size of a data directory in gigabytes or megabytes,
+        which ever is appropriate.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the data files
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes
+        """
+        return self._manifest.get_directory_data_size(directory)
 
     def _file_exists(self, file_attributes: CacheFileAttributes) -> bool:
         """
@@ -411,62 +432,106 @@ class CloudCacheBase(BasicLocalCache):
 
         # self._downloaded_data_path is where we will keep a JSONized
         # dict mapping paths to downloaded files to their file_hashes;
+        # this will be used when determining if a downloaded file
+        # can instead be a symlink
         self._downloaded_data_path = c_path / '_downloaded_data.json'
 
         # if the local manifest is missing but there are
-        # data files in cache_dir, emit a warning
-        # suggesting that the user run
-        # self.construct_local_manifest
+        # data files in cache_dir, emit a warning.
         if not self._downloaded_data_path.exists():
             file_list = c_path.glob('**/*')
             has_files = False
-            for file_name in file_list:
-                if file_name.is_file() and 'json' not in file_name.name:
+            for fname in file_list:
+                # If the file exists ignore it if it is a json file
+                # the last used manifest file, or a .DS_Store file for Mac
+                # compatibility.
+                if fname.is_file() \
+                        and 'json' not in fname.name \
+                        and '_manifest_last_used' not in fname.name \
+                        and 'DS_Store' not in fname.name:
                     has_files = True
                     break
             if has_files:
-                msg = 'This cache directory appears to '
-                msg += 'contain data files, but it has no '
-                msg += 'record of what those files are. '
-                msg += 'You might want to consider running\n\n'
-                msg += f'{self.ui}.construct_local_manifest()\n\n'
-                msg += 'to avoid needlessly downloading duplicates '
-                msg += 'of data files that did not change between '
-                msg += 'data releases. NOTE: running this method '
-                msg += 'will require hashing every data file you '
-                msg += 'have currently downloaded and could be '
-                msg += 'very time consuming.\n\n'
-                msg += 'To avoid this warning in the future, make '
-                msg += 'sure that\n\n'
-                msg += f'{str(self._downloaded_data_path.resolve())}\n\n'
-                msg += 'is not deleted between instantiations of this '
-                msg += 'cache'
+                msg = (
+                    'This cache directory appears to '
+                    'contain data files, but it has no '
+                    'record of what those files are. '
+                    'Unless running as a LocalCache, files will be '
+                    're-downloaded.'
+                )
                 warnings.warn(msg, MissingLocalManifestWarning)
 
-    def construct_local_manifest(self) -> None:
+    def _update_list_of_downloads(self,
+                                  file_attributes: CacheFileAttributes
+                                  ) -> None:
         """
-        Construct the dict that maps between file_hash and
-        absolute local path. Save it to self._downloaded_data_path
+        Update the local file that keeps track of files that have actually
+        been downloaded to reflect a newly downloaded file.
+
+        Parameters
+        ----------
+        file_attributes: CacheFileAttributes
+            Description of the file that was downloaded
+
+        Returns
+        -------
+        None
         """
-        lookup = {}
-        files_to_hash = set()
-        c_dir = Path(self._cache_dir)
-        file_iterator = c_dir.glob('**/*')
-        for file_name in file_iterator:
-            if file_name.is_file() and 'json' not in file_name.name:
-                    if file_name != self._manifest_last_used:
-                        files_to_hash.add(file_name.resolve())
+        if not file_attributes.local_path.exists():
+            # This file does not exist; there is nothing to do
+            return None
 
-        with tqdm.tqdm(files_to_hash,
-                       total=len(files_to_hash),
-                       unit='(files hashed)') as pbar:
+        if self._downloaded_data_path.exists():
+            with open(self._downloaded_data_path, 'rb') as in_file:
+                downloaded_data = set(json.load(in_file))
+        else:
+            downloaded_data = set()
 
-            for local_path in pbar:
-                hsh = file_hash_from_path(local_path)
-                lookup[str(local_path.absolute())] = hsh
+        abs_path = str(file_attributes.local_path.resolve())
+        if abs_path in downloaded_data:
+            return None
 
+        downloaded_data.add(abs_path)
         with open(self._downloaded_data_path, 'w') as out_file:
-            out_file.write(json.dumps(lookup, indent=2, sort_keys=True))
+            out_file.write(json.dumps(list(downloaded_data),
+                                      indent=2,
+                                      sort_keys=True))
+        return None
+
+    def _remove_download_from_list(self,
+                                   file_attributes: CacheFileAttributes
+                                   ) -> None:
+        """
+        Remove a file name from the list of downloads. This is used when
+        the force_download flag is set to True when downloading
+
+        Parameters
+        ----------
+        file_attributes: CacheFileAttributes
+            Description of the file that was downloaded
+
+        Returns
+        -------
+        None
+        """
+        if not file_attributes.local_path.exists():
+            # This file does not exist; there is nothing to do
+            return None
+
+        if self._downloaded_data_path.exists():
+            with open(self._downloaded_data_path, 'rb') as in_file:
+                downloaded_data = set(json.load(in_file))
+        else:
+            downloaded_data = set()
+
+        abs_path = str(file_attributes.local_path.resolve())
+        if abs_path in downloaded_data:
+            downloaded_data.remove(abs_path)
+            with open(self._downloaded_data_path, 'w') as out_file:
+                out_file.write(json.dumps(list(downloaded_data),
+                                          indent=2,
+                                          sort_keys=True))
+        return None
 
     def _warn_of_outdated_manifest(self, manifest_name: str) -> None:
         """
@@ -517,7 +582,7 @@ class CloudCacheBase(BasicLocalCache):
         file_list = self.list_all_downloaded_manifests()
         if len(file_list) == 0:
             return ''
-        return self._find_latest_file(self.list_all_downloaded_manifests())
+        return max(self.list_all_downloaded_manifests())
 
     def load_last_manifest(self):
         """
@@ -659,50 +724,10 @@ class CloudCacheBase(BasicLocalCache):
 
         self._manifest_name = manifest_name
 
-    def _update_list_of_downloads(self,
-                                  file_attributes: CacheFileAttributes
-                                  ) -> None:
-        """
-        Update the local file that keeps track of files that have actually
-        been downloaded to reflect a newly downloaded file.
-
-        Parameters
-        ----------
-        file_attributes: CacheFileAttributes
-
-        Returns
-        -------
-        None
-        """
-        if not file_attributes.local_path.exists():
-            # This file does not exist; there is nothing to do
-            return None
-
-        if self._downloaded_data_path.exists():
-            with open(self._downloaded_data_path, 'rb') as in_file:
-                downloaded_data = json.load(in_file)
-        else:
-            downloaded_data = {}
-
-        abs_path = str(file_attributes.local_path.resolve())
-        if abs_path in downloaded_data:
-            if downloaded_data[abs_path] == file_attributes.file_hash:
-                # this file has already been logged;
-                # there is nothing to do
-                return None
-
-        downloaded_data[abs_path] = file_attributes.file_hash
-        with open(self._downloaded_data_path, 'w') as out_file:
-            out_file.write(json.dumps(downloaded_data,
-                                      indent=2,
-                                      sort_keys=True))
-        return None
-
     def _file_exists(self, file_attributes: CacheFileAttributes) -> bool:
         """
         Given a CacheFileAttributes describing a file, assess whether that
-        file exists locally and is valid (i.e. has the expected
-        file hash)
+        file exists locally.
 
         Parameters
         ----------
@@ -727,17 +752,46 @@ class CloudCacheBase(BasicLocalCache):
                 raise RuntimeError(f"{file_attributes.local_path}\n"
                                    "exists, but is not a file;\n"
                                    "unsure how to proceed")
-
             file_exists = True
 
         return file_exists
 
-    def download_data(self,
-                      directory: str,
-                      file_name: str,
-                      force_download: bool = False,
-                      skip_hash_check: bool = False
-        ) -> Path:
+    def _check_successful_download(self,
+                                   file_attributes: CacheFileAttributes
+                                   ) -> bool:
+        """
+        Check to see if the file is listed in the set of successfully
+        downloaded files. If it is, return True.
+
+
+        Else return False
+
+        Parameters
+        ----------
+        file_attributes: CacheFileAttributes
+            The file we are considering downloading
+
+        Returns
+        -------
+        bool
+        """
+        if not self._downloaded_data_path.exists():
+            return False
+
+        with open(self._downloaded_data_path, 'rb') as in_file:
+            available_files = set(json.load(in_file))
+        if str(file_attributes.local_path.resolve()) in available_files:
+            return True
+
+        return False
+
+    def download_data(
+        self,
+        directory: str,
+        file_name: str,
+        force_download: bool = False,
+        skip_hash_check: bool = False
+    ) -> Path:
         """
         Return the local path to a data file, downloading the file
         if necessary
@@ -768,13 +822,16 @@ class CloudCacheBase(BasicLocalCache):
         super_attributes = self.data_path(directory=directory,
                                           file_name=file_name)
         file_attributes = super_attributes['file_attributes']
-        was_downloaded = self._download_file(
+        # If the file exists, check that it was downloaded successfully.
+        if super_attributes['exists'] \
+                and not self._check_successful_download(
+                        file_attributes=super_attributes['file_attributes']):
+            force_download = True
+        self._download_file(
             file_attributes=file_attributes,
             force_download=force_download,
             skip_hash_check=skip_hash_check
         )
-        if was_downloaded:
-            self._update_list_of_downloads(file_attributes)
         return file_attributes.local_path
 
     def download_metadata(self,
@@ -811,47 +868,98 @@ class CloudCacheBase(BasicLocalCache):
         """
         super_attributes = self.metadata_path(
             directory=directory, file_name=file_name)
+        # If the file exists, check that it was downloaded successfully.
+        if super_attributes['exists'] \
+                and not self._check_successful_download(
+                    file_attributes=super_attributes['file_attributes']):
+            force_download = True
         file_attributes = super_attributes['file_attributes']
-        was_downloaded = self._download_file(
+        self._download_file(
             file_attributes=file_attributes,
             force_download=force_download,
             skip_hash_check=skip_hash_check
         )
-        if was_downloaded:
-            self._update_list_of_downloads(file_attributes)
         return file_attributes.local_path
 
-    def get_metadata(self,
-                     directory: str,
-                     file_name: str) -> pd.DataFrame:
+    def download_directory_metadata(
+            self,
+            directory: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
         """
-        Return a pandas DataFrame of metadata
+        Download all of the metadata files in a directory.
 
         Parameters
         ----------
         directory: str
-            The name of the directory containing the metadata file
-        file_name: str
-            The name of the metadata file to load
+            The name of the directory containing the metadata files
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
 
         Returns
         -------
-        pd.DataFrame
-
-        Notes
-        -----
-        This method will check to see if the specified metadata file exists
-        locally. If it does not, the method will download the file. Use
-        self.metadata_path() to find where the file is stored
+        output_paths: list Paths
+            List of paths to the downloaded metadata files
         """
-        local_path = self.download_metadata(directory=directory,
-                                            file_name=file_name)
-        return pd.read_csv(local_path)
+        metadata_list = self.list_metadata_files(directory)
+        output_metadata = []
+        for file_name in metadata_list:
+            output_metadata.append(
+                self.download_metadata(
+                    directory=directory,
+                    file_name=file_name,
+                    force_download=force_download,
+                    skip_hash_check=skip_hash_check
+                )
+            )
+        return output_metadata
 
-    def _compare_directories(self,
-                             manifest_0: Manifest,
-                             manifest_1: Manifest
-        ) -> dict:
+    def download_directory_data(
+            self,
+            directory: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
+        """
+        Download all of the data files in a directory.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the data files
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        output_paths: list Paths
+            List of paths to the downloaded data files
+        """
+        data_list = self.list_data_files(directory)
+        output_data = []
+        for file_name in data_list:
+            output_data.append(
+                self.download_data(
+                    directory=directory,
+                    file_name=file_name,
+                    force_download=force_download,
+                    skip_hash_check=skip_hash_check
+                )
+            )
+        return output_data
+
+    def _compare_directories(
+        self,
+        manifest_0: Manifest,
+        manifest_1: Manifest
+    ) -> dict:
         """
         Compare two manifests from this dataset. Return a dict of new and
         removed manifests.
@@ -881,11 +989,12 @@ class CloudCacheBase(BasicLocalCache):
 
         return output_dict
 
-    def _compare_files(self,
-                       manifest_0: Manifest,
-                       manifest_1: Manifest,
-                       is_metadata: bool = False
-        ) -> dict:
+    def _compare_files(
+        self,
+        manifest_0: Manifest,
+        manifest_1: Manifest,
+        is_metadata: bool = False
+    ) -> dict:
         """
         Compare two manifests from this dataset. Return a dict of new and
         removed metadata files as well as any differences in the file metadata.
@@ -967,10 +1076,10 @@ class CloudCacheBase(BasicLocalCache):
             file_attr_1 = manifest_1.get_file_attributes(directory,
                                                          metadata_file)
 
-            if not file_attr_0 == file_attr_1 and \
+            if file_attr_0 != file_attr_1 and \
                     file_attr_0.version == file_attr_1.version:
                 output_dict[f'manifest_error_{file_kind}'].append(file_name)
-            elif not file_attr_0 == file_attr_1 and \
+            elif file_attr_0 != file_attr_1 and \
                     file_attr_0.version != file_attr_1.version:
                 output_dict[f'changed_{file_kind}'].append(file_name)
         output_dict[f'changed_{file_kind}'].sort()
@@ -979,8 +1088,8 @@ class CloudCacheBase(BasicLocalCache):
         return output_dict
 
     def compare_manifests(self,
-                          manifest_0_name: str,
-                          manifest_1_name: str
+                          manifest_newer_name: str,
+                          manifest_older_name: str
                           ) -> dict:
         """
         Compare two manifests from this dataset. Return a dict
@@ -991,17 +1100,24 @@ class CloudCacheBase(BasicLocalCache):
 
         Parameters
         ----------
-        manifest_0_name: str
-
-        manifest_1_name: str
+        manifest_newer_name: str
+            Name of the newer manifest to load.
+        manifest_older_name: str
+            Name of the older manifest to load.
 
         Returns
         -------
         output_dict: dict
         """
         results = {}
-        manifest_0 = self._load_manifest(manifest_0_name)
-        manifest_1 = self._load_manifest(manifest_1_name)
+        if manifest_older_name > manifest_newer_name:
+            raise ValueError(
+                f"The manifest input first ({manifest_newer_name}) is older "
+                f"than the manifest input second ({manifest_older_name}). "
+                "Please reverse the order of the input."
+            )
+        manifest_0 = self._load_manifest(manifest_newer_name)
+        manifest_1 = self._load_manifest(manifest_older_name)
 
         results['directory_changes'] = self._compare_directories(
             manifest_0=manifest_0,
@@ -1141,8 +1257,11 @@ class S3CloudCache(CloudCacheBase):
             10 iterations
         """
         was_downloaded = False
-        if force_download and file_attributes.local_path.exists():
-            file_attributes.local_path.unlink()
+        if force_download:
+            # Remove the file from the list of successfully downloaded files.
+            self._remove_download_from_list(file_attributes)
+            if file_attributes.local_path.exists():
+                file_attributes.local_path.unlink()
 
         local_path = file_attributes.local_path
 
@@ -1191,7 +1310,40 @@ class S3CloudCache(CloudCacheBase):
                                    f"{file_attributes}\n"
                                    "In {max_iter} iterations")
 
+            if file_attributes.local_path.exists():
+                self._update_list_of_downloads(file_attributes=file_attributes)
+
         if pbar is not None:
             pbar.close()
 
         return was_downloaded
+
+
+class LocalCache(CloudCacheBase):
+    """A class to handle accessing of data that has already been downloaded
+    locally. Supports multiple manifest versions from a given dataset.
+
+    Parameters
+    ----------
+    cache_dir: str or pathlib.Path
+        Path to the directory where data will be stored on the local system
+
+    ui_class_name: Optional[str]
+        Name of the class users are actually using to maniuplate this
+        functionality (used to populate helpful error messages)
+    """
+    def __init__(self, cache_dir, ui_class_name=None):
+        super().__init__(cache_dir=cache_dir,
+                         ui_class_name=ui_class_name)
+
+    def _list_all_manifests(self) -> list:
+        return self.list_all_downloaded_manifests()
+
+    def _download_manifest(self, manifest_name: str):
+        raise NotImplementedError()
+
+    def _download_file(self,
+                       file_attributes: CacheFileAttributes,
+                       force_download: bool = False,
+                       skip_hash_check: bool = False) -> bool:
+        raise NotImplementedError()

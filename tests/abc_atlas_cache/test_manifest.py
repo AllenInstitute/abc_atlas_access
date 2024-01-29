@@ -7,10 +7,11 @@ from abc_atlas_access.abc_atlas_cache.manifest import (
     DataTypeNotInDirectory
 )
 
+
 class TestManifest(unittest.TestCase):
 
     def setUp(self):
-        self.manifest_path = Path(__file__).parent / "resources" / "manifest.json"
+        self.manifest_path = Path(__file__).parent / "resources" / "manifest.json"  # noqa: E501
 
     def test_init(self):
         """
@@ -103,12 +104,12 @@ class TestManifest(unittest.TestCase):
 
         file_obj = manifest.get_file_attributes(directory='Allen-CCF-2020',
                                                 file_name='parcellation')
-        assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation.csv'
+        assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 41197
-        assert file_obj.local_path == cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv'
+        assert file_obj.local_path == cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.file_type == 'csv'
-        assert file_obj.relative_path == 'metadata/Allen-CCF-2020/20230630/parcellation.csv'
+        assert file_obj.relative_path == 'metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.file_hash == 'aea6f6925d7c84f4e5a2d022cbc9c7bb'
 
     def test_image_volume_file_attributes(self):
@@ -123,12 +124,12 @@ class TestManifest(unittest.TestCase):
             directory='MERFISH-C57BL6J-638850-CCF',
             file_name='resampled_annotation_boundary'
         )
-        assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'
+        assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 1548196
-        assert file_obj.local_path == cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'
+        assert file_obj.local_path == cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.file_type == 'nii.gz'
-        assert file_obj.relative_path == 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'
+        assert file_obj.relative_path == 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.file_hash == "1ce4be21528fa6cbfb462a117552477d"
 
     def test_expresion_matrix_file_attributes(self):
@@ -143,12 +144,12 @@ class TestManifest(unittest.TestCase):
             directory='WMB-10Xv2',
             file_name='WMB-10Xv2-Isocortex-2/log2'
         )
-        assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'
+        assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 9444387082
-        assert file_obj.local_path == cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'
+        assert file_obj.local_path == cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.file_type == 'h5ad'
-        assert file_obj.relative_path == 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'
+        assert file_obj.relative_path == 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.file_hash == "6cf8b3556e625b090c196ff5bb5f6cdd"
 
         with pytest.raises(
@@ -160,7 +161,7 @@ class TestManifest(unittest.TestCase):
                 file_name='WMB-10Xv2-Isocortex-2'
             )
 
-    def test_expresion_matrix_file_attributes(self):
+    def test_expresion_matrix_file_attributes_rasies(self):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for a expression_matrix file.
         """
@@ -170,7 +171,7 @@ class TestManifest(unittest.TestCase):
 
         with pytest.raises(
                 KeyError,
-                match=r"File WMB-10Xv2-Isocortex-2 not found in directory WMB-10X."
+                match=r"File WMB-10Xv2-Isocortex-2 not found in directory WMB-10X."  # noqa: E501
         ):
             manifest.get_file_attributes(
                 directory='WMB-10X',
