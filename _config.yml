@@ -4,7 +4,7 @@ title: Allen Brain Cell Atlas - Data Access
 author: Allen Institute
 copyright: "2023"
 logo: ./images/allen_logo.jpeg
-exclude_patterns: [_build, .DS_Store]   # Patterns to skip when building the book.
+exclude_patterns: [_build, .DS_Store, .pytest_cache, tests, "**.ipynb_checkpoints"]   # Patterns to skip when building the book.
 only_build_toc_files: true              # Auto-exclude files not in the toc
 bibtex_bibfiles:
   - references.bib
