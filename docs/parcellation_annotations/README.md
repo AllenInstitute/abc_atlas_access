@@ -1,3 +1,3 @@
 # Parcellation annotations
 
-* [Allen-CCF-2020](Allen-CCF-2020/substructure.html)
+* [Allen-CCF-2020](parcellation_redirect.html)
