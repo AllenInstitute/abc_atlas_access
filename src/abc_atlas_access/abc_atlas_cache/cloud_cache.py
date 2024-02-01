@@ -557,8 +557,8 @@ class CloudCacheBase(BasicLocalCache):
         msg += f'{self.latest_manifest_file}\n\n'
         msg += 'To see the differences between these manifests,'
         msg += 'run\n\n'
-        msg += f"{self.ui}.compare_manifests('{manifest_name}', "
-        msg += f"'{self.latest_manifest_file}')\n\n"
+        msg += f"{self.ui}.compare_manifests('{self.latest_manifest_file}', "
+        msg += f"'{manifest_name}')\n\n"
         msg += "To see all of the manifest files currently downloaded "
         msg += "onto your local system, run\n\n"
         msg += "self.list_all_downloaded_manifests()\n\n"
