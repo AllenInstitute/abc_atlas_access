@@ -363,7 +363,9 @@ class AbcProjectCache(object):
             directory: str,
             file_name: str,
             force_download: bool = False,
-            skip_hash_check: bool = False) -> pd.DataFrame:
+            skip_hash_check: bool = False,
+            **kwargs
+    ) -> pd.DataFrame:
         """
         Get the metadata table with the given file name. Download the file if
         using a S3Cache and the file is not currently on disk.
@@ -379,6 +381,8 @@ class AbcProjectCache(object):
             locally.
         skip_hash_check: bool
             If True, skip the file hash check for file integrity.
+        **kwargs
+           Keyword arguments to pass to pandas.read_csv
 
         Returns
         -------
@@ -391,7 +395,7 @@ class AbcProjectCache(object):
             force_download=force_download,
             skip_hash_check=skip_hash_check
         )
-        return pd.read_csv(path)
+        return pd.read_csv(path, **kwargs)
 
     def get_metadata_path(
             self,
