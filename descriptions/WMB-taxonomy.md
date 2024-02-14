@@ -34,11 +34,11 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 Data is being share under the CC BY NC 4.0 license.
 
 Related resources :
-* Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
+* Whole mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain MERFISH spatial transcriptomics dataset ([MERFISH-C57BL6J-638850](MERFISH-C57BL6J-638850.md))
 
 Associated notebooks:
-* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
+* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the AbcProjectCache to
   facilitate data download and usage.
 * [**10x scRNA-seq clustering analysis and annotation**](../notebooks/cluster_annotation_tutorial.ipynb): learn about the
   whole mouse brain taxonomy through some example use cases and visualization.

@@ -10,7 +10,7 @@ parts:
 
   - caption: DATA 
     chapters:
-    - file: descriptions/data_release_subtitle1
+    - file: descriptions/WMB_dataset
       sections:
       - file: descriptions/WMB-10Xv2
       - file: descriptions/WMB-10Xv3
@@ -21,12 +21,17 @@ parts:
       - file: descriptions/WMB-neighborhoods
       - file: descriptions/Allen-CCF-2020
       - file: descriptions/MERFISH-C57BL6J-638850-CCF
-    - file: descriptions/data_release_subtitle2
+    - file: descriptions/Zhuang_dataset
       sections:
       - file: descriptions/Zhuang-ABCA-1
       - file: descriptions/Zhuang-ABCA-2
       - file: descriptions/Zhuang-ABCA-3
       - file: descriptions/Zhuang-ABCA-4
+    - file: descriptions/WHB_dataset
+      sections:
+        - file: descriptions/WHB-10Xv3
+        - file: descriptions/WHB-10X-clustering
+        - file: descriptions/WHB-taxonomy
 
   - caption: NOTEBOOKS
     chapters:

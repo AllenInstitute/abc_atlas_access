@@ -1,6 +1,6 @@
 # Human brain taxonomy of cell types
 
-The data pesented here from [Siletti et al. 2022](https://www.biorxiv.org/content/10.1101/2022.10.12.511898v1),
+The data presented here from [Siletti et al. 2022](https://www.biorxiv.org/content/10.1101/2022.10.12.511898v1),
 consists of over three million single cells and two million neurons from 100
 locations across the forebrain, midbrain, and hindbrain. The integrated 
 transcriptomic taxonomy contains 31 superclusters, 461 clusters, and 3313
@@ -18,13 +18,15 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 |---|--|--------|
 | Metadata | [s3://allen-brain-cell-atlas/metadata/WHB-taxonomy/20240330/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/WHB-taxonomy/20240330/) | 1.6 MB |
 
-Data is being share under the CC BY NC 4.0 license.
+Data is being shared under the CC BY NC 4.0 license.
 
 Related resources :
 * Human brain single cell transcriptomes ([WHB-10Xv3](WHB-10Xv3.md))
+* Clustering analysis of over 3 million single cell transcriptomes spanning the
+  whole adult human brain ([WHB-10X-clustering](WHB-10X-clustering.md))
 
 Associated notebooks:
-* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
+* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the AbcProjectCache to
   facilitate data download and usage.
 * [**10x scRNA-seq clustering analysis and annotation**](../notebooks/cluster_annotation_tutorial.ipynb): learn about the
   whole mouse brain taxonomy through some example use cases and visualization.

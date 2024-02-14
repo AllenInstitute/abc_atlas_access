@@ -15,6 +15,8 @@ AWS Public Dataset:
 Data is being share under the CC BY NC 4.0 license.
 
 Related resources :
+* Clustering analysis of over 3 million single cell transcriptomes spanning the
+  whole adult human brain ([WHB-10X-clustering](WHB-10X-clustering.md))
 * Whole human brain taxonomy of cell types ([WHB-taxonomy](WHB-taxonomy.md))
 
 Associated notebooks:

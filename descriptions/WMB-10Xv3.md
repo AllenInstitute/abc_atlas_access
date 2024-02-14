@@ -4,7 +4,7 @@ This dataset consists of 2.3 million single cell transcriptomes spanning the
 whole adult mouse brain using 10Xv3 chemistry.
 
 It was used in the creation of a high resolution transcriptomic and spatial
-atlas of cell types describe in [Yao et. al](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
+atlas of cell types described in [Yao et al.](https://www.biorxiv.org/content/10.1101/2023.03.06.531121v1).
 
 The expression matrices and associated metadata is hosted on AWS S3 bucket as a
 AWS Public Dataset:
@@ -16,11 +16,11 @@ AWS Public Dataset:
 Data is being share under the CC BY NC 4.0 license.
 
 Related resources :
-* Whole mouse brain mouse brain clustering ([WMB-10X](WMB-10X.md))
+* Whole mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 
 Associated notebooks:
-* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
+* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the AbcPorjectCache to
   facilitate data download and usage.
 * [**10x scRNA-seq clustering analysis and annotation**](../notebooks/cluster_annotation_tutorial.ipynb): learn about the
   whole mouse brain taxonomy through some example use cases and visualization.
