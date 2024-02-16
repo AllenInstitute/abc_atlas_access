@@ -31,7 +31,7 @@ def get_gene_data(
         indexed on cell_label.
     all_genes: pandas.DataFrame
         genes metadata loaded as a pandas Dataframe from the AbcProjectCache
-        indexed on
+        indexed on gene_identifier.
     selected_genes: list of strings
         List of gene_symbols that are a subset of those in the full genes
         DataFrame.
