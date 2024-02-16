@@ -46,7 +46,7 @@ Available notebooks:
 * **[A molecularly defined and spatially resolved cell atlas of the whole
   mouse brain](descriptions/notebook_subtitle4.md)
   (Xiaowei Zhuang)**
-* **[Human whole-brain transcriptomic cell type atlas](descriptions/WHB_dataset.md)
+* **[Human whole-brain transcriptomic cell type atlas](descriptions/WHB_notebooks.md)
   (Kimberly Siletti)**
 
 ## Release Notes

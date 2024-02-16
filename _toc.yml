@@ -55,6 +55,11 @@ parts:
     - file: descriptions/notebook_subtitle4
       sections:
       - file: notebooks/zhuang_merfish_tutorial
+    - file: descriptions/WHB_notebooks
+      sections:
+      - file: notebooks/WHB_cluster_annotation_tutorial
+      - file: notebooks/WHB-10x_snRNASeq_tutorial_part_1
+      - file: notebooks/WHB-10x_snRNASeq_tutorial_part_2
 
   - caption: ADDITIONAL RESOURCES
     chapters:
