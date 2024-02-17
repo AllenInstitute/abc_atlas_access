@@ -41,6 +41,9 @@ Available notebooks:
 * [**Getting started**](notebooks/getting_started.ipynb): learn how to use the
   AbcProjectCache to facilitate data download and usage.
 [*notebooks/getting_started.ipynb*]
+* [**Loading genes from expression matrix data**](notebooks/general_accessing_10x_snRNASeq_tutorial.ipynb):
+  learn how to select genes from 10X expression matricies and combine them with
+  the cell metadata.
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/notebook_subtitle1.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole

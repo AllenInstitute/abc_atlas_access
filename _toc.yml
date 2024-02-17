@@ -7,6 +7,7 @@ parts:
   - caption: INTRODUCTION
     chapters:
       - file: notebooks/getting_started
+      - file: notebooks/general_accessing_10x_snRNASeq_tutorial
 
   - caption: DATA 
     chapters:
