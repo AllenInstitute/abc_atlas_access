@@ -2,27 +2,16 @@ import pathlib
 import boto3
 import json
 from moto import mock_aws
-from pathlib import Path
-import tempfile
-import unittest
 from abc_atlas_access.abc_atlas_cache.cloud_cache import (
     S3CloudCache,
     LocalCache
 )
 import hashlib
-from .utils import create_bucket, create_manifest_dict
+from .utils import create_manifest_dict, BaseCacheTestCase
 
 
 @mock_aws
-class TestLocalCache(unittest.TestCase):
-
-    def setUp(self):
-        self.test_bucket_name = 'abc_atlas_test_bucket'
-        self.tmpdir = tempfile.TemporaryDirectory()
-        self.cache_dir = Path(self.tmpdir.name).resolve()
-        self._region = 'us-east-1'
-        self.client = create_bucket(region_name=self._region,
-                                    bucket_name=self.test_bucket_name)
+class TestLocalCache(BaseCacheTestCase):
 
     def test_local_cache_file_access(self):
         """

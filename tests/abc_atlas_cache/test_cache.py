@@ -1,15 +1,11 @@
 import datetime
 import hashlib
-import tempfile
-from typing import Optional
 import warnings
 
 import pytest
 from pathlib import Path
-import boto3
 from moto import mock_aws
 import json
-import unittest
 
 from abc_atlas_access.abc_atlas_cache.file_attributes import \
     CacheFileAttributes
@@ -17,22 +13,11 @@ from abc_atlas_access.abc_atlas_cache.cloud_cache import (
     S3CloudCache,
     OutdatedManifestWarning
 )
-from .utils import create_bucket, create_manifest_dict
+from .utils import create_manifest_dict, BaseCacheTestCase
 
 
 @mock_aws
-class TestCache(unittest.TestCase):
-
-    def setUp(self):
-        self.test_bucket_name = 'abc_atlas_test_bucket'
-        self.tmpdir = tempfile.TemporaryDirectory()
-        self.cache_dir = Path(self.tmpdir.name).resolve()
-        self._region = 'us-east-1'
-        self.client = create_bucket(region_name=self._region,
-                                    bucket_name=self.test_bucket_name)
-
-    def tearDown(self):
-        self.tmpdir.cleanup()
+class TestCache(BaseCacheTestCase):
 
     def create_manifests(self, manifest_count):
         manifest_list = []

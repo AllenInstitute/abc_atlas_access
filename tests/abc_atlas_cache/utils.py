@@ -1,5 +1,8 @@
 from typing import Optional
 import boto3
+import unittest
+import tempfile
+from pathlib import Path
 
 
 def create_bucket(region_name: str,
@@ -92,3 +95,17 @@ def create_manifest_dict(version: str,
         }
     }
     return test_manifest, metadata_path, data_path
+
+
+class BaseCacheTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.test_bucket_name = 'abc_atlas_test_bucket'
+        self.tmpdir = tempfile.TemporaryDirectory()
+        self.cache_dir = Path(self.tmpdir.name).resolve()
+        self._region = 'us-east-1'
+        self.client = create_bucket(region_name=self._region,
+                                    bucket_name=self.test_bucket_name)
+
+    def tearDown(self):
+        self.tmpdir.cleanup()
