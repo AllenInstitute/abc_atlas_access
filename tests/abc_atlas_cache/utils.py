@@ -1,5 +1,6 @@
 from typing import Optional
 import boto3
+from moto import mock_aws
 import unittest
 import tempfile
 from pathlib import Path
@@ -97,6 +98,7 @@ def create_manifest_dict(version: str,
     return test_manifest, metadata_path, data_path
 
 
+@mock_aws
 class BaseCacheTestCase(unittest.TestCase):
 
     def setUp(self):
