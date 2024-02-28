@@ -1,5 +1,7 @@
 import json
 from moto import mock_aws
+import pytest
+
 from .utils import BaseCacheTestCase, create_manifest_dict
 from abc_atlas_access.abc_atlas_cache.cloud_cache import S3CloudCache
 from abc_atlas_access.abc_atlas_cache.file_attributes import CacheFileAttributes  # noqa: E501
@@ -121,11 +123,11 @@ class TestCompareManifests(BaseCacheTestCase):
             file_attribute=file_attr_2,
             manifest=manifest_2
         )
-        manifest_1_file = add_file_to_manifest(
+        manifest_1 = add_file_to_manifest(
             file_attribute=file_attr_1,
             manifest=manifest_1
         )
-        manifest_2_file = add_file_to_manifest(
+        manifest_2 = add_file_to_manifest(
             file_attribute=file_attr_2,
             manifest=manifest_2
         )
@@ -165,3 +167,32 @@ class TestCompareManifests(BaseCacheTestCase):
             manifest_older_name='releases/20230101/manifest.json'
         )
         assert comparison == expected
+
+    def test_compare_manifests_wrong_order(self):
+        """
+        """
+        manifest_1, _, _ = create_manifest_dict(
+            version='20230101',
+            test_bucket_name=self.test_bucket_name
+        )
+        manifest_2, _, _ = create_manifest_dict(
+            version='20240101',
+            test_bucket_name=self.test_bucket_name
+        )
+
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key='releases/20230101/manifest.json',
+                               Body=bytes(json.dumps(manifest_1), 'utf-8'))
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key='releases/20240101/manifest.json',
+                               Body=bytes(json.dumps(manifest_2), 'utf-8'))
+
+        cloud_cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
+        cloud_cache.load_manifest('releases/20230101/manifest.json')
+        cloud_cache.load_manifest('releases/20240101/manifest.json')
+
+        with pytest.raises(ValueError, match='The manifest input first'):
+            cloud_cache.compare_manifests(
+                manifest_newer_name='releases/20230101/manifest.json',
+                manifest_older_name='releases/20240101/manifest.json'
+            )
