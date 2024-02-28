@@ -85,7 +85,7 @@ def add_directory_to_manifest(
 class TestCompareManifests(BaseCacheTestCase):
 
     def test_compare_manifests(self):
-        """
+        """Test that the expected comparison between two manifests is returned.
         """
         manifest_1, _, _ = create_manifest_dict(
             version='20230101',

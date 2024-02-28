@@ -1,5 +1,3 @@
-import pathlib
-import boto3
 import json
 from moto import mock_aws
 from abc_atlas_access.abc_atlas_cache.cloud_cache import (

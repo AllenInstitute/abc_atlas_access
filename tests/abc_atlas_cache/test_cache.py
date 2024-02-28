@@ -60,8 +60,8 @@ class TestCache(BaseCacheTestCase):
 
     def test_list_all_manifests_many(self):
         """
-        Test the extreme case when there are more manifests than list_objects_v2
-        can return at a time
+        Test the extreme case when there are more manifests than
+        list_objects_v2 can return at a time
         """
         expected = self.create_manifests(manifest_count=2000)
         self.client.put_object(Bucket=self.test_bucket_name,
