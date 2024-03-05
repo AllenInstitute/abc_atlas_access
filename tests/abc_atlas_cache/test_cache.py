@@ -513,9 +513,7 @@ class TestCache(BaseCacheTestCase):
         Test that S3CloudCache.download_data() correctly downloads files from
         S3
         """
-        hasher = hashlib.md5()
         data = b'11235813kjlssergwesvsdd'
-        hasher.update(data)
 
         version = '20240101'
         manifest, metadata_path, data_path = create_manifest_dict(
