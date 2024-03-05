@@ -177,3 +177,26 @@ class TestManifest(unittest.TestCase):
                 directory='WMB-10X',
                 file_name='WMB-10Xv2-Isocortex-2'
             )
+
+    def test_get_directory_size(self):
+        """
+        Test that the correct directory size is returned for a given directory
+        in the manifest.
+        """
+        metadata_dir = "WMB-10X"
+        data_dir = "WMB-10Xv3"
+        small_dir = "Allen-CCF-2020"
+        cache_path = Path("/my/cache/dir/")
+        with open(self.manifest_path, "r") as jfile:
+            manifest = Manifest(cache_dir=cache_path, json_input=jfile)
+
+        ans = manifest.get_directory_metadata_size(metadata_dir)
+        assert ans == '2.39 GB'
+
+        ans = manifest.get_directory_data_size(data_dir)
+        assert ans == '176.41 GB'
+
+        ans = manifest.get_directory_data_size(small_dir)
+        assert ans == '379.11 MB'
+
+

@@ -508,7 +508,7 @@ class TestCache(BaseCacheTestCase):
         assert metadata_path_list == [expected_path]
         assert expected_path.exists()
 
-    def test_hashing_directory(self):
+    def test_hashing_check(self):
         """
         Test that S3CloudCache.download_data() correctly downloads files from
         S3
