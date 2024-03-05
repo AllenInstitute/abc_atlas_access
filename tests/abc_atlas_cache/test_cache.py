@@ -452,3 +452,126 @@ class TestCache(BaseCacheTestCase):
         with pytest.warns(UserWarning, match=expected):
             cache.load_last_manifest()
         assert cache.current_manifest == manifest_list[-1]
+
+    def test_download_directory(self):
+        """
+        Test that S3CloudCache.download_data() correctly files in the directory
+        form S3.
+        """
+        hasher = hashlib.md5()
+        data = b'11235813kjlssergwesvsdd'
+        hasher.update(data)
+        true_checksum = hasher.hexdigest()
+
+        version = '20240101'
+        manifest, metadata_path, data_path = create_manifest_dict(
+            version=version,
+            test_bucket_name=self.test_bucket_name,
+            file_hash=true_checksum
+        )
+
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key=metadata_path,
+                               Body=data)
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key=data_path,
+                               Body=data)
+
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key=f'releases/{version}/manifest.json',
+                               Body=bytes(json.dumps(manifest), 'utf-8'))
+
+        cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
+
+        cache.load_manifest(f'releases/{version}/manifest.json')
+
+        expected_data_path = (self.cache_dir / data_path)
+        assert not expected_data_path.exists()
+        expected_metadata_path = (self.cache_dir / metadata_path)
+        assert not expected_metadata_path.exists()
+
+        # test data_path
+        directory = data_path.split('/')[1]
+        data_path_list = cache.download_directory_data(
+            directory=directory
+        )
+        assert data_path_list == [expected_data_path]
+        assert expected_data_path.exists()
+
+        expected_path = self.cache_dir / metadata_path
+        assert not expected_path.exists()
+
+        directory = metadata_path.split('/')[1]
+        metadata_path_list = cache.download_directory_metadata(
+            directory
+        )
+        assert metadata_path_list == [expected_path]
+        assert expected_path.exists()
+
+    def test_hashing_directory(self):
+        """
+        Test that S3CloudCache.download_data() correctly downloads files from
+        S3
+        """
+        hasher = hashlib.md5()
+        data = b'11235813kjlssergwesvsdd'
+        hasher.update(data)
+
+        version = '20240101'
+        manifest, metadata_path, data_path = create_manifest_dict(
+            version=version,
+            test_bucket_name=self.test_bucket_name,
+            file_hash='junk'
+        )
+
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key=metadata_path,
+                               Body=data)
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key=data_path,
+                               Body=data)
+
+        self.client.put_object(Bucket=self.test_bucket_name,
+                               Key=f'releases/{version}/manifest.json',
+                               Body=bytes(json.dumps(manifest), 'utf-8'))
+
+        cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
+
+        cache.load_manifest(f'releases/{version}/manifest.json')
+
+        expected_data_path = (self.cache_dir / data_path)
+        assert not expected_data_path.exists()
+        expected_metadata_path = (self.cache_dir / metadata_path)
+        assert not expected_metadata_path.exists()
+
+        # test data_path
+        directory = data_path.split('/')[1]
+        with pytest.raises(RuntimeError,
+                           match=f"Could not download {data_path}"):
+            cache.download_data(
+                directory=directory,
+                file_name=f"{data_path.split('/')[-1].split('.')[0]}/log2"
+            )
+        assert not expected_data_path.exists()
+        with pytest.raises(RuntimeError,
+                           match=f"Could not download {metadata_path}"):
+            cache.download_metadata(
+                directory=directory,
+                file_name=metadata_path.split('/')[-1].split('.')[0]
+            )
+        assert not expected_metadata_path.exists()
+
+        full_data_path = cache.download_data(
+            directory=directory,
+            file_name=f"{data_path.split('/')[-1].split('.')[0]}/log2",
+            skip_hash_check=True
+        )
+        assert full_data_path.exists()
+        assert full_data_path == expected_data_path
+        full_metadata_path = cache.download_metadata(
+            directory=directory,
+            file_name=metadata_path.split('/')[-1].split('.')[0],
+            skip_hash_check=True
+        )
+        assert full_metadata_path.exists()
+        assert full_metadata_path == expected_metadata_path
