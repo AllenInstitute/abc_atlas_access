@@ -11,6 +11,7 @@ from abc_atlas_access.abc_atlas_cache.manifest import (
 class TestManifest(unittest.TestCase):
 
     def setUp(self):
+        self.cache_dir = "/my/cache/dir/"
         self.manifest_path = Path(__file__).parent / "resources" / "manifest.json"  # noqa: E501
 
     def test_init(self):
@@ -18,7 +19,7 @@ class TestManifest(unittest.TestCase):
         Test that the Manifest class can be instantiated
         """
         with open(self.manifest_path, "r") as jfile:
-            manifest = Manifest(cache_dir="/my/cache/dir/", json_input=jfile)
+            manifest = Manifest(cache_dir=self.cache_dir, json_input=jfile)
 
         with open(self.manifest_path, "r") as jfile:
             test_data = json.load(jfile)
@@ -50,7 +51,7 @@ class TestManifest(unittest.TestCase):
     def test_list_metadata_files(self):
         """Test listing the files in a metadata directory."""
         with open(self.manifest_path, "r") as jfile:
-            manifest = Manifest(cache_dir="/my/cache/dir/", json_input=jfile)
+            manifest = Manifest(cache_dir=self.cache_dir, json_input=jfile)
 
         assert manifest.list_metadata_files("Allen-CCF-2020") == [
             'parcellation',
@@ -76,7 +77,7 @@ class TestManifest(unittest.TestCase):
     def test_list_data_files(self):
         """List the data files in a directory."""
         with open(self.manifest_path, "r") as jfile:
-            manifest = Manifest(cache_dir="/my/cache/dir/", json_input=jfile)
+            manifest = Manifest(cache_dir=self.cache_dir, json_input=jfile)
 
         assert manifest.list_data_files("Zhuang-ABCA-1") == [
             'Zhuang-ABCA-1/log2',
@@ -98,7 +99,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifestget_file_attributes returns the
         correct CacheFileAttributes object for a metadata file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -116,7 +117,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for an image_volume file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -136,7 +137,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for a expression_matrix file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -165,7 +166,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for a expression_matrix file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -177,3 +178,24 @@ class TestManifest(unittest.TestCase):
                 directory='WMB-10X',
                 file_name='WMB-10Xv2-Isocortex-2'
             )
+
+    def test_get_directory_size(self):
+        """
+        Test that the correct directory size is returned for a given directory
+        in the manifest.
+        """
+        metadata_dir = "WMB-10X"
+        data_dir = "WMB-10Xv3"
+        small_dir = "Allen-CCF-2020"
+        cache_path = Path(self.cache_dir)
+        with open(self.manifest_path, "r") as jfile:
+            manifest = Manifest(cache_dir=cache_path, json_input=jfile)
+
+        ans = manifest.get_directory_metadata_size(metadata_dir)
+        assert ans == '2.39 GB'
+
+        ans = manifest.get_directory_data_size(data_dir)
+        assert ans == '176.41 GB'
+
+        ans = manifest.get_directory_data_size(small_dir)
+        assert ans == '379.11 MB'
