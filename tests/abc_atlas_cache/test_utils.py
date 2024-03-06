@@ -2,9 +2,10 @@ import hashlib
 import numpy as np
 from abc_atlas_access.abc_atlas_cache import utils
 
+
 def test_file_hash_from_path(tmpdir):
 
-    rng = np.random.RandomState(881)
+    rng = np.random.default_rng(seed=881)
     alphabet = list('abcdefghijklmnopqrstuvwxyz')
     fname = tmpdir / 'hash_dummy.txt'
     with open(fname, 'w') as out_file:

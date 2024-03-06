@@ -13,11 +13,18 @@ from abc_atlas_access.abc_atlas_cache.cloud_cache import (
     S3CloudCache,
     OutdatedManifestWarning
 )
-from .utils import create_manifest_dict, BaseCacheTestCase
+from .utils import create_manifest_dict, BaseCacheTestCase, hash_data
 
 
 @mock_aws
 class TestCache(BaseCacheTestCase):
+
+    def setUp(self):
+        super().setUp()
+        self.old_version = "20230101"
+        self.new_version = "20240101"
+        self.old_manifest_string = f'releases/{self.old_version}/manifest.json'
+        self.new_manifest_string = f'releases/{self.new_version}/manifest.json'
 
     def create_manifests(self, manifest_count):
         manifest_list = []
@@ -42,10 +49,10 @@ class TestCache(BaseCacheTestCase):
         Test that S3CloudCache.list_al_manifests() returns the correct result
         """
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20230101/manifest.json',
+                               Key=self.old_manifest_string,
                                Body=b'123456')
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20240101/manifest.json',
+                               Key=self.new_manifest_string,
                                Body=b'123456')
         self.client.put_object(Bucket=self.test_bucket_name,
                                Key='junk.txt',
@@ -55,8 +62,9 @@ class TestCache(BaseCacheTestCase):
                              bucket_name=self.test_bucket_name)
 
         assert cache.manifest_file_names == [
-            'releases/20230101/manifest.json',
-            'releases/20240101/manifest.json']
+            self.old_manifest_string,
+            self.new_manifest_string
+        ]
 
     def test_list_all_manifests_many(self):
         """
@@ -77,33 +85,33 @@ class TestCache(BaseCacheTestCase):
         Test loading manifests with S3CloudCache
         """
         manifest_1, _, _ = create_manifest_dict(
-            version='20230101',
+            version=self.old_version,
             test_bucket_name=self.test_bucket_name
         )
         manifest_2, _, _ = create_manifest_dict(
-            version='20240101',
+            version=self.new_version,
             test_bucket_name=self.test_bucket_name
         )
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20230101/manifest.json',
+                               Key=self.old_manifest_string,
                                Body=bytes(json.dumps(manifest_1), 'utf-8'))
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20240101/manifest.json',
+                               Key=self.new_manifest_string,
                                Body=bytes(json.dumps(manifest_2), 'utf-8'))
 
         cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
         assert cache.current_manifest is None
-        cache.load_manifest('releases/20230101/manifest.json')
+        cache.load_manifest(self.old_manifest_string)
         assert cache._manifest._data == manifest_1
-        assert cache.version == '20230101'
-        assert cache.current_manifest == 'releases/20230101/manifest.json'
+        assert cache.version == self.old_version
+        assert cache.current_manifest == self.old_manifest_string
 
-        cache.load_manifest('releases/20240101/manifest.json')
+        cache.load_manifest(self.new_manifest_string)
         assert cache._manifest._data == manifest_2
-        assert cache.version == '20240101'
-        assert cache.current_manifest == 'releases/20240101/manifest.json'
+        assert cache.version == self.new_version
+        assert cache.current_manifest == self.new_manifest_string
 
         with pytest.raises(ValueError) as context:
             cache.load_manifest('releases/20200101/manifest.json')
@@ -115,9 +123,7 @@ class TestCache(BaseCacheTestCase):
         Test that cache._file_exists behaves correctly
         """
         data = b'aakderasjklsafetss77123523asf'
-        hasher = hashlib.md5()
-        hasher.update(data)
-        true_checksum = hasher.hexdigest()
+        true_checksum = hash_data(data)
         test_file_path = self.cache_dir / 'junk.txt'
         with open(test_file_path, 'wb') as out_file:
             out_file.write(data)
@@ -126,7 +132,7 @@ class TestCache(BaseCacheTestCase):
 
         # should be true
         good_attribute = CacheFileAttributes(url='http://silly.url.com',
-                                             version='20240101',
+                                             version=self.new_version,
                                              file_size=1234,
                                              local_path=test_file_path,
                                              relative_path='junk.txt',
@@ -137,7 +143,7 @@ class TestCache(BaseCacheTestCase):
         # test when file path is wrong
         bad_path = Path('definitely/not/a/file.txt')
         bad_attribute = CacheFileAttributes(url='http://silly.url.com',
-                                            version='20240101',
+                                            version=self.new_version,
                                             file_size=1234,
                                             local_path=bad_path,
                                             relative_path='junk.txt',
@@ -148,7 +154,7 @@ class TestCache(BaseCacheTestCase):
 
         # test when path exists but is not a file
         bad_attribute = CacheFileAttributes(url='http://silly.url.com',
-                                            version='20240101',
+                                            version=self.new_version,
                                             file_size=1234,
                                             local_path=self.cache_dir,
                                             relative_path='junk.txt',
@@ -162,10 +168,8 @@ class TestCache(BaseCacheTestCase):
         """
         Test that S3CloudCache._download_file behaves as expected
         """
-        hasher = hashlib.md5()
         data = b'11235813kjlssergwesvsdd'
-        hasher.update(data)
-        true_checksum = hasher.hexdigest()
+        true_checksum = hash_data(data)
         relative_path = 'data/data_file.txt'
 
         self.client.put_object(Bucket=self.test_bucket_name,
@@ -176,9 +180,9 @@ class TestCache(BaseCacheTestCase):
 
         expected_path = self.cache_dir / 'data/data_file.txt'
 
-        url = f'http://{self.test_bucket_name}.s3.amazonaws.com/data/data_file.txt'
+        url = f'http://{self.test_bucket_name}.s3.amazonaws.com/data/data_file.txt'  # noqa: E501
         good_attributes = CacheFileAttributes(url=url,
-                                              version='20240101',
+                                              version=self.new_version,
                                               file_size=1234,
                                               local_path=expected_path,
                                               relative_path=relative_path,
@@ -198,10 +202,8 @@ class TestCache(BaseCacheTestCase):
         Test that S3CloudCache._download_file will re-download a file
         when it has been removed from the local system
         """
-        hasher = hashlib.md5()
         data = b'11235813kjlssergwesvsdd'
-        hasher.update(data)
-        true_checksum = hasher.hexdigest()
+        true_checksum = hash_data(data)
         relative_path = 'data/data_file.txt'
 
         self.client.put_object(Bucket=self.test_bucket_name,
@@ -212,9 +214,9 @@ class TestCache(BaseCacheTestCase):
 
         expected_path = self.cache_dir / relative_path
 
-        url = f'http://{self.test_bucket_name}.s3.amazonaws.com/data/data_file.txt'
+        url = f'http://{self.test_bucket_name}.s3.amazonaws.com/data/data_file.txt'  # noqa: E501
         good_attributes = CacheFileAttributes(url=url,
-                                              version='20240101',
+                                              version=self.new_version,
                                               file_size=1234,
                                               local_path=expected_path,
                                               relative_path=relative_path,
@@ -245,12 +247,10 @@ class TestCache(BaseCacheTestCase):
         Test that S3CloudCache.download_data() correctly downloads files from
         S3
         """
-        hasher = hashlib.md5()
         data = b'11235813kjlssergwesvsdd'
-        hasher.update(data)
-        true_checksum = hasher.hexdigest()
+        true_checksum = hash_data(data)
 
-        version = '20240101'
+        version = self.new_version
         manifest, metadata_path, data_path = create_manifest_dict(
             version=version,
             test_bucket_name=self.test_bucket_name,
@@ -265,12 +265,12 @@ class TestCache(BaseCacheTestCase):
                                Body=data)
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key=f'releases/{version}/manifest.json',
+                               Key=self.new_manifest_string,
                                Body=bytes(json.dumps(manifest), 'utf-8'))
 
         cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
 
-        cache.load_manifest(f'releases/{version}/manifest.json')
+        cache.load_manifest(self.new_manifest_string)
 
         expected_path = (self.cache_dir / data_path)
         assert not expected_path.exists()
@@ -317,8 +317,8 @@ class TestCache(BaseCacheTestCase):
 
     def test_outdated_manifest_warning(self):
         """
-        Test that a warning is raised the first time you try to load an outdated
-        manifest
+        Test that a warning is raised the first time you try to load an
+        outdated manifest
         """
         manifest_list = self.create_manifests(manifest_count=5)
 
@@ -458,12 +458,10 @@ class TestCache(BaseCacheTestCase):
         Test that S3CloudCache.download_data() correctly files in the directory
         form S3.
         """
-        hasher = hashlib.md5()
         data = b'11235813kjlssergwesvsdd'
-        hasher.update(data)
-        true_checksum = hasher.hexdigest()
+        true_checksum = hash_data(data)
 
-        version = '20240101'
+        version = self.new_version
         manifest, metadata_path, data_path = create_manifest_dict(
             version=version,
             test_bucket_name=self.test_bucket_name,
@@ -478,12 +476,12 @@ class TestCache(BaseCacheTestCase):
                                Body=data)
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key=f'releases/{version}/manifest.json',
+                               Key=self.new_manifest_string,
                                Body=bytes(json.dumps(manifest), 'utf-8'))
 
         cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
 
-        cache.load_manifest(f'releases/{version}/manifest.json')
+        cache.load_manifest(self.new_manifest_string)
 
         expected_data_path = (self.cache_dir / data_path)
         assert not expected_data_path.exists()
@@ -515,7 +513,7 @@ class TestCache(BaseCacheTestCase):
         """
         data = b'11235813kjlssergwesvsdd'
 
-        version = '20240101'
+        version = self.new_version
         manifest, metadata_path, data_path = create_manifest_dict(
             version=version,
             test_bucket_name=self.test_bucket_name,
@@ -530,12 +528,12 @@ class TestCache(BaseCacheTestCase):
                                Body=data)
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key=f'releases/{version}/manifest.json',
+                               Key=self.new_manifest_string,
                                Body=bytes(json.dumps(manifest), 'utf-8'))
 
         cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
 
-        cache.load_manifest(f'releases/{version}/manifest.json')
+        cache.load_manifest(self.new_manifest_string)
 
         expected_data_path = (self.cache_dir / data_path)
         assert not expected_data_path.exists()

@@ -15,15 +15,22 @@ from abc_atlas_access.abc_atlas_cache.file_attributes import CacheFileAttributes
 @mock_aws
 class TestCompareManifests(BaseCacheTestCase):
 
+    def setUp(self):
+        super().setUp()
+        self.old_version = '20230101'
+        self.new_version = '20240101'
+        self.old_manifest = f'releases/{self.old_version}/manifest.json'
+        self.new_manifest = f'releases/{self.new_version}/manifest.json'
+
     def test_compare_manifests(self):
         """Test that the expected comparison between two manifests is returned.
         """
         manifest_1, _, _ = create_manifest_dict(
-            version='20230101',
+            version=self.old_version,
             test_bucket_name=self.test_bucket_name
         )
         manifest_2, _, _ = create_manifest_dict(
-            version='20240101',
+            version=self.new_version,
             test_bucket_name=self.test_bucket_name
         )
 
@@ -32,7 +39,7 @@ class TestCompareManifests(BaseCacheTestCase):
             version='junk',
             file_size=1234,
             local_path='junk',
-            relative_path='expression_matrices/first_dir/20230101/data1.h5ad',
+            relative_path=f'expression_matrices/first_dir/{self.old_version}/data1.h5ad',  # noqa: E501
             file_type='data',
             file_hash='junk'
         )
@@ -41,7 +48,7 @@ class TestCompareManifests(BaseCacheTestCase):
             version='junk',
             file_size=1234,
             local_path='junk',
-            relative_path='expression_matrices/second_dir/20240101/data2.h5ad',
+            relative_path=f'expression_matrices/second_dir/{self.new_version}/data2.h5ad',  # noqa: E501
             file_type='data',
             file_hash='junk'
         )
@@ -64,10 +71,10 @@ class TestCompareManifests(BaseCacheTestCase):
         )
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20230101/manifest.json',
+                               Key=self.old_manifest,
                                Body=bytes(json.dumps(manifest_1), 'utf-8'))
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20240101/manifest.json',
+                               Key=self.new_manifest,
                                Body=bytes(json.dumps(manifest_2), 'utf-8'))
 
         expected = {
@@ -90,12 +97,12 @@ class TestCompareManifests(BaseCacheTestCase):
         }
 
         cloud_cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
-        cloud_cache.load_manifest('releases/20230101/manifest.json')
-        cloud_cache.load_manifest('releases/20240101/manifest.json')
+        cloud_cache.load_manifest(self.old_manifest)
+        cloud_cache.load_manifest(self.new_manifest)
 
         comparison = cloud_cache.compare_manifests(
-            manifest_newer_name='releases/20240101/manifest.json',
-            manifest_older_name='releases/20230101/manifest.json'
+            manifest_newer_name=self.new_manifest,
+            manifest_older_name=self.old_manifest
         )
         assert comparison == expected
 
@@ -103,27 +110,27 @@ class TestCompareManifests(BaseCacheTestCase):
         """
         """
         manifest_1, _, _ = create_manifest_dict(
-            version='20230101',
+            version=self.old_version,
             test_bucket_name=self.test_bucket_name
         )
         manifest_2, _, _ = create_manifest_dict(
-            version='20240101',
+            version=self.new_version,
             test_bucket_name=self.test_bucket_name
         )
 
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20230101/manifest.json',
+                               Key=self.old_manifest,
                                Body=bytes(json.dumps(manifest_1), 'utf-8'))
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key='releases/20240101/manifest.json',
+                               Key=self.new_manifest,
                                Body=bytes(json.dumps(manifest_2), 'utf-8'))
 
         cloud_cache = S3CloudCache(self.cache_dir, self.test_bucket_name)
-        cloud_cache.load_manifest('releases/20230101/manifest.json')
-        cloud_cache.load_manifest('releases/20240101/manifest.json')
+        cloud_cache.load_manifest(self.old_manifest)
+        cloud_cache.load_manifest(self.new_manifest)
 
         with pytest.raises(ValueError, match='The manifest input first'):
             cloud_cache.compare_manifests(
-                manifest_newer_name='releases/20230101/manifest.json',
-                manifest_older_name='releases/20240101/manifest.json'
+                manifest_newer_name=self.old_manifest,
+                manifest_older_name=self.new_manifest
             )

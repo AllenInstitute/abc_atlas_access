@@ -1,14 +1,12 @@
-import hashlib
 import json
 import pytest
-from pathlib import Path
-from unittest import mock
 from moto import mock_aws
 from .utils import (
     BaseCacheTestCase,
     create_manifest_dict,
     add_directory_to_manifest,
-    add_file_to_manifest
+    add_file_to_manifest,
+    hash_data
 )
 from abc_atlas_access.abc_atlas_cache.abc_project_cache import AbcProjectCache
 from abc_atlas_access.abc_atlas_cache.file_attributes import \
@@ -23,18 +21,17 @@ class TestAbcProjectCache(BaseCacheTestCase):
 
         self.new_version = "20240101"
         self.old_version = "20230101"
+        self.new_file = "new_data/log2"
+        self.old_file = "old_data/log2"
+        self.data_file = "data_file/log2"
 
-        hasher = hashlib.md5()
         old_data = b'11235813kjlssergwesvsdd'
-        hasher.update(old_data)
-        old_checksum = hasher.hexdigest()
+        old_checksum = hash_data(old_data)
 
-        hasher = hashlib.md5()
         new_data = b'8675309jenny'
-        hasher.update(new_data)
-        new_checksum = hasher.hexdigest()
+        new_checksum = hash_data(new_data)
 
-        self.manifest_1, self.old_metadata_path, self.old_data_path = create_manifest_dict(  # noqa: E501
+        self.old_manifest, self.old_metadata_path, self.old_data_path = create_manifest_dict(  # noqa: E501
             version=self.old_version,
             test_bucket_name=self.test_bucket_name,
             file_hash=old_checksum
@@ -46,7 +43,7 @@ class TestAbcProjectCache(BaseCacheTestCase):
                                Key=self.old_data_path,
                                Body=old_data)
 
-        self.manifest_2, self.new_metadata_path, self.new_data_path = create_manifest_dict(  # noqa: E501
+        self.new_manifest, self.new_metadata_path, self.new_data_path = create_manifest_dict(  # noqa: E501
             version=self.new_version,
             test_bucket_name=self.test_bucket_name,
             file_hash=new_checksum
@@ -58,70 +55,66 @@ class TestAbcProjectCache(BaseCacheTestCase):
                                Key=self.new_data_path,
                                Body=new_data)
 
-        hasher = hashlib.md5()
-        file_1 = b'skibbitybeebopSkatmansworld'
-        hasher.update(file_1)
-        file_1_checksum = hasher.hexdigest()
+        old_file = b'skibbitybeebopSkatmansworld'
+        old_file_checksum = hash_data(old_file)
 
-        hasher = hashlib.md5()
-        file_2 = b'sendingoutanSOS'
-        hasher.update(file_2)
-        file_2_checksum = hasher.hexdigest()
+        new_file = b'sendingoutanSOS'
+        new_file_checksum = hash_data(new_file)
 
-        self.file_attr_1 = CacheFileAttributes(
+        self.old_file_attr = CacheFileAttributes(
             url='junk',
             version=self.old_version,
             file_size=1234,
             local_path='junk',
-            relative_path='expression_matrices/first_dir/20230101/data1.h5ad',
+            relative_path=f'expression_matrices/first_dir/{self.old_version}/{self.old_file.split("/")[0]}.h5ad',  # noqa: E501
             file_type='data',
-            file_hash=file_1_checksum
+            file_hash=old_file_checksum
         )
-        self.file_attr_2 = CacheFileAttributes(
+        self.new_file_attr = CacheFileAttributes(
             url='junk',
             version=self.new_version,
             file_size=90210,
             local_path='junk',
-            relative_path='expression_matrices/second_dir/20240101/data2.h5ad',
+            relative_path=f'expression_matrices/second_dir/{self.new_version}/{self.new_file.split("/")[0]}.h5ad',  # noqa: E501
             file_type='data',
-            file_hash=file_2_checksum
+            file_hash=new_file_checksum
         )
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key=self.file_attr_1.relative_path,
-                               Body=file_1)
+                               Key=self.old_file_attr.relative_path,
+                               Body=old_file)
         self.client.put_object(Bucket=self.test_bucket_name,
-                               Key=self.file_attr_2.relative_path,
-                               Body=file_2)
+                               Key=self.new_file_attr.relative_path,
+                               Body=new_file)
 
-        self.manifest_1 = add_directory_to_manifest(
-            file_attribute=self.file_attr_1,
-            manifest=self.manifest_1
+        self.old_manifest = add_directory_to_manifest(
+            file_attribute=self.old_file_attr,
+            manifest=self.old_manifest
         )
-        self.manifest_2 = add_directory_to_manifest(
-            file_attribute=self.file_attr_2,
-            manifest=self.manifest_2
+        self.new_manifest = add_directory_to_manifest(
+            file_attribute=self.new_file_attr,
+            manifest=self.new_manifest
         )
-        self.manifest_1 = add_file_to_manifest(
-            file_attribute=self.file_attr_1,
-            manifest=self.manifest_1
+        self.old_manifest = add_file_to_manifest(
+            file_attribute=self.old_file_attr,
+            manifest=self.old_manifest
         )
-        self.manifest_2 = add_file_to_manifest(
-            file_attribute=self.file_attr_2,
-            manifest=self.manifest_2
+        self.new_manifest = add_file_to_manifest(
+            file_attribute=self.new_file_attr,
+            manifest=self.new_manifest
         )
 
         self.client.put_object(
             Bucket=self.test_bucket_name,
             Key=f'releases/{self.old_version}/manifest.json',
-            Body=bytes(json.dumps(self.manifest_1), 'utf-8')
+            Body=bytes(json.dumps(self.old_manifest), 'utf-8')
         )
         self.client.put_object(
             Bucket=self.test_bucket_name,
             Key=f'releases/{self.new_version}/manifest.json',
-            Body=bytes(json.dumps(self.manifest_2), 'utf-8')
+            Body=bytes(json.dumps(self.new_manifest), 'utf-8')
         )
 
-    def test_abc_projet_cache_s3(self):
+    def test_abc_project_cache_s3(self):
         """Run a suite of integration tests on the AbcProjectCache class
         from_s3_cache.
         """
@@ -140,20 +133,20 @@ class TestAbcProjectCache(BaseCacheTestCase):
             f'releases/{self.new_version}/manifest.json'
         ]
         assert cache.list_directories == ["second_dir", "test_directory"]
-        assert cache.list_data_files("second_dir") == ["data2/log2"]
-        assert cache.list_data_files("test_directory") == ["data_file/log2"]
+        assert cache.list_data_files("second_dir") == [self.new_file]
+        assert cache.list_data_files("test_directory") == [self.data_file]
         assert cache.list_metadata_files("test_directory") == [
             "metadata_file"
         ]
         # Test the directory from the older manifest is not available.
         with pytest.raises(KeyError, match="first_dir"):
-            assert cache.list_data_files("first_dir")
+            cache.list_data_files("first_dir")
 
         # Download data and test that the downloaded file exists on disk.
         data_path = cache.get_data_path(directory="second_dir",
-                                        file_name="data2/log2")
+                                        file_name=self.new_file)
         assert data_path.exists()
-        assert data_path == self.cache_dir / self.file_attr_2.relative_path
+        assert data_path == self.cache_dir / self.new_file_attr.relative_path
         data_path = cache.get_data_path(directory="test_directory",
                                         file_name="data_file/log2")
         assert data_path.exists()
@@ -173,19 +166,21 @@ class TestAbcProjectCache(BaseCacheTestCase):
             f'releases/{self.new_version}/manifest.json'
         ]
         assert cache.list_directories == ["first_dir", "test_directory"]
-        assert cache.list_data_files("first_dir") == ["data1/log2"]
-        assert cache.list_data_files("test_directory") == ["data_file/log2"]
+        assert cache.list_data_files("first_dir") == [self.old_file]
+        assert cache.list_data_files("test_directory") == [self.data_file]
         assert cache.list_metadata_files("test_directory") == [
             "metadata_file"
         ]
         # Test that the newer manifest's directory is not present.
         with pytest.raises(KeyError, match="second_dir"):
-            assert cache.list_data_files("second_dir")
+            cache.list_data_files("second_dir")
 
         # Download the older files and test for their expected paths.
         data_paths = cache.get_directory_data(directory="first_dir")
         assert data_paths[0].exists()
-        assert data_paths == [self.cache_dir / self.file_attr_1.relative_path]
+        assert data_paths == [
+            self.cache_dir / self.old_file_attr.relative_path
+        ]
         data_paths = cache.get_directory_data(directory="test_directory")
         assert data_paths[0].exists()
         assert data_paths == [self.cache_dir / self.old_data_path]
@@ -195,11 +190,11 @@ class TestAbcProjectCache(BaseCacheTestCase):
         assert metadata_paths[0].exists()
         assert metadata_paths == [self.cache_dir / self.old_metadata_path]
 
-        # Reload the most recent manifest and test that is as as expected.
+        # Reload the most recent manifest and test that is as expected.
         cache.load_latest_manifest()
         assert cache.current_manifest == f'releases/{self.new_version}/manifest.json'  # noqa: E501
 
-    def test_abc_projet_cache_local_cache(self):
+    def test_abc_project_cache_local_cache(self):
         """Run a suite of integration tests on the AbcProjectCache class
         from_local_cache.
         """
@@ -208,9 +203,9 @@ class TestAbcProjectCache(BaseCacheTestCase):
 
         # Download data into the local cache.
         cache.get_data_path(directory="second_dir",
-                            file_name="data2/log2")
+                            file_name=self.new_file)
         cache.get_data_path(directory="test_directory",
-                            file_name="data_file/log2")
+                            file_name=self.data_file)
         cache.get_metadata_path(directory="test_directory",
                                 file_name="metadata_file")
 
@@ -219,17 +214,28 @@ class TestAbcProjectCache(BaseCacheTestCase):
 
         # Initialize a new cache object from the local cache.
         cache = AbcProjectCache.from_local_cache(self.cache_dir)
-        assert cache.current_manifest == f'releases/{self.new_version}/manifest.json'
+        assert cache.current_manifest == f'releases/{self.new_version}/manifest.json'  # noqa: E501
         assert cache.list_all_downloaded_manifests == [
             f'releases/{self.new_version}/manifest.json'
         ]
+        assert cache.list_manifest_file_names == [
+            f'releases/{self.new_version}/manifest.json'
+        ]
+        assert cache.list_directories == ["second_dir", "test_directory"]
+        assert cache.list_data_files("second_dir") == [self.new_file]
+        assert cache.list_data_files("test_directory") == [self.data_file]
+        assert cache.list_metadata_files("test_directory") == [
+            "metadata_file"
+        ]
+        with pytest.raises(KeyError, match="first_dir"):
+            cache.list_data_files("first_dir")
 
         data_path = cache.get_data_path(directory="second_dir",
-                                        file_name="data2/log2")
+                                        file_name=self.new_file)
         assert data_path.exists()
-        assert data_path == self.cache_dir / self.file_attr_2.relative_path
+        assert data_path == self.cache_dir / self.new_file_attr.relative_path
         data_path = cache.get_data_path(directory="test_directory",
-                                        file_name="data_file/log2")
+                                        file_name=self.data_file)
         assert data_path.exists()
         assert data_path == self.cache_dir / self.new_data_path
         metadata_path = cache.get_metadata_path(directory="test_directory",

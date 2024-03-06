@@ -1,5 +1,6 @@
 from typing import Optional
 import boto3
+import hashlib
 from moto import mock_aws
 import unittest
 import tempfile
@@ -21,21 +22,8 @@ def create_manifest_dict(version: str,
                          metadata_file: str = 'metadata_file.csv',
                          test_directory: str = 'test_directory',
                          file_hash: Optional[str] = None,
-                         location: str = 'us-east-1') -> dict:
+                         location: str = 'us-east-1') -> tuple[dict, str, str]:
     """
-    Create a manifest dictionary for testing.
-
-    Parameters
-    ----------
-    version: str
-        The version of the test manifest.
-    test_bucket_name: str
-        The name of the test bucket.
-
-    Returns
-    -------
-    test_manifest: dict
-        Dictionary of test manifest values.
     """
     if file_hash is None:
         file_hash = f'abcd{version}'
@@ -173,6 +161,12 @@ def add_directory_to_manifest(
     manifest["file_listing"][directory] = {"expression_matrices": {},
                                            "metadata": {}}
     return manifest
+
+
+def hash_data(data):
+    hasher = hashlib.md5()
+    hasher.update(data)
+    return hasher.hexdigest()
 
 
 @mock_aws
