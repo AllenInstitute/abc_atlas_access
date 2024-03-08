@@ -7,7 +7,12 @@ insights to the ABC Atlas, this groundbreaking platform will keep growing,
 opening up endless possibilities for groundbreaking discoveries and
 breakthroughs in neuroscience. With the ABC Atlas, researchers everywhere can
 gain new insights into the brain’s complex workings, advancing our
-understanding of this amazing organ in ways we never thought possible.
+understanding of this amazing organ in ways we never thought possible. The
+ABC Atlas can be accessed at [here](https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas)
+and is the primary method of interacting with these data. Any questions or
+issues associated with the ABC Atlas are best directed to the [Allen Institute
+Commnituy Forum](https://community.brain-map.org/). This repository is intended
+for users who wish to download the ABC Atlas data and processes it locally.
 
 Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an
 S3 bucket as a AWS Public Dataset, [arn:aws:s3:::allen-brain-cell-atlas](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html).
@@ -55,7 +60,7 @@ Available notebooks:
 ## Release Notes
 * **[Spring 2024 Public Beta (version 20240330)]**
   * Added Whole Human Brain transcriptomic, taxonomy and clustering datasets
-    from Siletti et al. 2022 to the ABC Atlas.
+    from Siletti et al. 2023 to the ABC Atlas.
   * Added new AbcProjectCache python class to facilitate data download and
     usage.
     * Added file hashes to the manifest.json to facilitate data integrity
