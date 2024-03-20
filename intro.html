@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/simple_style.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -170,10 +171,11 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/data_release_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
@@ -185,25 +187,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
@@ -215,14 +223,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="notebooks/merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
@@ -400,7 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -416,6 +432,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes">Release Notes</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -427,80 +451,81 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="allen-brain-cell-atlas-data-access">
 <h1>Allen Brain Cell Atlas - Data Access<a class="headerlink" href="#allen-brain-cell-atlas-data-access" title="Permalink to this heading">#</a></h1>
-<p>The Allen Brain Cell Atlas (ABC Atlas) aims to empower researchers worldwide to explore and analyze multiple whole-brain datasets simultaneously. As the Allen Institute and its collaborators continue to add new modalities, species, and insights to the ABC Atlas, this groundbreaking platform will keep growing, opening up endless possibilities for groundbreaking discoveries and breakthroughs in neuroscience. With the ABC Atlas, researchers everywhere can gain new insights into the brain’s complex workings, advancing our understanding of this amazing organ in ways we never thought possible.</p>
-<p>Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>. No account or login is required for access. The purpose of this repo is to provide an overview of the available data, how to download and use it through example use cases.</p>
-<p>The fall 2023 public beta data release includes:</p>
+<p>The Allen Brain Cell Atlas (ABC Atlas) aims to empower researchers worldwide to
+explore and analyze multiple whole-brain datasets simultaneously. As the Allen
+Institute and its collaborators continue to add new modalities, species, and
+insights to the ABC Atlas, this groundbreaking platform will keep growing,
+opening up endless possibilities for groundbreaking discoveries and
+breakthroughs in neuroscience. With the ABC Atlas, researchers everywhere can
+gain new insights into the brain’s complex workings, advancing our
+understanding of this amazing organ in ways we never thought possible. The
+ABC Atlas can be accessed at <a class="reference external" href="https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas">here</a>
+and is the primary method of interacting with these data. Any questions or
+issues associated with the ABC Atlas are best directed to the <a class="reference external" href="https://community.brain-map.org/">Allen Institute
+Commnituy Forum</a>. This repository is intended
+for users who wish to download the ABC Atlas data and processes it locally.</p>
+<p>Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an
+S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>.
+No account or login is required for access. The purpose of this repo is to
+provide an overview of the available data, how to download and use it through
+example use cases.</p>
+<p>The spring 2024 public beta data release includes:</p>
 <ul class="simple">
-<li><p><strong>Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</strong></p>
-<ul>
-<li><p>1.7 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv2 chemistry (<a class="reference internal" href="descriptions/WMB-10Xv2.html"><span class="doc std std-doc">WMB-10Xv2</span></a>)</p></li>
-<li><p>2.3 million single cell transcriptomes spanning the whole adult mouse brain using 10Xv3 chemistry (<a class="reference internal" href="descriptions/WMB-10Xv3.html"><span class="doc std std-doc">WMB-10Xv3</span></a>)</p></li>
-<li><p>1687 single cell transcriptomes spanning the whole adult mouse brain using the 10X Multiome chemistry (<a class="reference internal" href="descriptions/WMB-10XMulti.html"><span class="doc std std-doc">WMB-10XMulti</span></a>)</p></li>
-<li><p>Clustering analysis of 4.0 million single cell transcriptomes spanning the whole adult mouse brain combining the 10Xv2, 10Xv3 and 10XMulti datasets (<a class="reference internal" href="descriptions/WMB-10X.html"><span class="doc std std-doc">WMB-10X</span></a>)</p></li>
-<li><p>A four level whole adult mouse brain taxonomy of cell types (<a class="reference internal" href="descriptions/WMB-taxonomy.html"><span class="doc std std-doc">WMB-taxonomy</span></a>)</p></li>
-<li><p>3.9 million cell spatial transcriptomics dataset spanning a single adult mouse brain with a 500 gene panel and mapped to the whole mouse brain taxonomy (<a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850.html"><span class="doc std std-doc">MERFISH-C57BL6J-638850</span></a>)</p></li>
-<li><p>Definition of 8 cell types neighborhoods and UMAP embeddings for fine grain visualization and analysis of neuronal types within and between brain regions (<a class="reference internal" href="descriptions/WMB-neighborhoods.html"><span class="doc std std-doc">WMB-neighborhoods</span></a>)</p></li>
-<li><p>An updated Allen CCFv3 with additional annotations for layers of Ammon’s horns, main olfactory blub and a simplifed 5-level anatomical heirarchy (<a class="reference internal" href="descriptions/Allen-CCF-2020.html"><span class="doc std std-doc">Allen-CCF-2020</span></a>)</p></li>
-<li><p>CCF mapped coordinates for cells in the whole brain spatial transcriptomics dataset (<a class="reference internal" href="descriptions/MERFISH-C57BL6J-638850-CCF.html"><span class="doc std std-doc">MERFISH-C57BL6J-638850-CCF</span></a>)</p></li>
+<li><p><strong><a class="reference internal" href="descriptions/WMB_dataset.html"><span class="doc std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Zhuang_dataset.html"><span class="doc std std-doc">A molecularly defined and spatially resolved cell atlas of the whole mouse brain</span></a>
+(Xiaowei Zhuang)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/WHB_dataset.html"><span class="doc std std-doc">Human whole-brain transcriptomic cell type atlas</span></a>
+(Kimberly Siletti)</strong></p></li>
 </ul>
-</li>
-<li><p><strong>A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</strong></p>
-<ul>
-<li><p>4.2 million cell spatial transcriptomics dataset spanning 147 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-1.html"><span class="doc std std-doc">Zhuang-ABCA-1</span></a>; 2.8 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-<li><p>1.9 million cell spatial transcriptomics dataset spanning 66 coronal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-2.html"><span class="doc std std-doc">Zhuang-ABCA-2</span></a>; 1.2 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-<li><p>2.1 million cell spatial transcriptomics dataset spanning 23 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-3.html"><span class="doc std std-doc">Zhuang-ABCA-3</span></a>; 1.6 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-<li><p>0.22 million cell spatial transcriptomics dataset spanning 3 sagittal sections with a 1122 gene panel and mapped to the whole mouse brain taxonomy and Allen CCFv3 (<a class="reference internal" href="descriptions/Zhuang-ABCA-4.html"><span class="doc std std-doc">Zhuang-ABCA-4</span></a>; 0.16 million cells passed cell classification confidence score threshold and displayed in the ABC atlas)</p></li>
-</ul>
-</li>
-</ul>
-<p>Each release has an associated <strong>manifest.json</strong> which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.</p>
-<p>Expression matrices are stored in the <a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and needs to be downloaded to a local file system for usage. To make data transfer, download and access more efficient,
-the 10x transcriptomics datasets have been subdivided into smaller packages grouped by method and anatomical origin. The notebooks provide example code on how to access data across these individual files.</p>
+<p>We provide a lightweight python object, the AbcProjectCache, to handle
+downloading of the data and managing different release versions for the user.
+See the <a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc">Getting Started</span></a> notebook for more
+details and examples on how to use the AbcProjectCache.</p>
+<p>Expression matrices are stored in the
+<a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and need to
+be downloaded to a local file system for usage. To make data transfer, download
+and access more efficient, the 10x transcriptomics datasets have been
+subdivided into smaller packages grouped by method and anatomical origin. The
+notebooks provide example code on how to access data across these individual
+files using the AbcProjectCache.</p>
 <p>Available notebooks:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc"><strong>Getting started</strong></span></a>: learn how to use the manifest.json file to faciliate data download and usage.
+<li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc"><strong>Getting started</strong></span></a>: learn how to use the
+AbcProjectCache to facilitate data download and usage.
 [<em>notebooks/getting_started.ipynb</em>]</p></li>
-<li><p><strong>Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</strong></p>
+<li><p><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html"><span class="doc std std-doc"><strong>Loading genes from expression matrix data</strong></span></a>:
+learn how to select genes from 10X expression matricies and combine them with
+the cell metadata.</p></li>
+<li><p><strong><a class="reference internal" href="descriptions/notebook_subtitle1.html"><span class="doc std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/notebook_subtitle4.html"><span class="doc std std-doc">A molecularly defined and spatially resolved cell atlas of the whole
+mouse brain</span></a>
+(Xiaowei Zhuang)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/WHB_notebooks.html"><span class="doc std std-doc">Human whole-brain transcriptomic cell type atlas</span></a>
+(Kimberly Siletti)</strong></p></li>
+</ul>
+<section id="release-notes">
+<h2>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>[Spring 2024 Public Beta (version 20240330)]</strong></p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/cluster_annotation_tutorial.html"><span class="doc std std-doc"><strong>10x scRNA-seq clustering analysis and annotation</strong></span></a>: learn about the whole mouse brain taxonomy through some example use cases and visualization.
-[<em>notebooks/cluster_annotation_tutorial.ipynb</em>]</p></li>
-<li><p><strong>10x scRNA-seq gene expression data</strong></p>
+<li><p>Added Whole Human Brain transcriptomic, taxonomy and clustering datasets
+from Siletti et al. 2023 to the ABC Atlas.</p></li>
+<li><p>Added new AbcProjectCache python class to facilitate data download and
+usage.</p>
 <ul>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the 10x dataset through some example use cases and visualization of cells in the thalamus.
-[<em>notebooks/10x_snRNASeq_tutorial_part_1.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn how to iterate through all the data packages, to access data for whole brain example use cases in part 2b.
-[<em>notebooks/10x_snRNASeq_tutorial_part_2a.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/10x_snRNASeq_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.
-[<em>notebooks/10x_snRNASeq_tutorial_part_2b.ipynb</em>]</p></li>
+<li><p>Added file hashes to the manifest.json to facilitate data integrity
+checks in the cache class.</p></li>
 </ul>
 </li>
-<li><p><strong>MERFISH whole brain spatial transcriptomics</strong></p>
-<ul>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization for a single brain section.
-[<em>notebooks/merfish_tutorial_part_1.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn to access data and prepare for whole brain example use cases in part 2b.
-[<em>notebooks/merfish_tutorial_part_2a.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: explore the whole brain data through visualization and analyses of a set of genes of interest.
-[<em>notebooks/merfish_tutorial_part_2b.ipynb</em>]</p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="notebooks/cluster_groups_and_embeddings_tutorial.html"><span class="doc std std-doc"><strong>Cluster groups and embeddings</strong></span></a>: learn about cell types neighborhoods and neighborhood specific UMAP embeddings through example use cases.
-[<em>notebooks/cluster_groups_and_embeddings_tutorial.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/cluster_neighborhood_gallery.html"><span class="doc std std-doc"><strong>Cell type neighborhood gallery</strong></span></a>: explore and visualize a set of cell types neighborhoods.
-[<em>notebooks/cluster_neighborhood_gallery.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/ccf_and_parcellation_annotation_tutorial.html"><span class="doc std std-doc"><strong>Allen CCFv3 parcellation and annotation</strong></span></a>: learn about the Allen CCFv3 and a simplified 5-level anatomical heirarchy through some example use cases and visualization.
-[<em>notebooks/ccf_and_parcellation_annotation_tutorial.ipynb</em>]</p></li>
-<li><p><a class="reference internal" href="notebooks/merfish_ccf_registration_tutorial.html"><span class="doc std std-doc"><strong>MERFISH CCF mapped coordinates</strong></span></a>: learn about how to download and use CCF mapped coordinates through some example use cases and visualization.
-[<em>notebooks/merfish_ccf_registration_tutorial.ipynb</em>]</p></li>
-</ul>
-</li>
-<li><p><strong>A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</strong></p>
-<ul>
-<li><p><a class="reference internal" href="notebooks/zhuang_merfish_tutorial.html"><span class="doc std std-doc"><strong>MERFISH whole mouse brain spatial transcriptomics</strong></span></a>: learn about the MERFISH dataset through some example use cases and visualization.
-[<em>notebooks/zhuang_merfish_tutorial.ipynb</em>]</p></li>
+<li><p>Updated all jupyter notebooks to use the new AbcProjectCache class.</p></li>
+<li><p>Added new notebooks for the whole human brain datasets.</p></li>
+<li><p>Re-organized jupyter-book webpages.</p></li>
 </ul>
 </li>
 </ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -556,6 +581,20 @@ the 10x transcriptomics datasets have been subdivided into smaller packages grou
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes">Release Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

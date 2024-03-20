@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -171,10 +172,11 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
@@ -186,25 +188,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
@@ -216,14 +224,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
@@ -451,30 +465,26 @@ document.write(`
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pathlib</span>
+
+<span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The prerequisite for running this notebook is that the data have been downloaded to local directory maintaining the organization from the manifest.json. <strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
+<p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;20231215&#39;</span>
-<span class="n">download_base</span> <span class="o">=</span> <span class="s1">&#39;../../abc_download_root&#39;</span>
-
-<span class="n">use_local_cache</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">manifest_path</span> <span class="o">=</span> <span class="s1">&#39;releases/</span><span class="si">%s</span><span class="s1">/manifest.json&#39;</span> <span class="o">%</span> <span class="n">version</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">use_local_cache</span> <span class="p">:</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/&#39;</span> <span class="o">+</span> <span class="n">manifest_path</span>
-    <span class="n">manifest</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="k">else</span> <span class="p">:</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">download_base</span><span class="p">,</span><span class="n">manifest_path</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">manifest</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -482,12 +492,9 @@ document.write(`
 <p>Read in the list of neighborhood spatial embedding maps</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
-<span class="n">rpath</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;dimension_reduction&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;csv&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
-<span class="n">maps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-<span class="n">maps</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of maps:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">maps</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maps</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;dimension_reduction&#39;</span><span class="p">)</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of maps:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">maps</span><span class="p">))</span>
 <span class="n">maps</span>
 </pre></div>
 </div>
@@ -591,12 +598,13 @@ document.write(`
 <p>Read in the extended 10x and MERFISH cell metadata created in the cluster neighborhood tutorial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
-<span class="n">rpath</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;10x_cell_metadata_with_group_membership&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;csv&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
-<span class="n">cell_10x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;neurotransmitter&quot;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
-<span class="n">cell_10x</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of 10x cells:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cell_10x</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_10x</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;10x_cell_metadata_with_group_membership&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;neurotransmitter&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">cell_10x</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of 10x cells:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell_10x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -608,12 +616,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
-<span class="n">rpath</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;merfish_cell_metadata_with_group_membership&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;csv&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
-<span class="n">cell_merfish</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span><span class="s2">&quot;neurotransmitter&quot;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
-<span class="n">cell_merfish</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of merfish cells:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_merfish</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;merfish_cell_metadata_with_group_membership&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;neurotransmitter&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">cell_merfish</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of merfish cells:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -626,13 +635,13 @@ document.write(`
 <p>Create a set of helper functions to read in the neighborhood specific UMAP coordinates and to plot cells in a UMAP or anatomical context and apply them a set of neighborhood</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fetch_coord</span><span class="p">(</span> <span class="n">group</span> <span class="p">)</span> <span class="p">:</span>
-    <span class="n">mlabel</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">group</span><span class="p">,</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
-    <span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
-    <span class="n">rpath</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">mlabel</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;csv&#39;</span><span class="p">][</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">rpath</span><span class="p">)</span>
-    <span class="n">coord</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    <span class="n">coord</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">mlabel</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">group</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">]</span>
+    <span class="n">coord</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+        <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">,</span>
+        <span class="n">file_name</span><span class="o">=</span><span class="n">mlabel</span>
+    <span class="p">)</span>
+    <span class="n">coord</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">coord</span>
 </pre></div>
 </div>
@@ -640,19 +649,19 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_umap</span><span class="p">(</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span> <span class="p">)</span> <span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_umap</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
     
-    <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">val</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">cc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">cc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
         
     <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">27</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">27</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
     
@@ -663,15 +672,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_sections</span><span class="p">(</span> <span class="n">df</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_sections</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
     
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">blist</span><span class="p">))</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">blist</span><span class="p">))</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
     
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">bsl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blist</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">bsl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blist</span><span class="p">):</span>
         
         <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;brain_section_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bsl</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">filtered</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">group</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">filtered</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
         <span class="n">xx</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
         <span class="n">yy</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
@@ -680,15 +689,15 @@ document.write(`
         <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
         <span class="n">vv</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#f5f5f5&#39;</span>
         
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
             
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
         
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">group</span><span class="p">,</span><span class="n">bsl</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">bsl</span><span class="p">))</span>
         
         
     <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
@@ -704,34 +713,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;Pallium-Glut&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71e1edf2c1dafab13325f3ab6d5094d7b0c2183ff01a262a8a8c88b4c14a6a6a.png" src="../_images/71e1edf2c1dafab13325f3ab6d5094d7b0c2183ff01a262a8a8c88b4c14a6a6a.png" />
+<img alt="../_images/8109f4b213333da697cd1f31acacbb63d91dc42031a78b230520eef62af12c77.png" src="../_images/8109f4b213333da697cd1f31acacbb63d91dc42031a78b230520eef62af12c77.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ce7964ffb788197ea62b7087c11e1619829adad4b196acda5c7f076b411589e9.png" src="../_images/ce7964ffb788197ea62b7087c11e1619829adad4b196acda5c7f076b411589e9.png" />
+<img alt="../_images/820d23f1a4c68cb92fb8e8cd8a945f1087e10548c8aa41cb7650766af5d52457.png" src="../_images/820d23f1a4c68cb92fb8e8cd8a945f1087e10548c8aa41cb7650766af5d52457.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07a4a78fa2fcd56d3db8a2e3b0f02abe053660ff61284cee10e23888e4b80547.png" src="../_images/07a4a78fa2fcd56d3db8a2e3b0f02abe053660ff61284cee10e23888e4b80547.png" />
+<img alt="../_images/7d27eef26191cb6fa116ff8d6c48385fdcedaed0d4e1fcb2e12a3b9bb08bbed8.png" src="../_images/7d27eef26191cb6fa116ff8d6c48385fdcedaed0d4e1fcb2e12a3b9bb08bbed8.png" />
 </div>
 </div>
 </section>
@@ -741,34 +750,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;Subpallium-GABA&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/48645cd6ed8458db4058626d2c0244a4fd80e7dd58927ba62ea4944e4847b036.png" src="../_images/48645cd6ed8458db4058626d2c0244a4fd80e7dd58927ba62ea4944e4847b036.png" />
+<img alt="../_images/71cdacde5c425b460b29b81e6866024eec7253a2e03c540a5a4f2a5344b3f4a8.png" src="../_images/71cdacde5c425b460b29b81e6866024eec7253a2e03c540a5a4f2a5344b3f4a8.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/41290affe56431d56699b7672634f291e3ed2f8ef597cfb229e03c447b7d7f24.png" src="../_images/41290affe56431d56699b7672634f291e3ed2f8ef597cfb229e03c447b7d7f24.png" />
+<img alt="../_images/abe0a4b70f1b05859a7401af45acba43b7f0cd66d4dfb518a872b4de88588149.png" src="../_images/abe0a4b70f1b05859a7401af45acba43b7f0cd66d4dfb518a872b4de88588149.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03d02f0a9db8f791fae125c84c1f2d19ac05126963f863ad68d8416d7017586b.png" src="../_images/03d02f0a9db8f791fae125c84c1f2d19ac05126963f863ad68d8416d7017586b.png" />
+<img alt="../_images/c6904dd1c0512760df19418462fbd975af9d973246b8ddae3dacc5d7d502834c.png" src="../_images/c6904dd1c0512760df19418462fbd975af9d973246b8ddae3dacc5d7d502834c.png" />
 </div>
 </div>
 </section>
@@ -778,34 +787,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;HY-EA-Glut-GABA&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0d7f7b30f9c198a516d85bdc1cc9f5648726f85ad6632d0cb2e5b3544a8b29cb.png" src="../_images/0d7f7b30f9c198a516d85bdc1cc9f5648726f85ad6632d0cb2e5b3544a8b29cb.png" />
+<img alt="../_images/b7e027d94abf350b7301a57f3cf15b6be5ab269ef9948e06c4b98637ce6f3e72.png" src="../_images/b7e027d94abf350b7301a57f3cf15b6be5ab269ef9948e06c4b98637ce6f3e72.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a5c84333a0e5584e31575a5f82a0df3aff6576d92fab0ecd17f38e6eb6d2f8ee.png" src="../_images/a5c84333a0e5584e31575a5f82a0df3aff6576d92fab0ecd17f38e6eb6d2f8ee.png" />
+<img alt="../_images/1cac6bbc4d908e2a75401806ec47c50c8690b5bc8d774f2f7e8c5f66cf94e826.png" src="../_images/1cac6bbc4d908e2a75401806ec47c50c8690b5bc8d774f2f7e8c5f66cf94e826.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/865953f713211581ca0eb4d42fa5319e060d626c55c934eed8f3904f058e3849.png" src="../_images/865953f713211581ca0eb4d42fa5319e060d626c55c934eed8f3904f058e3849.png" />
+<img alt="../_images/63ff97ca1c093d0568b7e541ce215f0e6bff1e1b16719058267bd3a3ca199982.png" src="../_images/63ff97ca1c093d0568b7e541ce215f0e6bff1e1b16719058267bd3a3ca199982.png" />
 </div>
 </div>
 </section>
@@ -815,34 +824,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;TH-EPI-Glut&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c62c2e5cd5bfe1c44c4e89db74b53d932df76746ea5256ce06ed82315cc0011f.png" src="../_images/c62c2e5cd5bfe1c44c4e89db74b53d932df76746ea5256ce06ed82315cc0011f.png" />
+<img alt="../_images/9400dc11444a92e429b3163b0027a08f0c8d6b34fe81fc258b8b5ebc702a68af.png" src="../_images/9400dc11444a92e429b3163b0027a08f0c8d6b34fe81fc258b8b5ebc702a68af.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.44&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.38&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.44&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.38&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06e8ed1305d7a7ff24d5cfa280e7befef9e82a3b3279b1b8878b1189457c31b1.png" src="../_images/06e8ed1305d7a7ff24d5cfa280e7befef9e82a3b3279b1b8878b1189457c31b1.png" />
+<img alt="../_images/3ffa4a338906a26070e4f483830e6175b7923481ea5f4e6afb98fd5b02090875.png" src="../_images/3ffa4a338906a26070e4f483830e6175b7923481ea5f4e6afb98fd5b02090875.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.33&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.33&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50c8fae90a4ebadf494f25e26b8c6024ccf6a3bb6debbc4179d86c269c0f6c2a.png" src="../_images/50c8fae90a4ebadf494f25e26b8c6024ccf6a3bb6debbc4179d86c269c0f6c2a.png" />
+<img alt="../_images/830613be97b5ebd825b04d21423eaa11aa1ac7dbca6a94fd89970f304fe0b34b.png" src="../_images/830613be97b5ebd825b04d21423eaa11aa1ac7dbca6a94fd89970f304fe0b34b.png" />
 </div>
 </div>
 </section>
@@ -852,34 +861,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;MB-HB-CB-GABA&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/85bc020df7b6e6467bf92b19c1dcd1a39fdcaac6130cf05c1a850eb6cec14400.png" src="../_images/85bc020df7b6e6467bf92b19c1dcd1a39fdcaac6130cf05c1a850eb6cec14400.png" />
+<img alt="../_images/791f5aba16191cbbd8c366a30b202688f58bd92c8236e26865aecad7c98f2847.png" src="../_images/791f5aba16191cbbd8c366a30b202688f58bd92c8236e26865aecad7c98f2847.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.26&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.26&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/853b285a7066577b0091bd75733d4cf8c5d863225c5f68c781e28623883d03f8.png" src="../_images/853b285a7066577b0091bd75733d4cf8c5d863225c5f68c781e28623883d03f8.png" />
+<img alt="../_images/0e3ce7f78b593d502d2e0d61f6b2863c831674fa6c5744141276936f11a733e1.png" src="../_images/0e3ce7f78b593d502d2e0d61f6b2863c831674fa6c5744141276936f11a733e1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.08&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.08&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a4fd3ee76d5495ff3fdfca8700c0cef4a395e721cf65338366bbafc3eb421b5.png" src="../_images/0a4fd3ee76d5495ff3fdfca8700c0cef4a395e721cf65338366bbafc3eb421b5.png" />
+<img alt="../_images/c46f59f3dbb68afeaf771a9edf772bf7b18deb71d40597a6f2c3d34c80ef7fe1.png" src="../_images/c46f59f3dbb68afeaf771a9edf772bf7b18deb71d40597a6f2c3d34c80ef7fe1.png" />
 </div>
 </div>
 </section>
@@ -889,34 +898,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;MB-HB-Glut-Sero-Dopa&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a3fafb94ffe9d188eaa607ea38f1d4103892b60f7c0058cf4e1052e897051db.png" src="../_images/0a3fafb94ffe9d188eaa607ea38f1d4103892b60f7c0058cf4e1052e897051db.png" />
+<img alt="../_images/99d85170fdca5d18584a63a3e19620261c0a8a563eb70f1fb13539c3b559085f.png" src="../_images/99d85170fdca5d18584a63a3e19620261c0a8a563eb70f1fb13539c3b559085f.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.26&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.26&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/453fc35bc11731ea5436245b87bce2774df6447e49498e66746b8731b2f09e4d.png" src="../_images/453fc35bc11731ea5436245b87bce2774df6447e49498e66746b8731b2f09e4d.png" />
+<img alt="../_images/33a6bb66b829e1049cf080c13daae83ef5a3674fb0026dd693814d26479b0a47.png" src="../_images/33a6bb66b829e1049cf080c13daae83ef5a3674fb0026dd693814d26479b0a47.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.08&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.08&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c5efad4f13434343839e1e6e4811f64d7493efe307d2e05544daf93c223f2cb.png" src="../_images/0c5efad4f13434343839e1e6e4811f64d7493efe307d2e05544daf93c223f2cb.png" />
+<img alt="../_images/4f31cbc5ab881cd64119961df3627020f9dcd3f13e8286ac5edcd0eb8d3ec2fc.png" src="../_images/4f31cbc5ab881cd64119961df3627020f9dcd3f13e8286ac5edcd0eb8d3ec2fc.png" />
 </div>
 </div>
 </section>
@@ -926,34 +935,34 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;NN-IMN-GC&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c5588247d3328e9d297d7fac9cbb775300f45eeb0d9db6e12768f90c9557ba0.png" src="../_images/0c5588247d3328e9d297d7fac9cbb775300f45eeb0d9db6e12768f90c9557ba0.png" />
+<img alt="../_images/2fe26f368940a0bd770a18cee1eae07dcde1e11ffb0b981681bd974cf3deb395.png" src="../_images/2fe26f368940a0bd770a18cee1eae07dcde1e11ffb0b981681bd974cf3deb395.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.67&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.60&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2534fe18677daff32fe50cf299dd34e8198dcd8deef633d246a080080697f4fa.png" src="../_images/2534fe18677daff32fe50cf299dd34e8198dcd8deef633d246a080080697f4fa.png" />
+<img alt="../_images/666e2ca89342ada5861745f650b82d787ded58025dabced72f132c858f35d1a1.png" src="../_images/666e2ca89342ada5861745f650b82d787ded58025dabced72f132c858f35d1a1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span> <span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ed40529fb1e525a69b95bc00783e934698d1f4d54e407c75e1920c9d12f59c90.png" src="../_images/ed40529fb1e525a69b95bc00783e934698d1f4d54e407c75e1920c9d12f59c90.png" />
+<img alt="../_images/e570489e2f85c737b7c4b391d0d2d675c21005446e5dbb8613a3dd31426074c4.png" src="../_images/e570489e2f85c737b7c4b391d0d2d675c21005446e5dbb8613a3dd31426074c4.png" />
 </div>
 </div>
 </section>

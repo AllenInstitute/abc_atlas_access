@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -65,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/getting_started';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)" href="../descriptions/data_release_subtitle1.html" />
+    <link rel="next" title="Accessing 10x RNA-seq gene expression data" href="general_accessing_10x_snRNASeq_tutorial.html" />
     <link rel="prev" title="Allen Brain Cell Atlas - Data Access" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,10 +172,11 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
@@ -186,25 +188,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/data_release_subtitle2.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
@@ -216,14 +224,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
@@ -424,12 +438,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-file-manifest">Using the file manifest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files-for-the-tutorial-notebooks">Downloading files for the tutorial notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-metadata-directories">Downloading all metadata directories</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-one-10x-expression-matrix">Downloading one 10x expression matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-merfish-expression-matrix">Downloading the MERFISH expression matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-image-volumes">Downloading all image volumes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-cache">Using the cache</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">Downloading files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-data-files-or-metadata-files-in-a-directory">Downloading all data files or metadata files in a directory.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-files">Downloading individual files.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-metadata-files">Downloading individual metadata files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-data-files">Downloading individual data files</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options">Advanced Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-the-cache-to-redownload-data">Forcing the cache to redownload data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skipping-the-file-hashing-check">Skipping the file hashing check</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -447,321 +468,960 @@ document.write(`
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
 <p>Data associated with the Allen Brain Cell Atlas is hosted on Amazon Web Services (AWS) in an S3 bucket as a AWS Public Dataset.
 No account or login is required. The S3 bucket is located here <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>. You will need to be connected to the internet to run this notebook.</p>
-<p>Each release has an associated <strong>manifest.json</strong> which list all the specific version of directories and files that are part of the release. We recommend using the manifest as the starting point of data download and usage.</p>
-<p>Expression matrices are stored in the <a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and needs to be downloaded to a local file system for usage.</p>
-<p>The <strong>AWS Command Line Interface (<a class="reference external" href="https://aws.amazon.com/cli/">AWS CLI</a>)</strong> is a simple option to download specific directories and files from S3. Download and installation instructructions can be found here: <a class="reference external" href="https://aws.amazon.com/cli/">https://aws.amazon.com/cli/</a>.</p>
-<p>This notebook shows how to format AWS CLI commands to download the data required for the tutorials. You can copy those command onto a terminal shell or optionally you can run those command directly in this notebook by uncommenting the “subprocess.run” lines in the code.</p>
+<p>Each data release has an associated <strong>manifest.json</strong> which lists all the specific version of directories and files that are part of the release. We recommend using the <a class="reference external" href="https://github.com/AllenInstitute/abc_atlas_access/blob/41eb836e41e516ee528c98bf3979d0aff60c0b85/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py#L36C7-L36C22"><strong>AbcProjectCache</strong></a> to download the data.</p>
+<p>Expression matricies are stored in the <a class="reference external" href="https://anndata.readthedocs.io/en/latest/">anndata h5ad format</a> and need to be downloaded to a local file system for usage.</p>
+<p>This notebook shows how to use the <strong>AbcProjectCache</strong> to download the data required for the tutorials.</p>
+<p>Below we install the python library we will be using throughout to this python enviroment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">time</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="using-the-file-manifest">
-<h2>Using the file manifest<a class="headerlink" href="#using-the-file-manifest" title="Permalink to this heading">#</a></h2>
-<p>Let’s open the manifest.json file associated with the current release.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;20231215&#39;</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/releases/</span><span class="si">%s</span><span class="s1">/manifest.json&#39;</span> <span class="o">%</span> <span class="n">version</span>
-<span class="n">manifest</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;version: &quot;</span><span class="p">,</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">alleninstitute</span><span class="o">/</span><span class="n">abc_atlas_access</span><span class="nd">@u</span><span class="o">/</span><span class="n">morriscb</span><span class="o">/</span><span class="n">updateJupyterBook</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>version:  20230830
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting git+https://github.com/alleninstitute/abc_atlas_access@u/morriscb/updateJupyterBook
+  Cloning https://github.com/alleninstitute/abc_atlas_access (to revision u/morriscb/updateJupyterBook) to /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-k_k2xa_5
+  Running command git clone --filter=blob:none --quiet https://github.com/alleninstitute/abc_atlas_access /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-k_k2xa_5
+  Running command git checkout -b u/morriscb/updateJupyterBook --track origin/u/morriscb/updateJupyterBook
+  Switched to a new branch &#39;u/morriscb/updateJupyterBook&#39;
+  branch &#39;u/morriscb/updateJupyterBook&#39; set up to track &#39;origin/u/morriscb/updateJupyterBook&#39;.
+  Resolved https://github.com/alleninstitute/abc_atlas_access to commit 5cbeb4e1fe7ebb6492696b6dae9a76697b8c4cd0
+  Installing build dependencies ... ?25ldone
+?25h  Getting requirements to build wheel ... ?25ldone
+?25h  Preparing metadata (pyproject.toml) ... ?25ldone
+?25hRequirement already satisfied: anndata in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (0.10.5.post1)
+Requirement already satisfied: boto3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (1.34.55)
+Requirement already satisfied: ghp-import in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.1.0)
+Requirement already satisfied: matplotlib in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (3.8.3)
+Requirement already satisfied: moto in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (5.0.2)
+Requirement already satisfied: numpy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (1.26.4)
+Requirement already satisfied: pandas in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.2.1)
+Requirement already satisfied: pydantic in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.6.3)
+Requirement already satisfied: pytest in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (8.0.2)
+Requirement already satisfied: requests in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.31.0)
+Requirement already satisfied: scipy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (1.12.0)
+Requirement already satisfied: simpleitk in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.3.1)
+Requirement already satisfied: tqdm in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (4.66.2)
+Requirement already satisfied: array-api-compat in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (1.4.1)
+Requirement already satisfied: h5py&gt;=3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (3.10.0)
+Requirement already satisfied: natsort in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (8.4.0)
+Requirement already satisfied: packaging&gt;=20 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (23.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.0.1) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.0.1) (2024.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.0.1) (2024.1)
+Requirement already satisfied: botocore&lt;1.35.0,&gt;=1.34.55 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.0.1) (1.34.55)
+Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.0.1) (1.0.1)
+Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.0.1) (0.10.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (4.49.0)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (1.4.5)
+Requirement already satisfied: pillow&gt;=8 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (10.2.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (3.1.1)
+Requirement already satisfied: cryptography&gt;=3.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (42.0.5)
+Requirement already satisfied: xmltodict in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (0.13.0)
+Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,&gt;=0.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (3.0.1)
+Requirement already satisfied: responses&gt;=0.15.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (0.25.0)
+Requirement already satisfied: Jinja2&gt;=2.10.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (3.1.3)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (3.6)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (2024.2.2)
+Requirement already satisfied: annotated-types&gt;=0.4.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.0.1) (0.6.0)
+Requirement already satisfied: pydantic-core==2.16.3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.0.1) (2.16.3)
+Requirement already satisfied: typing-extensions&gt;=4.6.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.0.1) (4.10.0)
+Requirement already satisfied: iniconfig in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.0.1) (2.0.0)
+Requirement already satisfied: pluggy&lt;2.0,&gt;=1.3.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.0.1) (1.4.0)
+Requirement already satisfied: cffi&gt;=1.12 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.0.1) (1.16.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from Jinja2&gt;=2.10.1-&gt;moto-&gt;abc_atlas_access==0.0.1) (2.1.5)
+Requirement already satisfied: six&gt;=1.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;abc_atlas_access==0.0.1) (1.16.0)
+Requirement already satisfied: pyyaml in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from responses&gt;=0.15.0-&gt;moto-&gt;abc_atlas_access==0.0.1) (6.0.1)
+Requirement already satisfied: pycparser in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.0.1) (2.21)
+Building wheels for collected packages: abc_atlas_access
+  Building wheel for abc_atlas_access (pyproject.toml) ... ?25ldone
+?25h  Created wheel for abc_atlas_access: filename=abc_atlas_access-0.0.1-py3-none-any.whl size=20811 sha256=d8098f32f446e44b53e54ad633cdea61188d55b3cc708d45cb702c309ee9224c
+  Stored in directory: /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-ephem-wheel-cache-c8464kd3/wheels/d8/36/c5/498927e9ff1fdc24cca5fd8a35f6daeb0d2b61623f3ee82a07
+Successfully built abc_atlas_access
+Installing collected packages: abc_atlas_access
+  Attempting uninstall: abc_atlas_access
+    Found existing installation: abc_atlas_access 0.0.1
+    Uninstalling abc_atlas_access-0.0.1:
+      Successfully uninstalled abc_atlas_access-0.0.1
+Successfully installed abc_atlas_access-0.0.1
+Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
 </div>
-<p>At the top level, the manifest consists of the release <em>version</em> tag, S3 <em>resource_uri</em>,  dictionaries <em>directory_listing</em> and <em>file_listing</em>. A simple option to download data is to use the AWS CLI to download specific directories or files. All the example notebooks in this repository assumes that data has been downloaded locally in the same file organization as specified by the “relative_path” field in the manifest.</p>
+<p>After installing these new packages we need to restart the python kernel in this notebook. This can either be done by selecting <code class="docutils literal notranslate"><span class="pre">Restart</span> <span class="pre">Kernel...</span></code> under the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> drop down menu above or uncommenting and running the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">manifest</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;version:&quot;</span><span class="p">,</span><span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;resource_uri:&quot;</span><span class="p">,</span><span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get_ipython().kernel.do_shutdown()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="using-the-cache">
+<h2>Using the cache<a class="headerlink" href="#using-the-cache" title="Permalink to this heading">#</a></h2>
+<p>Below we show how to setup up the cache to download from S3, how to list and switch to a different data release, and additionally how to list the directories available, their size, and the files in that directory.</p>
+<p>Setup the <strong>AbcProjectCache</strong> object by specifying a directory and calling <code class="docutils literal notranslate"><span class="pre">from_s3_cache</span></code> as shown below. We also print what version of the manifest is being currently loaded by the cache.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span> <span class="c1"># Path to where you would like to write the downloaded data.</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>version: 20230830
-resource_uri: s3://allen-brain-cell-atlas/
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s look at the information associated with the spatial transcriptomics dataset <strong>MERFISH-C57BL6J-638850</strong>. This dataset has two related directories: <em>expression_matrices</em> containing a set of h5ad files and <em>metadata</em> containing a set of csv files. Use the <em>view_link</em> url to browse the directories on a web-browser.</p>
+<p>List the all of the different releases available and usable by the cache object we have just loaded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">][</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">expression_matrices</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">expression_matrices</span><span class="p">[</span><span class="s1">&#39;view_link&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_manifest_file_names</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;version&#39;: &#39;20230830&#39;, &#39;relative_path&#39;: &#39;expression_matrices/MERFISH-C57BL6J-638850/20230830&#39;, &#39;url&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;view_link&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;total_size&#39;: 15255179148}
-https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230830/
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;releases/20230630/manifest.json&#39;,
+ &#39;releases/20230830/manifest.json&#39;,
+ &#39;releases/20231215/manifest.json&#39;,
+ &#39;releases/20240330/manifest.json&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can switch to a specific manifest and release version of the data using the <code class="docutils literal notranslate"><span class="pre">load_manifest</span></code> method. This determines what version of the released data the cache will download/return to the user. The cache will keep track of which version was last used across sessions. Upon instantiating a cache, the current manifest can be viewed with the method: <code class="docutils literal notranslate"><span class="pre">current_manifest</span></code>. Note that a warning will be thrown if the manifest loaded by the cache is older than the most recent manifest available.</p>
+<p>Below we show an example of loading an older manifest. Any of the strings returned by <code class="docutils literal notranslate"><span class="pre">list_manifest_file_names</span></code> will be valid manifests, however, we’ll stick to the current manifest for this tutorial to avoid confusion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">][</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;view_link&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;version&#39;: &#39;20230830&#39;, &#39;relative_path&#39;: &#39;metadata/MERFISH-C57BL6J-638850/20230830&#39;, &#39;url&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;view_link&#39;: &#39;https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230830/&#39;, &#39;total_size&#39;: 1942603772}
-https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20230830/
-</pre></div>
-</div>
-</div>
-</div>
-<p>Directory sizes are also reported as part to the manifest.json. WARNING: the expression matrices directories can get very large &gt; 100 GB.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">GB</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">load_manifest</span><span class="p">(</span><span class="s1">&#39;releases/20230630/manifest.json&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;old manifest loaded:&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">]</span> <span class="p">:</span>    
-    <span class="n">r_dict</span> <span class="o">=</span>  <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">]</span> <span class="p">:</span>
-        <span class="n">d_dict</span> <span class="o">=</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">]</span>        
-        <span class="nb">print</span><span class="p">(</span><span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">%0.2f</span><span class="s1"> GB&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;total_size&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">GB</span><span class="p">))</span>
-        
+<span class="c1"># Return to the latest manifest</span>
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">load_latest_manifest</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after latest manifest loaded:&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>expression_matrices/MERFISH-C57BL6J-638850/20230830 : 14.21 GB
-metadata/MERFISH-C57BL6J-638850/20230830 : 1.81 GB
-expression_matrices/MERFISH-C57BL6J-638850-sections/20230630 : 14.31 GB
-expression_matrices/WMB-10Xv2/20230630 : 104.16 GB
-expression_matrices/WMB-10Xv3/20230630 : 176.41 GB
-expression_matrices/WMB-10XMulti/20230830 : 0.21 GB
-metadata/WMB-10X/20230830 : 2.39 GB
-metadata/WMB-taxonomy/20230830 : 0.00 GB
-metadata/WMB-neighborhoods/20230830 : 3.00 GB
-image_volumes/Allen-CCF-2020/20230630 : 0.37 GB
-metadata/Allen-CCF-2020/20230630 : 0.00 GB
-image_volumes/MERFISH-C57BL6J-638850-CCF/20230630 : 0.11 GB
-metadata/MERFISH-C57BL6J-638850-CCF/20230830 : 0.59 GB
-expression_matrices/Zhuang-ABCA-1/20230830 : 3.09 GB
-metadata/Zhuang-ABCA-1/20230830 : 1.33 GB
-metadata/Zhuang-ABCA-1-CCF/20230830 : 0.21 GB
-expression_matrices/Zhuang-ABCA-2/20230830 : 1.30 GB
-metadata/Zhuang-ABCA-2/20230830 : 0.57 GB
-metadata/Zhuang-ABCA-2-CCF/20230830 : 0.08 GB
-expression_matrices/Zhuang-ABCA-3/20230830 : 1.69 GB
-metadata/Zhuang-ABCA-3/20230830 : 0.74 GB
-metadata/Zhuang-ABCA-3-CCF/20230830 : 0.12 GB
-expression_matrices/Zhuang-ABCA-4/20230830 : 0.16 GB
-metadata/Zhuang-ABCA-4/20230830 : 0.08 GB
-metadata/Zhuang-ABCA-4-CCF/20230830 : 0.01 GB
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="downloading-files-for-the-tutorial-notebooks">
-<h2>Downloading files for the tutorial notebooks<a class="headerlink" href="#downloading-files-for-the-tutorial-notebooks" title="Permalink to this heading">#</a></h2>
-<p>Suppose you would like to download data to your local path <em>../abc_download_root</em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="s1">&#39;../../abc_download_root&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="downloading-all-metadata-directories">
-<h3>Downloading all metadata directories<a class="headerlink" href="#downloading-all-metadata-directories" title="Permalink to this heading">#</a></h3>
-<p>Since the metadata directories are relatively small we will download all the metadata directories. We loop through the manifest and download each metadata directory using  <strong><a class="reference external" href="https://aws.amazon.com/cli/">AWS CLI</a></strong> sync command. This should take &lt; 5 minutes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">]</span> <span class="p">:</span>
-    
-    <span class="n">r_dict</span> <span class="o">=</span>  <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
-    
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">]</span> <span class="p">:</span>
-        
-        <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="s1">&#39;metadata&#39;</span> <span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="n">d_dict</span> <span class="o">=</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">]</span>
-        <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">])</span>
-        <span class="n">local_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span> <span class="n">local_path</span> <span class="p">)</span>
-        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
-        
-        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;aws s3 sync --no-sign-request </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-        
-        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-        <span class="c1"># Uncomment to download directories</span>
-        <span class="c1">#result = subprocess.run(command.split(),stdout=subprocess.PIPE)</span>
-        <span class="c1">#print(&quot;time taken: &quot;, time.process_time() - start)</span>
-  
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850/20230830 ../../abc_download_root/metadata/MERFISH-C57BL6J-638850/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/WMB-10X/20230830 ../../abc_download_root/metadata/WMB-10X/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/WMB-taxonomy/20230830 ../../abc_download_root/metadata/WMB-taxonomy/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/WMB-neighborhoods/20230830 ../../abc_download_root/metadata/WMB-neighborhoods/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Allen-CCF-2020/20230630 ../../abc_download_root/metadata/Allen-CCF-2020/20230630
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850-CCF/20230830 ../../abc_download_root/metadata/MERFISH-C57BL6J-638850-CCF/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-1/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-1-CCF/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-2/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-2/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-2-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-2-CCF/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-3/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-3-CCF/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-4/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-4/20230830
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-4-CCF/20230830 ../../abc_download_root/metadata/Zhuang-ABCA-4-CCF/20230830
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="downloading-one-10x-expression-matrix">
-<h3>Downloading one 10x expression matrix<a class="headerlink" href="#downloading-one-10x-expression-matrix" title="Permalink to this heading">#</a></h3>
-<p>The prerequisite to run the 10x part 1 notebook is to have downloaded the log2 version of the “‘WMB-10Xv2-TH’” matrix (4GB). Download takes ~ 1 min depending on your network speed.</p>
-<p>We define a simple helper function to create the require AWS command. You can copy the command into a terminal shell to run or optionally run it inside this notebook if you uncomment the “subprocess.run” line of code.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span> <span class="p">:</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">],</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
-    <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span> <span class="p">)</span>
-    <span class="n">local_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span> <span class="n">local_path</span> <span class="p">)</span>
-    <span class="n">remote_path</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:567: OutdatedManifestWarning: 
 
-    <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;aws s3 cp --no-sign-request </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+The manifest file you are loading is not the most up to date manifest file available for this dataset. The most up to data manifest file available for this dataset is 
 
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-    <span class="c1"># Uncomment to download file</span>
-    <span class="c1">#result = subprocess.run(command.split(&#39; &#39;),stdout=subprocess.PIPE)</span>
-    <span class="c1">#print(&quot;time taken: &quot;, time.process_time() - start)</span>
+releases/20240330/manifest.json
+
+To see the differences between these manifests,run
+
+type.compare_manifests(&#39;releases/20240330/manifest.json&#39;, &#39;releases/20230630/manifest.json&#39;)
+
+To see all of the manifest files currently downloaded onto your local system, run
+
+self.list_all_downloaded_manifests()
+
+If you just want to load the latest manifest, run
+
+self.load_latest_manifest()
+
+
+  warnings.warn(msg, OutdatedManifestWarning)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>old manifest loaded: releases/20230630/manifest.json
+after latest manifest loaded: releases/20240330/manifest.json
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can list all available directories in the release we loaded using the method below. We can then list all the available data and metadata files in those directories. Note that the cache will raise an exception if the requested kind of files (data files [e.g. h5ad expression_matricies, nii.gz image_volumes] or metadata files [e.g. csv files]) are not available in the directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_directories</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Allen-CCF-2020&#39;,
+ &#39;MERFISH-C57BL6J-638850&#39;,
+ &#39;MERFISH-C57BL6J-638850-CCF&#39;,
+ &#39;MERFISH-C57BL6J-638850-sections&#39;,
+ &#39;WHB-10Xv3&#39;,
+ &#39;WHB-taxonomy&#39;,
+ &#39;WMB-10X&#39;,
+ &#39;WMB-10XMulti&#39;,
+ &#39;WMB-10Xv2&#39;,
+ &#39;WMB-10Xv3&#39;,
+ &#39;WMB-neighborhoods&#39;,
+ &#39;WMB-taxonomy&#39;,
+ &#39;Zhuang-ABCA-1&#39;,
+ &#39;Zhuang-ABCA-1-CCF&#39;,
+ &#39;Zhuang-ABCA-2&#39;,
+ &#39;Zhuang-ABCA-2-CCF&#39;,
+ &#39;Zhuang-ABCA-3&#39;,
+ &#39;Zhuang-ABCA-3-CCF&#39;,
+ &#39;Zhuang-ABCA-4&#39;,
+ &#39;Zhuang-ABCA-4-CCF&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
-<span class="n">file_dict</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="s1">&#39;WMB-10Xv2-TH&#39;</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
-<span class="n">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 4038679930
-expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad 4038679930
-aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad ../../abc_download_root/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;WMB-10Xv2-CTXsp/log2&#39;,
+ &#39;WMB-10Xv2-CTXsp/raw&#39;,
+ &#39;WMB-10Xv2-HPF/log2&#39;,
+ &#39;WMB-10Xv2-HPF/raw&#39;,
+ &#39;WMB-10Xv2-HY/log2&#39;,
+ &#39;WMB-10Xv2-HY/raw&#39;,
+ &#39;WMB-10Xv2-Isocortex-1/log2&#39;,
+ &#39;WMB-10Xv2-Isocortex-1/raw&#39;,
+ &#39;WMB-10Xv2-Isocortex-2/log2&#39;,
+ &#39;WMB-10Xv2-Isocortex-2/raw&#39;,
+ &#39;WMB-10Xv2-Isocortex-3/log2&#39;,
+ &#39;WMB-10Xv2-Isocortex-3/raw&#39;,
+ &#39;WMB-10Xv2-Isocortex-4/log2&#39;,
+ &#39;WMB-10Xv2-Isocortex-4/raw&#39;,
+ &#39;WMB-10Xv2-MB/log2&#39;,
+ &#39;WMB-10Xv2-MB/raw&#39;,
+ &#39;WMB-10Xv2-OLF/log2&#39;,
+ &#39;WMB-10Xv2-OLF/raw&#39;,
+ &#39;WMB-10Xv2-TH/log2&#39;,
+ &#39;WMB-10Xv2-TH/raw&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cluster&#39;,
+ &#39;cluster_annotation_term&#39;,
+ &#39;cluster_annotation_term_set&#39;,
+ &#39;cluster_annotation_term_with_counts&#39;,
+ &#39;cluster_to_cluster_annotation_membership&#39;,
+ &#39;cluster_to_cluster_annotation_membership_color&#39;,
+ &#39;cluster_to_cluster_annotation_membership_pivoted&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before we start downloading data, we can check how much total data is in a given directory for both data files and metadata files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data_size</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;104.16 GB&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata_size</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;4.65 MB&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="downloading-the-merfish-expression-matrix">
-<h3>Downloading the MERFISH expression matrix<a class="headerlink" href="#downloading-the-merfish-expression-matrix" title="Permalink to this heading">#</a></h3>
-<p>The prerequisite to run the MERFISH part 1 notebook is to have downloaded the log2 version of the “C57BL6J-638850” matrix (7GB). Download takes ~3 mins depending on tour network speed.</p>
+<section id="downloading-files">
+<h2>Downloading files<a class="headerlink" href="#downloading-files" title="Permalink to this heading">#</a></h2>
+<p>The next set of examples shows how to download data to the directory you specified when setting up the cache object. There are two main ways of downloading the data: individually by file or by full directory.</p>
+<section id="downloading-all-data-files-or-metadata-files-in-a-directory">
+<h3>Downloading all data files or metadata files in a directory.<a class="headerlink" href="#downloading-all-data-files-or-metadata-files-in-a-directory" title="Permalink to this heading">#</a></h3>
+<p>Here we show how one can download the full set of data files or metadata files contained in a directory in the release. Use the <code class="docutils literal notranslate"><span class="pre">list_directories</span></code> as a guide here as to what data is available. Here we download all the data in two directories we know to be small. Once the download of all files is complete, a list of Paths to the downloaded files is returned.</p>
+<p>The user should be warned that several directories are significant in size, &gt;100 GB. If a directory is over 10 GB in size total, the cache will warn the user when requesting to download the data in the directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datasets</span> <span class="p">:</span>
-    <span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
-    <span class="n">file_dict</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="s1">&#39;C57BL6J-638850&#39;</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
-    <span class="n">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 7627589574
-expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad 7627589574
-aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad ../../abc_download_root/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:01&lt;00:00, 22.8MMB/s]  
+annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:01&lt;00:00, 19.3MMB/s]  
+average_template_10.nii.gz: 100%|██████████| 343M/343M [00:11&lt;00:00, 29.2MMB/s]    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
+	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The prerequisite to run the Zhuang MERFISH notebook is to have downloaded the log2 version of the expression matrices of all 4 brain specimens</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Zhuang-ABCA-1&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-2&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-3&#39;</span><span class="p">,</span><span class="s1">&#39;Zhuang-ABCA-4&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datasets</span> <span class="p">:</span>
-    <span class="n">expression_matrices</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;file_listing&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;expression_matrices&#39;</span><span class="p">]</span>
-    <span class="n">file_dict</span> <span class="o">=</span> <span class="n">expression_matrices</span><span class="p">[</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;log2&#39;</span><span class="p">][</span><span class="s1">&#39;files&#39;</span><span class="p">][</span><span class="s1">&#39;h5ad&#39;</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span><span class="n">file_dict</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
-    <span class="n">download_file</span><span class="p">(</span> <span class="n">file_dict</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: 2128478610
-expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad 2128478610
-aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad
-size: 871420938
-expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad 871420938
-aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad
-size: 1160586154
-expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad 1160586154
-aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad
-size: 106739752
-expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad 106739752
-aws s3 cp --no-sign-request s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad ../../abc_download_root/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 131k/131k [00:00&lt;00:00, 838kMB/s]  
+cluster_annotation_term.csv: 100%|██████████| 861k/861k [00:00&lt;00:00, 5.60MMB/s] 
+cluster_annotation_term_set.csv: 100%|██████████| 1.11k/1.11k [00:00&lt;00:00, 13.7kMB/s]
+cluster_annotation_term_with_counts.csv: 100%|██████████| 902k/902k [00:00&lt;00:00, 5.30MMB/s] 
+cluster_to_cluster_annotation_membership.csv: 100%|██████████| 2.21M/2.21M [00:00&lt;00:00, 15.0MMB/s]
+cluster_to_cluster_annotation_membership_color.csv: 100%|██████████| 239k/239k [00:00&lt;00:00, 1.99MMB/s]
+cluster_to_cluster_annotation_membership_pivoted.csv: 100%|██████████| 531k/531k [00:00&lt;00:00, 3.41MMB/s] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-taxonomy metadata files:
+	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that, after downloading the file successfully, running the <code class="docutils literal notranslate"><span class="pre">get_directory_data</span></code> or <code class="docutils literal notranslate"><span class="pre">get_directory_metadata</span></code> methods will return the list of the local paths without having to redownload the files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
+	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)] 
+
+
+WMB-taxonomy metadata files:
+	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="downloading-all-image-volumes">
-<h3>Downloading all image volumes<a class="headerlink" href="#downloading-all-image-volumes" title="Permalink to this heading">#</a></h3>
-<p>The prerequisite to run the CCF and MERFISH to CCF registration notebooks is to have downloaded the two set of image volumes.</p>
+<section id="downloading-individual-files">
+<h3>Downloading individual files.<a class="headerlink" href="#downloading-individual-files" title="Permalink to this heading">#</a></h3>
+<p>The option also exists to download files individually. We can use <code class="docutils literal notranslate"><span class="pre">list_directories</span></code> and the methods <code class="docutils literal notranslate"><span class="pre">list_data_files</span></code> and <code class="docutils literal notranslate"><span class="pre">list_metadata_files</span></code> to guide us as to what is available to download. Below we will download one metadata file from the WMB-10X directory/dataset and one expression matrix data file from the WMB-10XMulti directory/dataset.</p>
+<section id="downloading-individual-metadata-files">
+<h4>Downloading individual metadata files<a class="headerlink" href="#downloading-individual-metadata-files" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">]</span> <span class="p">:</span>
-    
-    <span class="n">r_dict</span> <span class="o">=</span>  <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;directory_listing&#39;</span><span class="p">][</span><span class="n">r</span><span class="p">]</span>
-    
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">]</span> <span class="p">:</span>
-        
-        <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="s1">&#39;image_volumes&#39;</span> <span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="n">d_dict</span> <span class="o">=</span> <span class="n">r_dict</span><span class="p">[</span><span class="s1">&#39;directories&#39;</span><span class="p">][</span><span class="n">d</span><span class="p">]</span>
-        <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">download_base</span><span class="p">,</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">])</span>
-        <span class="n">local_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span> <span class="n">local_path</span> <span class="p">)</span>
-        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">manifest</span><span class="p">[</span><span class="s1">&#39;resource_uri&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">d_dict</span><span class="p">[</span><span class="s1">&#39;relative_path&#39;</span><span class="p">]</span>
-        
-        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;aws s3 sync --no-sign-request </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-        
-        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-        <span class="c1"># Uncomment to download directories</span>
-        <span class="c1">#result = subprocess.run(command.split(),stdout=subprocess.PIPE)</span>
-        <span class="c1">#print(&quot;time taken: &quot;, time.process_time() - start)</span>
-  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/Allen-CCF-2020/20230630 ../../abc_download_root/image_volumes/Allen-CCF-2020/20230630
-aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630 ../../abc_download_root/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cell_metadata&#39;,
+ &#39;cell_metadata_with_cluster_annotation&#39;,
+ &#39;example_genes_all_cells_expression&#39;,
+ &#39;gene&#39;,
+ &#39;region_of_interest_metadata&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 4.95MMB/s]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-10X/20231215/gene.csv&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cache can also return a dataframe for metadata objects. They are loaded with a generic index. Note that when using this method, it can accept additional argments that will be passed to the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">pandas.read_csv</a> method. Examples of this are used throughout the notebooks in this repo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_identifier</th>
+      <th>gene_symbol</th>
+      <th>name</th>
+      <th>mapped_ncbi_identifier</th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ENSMUSG00000051951</td>
+      <td>Xkr4</td>
+      <td>X-linked Kx blood group related 4</td>
+      <td>NCBIGene:497097</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ENSMUSG00000089699</td>
+      <td>Gm1992</td>
+      <td>predicted gene 1992</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ENSMUSG00000102331</td>
+      <td>Gm19938</td>
+      <td>predicted gene, 19938</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ENSMUSG00000102343</td>
+      <td>Gm37381</td>
+      <td>predicted gene, 37381</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ENSMUSG00000025900</td>
+      <td>Rp1</td>
+      <td>retinitis pigmentosa 1 (human)</td>
+      <td>NCBIGene:19888</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>32280</th>
+      <td>ENSMUSG00000095523</td>
+      <td>AC124606.1</td>
+      <td>PRAME family member 8-like</td>
+      <td>NCBIGene:100038995</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32281</th>
+      <td>ENSMUSG00000095475</td>
+      <td>AC133095.2</td>
+      <td>uncharacterized LOC545763</td>
+      <td>NCBIGene:545763</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32282</th>
+      <td>ENSMUSG00000094855</td>
+      <td>AC133095.1</td>
+      <td>uncharacterized LOC620639</td>
+      <td>NCBIGene:620639</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32283</th>
+      <td>ENSMUSG00000095019</td>
+      <td>AC234645.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32284</th>
+      <td>ENSMUSG00000095041</td>
+      <td>AC149090.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>32285 rows × 5 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="downloading-individual-data-files">
+<h4>Downloading individual data files<a class="headerlink" href="#downloading-individual-data-files" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;WMB-10XMulti/log2&#39;, &#39;WMB-10XMulti/raw&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note how <code class="docutils literal notranslate"><span class="pre">log2</span></code> and <code class="docutils literal notranslate"><span class="pre">raw</span></code> is added to the end of the file name returned by the above function and used below. If we were not to specify this in the input, the code will throw an error describing the ambiguity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti/log2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|██████████| 89.3M/89.3M [00:03&lt;00:00, 24.0MMB/s]  
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:477,</span> in <span class="ni">AbcProjectCache.get_data_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_local_path</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">477</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span>         <span class="n">force_download</span><span class="o">=</span><span class="n">force_download</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>         <span class="n">skip_hash_check</span><span class="o">=</span><span class="n">skip_hash_check</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="k">return</span> <span class="n">data_path</span>
+
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:822,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span> <span class="k">def</span> <span class="nf">download_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span><span class="sd">     Return the local path to a data file, downloading the file</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span><span class="sd">     if necessary</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">822</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span>                                       <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">825</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
+
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:395,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="k">def</span> <span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span><span class="sd">     file&#39;s existence</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">395</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span>     <span class="k">return</span> <span class="n">output</span>
+
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:321,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">def</span> <span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="sd">     file&#39;s existence.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">321</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
+
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/manifest.py:238,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>             <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_file_attributes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>                 <span class="n">remote_path</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>                     <span class="s1">&#39;url&#39;</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>                 <span class="n">file_hash</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s1">&#39;file_hash&#39;</span><span class="p">]</span>  <span class="c1"># noqa: E501</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="k">elif</span> <span class="n">kind</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">238</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>                 <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> found in directory but multiple &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>                 <span class="sa">f</span><span class="s2">&quot;files found: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">. Please &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>                 <span class="s2">&quot;specify the file name as one of &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa: E501</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="k">if</span> <span class="n">file_attributes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>         <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found in directory </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="p">)</span>
+
+<span class="ne">KeyError</span>: &quot;File WMB-10XMulti found in directory but multiple files found: [&#39;log2&#39;, &#39;raw&#39;]. Please specify the file name as one of [&#39;WMB-10XMulti/log2&#39;, &#39;WMB-10XMulti/raw&#39;]&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="advanced-options">
+<h3>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this heading">#</a></h3>
+<section id="forcing-the-cache-to-redownload-data">
+<h4>Forcing the cache to redownload data<a class="headerlink" href="#forcing-the-cache-to-redownload-data" title="Permalink to this heading">#</a></h4>
+<p>For all methods that download files, the option exists to force the cache to redownload the file(s). This can be useful if the downloaded file has become corrupted or accidentially deleted/changed. Below are examples of using it while downloading an inividual file or a full directory of files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 5.64MMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_identifier</th>
+      <th>gene_symbol</th>
+      <th>name</th>
+      <th>mapped_ncbi_identifier</th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ENSMUSG00000051951</td>
+      <td>Xkr4</td>
+      <td>X-linked Kx blood group related 4</td>
+      <td>NCBIGene:497097</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ENSMUSG00000089699</td>
+      <td>Gm1992</td>
+      <td>predicted gene 1992</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ENSMUSG00000102331</td>
+      <td>Gm19938</td>
+      <td>predicted gene, 19938</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ENSMUSG00000102343</td>
+      <td>Gm37381</td>
+      <td>predicted gene, 37381</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ENSMUSG00000025900</td>
+      <td>Rp1</td>
+      <td>retinitis pigmentosa 1 (human)</td>
+      <td>NCBIGene:19888</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>32280</th>
+      <td>ENSMUSG00000095523</td>
+      <td>AC124606.1</td>
+      <td>PRAME family member 8-like</td>
+      <td>NCBIGene:100038995</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32281</th>
+      <td>ENSMUSG00000095475</td>
+      <td>AC133095.2</td>
+      <td>uncharacterized LOC545763</td>
+      <td>NCBIGene:545763</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32282</th>
+      <td>ENSMUSG00000094855</td>
+      <td>AC133095.1</td>
+      <td>uncharacterized LOC620639</td>
+      <td>NCBIGene:620639</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32283</th>
+      <td>ENSMUSG00000095019</td>
+      <td>AC234645.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>no expression</td>
+    </tr>
+    <tr>
+      <th>32284</th>
+      <td>ENSMUSG00000095041</td>
+      <td>AC149090.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>32285 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:00&lt;00:00, 42.1MMB/s]
+annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:00&lt;00:00, 38.3MMB/s]
+average_template_10.nii.gz: 100%|██████████| 343M/343M [00:07&lt;00:00, 48.1MMB/s] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
+	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="skipping-the-file-hashing-check">
+<h4>Skipping the file hashing check<a class="headerlink" href="#skipping-the-file-hashing-check" title="Permalink to this heading">#</a></h4>
+<p>When a download is completed, a hash of the downloaded file is computed and checked against the expected hash in the manifest. While this check is recommeneded it can add overhead to the download process. <code class="docutils literal notranslate"><span class="pre">skip_hash_check</span></code> allows the user to skip computing the hash and assume the download has been completed successfully.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;UMAP20230830-TH-EPI-Glut&#39;</span><span class="p">,</span> <span class="n">skip_hash_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|██████████| 6.46M/6.46M [00:00&lt;00:00, 16.1MMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_label</th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CTCACACTCGTAGATC-044_D01</td>
+      <td>-4.603476</td>
+      <td>-6.148670</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CCGTACTCATCCAACA-036_D01</td>
+      <td>-4.817812</td>
+      <td>-6.366151</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AGCGGTCCATGGGAAC-037_A01</td>
+      <td>-4.798783</td>
+      <td>-6.577992</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>GATGAGGCATGTTCCC-037_B01</td>
+      <td>-5.188138</td>
+      <td>-5.892220</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TAGTGGTAGGCGACAT-037_B01</td>
+      <td>-4.715829</td>
+      <td>-6.606307</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>126166</th>
+      <td>TTTGTTGTCCGACATA-290_B01</td>
+      <td>10.042111</td>
+      <td>10.349521</td>
+    </tr>
+    <tr>
+      <th>126167</th>
+      <td>TTTGTTGTCGTCTACC-294_B05</td>
+      <td>-1.630137</td>
+      <td>9.033476</td>
+    </tr>
+    <tr>
+      <th>126168</th>
+      <td>TTTGTTGTCGTTCCTG-463_A05</td>
+      <td>-6.848272</td>
+      <td>12.645908</td>
+    </tr>
+    <tr>
+      <th>126169</th>
+      <td>TTTGTTGTCGTTGCCT-621_A02</td>
+      <td>-6.982306</td>
+      <td>14.718120</td>
+    </tr>
+    <tr>
+      <th>126170</th>
+      <td>TTTGTTGTCTTTCGAT-574_A02</td>
+      <td>-5.292696</td>
+      <td>6.804039</td>
+    </tr>
+  </tbody>
+</table>
+<p>126171 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">skip_hash_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████| 41.2k/41.2k [00:00&lt;00:00, 606kMB/s]
+parcellation_term.csv: 100%|██████████| 177k/177k [00:00&lt;00:00, 1.27MMB/s] 
+parcellation_term_set.csv: 100%|██████████| 628/628 [00:00&lt;00:00, 8.04kMB/s]
+parcellation_term_set_membership.csv: 100%|██████████| 114k/114k [00:00&lt;00:00, 956kMB/s]  
+parcellation_term_with_counts.csv: 100%|██████████| 137k/137k [00:00&lt;00:00, 908kMB/s]  
+parcellation_to_parcellation_term_membership.csv: 100%|██████████| 680k/680k [00:00&lt;00:00, 3.71MMB/s] 
+parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████| 22.3k/22.3k [00:00&lt;00:00, 96.8kMB/s]
+parcellation_to_parcellation_term_membership_blue.csv: 100%|██████████| 16.4k/16.4k [00:00&lt;00:00, 232kMB/s]
+parcellation_to_parcellation_term_membership_color.csv: 100%|██████████| 30.5k/30.5k [00:00&lt;00:00, 432kMB/s]
+parcellation_to_parcellation_term_membership_green.csv: 100%|██████████| 16.5k/16.5k [00:00&lt;00:00, 234kMB/s]
+parcellation_to_parcellation_term_membership_name.csv: 100%|██████████| 75.8k/75.8k [00:00&lt;00:00, 315kMB/s] 
+parcellation_to_parcellation_term_membership_red.csv: 100%|██████████| 16.0k/16.0k [00:00&lt;00:00, 215kMB/s]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_term.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -806,11 +1466,11 @@ aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/MERFISH-
       </div>
     </a>
     <a class="right-next"
-       href="../descriptions/data_release_subtitle1.html"
+       href="general_accessing_10x_snRNASeq_tutorial.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</p>
+        <p class="prev-next-title">Accessing 10x RNA-seq gene expression data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -829,12 +1489,19 @@ aws s3 sync --no-sign-request s3://allen-brain-cell-atlas/image_volumes/MERFISH-
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-file-manifest">Using the file manifest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files-for-the-tutorial-notebooks">Downloading files for the tutorial notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-metadata-directories">Downloading all metadata directories</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-one-10x-expression-matrix">Downloading one 10x expression matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-the-merfish-expression-matrix">Downloading the MERFISH expression matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-image-volumes">Downloading all image volumes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-cache">Using the cache</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">Downloading files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-data-files-or-metadata-files-in-a-directory">Downloading all data files or metadata files in a directory.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-files">Downloading individual files.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-metadata-files">Downloading individual metadata files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-data-files">Downloading individual data files</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options">Advanced Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-the-cache-to-redownload-data">Forcing the cache to redownload data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skipping-the-file-hashing-check">Skipping the file hashing check</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

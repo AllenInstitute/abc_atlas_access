@@ -1,0 +1,1266 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing 10x RNA-seq gene expression data &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/general_accessing_10x_snRNASeq_tutorial';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)" href="../descriptions/WMB_dataset.html" />
+    <link rel="prev" title="Getting started" href="getting_started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas - Data Access
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Accessing 10x RNA-seq gene expression data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fnotebooks/general_accessing_10x_snRNASeq_tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/general_accessing_10x_snRNASeq_tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Accessing 10x RNA-seq gene expression data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-specific-genes-from-the-data">Loading specific genes from the data</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="accessing-10x-rna-seq-gene-expression-data">
+<h1>Accessing 10x RNA-seq gene expression data<a class="headerlink" href="#accessing-10x-rna-seq-gene-expression-data" title="Permalink to this heading">#</a></h1>
+<p>This notebook provides examples and functions for accessing the 10X expression matrix data stored in the ABC Atlas. These files require a large amount of memory to be available to load and analyize them if care is not taken. In this notebook, we present an example of how to access specific gene expressions from the data. The functions used below could be simplily parallized when processing data at scale, however, we leave them simple here.</p>
+<p>Care should still be taken not to attempt too load to many genes from the expression matrices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">anndata</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
+<span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.anndata_utils</span> <span class="kn">import</span> <span class="n">get_gene_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
+<p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="gene-expression-matrices">
+<h2>Gene expression matrices<a class="headerlink" href="#gene-expression-matrices" title="Permalink to this heading">#</a></h2>
+<p>The Whole Mouse Brain (WMB) and Whole Human Brain (WHB) datasets are formatted similarly. Each package is formatted as annadata h5ad files with minimal metadata. For each dataset, there are two h5ad files: one storing the raw counts and the other log2 normalization of the counts.</p>
+<p>To load the data by gene for either mouse or human dataset, we need to load two pieces of metadata, the <code class="docutils literal notranslate"><span class="pre">cell</span></code>s table and the <code class="docutils literal notranslate"><span class="pre">gene</span></code>s table in addition to our instantiated AbcProjectCache object. These metadata can be found in the directories WMB-10X and WHB-10Xv3 for mouse and human respectively. Below we use the human brain data in our example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+<span class="n">cell</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 705M/705M [00:31&lt;00:00, 22.7MMB/s]    
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_barcode</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>library_label</th>
+      <th>feature_matrix_label</th>
+      <th>entity</th>
+      <th>brain_section_label</th>
+      <th>library_method</th>
+      <th>donor_label</th>
+      <th>donor_sex</th>
+      <th>dataset_label</th>
+      <th>x</th>
+      <th>y</th>
+      <th>cluster_alias</th>
+      <th>region_of_interest_label</th>
+      <th>anatomical_division_label</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10X386_2:CATGGATTCTCGACGG</th>
+      <td>CATGGATTCTCGACGG</td>
+      <td>10X386_2</td>
+      <td>LKTX_210825_01_B01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.001.CX.51</td>
+      <td>10Xv3</td>
+      <td>H19.30.001</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>7.533584</td>
+      <td>-15.230048</td>
+      <td>20</td>
+      <td>Human MoAN</td>
+      <td>Myelencephalon</td>
+    </tr>
+    <tr>
+      <th>10X383_5:TCTTGCGGTGAATTGA</th>
+      <td>TCTTGCGGTGAATTGA</td>
+      <td>10X383_5</td>
+      <td>LKTX_210818_02_E01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.BS.94</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>2.307856</td>
+      <td>-15.542040</td>
+      <td>20</td>
+      <td>Human MoSR</td>
+      <td>Myelencephalon</td>
+    </tr>
+    <tr>
+      <th>10X386_2:CTCATCGGTCGAGCAA</th>
+      <td>CTCATCGGTCGAGCAA</td>
+      <td>10X386_2</td>
+      <td>LKTX_210825_01_B01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.001.CX.51</td>
+      <td>10Xv3</td>
+      <td>H19.30.001</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>6.740066</td>
+      <td>-16.186017</td>
+      <td>17</td>
+      <td>Human MoAN</td>
+      <td>Myelencephalon</td>
+    </tr>
+    <tr>
+      <th>10X378_8:TTGGATGAGACAAGCC</th>
+      <td>TTGGATGAGACAAGCC</td>
+      <td>10X378_8</td>
+      <td>LKTX_210809_01_H01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.BS.93</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>5.926133</td>
+      <td>-20.015151</td>
+      <td>18</td>
+      <td>Human PnAN</td>
+      <td>Pons</td>
+    </tr>
+    <tr>
+      <th>10X387_7:TGAACGTAGTATTCCG</th>
+      <td>TGAACGTAGTATTCCG</td>
+      <td>10X387_7</td>
+      <td>LKTX_210825_02_G01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.001.CX.51</td>
+      <td>10Xv3</td>
+      <td>H19.30.001</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>5.622083</td>
+      <td>-13.561958</td>
+      <td>16</td>
+      <td>Human MoAN</td>
+      <td>Myelencephalon</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10X194_8:GAAATGAGTTCGGCTG</th>
+      <td>GAAATGAGTTCGGCTG</td>
+      <td>10X194_8</td>
+      <td>LKTX_190529_02_H01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H18.30.002.CX.50</td>
+      <td>10Xv3</td>
+      <td>H18.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>-32.154318</td>
+      <td>21.585480</td>
+      <td>3264</td>
+      <td>Human SN</td>
+      <td>Midbrain</td>
+    </tr>
+    <tr>
+      <th>10X350_4:TTTACCATCGCACGAC</th>
+      <td>TTTACCATCGCACGAC</td>
+      <td>10X350_4</td>
+      <td>LKTX_210421_03_D01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.CB.62</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>-29.906175</td>
+      <td>23.914979</td>
+      <td>3265</td>
+      <td>Human CbDN</td>
+      <td>Cerebellum</td>
+    </tr>
+    <tr>
+      <th>10X225_1:AGAAGCGTCCATATGG</th>
+      <td>AGAAGCGTCCATATGG</td>
+      <td>10X225_1</td>
+      <td>LKTX_190913_02_A01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H18.30.002.CX.51</td>
+      <td>10Xv3</td>
+      <td>H18.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>-32.091915</td>
+      <td>21.212210</td>
+      <td>3264</td>
+      <td>Human PAG</td>
+      <td>Midbrain</td>
+    </tr>
+    <tr>
+      <th>10X221_5:TTGAACGCAGCCTTCT</th>
+      <td>TTGAACGCAGCCTTCT</td>
+      <td>10X221_5</td>
+      <td>LKTX_190830_01_E01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H18.30.002.CX.49</td>
+      <td>10Xv3</td>
+      <td>H18.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>-30.665837</td>
+      <td>22.993120</td>
+      <td>3265</td>
+      <td>Human STG</td>
+      <td>Cerebral cortex</td>
+    </tr>
+    <tr>
+      <th>10X385_3:CTACCCAGTGGCGCTT</th>
+      <td>CTACCCAGTGGCGCTT</td>
+      <td>10X385_3</td>
+      <td>LKTX_210818_04_C01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.CX.49</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>-30.579284</td>
+      <td>22.853419</td>
+      <td>3264</td>
+      <td>Human GPi</td>
+      <td>Basal nuclei</td>
+    </tr>
+  </tbody>
+</table>
+<p>3369219 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;gene_identifier&#39;</span><span class="p">)</span>
+<span class="n">gene</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 4.23M/4.23M [00:00&lt;00:00, 9.17MMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_symbol</th>
+      <th>biotype</th>
+      <th>name</th>
+    </tr>
+    <tr>
+      <th>gene_identifier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ENSG00000000003</th>
+      <td>TSPAN6</td>
+      <td>protein_coding</td>
+      <td>tetraspanin 6</td>
+    </tr>
+    <tr>
+      <th>ENSG00000000005</th>
+      <td>TNMD</td>
+      <td>protein_coding</td>
+      <td>tenomodulin</td>
+    </tr>
+    <tr>
+      <th>ENSG00000000419</th>
+      <td>DPM1</td>
+      <td>protein_coding</td>
+      <td>dolichyl-phosphate mannosyltransferase subunit...</td>
+    </tr>
+    <tr>
+      <th>ENSG00000000457</th>
+      <td>SCYL3</td>
+      <td>protein_coding</td>
+      <td>SCY1 like pseudokinase 3</td>
+    </tr>
+    <tr>
+      <th>ENSG00000000460</th>
+      <td>C1orf112</td>
+      <td>protein_coding</td>
+      <td>chromosome 1 open reading frame 112</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ENSG00000288638</th>
+      <td>AL627443.4</td>
+      <td>lncRNA</td>
+      <td>novel transcript</td>
+    </tr>
+    <tr>
+      <th>ENSG00000288639</th>
+      <td>AC093246.1</td>
+      <td>protein_coding</td>
+      <td>novel protein</td>
+    </tr>
+    <tr>
+      <th>ENSG00000288642</th>
+      <td>CDR1</td>
+      <td>protein_coding</td>
+      <td>cerebellar degeneration related protein 1</td>
+    </tr>
+    <tr>
+      <th>ENSG00000288643</th>
+      <td>AC114982.3</td>
+      <td>protein_coding</td>
+      <td>novel transcript</td>
+    </tr>
+    <tr>
+      <th>ENSG00000288645</th>
+      <td>AC084756.2</td>
+      <td>protein_coding</td>
+      <td>novel protein</td>
+    </tr>
+  </tbody>
+</table>
+<p>59357 rows × 3 columns</p>
+</div></div></div>
+</div>
+<section id="loading-specific-genes-from-the-data">
+<h3>Loading specific genes from the data<a class="headerlink" href="#loading-specific-genes-from-the-data" title="Permalink to this heading">#</a></h3>
+<p>The Whole Human Brain dataset <a class="reference external" href="https://www.science.org/doi/10.1126/science.add7046">(Siletti et al. 2023)</a> consists of two sub-datasets: Neuron cells and Non-neuron cells. The neuron files are 30 GB in size and if we were to attempt to slice the dataset by gene we would have to load &gt;30 GB once the data is uncompressed into memory. To avoid this, we load the data in chunks and recombine them into a pandas dataframe with all cells and the requested genes loaded.</p>
+<p>Below, we specify a select set of genes from the data that we’ll load into our output data frame. These are the same genes that are available in the example file <code class="docutils literal notranslate"><span class="pre">example_genes_all_cells_expression</span></code> in the WHB-10Xv3 metadata directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SLC17A6&#39;</span><span class="p">,</span> <span class="s1">&#39;SLC17A7&#39;</span><span class="p">,</span> <span class="s1">&#39;SLC32A1&#39;</span><span class="p">,</span> <span class="s1">&#39;PTPRC&#39;</span><span class="p">,</span> <span class="s1">&#39;PLP1&#39;</span><span class="p">,</span> <span class="s1">&#39;AQP4&#39;</span><span class="p">,</span> <span class="s1">&#39;TTR&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is a function that can be used to load specific genes from the from the full set of data in the WHB dataset. Adjust the chunk size down if you find your system still running out of memory. Additionally, reduce the number of genes if you still have issues. Note that the funciton can load either the raw expression data or the log2 data. The full code of this function can be found <a class="reference external" href="https://github.com/AllenInstitute/abc_atlas_access/blob/4c4a7dfb124971b543de2cb737d059e7cabd620a/src/abc_atlas_access/abc_atlas_cache/anndata_utils.py#L9">here</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>get_gene_data
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+get_gene_data<span class=" -Color -Color-Blue">(</span>
+    abc_atlas_cache<span class=" -Color -Color-Blue">:</span> abc_atlas_access<span class=" -Color -Color-Blue">.</span>abc_atlas_cache<span class=" -Color -Color-Blue">.</span>abc_project_cache<span class=" -Color -Color-Blue">.</span>AbcProjectCache<span class=" -Color -Color-Blue">,</span>
+    all_cells<span class=" -Color -Color-Blue">:</span> pandas<span class=" -Color -Color-Blue">.</span>core<span class=" -Color -Color-Blue">.</span>frame<span class=" -Color -Color-Blue">.</span>DataFrame<span class=" -Color -Color-Blue">,</span>
+    all_genes<span class=" -Color -Color-Blue">:</span> pandas<span class=" -Color -Color-Blue">.</span>core<span class=" -Color -Color-Blue">.</span>frame<span class=" -Color -Color-Blue">.</span>DataFrame<span class=" -Color -Color-Blue">,</span>
+    selected_genes<span class=" -Color -Color-Blue">:</span> List<span class=" -Color -Color-Blue">[</span>str<span class=" -Color -Color-Blue">],</span>
+    data_type<span class=" -Color -Color-Blue">:</span> str <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">&#39;log2&#39;,</span>
+    chunk_size<span class=" -Color -Color-Blue">:</span> int <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Cyan">8192</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Load expression matrix data from the ABC Atlas and extract data for
+specific genes.
+
+Method will load all expression data required to process across multiple
+files to extract the full set of genes. This may result in downloading
+potentially ~100 GB of data.
+
+Parameters
+----------
+abc_atlas_cache: AbcProjectCache
+    An AbcProjectCache instance object to handle downloading and serving
+    the path to the expression matrix data.
+all_cells: pandas.DataFrame
+    cells metadata loaded as a pandas Dataframe from the AbcProjectCache
+    indexed on cell_label.
+all_genes: pandas.DataFrame
+    genes metadata loaded as a pandas Dataframe from the AbcProjectCache
+    indexed on gene_identifier.
+selected_genes: list of strings
+    List of gene_symbols that are a subset of those in the full genes
+    DataFrame.
+data_type: str (Default: &quot;log2&quot;)
+    Kind of expression matrix to load either &quot;log2&quot; or &quot;raw&quot;. Defaults to
+    &quot;log2&quot;.
+chunk_size: int (Default: 8192)
+    Size of the chunk to load from the anndata files. Adjust this size if
+    needed based on memory/file io. Default: 8192.
+
+Returns
+-------
+output_gene_data: pandas.DataFrame
+    Subset of gene data indexed by cell.
+<span class=" -Color -Color-Red">File:</span>      ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/anndata_utils.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code commented out below will create a gene expression DataFrame over the full WHB dataset. Running this full process takes around 10 minutes to processes, however downloading the full data can take up to an hour depending on your download speed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">gene_data = get_gene_data(</span>
+<span class="sd">    abc_atlas_cache=abc_cache,</span>
+<span class="sd">    all_cells=cell,</span>
+<span class="sd">    all_genes=gene,</span>
+<span class="sd">    selected_genes=gene_names</span>
+<span class="sd">)&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\ngene_data = get_gene_data(\n    abc_atlas_cache=abc_cache,\n    all_cells=cell,\n    all_genes=gene,\n    selected_genes=gene_names\n)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a quicker example, we’ll load the Non-neurons from the WHB dataset only. This should take roughly a handful of minutes to complete and around 10 minutes download depending on your connection speed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nonneuron_cells</span> <span class="o">=</span> <span class="n">cell</span><span class="p">[</span><span class="n">cell</span><span class="p">[</span><span class="s1">&#39;feature_matrix_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;WHB-10Xv3-Nonneurons&#39;</span><span class="p">]</span>
+<span class="n">gene_data</span> <span class="o">=</span> <span class="n">get_gene_data</span><span class="p">(</span>
+    <span class="n">abc_atlas_cache</span><span class="o">=</span><span class="n">abc_cache</span><span class="p">,</span>
+    <span class="n">all_cells</span><span class="o">=</span><span class="n">nonneuron_cells</span><span class="p">,</span>
+    <span class="n">all_genes</span><span class="o">=</span><span class="n">gene</span><span class="p">,</span>
+    <span class="n">selected_genes</span><span class="o">=</span><span class="n">gene_names</span>
+<span class="p">)</span>
+<span class="n">gene_data</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">gene_data</span><span class="p">[</span><span class="n">gene_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]])]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loading file: WHB-10Xv3-Nonneurons
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WHB-10Xv3-Nonneurons-log2.h5ad: 100%|██████████| 4.78G/4.78G [04:12&lt;00:00, 19.0MMB/s]    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  133.182634
+total time taken: 219.19582499999999
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>gene_symbol</th>
+      <th>PTPRC</th>
+      <th>SLC17A6</th>
+      <th>SLC32A1</th>
+      <th>SLC17A7</th>
+      <th>TTR</th>
+      <th>PLP1</th>
+      <th>AQP4</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10X362_3:TCAGTGAGTATTGACC</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.177927</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X362_5:TCCGTGTGTGAAAGTT</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.262379</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X362_5:CACGGGTAGAGCAGAA</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>11.240114</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X362_5:GATTCTTGTATGTCAC</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.314513</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X362_6:AGGACTTGTATCCTTT</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.736156</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10X194_8:GAAATGAGTTCGGCTG</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.210833</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X350_4:TTTACCATCGCACGAC</th>
+      <td>9.587301</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.006084</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X225_1:AGAAGCGTCCATATGG</th>
+      <td>8.567961</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X221_5:TTGAACGCAGCCTTCT</th>
+      <td>10.119619</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X385_3:CTACCCAGTGGCGCTT</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>888263 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>The returned DataFrame is indexed by <code class="docutils literal notranslate"><span class="pre">cell_label</span></code> and can thus be joined with the <code class="docutils literal notranslate"><span class="pre">cell</span></code> DataFrame for further analysis.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="getting_started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting started</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../descriptions/WMB_dataset.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-specific-genes-from-the-data">Loading specific genes from the data</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
