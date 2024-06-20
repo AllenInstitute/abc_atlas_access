@@ -54,6 +54,8 @@ def get_gene_data(
     output_gene_data = pd.DataFrame(index=all_cells.index,
                                     columns=gene_filtered.index)
 
+    num_total_cells = len(all_cells)
+
     # Get the names of the data in the ABC atlas that we need
     # to load.
     matrices = all_cells.groupby(
@@ -63,6 +65,7 @@ def get_gene_data(
 
     total_start = time.process_time()
     # Loop over all data files.
+    num_processed_cells = 0
     for matrix_index in matrices.index:
         directory = matrix_index[0]
         matrix_file = matrix_index[1]
@@ -82,8 +85,12 @@ def get_gene_data(
         for chunk, min_idx, max_idx in expression_data.chunked_X(
                 chunk_size=chunk_size):
             cell_indexes = obs.index[min_idx:max_idx]
-            output_gene_data.loc[cell_indexes, gene_filtered.index] = \
-                chunk.toarray()[:, gene_mask]
+            cell_mask = cell_indexes.isin(all_cells.index)
+            subcell_indexes = cell_indexes[cell_mask]
+            num_processed_cells += len(subcell_indexes)
+            output_gene_data.loc[
+                    subcell_indexes, gene_filtered.index] = \
+                chunk.toarray()[cell_mask][:, gene_mask]
 
         expression_data.file.close()
         del expression_data  # Clean up our loaded file.
@@ -91,4 +98,8 @@ def get_gene_data(
 
     output_gene_data.columns = gene_filtered.gene_symbol
     print(f"total time taken: {time.process_time() - total_start}")
+    print(
+        "\ttotal cells:", num_total_cells,
+        "processed cells:", num_processed_cells
+    )
     return output_gene_data
