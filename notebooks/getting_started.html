@@ -556,7 +556,7 @@ Note: you may need to restart the kernel to use updated packages.
 <p>After installing these new packages we need to restart the python kernel in this notebook. This can either be done by selecting <code class="docutils literal notranslate"><span class="pre">Restart</span> <span class="pre">Kernel...</span></code> under the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> drop down menu above or uncommenting and running the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get_ipython().kernel.do_shutdown()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">do_shutdown</span><span class="p">(</span><span class="n">restart</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
