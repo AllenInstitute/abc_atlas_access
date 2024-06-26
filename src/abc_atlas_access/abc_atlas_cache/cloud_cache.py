@@ -23,6 +23,10 @@ class MissingLocalManifestWarning(UserWarning):
     pass
 
 
+class ReadOnlyLocalCacheWarning(UserWarning):
+    pass
+
+
 class BasicLocalCache(ABC):
     """
     A class to handle the loading and accessing a project's data and
@@ -719,10 +723,16 @@ class CloudCacheBase(BasicLocalCache):
         self._manifest = self._load_manifest(manifest_name)
 
         # Keep track of the newly loaded manifest
-        with open(self._manifest_last_used, 'w') as out_file:
-            out_file.write(manifest_name)
+        self._save_last_used_manifest(manifest_name)
 
         self._manifest_name = manifest_name
+
+    def _save_last_used_manifest(self, manifest_name: str):
+        """
+        Save the name of the last manifest used in this cache.
+        """
+        with open(self._manifest_last_used, 'w') as out_file:
+            out_file.write(manifest_name)
 
     def _file_exists(self, file_attributes: CacheFileAttributes) -> bool:
         """
@@ -1347,3 +1357,17 @@ class LocalCache(CloudCacheBase):
                        force_download: bool = False,
                        skip_hash_check: bool = False) -> bool:
         raise NotImplementedError()
+
+    def _save_last_used_manifest(self, manifest_name: str):
+        """
+        """
+        try:
+            with open(self._manifest_last_used, 'w') as out_file:
+                out_file.write(manifest_name)
+        except OSError:
+            warnings.warn(
+                f"""LocalCache is a read only directory and cannot
+                save the last used manifest.
+                Current Manifest: {manifest_name}""",
+                ReadOnlyLocalCacheWarning
+            )
