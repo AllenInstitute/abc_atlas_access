@@ -58,7 +58,7 @@ Available notebooks:
   (Kimberly Siletti)**
 
 ## Release Notes
-* **[abc_atlas_access (v0.110)]**
+* **[abc_atlas_access (v0.1.1)]**
   * Fixed compatibility issue with read only local caches specifically for
     fuse style file mounts such as those used on CodeOcean.
   * Added local cache example to notebooks.
