@@ -58,6 +58,10 @@ Available notebooks:
   (Kimberly Siletti)**
 
 ## Release Notes
+* **[abc_atlas_access (v0.110)]**
+  * Fixed compatibility issue with read only local caches specifically for
+    fuse style file mounts such as those used on CodeOcean.
+  * Added local cache example to notebooks.
 * **[abc_atlas_access (v0.1.0)]**
   * Fixed issue with loading 10X mouse data with the `get_gene_data` function.
 * **[Spring 2024 Public Beta (version 20240330)]**

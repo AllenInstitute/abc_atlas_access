@@ -573,10 +573,15 @@ Note: you may need to restart the kernel to use updated packages.
 <h2>Using the cache<a class="headerlink" href="#using-the-cache" title="Permalink to this heading">#</a></h2>
 <p>Below we show how to setup up the cache to download from S3, how to list and switch to a different data release, and additionally how to list the directories available, their size, and the files in that directory.</p>
 <p>Setup the <strong>AbcProjectCache</strong> object by specifying a directory and calling <code class="docutils literal notranslate"><span class="pre">from_s3_cache</span></code> as shown below. We also print what version of the manifest is being currently loaded by the cache.</p>
+<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar. Using the cache from a s3fs mount means that all files will be streamed over the internet instead of saved to the local disk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span> <span class="c1"># Path to where you would like to write the downloaded data.</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+
+<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
+<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
