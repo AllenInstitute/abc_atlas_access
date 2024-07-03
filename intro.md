@@ -58,6 +58,9 @@ Available notebooks:
   (Kimberly Siletti)**
 
 ## Release Notes
+* **[abc_atlas_access (v0.1.2)]**
+  * Added script for selecting genes from expression matrices for use on
+    CodeOcean.
 * **[abc_atlas_access (v0.1.1)]**
   * Fixed compatibility issue with read only local caches specifically for
     fuse style file mounts such as those used on CodeOcean.
