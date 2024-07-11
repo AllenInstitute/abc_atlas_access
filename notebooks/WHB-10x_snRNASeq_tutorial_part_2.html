@@ -454,17 +454,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-10x-rna-seq-gene-expression-data-part-2">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-10x-rna-seq-gene-expression-data-part-2">
 <h1>Whole Human Brain 10x RNA-seq gene expression data (part 2)<a class="headerlink" href="#whole-human-brain-10x-rna-seq-gene-expression-data-part-2" title="Permalink to this heading">#</a></h1>
 <p>In this notebook we’ll explore some of the gene expression and combine it with the cell metadata we showed in <strong>part 1</strong>.</p>
 <p>You need to be either connected to the internet or connected to a cache that has the WHB data downloaded already and have already downloaded the example data via the getting started notebook to run this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -851,7 +857,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|██████████| 233M/233M [00:08&lt;00:00, 25.9MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|████████████████████████████████████████████████████████████████████████████| 233M/233M [00:28&lt;00:00, 8.06MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1005,7 +1011,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f99c8a111cc9403d1da69ff183f21dc7136ac7ca4d4fd07516b408f472dc535.png" src="../_images/4f99c8a111cc9403d1da69ff183f21dc7136ac7ca4d4fd07516b408f472dc535.png" />
+<img alt="../_images/233c15849eaaec971b29be4fcc9aa94b83d733d1dc56ff0d2cdb008cbfbb387e.png" src="../_images/233c15849eaaec971b29be4fcc9aa94b83d733d1dc56ff0d2cdb008cbfbb387e.png" />
 </div>
 </div>
 <p>Below is by dissection region of interest shows that each of these genes are associated with distinct regions.</p>
@@ -1017,7 +1023,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18db411f7bbd86dbe5718f5b5340cc6675ea2415933c94f8723fccd381ad69e9.png" src="../_images/18db411f7bbd86dbe5718f5b5340cc6675ea2415933c94f8723fccd381ad69e9.png" />
+<img alt="../_images/397a8f6069945d9c4f89c5681f9852005281567b060b105e7731e7b3fb10a147.png" src="../_images/397a8f6069945d9c4f89c5681f9852005281567b060b105e7731e7b3fb10a147.png" />
 </div>
 </div>
 <p>And finally by supercluster from the taxonomy.</p>
@@ -1029,7 +1035,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f02d68ae8cf7c862b55ff9f924f84ce51c222abe32e4ff6693015af781eb0478.png" src="../_images/f02d68ae8cf7c862b55ff9f924f84ce51c222abe32e4ff6693015af781eb0478.png" />
+<img alt="../_images/48b662dc9af31739f5dbae9a6f91e19f1180b534657faa106af3e815fdcefa74.png" src="../_images/48b662dc9af31739f5dbae9a6f91e19f1180b534657faa106af3e815fdcefa74.png" />
 </div>
 </div>
 <p>We can also visualize the relationship these genes and their location in the UMAP. Note again as in part one that Neurons and Non-neurons should be plotted seperately.</p>
@@ -1074,8 +1080,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a7eaa3e5756104dd9412fcf723d8cf1f228d622e67787b997fdf6b8ed4cca5f.png" src="../_images/5a7eaa3e5756104dd9412fcf723d8cf1f228d622e67787b997fdf6b8ed4cca5f.png" />
-<img alt="../_images/13d045ecfaa9a0f7866b81a339f0567860edf219b0639aeeb87dd0378631be33.png" src="../_images/13d045ecfaa9a0f7866b81a339f0567860edf219b0639aeeb87dd0378631be33.png" />
+<img alt="../_images/4ba108cf81673de344c0731dbfd66556e885c17ef00998da6d7eadaf69a80ebf.png" src="../_images/4ba108cf81673de344c0731dbfd66556e885c17ef00998da6d7eadaf69a80ebf.png" />
+<img alt="../_images/aad4f4e8b9079dad5a211ce9b4c2d217ce4305d3a0182244c600e179fefdd572.png" src="../_images/aad4f4e8b9079dad5a211ce9b4c2d217ce4305d3a0182244c600e179fefdd572.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1088,8 +1094,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0fd13e2bf3dc5dbf7eb95294a8e69a3fe495eb6e8a0750a4a6a8e3f78581b2e6.png" src="../_images/0fd13e2bf3dc5dbf7eb95294a8e69a3fe495eb6e8a0750a4a6a8e3f78581b2e6.png" />
-<img alt="../_images/b60b68ad038bb5fd94a123a5c1dea74d69c2fa0850dc563baa30a29f34f58cc7.png" src="../_images/b60b68ad038bb5fd94a123a5c1dea74d69c2fa0850dc563baa30a29f34f58cc7.png" />
+<img alt="../_images/6340a55a43689d7734e505f76b826a36ae0caa4cc52912f879265fa35eb39ab8.png" src="../_images/6340a55a43689d7734e505f76b826a36ae0caa4cc52912f879265fa35eb39ab8.png" />
+<img alt="../_images/b1b85f27e4c69509bf9e1e310bc7ff951d0ca6accd064340bd76a0a58cb10599.png" src="../_images/b1b85f27e4c69509bf9e1e310bc7ff951d0ca6accd064340bd76a0a58cb10599.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1102,8 +1108,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2341760d68c1b2fa93043721b7dd8ea64818328fe2f6b7a55d2c3883cf4636e.png" src="../_images/a2341760d68c1b2fa93043721b7dd8ea64818328fe2f6b7a55d2c3883cf4636e.png" />
-<img alt="../_images/14c1213cd7aa356e805aefbbe375086392ce16c8e5b64fbd2d1f11276ec92381.png" src="../_images/14c1213cd7aa356e805aefbbe375086392ce16c8e5b64fbd2d1f11276ec92381.png" />
+<img alt="../_images/eef77a58f4177da0bc2b89f2aea6b49dfaa950e5fff2797eef55e13c7c24988e.png" src="../_images/eef77a58f4177da0bc2b89f2aea6b49dfaa950e5fff2797eef55e13c7c24988e.png" />
+<img alt="../_images/abf25225f11323a98fa2e7e205f4fa039ff92df13348034127f27d530638ac8b.png" src="../_images/abf25225f11323a98fa2e7e205f4fa039ff92df13348034127f27d530638ac8b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1116,8 +1122,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1907b49b55b41e1d07a572d3d8ec10be0bc9a67d6b96b29d5fb07062aa8e90b1.png" src="../_images/1907b49b55b41e1d07a572d3d8ec10be0bc9a67d6b96b29d5fb07062aa8e90b1.png" />
-<img alt="../_images/d9e870e9fa9d71062306b15e47837b9ba3eed41f312181fa8b2bf54e241b00cc.png" src="../_images/d9e870e9fa9d71062306b15e47837b9ba3eed41f312181fa8b2bf54e241b00cc.png" />
+<img alt="../_images/21a8bfdacfbc4971f407de0dad0c64d317511a34736725ad1e67c341a23bb0be.png" src="../_images/21a8bfdacfbc4971f407de0dad0c64d317511a34736725ad1e67c341a23bb0be.png" />
+<img alt="../_images/47f87be873be0384798928531e1c9e6bb523e332cf9b60f6abab2813d018d1a3.png" src="../_images/47f87be873be0384798928531e1c9e6bb523e332cf9b60f6abab2813d018d1a3.png" />
 </div>
 </div>
 <p>(Plots for <em>SLC17A7</em>, <em>PTPRC</em>, and <em>TTR</em> could be generated the same way, but aren’t shown.)</p>

@@ -479,75 +479,61 @@ No account or login is required. The S3 bucket is located here <a class="referen
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting git+https://github.com/alleninstitute/abc_atlas_access@u/morriscb/updateJupyterBook
-  Cloning https://github.com/alleninstitute/abc_atlas_access (to revision u/morriscb/updateJupyterBook) to /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-k_k2xa_5
-  Running command git clone --filter=blob:none --quiet https://github.com/alleninstitute/abc_atlas_access /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-k_k2xa_5
-  Running command git checkout -b u/morriscb/updateJupyterBook --track origin/u/morriscb/updateJupyterBook
-  Switched to a new branch &#39;u/morriscb/updateJupyterBook&#39;
-  branch &#39;u/morriscb/updateJupyterBook&#39; set up to track &#39;origin/u/morriscb/updateJupyterBook&#39;.
-  Resolved https://github.com/alleninstitute/abc_atlas_access to commit 5cbeb4e1fe7ebb6492696b6dae9a76697b8c4cd0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting git+https://github.com/alleninstitute/abc_atlas_access
+  Cloning https://github.com/alleninstitute/abc_atlas_access to /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-4e9rhwaj
+  Running command git clone --filter=blob:none --quiet https://github.com/alleninstitute/abc_atlas_access /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-4e9rhwaj
+  Resolved https://github.com/alleninstitute/abc_atlas_access to commit b067b896ea0fada09fe0b46471158df22b2622a0
   Installing build dependencies ... ?25ldone
 ?25h  Getting requirements to build wheel ... ?25ldone
 ?25h  Preparing metadata (pyproject.toml) ... ?25ldone
-?25hRequirement already satisfied: anndata in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (0.10.5.post1)
-Requirement already satisfied: boto3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (1.34.55)
-Requirement already satisfied: ghp-import in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.1.0)
-Requirement already satisfied: matplotlib in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (3.8.3)
-Requirement already satisfied: moto in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (5.0.2)
-Requirement already satisfied: numpy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (1.26.4)
-Requirement already satisfied: pandas in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.2.1)
-Requirement already satisfied: pydantic in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.6.3)
-Requirement already satisfied: pytest in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (8.0.2)
-Requirement already satisfied: requests in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.31.0)
-Requirement already satisfied: scipy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (1.12.0)
-Requirement already satisfied: simpleitk in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (2.3.1)
-Requirement already satisfied: tqdm in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.0.1) (4.66.2)
-Requirement already satisfied: array-api-compat in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (1.4.1)
-Requirement already satisfied: h5py&gt;=3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (3.10.0)
-Requirement already satisfied: natsort in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (8.4.0)
-Requirement already satisfied: packaging&gt;=20 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.0.1) (23.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.0.1) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.0.1) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.0.1) (2024.1)
-Requirement already satisfied: botocore&lt;1.35.0,&gt;=1.34.55 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.0.1) (1.34.55)
-Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.0.1) (1.0.1)
-Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.0.1) (0.10.0)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (1.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (4.49.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (1.4.5)
-Requirement already satisfied: pillow&gt;=8 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (10.2.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.0.1) (3.1.1)
-Requirement already satisfied: cryptography&gt;=3.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (42.0.5)
-Requirement already satisfied: xmltodict in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (0.13.0)
-Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,&gt;=0.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (3.0.1)
-Requirement already satisfied: responses&gt;=0.15.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (0.25.0)
-Requirement already satisfied: Jinja2&gt;=2.10.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.0.1) (3.1.3)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (3.6)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (2.0.7)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.0.1) (2024.2.2)
-Requirement already satisfied: annotated-types&gt;=0.4.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.0.1) (0.6.0)
-Requirement already satisfied: pydantic-core==2.16.3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.0.1) (2.16.3)
-Requirement already satisfied: typing-extensions&gt;=4.6.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.0.1) (4.10.0)
-Requirement already satisfied: iniconfig in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.0.1) (2.0.0)
-Requirement already satisfied: pluggy&lt;2.0,&gt;=1.3.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.0.1) (1.4.0)
-Requirement already satisfied: cffi&gt;=1.12 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.0.1) (1.16.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from Jinja2&gt;=2.10.1-&gt;moto-&gt;abc_atlas_access==0.0.1) (2.1.5)
-Requirement already satisfied: six&gt;=1.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;abc_atlas_access==0.0.1) (1.16.0)
-Requirement already satisfied: pyyaml in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from responses&gt;=0.15.0-&gt;moto-&gt;abc_atlas_access==0.0.1) (6.0.1)
-Requirement already satisfied: pycparser in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.0.1) (2.21)
-Building wheels for collected packages: abc_atlas_access
-  Building wheel for abc_atlas_access (pyproject.toml) ... ?25ldone
-?25h  Created wheel for abc_atlas_access: filename=abc_atlas_access-0.0.1-py3-none-any.whl size=20811 sha256=d8098f32f446e44b53e54ad633cdea61188d55b3cc708d45cb702c309ee9224c
-  Stored in directory: /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-ephem-wheel-cache-c8464kd3/wheels/d8/36/c5/498927e9ff1fdc24cca5fd8a35f6daeb0d2b61623f3ee82a07
-Successfully built abc_atlas_access
-Installing collected packages: abc_atlas_access
-  Attempting uninstall: abc_atlas_access
-    Found existing installation: abc_atlas_access 0.0.1
-    Uninstalling abc_atlas_access-0.0.1:
-      Successfully uninstalled abc_atlas_access-0.0.1
-Successfully installed abc_atlas_access-0.0.1
+?25hRequirement already satisfied: anndata in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (0.10.7)
+Requirement already satisfied: boto3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (1.34.129)
+Requirement already satisfied: ghp-import in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.1.0)
+Requirement already satisfied: matplotlib in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (3.9.0)
+Requirement already satisfied: moto in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (5.0.9)
+Requirement already satisfied: numpy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.0.0)
+Requirement already satisfied: pandas in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.2.2)
+Requirement already satisfied: pydantic in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.7.4)
+Requirement already satisfied: pytest in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (8.2.2)
+Requirement already satisfied: requests in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.32.3)
+Requirement already satisfied: scipy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (1.13.1)
+Requirement already satisfied: simpleitk in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.3.1)
+Requirement already satisfied: tqdm in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (4.66.4)
+Requirement already satisfied: array-api-compat!=1.5,&gt;1.4 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (1.7.1)
+Requirement already satisfied: h5py&gt;=3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (3.11.0)
+Requirement already satisfied: natsort in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (8.4.0)
+Requirement already satisfied: packaging&gt;=20.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (24.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.1.2) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.1.2) (2024.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.1.2) (2024.1)
+Requirement already satisfied: botocore&lt;1.35.0,&gt;=1.34.129 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.1.2) (1.34.129)
+Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.1.2) (1.0.1)
+Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.1.2) (0.10.1)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (1.2.1)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (4.53.0)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (1.4.5)
+Requirement already satisfied: pillow&gt;=8 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (10.3.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (3.1.2)
+Requirement already satisfied: cryptography&gt;=3.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (42.0.8)
+Requirement already satisfied: xmltodict in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (0.13.0)
+Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,&gt;=0.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (3.0.3)
+Requirement already satisfied: responses&gt;=0.15.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (0.25.3)
+Requirement already satisfied: Jinja2&gt;=2.10.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (3.1.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (3.7)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (2.2.2)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (2024.6.2)
+Requirement already satisfied: annotated-types&gt;=0.4.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.1.2) (0.7.0)
+Requirement already satisfied: pydantic-core==2.18.4 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.1.2) (2.18.4)
+Requirement already satisfied: typing-extensions&gt;=4.6.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.1.2) (4.12.2)
+Requirement already satisfied: iniconfig in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.1.2) (2.0.0)
+Requirement already satisfied: pluggy&lt;2.0,&gt;=1.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.1.2) (1.5.0)
+Requirement already satisfied: cffi&gt;=1.12 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.1.2) (1.16.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from Jinja2&gt;=2.10.1-&gt;moto-&gt;abc_atlas_access==0.1.2) (2.1.5)
+Requirement already satisfied: six&gt;=1.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;abc_atlas_access==0.1.2) (1.16.0)
+Requirement already satisfied: pyyaml in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from responses&gt;=0.15.0-&gt;moto-&gt;abc_atlas_access==0.1.2) (6.0.1)
+Requirement already satisfied: pycparser in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.1.2) (2.22)
 Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
@@ -557,6 +543,19 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">do_shutdown</span><span class="p">(</span><span class="n">restart</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;status&#39;: &#39;ok&#39;, &#39;restart&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
+<p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -622,7 +621,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:567: OutdatedManifestWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:571: OutdatedManifestWarning: 
 
 The manifest file you are loading is not the most up to date manifest file available for this dataset. The most up to data manifest file available for this dataset is 
 
@@ -772,9 +771,9 @@ after latest manifest loaded: releases/20240330/manifest.json
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:01&lt;00:00, 22.8MMB/s]  
-annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:01&lt;00:00, 19.3MMB/s]  
-average_template_10.nii.gz: 100%|██████████| 343M/343M [00:11&lt;00:00, 29.2MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████| 27.5M/27.5M [00:04&lt;00:00, 6.17MMB/s]
+annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████| 27.4M/27.4M [00:04&lt;00:00, 6.04MMB/s]
+average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████| 343M/343M [00:56&lt;00:00, 6.07MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
@@ -794,13 +793,13 @@ average_template_10.nii.gz: 100%|██████████| 343M/343M [00:1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 131k/131k [00:00&lt;00:00, 838kMB/s]  
-cluster_annotation_term.csv: 100%|██████████| 861k/861k [00:00&lt;00:00, 5.60MMB/s] 
-cluster_annotation_term_set.csv: 100%|██████████| 1.11k/1.11k [00:00&lt;00:00, 13.7kMB/s]
-cluster_annotation_term_with_counts.csv: 100%|██████████| 902k/902k [00:00&lt;00:00, 5.30MMB/s] 
-cluster_to_cluster_annotation_membership.csv: 100%|██████████| 2.21M/2.21M [00:00&lt;00:00, 15.0MMB/s]
-cluster_to_cluster_annotation_membership_color.csv: 100%|██████████| 239k/239k [00:00&lt;00:00, 1.99MMB/s]
-cluster_to_cluster_annotation_membership_pivoted.csv: 100%|██████████| 531k/531k [00:00&lt;00:00, 3.41MMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|█████████████████████████████████████████████████████████████████████████| 131k/131k [00:00&lt;00:00, 819kMB/s]
+cluster_annotation_term.csv: 100%|████████████████████████████████████████████████████████| 861k/861k [00:00&lt;00:00, 2.94MMB/s]
+cluster_annotation_term_set.csv: 100%|██████████████████████████████████████████████████| 1.11k/1.11k [00:00&lt;00:00, 12.5kMB/s]
+cluster_annotation_term_with_counts.csv: 100%|████████████████████████████████████████████| 902k/902k [00:00&lt;00:00, 3.77MMB/s]
+cluster_to_cluster_annotation_membership.csv: 100%|█████████████████████████████████████| 2.21M/2.21M [00:00&lt;00:00, 4.47MMB/s]
+cluster_to_cluster_annotation_membership_color.csv: 100%|█████████████████████████████████| 239k/239k [00:00&lt;00:00, 1.53MMB/s]
+cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████████████████████████████| 531k/531k [00:00&lt;00:00, 2.51MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-taxonomy metadata files:
@@ -862,7 +861,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 4.95MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 4.00MMB/s]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-10X/20231215/gene.csv&#39;)
@@ -1020,7 +1019,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|██████████| 89.3M/89.3M [00:03&lt;00:00, 24.0MMB/s]  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|███████████████████████████████████████████████████████████| 89.3M/89.3M [00:14&lt;00:00, 5.96MMB/s]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
@@ -1037,7 +1036,7 @@ WMB-taxonomy metadata files:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
 
 <span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:477,</span> in <span class="ni">AbcProjectCache.get_data_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
@@ -1054,49 +1053,49 @@ WMB-taxonomy metadata files:
 <span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="k">return</span> <span class="n">data_path</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:822,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span> <span class="k">def</span> <span class="nf">download_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:832,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span> <span class="k">def</span> <span class="nf">download_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span><span class="sd">     Return the local path to a data file, downloading the file</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span><span class="sd">     if necessary</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">805</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">806</span><span class="sd">     Return the local path to a data file, downloading the file</span>
+<span class="g g-Whitespace">    </span><span class="mi">807</span><span class="sd">     if necessary</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">821</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">822</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">823</span>                                       <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">824</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">831</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">832</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">833</span>                                       <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">834</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:395,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="k">def</span> <span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span><span class="sd">     file&#39;s existence</span>
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:399,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span> <span class="k">def</span> <span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span><span class="sd">     file&#39;s existence</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">395</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span>     <span class="k">return</span> <span class="n">output</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">398</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">399</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span>     <span class="k">return</span> <span class="n">output</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:321,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">def</span> <span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="sd">     file&#39;s existence.</span>
+<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:325,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span> <span class="k">def</span> <span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span><span class="sd">     file&#39;s existence.</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">321</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">325</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
 
 <span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/manifest.py:238,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">226</span>             <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_file_attributes</span><span class="p">(</span>
@@ -1136,7 +1135,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 5.64MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 3.89MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1266,9 +1265,9 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:00&lt;00:00, 42.1MMB/s]
-annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:00&lt;00:00, 38.3MMB/s]
-average_template_10.nii.gz: 100%|██████████| 343M/343M [00:07&lt;00:00, 48.1MMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████| 27.5M/27.5M [00:04&lt;00:00, 5.91MMB/s]
+annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████| 27.4M/27.4M [00:04&lt;00:00, 5.60MMB/s]
+average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████| 343M/343M [00:57&lt;00:00, 5.95MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
@@ -1291,7 +1290,7 @@ average_template_10.nii.gz: 100%|██████████| 343M/343M [00:0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|██████████| 6.46M/6.46M [00:00&lt;00:00, 16.1MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|█████████████████████████████████████████████████████| 6.46M/6.46M [00:01&lt;00:00, 5.18MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1396,18 +1395,18 @@ average_template_10.nii.gz: 100%|██████████| 343M/343M [00:0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████| 41.2k/41.2k [00:00&lt;00:00, 606kMB/s]
-parcellation_term.csv: 100%|██████████| 177k/177k [00:00&lt;00:00, 1.27MMB/s] 
-parcellation_term_set.csv: 100%|██████████| 628/628 [00:00&lt;00:00, 8.04kMB/s]
-parcellation_term_set_membership.csv: 100%|██████████| 114k/114k [00:00&lt;00:00, 956kMB/s]  
-parcellation_term_with_counts.csv: 100%|██████████| 137k/137k [00:00&lt;00:00, 908kMB/s]  
-parcellation_to_parcellation_term_membership.csv: 100%|██████████| 680k/680k [00:00&lt;00:00, 3.71MMB/s] 
-parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████| 22.3k/22.3k [00:00&lt;00:00, 96.8kMB/s]
-parcellation_to_parcellation_term_membership_blue.csv: 100%|██████████| 16.4k/16.4k [00:00&lt;00:00, 232kMB/s]
-parcellation_to_parcellation_term_membership_color.csv: 100%|██████████| 30.5k/30.5k [00:00&lt;00:00, 432kMB/s]
-parcellation_to_parcellation_term_membership_green.csv: 100%|██████████| 16.5k/16.5k [00:00&lt;00:00, 234kMB/s]
-parcellation_to_parcellation_term_membership_name.csv: 100%|██████████| 75.8k/75.8k [00:00&lt;00:00, 315kMB/s] 
-parcellation_to_parcellation_term_membership_red.csv: 100%|██████████| 16.0k/16.0k [00:00&lt;00:00, 215kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████████████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 963kMB/s]
+parcellation_term.csv: 100%|██████████████████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.28MMB/s]
+parcellation_term_set.csv: 100%|████████████████████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 12.9kMB/s]
+parcellation_term_set_membership.csv: 100%|████████████████████████████████████████████████| 114k/114k [00:00&lt;00:00, 919kMB/s]
+parcellation_term_with_counts.csv: 100%|███████████████████████████████████████████████████| 137k/137k [00:00&lt;00:00, 880kMB/s]
+parcellation_to_parcellation_term_membership.csv: 100%|███████████████████████████████████| 680k/680k [00:00&lt;00:00, 3.18MMB/s]
+parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████████████████████| 22.3k/22.3k [00:00&lt;00:00, 366kMB/s]
+parcellation_to_parcellation_term_membership_blue.csv: 100%|█████████████████████████████| 16.4k/16.4k [00:00&lt;00:00, 196kMB/s]
+parcellation_to_parcellation_term_membership_color.csv: 100%|████████████████████████████| 30.5k/30.5k [00:00&lt;00:00, 516kMB/s]
+parcellation_to_parcellation_term_membership_green.csv: 100%|████████████████████████████| 16.5k/16.5k [00:00&lt;00:00, 183kMB/s]
+parcellation_to_parcellation_term_membership_name.csv: 100%|█████████████████████████████| 75.8k/75.8k [00:00&lt;00:00, 695kMB/s]
+parcellation_to_parcellation_term_membership_red.csv: 100%|██████████████████████████████| 16.0k/16.0k [00:00&lt;00:00, 247kMB/s]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),

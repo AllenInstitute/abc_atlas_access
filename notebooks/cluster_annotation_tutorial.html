@@ -469,7 +469,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-clustering-analysis-and-annotation-ccn20230722">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-clustering-analysis-and-annotation-ccn20230722">
 <h1>10x RNA-seq clustering analysis and annotation (CCN20230722)<a class="headerlink" href="#x-rna-seq-clustering-analysis-and-annotation-ccn20230722" title="Permalink to this heading">#</a></h1>
 <p>The Mouse Whole Brain Atlas is a high-resolution transcriptomic and spatial cell-type atlas across the entire mouse brain, integrating several whole-brain single-cell RNA-sequencing (scRNA-seq) datasets. The datasets contain a total of ~4 million cells passing rigorous quality-control (QC) criteria. The integrated transcriptomic taxonomy contains 5,322 clusters that are organized in a hierarchical manner with nested groupings of 34 classes, 338 subclasses, 1,201 supertypes and 5,322 types/clusters. The scRNA-seq data reveal transcriptome-wide gene expression and co-expression patterns for each cell type. The anatomical location of each cell type has been annotated using a comprehensive brain-wide MERFISH dataset with a total of ~4 million segmented and QC-passed cells, probed with a 500-gene panel and registered to the Allen Mouse Brain Common Coordinate Framework (CCF v3). The MERFISH data not only provide accurate spatial annotation of cell types at subclass, supertype and cluster levels, but also reveal fine-resolution spatial distinctions or gradients for cell types. The combination of scRNA-seq and MERFISH data reveals a high degree of correspondence between transcriptomic identity and spatial specificity for each cell type, as well as unique features of cell type organization in different brain regions.</p>
 <p>The purpose of this notebook is to provide an overview of how cluster and cluster annotation information is represented through example use cases.</p>
@@ -477,11 +485,10 @@ document.write(`
 <p>A detailed cell type <a class="reference external" href="https://allen-brain-cell-atlas.s3-us-west-2.amazonaws.com/metadata/WMB-taxonomy/20230830/cl.df_CCN202307220.xlsx">annotation table</a> is also provided along with data downloads detailing information about the hierarchical membership, anatomical annotation, neurotransmitter type, cell type marker genes, transcription factor and neuropeptide markers, and other metadata types for each cluster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
@@ -1396,7 +1403,7 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25df63b1d4c1c81527cdccad0c44316e0fe2b7881397f72c45d1e7261d989ad5.png" src="../_images/25df63b1d4c1c81527cdccad0c44316e0fe2b7881397f72c45d1e7261d989ad5.png" />
+<img alt="../_images/098569ada2d155f77e8b53e4d25d0632c27b13cf55712c642bdd5066238dacbb.png" src="../_images/098569ada2d155f77e8b53e4d25d0632c27b13cf55712c642bdd5066238dacbb.png" />
 </div>
 </div>
 </section>
@@ -1410,7 +1417,7 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/234a43a8582af494594f368018aef9c1951c7a6cab51014321c77c0cb71bc45c.png" src="../_images/234a43a8582af494594f368018aef9c1951c7a6cab51014321c77c0cb71bc45c.png" />
+<img alt="../_images/8e6c9ec719e009e2011920e79a67d0dfef6374e133de7290322692f257d9ff2a.png" src="../_images/8e6c9ec719e009e2011920e79a67d0dfef6374e133de7290322692f257d9ff2a.png" />
 </div>
 </div>
 </section>
@@ -1747,11 +1754,11 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_77026/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_86047/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.barh(AxB.index, AxB[col], left=bottom, label=col[1], color=B_colors[i])
 </pre></div>
 </div>
-<img alt="../_images/fcc228068dbc88b99c4e21745f2bbe4d22c27b835f33a9227add791a0873de62.png" src="../_images/fcc228068dbc88b99c4e21745f2bbe4d22c27b835f33a9227add791a0873de62.png" />
+<img alt="../_images/6f330242aa671b75799700537f56130e1788c9c8c7bfa70cf63bae032088d529.png" src="../_images/6f330242aa671b75799700537f56130e1788c9c8c7bfa70cf63bae032088d529.png" />
 </div>
 </div>
 </section>
@@ -1796,7 +1803,7 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9397e7de290ddfac6534111d00dd9171c7a3606dee528cdf9567c50150a688db.png" src="../_images/9397e7de290ddfac6534111d00dd9171c7a3606dee528cdf9567c50150a688db.png" />
+<img alt="../_images/b7de3574f936221f6e96d850a13fb61ffa5841b002e5c026f18319d330930fa2.png" src="../_images/b7de3574f936221f6e96d850a13fb61ffa5841b002e5c026f18319d330930fa2.png" />
 </div>
 </div>
 </section>

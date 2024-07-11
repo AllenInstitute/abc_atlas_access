@@ -440,15 +440,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-2a">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-2a">
 <h1>MERFISH whole brain spatial transcriptomics (part 2a)<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-part-2a" title="Permalink to this heading">#</a></h1>
 <p>In part 1, we explored two examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 in the one coronal section. In this notebook, we will prepare data so that we can repeat the examples for all cells spanning the whole brain. This notebook takes ~10 seconds to run.</p>
 <p>The results from this notebook has already been cached and saved. As such, if needed you can skip this notebook and continue with part 2b.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the log2 expression matrices associated with MERFISH-C57BL6J-638850-combined dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
@@ -615,7 +622,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  6.402895000000001
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  8.358554
 </pre></div>
 </div>
 </div>

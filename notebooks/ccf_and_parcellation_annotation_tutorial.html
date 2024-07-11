@@ -463,7 +463,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="allen-mouse-common-coordinate-framework-2020-version">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="allen-mouse-common-coordinate-framework-2020-version">
 <h1>Allen Mouse Common Coordinate Framework (2020 version)<a class="headerlink" href="#allen-mouse-common-coordinate-framework-2020-version" title="Permalink to this heading">#</a></h1>
 <p>Allen Mouse Brain Common Coordinate Framework (CCFv3, <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al, 2020</a>) is a 3D reference space is an average brain at 10um voxel resolution created from serial two-photon tomography images of 1,675 young adult C57Bl6/J mice. Using multimodal reference data, the entire brain parcellated directly in 3D, labeling every voxel with a brain structure spanning 43 isocortical areas and their layers, 314 subcortical gray matter structures, 81 fiber tracts, and 8 ventricular structures. The 2020 version adds new annotations for layers of the Ammon’s horn (CA), main olfactory bulb (MOB) and minor modification of surrounding fiber tracts.</p>
 <p>CCFv3 is used in informatics pipelines and online applications to analyze, visualize and integrate multimodal and multiscale data sets in 3D, and is openly accessible for research use.</p>
@@ -471,13 +479,12 @@ document.write(`
 <p>You need to be connected to the internet to run this notebook and that you have already downloaded the data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">SimpleITK</span> <span class="k">as</span> <span class="nn">sitk</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
@@ -608,7 +615,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/13904a0dbe68967e743dd5e61dd73124bc97820fecbea8e191fcf39bd3cd0bce.png" src="../_images/13904a0dbe68967e743dd5e61dd73124bc97820fecbea8e191fcf39bd3cd0bce.png" />
+<img alt="../_images/519ab26c169092c47a271a8fec39b53e2d63928259ac7b8bde6ec0be7a49f4d1.png" src="../_images/519ab26c169092c47a271a8fec39b53e2d63928259ac7b8bde6ec0be7a49f4d1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -620,7 +627,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1a3cda2031f3b1dfa6608c6e4e2cb290fd6c9b854bb8759b6e28ad09e062577a.png" src="../_images/1a3cda2031f3b1dfa6608c6e4e2cb290fd6c9b854bb8759b6e28ad09e062577a.png" />
+<img alt="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" src="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -632,7 +639,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/919b619238363b70dab22d2368d3847076d28bc56c0961c61a2a28308623a9c2.png" src="../_images/919b619238363b70dab22d2368d3847076d28bc56c0961c61a2a28308623a9c2.png" />
+<img alt="../_images/a34f6daf715dbf6d3e3d6592ebd442cbfd25b0a8566f5643ad2c4f70c41367ec.png" src="../_images/a34f6daf715dbf6d3e3d6592ebd442cbfd25b0a8566f5643ad2c4f70c41367ec.png" />
 </div>
 </div>
 </section>
@@ -2254,7 +2261,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1a3cda2031f3b1dfa6608c6e4e2cb290fd6c9b854bb8759b6e28ad09e062577a.png" src="../_images/1a3cda2031f3b1dfa6608c6e4e2cb290fd6c9b854bb8759b6e28ad09e062577a.png" />
+<img alt="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" src="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2267,7 +2274,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa465d68d1ccf4355acf7c27bdd0a1f34919e13100e0c96892d0e4475bd4bbb3.png" src="../_images/aa465d68d1ccf4355acf7c27bdd0a1f34919e13100e0c96892d0e4475bd4bbb3.png" />
+<img alt="../_images/3bc25f96acbd4ef50623c55e9ae24e08a2c704a4a149511e4f789b5ec0a1f5c2.png" src="../_images/3bc25f96acbd4ef50623c55e9ae24e08a2c704a4a149511e4f789b5ec0a1f5c2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2280,7 +2287,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d3af980ca976c5072a75db1d3184362a2001359d257cbd00e32371a5e49c421d.png" src="../_images/d3af980ca976c5072a75db1d3184362a2001359d257cbd00e32371a5e49c421d.png" />
+<img alt="../_images/98ec2773c734302ccad2504ec132251b4b08e95e0a9b22ffe07d92e2fbebc2f7.png" src="../_images/98ec2773c734302ccad2504ec132251b4b08e95e0a9b22ffe07d92e2fbebc2f7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2293,7 +2300,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1e9974e5df3dbb3ad61d8a15a1c3858f07f44090330b8489121bdd0aabfce3f.png" src="../_images/a1e9974e5df3dbb3ad61d8a15a1c3858f07f44090330b8489121bdd0aabfce3f.png" />
+<img alt="../_images/0f0558a5c8ae6fc845c3e3a2d4530fa267cdbb7556c2ab5c0ffedcf076f21122.png" src="../_images/0f0558a5c8ae6fc845c3e3a2d4530fa267cdbb7556c2ab5c0ffedcf076f21122.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2306,7 +2313,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/460df01c489eb858e300bdf1cd35a96bf6c4bc0d063026ca1cc8c68863e7b4a2.png" src="../_images/460df01c489eb858e300bdf1cd35a96bf6c4bc0d063026ca1cc8c68863e7b4a2.png" />
+<img alt="../_images/ba8c55264258ecbe09fd732c0adf9682d207bb8673e52d022822ccb5b3ae2d9f.png" src="../_images/ba8c55264258ecbe09fd732c0adf9682d207bb8673e52d022822ccb5b3ae2d9f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2319,7 +2326,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19021bc93fa6a6a231263aaceaca5719bbefb183a94acae6d5dbfe2d07dc4669.png" src="../_images/19021bc93fa6a6a231263aaceaca5719bbefb183a94acae6d5dbfe2d07dc4669.png" />
+<img alt="../_images/6d1936c196e3ce8a9e5d79bcc7d92b729ef4fd18c748d4bf6c784794c4f4d844.png" src="../_images/6d1936c196e3ce8a9e5d79bcc7d92b729ef4fd18c748d4bf6c784794c4f4d844.png" />
 </div>
 </div>
 </section>

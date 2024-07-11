@@ -456,17 +456,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cell-type-neighborhood-gallery">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="cell-type-neighborhood-gallery">
 <h1>Cell type neighborhood gallery<a class="headerlink" href="#cell-type-neighborhood-gallery" title="Permalink to this heading">#</a></h1>
 <p>In this notebook, we will visualize a set of cell type neighborhoods to produce visualizations similar to Figure 2 of <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
@@ -614,6 +620,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10x_cell_metadata_with_group_membership.csv: 100%|█████████████████████████████████████████████████████████████████████| 1.57G/1.57G [01:09&lt;00:00, 22.6MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of 10x cells: 4042976
 </pre></div>
 </div>
@@ -632,6 +641,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>merfish_cell_metadata_with_group_membership.csv: 100%|█████████████████████████████████████████████████████████████████| 1.20G/1.20G [00:50&lt;00:00, 24.0MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of merfish cells: 3938808
 </pre></div>
 </div>
@@ -723,7 +735,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8109f4b213333da697cd1f31acacbb63d91dc42031a78b230520eef62af12c77.png" src="../_images/8109f4b213333da697cd1f31acacbb63d91dc42031a78b230520eef62af12c77.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-Pallium-Glut.csv: 100%|███████████████████████████████████████████████████████████████████████████████████| 84.5M/84.5M [00:03&lt;00:00, 25.0MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/4910f5653fe2b2b4eaf35adc44fcc541730e303985c22bfc38d3ab42396c5339.png" src="../_images/4910f5653fe2b2b4eaf35adc44fcc541730e303985c22bfc38d3ab42396c5339.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -734,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/820d23f1a4c68cb92fb8e8cd8a945f1087e10548c8aa41cb7650766af5d52457.png" src="../_images/820d23f1a4c68cb92fb8e8cd8a945f1087e10548c8aa41cb7650766af5d52457.png" />
+<img alt="../_images/5826bd111dee2b4bd31ee3701b2739c5c451596dbf55b0fcd54e55c5349daffe.png" src="../_images/5826bd111dee2b4bd31ee3701b2739c5c451596dbf55b0fcd54e55c5349daffe.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -745,7 +760,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7d27eef26191cb6fa116ff8d6c48385fdcedaed0d4e1fcb2e12a3b9bb08bbed8.png" src="../_images/7d27eef26191cb6fa116ff8d6c48385fdcedaed0d4e1fcb2e12a3b9bb08bbed8.png" />
+<img alt="../_images/7a416977a633dee37daf4d6733943a84c9e1300be1b1b002829d005d0b075fac.png" src="../_images/7a416977a633dee37daf4d6733943a84c9e1300be1b1b002829d005d0b075fac.png" />
 </div>
 </div>
 </section>
@@ -760,7 +775,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71cdacde5c425b460b29b81e6866024eec7253a2e03c540a5a4f2a5344b3f4a8.png" src="../_images/71cdacde5c425b460b29b81e6866024eec7253a2e03c540a5a4f2a5344b3f4a8.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-Subpallium-GABA.csv: 100%|████████████████████████████████████████████████████████████████████████████████| 27.7M/27.7M [00:01&lt;00:00, 15.9MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/6bd8718432439318c4bbe226f6804cb6fc816254065dff3bfe99dd18c0bfe845.png" src="../_images/6bd8718432439318c4bbe226f6804cb6fc816254065dff3bfe99dd18c0bfe845.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -771,7 +789,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/abe0a4b70f1b05859a7401af45acba43b7f0cd66d4dfb518a872b4de88588149.png" src="../_images/abe0a4b70f1b05859a7401af45acba43b7f0cd66d4dfb518a872b4de88588149.png" />
+<img alt="../_images/312e5ef4254486419c019a5a0140680d0885a80e587ca1cb78fc1077c42e11c5.png" src="../_images/312e5ef4254486419c019a5a0140680d0885a80e587ca1cb78fc1077c42e11c5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -782,7 +800,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c6904dd1c0512760df19418462fbd975af9d973246b8ddae3dacc5d7d502834c.png" src="../_images/c6904dd1c0512760df19418462fbd975af9d973246b8ddae3dacc5d7d502834c.png" />
+<img alt="../_images/306d1080806a8f3cf0ec16ac14b2d1e0ba19c4a0878e460c53465aaf31f82e0d.png" src="../_images/306d1080806a8f3cf0ec16ac14b2d1e0ba19c4a0878e460c53465aaf31f82e0d.png" />
 </div>
 </div>
 </section>
@@ -797,7 +815,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7e027d94abf350b7301a57f3cf15b6be5ab269ef9948e06c4b98637ce6f3e72.png" src="../_images/b7e027d94abf350b7301a57f3cf15b6be5ab269ef9948e06c4b98637ce6f3e72.png" />
+<img alt="../_images/c52ef314efa94fe6b630f0ac2edcc01fe1e7caecb7cfb556b275aa8d338195ed.png" src="../_images/c52ef314efa94fe6b630f0ac2edcc01fe1e7caecb7cfb556b275aa8d338195ed.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -808,7 +826,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1cac6bbc4d908e2a75401806ec47c50c8690b5bc8d774f2f7e8c5f66cf94e826.png" src="../_images/1cac6bbc4d908e2a75401806ec47c50c8690b5bc8d774f2f7e8c5f66cf94e826.png" />
+<img alt="../_images/cd45db1c197d06b6f131c106a5615d8c1b11aafa3fe29313604fd959fe60e354.png" src="../_images/cd45db1c197d06b6f131c106a5615d8c1b11aafa3fe29313604fd959fe60e354.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -819,7 +837,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/63ff97ca1c093d0568b7e541ce215f0e6bff1e1b16719058267bd3a3ca199982.png" src="../_images/63ff97ca1c093d0568b7e541ce215f0e6bff1e1b16719058267bd3a3ca199982.png" />
+<img alt="../_images/45b0842b0061b8a6ccdd6417379cae5ce990b9a2243331c4fe72ef936eb0858f.png" src="../_images/45b0842b0061b8a6ccdd6417379cae5ce990b9a2243331c4fe72ef936eb0858f.png" />
 </div>
 </div>
 </section>
@@ -834,7 +852,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9400dc11444a92e429b3163b0027a08f0c8d6b34fe81fc258b8b5ebc702a68af.png" src="../_images/9400dc11444a92e429b3163b0027a08f0c8d6b34fe81fc258b8b5ebc702a68af.png" />
+<img alt="../_images/23c600bd5bf8c89496b5075a197c8f0e27cd52ccb335e53cf88962c1c30f4e41.png" src="../_images/23c600bd5bf8c89496b5075a197c8f0e27cd52ccb335e53cf88962c1c30f4e41.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -845,7 +863,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3ffa4a338906a26070e4f483830e6175b7923481ea5f4e6afb98fd5b02090875.png" src="../_images/3ffa4a338906a26070e4f483830e6175b7923481ea5f4e6afb98fd5b02090875.png" />
+<img alt="../_images/af175172c17782d66ab9c8886a4cd39e602e8ad0f85a04757ccb9fe191ccc044.png" src="../_images/af175172c17782d66ab9c8886a4cd39e602e8ad0f85a04757ccb9fe191ccc044.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -856,7 +874,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/830613be97b5ebd825b04d21423eaa11aa1ac7dbca6a94fd89970f304fe0b34b.png" src="../_images/830613be97b5ebd825b04d21423eaa11aa1ac7dbca6a94fd89970f304fe0b34b.png" />
+<img alt="../_images/13438f40d96ea5213a791bc8b0b6c8dba80bb6f9f53fc3cac930f12795d6b3ac.png" src="../_images/13438f40d96ea5213a791bc8b0b6c8dba80bb6f9f53fc3cac930f12795d6b3ac.png" />
 </div>
 </div>
 </section>
@@ -871,7 +889,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/791f5aba16191cbbd8c366a30b202688f58bd92c8236e26865aecad7c98f2847.png" src="../_images/791f5aba16191cbbd8c366a30b202688f58bd92c8236e26865aecad7c98f2847.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-MB-HB-CB-GABA.csv: 100%|██████████████████████████████████████████████████████████████████████████████████| 9.32M/9.32M [00:00&lt;00:00, 18.7MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/06e5f1ed2da69e77d21905ce7e19c4f7dcf842b9414fd623b19048fe83e86f08.png" src="../_images/06e5f1ed2da69e77d21905ce7e19c4f7dcf842b9414fd623b19048fe83e86f08.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -882,7 +903,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0e3ce7f78b593d502d2e0d61f6b2863c831674fa6c5744141276936f11a733e1.png" src="../_images/0e3ce7f78b593d502d2e0d61f6b2863c831674fa6c5744141276936f11a733e1.png" />
+<img alt="../_images/b4f869f57f1133381b531dba160374d006acd3f4a5a421338bfe0ace96a198b4.png" src="../_images/b4f869f57f1133381b531dba160374d006acd3f4a5a421338bfe0ace96a198b4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -893,7 +914,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c46f59f3dbb68afeaf771a9edf772bf7b18deb71d40597a6f2c3d34c80ef7fe1.png" src="../_images/c46f59f3dbb68afeaf771a9edf772bf7b18deb71d40597a6f2c3d34c80ef7fe1.png" />
+<img alt="../_images/aae1c57365ff98c44b1ca98525d16cb15ca8cd3d0c8dd47cb865fa4da1ac9ac0.png" src="../_images/aae1c57365ff98c44b1ca98525d16cb15ca8cd3d0c8dd47cb865fa4da1ac9ac0.png" />
 </div>
 </div>
 </section>
@@ -908,7 +929,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/99d85170fdca5d18584a63a3e19620261c0a8a563eb70f1fb13539c3b559085f.png" src="../_images/99d85170fdca5d18584a63a3e19620261c0a8a563eb70f1fb13539c3b559085f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-MB-HB-Glut-Sero-Dopa.csv: 100%|███████████████████████████████████████████████████████████████████████████| 8.42M/8.42M [00:00&lt;00:00, 18.5MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/cf8cdcfe120545151a770e486b0c9d198712c39a486e0528f0468503a159915d.png" src="../_images/cf8cdcfe120545151a770e486b0c9d198712c39a486e0528f0468503a159915d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -919,7 +943,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/33a6bb66b829e1049cf080c13daae83ef5a3674fb0026dd693814d26479b0a47.png" src="../_images/33a6bb66b829e1049cf080c13daae83ef5a3674fb0026dd693814d26479b0a47.png" />
+<img alt="../_images/f30f249ff57aaa1b05312eb1a47d7b972a7b0e0800630aa9f6d5cad363e4b0b1.png" src="../_images/f30f249ff57aaa1b05312eb1a47d7b972a7b0e0800630aa9f6d5cad363e4b0b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -930,7 +954,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f31cbc5ab881cd64119961df3627020f9dcd3f13e8286ac5edcd0eb8d3ec2fc.png" src="../_images/4f31cbc5ab881cd64119961df3627020f9dcd3f13e8286ac5edcd0eb8d3ec2fc.png" />
+<img alt="../_images/af81d9105ffaa1d8900b5928fb0591dd5aed3d3db95d7e84fddcb43fdc1622fa.png" src="../_images/af81d9105ffaa1d8900b5928fb0591dd5aed3d3db95d7e84fddcb43fdc1622fa.png" />
 </div>
 </div>
 </section>
@@ -945,7 +969,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2fe26f368940a0bd770a18cee1eae07dcde1e11ffb0b981681bd974cf3deb395.png" src="../_images/2fe26f368940a0bd770a18cee1eae07dcde1e11ffb0b981681bd974cf3deb395.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-NN-IMN-GC.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████| 83.4M/83.4M [00:03&lt;00:00, 21.4MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/9209914dd5fdd0d700f7282e8993c19515030fcc42c7f86660b722ca71d8105f.png" src="../_images/9209914dd5fdd0d700f7282e8993c19515030fcc42c7f86660b722ca71d8105f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -956,7 +983,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/666e2ca89342ada5861745f650b82d787ded58025dabced72f132c858f35d1a1.png" src="../_images/666e2ca89342ada5861745f650b82d787ded58025dabced72f132c858f35d1a1.png" />
+<img alt="../_images/890a8f145b1c9f89d8e1bdab42c090797cbdd62bcb87bafe9ddc023325a79590.png" src="../_images/890a8f145b1c9f89d8e1bdab42c090797cbdd62bcb87bafe9ddc023325a79590.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -967,7 +994,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e570489e2f85c737b7c4b391d0d2d675c21005446e5dbb8613a3dd31426074c4.png" src="../_images/e570489e2f85c737b7c4b391d0d2d675c21005446e5dbb8613a3dd31426074c4.png" />
+<img alt="../_images/152175ca17a91088fbc05df0b47678bac957a2ef8831c74f107147958c2775b1.png" src="../_images/152175ca17a91088fbc05df0b47678bac957a2ef8831c74f107147958c2775b1.png" />
 </div>
 </div>
 </section>

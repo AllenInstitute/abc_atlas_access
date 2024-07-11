@@ -462,17 +462,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cluster-neighborhoods-and-embeddings">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="cluster-neighborhoods-and-embeddings">
 <h1>Cluster neighborhoods and embeddings<a class="headerlink" href="#cluster-neighborhoods-and-embeddings" title="Permalink to this heading">#</a></h1>
 <p>To further investigate the neuronal diversity within each major brain structure, <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a> created concept of cell types “neighborhoods” or groups and use them for visualization and analysis. For each neighborhood, they genereated re-embedded UMAPS to reveal fine-grained relationships between neuronal types within and between brain regions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
@@ -515,7 +521,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group.csv: 100%|██████████| 1.62k/1.62k [00:00&lt;00:00, 23.0kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 1.62k/1.62k [00:00&lt;00:00, 25.4kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of groups: 8
@@ -673,7 +679,7 @@ All cells in the whole mouse brain (5322 clusters)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group_membership.csv: 100%|██████████| 674k/674k [00:00&lt;00:00, 2.78MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group_membership.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████| 674k/674k [00:00&lt;00:00, 2.40MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -755,7 +761,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dimension_reduction.csv: 100%|██████████| 1.68k/1.68k [00:00&lt;00:00, 19.6kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dimension_reduction.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1.68k/1.68k [00:00&lt;00:00, 23.3kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of maps: 8
@@ -1101,7 +1107,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/33bb4bd7b825b885db28d4549095ee02319b0e02bb5e452311ccacbe20533f3f.png" src="../_images/33bb4bd7b825b885db28d4549095ee02319b0e02bb5e452311ccacbe20533f3f.png" />
+<img alt="../_images/aa4ba86f9b0b984fa7f0aab1fbae112df6b4d254ce24e3627934d2e8d8245cf0.png" src="../_images/aa4ba86f9b0b984fa7f0aab1fbae112df6b4d254ce24e3627934d2e8d8245cf0.png" />
 </div>
 </div>
 <p>We filter to only colorized cells in the “HY-EA-Glut-GABA” cluster group to visualize cell type classes, subclasses and neurotransmitter types</p>
@@ -1123,7 +1129,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Glutamatergic and GABAergic neurons in hypothalamus and extended amygdala, also including all non-pallium glutamatergic neurons in cerebral nuclei (1404 clusters)
 </pre></div>
 </div>
-<img alt="../_images/76db99783bbb75bcbed65aebc09b8002063dd97bad5fd8731bcd07300026c682.png" src="../_images/76db99783bbb75bcbed65aebc09b8002063dd97bad5fd8731bcd07300026c682.png" />
+<img alt="../_images/d076ecde6caf13320a356558bba5761d6c26262b7442d565ed291078d0043a72.png" src="../_images/d076ecde6caf13320a356558bba5761d6c26262b7442d565ed291078d0043a72.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1136,7 +1142,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b111c475916d3ad1b45a5a65ce55dec58d8e2e20660fff432e221aa5dbafcdf5.png" src="../_images/b111c475916d3ad1b45a5a65ce55dec58d8e2e20660fff432e221aa5dbafcdf5.png" />
+<img alt="../_images/9476cb4e7a533ed68d687c872a6a475b4d757b1226f4299cf847e0bac4197815.png" src="../_images/9476cb4e7a533ed68d687c872a6a475b4d757b1226f4299cf847e0bac4197815.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1149,7 +1155,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73a348d6aa816f9fe9088721056857b02fb6b18e0d3f439b4bad981743686b09.png" src="../_images/73a348d6aa816f9fe9088721056857b02fb6b18e0d3f439b4bad981743686b09.png" />
+<img alt="../_images/1c33b616c1ec5ab4c6017daa27a2abfd5309f869795663d2916635b127e808d1.png" src="../_images/1c33b616c1ec5ab4c6017daa27a2abfd5309f869795663d2916635b127e808d1.png" />
 </div>
 </div>
 <p>In this next section, we read in the coordinates for the HY-EA-Glut-GABA specific embedding</p>
@@ -1164,7 +1170,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-HY-EA-Glut-GABA.csv: 100%|██████████| 13.7M/13.7M [00:01&lt;00:00, 7.31MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-HY-EA-Glut-GABA.csv: 100%|████████████████████████████████████████████████████████████████████████████████| 13.7M/13.7M [00:01&lt;00:00, 10.7MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1186,7 +1192,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/919fa1f81acc1f56dd94cfb592381d1a1d50d133d7d8e261255e720bc7ab0a49.png" src="../_images/919fa1f81acc1f56dd94cfb592381d1a1d50d133d7d8e261255e720bc7ab0a49.png" />
+<img alt="../_images/4eab104cf864e8ffc52277442a7ea6a42959e620099099dc7a3c4ff5f4f62fce.png" src="../_images/4eab104cf864e8ffc52277442a7ea6a42959e620099099dc7a3c4ff5f4f62fce.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1197,7 +1203,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2116429cccaf2eac06dd9c4e1b9c359f1769ec7b8f5c3f5d9c367dc75f88dad.png" src="../_images/a2116429cccaf2eac06dd9c4e1b9c359f1769ec7b8f5c3f5d9c367dc75f88dad.png" />
+<img alt="../_images/88b8b46754fde96c26793a5a67768a5c5ba371e25f39b60b85a7703d640c5dc5.png" src="../_images/88b8b46754fde96c26793a5a67768a5c5ba371e25f39b60b85a7703d640c5dc5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1208,7 +1214,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/63d56f7a5361bf3312540248ece1070e3c98dc2b9258689db4880149e6225aa7.png" src="../_images/63d56f7a5361bf3312540248ece1070e3c98dc2b9258689db4880149e6225aa7.png" />
+<img alt="../_images/b0f4484e7b7169687d1d5309b4925464070955146e44a84ea5f275bd6b7c5766.png" src="../_images/b0f4484e7b7169687d1d5309b4925464070955146e44a84ea5f275bd6b7c5766.png" />
 </div>
 </div>
 </section>
@@ -1248,7 +1254,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1630d0a9a26ab162c26a0e6d86ab5c3502777274fc90cc54f32044bc9d92e0b8.png" src="../_images/1630d0a9a26ab162c26a0e6d86ab5c3502777274fc90cc54f32044bc9d92e0b8.png" />
+<img alt="../_images/e534b8255a9590aed43ae1dfa47c87615f466ec07a856268b239718280a1a761.png" src="../_images/e534b8255a9590aed43ae1dfa47c87615f466ec07a856268b239718280a1a761.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1260,7 +1266,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/351840d3406f2ecf407fb800065374b62fdd11fc18610cae26de96ac73ac842e.png" src="../_images/351840d3406f2ecf407fb800065374b62fdd11fc18610cae26de96ac73ac842e.png" />
+<img alt="../_images/eabd89cf8c568807cda9c8676e065b131d48669de13b813488e02ed476980f62.png" src="../_images/eabd89cf8c568807cda9c8676e065b131d48669de13b813488e02ed476980f62.png" />
 </div>
 </div>
 </section>
@@ -1279,7 +1285,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|██████████| 1.02G/1.02G [00:49&lt;00:00, 20.6MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|███████████████████████████████████████████████████████████████████████| 1.02G/1.02G [00:39&lt;00:00, 25.7MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1337,7 +1343,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1cd87f48ecc50030e70f2e9e5029a0c22fdfd42d11b896c0506012a4132cc25c.png" src="../_images/1cd87f48ecc50030e70f2e9e5029a0c22fdfd42d11b896c0506012a4132cc25c.png" />
+<img alt="../_images/af6ef7814990d16a17154dd4e9bcae8f2d8de497e074fb1a19bfe2d770685fc7.png" src="../_images/af6ef7814990d16a17154dd4e9bcae8f2d8de497e074fb1a19bfe2d770685fc7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1348,7 +1354,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e3e262490bfcd8a57833b852a9384f825a19d0bc169c0113e07eaf0db784a6c.png" src="../_images/8e3e262490bfcd8a57833b852a9384f825a19d0bc169c0113e07eaf0db784a6c.png" />
+<img alt="../_images/83f0ba8a8239e015b8369b34cb6d5900693b7e8f1d5747e64c510add042a582c.png" src="../_images/83f0ba8a8239e015b8369b34cb6d5900693b7e8f1d5747e64c510add042a582c.png" />
 </div>
 </div>
 </section>

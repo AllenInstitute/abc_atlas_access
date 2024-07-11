@@ -454,7 +454,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-whb-10x-rna-seq-gene-expression-data-part-1">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-whb-10x-rna-seq-gene-expression-data-part-1">
 <h1>Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)<a class="headerlink" href="#whole-human-brain-whb-10x-rna-seq-gene-expression-data-part-1" title="Permalink to this heading">#</a></h1>
 <p>The purpose of this set of notebooks is to provide an overview of the data, the file organization, and how to combine data and metadata through example use cases.</p>
 <p>You need to be connected to the internet to run this notebook or connected to a cache that has the WHB data downloaded already.</p>
@@ -462,12 +470,10 @@ document.write(`
 <p>For full details of the data, see <a class="reference external" href="https://www.science.org/doi/10.1126/science.add7046">Siletti et al. 2023</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
@@ -659,9 +665,6 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 1.02M/1.02M [00:00&lt;00:00, 3.20MMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -756,9 +759,6 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 1.33k/1.33k [00:00&lt;00:00, 11.7kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -922,7 +922,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_structure_map.csv: 100%|██████████| 8.82k/8.82k [00:00&lt;00:00, 125kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_structure_map.csv: 100%|█████████████████████████████████████████████████████████████████████████████| 8.82k/8.82k [00:00&lt;00:00, 106kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1284,8 +1284,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6c3cdbedb529721cd4962df128005889cc505ab58d249e9db4cb4cb414442ac5.png" src="../_images/6c3cdbedb529721cd4962df128005889cc505ab58d249e9db4cb4cb414442ac5.png" />
-<img alt="../_images/d301e6a5e974e516b8650cea6191391684dc891b5783eac7e5c18990c61aca1e.png" src="../_images/d301e6a5e974e516b8650cea6191391684dc891b5783eac7e5c18990c61aca1e.png" />
+<img alt="../_images/ef9e52785d69e9c482faad54e513f66f214b78ed1daaf2437973db5695e3cd13.png" src="../_images/ef9e52785d69e9c482faad54e513f66f214b78ed1daaf2437973db5695e3cd13.png" />
+<img alt="../_images/94b221ae371046fbfaa8c3f2dd37e9597f9a8ffa814a9e119d3ff200763fd17d.png" src="../_images/94b221ae371046fbfaa8c3f2dd37e9597f9a8ffa814a9e119d3ff200763fd17d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1298,8 +1298,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1d85aa8cee1391e82df6442f74c3d30c0dc9ab675ec7f54349bbcb8b4d0c7232.png" src="../_images/1d85aa8cee1391e82df6442f74c3d30c0dc9ab675ec7f54349bbcb8b4d0c7232.png" />
-<img alt="../_images/5f3193afad0081896fe0039a8e1b00e73bfdfe1b7237546372489801f780a60c.png" src="../_images/5f3193afad0081896fe0039a8e1b00e73bfdfe1b7237546372489801f780a60c.png" />
+<img alt="../_images/13994cfd968e041809bfa9c74b0df5170a0b91189c6bed421efedd80ad2ea2f2.png" src="../_images/13994cfd968e041809bfa9c74b0df5170a0b91189c6bed421efedd80ad2ea2f2.png" />
+<img alt="../_images/a5db864f9fbb7cf2f9861dcc4fd827a6fe888af67f76520197d5bf7678d3ca86.png" src="../_images/a5db864f9fbb7cf2f9861dcc4fd827a6fe888af67f76520197d5bf7678d3ca86.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1312,8 +1312,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/924d8123b454f53632de65048b67b347326b20a8bda0bcc49824d714f3a87b5c.png" src="../_images/924d8123b454f53632de65048b67b347326b20a8bda0bcc49824d714f3a87b5c.png" />
-<img alt="../_images/dfb0a57a3e306c16dc9c009f6f60ccd0edb166bec411ac8d8025fb3753583982.png" src="../_images/dfb0a57a3e306c16dc9c009f6f60ccd0edb166bec411ac8d8025fb3753583982.png" />
+<img alt="../_images/fc7d707da669a7863bb6a04ff92f79b6a4b58a21469b1f9e2ac40ed75e32b4bf.png" src="../_images/fc7d707da669a7863bb6a04ff92f79b6a4b58a21469b1f9e2ac40ed75e32b4bf.png" />
+<img alt="../_images/6ee50428784c892741c50c6a5f6c96b8273b5eae490de223c74a6ba45c950e3e.png" src="../_images/6ee50428784c892741c50c6a5f6c96b8273b5eae490de223c74a6ba45c950e3e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1326,8 +1326,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ca31029c2bfd1e8c78f3d792782a16c0b034df9a35f21356126bc42eff10817.png" src="../_images/1ca31029c2bfd1e8c78f3d792782a16c0b034df9a35f21356126bc42eff10817.png" />
-<img alt="../_images/8e0428a91449aa0eeb1ee39b9cc112f703d1ee9a9d42b242bf0cd28959e806e0.png" src="../_images/8e0428a91449aa0eeb1ee39b9cc112f703d1ee9a9d42b242bf0cd28959e806e0.png" />
+<img alt="../_images/7b75d3e5feb5430f4c3e1207cfbecdfb677942d8fa4f3eef136c1c5e64697394.png" src="../_images/7b75d3e5feb5430f4c3e1207cfbecdfb677942d8fa4f3eef136c1c5e64697394.png" />
+<img alt="../_images/28e4b499b60bf4614d71c068e06bfbfbe0dea469b05dc2772dd53fde2ecd9168.png" src="../_images/28e4b499b60bf4614d71c068e06bfbfbe0dea469b05dc2772dd53fde2ecd9168.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1340,8 +1340,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b714de6a76e5b6b756c2701f0caa601f6f98a125d5fa77a3e8d039d082284993.png" src="../_images/b714de6a76e5b6b756c2701f0caa601f6f98a125d5fa77a3e8d039d082284993.png" />
-<img alt="../_images/8f8aab033f2ce293caa9d80b3d457dafc075ff2c7619b7e67595b1d812f69c3d.png" src="../_images/8f8aab033f2ce293caa9d80b3d457dafc075ff2c7619b7e67595b1d812f69c3d.png" />
+<img alt="../_images/2f3833e4eb166654a0668252051e495f9d66e90c06ce217c1b57b58c9b41aa2d.png" src="../_images/2f3833e4eb166654a0668252051e495f9d66e90c06ce217c1b57b58c9b41aa2d.png" />
+<img alt="../_images/36e7d78c2fde66cafbd1d8243ebb6d200bf5aa6bf7960017f53e2139b9e9f244.png" src="../_images/36e7d78c2fde66cafbd1d8243ebb6d200bf5aa6bf7960017f53e2139b9e9f244.png" />
 </div>
 </div>
 <p><strong>In part 2 we’ll focus on gene data including using the UMAP to plot gene expression locations in the different clusterings.</strong></p>

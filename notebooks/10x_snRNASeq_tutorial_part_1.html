@@ -461,15 +461,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-1">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-1">
 <h1>10x RNA-seq gene expression data (part 1)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-1" title="Permalink to this heading">#</a></h1>
 <p>To efficiently handle data transfer and download, the 4 million cell 10X dataset, was subdivide into 24 expression matrices where cells are grouped by 10X chemistry (10Xv2, 10Xv3 and 10XMulti) and the broad anatomical region from where the cells were dissected from.</p>
 <p>The purpose of this set of notebooks is to provide an overview of the data, the file organization and how to combine data and metadata through example use cases.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
@@ -626,9 +633,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 858M/858M [00:33&lt;00:00, 25.7MMB/s]    
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  4042976
 </pre></div>
 </div>
@@ -1065,9 +1069,6 @@ Number of unique cluster_alias = 5322
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_metadata.csv: 100%|██████████| 1.40k/1.40k [00:00&lt;00:00, 13.1kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1428,7 +1429,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0edb5fd672459996fa2ea8fa5a59e31ed242d169c32c302bcbc1a221b68be6de.png" src="../_images/0edb5fd672459996fa2ea8fa5a59e31ed242d169c32c302bcbc1a221b68be6de.png" />
+<img alt="../_images/80e096ef8cd56746b1250425948e603b22ffc7142e03692977264b649ef9c2b4.png" src="../_images/80e096ef8cd56746b1250425948e603b22ffc7142e03692977264b649ef9c2b4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1439,7 +1440,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e0e2401687569991deb61ab60bbde9fb6f6852abb022202ad1b2598c2a9eac8.png" src="../_images/8e0e2401687569991deb61ab60bbde9fb6f6852abb022202ad1b2598c2a9eac8.png" />
+<img alt="../_images/22433bb5276afda1e34a8bf2da8dffa501290b5ea5d1ba20e26ff99ce03019d6.png" src="../_images/22433bb5276afda1e34a8bf2da8dffa501290b5ea5d1ba20e26ff99ce03019d6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1450,7 +1451,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e31ed4e7bd525d5f9306446ef7927ccd243e8174ddf33bee3d6871e48d556eb7.png" src="../_images/e31ed4e7bd525d5f9306446ef7927ccd243e8174ddf33bee3d6871e48d556eb7.png" />
+<img alt="../_images/f2f79df7acac0bf9e8b95b33acdc9bb7292e353abd3a47c35ae9f3ad3f923138.png" src="../_images/f2f79df7acac0bf9e8b95b33acdc9bb7292e353abd3a47c35ae9f3ad3f923138.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1461,7 +1462,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a7707626b2daa46e642a073e48bb046c85e3b1e179b0b1a07f2bc799c7991717.png" src="../_images/a7707626b2daa46e642a073e48bb046c85e3b1e179b0b1a07f2bc799c7991717.png" />
+<img alt="../_images/1981c7472f8506208f16ffe75c871f38660dff495e55f16f227b5a5d81e9ef4f.png" src="../_images/1981c7472f8506208f16ffe75c871f38660dff495e55f16f227b5a5d81e9ef4f.png" />
 </div>
 </div>
 </section>
@@ -1727,7 +1728,7 @@ reference transcriptome mm10 (GENCODE vM23/Ensembl 98) using the 10x Genomics Ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-TH-log2.h5ad: 100%|██████████| 4.04G/4.04G [02:34&lt;00:00, 26.1MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-TH-log2.h5ad: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 4.04G/4.04G [02:47&lt;00:00, 24.1MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_download_root/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad
@@ -1907,7 +1908,7 @@ reference transcriptome mm10 (GENCODE vM23/Ensembl 98) using the 10x Genomics Ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  3.630955
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  4.166669999999996
 AnnData object with n_obs × n_vars = 131212 × 10
     obs: &#39;cell_barcode&#39;, &#39;library_label&#39;, &#39;anatomical_division_label&#39;
     var: &#39;gene_symbol&#39;
@@ -1977,7 +1978,7 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ece0f16cdbe6dfc970e28922796c235574adceb0b940e1a4147732b30e491f3c.png" src="../_images/ece0f16cdbe6dfc970e28922796c235574adceb0b940e1a4147732b30e491f3c.png" />
+<img alt="../_images/3a5484183bc627013d1d8434acdf8c1ee1b956d6cd1edd736f9536973b252c0d.png" src="../_images/3a5484183bc627013d1d8434acdf8c1ee1b956d6cd1edd736f9536973b252c0d.png" />
 </div>
 </div>
 </section>
@@ -2002,11 +2003,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_15441/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/90c69c99e735246f3af81a2259b0f5649989313b1cb67c365126c4c914a907e7.png" src="../_images/90c69c99e735246f3af81a2259b0f5649989313b1cb67c365126c4c914a907e7.png" />
+<img alt="../_images/1fe369ddfd502c551e13f0db069321cda94d50f4c577fd1364b8d9d4d1bf6b51.png" src="../_images/1fe369ddfd502c551e13f0db069321cda94d50f4c577fd1364b8d9d4d1bf6b51.png" />
 </div>
 </div>
 <p>Grouping cells by cell types class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic types.</p>
@@ -2018,11 +2019,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_15441/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/b3eaf4596e6743b554598c9f7b46aa541227cc83318b53706f91b4f8a1ba5cd7.png" src="../_images/b3eaf4596e6743b554598c9f7b46aa541227cc83318b53706f91b4f8a1ba5cd7.png" />
+<img alt="../_images/bd1f6a003556ae291743d77a0717b972ee857735a1a58c1eb180dc92182868c6.png" src="../_images/bd1f6a003556ae291743d77a0717b972ee857735a1a58c1eb180dc92182868c6.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass, shows Tac2 is enriched in sublcass “145 MH Tac2 Glut” with further specificity to the medial habenula and with Tac2 itself as a marker for the subclass.</p>
@@ -2034,11 +2035,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_15441/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/6ed9d030fa70580ef79026c47e1d42b9dd9429ef02c9cf7f98b73ab56860f977.png" src="../_images/6ed9d030fa70580ef79026c47e1d42b9dd9429ef02c9cf7f98b73ab56860f977.png" />
+<img alt="../_images/5ee6787d302febc5dcaa94e33ce5032cf054fa9c1f0cfb89723149904385908b.png" src="../_images/5ee6787d302febc5dcaa94e33ce5032cf054fa9c1f0cfb89723149904385908b.png" />
 </div>
 </div>
 <p>Next level down, gene Tac2 is enriched in several children supertypes of “145 MH Tac2 Glut”</p>
@@ -2050,11 +2051,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_15441/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/4e9c87b546c6906afde42e6e06ee79dbd4ab74530ec3b3dce207ae99444e1c38.png" src="../_images/4e9c87b546c6906afde42e6e06ee79dbd4ab74530ec3b3dce207ae99444e1c38.png" />
+<img alt="../_images/3df5e83b22a75934f9cfb775f7b5240a95463d589a6d6a3d19dc6c872d14c165.png" src="../_images/3df5e83b22a75934f9cfb775f7b5240a95463d589a6d6a3d19dc6c872d14c165.png" />
 </div>
 </div>
 <p>Close h5ad file and clean up</p>

@@ -460,7 +460,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-1">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-1">
 <h1>MERFISH whole brain spatial transcriptomics (part 1)<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-part-1" title="Permalink to this heading">#</a></h1>
 <p>The MERFISH data consists of 59 coronal sections (10 micron thick) covering the whole anterior to posterior extent of the brain (~200 micron apart) from a single adult male mouse. Each section is assayed using the MERSCOPE platform with a 500 gene panel designed to enable us to map cells to the whole mouse brain taxonomy.</p>
 <p>The MERSCOPE platform uses combinatorial labeling, sequential imaging and error robust barcodes to obtain quantitative (counts) RNA-expression of 100s-1000s of genes. Each probe binds to a specific transcripts resulting in “dots” in the image. Cells are segmented using CellPose software based on DAPI/PolyT stains.</p>
@@ -468,8 +476,7 @@ document.write(`
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
@@ -523,7 +530,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 564M/564M [00:18&lt;00:00, 29.9MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 564M/564M [00:21&lt;00:00, 26.6MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  3938808
@@ -1096,7 +1103,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 48.4k/48.4k [00:00&lt;00:00, 531kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 48.4k/48.4k [00:00&lt;00:00, 422kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  550
@@ -1200,7 +1207,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-log2.h5ad: 100%|██████████| 7.63G/7.63G [03:59&lt;00:00, 31.9MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-log2.h5ad: 100%|████████████████████████████████████████████████████████████████████████████████████████| 7.63G/7.63G [04:52&lt;00:00, 26.1MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_download_root/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad
@@ -1290,7 +1297,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8c43fc09d27461faebdff277a5524e7c33e24955574c95342a3babf228217178.png" src="../_images/8c43fc09d27461faebdff277a5524e7c33e24955574c95342a3babf228217178.png" />
+<img alt="../_images/ee325eb6ec65301a9621dd5ac139723d77003bfbb66581c8994f6891532c083f.png" src="../_images/ee325eb6ec65301a9621dd5ac139723d77003bfbb66581c8994f6891532c083f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1301,7 +1308,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/468d64e9305ef435f5bce240f4e0636b31c1b5ec671daabea80a3c79c93a5d95.png" src="../_images/468d64e9305ef435f5bce240f4e0636b31c1b5ec671daabea80a3c79c93a5d95.png" />
+<img alt="../_images/82daaa81293235655797a2eff5c30671a3ed789c403412e97cc89068037236a9.png" src="../_images/82daaa81293235655797a2eff5c30671a3ed789c403412e97cc89068037236a9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1312,7 +1319,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4bf04cdd2425ed917ae35be963a71e85cd7aced773ee805ec1e6c5617e8a290f.png" src="../_images/4bf04cdd2425ed917ae35be963a71e85cd7aced773ee805ec1e6c5617e8a290f.png" />
+<img alt="../_images/80d132a21b1dd69e5417d9ccc6bf6d92a548fdf9e0fc4430a298c1fe48a0774f.png" src="../_images/80d132a21b1dd69e5417d9ccc6bf6d92a548fdf9e0fc4430a298c1fe48a0774f.png" />
 </div>
 </div>
 </section>
@@ -1414,7 +1421,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  6.642314999999996
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  8.155457999999996
 AnnData object with n_obs × n_vars = 4334174 × 8
     obs: &#39;brain_section_label&#39;
     var: &#39;gene_symbol&#39;, &#39;transcript_identifier&#39;
@@ -1486,7 +1493,7 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f7519b036d3b6f5d48b0f17f64b71f6e10e9b3b36da359219580b9e38d26e38e.png" src="../_images/f7519b036d3b6f5d48b0f17f64b71f6e10e9b3b36da359219580b9e38d26e38e.png" />
+<img alt="../_images/04537d783821e278a73fbe313659f0c45f13fd3ab113ddafc891a84e6f0add4d.png" src="../_images/04537d783821e278a73fbe313659f0c45f13fd3ab113ddafc891a84e6f0add4d.png" />
 </div>
 </div>
 <p>The expression data can also be visualized as scatter point in anatomical context. Gene Slc17a7 is highly enriched in the cortex , hippocampus, medial habenula with some expression in the thalamus. On the other hand gene Slc32a1 is enriched in the striatum with sparse expression on the cortical plate.</p>
@@ -1498,7 +1505,7 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/78fc989b13931bea53e9deff947583c971b066e473203fd375c06bfec1c2a9b3.png" src="../_images/78fc989b13931bea53e9deff947583c971b066e473203fd375c06bfec1c2a9b3.png" />
+<img alt="../_images/743f8f4c81132949985895749b140afe484471df95442332135cae03f3e7da0d.png" src="../_images/743f8f4c81132949985895749b140afe484471df95442332135cae03f3e7da0d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1509,7 +1516,7 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b65fef4c3be5ca789443925700183f4c349472155df62173c877d3399e64a99b.png" src="../_images/b65fef4c3be5ca789443925700183f4c349472155df62173c877d3399e64a99b.png" />
+<img alt="../_images/bf11b4884aafc0f2592f3ff922998085d11e483567a29e6320a2b88e101db45a.png" src="../_images/bf11b4884aafc0f2592f3ff922998085d11e483567a29e6320a2b88e101db45a.png" />
 </div>
 </div>
 </section>
@@ -1534,11 +1541,11 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_17089/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_86626/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/2a199769f5e149467a0962389858e8987ff52dcc10339eb1ae46c1ba5b71314f.png" src="../_images/2a199769f5e149467a0962389858e8987ff52dcc10339eb1ae46c1ba5b71314f.png" />
+<img alt="../_images/191ade01f30d3ce96fe3c34fff7680f76d7eca46e0a24329e85e33a1ad081e1a.png" src="../_images/191ade01f30d3ce96fe3c34fff7680f76d7eca46e0a24329e85e33a1ad081e1a.png" />
 </div>
 </div>
 <p>Grouping cells by cell types class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic types.</p>
@@ -1550,11 +1557,11 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_17089/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_86626/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/fcdfaf2fe436d5a7745c0be0d0f6833308283c9d2b1ff16230a3965188ff6c17.png" src="../_images/fcdfaf2fe436d5a7745c0be0d0f6833308283c9d2b1ff16230a3965188ff6c17.png" />
+<img alt="../_images/cfac1de3f357b48200a1e2b233f4bc8eeb7aad63f743e74076b9ae6faf4cf763.png" src="../_images/cfac1de3f357b48200a1e2b233f4bc8eeb7aad63f743e74076b9ae6faf4cf763.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass, shows Tac2 is enriched in sublcasses with specificity to the medial habenula (MH), bed muclei of the stria terminalis (BST) and main olfactory blub (MOB).</p>
@@ -1566,11 +1573,11 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_17089/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_86626/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/0e381e6e6a8ae38b6295554567d49c911cf8c0028f6cae350ece44de0c2606b4.png" src="../_images/0e381e6e6a8ae38b6295554567d49c911cf8c0028f6cae350ece44de0c2606b4.png" />
+<img alt="../_images/663efa271496b6c6ffd2995d50d2ac0a19938ec742fb64443a456bd1152f55f7.png" src="../_images/663efa271496b6c6ffd2995d50d2ac0a19938ec742fb64443a456bd1152f55f7.png" />
 </div>
 </div>
 <p>Plotting Tac2 expression in anatomical coordinates results in a image that is comparable to the ISH image data showing enriched expression in the medial habenula, amydala and hypothalamus and sparse expression in the cortex.</p>
@@ -1582,7 +1589,7 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/968824ff2b5519d5e20d57462a6680544bdcf23995a39235e686a313c64455c2.png" src="../_images/968824ff2b5519d5e20d57462a6680544bdcf23995a39235e686a313c64455c2.png" />
+<img alt="../_images/baa962c6bd67cedb4f0114916ce911700e9059c6476a2192e03ae1ac34c87f8c.png" src="../_images/baa962c6bd67cedb4f0114916ce911700e9059c6476a2192e03ae1ac34c87f8c.png" />
 </div>
 </div>
 <p>Close h5ad file and clean up</p>

@@ -453,19 +453,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="accessing-10x-rna-seq-gene-expression-data">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="accessing-10x-rna-seq-gene-expression-data">
 <h1>Accessing 10x RNA-seq gene expression data<a class="headerlink" href="#accessing-10x-rna-seq-gene-expression-data" title="Permalink to this heading">#</a></h1>
 <p>This notebook provides examples and functions for accessing the 10X expression matrix data stored in the ABC Atlas. These files require a large amount of memory to be available to load and analyize them if care is not taken. In this notebook, we present an example of how to access specific gene expressions from the data. The functions used below could be simplily parallized when processing data at scale, however, we leave them simple here.</p>
 <p>Care should still be taken not to attempt too load to many genes from the expression matrices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
-<span class="kn">import</span> <span class="nn">time</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.anndata_utils</span> <span class="kn">import</span> <span class="n">get_gene_data</span>
@@ -506,9 +511,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 705M/705M [00:31&lt;00:00, 22.7MMB/s]    
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -774,9 +776,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 4.23M/4.23M [00:00&lt;00:00, 9.17MMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -980,13 +979,9 @@ output_gene_data: pandas.DataFrame
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loading file: WHB-10Xv3-Nonneurons
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WHB-10Xv3-Nonneurons-log2.h5ad: 100%|██████████| 4.78G/4.78G [04:12&lt;00:00, 19.0MMB/s]    
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  133.182634
-total time taken: 219.19582499999999
+ - time taken:  235.91918
+total time taken: 235.92228400000002
+	total cells: 888263 processed cells: 888263
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1143,6 +1138,349 @@ total time taken: 219.19582499999999
 </div></div></div>
 </div>
 <p>The returned DataFrame is indexed by <code class="docutils literal notranslate"><span class="pre">cell_label</span></code> and can thus be joined with the <code class="docutils literal notranslate"><span class="pre">cell</span></code> DataFrame for further analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cells_with_genes</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gene_data</span><span class="p">)</span>
+<span class="n">cells_with_genes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_barcode</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>library_label</th>
+      <th>feature_matrix_label</th>
+      <th>entity</th>
+      <th>brain_section_label</th>
+      <th>library_method</th>
+      <th>donor_label</th>
+      <th>donor_sex</th>
+      <th>dataset_label</th>
+      <th>...</th>
+      <th>cluster_alias</th>
+      <th>region_of_interest_label</th>
+      <th>anatomical_division_label</th>
+      <th>PTPRC</th>
+      <th>SLC17A6</th>
+      <th>SLC32A1</th>
+      <th>SLC17A7</th>
+      <th>TTR</th>
+      <th>PLP1</th>
+      <th>AQP4</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10X386_2:CATGGATTCTCGACGG</th>
+      <td>CATGGATTCTCGACGG</td>
+      <td>10X386_2</td>
+      <td>LKTX_210825_01_B01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.001.CX.51</td>
+      <td>10Xv3</td>
+      <td>H19.30.001</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>20</td>
+      <td>Human MoAN</td>
+      <td>Myelencephalon</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10X383_5:TCTTGCGGTGAATTGA</th>
+      <td>TCTTGCGGTGAATTGA</td>
+      <td>10X383_5</td>
+      <td>LKTX_210818_02_E01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.BS.94</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>20</td>
+      <td>Human MoSR</td>
+      <td>Myelencephalon</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10X386_2:CTCATCGGTCGAGCAA</th>
+      <td>CTCATCGGTCGAGCAA</td>
+      <td>10X386_2</td>
+      <td>LKTX_210825_01_B01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.001.CX.51</td>
+      <td>10Xv3</td>
+      <td>H19.30.001</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>17</td>
+      <td>Human MoAN</td>
+      <td>Myelencephalon</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10X378_8:TTGGATGAGACAAGCC</th>
+      <td>TTGGATGAGACAAGCC</td>
+      <td>10X378_8</td>
+      <td>LKTX_210809_01_H01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.BS.93</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>18</td>
+      <td>Human PnAN</td>
+      <td>Pons</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10X387_7:TGAACGTAGTATTCCG</th>
+      <td>TGAACGTAGTATTCCG</td>
+      <td>10X387_7</td>
+      <td>LKTX_210825_02_G01</td>
+      <td>WHB-10Xv3-Neurons</td>
+      <td>nuclei</td>
+      <td>H19.30.001.CX.51</td>
+      <td>10Xv3</td>
+      <td>H19.30.001</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>16</td>
+      <td>Human MoAN</td>
+      <td>Myelencephalon</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10X194_8:GAAATGAGTTCGGCTG</th>
+      <td>GAAATGAGTTCGGCTG</td>
+      <td>10X194_8</td>
+      <td>LKTX_190529_02_H01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H18.30.002.CX.50</td>
+      <td>10Xv3</td>
+      <td>H18.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>3264</td>
+      <td>Human SN</td>
+      <td>Midbrain</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.210833</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X350_4:TTTACCATCGCACGAC</th>
+      <td>TTTACCATCGCACGAC</td>
+      <td>10X350_4</td>
+      <td>LKTX_210421_03_D01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.CB.62</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>3265</td>
+      <td>Human CbDN</td>
+      <td>Cerebellum</td>
+      <td>9.587301</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.006084</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X225_1:AGAAGCGTCCATATGG</th>
+      <td>AGAAGCGTCCATATGG</td>
+      <td>10X225_1</td>
+      <td>LKTX_190913_02_A01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H18.30.002.CX.51</td>
+      <td>10Xv3</td>
+      <td>H18.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>3264</td>
+      <td>Human PAG</td>
+      <td>Midbrain</td>
+      <td>8.567961</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X221_5:TTGAACGCAGCCTTCT</th>
+      <td>TTGAACGCAGCCTTCT</td>
+      <td>10X221_5</td>
+      <td>LKTX_190830_01_E01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H18.30.002.CX.49</td>
+      <td>10Xv3</td>
+      <td>H18.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>3265</td>
+      <td>Human STG</td>
+      <td>Cerebral cortex</td>
+      <td>10.119619</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>10X385_3:CTACCCAGTGGCGCTT</th>
+      <td>CTACCCAGTGGCGCTT</td>
+      <td>10X385_3</td>
+      <td>LKTX_210818_04_C01</td>
+      <td>WHB-10Xv3-Nonneurons</td>
+      <td>nuclei</td>
+      <td>H19.30.002.CX.49</td>
+      <td>10Xv3</td>
+      <td>H19.30.002</td>
+      <td>M</td>
+      <td>WHB-10Xv3</td>
+      <td>...</td>
+      <td>3264</td>
+      <td>Human GPi</td>
+      <td>Basal nuclei</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3369219 rows × 22 columns</p>
+</div></div></div>
+</div>
 </section>
 </section>
 </section>

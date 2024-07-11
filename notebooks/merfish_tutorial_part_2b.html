@@ -451,18 +451,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-2b">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-2b">
 <h1>MERFISH whole brain spatial transcriptomics (part 2b)<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-part-2b" title="Permalink to this heading">#</a></h1>
 <p>We can continue to explore our examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 over the whole brain.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
@@ -516,11 +522,6 @@ document.write(`
     <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span>
 <span class="n">exp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|██████████| 360M/360M [00:11&lt;00:00, 30.5MMB/s]    
 </pre></div>
 </div>
 </div>
@@ -581,7 +582,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2ad36fb8383506da26985997da76fc75af751aa5030a034307c38f9da04e60f6.png" src="../_images/2ad36fb8383506da26985997da76fc75af751aa5030a034307c38f9da04e60f6.png" />
+<img alt="../_images/7b4aec5f38c5535771a33a477b71df68a0a0054f79bd8b226b235e087320403e.png" src="../_images/7b4aec5f38c5535771a33a477b71df68a0a0054f79bd8b226b235e087320403e.png" />
 </div>
 </div>
 <p>Grouping expression by dissection region of interest shows that each of these genes have distinct spatial patterns. The MERFISH data allows us to visualize these patterns in anatomical context.</p>
@@ -594,7 +595,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c42859b94749b55a7908d1090c04c200977898943a44473a3d508207f4bdbe9.png" src="../_images/0c42859b94749b55a7908d1090c04c200977898943a44473a3d508207f4bdbe9.png" />
+<img alt="../_images/3ac6faab34c88545f96eb725def49277e3674fe9a3d85ebb5e6d4b0940b7f1d3.png" src="../_images/3ac6faab34c88545f96eb725def49277e3674fe9a3d85ebb5e6d4b0940b7f1d3.png" />
 </div>
 </div>
 <p>We define a small helper function <em>plot sections</em> to visualize the cells for a specified set of brain sections either by colorized metadata or gene expression.</p>
@@ -641,7 +642,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/53df6b4d3d3e67f32dc9ccb3193fe11b329568b100c97ca9c1f69dc7e10fb36b.png" src="../_images/53df6b4d3d3e67f32dc9ccb3193fe11b329568b100c97ca9c1f69dc7e10fb36b.png" />
+<img alt="../_images/41f764328b5044808df165f570ed259730f1753e9e3d374c993344baab166301.png" src="../_images/41f764328b5044808df165f570ed259730f1753e9e3d374c993344baab166301.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -651,7 +652,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/abe20e465f7e2b55ab67f9a36cba315c9a54f7b8e5f73dd8e0ac5f1f516a41ca.png" src="../_images/abe20e465f7e2b55ab67f9a36cba315c9a54f7b8e5f73dd8e0ac5f1f516a41ca.png" />
+<img alt="../_images/2356d61ccdf65fdecaf6f5f58d95995b2283dc338f33a3e3e49e1681c7b79199.png" src="../_images/2356d61ccdf65fdecaf6f5f58d95995b2283dc338f33a3e3e49e1681c7b79199.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +662,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fb6869836e1daf0dce4ee18c5a175111cbfa38f721c0e82f8131e6fdfd5a3162.png" src="../_images/fb6869836e1daf0dce4ee18c5a175111cbfa38f721c0e82f8131e6fdfd5a3162.png" />
+<img alt="../_images/f95df4197f0199c6b9c283307066b82b47902cff1ed6d7448e66b6e9ab8af8f1.png" src="../_images/f95df4197f0199c6b9c283307066b82b47902cff1ed6d7448e66b6e9ab8af8f1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,7 +672,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3e2fd13fc250d053b7fd5f823b57c135094c339197c0ca75c2afba6a030a2f4.png" src="../_images/c3e2fd13fc250d053b7fd5f823b57c135094c339197c0ca75c2afba6a030a2f4.png" />
+<img alt="../_images/c8c221dc70e59f5a1888f36bceb86ca65d9aa5f7e6b0d4292fd6000a97ceaf29.png" src="../_images/c8c221dc70e59f5a1888f36bceb86ca65d9aa5f7e6b0d4292fd6000a97ceaf29.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -681,7 +682,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1073d7dc955a00c6be6539904b3429bc012b7a642830cec62432dbc9dd69487f.png" src="../_images/1073d7dc955a00c6be6539904b3429bc012b7a642830cec62432dbc9dd69487f.png" />
+<img alt="../_images/87ffd9a7576df549c62b6ab0f8bc627f3c57cc82839fce8b3df5ddbc59aa92d2.png" src="../_images/87ffd9a7576df549c62b6ab0f8bc627f3c57cc82839fce8b3df5ddbc59aa92d2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -691,7 +692,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/569d3888bf3bdf3fb016ffb68f71489bd6c7c1df8137b72b04618d8d1d27ba99.png" src="../_images/569d3888bf3bdf3fb016ffb68f71489bd6c7c1df8137b72b04618d8d1d27ba99.png" />
+<img alt="../_images/e321c830dc7edbf6779fc5f9f09c5cdf48ea490b5955ba6ebad9d177649c9021.png" src="../_images/e321c830dc7edbf6779fc5f9f09c5cdf48ea490b5955ba6ebad9d177649c9021.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -701,7 +702,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ddcb498a7b9230fb9732f940614199ef2396f09877f60c54c82349d35a1562a.png" src="../_images/8ddcb498a7b9230fb9732f940614199ef2396f09877f60c54c82349d35a1562a.png" />
+<img alt="../_images/9cb6ca80569915aad85026b2b5c6145d5a948c37f41775efd0f15c3b949da86d.png" src="../_images/9cb6ca80569915aad85026b2b5c6145d5a948c37f41775efd0f15c3b949da86d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -711,7 +712,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83129c4db6e3fecc76a6dea6909e3e46b8e1663a69294e8ebd77a9132c266c26.png" src="../_images/83129c4db6e3fecc76a6dea6909e3e46b8e1663a69294e8ebd77a9132c266c26.png" />
+<img alt="../_images/03ec7b5cce1a7c61099453c8bc69b523983a911b6a64df4f453adc367b273bf7.png" src="../_images/03ec7b5cce1a7c61099453c8bc69b523983a911b6a64df4f453adc367b273bf7.png" />
 </div>
 </div>
 </section>
@@ -730,7 +731,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c9cb182662173fcd38026dbb9daac5126c62fd14b61bf528c0d0b30ba5c8d192.png" src="../_images/c9cb182662173fcd38026dbb9daac5126c62fd14b61bf528c0d0b30ba5c8d192.png" />
+<img alt="../_images/de509559f792c9b9ce09957add15bc6c783f7d4b5edfea794c64997a7bbd1e90.png" src="../_images/de509559f792c9b9ce09957add15bc6c783f7d4b5edfea794c64997a7bbd1e90.png" />
 </div>
 </div>
 <p>Grouping by class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic type and “06 CTX-CGE GABA” GABAergic cells originating from the caudal ganglionic eminence (CGE).</p>
@@ -743,7 +744,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83e356e5823aae0c47a2bd7861fa180c454a0adedd6850771e2a9e4578137daf.png" src="../_images/83e356e5823aae0c47a2bd7861fa180c454a0adedd6850771e2a9e4578137daf.png" />
+<img alt="../_images/3f4c5ae70ec4ed910055b51cf23f9b671203f3c9628db8001ce877ca06f7203e.png" src="../_images/3f4c5ae70ec4ed910055b51cf23f9b671203f3c9628db8001ce877ca06f7203e.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass reveals enrichment is highly anatomically localized cell types such as the medial habenula (MH), bed nuclei of the stria terminalis (BST), spinal nucleus of the trigeminal (SPVC), main olfactory blub (MOB), central amygdalar nucleus (CEA) and arcuate hypothalamic nucleus (ARH).</p>
@@ -756,7 +757,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6b8362bf1ce319318142e1b981b3e04c6a17c6306ca0bc8607f5088dc65c99d9.png" src="../_images/6b8362bf1ce319318142e1b981b3e04c6a17c6306ca0bc8607f5088dc65c99d9.png" />
+<img alt="../_images/faa1fc59f7bc65e091b30d5b7eab580b7f24b12a1def32c4358d3d2fc2ffc503.png" src="../_images/faa1fc59f7bc65e091b30d5b7eab580b7f24b12a1def32c4358d3d2fc2ffc503.png" />
 </div>
 </div>
 <p>The MERFISH data allows us to visualize these spatial pattern in anatomical context. We can aggregate Tac2 expression by brain section so that we can find 4 sections where the enriched expression is located. We then visualize cells in those section by Tac2 expression, neurotransmitter identity, cell type classes and subclasses.</p>
@@ -769,7 +770,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1c8c6f297865168fb754e836c1478fff3f4ae4ac1ffba514d601430f01589f40.png" src="../_images/1c8c6f297865168fb754e836c1478fff3f4ae4ac1ffba514d601430f01589f40.png" />
+<img alt="../_images/939fdeb9b8f26b9bd1348f7e71fea6de5e72dff00491aa1b875bd99c50db0f2d.png" src="../_images/939fdeb9b8f26b9bd1348f7e71fea6de5e72dff00491aa1b875bd99c50db0f2d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -780,7 +781,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27b42510e1ea759960605937e520de914cf9bd1ead6114020ea12dcea2f4e1c6.png" src="../_images/27b42510e1ea759960605937e520de914cf9bd1ead6114020ea12dcea2f4e1c6.png" />
+<img alt="../_images/85980edabee436cc9dcf90eb016b977a8ca6ab9c4a8873875ce0b22bb9457cdd.png" src="../_images/85980edabee436cc9dcf90eb016b977a8ca6ab9c4a8873875ce0b22bb9457cdd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -790,7 +791,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/67e50de1362dde051aa10a48ee49ff3319392169708b423d6fbc7919284babbb.png" src="../_images/67e50de1362dde051aa10a48ee49ff3319392169708b423d6fbc7919284babbb.png" />
+<img alt="../_images/de3925976fa77f14de2f73eb77e707232b724053dfa9bdceaf92de5357437d3f.png" src="../_images/de3925976fa77f14de2f73eb77e707232b724053dfa9bdceaf92de5357437d3f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -800,7 +801,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4836b8e87cfd94cd7c18ced0832b95d92aa2eff21898741e0f67b13c566cf9ef.png" src="../_images/4836b8e87cfd94cd7c18ced0832b95d92aa2eff21898741e0f67b13c566cf9ef.png" />
+<img alt="../_images/45ae24cedde37857703ca21301c19bf4bca0c3f437cdeb2965ec8455d8df3d41.png" src="../_images/45ae24cedde37857703ca21301c19bf4bca0c3f437cdeb2965ec8455d8df3d41.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -810,7 +811,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cf96ed3e191617c986c7848bd81e3e709e24bf97de4dd261deba5e2aef35a831.png" src="../_images/cf96ed3e191617c986c7848bd81e3e709e24bf97de4dd261deba5e2aef35a831.png" />
+<img alt="../_images/bb73aeb4aa61cc74baec0f653df561c50f2dca1042ec43b0fc63bb7c33bedef5.png" src="../_images/bb73aeb4aa61cc74baec0f653df561c50f2dca1042ec43b0fc63bb7c33bedef5.png" />
 </div>
 </div>
 <p>We can use the Tac2 aggregate by subclass table above and pick out the top 10 most enriched subclasses and plot only them on the same set of brain sections and observed that this set of subclasses is able recapitulate the expression pattern of Tac2.</p>
@@ -823,7 +824,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/817bb0ece77a882a438adc19e4d39d14cc82d8d1f62f575a870ff1f1bfe27bbb.png" src="../_images/817bb0ece77a882a438adc19e4d39d14cc82d8d1f62f575a870ff1f1bfe27bbb.png" />
+<img alt="../_images/e722cbd183b360755afb06962016c0de95d360df5aaabdc44c7a8e265623b008.png" src="../_images/e722cbd183b360755afb06962016c0de95d360df5aaabdc44c7a8e265623b008.png" />
 </div>
 </div>
 <div class="cell docutils container">

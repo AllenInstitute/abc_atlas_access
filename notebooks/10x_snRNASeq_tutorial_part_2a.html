@@ -451,15 +451,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2a">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2a">
 <h1>10x RNA-seq gene expression data (part 2a)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2a" title="Permalink to this heading">#</a></h1>
 <p>In part 1, we explore two examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 in the thalamus. In this notebook, we will prepare data so that we can repeat the examples for all cells spanning the whole brain. This notebook takes ~ 5 minutes to run.</p>
 <p>The results from this notebook has already been cached and saved. As such, you can skip this notebook and continue with part 2b. A cleaner example of accessing genes from the expression matricies can also be found in the <code class="docutils literal notranslate"><span class="pre">general_accessing_10x_snRNASeq_tutorial.ipynb</span></code> notebook.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the all the log2 expression matrices associated with both the WMB-10Xv2, WMB-10Xv3 and WMB-10XMulti datasets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
@@ -804,22 +811,22 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti
- - time taken:  0.1000140000000016
+ - time taken:  0.1458529999999989
 WMB-10Xv2-CTXsp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-CTXsp-log2.h5ad: 100%|██████████| 1.74G/1.74G [01:09&lt;00:00, 24.9MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-CTXsp-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████| 1.74G/1.74G [01:08&lt;00:00, 25.3MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  2.0210620000000006
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  2.472235999999995
 WMB-10Xv2-HPF
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-HPF-log2.h5ad: 100%|██████████| 6.10G/6.10G [04:48&lt;00:00, 21.2MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-HPF-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 6.10G/6.10G [04:05&lt;00:00, 24.8MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  6.7627419999999745
-total time taken:  140.118578
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  9.844729000000001
+total time taken:  114.037751
 </pre></div>
 </div>
 </div>

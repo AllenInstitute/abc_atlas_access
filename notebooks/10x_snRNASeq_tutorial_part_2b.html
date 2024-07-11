@@ -451,17 +451,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2b">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2b">
 <h1>10x RNA-seq gene expression data (part 2b)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2b" title="Permalink to this heading">#</a></h1>
 <p>We can continue to explore our examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 over the whole brain.</p>
 <p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">anndata</span>
-<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -500,7 +506,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|██████████| 1.39G/1.39G [00:47&lt;00:00, 29.2MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|███████████████████████████████████████████████████████████████████████| 1.39G/1.39G [00:55&lt;00:00, 25.0MMB/s]
 /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:398: DtypeWarning: Columns (16) have mixed types. Specify dtype option on import or set low_memory=False.
   return pd.read_csv(path, **kwargs)
 </pre></div>
@@ -516,7 +522,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|██████████| 318M/318M [00:10&lt;00:00, 30.5MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|████████████████████████████████████████████████████████████████████████████| 318M/318M [00:11&lt;00:00, 27.2MMB/s]
 </pre></div>
 </div>
 </div>
@@ -602,7 +608,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/70bb6b660cc575f15b5b361803b7676ebd6e885444e1031eb46d4f7c1e6ccfcf.png" src="../_images/70bb6b660cc575f15b5b361803b7676ebd6e885444e1031eb46d4f7c1e6ccfcf.png" />
+<img alt="../_images/65cf809215f6d96b168c8273a7e2b63304fe8db7444484af7a0ebe45e7f2fdbe.png" src="../_images/65cf809215f6d96b168c8273a7e2b63304fe8db7444484af7a0ebe45e7f2fdbe.png" />
 </div>
 </div>
 <p>We can also visualize the relationship between transport genes and neurotransmitter identities on the UMAP.</p>
@@ -615,7 +621,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7334a8fb665aaca698634df1de9880952be8cf380b66b2815b7e2b1d212147a4.png" src="../_images/7334a8fb665aaca698634df1de9880952be8cf380b66b2815b7e2b1d212147a4.png" />
+<img alt="../_images/94d41f90a5c281070f5a751d7dbcfd73f628b788085c862fff48ff4c28a0cc6a.png" src="../_images/94d41f90a5c281070f5a751d7dbcfd73f628b788085c862fff48ff4c28a0cc6a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -626,7 +632,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7f7ab8c7ca7cfbeed5bc9baea56fdebae7c8aca51b0f3fc287c17fc9d8f08dc9.png" src="../_images/7f7ab8c7ca7cfbeed5bc9baea56fdebae7c8aca51b0f3fc287c17fc9d8f08dc9.png" />
+<img alt="../_images/fa0f2398125ea5a2c7efe0a8a7826caf121fe432efb033c143780396fbca0e72.png" src="../_images/fa0f2398125ea5a2c7efe0a8a7826caf121fe432efb033c143780396fbca0e72.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -637,7 +643,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cf6fea589b3fd3a014d7b6a2b8b86552a37c00879c0bf123d6dbff86bdee451d.png" src="../_images/cf6fea589b3fd3a014d7b6a2b8b86552a37c00879c0bf123d6dbff86bdee451d.png" />
+<img alt="../_images/dc3fa14eca66671c8dd1e3dc205bc99498d1ba8a824f2f108a6f9434847aed38.png" src="../_images/dc3fa14eca66671c8dd1e3dc205bc99498d1ba8a824f2f108a6f9434847aed38.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -648,7 +654,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/64e324107550c8a89e00dd25b13b0ddb9f2f3ab76f650531fe91adebe788ae5c.png" src="../_images/64e324107550c8a89e00dd25b13b0ddb9f2f3ab76f650531fe91adebe788ae5c.png" />
+<img alt="../_images/50791e6ea1c165f8364aa52f3d84115fc03d525cf879425d71e30d50dfb47405.png" src="../_images/50791e6ea1c165f8364aa52f3d84115fc03d525cf879425d71e30d50dfb47405.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -659,7 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f7a56e1a43381bc2b8ef11c51bf68bb4d1c04db380b215184b79614eecdcecef.png" src="../_images/f7a56e1a43381bc2b8ef11c51bf68bb4d1c04db380b215184b79614eecdcecef.png" />
+<img alt="../_images/adb9c342264009adeaea04087b371171fe23806aad887999e9bf0e3e86e95ce8.png" src="../_images/adb9c342264009adeaea04087b371171fe23806aad887999e9bf0e3e86e95ce8.png" />
 </div>
 </div>
 <p>Grouping expression by dissection region of interest shows that each of these genes have distinct spatial patterns. Genes Slc17a7 is enriched in the cortex, Slc32a1 in the striatum, Slc17a6 in the thalamus, Slc6a3 in the midbrain, and Slc6a5 in the medulla.</p>
@@ -680,7 +686,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a391eed18285afd8b568ea1da2248b8af3d5490cb5b061142097e2c04fd717d.png" src="../_images/5a391eed18285afd8b568ea1da2248b8af3d5490cb5b061142097e2c04fd717d.png" />
+<img alt="../_images/5431e3fd14a018a4aa2b24c270c128401cbbe7c1c59752092068ae95a2e825e3.png" src="../_images/5431e3fd14a018a4aa2b24c270c128401cbbe7c1c59752092068ae95a2e825e3.png" />
 </div>
 </div>
 </section>
@@ -706,10 +712,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11bfd4990&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x15f43bf10&gt;
 </pre></div>
 </div>
-<img alt="../_images/0585d93d74859a7dfdb93bae588cdca106a397dc200eb4c699aea56f3724ed9d.png" src="../_images/0585d93d74859a7dfdb93bae588cdca106a397dc200eb4c699aea56f3724ed9d.png" />
+<img alt="../_images/91f63411dae4299b4797d953aca04653f9fed9f6097c5065bf8e6d6e5ba8a594.png" src="../_images/91f63411dae4299b4797d953aca04653f9fed9f6097c5065bf8e6d6e5ba8a594.png" />
 </div>
 </div>
 <p>Grouping by class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic type and “06 CTX-CGE GABA” GABAergic cells originating from the caudal ganglionic eminence (CGE).</p>
@@ -721,10 +727,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11ccfced0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x15f5acc10&gt;
 </pre></div>
 </div>
-<img alt="../_images/a5f73c57a97556da1adde6601fa815e73431c5af06dfff1593b91352d1807e15.png" src="../_images/a5f73c57a97556da1adde6601fa815e73431c5af06dfff1593b91352d1807e15.png" />
+<img alt="../_images/dcf02a4ffb7022cd78fbc2b447c1fd2d5eae27d26ce852c6ebea596a35864fb4.png" src="../_images/dcf02a4ffb7022cd78fbc2b447c1fd2d5eae27d26ce852c6ebea596a35864fb4.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass reveals enrichment is highly anatomically localized cell types such as the medial habenula (MH), bed nuclei of the stria terminalis (BST), spinal nucleus of the trigeminal (SPVC), main olfactory blub (MOB), central amygdalar nucleus (CEA) and arcuate hypothalamic nucleus (ARH).</p>
@@ -737,10 +743,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x29808f7d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x15f514d90&gt;
 </pre></div>
 </div>
-<img alt="../_images/821ef8fdeb82dd9e20a3b780f34f629b860d9e0195bd4c62bf3ed2297a1a4156.png" src="../_images/821ef8fdeb82dd9e20a3b780f34f629b860d9e0195bd4c62bf3ed2297a1a4156.png" />
+<img alt="../_images/c554d580e977f4b50bff1c0bd7b5fed648183a618387725f27b750389db9b7bc.png" src="../_images/c554d580e977f4b50bff1c0bd7b5fed648183a618387725f27b750389db9b7bc.png" />
 </div>
 </div>
 <p>Plotting Tac2 expression on the UMAP enables you see whole brain expression in one view showing Tac2 expression is highly restricted to a small number of clusters. Further we can compare the expression profile with the top 10 enriched subclasses.</p>
@@ -752,7 +758,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e7ed09236fa6f45109d1f5ef2a57130779e14daaa934efad1f7f5e06667679a2.png" src="../_images/e7ed09236fa6f45109d1f5ef2a57130779e14daaa934efad1f7f5e06667679a2.png" />
+<img alt="../_images/71227db1040ec687c5b98e73be0df7f6bc70d44058f870fa1d1f0c475fd7c265.png" src="../_images/71227db1040ec687c5b98e73be0df7f6bc70d44058f870fa1d1f0c475fd7c265.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -766,7 +772,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/28d34cf14a5a51b92b44378bd8456005fefc1ee1c69152275b12dc1111e216cb.png" src="../_images/28d34cf14a5a51b92b44378bd8456005fefc1ee1c69152275b12dc1111e216cb.png" />
+<img alt="../_images/4119fdaee09ad5278d980aa62ba72e2dda3256f752aec9d3fd61d265db90a6a0.png" src="../_images/4119fdaee09ad5278d980aa62ba72e2dda3256f752aec9d3fd61d265db90a6a0.png" />
 </div>
 </div>
 </section>

@@ -469,15 +469,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-10x-rna-seq-clustering-analysis-and-annotation">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-10x-rna-seq-clustering-analysis-and-annotation">
 <h1>Whole Human Brain 10x RNA-seq clustering analysis and annotation<a class="headerlink" href="#whole-human-brain-10x-rna-seq-clustering-analysis-and-annotation" title="Permalink to this heading">#</a></h1>
 <p>The Whole Human Brain Atlas data 10X RNA-seq dataset contains ~3 million nuclei (more than 2 million sequenced neurons and almost 1 million non-neurons) from 100 locations across the forebrain, midbrain, and hindbrain. The integrated transcriptomic taxonomy contains 31 superclusters, 461 clusters, and 3313 subclusters. Full details of the dataset can be found in <a class="reference external" href="https://www.science.org/doi/10.1126/science.add7046">Siletti et al. 2023</a></p>
 <p>The purpose of this notebook is to provide an overview of how cluster and cluster annotation information is represented through example use cases. Note that <strong>cluster</strong> in this notebook is an overloaded term as one of the levels is referred to as <strong>cluster</strong> while it can also refer to the general clustering of similar cells.</p>
 <p>You need to be connected to the internet to run this notebook and that you have already downloaded the data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -538,10 +545,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 84.8k/84.8k [00:00&lt;00:00, 433kMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 84.8k/84.8k [00:00&lt;00:00, 298kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3313
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -651,6 +661,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 1.33k/1.33k [00:00&lt;00:00, 14.9kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -750,7 +763,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 547k/547k [00:00&lt;00:00, 2.87MMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 547k/547k [00:00&lt;00:00, 2.35MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -926,6 +939,9 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|████████████████████████████████████████████████████████████████████| 1.02M/1.02M [00:00&lt;00:00, 4.06MMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1202,7 +1218,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f05091e9166d7ecb468c2d49e02f1cc9aa4dbcb8e4b5c8c48526ccb953481ff.png" src="../_images/4f05091e9166d7ecb468c2d49e02f1cc9aa4dbcb8e4b5c8c48526ccb953481ff.png" />
+<img alt="../_images/66b3db8ff33a3c48d642e213ceaa3faeae72f9188a19ecfb472267d5e3d21644.png" src="../_images/66b3db8ff33a3c48d642e213ceaa3faeae72f9188a19ecfb472267d5e3d21644.png" />
 </div>
 </div>
 </section>
@@ -1216,7 +1232,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6aaa95fa247bcf42ca2e851183408cf214fc9a1da40e42c730e587b94a4582d8.png" src="../_images/6aaa95fa247bcf42ca2e851183408cf214fc9a1da40e42c730e587b94a4582d8.png" />
+<img alt="../_images/6244e6dabe3d1d72e10e4e67e6178163493ad7079f78cdedefb65cd85849c9b3.png" src="../_images/6244e6dabe3d1d72e10e4e67e6178163493ad7079f78cdedefb65cd85849c9b3.png" />
 </div>
 </div>
 </section>
@@ -1526,11 +1542,11 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_15202/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_86546/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.barh(AxB.index, AxB[col], left=bottom, label=col[1], color=B_colors[i])
 </pre></div>
 </div>
-<img alt="../_images/21e9da0bb332b127fefd81290cf7088f0dc31dad3629118082f7f46c472741a0.png" src="../_images/21e9da0bb332b127fefd81290cf7088f0dc31dad3629118082f7f46c472741a0.png" />
+<img alt="../_images/bc79ecdf4c0b71f3afec9784f688dbe7e5b94bf7a89b5c89d5de76ad1ad2f297.png" src="../_images/bc79ecdf4c0b71f3afec9784f688dbe7e5b94bf7a89b5c89d5de76ad1ad2f297.png" />
 </div>
 </div>
 </section>
@@ -1575,7 +1591,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/708eda4421a15c7b69f27d38e963e3ebf86dee336ec7041ec2e6c63817ac8c5d.png" src="../_images/708eda4421a15c7b69f27d38e963e3ebf86dee336ec7041ec2e6c63817ac8c5d.png" />
+<img alt="../_images/296364bbbec838e14cd61ad9f8df80612f79d9eb9a29b4e9b9b7f1707b354159.png" src="../_images/296364bbbec838e14cd61ad9f8df80612f79d9eb9a29b4e9b9b7f1707b354159.png" />
 </div>
 </div>
 </section>

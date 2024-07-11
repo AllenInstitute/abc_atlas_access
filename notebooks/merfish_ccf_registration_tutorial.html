@@ -456,7 +456,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="merfish-ccf-mapped-coordinates">
+  <p>IPython magic command to render matplotlib plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="merfish-ccf-mapped-coordinates">
 <h1>MERFISH CCF mapped coordinates<a class="headerlink" href="#merfish-ccf-mapped-coordinates" title="Permalink to this heading">#</a></h1>
 <p>Registration to the Allen CCFv3 was performed at 10 micron in-plane resolution. For each section, an anatomical label reference was created using class/subclass level cell type assignments which are then used to match to corresponding CCF parcellations. The midline was manually determined for each section to rotate the section upright and center in in the middle (<strong>section coordinates</strong>). This set of rectified images were stacked in sequential order to create an inital configuration for registration.</p>
 <p>The ANTS registration framework was use to establish a 2.5D deformable spatial mapping between the MERFISH data and <strong>CCF coordinates</strong> via three major steps: (1) A 3D global affine (12 dof) mapping was performed to align the CCF into the MERFISH space (<strong>resampled CCF</strong>); (2) 2D affine (6 dof) registration of each MERFISH section to match the target resampled CCF section and finally, (3) a 2D multi-scale, symmetric diffeomorphic registration of each section (<strong>reconstructed coordinates</strong>) to finer level match to the target CCF section. Global and section-wise mappings from each of these registration steps were preserved and concatenated (with appropriate inversions) to allow point-to-point mapping between the original MERFISH coordinate space and the CCF space. See <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a> for further details.</p>
@@ -464,12 +472,11 @@ document.write(`
 <p>You need to be connected to the internet to run this notebook and that you have already downloaded the data via the getting started notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">SimpleITK</span> <span class="k">as</span> <span class="nn">sitk</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
@@ -714,7 +721,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reconstructed_coordinates.csv: 100%|██████████| 256M/256M [00:08&lt;00:00, 29.6MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reconstructed_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████| 256M/256M [00:10&lt;00:00, 24.5MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1006,7 +1013,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|██████████| 296M/296M [00:09&lt;00:00, 31.0MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 296M/296M [00:12&lt;00:00, 23.5MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1346,7 +1353,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/972b122f0531e8b6818232454d314368abe30eb6eb839b4adc723e00f4b505b5.png" src="../_images/972b122f0531e8b6818232454d314368abe30eb6eb839b4adc723e00f4b505b5.png" />
+<img alt="../_images/f9ec8df28a29cfcdbebe1c78a3625b26d1d7ac8de13e1d04f95cc23fd783153e.png" src="../_images/f9ec8df28a29cfcdbebe1c78a3625b26d1d7ac8de13e1d04f95cc23fd783153e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1359,7 +1366,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/17b1d09d32f47cdcaee481a738aef5ddd4d805e5ccb3da3a6250a17bf4019421.png" src="../_images/17b1d09d32f47cdcaee481a738aef5ddd4d805e5ccb3da3a6250a17bf4019421.png" />
+<img alt="../_images/7d9a810627febed27a72da4bb64ddccbce34020cc11630cc07a9e5cce59473cb.png" src="../_images/7d9a810627febed27a72da4bb64ddccbce34020cc11630cc07a9e5cce59473cb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1372,7 +1379,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71a5e7216918f395f249a6b9c018d1da7e27aedafa5748a68684bba129b1660e.png" src="../_images/71a5e7216918f395f249a6b9c018d1da7e27aedafa5748a68684bba129b1660e.png" />
+<img alt="../_images/392c76a7040dd13d15232b2efbe68ca3353a1738d3315aed266b1acc4dedad55.png" src="../_images/392c76a7040dd13d15232b2efbe68ca3353a1738d3315aed266b1acc4dedad55.png" />
 </div>
 </div>
 </section>
@@ -1786,7 +1793,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea8ca389516b9b762b53f3241e4136759ff694c739b4a75662fb18ab31649e84.png" src="../_images/ea8ca389516b9b762b53f3241e4136759ff694c739b4a75662fb18ab31649e84.png" />
+<img alt="../_images/870413bacaff2e08412da128175bd12f3b05771e198e86d2c693f2623ddd978a.png" src="../_images/870413bacaff2e08412da128175bd12f3b05771e198e86d2c693f2623ddd978a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1799,7 +1806,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51c7e41fa66b2a34cae98ac81c7264b469cae5dfd3df891b36c9734286583056.png" src="../_images/51c7e41fa66b2a34cae98ac81c7264b469cae5dfd3df891b36c9734286583056.png" />
+<img alt="../_images/5eccce5ca4ecea6ea0989c5cd83be4ed875a6472b0c3b146c6bacaecfa770a66.png" src="../_images/5eccce5ca4ecea6ea0989c5cd83be4ed875a6472b0c3b146c6bacaecfa770a66.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1812,7 +1819,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6ad377e8a0759cbf09b628277bd466560479fd05738641fab6e4b212683988ee.png" src="../_images/6ad377e8a0759cbf09b628277bd466560479fd05738641fab6e4b212683988ee.png" />
+<img alt="../_images/ad53e64eed3800b57bf9082e01e385e6e7cb4b89e283ad8027f229b0ad184ff3.png" src="../_images/ad53e64eed3800b57bf9082e01e385e6e7cb4b89e283ad8027f229b0ad184ff3.png" />
 </div>
 </div>
 </section>
@@ -2359,19 +2366,19 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_average_template
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_average_template.nii.gz: 100%|██████████| 117M/117M [00:04&lt;00:00, 27.7MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_average_template.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████| 117M/117M [00:05&lt;00:00, 21.0MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_annotation
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation.nii.gz: 100%|██████████| 2.12M/2.12M [00:00&lt;00:00, 15.0MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████| 2.12M/2.12M [00:00&lt;00:00, 11.4MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_annotation_boundary
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation_boundary.nii.gz: 100%|██████████| 1.55M/1.55M [00:00&lt;00:00, 11.9MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation_boundary.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████| 1.55M/1.55M [00:00&lt;00:00, 6.30MMB/s]
 </pre></div>
 </div>
 </div>
@@ -2439,7 +2446,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/46a2ef4abfcb5406807486c902bc45634e58347e1c8bbd549dfe3356bed4c807.png" src="../_images/46a2ef4abfcb5406807486c902bc45634e58347e1c8bbd549dfe3356bed4c807.png" />
+<img alt="../_images/15b4672736e824a080a4c70527537e995f69b7f0c3e1b6399d4a71616c4876c4.png" src="../_images/15b4672736e824a080a4c70527537e995f69b7f0c3e1b6399d4a71616c4876c4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2451,7 +2458,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/080b4b72d7b30736c69f789ae7a354c0e67e562170d0ebd704d5610fb15bb836.png" src="../_images/080b4b72d7b30736c69f789ae7a354c0e67e562170d0ebd704d5610fb15bb836.png" />
+<img alt="../_images/b88fb25619d816b648d8b9103d535a710d8ab713fab0f13cca58d910b953415f.png" src="../_images/b88fb25619d816b648d8b9103d535a710d8ab713fab0f13cca58d910b953415f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2463,7 +2470,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d5bd0eb66d62f46e0397b3974c9603e8de1b5f1ba50f693a333545e1e0d798d4.png" src="../_images/d5bd0eb66d62f46e0397b3974c9603e8de1b5f1ba50f693a333545e1e0d798d4.png" />
+<img alt="../_images/c7e564b03a2b2fdbe2ce4575a09f092116706ec25fc3d3806e1e08458dd29d43.png" src="../_images/c7e564b03a2b2fdbe2ce4575a09f092116706ec25fc3d3806e1e08458dd29d43.png" />
 </div>
 </div>
 <p>Using the help function, we can overlay the parcellation boundary overlay on top of the cells colorized by subclass</p>
@@ -2483,7 +2490,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ef1ba4f4f1c464fef47debd4e36375a73f99ced4fc7f834f6510f669dc2f6247.png" src="../_images/ef1ba4f4f1c464fef47debd4e36375a73f99ced4fc7f834f6510f669dc2f6247.png" />
+<img alt="../_images/0055ea0265f6ac081eb8b44f081dab2f8d15afcd8ee7881cfb0c008f5a6442f9.png" src="../_images/0055ea0265f6ac081eb8b44f081dab2f8d15afcd8ee7881cfb0c008f5a6442f9.png" />
 </div>
 </div>
 </section>
