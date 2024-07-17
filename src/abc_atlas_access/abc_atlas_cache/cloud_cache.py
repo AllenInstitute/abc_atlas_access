@@ -1,6 +1,6 @@
 from typing import List, Optional, Union
 from abc import ABC, abstractmethod
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import json
 import warnings
 import tqdm
@@ -174,8 +174,12 @@ class BasicLocalCache(ABC):
         Return a list of all of the manifest files that have been
         downloaded for this dataset
         """
-        output = [self.manifest_prefix + str(x).split('releases/')[-1]
-                  for x in self.cache_dir.glob("releases/*/manifest.json")]
+        # Use PurePosixPath for to enforce consistent formatting across
+        # platforms.
+        output = [
+            self.manifest_prefix + str(PurePosixPath(x)).split('releases/')[-1]
+            for x in self.cache_dir.glob("releases/*/manifest.json")
+        ]
         output.sort()
         return output
 
@@ -935,7 +939,7 @@ class CloudCacheBase(BasicLocalCache):
             skip_hash_check: bool = False
     ) -> List[Path]:
         """
-        Download all of the data files in a directory.
+        Download all the data files in a directory.
 
         Parameters
         ----------
@@ -1316,9 +1320,9 @@ class S3CloudCache(CloudCacheBase):
 
             if n_iter > max_iter:
                 pbar.close()
-                raise RuntimeError("Could not download\n"
-                                   f"{file_attributes}\n"
-                                   "In {max_iter} iterations")
+                raise RuntimeError("Could not download "
+                                   f"{file_attributes.relative_path} "
+                                   f"In {max_iter} iterations.")
 
             if file_attributes.local_path.exists():
                 self._update_list_of_downloads(file_attributes=file_attributes)

@@ -11,6 +11,7 @@ from abc_atlas_access.abc_atlas_cache.manifest import (
 class TestManifest(unittest.TestCase):
 
     def setUp(self):
+        self.cache_dir = "/my/cache/dir/"
         self.manifest_path = Path(__file__).parent / "resources" / "manifest.json"  # noqa: E501
 
     def test_init(self):
@@ -18,7 +19,7 @@ class TestManifest(unittest.TestCase):
         Test that the Manifest class can be instantiated
         """
         with open(self.manifest_path, "r") as jfile:
-            manifest = Manifest(cache_dir="/my/cache/dir/", json_input=jfile)
+            manifest = Manifest(cache_dir=self.cache_dir, json_input=jfile)
 
         with open(self.manifest_path, "r") as jfile:
             test_data = json.load(jfile)
@@ -50,7 +51,7 @@ class TestManifest(unittest.TestCase):
     def test_list_metadata_files(self):
         """Test listing the files in a metadata directory."""
         with open(self.manifest_path, "r") as jfile:
-            manifest = Manifest(cache_dir="/my/cache/dir/", json_input=jfile)
+            manifest = Manifest(cache_dir=self.cache_dir, json_input=jfile)
 
         assert manifest.list_metadata_files("Allen-CCF-2020") == [
             'parcellation',
@@ -76,7 +77,7 @@ class TestManifest(unittest.TestCase):
     def test_list_data_files(self):
         """List the data files in a directory."""
         with open(self.manifest_path, "r") as jfile:
-            manifest = Manifest(cache_dir="/my/cache/dir/", json_input=jfile)
+            manifest = Manifest(cache_dir=self.cache_dir, json_input=jfile)
 
         assert manifest.list_data_files("Zhuang-ABCA-1") == [
             'Zhuang-ABCA-1/log2',
@@ -98,7 +99,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifestget_file_attributes returns the
         correct CacheFileAttributes object for a metadata file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -107,7 +108,7 @@ class TestManifest(unittest.TestCase):
         assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 41197
-        assert file_obj.local_path == cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
+        assert file_obj.local_path == (cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv').resolve()  # noqa: E501
         assert file_obj.file_type == 'csv'
         assert file_obj.relative_path == 'metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.file_hash == 'aea6f6925d7c84f4e5a2d022cbc9c7bb'
@@ -116,7 +117,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for an image_volume file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -127,7 +128,7 @@ class TestManifest(unittest.TestCase):
         assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 1548196
-        assert file_obj.local_path == cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
+        assert file_obj.local_path == (cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz').resolve()  # noqa: E501
         assert file_obj.file_type == 'nii.gz'
         assert file_obj.relative_path == 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.file_hash == "1ce4be21528fa6cbfb462a117552477d"
@@ -136,7 +137,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for a expression_matrix file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -147,7 +148,7 @@ class TestManifest(unittest.TestCase):
         assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 9444387082
-        assert file_obj.local_path == cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
+        assert file_obj.local_path == (cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad').resolve()  # noqa: E501
         assert file_obj.file_type == 'h5ad'
         assert file_obj.relative_path == 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.file_hash == "6cf8b3556e625b090c196ff5bb5f6cdd"
@@ -165,7 +166,7 @@ class TestManifest(unittest.TestCase):
         """Test that Manifest.get_file_attributes returns the
         correct CacheFileAttributes object for a expression_matrix file.
         """
-        cache_path = Path("/my/cache/dir/")
+        cache_path = Path(self.cache_dir)
         with open(self.manifest_path, "r") as jfile:
             manifest = Manifest(cache_dir=cache_path, json_input=jfile)
 
@@ -177,3 +178,24 @@ class TestManifest(unittest.TestCase):
                 directory='WMB-10X',
                 file_name='WMB-10Xv2-Isocortex-2'
             )
+
+    def test_get_directory_size(self):
+        """
+        Test that the correct directory size is returned for a given directory
+        in the manifest.
+        """
+        metadata_dir = "WMB-10X"
+        data_dir = "WMB-10Xv3"
+        small_dir = "Allen-CCF-2020"
+        cache_path = Path(self.cache_dir)
+        with open(self.manifest_path, "r") as jfile:
+            manifest = Manifest(cache_dir=cache_path, json_input=jfile)
+
+        ans = manifest.get_directory_metadata_size(metadata_dir)
+        assert ans == '2.39 GB'
+
+        ans = manifest.get_directory_data_size(data_dir)
+        assert ans == '176.41 GB'
+
+        ans = manifest.get_directory_data_size(small_dir)
+        assert ans == '379.11 MB'
