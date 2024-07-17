@@ -1,6 +1,6 @@
 from typing import List, Optional, Union
 from abc import ABC, abstractmethod
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import json
 import warnings
 import tqdm
@@ -174,8 +174,12 @@ class BasicLocalCache(ABC):
         Return a list of all of the manifest files that have been
         downloaded for this dataset
         """
-        output = [self.manifest_prefix + str(x).split('releases/')[-1]
-                  for x in self.cache_dir.glob("releases/*/manifest.json")]
+        # Use PurePosixPath for to enforce consistent formatting across
+        # platforms.
+        output = [
+            self.manifest_prefix + str(PurePosixPath(x)).split('releases/')[-1]
+            for x in self.cache_dir.glob("releases/*/manifest.json")
+        ]
         output.sort()
         return output
 
