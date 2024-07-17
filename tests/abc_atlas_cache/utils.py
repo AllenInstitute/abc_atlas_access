@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Tuple
 import boto3
 import hashlib
 from moto import mock_aws
@@ -22,7 +22,7 @@ def create_manifest_dict(version: str,
                          metadata_file: str = 'metadata_file.csv',
                          test_directory: str = 'test_directory',
                          file_hash: Optional[str] = None,
-                         location: str = 'us-east-1') -> tuple[dict, str, str]:
+                         location: str = 'us-east-1') -> Tuple[dict, str, str]:
     """
     """
     if file_hash is None:
@@ -91,7 +91,7 @@ def create_manifest_dict(version: str,
 def add_file_to_manifest(
         file_attribute: CacheFileAttributes,
         manifest: dict
-):
+) -> dict:
     """
     """
     split_file = file_attribute.relative_path.split('/')
@@ -131,7 +131,7 @@ def add_file_to_manifest(
 def add_directory_to_manifest(
         file_attribute: CacheFileAttributes,
         manifest: dict
-):
+) -> dict:
     """
     """
     split_file = file_attribute.relative_path.split('/')
@@ -163,7 +163,7 @@ def add_directory_to_manifest(
     return manifest
 
 
-def hash_data(data):
+def hash_data(data) -> str:
     hasher = hashlib.md5()
     hasher.update(data)
     return hasher.hexdigest()
