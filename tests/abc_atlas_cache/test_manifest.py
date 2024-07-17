@@ -108,7 +108,7 @@ class TestManifest(unittest.TestCase):
         assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 41197
-        assert file_obj.local_path == cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
+        assert file_obj.local_path == (cache_path / 'metadata/Allen-CCF-2020/20230630/parcellation.csv').resolve()  # noqa: E501
         assert file_obj.file_type == 'csv'
         assert file_obj.relative_path == 'metadata/Allen-CCF-2020/20230630/parcellation.csv'  # noqa: E501
         assert file_obj.file_hash == 'aea6f6925d7c84f4e5a2d022cbc9c7bb'
@@ -128,7 +128,7 @@ class TestManifest(unittest.TestCase):
         assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 1548196
-        assert file_obj.local_path == cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
+        assert file_obj.local_path == (cache_path / 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz').resolve()  # noqa: E501
         assert file_obj.file_type == 'nii.gz'
         assert file_obj.relative_path == 'image_volumes/MERFISH-C57BL6J-638850-CCF/20230630/resampled_annotation_boundary.nii.gz'  # noqa: E501
         assert file_obj.file_hash == "1ce4be21528fa6cbfb462a117552477d"
@@ -148,7 +148,7 @@ class TestManifest(unittest.TestCase):
         assert file_obj.url == 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.version == '20230630'
         assert file_obj.file_size == 9444387082
-        assert file_obj.local_path == cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
+        assert file_obj.local_path == (cache_path / 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad').resolve()  # noqa: E501
         assert file_obj.file_type == 'h5ad'
         assert file_obj.relative_path == 'expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-Isocortex-2-log2.h5ad'  # noqa: E501
         assert file_obj.file_hash == "6cf8b3556e625b090c196ff5bb5f6cdd"
