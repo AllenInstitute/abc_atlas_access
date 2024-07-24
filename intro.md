@@ -58,6 +58,14 @@ Available notebooks:
   (Kimberly Siletti)**
 
 ## Release Notes
+* **[Summer 2024 Public Beta (version 20240831) ab_atlas_access (v0.2.0)]**
+  * Released ~8k imputed genes for the MERFISH-C57BL6J-638850 dataset.
+  * Added new notebooks and pages for the imputed gene dataset.
+  * Updated cache object for better compatiblity across platforms.
+    * Added automatic unittesting via GitHub Actions.
+    * Modified cache to autodetect cache type (local or s3) for easier
+      compatibility with CodeOcean/s3fs-fuse mounts.
+    * Simplified notebooks use of the cache.
 * **[abc_atlas_access (v0.1.2)]**
   * Add matplotlib magic.
   * Fixed bugs in pathlib import in notebooks
