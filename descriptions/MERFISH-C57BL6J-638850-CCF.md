@@ -25,6 +25,7 @@ Related resources :
 * Whole mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 * Whole mouse brain MERFISH spatial transcriptomics dataset ([MERFISH-C57BL6J-638850](MERFISH-C57BL6J-638850.md))
+* Imputed, whole mouse brain MERFISH spatial transcriptomics dataset ([MERFISH-C57BL6J-638850-imputed](MERFISH-C57BL6J-638850-imputed.md))
 * Allen CCFv3 with a simplified 5-level anatomical hierarchy ([Allen-CCF-2020](Allen-CCF-2020.md))
 
 Associated notebooks:
@@ -39,6 +40,8 @@ Associated notebooks:
     example use cases in part 2b.
   * [**Part 2b**](../notebooks/merfish_tutorial_part_2b.ipynb): Explore the whole brain data through visualization and
     analyses of a set of genes of interest.
+  * [**MERFISH imputed genes**](../notebooks/merfish_tutorial_part_1.ipynb):
+    Learn about the using the imputed genes of the MERFISH dataset.
 * [**Allen CCFv3 parcellation and annotation**](../notebooks/ccf_and_parcellation_annotation_tutorial.ipynb): learn about the Allen
   CCFv3 and a simplified 5-level anatomical hierarchy through some example use
   cases and visualization.
