@@ -22,4 +22,7 @@
   ([Allen-CCF-2020](Allen-CCF-2020.md))
 * CCF mapped coordinates for cells in the whole brain spatial transcriptomics
   dataset ([MERFISH-C57BL6J-638850-CCF](MERFISH-C57BL6J-638850-CCF.md))
+*  3.9 million cell spatial transcriptomics dataset with ~8000 genes
+   imputed using the 500 genes in the base MERFISH-C57BL6J-638850 dataset
+   [MERFISH-C57BL6J-638850-imputed](MERFISH-C57BL6J-638850-imputed.md).
 
