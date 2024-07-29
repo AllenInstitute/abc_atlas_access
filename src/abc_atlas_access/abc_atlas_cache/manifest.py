@@ -92,7 +92,7 @@ class Manifest(object):
             output_data_list.extend(list(sub_directories['metadata'].keys()))
         else:
             for sub_dir in sub_directories.keys():
-                if sub_dir == 'metadata':
+                if sub_dir == 'metadata' or sub_dir == 'mapmycells':
                     continue
                 for sub_dir_key in sub_directories[sub_dir].keys():
                     # Check for files with multiple kinds (e.g. raw and log2)
