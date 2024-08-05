@@ -204,7 +204,7 @@ def populate_datasets(
 
                     file_hash = file_hash_from_path(full_path)
 
-                    if ext == 'csv':
+                    if ext in ['csv', 'json', 'h5']:
                         tag = bsplit[0]
                         datasets[data_set][data_kind][tag] = {}
                         datasets[data_set][data_kind][tag]['files'] = {}
