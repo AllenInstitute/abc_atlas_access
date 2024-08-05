@@ -55,14 +55,13 @@ def find_directories(
         "resource_uri": "s3://allen-brain-cell-atlas/",
         "directory_listing": {}
     }
-
     for directory in os.walk(base_dir):
         versions = []
         # Find only directories with properly formated date version
         # subdirectories
         for subdir in directory[1]:
-            if not _validate_version(subdir):
-                continue
+            if _validate_version(subdir):
+                versions.append(subdir)
         # If we find a version  select either the max version
         if versions:
             max_version = max(versions)
@@ -72,12 +71,7 @@ def find_directories(
                 print(f"Skipping dataset: {data_set}")
                 continue
             if version < max_version and version not in versions:
-                raise ValueError(
-                    "Requested version is less older than max version for "
-                    f"{data_set} and specified version is not found. Please "
-                    "select a valid release version. Versions "
-                    f"available {versions}. Exiting."
-                )
+                continue
             data_kind = split_dir[-2]
             if data_set not in release['directory_listing']:
                 release['directory_listing'][data_set] = {}
@@ -259,9 +253,7 @@ def populate_datasets(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description=""
-    )
+    parser = argparse.ArgumentParser()
     parser.add_argument(
         "--abc_atlas_staging_path",
         type=str,
@@ -295,22 +287,31 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
+    base_dir = Path(args.abc_atlas_staging_path)
+    version = args.manifest_version
     if not _validate_version(args.manifest_version):
         raise ValueError("Invalid version format. Please use %Y%m%d format "
                          "(e.g. 20240315)")
+    bucket_prefix = args.bucket_prefix
     browse_prefix = args.bucket_prefix + 'index.html#'
+    datasets_to_skip = args.datasets_to_skip
 
     output_release = find_directories(
-        base_dir=args.abc_atlas_staging_path,
-        version=args.manifest_version,
-        dirs_to_skip=args.datasets_to_skip
+        base_dir=base_dir,
+        version=version,
+        dirs_to_skip=datasets_to_skip
     )
     output_release = populate_paths_and_urls(
-        base_dir=args.abc_atlas_staging_path,
+        base_dir=base_dir,
         release=output_release,
-        bucket_prefix=args.bucket_prefix,
+        bucket_prefix=bucket_prefix,
         browse_prefix=browse_prefix
     )
     output_release = populate_datasets(
-
+        base_dir=base_dir,
+        release=output_release,
+        bucket_prefix=bucket_prefix
     )
+    
+    json.dump(output_release, args.output_file, indent=4)
+    args.output_file.close()
