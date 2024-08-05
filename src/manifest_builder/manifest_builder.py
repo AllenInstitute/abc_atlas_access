@@ -35,7 +35,7 @@ def find_directories(
     Parameters
     ----------
     base_dir: str or Path
-        Base directory to look for ABC atlas release files. Fin
+        Base directory to look for ABC atlas release files.
     version: str
         String date format of the version. Should be of the form %Y%m%d (e.g.
         20240330)
@@ -90,16 +90,24 @@ def populate_paths_and_urls(
         bucket_prefix: str,
         browse_prefix: str
 ) -> dict:
-    """
+    """Populate paths and urls for each dataset/directory in the release.
 
     Parameters
     ----------
-    base_dir
-    release
+    base_dir: str or Path
+        Base directory to look for ABC atlas release files.
+    release: dict
+        Base release manifest dictionary with all directories populated.
+    bucket_prefix: str
+        Prefix to add to the bucket url.
+    browse_prefix: str
+        Prefix to add to the browse url.
 
     Returns
     -------
-
+    release: dict
+        Base release manifest dictionary with all directories, links, and paths
+        populated.
     """
     for data_set in release['directory_listing'].keys():
 
@@ -133,17 +141,23 @@ def populate_datasets(
         release: dict,
         bucket_prefix: str,
 ) -> dict:
-    """
+    """Populate all files in the manifest by crawling the base directory.
 
     Parameters
     ----------
-    base_dir
-    release
-    bucket_prefix
+    base_dir: str or Path
+        Staging directory of the ABC atlas release.
+    release: dict
+        Base release manifest dictionary with all directories populated, links,
+        and paths populated.
+    bucket_prefix: str
+        Prefix to add to the bucket url.
 
     Returns
     -------
-
+    release: dict
+        Base release manifest dictionary with all directories, links, paths,
+        and files populated.
     """
     datasets = {}
 
@@ -153,11 +167,11 @@ def populate_datasets(
         ds_dict = release['directory_listing'][data_set]['directories']
         datasets[data_set] = {}
 
-        for m in ds_dict.keys():
+        for data_kind in ds_dict.keys():
 
-            print('--', m)
-            datasets[data_set][m] = {}
-            ver_dict = ds_dict[m]
+            print('--', data_kind)
+            datasets[data_set][data_kind] = {}
+            ver_dict = ds_dict[data_kind]
 
             data_dir = os.path.join(base_dir, ver_dict['relative_path'])
             # print('---',data_dir)
@@ -192,17 +206,18 @@ def populate_datasets(
 
                     if ext == 'csv':
                         tag = bsplit[0]
-                        datasets[data_set][m][tag] = {}
-                        datasets[data_set][m][tag]['files'] = {}
-                        datasets[data_set][m][tag]['files'][ext] = {}
-                        datasets[data_set][m][tag]['files'][ext]['version'] = \
-                        ds_dict[m]['version']
-                        datasets[data_set][m][tag]['files'][ext][
+                        datasets[data_set][data_kind][tag] = {}
+                        datasets[data_set][data_kind][tag]['files'] = {}
+                        datasets[data_set][data_kind][tag]['files'][ext] = {}
+                        datasets[data_set][data_kind][tag]['files'][ext][
+                            'version'] = ds_dict[data_kind]['version']
+                        datasets[data_set][data_kind][tag]['files'][ext][
                             'relative_path'] = rel_path
-                        datasets[data_set][m][tag]['files'][ext][
+                        datasets[data_set][data_kind][tag]['files'][ext][
                             'url'] = bucket_prefix + rel_path
-                        datasets[data_set][m][tag]['files'][ext]['size'] = file_size
-                        datasets[data_set][m][tag]['files'][ext][
+                        datasets[data_set][data_kind][tag]['files'][ext][
+                            'size'] = file_size
+                        datasets[data_set][data_kind][tag]['files'][ext][
                             'file_hash'] = file_hash
                     elif ext == 'h5ad':
 
@@ -213,37 +228,38 @@ def populate_datasets(
                             tag = bname.split('-log2.h5ad')[0]
                             norm = 'log2'
 
-                        if tag not in datasets[data_set][m].keys():
-                            datasets[data_set][m][tag] = {}
+                        if tag not in datasets[data_set][data_kind].keys():
+                            datasets[data_set][data_kind][tag] = {}
 
-                        datasets[data_set][m][tag][norm] = {}
-                        datasets[data_set][m][tag][norm]['files'] = {}
-                        datasets[data_set][m][tag][norm]['files'][ext] = {}
-                        datasets[data_set][m][tag][norm]['files'][ext]['version'] = \
-                        ds_dict[m]['version']
-                        datasets[data_set][m][tag][norm]['files'][ext][
+                        datasets[data_set][data_kind][tag][norm] = {}
+                        datasets[data_set][data_kind][tag][norm]['files'] = {}
+                        datasets[data_set][data_kind][tag][norm]['files'][
+                            ext] = {}
+                        datasets[data_set][data_kind][tag][norm]['files'][
+                            ext]['version'] = ds_dict[data_kind]['version']
+                        datasets[data_set][data_kind][tag][norm]['files'][ext][
                             'relative_path'] = rel_path
-                        datasets[data_set][m][tag][norm]['files'][ext][
+                        datasets[data_set][data_kind][tag][norm]['files'][ext][
                             'url'] = bucket_prefix + rel_path
-                        datasets[data_set][m][tag][norm]['files'][ext][
+                        datasets[data_set][data_kind][tag][norm]['files'][ext][
                             'size'] = file_size
-                        datasets[data_set][m][tag][norm]['files'][ext][
+                        datasets[data_set][data_kind][tag][norm]['files'][ext][
                             'file_hash'] = file_hash
                     elif ext == 'gz':
                         ext = 'nii.gz'
                         tag = bname.replace('.nii.gz', '')
-                        datasets[data_set][m][tag] = {}
-                        datasets[data_set][m][tag]['files'] = {}
-                        datasets[data_set][m][tag]['files'][ext] = {}
-                        datasets[data_set][m][tag]['files'][ext]['version'] = \
-                        ds_dict[m]['version']
-                        datasets[data_set][m][tag]['files'][ext][
+                        datasets[data_set][data_kind][tag] = {}
+                        datasets[data_set][data_kind][tag]['files'] = {}
+                        datasets[data_set][data_kind][tag]['files'][ext] = {}
+                        datasets[data_set][data_kind][tag]['files'][ext][
+                            'version'] = ds_dict[data_kind]['version']
+                        datasets[data_set][data_kind][tag]['files'][ext][
                             'relative_path'] = rel_path
-                        datasets[data_set][m][tag]['files'][ext][
+                        datasets[data_set][data_kind][tag]['files'][ext][
                             'url'] = bucket_prefix + rel_path
-                        datasets[data_set][m][tag]['files'][ext]['size'] = \
-                            file_size
-                        datasets[data_set][m][tag]['files'][ext][
+                        datasets[data_set][data_kind][tag]['files'][ext][
+                            'size'] = file_size
+                        datasets[data_set][data_kind][tag]['files'][ext][
                             'file_hash'] = file_hash
 
                 ver_dict['total_size'] = total_size
@@ -262,7 +278,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--output_file",
-        type=argparse.FileType('w'),
+        type=str,
         required=True,
         help=""
     )
@@ -312,6 +328,6 @@ if __name__ == "__main__":
         release=output_release,
         bucket_prefix=bucket_prefix
     )
-    
-    json.dump(output_release, args.output_file, indent=4)
-    args.output_file.close()
+
+    with open(args.output_file, 'w') as jfile:
+        json.dump(output_release, jfile, indent=4)
