@@ -17,6 +17,7 @@ AWS Public Dataset:
 Data is being share under the CC BY NC 4.0 license.
 
 Related resources :
+* Imputed, whole mouse brain MERFISH spatial transcriptomics dataset ([MERFISH-C57BL6J-638850-imputed](MERFISH-C57BL6J-638850-imputed.md))
 * Whole mouse brain clustering ([WMB-10X](WMB-10X.md))
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 
@@ -32,3 +33,5 @@ Associated notebooks:
     example use cases in part 2b.
   * [**Part 2b**](../notebooks/merfish_tutorial_part_2b.ipynb): Explore the whole brain data through visualization and
     analyses of a set of genes of interest.
+  * [**MERFISH imputed genes**](../notebooks/merfish_tutorial_part_1.ipynb):
+    Learn about the using the imputed genes of the MERFISH dataset.
