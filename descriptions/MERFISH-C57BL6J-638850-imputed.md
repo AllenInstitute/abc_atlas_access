@@ -9,10 +9,10 @@ among the 10Xv3 cells for each MERFISH cell and use the average expression of
 these neighbors for each gene as the impute values. Further details can be
 found in the methods section of [Yao et. al](https://www.nature.com/articles/s41586-023-06812-z).
 
-| Component | Current Version                                                                                                                                                                                                      | Size |
-|---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850-imputed/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850/20230830/) | 14.2 GB |
-| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850-imputed/20231215](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850/20231215/)                       | 1.81 GB |
+| Component | Current Version                                                                                                                                                                                                              | Size  |
+|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/MERFISH-C57BL6J-638850-imputed/20240831](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/MERFISH-C57BL6J-638850-imputed/20240831/) | 47 GB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/MERFISH-C57BL6J-638850-imputed/20240831](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/MERFISH-C57BL6J-638850-imputed/20240831/)                       | 1 MB  |
 
 Data is being share under the CC BY NC 4.0 license.
 
