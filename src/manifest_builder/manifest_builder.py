@@ -10,10 +10,6 @@ from typing import List, Union
 from abc_atlas_access.abc_atlas_cache.utils import file_hash_from_path
 
 
-BUCKET_PREFIX = 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/'
-BROWSE_PREFIX = 'https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#'
-
-
 def _validate_version(version: str) -> bool:
     try:
         datetime.datetime.strptime(version, '%Y%m%d').date()
@@ -56,21 +52,21 @@ def find_directories(
         "directory_listing": {}
     }
     for directory in os.walk(base_dir):
-        versions = []
+        verion_list = []
         # Find only directories with properly formated date version
         # subdirectories
         for subdir in directory[1]:
             if _validate_version(subdir):
-                versions.append(subdir)
+                verion_list.append(subdir)
         # If we find a version  select either the max version
-        if versions:
-            max_version = max(versions)
+        if verion_list:
+            max_version = max(verion_list)
             split_dir = str(PurePosixPath(directory[0])).split('/')
             data_set = split_dir[-1]
             if any([data_set.startswith(skip) for skip in dirs_to_skip]):
                 print(f"Skipping dataset: {data_set}")
                 continue
-            if version < max_version and version not in versions:
+            if version < max_version and version not in verion_list:
                 continue
             data_kind = split_dir[-2]
             if data_set not in release['directory_listing']:
@@ -84,7 +80,7 @@ def find_directories(
     return release
 
 
-def populate_paths_and_urls(
+def populate_directories(
         base_dir: Union[str, Path],
         release: dict,
         bucket_prefix: str,
@@ -159,18 +155,18 @@ def populate_datasets(
         Base release manifest dictionary with all directories, links, paths,
         and files populated.
     """
-    datasets = {}
+    dataset_lookup = {}
 
-    for data_set in release['directory_listing'].keys():
+    for dataset in release['directory_listing'].keys():
 
-        print('-', data_set)
-        ds_dict = release['directory_listing'][data_set]['directories']
-        datasets[data_set] = {}
+        print('-', dataset)
+        ds_dict = release['directory_listing'][dataset]['directories']
+        dataset_lookup[dataset] = {}
 
         for data_kind in ds_dict.keys():
 
             print('--', data_kind)
-            datasets[data_set][data_kind] = {}
+            dataset_lookup[dataset][data_kind] = {}
             ver_dict = ds_dict[data_kind]
 
             data_dir = os.path.join(base_dir, ver_dict['relative_path'])
@@ -192,33 +188,30 @@ def populate_datasets(
                     total_size += file_size
 
                     rel_path = os.path.relpath(full_path, base_dir)
-                    # print('--',rel_path)
 
                     bname = os.path.basename(full_path)
-                    # print('---',bname)
 
                     bsplit = os.path.splitext(bname)
                     ext = bsplit[1]
                     ext = ext.replace('.', '')
-                    # print('---',ext)
 
                     file_hash = file_hash_from_path(full_path)
 
+                    # Metadata for an individual file.
+                    file_dict = {
+                        'version': ds_dict[data_kind]['version'],
+                        'relative_path': rel_path,
+                        'url': bucket_prefix + rel_path,
+                        'size': file_size,
+                        'file_hash': file_hash
+                    }
+
                     if ext in ['csv', 'json', 'h5']:
                         tag = bsplit[0]
-                        datasets[data_set][data_kind][tag] = {}
-                        datasets[data_set][data_kind][tag]['files'] = {}
-                        datasets[data_set][data_kind][tag]['files'][ext] = {}
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'version'] = ds_dict[data_kind]['version']
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'relative_path'] = rel_path
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'url'] = bucket_prefix + rel_path
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'size'] = file_size
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'file_hash'] = file_hash
+                        dataset_lookup[dataset][data_kind][tag] = {}
+                        dataset_lookup[dataset][data_kind][tag]['files'] = {}
+                        dataset_lookup[dataset][data_kind][tag]['files'][
+                            ext] = file_dict
                     elif ext == 'h5ad':
 
                         if '-raw.h5ad' in bname:
@@ -228,43 +221,24 @@ def populate_datasets(
                             tag = bname.split('-log2.h5ad')[0]
                             norm = 'log2'
 
-                        if tag not in datasets[data_set][data_kind].keys():
-                            datasets[data_set][data_kind][tag] = {}
+                        if tag not in dataset_lookup[dataset][data_kind].keys():
+                            dataset_lookup[dataset][data_kind][tag] = {}
 
-                        datasets[data_set][data_kind][tag][norm] = {}
-                        datasets[data_set][data_kind][tag][norm]['files'] = {}
-                        datasets[data_set][data_kind][tag][norm]['files'][
-                            ext] = {}
-                        datasets[data_set][data_kind][tag][norm]['files'][
-                            ext]['version'] = ds_dict[data_kind]['version']
-                        datasets[data_set][data_kind][tag][norm]['files'][ext][
-                            'relative_path'] = rel_path
-                        datasets[data_set][data_kind][tag][norm]['files'][ext][
-                            'url'] = bucket_prefix + rel_path
-                        datasets[data_set][data_kind][tag][norm]['files'][ext][
-                            'size'] = file_size
-                        datasets[data_set][data_kind][tag][norm]['files'][ext][
-                            'file_hash'] = file_hash
+                        dataset_lookup[dataset][data_kind][tag][norm] = {}
+                        dataset_lookup[dataset][data_kind][tag][norm]['files'] = {}
+                        dataset_lookup[dataset][data_kind][tag][norm]['files'][
+                            ext] = file_dict
                     elif ext == 'gz':
                         ext = 'nii.gz'
                         tag = bname.replace('.nii.gz', '')
-                        datasets[data_set][data_kind][tag] = {}
-                        datasets[data_set][data_kind][tag]['files'] = {}
-                        datasets[data_set][data_kind][tag]['files'][ext] = {}
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'version'] = ds_dict[data_kind]['version']
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'relative_path'] = rel_path
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'url'] = bucket_prefix + rel_path
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'size'] = file_size
-                        datasets[data_set][data_kind][tag]['files'][ext][
-                            'file_hash'] = file_hash
+                        dataset_lookup[dataset][data_kind][tag] = {}
+                        dataset_lookup[dataset][data_kind][tag]['files'] = {}
+                        dataset_lookup[dataset][data_kind][tag]['files'][
+                            ext] = file_dict
 
                 ver_dict['total_size'] = total_size
 
-    release['file_listing'] = datasets
+    release['file_listing'] = dataset_lookup
     return release
 
 
@@ -317,7 +291,7 @@ if __name__ == "__main__":
         version=version,
         dirs_to_skip=datasets_to_skip
     )
-    output_release = populate_paths_and_urls(
+    output_release = populate_directories(
         base_dir=base_dir,
         release=output_release,
         bucket_prefix=bucket_prefix,
