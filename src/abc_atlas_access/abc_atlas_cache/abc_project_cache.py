@@ -1,12 +1,14 @@
 from typing import Optional, Union, List
 from pathlib import Path
 import logging
+import os
 import pandas as pd
+import warnings
+
 from abc_atlas_access.abc_atlas_cache.cloud_cache import (
     S3CloudCache,
     LocalCache
 )
-import warnings
 
 
 class AbcProjectCacheVersionException(Exception):
@@ -135,6 +137,35 @@ class AbcProjectCache(object):
             ui_class_name=cls.__class__.__name__
         )
         return cls(cache, local=True)
+
+    @classmethod
+    def from_cache_dir(
+            cls,
+            cache_dir: Union[str, Path],
+    ) -> "ProjectCloudApiBase":
+        """Instantiate either a local_cache or s3_cache instance of the class.
+
+        Tests if user has write access to the directory, instantiate a s3_cache
+        else instantiate a local_cache.
+
+        Parameters
+        ----------
+        cache_dir: str or pathlib.Path
+            Path to the directory where data will be stored on the local system
+
+        Returns
+        -------
+        ProjectCloudApiBase instance
+        """
+        cache_dir = Path(cache_dir)
+        # If the directory does not exist or we have write access to it
+        # we will use the s3 cache. Else we will use the local cache.
+        if not cache_dir.exists() or os.access(cache_dir, os.W_OK):
+            return cls.from_s3_cache(cache_dir)
+        elif cache_dir.exists() and not os.access(cache_dir, os.W_OK):
+            return cls.from_local_cache(cache_dir)
+        else:
+            raise RuntimeError("Could not access or create cache directory.")
 
     def compare_manifests(self,
                           manifest_newer_name: str,

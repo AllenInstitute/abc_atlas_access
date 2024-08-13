@@ -1,6 +1,9 @@
 import json
-import pytest
 from moto import mock_aws
+import os
+from unittest.mock import patch
+import pytest
+
 from .utils import (
     BaseCacheTestCase,
     create_manifest_dict,
@@ -11,6 +14,10 @@ from .utils import (
 from abc_atlas_access.abc_atlas_cache.abc_project_cache import AbcProjectCache
 from abc_atlas_access.abc_atlas_cache.file_attributes import \
     CacheFileAttributes
+from abc_atlas_access.abc_atlas_cache.cloud_cache import (
+    LocalCache,
+    S3CloudCache
+)
 
 
 @mock_aws
@@ -249,3 +256,28 @@ class TestAbcProjectCache(BaseCacheTestCase):
             directory="test_directory"
         )
         assert metadata_paths == [self.cache_dir / self.new_metadata_path]
+
+    def test_abc_project_cache_from_cache_dir(self):
+        """Run test that caches are initialized from the cache directory
+        correctly as either a S3CloudCache or LocalCache object when
+        appropreate.
+        """
+        AbcProjectCache._bucket_name = self.test_bucket_name
+        cache = AbcProjectCache.from_cache_dir(self.cache_dir)
+        assert isinstance(cache.cache, S3CloudCache)
+
+        # Download data into the local cache.
+        cache.get_data_path(directory="second_dir",
+                            file_name=self.new_file)
+        cache.get_data_path(directory="test_directory",
+                            file_name=self.data_file)
+        cache.get_metadata_path(directory="test_directory",
+                                file_name="metadata_file")
+
+        # Remove the previous cache object.
+        del cache
+
+        # Initialize a new read only object from the local cache.
+        with patch('os.access', return_value=False):
+            cache = AbcProjectCache.from_cache_dir(self.cache_dir)
+        assert isinstance(cache.cache, LocalCache)
