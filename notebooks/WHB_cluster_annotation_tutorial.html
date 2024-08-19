@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -481,7 +483,7 @@ document.write(`
 <h1>Whole Human Brain 10x RNA-seq clustering analysis and annotation<a class="headerlink" href="#whole-human-brain-10x-rna-seq-clustering-analysis-and-annotation" title="Permalink to this heading">#</a></h1>
 <p>The Whole Human Brain Atlas data 10X RNA-seq dataset contains ~3 million nuclei (more than 2 million sequenced neurons and almost 1 million non-neurons) from 100 locations across the forebrain, midbrain, and hindbrain. The integrated transcriptomic taxonomy contains 31 superclusters, 461 clusters, and 3313 subclusters. Full details of the dataset can be found in <a class="reference external" href="https://www.science.org/doi/10.1126/science.add7046">Siletti et al. 2023</a></p>
 <p>The purpose of this notebook is to provide an overview of how cluster and cluster annotation information is represented through example use cases. Note that <strong>cluster</strong> in this notebook is an overloaded term as one of the levels is referred to as <strong>cluster</strong> while it can also refer to the general clustering of similar cells.</p>
-<p>You need to be connected to the internet to run this notebook and that you have already downloaded the data via the getting started notebook.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -495,22 +497,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -545,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 84.8k/84.8k [00:00&lt;00:00, 298kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 84.8k/84.8k [00:00&lt;00:00, 587kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3313
@@ -661,7 +659,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 1.33k/1.33k [00:00&lt;00:00, 14.9kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████| 1.33k/1.33k [00:00&lt;00:00, 17.1kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -763,7 +761,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 547k/547k [00:00&lt;00:00, 2.35MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 547k/547k [00:00&lt;00:00, 2.37MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -939,7 +937,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|████████████████████████████████████████████████████████████████████| 1.02M/1.02M [00:00&lt;00:00, 4.06MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|█████████████████████████████████████████████████████████████████████████| 1.02M/1.02M [00:00&lt;00:00, 4.22MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1218,7 +1216,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66b3db8ff33a3c48d642e213ceaa3faeae72f9188a19ecfb472267d5e3d21644.png" src="../_images/66b3db8ff33a3c48d642e213ceaa3faeae72f9188a19ecfb472267d5e3d21644.png" />
+<img alt="../_images/b216ea61e826d2cec0611b2839aea3a702dd3a6b9e70e4cb9b01454d13321d0c.png" src="../_images/b216ea61e826d2cec0611b2839aea3a702dd3a6b9e70e4cb9b01454d13321d0c.png" />
 </div>
 </div>
 </section>
@@ -1232,7 +1230,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6244e6dabe3d1d72e10e4e67e6178163493ad7079f78cdedefb65cd85849c9b3.png" src="../_images/6244e6dabe3d1d72e10e4e67e6178163493ad7079f78cdedefb65cd85849c9b3.png" />
+<img alt="../_images/f5cfea015d5552833f08738e274166c52eb75915b3c5200ab6c892a54fa6154d.png" src="../_images/f5cfea015d5552833f08738e274166c52eb75915b3c5200ab6c892a54fa6154d.png" />
 </div>
 </div>
 </section>
@@ -1542,11 +1540,11 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_86546/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_74467/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.barh(AxB.index, AxB[col], left=bottom, label=col[1], color=B_colors[i])
 </pre></div>
 </div>
-<img alt="../_images/bc79ecdf4c0b71f3afec9784f688dbe7e5b94bf7a89b5c89d5de76ad1ad2f297.png" src="../_images/bc79ecdf4c0b71f3afec9784f688dbe7e5b94bf7a89b5c89d5de76ad1ad2f297.png" />
+<img alt="../_images/20eb2b3d47a6cef6b14467ce0063918314b30a63f0e6ae20a9a99df3051d4912.png" src="../_images/20eb2b3d47a6cef6b14467ce0063918314b30a63f0e6ae20a9a99df3051d4912.png" />
 </div>
 </div>
 </section>
@@ -1591,7 +1589,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/296364bbbec838e14cd61ad9f8df80612f79d9eb9a29b4e9b9b7f1707b354159.png" src="../_images/296364bbbec838e14cd61ad9f8df80612f79d9eb9a29b4e9b9b7f1707b354159.png" />
+<img alt="../_images/37b2beb36bebe85dca93356b9173ea07255c903fb7831232de5a718fc8528f9a.png" src="../_images/37b2beb36bebe85dca93356b9173ea07255c903fb7831232de5a718fc8528f9a.png" />
 </div>
 </div>
 </section>

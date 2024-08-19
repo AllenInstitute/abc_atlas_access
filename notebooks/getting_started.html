@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -571,22 +573,19 @@ Note: you may need to restart the kernel to use updated packages.
 <section id="using-the-cache">
 <h2>Using the cache<a class="headerlink" href="#using-the-cache" title="Permalink to this heading">#</a></h2>
 <p>Below we show how to setup up the cache to download from S3, how to list and switch to a different data release, and additionally how to list the directories available, their size, and the files in that directory.</p>
-<p>Setup the <strong>AbcProjectCache</strong> object by specifying a directory and calling <code class="docutils literal notranslate"><span class="pre">from_s3_cache</span></code> as shown below. We also print what version of the manifest is being currently loaded by the cache.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar. Using the cache from a s3fs mount means that all files will be streamed over the internet instead of saved to the local disk.</p>
+<p>Setup the <strong>AbcProjectCache</strong> object by specifying a directory and calling <code class="docutils literal notranslate"><span class="pre">from_cache_dir</span></code> as shown below. We also print what version of the manifest is being currently loaded by the cache. This will automatically instantiate the cache and set it up to either download data via a AWS S3 enabled cache or to load it through local read only cache depending on if the user has write access. The later is useful if accessing the data directly through a <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar mount of the AWS S3 bucket directly such as on CodeOcean.</p>
+<p>Users can also specify a download enabled or read only local cache explicitly by using the funcitons <code class="docutils literal notranslate"><span class="pre">from_s3_cache</span></code> and <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span> <span class="c1"># Path to where you would like to write the downloaded data.</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -602,7 +601,9 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;releases/20230630/manifest.json&#39;,
  &#39;releases/20230830/manifest.json&#39;,
  &#39;releases/20231215/manifest.json&#39;,
- &#39;releases/20240330/manifest.json&#39;]
+ &#39;releases/20240330/manifest.json&#39;,
+ &#39;releases/20240831/&#39;,
+ &#39;releases/20240831/manifest.json&#39;]
 </pre></div>
 </div>
 </div>
@@ -621,15 +622,15 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:571: OutdatedManifestWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:575: OutdatedManifestWarning: 
 
 The manifest file you are loading is not the most up to date manifest file available for this dataset. The most up to data manifest file available for this dataset is 
 
-releases/20240330/manifest.json
+releases/20240831/manifest.json
 
 To see the differences between these manifests,run
 
-type.compare_manifests(&#39;releases/20240330/manifest.json&#39;, &#39;releases/20230630/manifest.json&#39;)
+type.compare_manifests(&#39;releases/20240831/manifest.json&#39;, &#39;releases/20230630/manifest.json&#39;)
 
 To see all of the manifest files currently downloaded onto your local system, run
 
@@ -644,7 +645,7 @@ self.load_latest_manifest()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>old manifest loaded: releases/20230630/manifest.json
-after latest manifest loaded: releases/20240330/manifest.json
+after latest manifest loaded: releases/20240831/manifest.json
 </pre></div>
 </div>
 </div>
@@ -660,6 +661,7 @@ after latest manifest loaded: releases/20240330/manifest.json
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Allen-CCF-2020&#39;,
  &#39;MERFISH-C57BL6J-638850&#39;,
  &#39;MERFISH-C57BL6J-638850-CCF&#39;,
+ &#39;MERFISH-C57BL6J-638850-imputed&#39;,
  &#39;MERFISH-C57BL6J-638850-sections&#39;,
  &#39;WHB-10Xv3&#39;,
  &#39;WHB-taxonomy&#39;,
@@ -771,13 +773,13 @@ after latest manifest loaded: releases/20240330/manifest.json
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████| 27.5M/27.5M [00:04&lt;00:00, 6.17MMB/s]
-annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████| 27.4M/27.4M [00:04&lt;00:00, 6.04MMB/s]
-average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████| 343M/343M [00:56&lt;00:00, 6.07MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 27.5M/27.5M [00:01&lt;00:00, 21.2MMB/s]
+annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████████████████| 27.4M/27.4M [00:02&lt;00:00, 13.2MMB/s]
+average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 343M/343M [00:15&lt;00:00, 21.9MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)]
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -793,17 +795,17 @@ average_template_10.nii.gz: 100%|███████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|█████████████████████████████████████████████████████████████████████████| 131k/131k [00:00&lt;00:00, 819kMB/s]
-cluster_annotation_term.csv: 100%|████████████████████████████████████████████████████████| 861k/861k [00:00&lt;00:00, 2.94MMB/s]
-cluster_annotation_term_set.csv: 100%|██████████████████████████████████████████████████| 1.11k/1.11k [00:00&lt;00:00, 12.5kMB/s]
-cluster_annotation_term_with_counts.csv: 100%|████████████████████████████████████████████| 902k/902k [00:00&lt;00:00, 3.77MMB/s]
-cluster_to_cluster_annotation_membership.csv: 100%|█████████████████████████████████████| 2.21M/2.21M [00:00&lt;00:00, 4.47MMB/s]
-cluster_to_cluster_annotation_membership_color.csv: 100%|█████████████████████████████████| 239k/239k [00:00&lt;00:00, 1.53MMB/s]
-cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████████████████████████████| 531k/531k [00:00&lt;00:00, 2.51MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 131k/131k [00:00&lt;00:00, 448kMB/s]
+cluster_annotation_term.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 861k/861k [00:00&lt;00:00, 4.06MMB/s]
+cluster_annotation_term_set.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████| 1.11k/1.11k [00:00&lt;00:00, 6.21kMB/s]
+cluster_annotation_term_with_counts.csv: 100%|████████████████████████████████████████████████████████████████████████████████| 902k/902k [00:00&lt;00:00, 4.18MMB/s]
+cluster_to_cluster_annotation_membership.csv: 100%|█████████████████████████████████████████████████████████████████████████| 2.21M/2.21M [00:00&lt;00:00, 10.9MMB/s]
+cluster_to_cluster_annotation_membership_color.csv: 100%|█████████████████████████████████████████████████████████████████████| 239k/239k [00:00&lt;00:00, 1.82MMB/s]
+cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████████████████████████████████████████████████████████████████| 531k/531k [00:00&lt;00:00, 3.83MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-taxonomy metadata files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -823,11 +825,11 @@ cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)] 
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)] 
 
 
 WMB-taxonomy metadata files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
 </pre></div>
 </div>
 </div>
@@ -861,10 +863,10 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 4.00MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 4.14MMB/s]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-10X/20231215/gene.csv&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20231215/gene.csv&#39;)
 </pre></div>
 </div>
 </div>
@@ -1019,10 +1021,10 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|███████████████████████████████████████████████████████████| 89.3M/89.3M [00:14&lt;00:00, 5.96MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 89.3M/89.3M [00:04&lt;00:00, 20.4MMB/s]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
 </pre></div>
 </div>
 </div>
@@ -1039,65 +1041,65 @@ WMB-taxonomy metadata files:
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:477,</span> in <span class="ni">AbcProjectCache.get_data_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_local_path</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">477</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">479</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span>         <span class="n">force_download</span><span class="o">=</span><span class="n">force_download</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>         <span class="n">skip_hash_check</span><span class="o">=</span><span class="n">skip_hash_check</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="k">return</span> <span class="n">data_path</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:508,</span> in <span class="ni">AbcProjectCache.get_data_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_local_path</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">508</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="n">force_download</span><span class="o">=</span><span class="n">force_download</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span>         <span class="n">skip_hash_check</span><span class="o">=</span><span class="n">skip_hash_check</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="k">return</span> <span class="n">data_path</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:832,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span> <span class="k">def</span> <span class="nf">download_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:836,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="k">def</span> <span class="nf">download_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">805</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span><span class="sd">     Return the local path to a data file, downloading the file</span>
-<span class="g g-Whitespace">    </span><span class="mi">807</span><span class="sd">     if necessary</span>
+<span class="g g-Whitespace">    </span><span class="mi">807</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">808</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">809</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span><span class="sd">     Return the local path to a data file, downloading the file</span>
+<span class="g g-Whitespace">    </span><span class="mi">811</span><span class="sd">     if necessary</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">832</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">833</span>                                       <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">834</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
+<span class="g g-Whitespace">    </span><span class="mi">834</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">836</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span>                                       <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">838</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">839</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:399,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span> <span class="k">def</span> <span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span><span class="sd">     file&#39;s existence</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:403,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="k">def</span> <span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">     file&#39;s existence</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">397</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">399</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>     <span class="k">return</span> <span class="n">output</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">403</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="k">return</span> <span class="n">output</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:325,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span> <span class="k">def</span> <span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span><span class="sd">     file&#39;s existence.</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:329,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">def</span> <span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="sd">     file&#39;s existence.</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">325</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">329</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
 
-<span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/manifest.py:238,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/manifest.py:238,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">226</span>             <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_file_attributes</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">227</span>                 <span class="n">remote_path</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span>
 <span class="g g-Whitespace">    </span><span class="mi">228</span>                     <span class="s1">&#39;url&#39;</span><span class="p">],</span>
@@ -1135,7 +1137,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 3.89MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 14.8MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1265,13 +1267,13 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████| 27.5M/27.5M [00:04&lt;00:00, 5.91MMB/s]
-annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████| 27.4M/27.4M [00:04&lt;00:00, 5.60MMB/s]
-average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████| 343M/343M [00:57&lt;00:00, 5.95MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 27.5M/27.5M [00:00&lt;00:00, 34.6MMB/s]
+annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████████████████| 27.4M/27.4M [00:00&lt;00:00, 33.1MMB/s]
+average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 343M/343M [00:07&lt;00:00, 46.0MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)]
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20230630/average_template_10.nii.gz&#39;)]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1290,7 +1292,7 @@ average_template_10.nii.gz: 100%|███████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|█████████████████████████████████████████████████████| 6.46M/6.46M [00:01&lt;00:00, 5.18MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 6.46M/6.46M [00:00&lt;00:00, 8.72MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1395,32 +1397,32 @@ average_template_10.nii.gz: 100%|███████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████████████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 963kMB/s]
-parcellation_term.csv: 100%|██████████████████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.28MMB/s]
-parcellation_term_set.csv: 100%|████████████████████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 12.9kMB/s]
-parcellation_term_set_membership.csv: 100%|████████████████████████████████████████████████| 114k/114k [00:00&lt;00:00, 919kMB/s]
-parcellation_term_with_counts.csv: 100%|███████████████████████████████████████████████████| 137k/137k [00:00&lt;00:00, 880kMB/s]
-parcellation_to_parcellation_term_membership.csv: 100%|███████████████████████████████████| 680k/680k [00:00&lt;00:00, 3.18MMB/s]
-parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████████████████████| 22.3k/22.3k [00:00&lt;00:00, 366kMB/s]
-parcellation_to_parcellation_term_membership_blue.csv: 100%|█████████████████████████████| 16.4k/16.4k [00:00&lt;00:00, 196kMB/s]
-parcellation_to_parcellation_term_membership_color.csv: 100%|████████████████████████████| 30.5k/30.5k [00:00&lt;00:00, 516kMB/s]
-parcellation_to_parcellation_term_membership_green.csv: 100%|████████████████████████████| 16.5k/16.5k [00:00&lt;00:00, 183kMB/s]
-parcellation_to_parcellation_term_membership_name.csv: 100%|█████████████████████████████| 75.8k/75.8k [00:00&lt;00:00, 695kMB/s]
-parcellation_to_parcellation_term_membership_red.csv: 100%|██████████████████████████████| 16.0k/16.0k [00:00&lt;00:00, 247kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 554kMB/s]
+parcellation_term.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.07MMB/s]
+parcellation_term_set.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 6.64kMB/s]
+parcellation_term_set_membership.csv: 100%|████████████████████████████████████████████████████████████████████████████████████| 114k/114k [00:00&lt;00:00, 828kMB/s]
+parcellation_term_with_counts.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 137k/137k [00:00&lt;00:00, 827kMB/s]
+parcellation_to_parcellation_term_membership.csv: 100%|███████████████████████████████████████████████████████████████████████| 680k/680k [00:00&lt;00:00, 5.16MMB/s]
+parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████████████████████████████████████████████████████████| 22.3k/22.3k [00:00&lt;00:00, 309kMB/s]
+parcellation_to_parcellation_term_membership_blue.csv: 100%|█████████████████████████████████████████████████████████████████| 16.4k/16.4k [00:00&lt;00:00, 115kMB/s]
+parcellation_to_parcellation_term_membership_color.csv: 100%|████████████████████████████████████████████████████████████████| 30.5k/30.5k [00:00&lt;00:00, 478kMB/s]
+parcellation_to_parcellation_term_membership_green.csv: 100%|████████████████████████████████████████████████████████████████| 16.5k/16.5k [00:00&lt;00:00, 117kMB/s]
+parcellation_to_parcellation_term_membership_name.csv: 100%|█████████████████████████████████████████████████████████████████| 75.8k/75.8k [00:00&lt;00:00, 375kMB/s]
+parcellation_to_parcellation_term_membership_red.csv: 100%|██████████████████████████████████████████████████████████████████| 16.0k/16.0k [00:00&lt;00:00, 196kMB/s]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_term.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv&#39;)]
 </pre></div>
 </div>
 </div>

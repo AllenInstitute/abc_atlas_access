@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -482,22 +484,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -922,7 +920,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_structure_map.csv: 100%|█████████████████████████████████████████████████████████████████████████████| 8.82k/8.82k [00:00&lt;00:00, 106kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_structure_map.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 8.82k/8.82k [00:00&lt;00:00, 71.8kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1284,8 +1282,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ef9e52785d69e9c482faad54e513f66f214b78ed1daaf2437973db5695e3cd13.png" src="../_images/ef9e52785d69e9c482faad54e513f66f214b78ed1daaf2437973db5695e3cd13.png" />
-<img alt="../_images/94b221ae371046fbfaa8c3f2dd37e9597f9a8ffa814a9e119d3ff200763fd17d.png" src="../_images/94b221ae371046fbfaa8c3f2dd37e9597f9a8ffa814a9e119d3ff200763fd17d.png" />
+<img alt="../_images/77391a02be22e28bc89e61b7d8b60cb4175dc39a5d140f01370c0e0803302afa.png" src="../_images/77391a02be22e28bc89e61b7d8b60cb4175dc39a5d140f01370c0e0803302afa.png" />
+<img alt="../_images/f82fa4a64e0d21f0c4a19fda82fb8e72ae6595d1149e12153002d3bb370e1b01.png" src="../_images/f82fa4a64e0d21f0c4a19fda82fb8e72ae6595d1149e12153002d3bb370e1b01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1298,8 +1296,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/13994cfd968e041809bfa9c74b0df5170a0b91189c6bed421efedd80ad2ea2f2.png" src="../_images/13994cfd968e041809bfa9c74b0df5170a0b91189c6bed421efedd80ad2ea2f2.png" />
-<img alt="../_images/a5db864f9fbb7cf2f9861dcc4fd827a6fe888af67f76520197d5bf7678d3ca86.png" src="../_images/a5db864f9fbb7cf2f9861dcc4fd827a6fe888af67f76520197d5bf7678d3ca86.png" />
+<img alt="../_images/82b6aea6c5807a0aea07047159859c3b07a165407aaa1fc3654d2530ad64ef25.png" src="../_images/82b6aea6c5807a0aea07047159859c3b07a165407aaa1fc3654d2530ad64ef25.png" />
+<img alt="../_images/2283c2f3d3943d3b61065173a92de228ed7a8f02bb1ec3f35f4be6f86e1e6efd.png" src="../_images/2283c2f3d3943d3b61065173a92de228ed7a8f02bb1ec3f35f4be6f86e1e6efd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1312,8 +1310,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fc7d707da669a7863bb6a04ff92f79b6a4b58a21469b1f9e2ac40ed75e32b4bf.png" src="../_images/fc7d707da669a7863bb6a04ff92f79b6a4b58a21469b1f9e2ac40ed75e32b4bf.png" />
-<img alt="../_images/6ee50428784c892741c50c6a5f6c96b8273b5eae490de223c74a6ba45c950e3e.png" src="../_images/6ee50428784c892741c50c6a5f6c96b8273b5eae490de223c74a6ba45c950e3e.png" />
+<img alt="../_images/a799830460d1828b559f909d8c72c1a5527d22dea7bbb92ff717b5e10fe9ba40.png" src="../_images/a799830460d1828b559f909d8c72c1a5527d22dea7bbb92ff717b5e10fe9ba40.png" />
+<img alt="../_images/99a68ba7d45abb30c8fd0c66a8f2b829fc9505baf2ff14632b814cb1ed56a9bd.png" src="../_images/99a68ba7d45abb30c8fd0c66a8f2b829fc9505baf2ff14632b814cb1ed56a9bd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1326,8 +1324,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7b75d3e5feb5430f4c3e1207cfbecdfb677942d8fa4f3eef136c1c5e64697394.png" src="../_images/7b75d3e5feb5430f4c3e1207cfbecdfb677942d8fa4f3eef136c1c5e64697394.png" />
-<img alt="../_images/28e4b499b60bf4614d71c068e06bfbfbe0dea469b05dc2772dd53fde2ecd9168.png" src="../_images/28e4b499b60bf4614d71c068e06bfbfbe0dea469b05dc2772dd53fde2ecd9168.png" />
+<img alt="../_images/0d511e7f83520b8569b284e9b123db70d08d6567ec27dc380ae8b88c09be8156.png" src="../_images/0d511e7f83520b8569b284e9b123db70d08d6567ec27dc380ae8b88c09be8156.png" />
+<img alt="../_images/c3ca6ed8335cb38185602be10ba09495ec3353064b52ca80f5ee0dd1befc5e6f.png" src="../_images/c3ca6ed8335cb38185602be10ba09495ec3353064b52ca80f5ee0dd1befc5e6f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1340,8 +1338,8 @@ n non-neurons to plot: 107871
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2f3833e4eb166654a0668252051e495f9d66e90c06ce217c1b57b58c9b41aa2d.png" src="../_images/2f3833e4eb166654a0668252051e495f9d66e90c06ce217c1b57b58c9b41aa2d.png" />
-<img alt="../_images/36e7d78c2fde66cafbd1d8243ebb6d200bf5aa6bf7960017f53e2139b9e9f244.png" src="../_images/36e7d78c2fde66cafbd1d8243ebb6d200bf5aa6bf7960017f53e2139b9e9f244.png" />
+<img alt="../_images/abe8651dad2c659e3e3f8380038bfb61b3f2db572ce1e9e157f96bc3d3205ed3.png" src="../_images/abe8651dad2c659e3e3f8380038bfb61b3f2db572ce1e9e157f96bc3d3205ed3.png" />
+<img alt="../_images/5e34eb8192deaf618de55131a789ea3eb8afe260703a30cc343be72db599960e.png" src="../_images/5e34eb8192deaf618de55131a789ea3eb8afe260703a30cc343be72db599960e.png" />
 </div>
 </div>
 <p><strong>In part 2 we’ll focus on gene data including using the UMAP to plot gene expression locations in the different clusterings.</strong></p>

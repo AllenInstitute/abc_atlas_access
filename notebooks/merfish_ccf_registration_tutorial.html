@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -469,7 +471,7 @@ document.write(`
 <p>Registration to the Allen CCFv3 was performed at 10 micron in-plane resolution. For each section, an anatomical label reference was created using class/subclass level cell type assignments which are then used to match to corresponding CCF parcellations. The midline was manually determined for each section to rotate the section upright and center in in the middle (<strong>section coordinates</strong>). This set of rectified images were stacked in sequential order to create an inital configuration for registration.</p>
 <p>The ANTS registration framework was use to establish a 2.5D deformable spatial mapping between the MERFISH data and <strong>CCF coordinates</strong> via three major steps: (1) A 3D global affine (12 dof) mapping was performed to align the CCF into the MERFISH space (<strong>resampled CCF</strong>); (2) 2D affine (6 dof) registration of each MERFISH section to match the target resampled CCF section and finally, (3) a 2D multi-scale, symmetric diffeomorphic registration of each section (<strong>reconstructed coordinates</strong>) to finer level match to the target CCF section. Global and section-wise mappings from each of these registration steps were preserved and concatenated (with appropriate inversions) to allow point-to-point mapping between the original MERFISH coordinate space and the CCF space. See <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a> for further details.</p>
 <p>The purpose of this notebook is to provide an overview of how the mapped coordinate information is represented through example use cases.</p>
-<p>You need to be connected to the internet to run this notebook and that you have already downloaded the data via the getting started notebook.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -484,22 +486,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -721,7 +719,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reconstructed_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████| 256M/256M [00:10&lt;00:00, 24.5MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reconstructed_coordinates.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 256M/256M [00:10&lt;00:00, 24.2MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1013,7 +1011,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 296M/296M [00:12&lt;00:00, 23.5MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 296M/296M [00:48&lt;00:00, 6.13MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1353,7 +1351,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9ec8df28a29cfcdbebe1c78a3625b26d1d7ac8de13e1d04f95cc23fd783153e.png" src="../_images/f9ec8df28a29cfcdbebe1c78a3625b26d1d7ac8de13e1d04f95cc23fd783153e.png" />
+<img alt="../_images/c014284a15c580bcad4b0e17de1283826d7ce29d9087340b9c8c79226b7ff7d9.png" src="../_images/c014284a15c580bcad4b0e17de1283826d7ce29d9087340b9c8c79226b7ff7d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1366,7 +1364,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7d9a810627febed27a72da4bb64ddccbce34020cc11630cc07a9e5cce59473cb.png" src="../_images/7d9a810627febed27a72da4bb64ddccbce34020cc11630cc07a9e5cce59473cb.png" />
+<img alt="../_images/2e8c0f42ea45382b8fb879edc2209e9dff397e676ab0e5ba0aec39b0808f1e34.png" src="../_images/2e8c0f42ea45382b8fb879edc2209e9dff397e676ab0e5ba0aec39b0808f1e34.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1379,7 +1377,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/392c76a7040dd13d15232b2efbe68ca3353a1738d3315aed266b1acc4dedad55.png" src="../_images/392c76a7040dd13d15232b2efbe68ca3353a1738d3315aed266b1acc4dedad55.png" />
+<img alt="../_images/2f621660e86cea99ab8d274b517df4500ac4fcaefacb69df0c1eece4bd5b5cdb.png" src="../_images/2f621660e86cea99ab8d274b517df4500ac4fcaefacb69df0c1eece4bd5b5cdb.png" />
 </div>
 </div>
 </section>
@@ -1397,6 +1395,9 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████████████████████████████████████████████████████████| 22.3k/22.3k [00:00&lt;00:00, 334kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1486,6 +1487,9 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership_color.csv: 100%|████████████████████████████████████████████████████████████████| 30.5k/30.5k [00:00&lt;00:00, 338kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1793,7 +1797,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/870413bacaff2e08412da128175bd12f3b05771e198e86d2c693f2623ddd978a.png" src="../_images/870413bacaff2e08412da128175bd12f3b05771e198e86d2c693f2623ddd978a.png" />
+<img alt="../_images/4290a0f1d13526a92dea8ee8ed8f36e486149f18e82b9e14ccc18e217b994758.png" src="../_images/4290a0f1d13526a92dea8ee8ed8f36e486149f18e82b9e14ccc18e217b994758.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1806,7 +1810,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5eccce5ca4ecea6ea0989c5cd83be4ed875a6472b0c3b146c6bacaecfa770a66.png" src="../_images/5eccce5ca4ecea6ea0989c5cd83be4ed875a6472b0c3b146c6bacaecfa770a66.png" />
+<img alt="../_images/193dc241f9d36a8216043cea905a4cb80880e1311b5f099314539bd74a1f77b0.png" src="../_images/193dc241f9d36a8216043cea905a4cb80880e1311b5f099314539bd74a1f77b0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1819,7 +1823,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ad53e64eed3800b57bf9082e01e385e6e7cb4b89e283ad8027f229b0ad184ff3.png" src="../_images/ad53e64eed3800b57bf9082e01e385e6e7cb4b89e283ad8027f229b0ad184ff3.png" />
+<img alt="../_images/ed390b31a1af9a24c5b4a9141aea0c16239910eb205bf67b0da0a2577473da38.png" src="../_images/ed390b31a1af9a24c5b4a9141aea0c16239910eb205bf67b0da0a2577473da38.png" />
 </div>
 </div>
 </section>
@@ -2366,19 +2370,19 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_average_template
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_average_template.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████| 117M/117M [00:05&lt;00:00, 21.0MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_average_template.nii.gz: 100%|██████████████████████████████████████████████████████████████████████████████████████| 117M/117M [00:21&lt;00:00, 5.57MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_annotation
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████| 2.12M/2.12M [00:00&lt;00:00, 11.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation.nii.gz: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 2.12M/2.12M [00:00&lt;00:00, 3.23MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_annotation_boundary
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation_boundary.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████| 1.55M/1.55M [00:00&lt;00:00, 6.30MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation_boundary.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████| 1.55M/1.55M [00:00&lt;00:00, 2.88MMB/s]
 </pre></div>
 </div>
 </div>
@@ -2446,7 +2450,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/15b4672736e824a080a4c70527537e995f69b7f0c3e1b6399d4a71616c4876c4.png" src="../_images/15b4672736e824a080a4c70527537e995f69b7f0c3e1b6399d4a71616c4876c4.png" />
+<img alt="../_images/9d8449ed7909e9bad653180a331e8db0e38ff2144becae387f3d0fe4e2b91194.png" src="../_images/9d8449ed7909e9bad653180a331e8db0e38ff2144becae387f3d0fe4e2b91194.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2458,7 +2462,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b88fb25619d816b648d8b9103d535a710d8ab713fab0f13cca58d910b953415f.png" src="../_images/b88fb25619d816b648d8b9103d535a710d8ab713fab0f13cca58d910b953415f.png" />
+<img alt="../_images/331e16a7b7a59d9d89a66c71449d2dfb854f96092dacbc32660c570967c5a79c.png" src="../_images/331e16a7b7a59d9d89a66c71449d2dfb854f96092dacbc32660c570967c5a79c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2470,7 +2474,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c7e564b03a2b2fdbe2ce4575a09f092116706ec25fc3d3806e1e08458dd29d43.png" src="../_images/c7e564b03a2b2fdbe2ce4575a09f092116706ec25fc3d3806e1e08458dd29d43.png" />
+<img alt="../_images/38d680afdb9da6a58782f1f70312b468b896af427a06d091a468a3450cb3a23e.png" src="../_images/38d680afdb9da6a58782f1f70312b468b896af427a06d091a468a3450cb3a23e.png" />
 </div>
 </div>
 <p>Using the help function, we can overlay the parcellation boundary overlay on top of the cells colorized by subclass</p>
@@ -2490,7 +2494,7 @@ origin: (5.476531505584717, 8.600000381469727, 6.435669422149658)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0055ea0265f6ac081eb8b44f081dab2f8d15afcd8ee7881cfb0c008f5a6442f9.png" src="../_images/0055ea0265f6ac081eb8b44f081dab2f8d15afcd8ee7881cfb0c008f5a6442f9.png" />
+<img alt="../_images/f499393c84209ff13c3fe48a5a2ab112537a4922e9f53b8dd465c76c67e5cd66.png" src="../_images/f499393c84209ff13c3fe48a5a2ab112537a4922e9f53b8dd465c76c67e5cd66.png" />
 </div>
 </div>
 </section>

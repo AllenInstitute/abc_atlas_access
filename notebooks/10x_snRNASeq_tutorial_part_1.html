@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -473,7 +475,7 @@ document.write(`
 <h1>10x RNA-seq gene expression data (part 1)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-1" title="Permalink to this heading">#</a></h1>
 <p>To efficiently handle data transfer and download, the 4 million cell 10X dataset, was subdivide into 24 expression matrices where cells are grouped by 10X chemistry (10Xv2, 10Xv3 and 10XMulti) and the broad anatomical region from where the cells were dissected from.</p>
 <p>The purpose of this set of notebooks is to provide an overview of the data, the file organization and how to combine data and metadata through example use cases.</p>
-<p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -489,34 +491,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">latest_manifest_file</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -570,13 +556,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/abc_download_root/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
 </pre></div>
 </div>
 </div>
@@ -1429,7 +1415,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/80e096ef8cd56746b1250425948e603b22ffc7142e03692977264b649ef9c2b4.png" src="../_images/80e096ef8cd56746b1250425948e603b22ffc7142e03692977264b649ef9c2b4.png" />
+<img alt="../_images/220a72d0fb45df7a2e8671e2b8152fd284d6ee42037d9291296fa2999fdd4c42.png" src="../_images/220a72d0fb45df7a2e8671e2b8152fd284d6ee42037d9291296fa2999fdd4c42.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1440,7 +1426,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22433bb5276afda1e34a8bf2da8dffa501290b5ea5d1ba20e26ff99ce03019d6.png" src="../_images/22433bb5276afda1e34a8bf2da8dffa501290b5ea5d1ba20e26ff99ce03019d6.png" />
+<img alt="../_images/7509c984ee0865ad04d2270d1a1ea3485ad84936ff52573c7c5cfbc2999ad0ff.png" src="../_images/7509c984ee0865ad04d2270d1a1ea3485ad84936ff52573c7c5cfbc2999ad0ff.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1451,7 +1437,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f2f79df7acac0bf9e8b95b33acdc9bb7292e353abd3a47c35ae9f3ad3f923138.png" src="../_images/f2f79df7acac0bf9e8b95b33acdc9bb7292e353abd3a47c35ae9f3ad3f923138.png" />
+<img alt="../_images/94d691a0894f4a9ccc269f05005f941c5a32cec0132971ee9f10978f858f941d.png" src="../_images/94d691a0894f4a9ccc269f05005f941c5a32cec0132971ee9f10978f858f941d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1462,7 +1448,7 @@ Number of unique region_of_interest_color = 29 [&#39;#0059CC&#39;, &#39;#00990A&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1981c7472f8506208f16ffe75c871f38660dff495e55f16f227b5a5d81e9ef4f.png" src="../_images/1981c7472f8506208f16ffe75c871f38660dff495e55f16f227b5a5d81e9ef4f.png" />
+<img alt="../_images/38a6548712c2b2c690fb59325eceb751d944649af43348940476d27072be8e45.png" src="../_images/38a6548712c2b2c690fb59325eceb751d944649af43348940476d27072be8e45.png" />
 </div>
 </div>
 </section>
@@ -1728,13 +1714,7 @@ reference transcriptome mm10 (GENCODE vM23/Ensembl 98) using the 10x Genomics Ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10Xv2-TH-log2.h5ad: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 4.04G/4.04G [02:47&lt;00:00, 24.1MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_download_root/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad
 </pre></div>
 </div>
 </div>
@@ -1748,7 +1728,7 @@ reference transcriptome mm10 (GENCODE vM23/Ensembl 98) using the 10x Genomics Ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AnnData object with n_obs × n_vars = 131212 × 32285 backed at &#39;/Users/chris.morrison/src/abc_download_root/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AnnData object with n_obs × n_vars = 131212 × 32285 backed at &#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10Xv2/20230630/WMB-10Xv2-TH-log2.h5ad&#39;
     obs: &#39;cell_barcode&#39;, &#39;library_label&#39;, &#39;anatomical_division_label&#39;
     var: &#39;gene_symbol&#39;
     uns: &#39;normalization&#39;, &#39;parent&#39;, &#39;parent_layer&#39;, &#39;parent_rows&#39;
@@ -1908,7 +1888,7 @@ reference transcriptome mm10 (GENCODE vM23/Ensembl 98) using the 10x Genomics Ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  4.166669999999996
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  3.722196999999994
 AnnData object with n_obs × n_vars = 131212 × 10
     obs: &#39;cell_barcode&#39;, &#39;library_label&#39;, &#39;anatomical_division_label&#39;
     var: &#39;gene_symbol&#39;
@@ -1978,7 +1958,7 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3a5484183bc627013d1d8434acdf8c1ee1b956d6cd1edd736f9536973b252c0d.png" src="../_images/3a5484183bc627013d1d8434acdf8c1ee1b956d6cd1edd736f9536973b252c0d.png" />
+<img alt="../_images/9e837c4b9954c275777ec11a32ec20edfc6a8a6bab4bdc964c752d503bdcdc57.png" src="../_images/9e837c4b9954c275777ec11a32ec20edfc6a8a6bab4bdc964c752d503bdcdc57.png" />
 </div>
 </div>
 </section>
@@ -2003,11 +1983,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_71964/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/1fe369ddfd502c551e13f0db069321cda94d50f4c577fd1364b8d9d4d1bf6b51.png" src="../_images/1fe369ddfd502c551e13f0db069321cda94d50f4c577fd1364b8d9d4d1bf6b51.png" />
+<img alt="../_images/f17a30c1993537525c41ed5bf56965045a15dca9c536d98fb0dfa94152487107.png" src="../_images/f17a30c1993537525c41ed5bf56965045a15dca9c536d98fb0dfa94152487107.png" />
 </div>
 </div>
 <p>Grouping cells by cell types class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic types.</p>
@@ -2019,11 +1999,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_71964/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/bd1f6a003556ae291743d77a0717b972ee857735a1a58c1eb180dc92182868c6.png" src="../_images/bd1f6a003556ae291743d77a0717b972ee857735a1a58c1eb180dc92182868c6.png" />
+<img alt="../_images/0821b4c12207ce9241e4d6ecfaf6880bbac0f6cf7f81aa5e96437c9ee62335c3.png" src="../_images/0821b4c12207ce9241e4d6ecfaf6880bbac0f6cf7f81aa5e96437c9ee62335c3.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass, shows Tac2 is enriched in sublcass “145 MH Tac2 Glut” with further specificity to the medial habenula and with Tac2 itself as a marker for the subclass.</p>
@@ -2035,11 +2015,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_71964/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/5ee6787d302febc5dcaa94e33ce5032cf054fa9c1f0cfb89723149904385908b.png" src="../_images/5ee6787d302febc5dcaa94e33ce5032cf054fa9c1f0cfb89723149904385908b.png" />
+<img alt="../_images/a9857ee94e2651246d0da267cd9ad2242781cdb86fa5dc94d6d70c60eb6c545b.png" src="../_images/a9857ee94e2651246d0da267cd9ad2242781cdb86fa5dc94d6d70c60eb6c545b.png" />
 </div>
 </div>
 <p>Next level down, gene Tac2 is enriched in several children supertypes of “145 MH Tac2 Glut”</p>
@@ -2051,11 +2031,11 @@ AnnData object with n_obs × n_vars = 131212 × 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_85430/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_71964/199257058.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/3df5e83b22a75934f9cfb775f7b5240a95463d589a6d6a3d19dc6c872d14c165.png" src="../_images/3df5e83b22a75934f9cfb775f7b5240a95463d589a6d6a3d19dc6c872d14c165.png" />
+<img alt="../_images/698ccedf349b73b469e35d3d6705cce70fb7d8922ceca7da3371db7eddbcdb68.png" src="../_images/698ccedf349b73b469e35d3d6705cce70fb7d8922ceca7da3371db7eddbcdb68.png" />
 </div>
 </div>
 <p>Close h5ad file and clean up</p>

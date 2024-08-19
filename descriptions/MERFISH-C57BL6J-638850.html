@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'descriptions/MERFISH-C57BL6J-638850';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Cluster groups and neighborhood specific UMAP embeddings" href="WMB-neighborhoods.html" />
+    <link rel="next" title="Imputed MERFISH spatial transcriptomics of a single adult mouse brain" href="MERFISH-C57BL6J-638850-imputed.html" />
     <link rel="prev" title="Whole adult mouse brain taxonomy of cell types" href="WMB-taxonomy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../notebooks/merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks/merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks/merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -470,6 +472,7 @@ AWS Public Dataset:</p>
 <p>Data is being share under the CC BY NC 4.0 license.</p>
 <p>Related resources :</p>
 <ul class="simple">
+<li><p>Imputed, whole mouse brain MERFISH spatial transcriptomics dataset (<a class="reference internal" href="MERFISH-C57BL6J-638850-imputed.html"><span class="doc std std-doc">MERFISH-C57BL6J-638850-imputed</span></a>)</p></li>
 <li><p>Whole mouse brain clustering (<a class="reference internal" href="WMB-10X.html"><span class="doc std std-doc">WMB-10X</span></a>)</p></li>
 <li><p>Whole mouse brain mouse taxonomy of cell types (<a class="reference internal" href="WMB-taxonomy.html"><span class="doc std std-doc">WMB-taxonomy</span></a>)</p></li>
 </ul>
@@ -479,14 +482,16 @@ AWS Public Dataset:</p>
 facilitate data download and usage.</p></li>
 <li><p><a class="reference internal" href="../notebooks/cluster_annotation_tutorial.html"><span class="doc std std-doc"><strong>10x scRNA-seq clustering analysis and annotation</strong></span></a>: learn about the
 whole mouse brain taxonomy through some example use cases and visualization.</p></li>
-<li><ul>
-<li><p><strong>MERFISH whole brain spatial transcriptomics</strong></p></li>
-<li><p><a class="reference internal" href="../notebooks/merfish_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: learn about the MERFISH dataset through some example use
+<li><p><strong>MERFISH whole brain spatial transcriptomics</strong></p>
+<ul>
+<li><p><a class="reference internal" href="../notebooks/merfish_tutorial_part_1.html"><span class="doc std std-doc"><strong>Part 1</strong></span></a>: Learn about the MERFISH dataset through some example use
 cases and visualization for a single brain section.</p></li>
-<li><p><a class="reference internal" href="../notebooks/merfish_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: learn to access data and prepare for whole brain
+<li><p><a class="reference internal" href="../notebooks/merfish_tutorial_part_2a.html"><span class="doc std std-doc"><strong>Part 2a</strong></span></a>: Learn to access data and prepare for whole brain
 example use cases in part 2b.</p></li>
 <li><p><a class="reference internal" href="../notebooks/merfish_tutorial_part_2b.html"><span class="doc std std-doc"><strong>Part 2b</strong></span></a>: Explore the whole brain data through visualization and
 analyses of a set of genes of interest.</p></li>
+<li><p><a class="reference internal" href="../notebooks/merfish_imputed_genes_example.html"><span class="doc std std-doc"><strong>MERFISH imputed genes</strong></span></a>:
+Learn about the using the imputed genes of the MERFISH dataset.</p></li>
 </ul>
 </li>
 </ul>
@@ -532,11 +537,11 @@ analyses of a set of genes of interest.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="WMB-neighborhoods.html"
+       href="MERFISH-C57BL6J-638850-imputed.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cluster groups and neighborhood specific UMAP embeddings</p>
+        <p class="prev-next-title">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

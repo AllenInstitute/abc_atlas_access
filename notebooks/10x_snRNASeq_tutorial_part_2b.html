@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -462,7 +464,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-gene-expression-data-part-2b">
 <h1>10x RNA-seq gene expression data (part 2b)<a class="headerlink" href="#x-rna-seq-gene-expression-data-part-2b" title="Permalink to this heading">#</a></h1>
 <p>We can continue to explore our examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 over the whole brain.</p>
-<p>You need to be connected to the internet to run this notebook and that you have downloaded the example data via the getting started notebook.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -477,22 +479,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -506,8 +504,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|███████████████████████████████████████████████████████████████████████| 1.39G/1.39G [00:55&lt;00:00, 25.0MMB/s]
-/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:398: DtypeWarning: Columns (16) have mixed types. Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|████████████████████████████████████████████████████████████████████████████| 1.39G/1.39G [00:52&lt;00:00, 26.4MMB/s]
+/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:429: DtypeWarning: Columns (16) have mixed types. Specify dtype option on import or set low_memory=False.
   return pd.read_csv(path, **kwargs)
 </pre></div>
 </div>
@@ -522,7 +520,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|████████████████████████████████████████████████████████████████████████████| 318M/318M [00:11&lt;00:00, 27.2MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 318M/318M [00:37&lt;00:00, 8.48MMB/s]
 </pre></div>
 </div>
 </div>
@@ -608,7 +606,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/65cf809215f6d96b168c8273a7e2b63304fe8db7444484af7a0ebe45e7f2fdbe.png" src="../_images/65cf809215f6d96b168c8273a7e2b63304fe8db7444484af7a0ebe45e7f2fdbe.png" />
+<img alt="../_images/d28335dfcc08d585d3b19f73208f3f132528973e659e571daf0ccf735da4b8fa.png" src="../_images/d28335dfcc08d585d3b19f73208f3f132528973e659e571daf0ccf735da4b8fa.png" />
 </div>
 </div>
 <p>We can also visualize the relationship between transport genes and neurotransmitter identities on the UMAP.</p>
@@ -621,7 +619,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/94d41f90a5c281070f5a751d7dbcfd73f628b788085c862fff48ff4c28a0cc6a.png" src="../_images/94d41f90a5c281070f5a751d7dbcfd73f628b788085c862fff48ff4c28a0cc6a.png" />
+<img alt="../_images/85ef12e29bfd39432fb827bbeefc71bbf9feb5fc6cf3864436abb38753e1e650.png" src="../_images/85ef12e29bfd39432fb827bbeefc71bbf9feb5fc6cf3864436abb38753e1e650.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -632,7 +630,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fa0f2398125ea5a2c7efe0a8a7826caf121fe432efb033c143780396fbca0e72.png" src="../_images/fa0f2398125ea5a2c7efe0a8a7826caf121fe432efb033c143780396fbca0e72.png" />
+<img alt="../_images/88d492725a2c77b9ce8a76d342e4d811324685d1e7f07ae3d41b5df1fbf1c868.png" src="../_images/88d492725a2c77b9ce8a76d342e4d811324685d1e7f07ae3d41b5df1fbf1c868.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -643,7 +641,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc3fa14eca66671c8dd1e3dc205bc99498d1ba8a824f2f108a6f9434847aed38.png" src="../_images/dc3fa14eca66671c8dd1e3dc205bc99498d1ba8a824f2f108a6f9434847aed38.png" />
+<img alt="../_images/bc1b6042f5005e890ba45964eb9d053c7670b9ae5b351acde8a8fcfba6ddca7c.png" src="../_images/bc1b6042f5005e890ba45964eb9d053c7670b9ae5b351acde8a8fcfba6ddca7c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -654,7 +652,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50791e6ea1c165f8364aa52f3d84115fc03d525cf879425d71e30d50dfb47405.png" src="../_images/50791e6ea1c165f8364aa52f3d84115fc03d525cf879425d71e30d50dfb47405.png" />
+<img alt="../_images/159c6f728654133ff9d3df0eb4455dee5c2b65d27ca8c9d774ba06be06aeb7bc.png" src="../_images/159c6f728654133ff9d3df0eb4455dee5c2b65d27ca8c9d774ba06be06aeb7bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -665,7 +663,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/adb9c342264009adeaea04087b371171fe23806aad887999e9bf0e3e86e95ce8.png" src="../_images/adb9c342264009adeaea04087b371171fe23806aad887999e9bf0e3e86e95ce8.png" />
+<img alt="../_images/ec98826670dd0667495a9edf736a32652b970c02a7d485dc1a43686fc5481b61.png" src="../_images/ec98826670dd0667495a9edf736a32652b970c02a7d485dc1a43686fc5481b61.png" />
 </div>
 </div>
 <p>Grouping expression by dissection region of interest shows that each of these genes have distinct spatial patterns. Genes Slc17a7 is enriched in the cortex, Slc32a1 in the striatum, Slc17a6 in the thalamus, Slc6a3 in the midbrain, and Slc6a5 in the medulla.</p>
@@ -686,7 +684,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5431e3fd14a018a4aa2b24c270c128401cbbe7c1c59752092068ae95a2e825e3.png" src="../_images/5431e3fd14a018a4aa2b24c270c128401cbbe7c1c59752092068ae95a2e825e3.png" />
+<img alt="../_images/45fa13a637f8d33f4c5c602d8bd1fc9f4d10040f870e6ea545af73f30c3b70dc.png" src="../_images/45fa13a637f8d33f4c5c602d8bd1fc9f4d10040f870e6ea545af73f30c3b70dc.png" />
 </div>
 </div>
 </section>
@@ -712,10 +710,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x15f43bf10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x29ee81e50&gt;
 </pre></div>
 </div>
-<img alt="../_images/91f63411dae4299b4797d953aca04653f9fed9f6097c5065bf8e6d6e5ba8a594.png" src="../_images/91f63411dae4299b4797d953aca04653f9fed9f6097c5065bf8e6d6e5ba8a594.png" />
+<img alt="../_images/9d3a13507188993128cf931512351b8268f0991e6c332bd0f58c78bb0f15f6eb.png" src="../_images/9d3a13507188993128cf931512351b8268f0991e6c332bd0f58c78bb0f15f6eb.png" />
 </div>
 </div>
 <p>Grouping by class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic type and “06 CTX-CGE GABA” GABAergic cells originating from the caudal ganglionic eminence (CGE).</p>
@@ -727,10 +725,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x15f5acc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x29fb80d10&gt;
 </pre></div>
 </div>
-<img alt="../_images/dcf02a4ffb7022cd78fbc2b447c1fd2d5eae27d26ce852c6ebea596a35864fb4.png" src="../_images/dcf02a4ffb7022cd78fbc2b447c1fd2d5eae27d26ce852c6ebea596a35864fb4.png" />
+<img alt="../_images/a81eeccb46c0fdda778a891dc84cc994e9b2900dca8aa4554ad4b3f97b553279.png" src="../_images/a81eeccb46c0fdda778a891dc84cc994e9b2900dca8aa4554ad4b3f97b553279.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass reveals enrichment is highly anatomically localized cell types such as the medial habenula (MH), bed nuclei of the stria terminalis (BST), spinal nucleus of the trigeminal (SPVC), main olfactory blub (MOB), central amygdalar nucleus (CEA) and arcuate hypothalamic nucleus (ARH).</p>
@@ -743,10 +741,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x15f514d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x29d98b9d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/c554d580e977f4b50bff1c0bd7b5fed648183a618387725f27b750389db9b7bc.png" src="../_images/c554d580e977f4b50bff1c0bd7b5fed648183a618387725f27b750389db9b7bc.png" />
+<img alt="../_images/6bdfc482c8ba97fb1bc4ab361968ab0f1adccaf3096398d077aafecaf2056654.png" src="../_images/6bdfc482c8ba97fb1bc4ab361968ab0f1adccaf3096398d077aafecaf2056654.png" />
 </div>
 </div>
 <p>Plotting Tac2 expression on the UMAP enables you see whole brain expression in one view showing Tac2 expression is highly restricted to a small number of clusters. Further we can compare the expression profile with the top 10 enriched subclasses.</p>
@@ -758,7 +756,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71227db1040ec687c5b98e73be0df7f6bc70d44058f870fa1d1f0c475fd7c265.png" src="../_images/71227db1040ec687c5b98e73be0df7f6bc70d44058f870fa1d1f0c475fd7c265.png" />
+<img alt="../_images/cb996377969a2fe30f3f00b653b63fccc6ebb7ff05cf174a47038482a8db0702.png" src="../_images/cb996377969a2fe30f3f00b653b63fccc6ebb7ff05cf174a47038482a8db0702.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -772,7 +770,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4119fdaee09ad5278d980aa62ba72e2dda3256f752aec9d3fd61d265db90a6a0.png" src="../_images/4119fdaee09ad5278d980aa62ba72e2dda3256f752aec9d3fd61d265db90a6a0.png" />
+<img alt="../_images/70685cfc76699398023af8b2f687be6abff5aae9c70bddc24e8d8e8c10d82cce.png" src="../_images/70685cfc76699398023af8b2f687be6abff5aae9c70bddc24e8d8e8c10d82cce.png" />
 </div>
 </div>
 </section>

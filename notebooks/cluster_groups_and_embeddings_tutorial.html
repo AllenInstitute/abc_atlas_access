@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cell type neighborhood gallery" href="cluster_neighborhood_gallery.html" />
-    <link rel="prev" title="MERFISH whole brain spatial transcriptomics (part 2b)" href="merfish_tutorial_part_2b.html" />
+    <link rel="prev" title="MERFISH whole brain spatial transcriptomics cells with imputed genes" href="merfish_imputed_genes_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Cluster neighborhoods and embeddings</a></li>
@@ -486,22 +488,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -521,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 1.62k/1.62k [00:00&lt;00:00, 25.4kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 1.62k/1.62k [00:00&lt;00:00, 23.4kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of groups: 8
@@ -679,7 +677,7 @@ All cells in the whole mouse brain (5322 clusters)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group_membership.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████| 674k/674k [00:00&lt;00:00, 2.40MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_group_membership.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 674k/674k [00:00&lt;00:00, 2.40MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -761,7 +759,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dimension_reduction.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1.68k/1.68k [00:00&lt;00:00, 23.3kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dimension_reduction.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 1.68k/1.68k [00:00&lt;00:00, 25.2kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of maps: 8
@@ -1107,7 +1105,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa4ba86f9b0b984fa7f0aab1fbae112df6b4d254ce24e3627934d2e8d8245cf0.png" src="../_images/aa4ba86f9b0b984fa7f0aab1fbae112df6b4d254ce24e3627934d2e8d8245cf0.png" />
+<img alt="../_images/b5be3230f45717c33da597f0b722e3702934c39ebad7b92609d245479125da12.png" src="../_images/b5be3230f45717c33da597f0b722e3702934c39ebad7b92609d245479125da12.png" />
 </div>
 </div>
 <p>We filter to only colorized cells in the “HY-EA-Glut-GABA” cluster group to visualize cell type classes, subclasses and neurotransmitter types</p>
@@ -1129,7 +1127,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Glutamatergic and GABAergic neurons in hypothalamus and extended amygdala, also including all non-pallium glutamatergic neurons in cerebral nuclei (1404 clusters)
 </pre></div>
 </div>
-<img alt="../_images/d076ecde6caf13320a356558bba5761d6c26262b7442d565ed291078d0043a72.png" src="../_images/d076ecde6caf13320a356558bba5761d6c26262b7442d565ed291078d0043a72.png" />
+<img alt="../_images/6fe3c6c12b2aaa4422122d036c863d3c671f4861bdc682baa94a8ae76c397c44.png" src="../_images/6fe3c6c12b2aaa4422122d036c863d3c671f4861bdc682baa94a8ae76c397c44.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1142,7 +1140,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9476cb4e7a533ed68d687c872a6a475b4d757b1226f4299cf847e0bac4197815.png" src="../_images/9476cb4e7a533ed68d687c872a6a475b4d757b1226f4299cf847e0bac4197815.png" />
+<img alt="../_images/c6cc6a276a25b9b684abbdf2ebce3e5ad134c01055d8560ce96e36f61f119747.png" src="../_images/c6cc6a276a25b9b684abbdf2ebce3e5ad134c01055d8560ce96e36f61f119747.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1155,7 +1153,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1c33b616c1ec5ab4c6017daa27a2abfd5309f869795663d2916635b127e808d1.png" src="../_images/1c33b616c1ec5ab4c6017daa27a2abfd5309f869795663d2916635b127e808d1.png" />
+<img alt="../_images/3eec02e85b5d9e2e66b9cbe53964e291599f573cd6fd45f390a2000fda8c0c44.png" src="../_images/3eec02e85b5d9e2e66b9cbe53964e291599f573cd6fd45f390a2000fda8c0c44.png" />
 </div>
 </div>
 <p>In this next section, we read in the coordinates for the HY-EA-Glut-GABA specific embedding</p>
@@ -1170,7 +1168,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-HY-EA-Glut-GABA.csv: 100%|████████████████████████████████████████████████████████████████████████████████| 13.7M/13.7M [00:01&lt;00:00, 10.7MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-HY-EA-Glut-GABA.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████| 13.7M/13.7M [00:01&lt;00:00, 7.46MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1192,7 +1190,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4eab104cf864e8ffc52277442a7ea6a42959e620099099dc7a3c4ff5f4f62fce.png" src="../_images/4eab104cf864e8ffc52277442a7ea6a42959e620099099dc7a3c4ff5f4f62fce.png" />
+<img alt="../_images/037a289d96287e9a120f00f16d2eda301e26b2ea559a6ce7905f7f497ac9e0a7.png" src="../_images/037a289d96287e9a120f00f16d2eda301e26b2ea559a6ce7905f7f497ac9e0a7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1203,7 +1201,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88b8b46754fde96c26793a5a67768a5c5ba371e25f39b60b85a7703d640c5dc5.png" src="../_images/88b8b46754fde96c26793a5a67768a5c5ba371e25f39b60b85a7703d640c5dc5.png" />
+<img alt="../_images/e0da2cffb2e7c6c0b72a99591e9472f2be894f6331a75eb98cae7209039ee2e5.png" src="../_images/e0da2cffb2e7c6c0b72a99591e9472f2be894f6331a75eb98cae7209039ee2e5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1214,7 +1212,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b0f4484e7b7169687d1d5309b4925464070955146e44a84ea5f275bd6b7c5766.png" src="../_images/b0f4484e7b7169687d1d5309b4925464070955146e44a84ea5f275bd6b7c5766.png" />
+<img alt="../_images/67995d31356f62dc2a8a42f4ae68d0e68e50517b7088093c409c82b3af35aeeb.png" src="../_images/67995d31356f62dc2a8a42f4ae68d0e68e50517b7088093c409c82b3af35aeeb.png" />
 </div>
 </div>
 </section>
@@ -1254,7 +1252,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e534b8255a9590aed43ae1dfa47c87615f466ec07a856268b239718280a1a761.png" src="../_images/e534b8255a9590aed43ae1dfa47c87615f466ec07a856268b239718280a1a761.png" />
+<img alt="../_images/c21287d7294d016a8c08d17772c0e209118dc4860d6ecdc4c081a35a1b6e0a2e.png" src="../_images/c21287d7294d016a8c08d17772c0e209118dc4860d6ecdc4c081a35a1b6e0a2e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1266,7 +1264,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eabd89cf8c568807cda9c8676e065b131d48669de13b813488e02ed476980f62.png" src="../_images/eabd89cf8c568807cda9c8676e065b131d48669de13b813488e02ed476980f62.png" />
+<img alt="../_images/61ab56b11e57b8c4ad8ee03c599d362d7e8e10f2bf75c343ac333d2fa431181c.png" src="../_images/61ab56b11e57b8c4ad8ee03c599d362d7e8e10f2bf75c343ac333d2fa431181c.png" />
 </div>
 </div>
 </section>
@@ -1285,7 +1283,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|███████████████████████████████████████████████████████████████████████| 1.02G/1.02G [00:39&lt;00:00, 25.7MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|████████████████████████████████████████████████████████████████████████████| 1.02G/1.02G [02:46&lt;00:00, 6.13MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1343,7 +1341,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af6ef7814990d16a17154dd4e9bcae8f2d8de497e074fb1a19bfe2d770685fc7.png" src="../_images/af6ef7814990d16a17154dd4e9bcae8f2d8de497e074fb1a19bfe2d770685fc7.png" />
+<img alt="../_images/8859f03c217b7eb3f6bff868fd0a851025f60a6d485b00a5cac44102f1b97ad8.png" src="../_images/8859f03c217b7eb3f6bff868fd0a851025f60a6d485b00a5cac44102f1b97ad8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1354,7 +1352,7 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83f0ba8a8239e015b8369b34cb6d5900693b7e8f1d5747e64c510add042a582c.png" src="../_images/83f0ba8a8239e015b8369b34cb6d5900693b7e8f1d5747e64c510add042a582c.png" />
+<img alt="../_images/093e5a5b0a26c6673cef0681ae1e9a6b323e936cf54bb1fc09a34a40411ae3b4.png" src="../_images/093e5a5b0a26c6673cef0681ae1e9a6b323e936cf54bb1fc09a34a40411ae3b4.png" />
 </div>
 </div>
 </section>
@@ -1392,12 +1390,12 @@ The top 100 PCs were selected and used to create a 2D UMAP (Uniform Manifold App
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="merfish_tutorial_part_2b.html"
+       href="merfish_imputed_genes_example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">MERFISH whole brain spatial transcriptomics (part 2b)</p>
+        <p class="prev-next-title">MERFISH whole brain spatial transcriptomics cells with imputed genes</p>
       </div>
     </a>
     <a class="right-next"

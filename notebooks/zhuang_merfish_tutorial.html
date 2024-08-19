@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -486,22 +488,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -544,25 +542,25 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 556M/556M [00:23&lt;00:00, 23.2MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 556M/556M [00:24&lt;00:00, 23.1MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 : Number of cells =  2846908 ,  Number of sections = 147
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 240M/240M [00:09&lt;00:00, 26.3MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 240M/240M [00:10&lt;00:00, 22.3MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 : Number of cells =  1227408 ,  Number of sections = 66
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 310M/310M [00:11&lt;00:00, 26.2MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 310M/310M [00:13&lt;00:00, 23.4MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 : Number of cells =  1585843 ,  Number of sections = 23
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 31.9M/31.9M [00:01&lt;00:00, 20.5MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 31.9M/31.9M [00:01&lt;00:00, 24.9MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 : Number of cells =  162578 ,  Number of sections = 3
@@ -1455,7 +1453,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 84.7k/84.7k [00:00&lt;00:00, 353kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 84.7k/84.7k [00:00&lt;00:00, 370kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  1122
@@ -1582,7 +1580,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/daba8c892923039d6b47d5c2d7a68909c358b72203aaca8d62eb159fe4de1ca2.png" src="../_images/daba8c892923039d6b47d5c2d7a68909c358b72203aaca8d62eb159fe4de1ca2.png" />
+<img alt="../_images/a2a8f9f522310d450893cdf8191e463d38dc7a822adb142ab74921ceb66c9441.png" src="../_images/a2a8f9f522310d450893cdf8191e463d38dc7a822adb142ab74921ceb66c9441.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1593,7 +1591,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11fccffe102b5aaaaf534b1edc973976fbff3ffd349994d01ba5b1591e0c8c6a.png" src="../_images/11fccffe102b5aaaaf534b1edc973976fbff3ffd349994d01ba5b1591e0c8c6a.png" />
+<img alt="../_images/3a9ae355f85069bd6828bc9a2329012c607850f04b7b44de38ea6a044a17f378.png" src="../_images/3a9ae355f85069bd6828bc9a2329012c607850f04b7b44de38ea6a044a17f378.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1604,7 +1602,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2d2f73550d934f13bd1dc2889f21af595d13f29418f2106491eb0b07307c8ddf.png" src="../_images/2d2f73550d934f13bd1dc2889f21af595d13f29418f2106491eb0b07307c8ddf.png" />
+<img alt="../_images/5593ea455460044069fb3a9e3ab96d171ea390f8def116e539caecfc5b192db3.png" src="../_images/5593ea455460044069fb3a9e3ab96d171ea390f8def116e539caecfc5b192db3.png" />
 </div>
 </div>
 </section>
@@ -1732,28 +1730,28 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 2.13G/2.13G [01:21&lt;00:00, 26.0MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1-log2.h5ad: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 2.13G/2.13G [02:23&lt;00:00, 14.8MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  18.354600000000005
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  19.471441
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 871M/871M [00:32&lt;00:00, 26.5MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2-log2.h5ad: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 871M/871M [02:38&lt;00:00, 5.49MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 - time taken:  8.206339999999997
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 - time taken:  10.082500999999993
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1.16G/1.16G [00:47&lt;00:00, 24.6MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3-log2.h5ad: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 1.16G/1.16G [04:33&lt;00:00, 4.24MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 - time taken:  9.795004000000006
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 - time taken:  9.916156
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 107M/107M [00:04&lt;00:00, 24.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4-log2.h5ad: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 107M/107M [00:04&lt;00:00, 21.4MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 - time taken:  1.195885000000004
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 - time taken:  1.1427290000000028
 </pre></div>
 </div>
 </div>
@@ -1767,7 +1765,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/32d384c900141b9673406c38ccf7a6d553dbddd783250793bb6a35057edf1561.png" src="../_images/32d384c900141b9673406c38ccf7a6d553dbddd783250793bb6a35057edf1561.png" />
+<img alt="../_images/8ba8d62fc5f963a5dcb08843fdb00fac15e654316391c64bbc6d8957fbfe6685.png" src="../_images/8ba8d62fc5f963a5dcb08843fdb00fac15e654316391c64bbc6d8957fbfe6685.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1778,7 +1776,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/92a8595c101e35cedaee402c3d32bffcdb22a150801f05d34943fefbf2fddfef.png" src="../_images/92a8595c101e35cedaee402c3d32bffcdb22a150801f05d34943fefbf2fddfef.png" />
+<img alt="../_images/393c14868be0b4f7458eca07943d476b4e7717623c5291fc3231073d8ca3a84b.png" src="../_images/393c14868be0b4f7458eca07943d476b4e7717623c5291fc3231073d8ca3a84b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1789,7 +1787,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/785d8fa4b309be7e60e1e8254c0d1940fb7217c1dd737aea228febc8616adf3d.png" src="../_images/785d8fa4b309be7e60e1e8254c0d1940fb7217c1dd737aea228febc8616adf3d.png" />
+<img alt="../_images/f952e7b5c40a774278fca7ba0514e1b2147cbb952a69f52a9e8463026c58d5f4.png" src="../_images/f952e7b5c40a774278fca7ba0514e1b2147cbb952a69f52a9e8463026c58d5f4.png" />
 </div>
 </div>
 <section id="ccf-registration-and-parcellation-annotation">
@@ -1813,10 +1811,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 221M/221M [00:09&lt;00:00, 24.3MMB/s]
-ccf_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 89.1M/89.1M [00:03&lt;00:00, 25.6MMB/s]
-ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 132M/132M [00:04&lt;00:00, 26.6MMB/s]
-ccf_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 13.8M/13.8M [00:00&lt;00:00, 14.6MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 221M/221M [00:08&lt;00:00, 25.8MMB/s]
+ccf_coordinates.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 89.1M/89.1M [00:03&lt;00:00, 22.4MMB/s]
+ccf_coordinates.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 132M/132M [00:05&lt;00:00, 23.2MMB/s]
+ccf_coordinates.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 13.8M/13.8M [00:00&lt;00:00, 17.3MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1975,7 +1973,7 @@ ccf_coordinates.csv: 100%|██████████████████
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c8b608cf4e10a50d7842fc12eb238a40f3253371af57cdd5f70c462363fa3262.png" src="../_images/c8b608cf4e10a50d7842fc12eb238a40f3253371af57cdd5f70c462363fa3262.png" />
+<img alt="../_images/4190254aad87a65da7b00da51e46ba13e020b8c351715b35c6d973fc5b5362fc.png" src="../_images/4190254aad87a65da7b00da51e46ba13e020b8c351715b35c6d973fc5b5362fc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1986,7 +1984,7 @@ ccf_coordinates.csv: 100%|██████████████████
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51eac80ebb59def335b31547192c1e4735b6cfd78b4ec8fb5af291a106fc817b.png" src="../_images/51eac80ebb59def335b31547192c1e4735b6cfd78b4ec8fb5af291a106fc817b.png" />
+<img alt="../_images/1ba38f20309ab208326fb27cb845632db9997d519ca3662264754ba98a8e1748.png" src="../_images/1ba38f20309ab208326fb27cb845632db9997d519ca3662264754ba98a8e1748.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1997,7 +1995,7 @@ ccf_coordinates.csv: 100%|██████████████████
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/abcbd155d6fb77c3e76d5d020eb34fc203f282473e438e3cae5f934c17eb51c2.png" src="../_images/abcbd155d6fb77c3e76d5d020eb34fc203f282473e438e3cae5f934c17eb51c2.png" />
+<img alt="../_images/86d5b1c5e6e8a424c7d1fb7be99b08cc0da5008a7662dee3fca22c000530477b.png" src="../_images/86d5b1c5e6e8a424c7d1fb7be99b08cc0da5008a7662dee3fca22c000530477b.png" />
 </div>
 </div>
 </section>

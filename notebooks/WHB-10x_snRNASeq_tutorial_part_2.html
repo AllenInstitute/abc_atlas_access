@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -480,22 +482,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -857,7 +855,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|████████████████████████████████████████████████████████████████████████████| 233M/233M [00:28&lt;00:00, 8.06MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 233M/233M [00:44&lt;00:00, 5.25MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1011,7 +1009,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/233c15849eaaec971b29be4fcc9aa94b83d733d1dc56ff0d2cdb008cbfbb387e.png" src="../_images/233c15849eaaec971b29be4fcc9aa94b83d733d1dc56ff0d2cdb008cbfbb387e.png" />
+<img alt="../_images/3f5b000d5d50e20ee963c10488dcab1433531afcdbb140bb73765b33f39a1211.png" src="../_images/3f5b000d5d50e20ee963c10488dcab1433531afcdbb140bb73765b33f39a1211.png" />
 </div>
 </div>
 <p>Below is by dissection region of interest shows that each of these genes are associated with distinct regions.</p>
@@ -1023,7 +1021,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/397a8f6069945d9c4f89c5681f9852005281567b060b105e7731e7b3fb10a147.png" src="../_images/397a8f6069945d9c4f89c5681f9852005281567b060b105e7731e7b3fb10a147.png" />
+<img alt="../_images/59e0852b744f62ac2ef451c7643d828aac2ec5e7e73834feba36a28bfa46b2e4.png" src="../_images/59e0852b744f62ac2ef451c7643d828aac2ec5e7e73834feba36a28bfa46b2e4.png" />
 </div>
 </div>
 <p>And finally by supercluster from the taxonomy.</p>
@@ -1035,7 +1033,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/48b662dc9af31739f5dbae9a6f91e19f1180b534657faa106af3e815fdcefa74.png" src="../_images/48b662dc9af31739f5dbae9a6f91e19f1180b534657faa106af3e815fdcefa74.png" />
+<img alt="../_images/1826c05b612b176c521cc548560fc6c5939ef4ccf76d23f94c86f9b0af6bec80.png" src="../_images/1826c05b612b176c521cc548560fc6c5939ef4ccf76d23f94c86f9b0af6bec80.png" />
 </div>
 </div>
 <p>We can also visualize the relationship these genes and their location in the UMAP. Note again as in part one that Neurons and Non-neurons should be plotted seperately.</p>
@@ -1080,8 +1078,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4ba108cf81673de344c0731dbfd66556e885c17ef00998da6d7eadaf69a80ebf.png" src="../_images/4ba108cf81673de344c0731dbfd66556e885c17ef00998da6d7eadaf69a80ebf.png" />
-<img alt="../_images/aad4f4e8b9079dad5a211ce9b4c2d217ce4305d3a0182244c600e179fefdd572.png" src="../_images/aad4f4e8b9079dad5a211ce9b4c2d217ce4305d3a0182244c600e179fefdd572.png" />
+<img alt="../_images/f6bc501ed11f228c37ed54d2d5876cc9a10d23fe719b45679f7bcc24424eeed5.png" src="../_images/f6bc501ed11f228c37ed54d2d5876cc9a10d23fe719b45679f7bcc24424eeed5.png" />
+<img alt="../_images/cf43476015629f51221fa1ab4eed704b8f4bc19c04147db441fb324ec3822c01.png" src="../_images/cf43476015629f51221fa1ab4eed704b8f4bc19c04147db441fb324ec3822c01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1094,8 +1092,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6340a55a43689d7734e505f76b826a36ae0caa4cc52912f879265fa35eb39ab8.png" src="../_images/6340a55a43689d7734e505f76b826a36ae0caa4cc52912f879265fa35eb39ab8.png" />
-<img alt="../_images/b1b85f27e4c69509bf9e1e310bc7ff951d0ca6accd064340bd76a0a58cb10599.png" src="../_images/b1b85f27e4c69509bf9e1e310bc7ff951d0ca6accd064340bd76a0a58cb10599.png" />
+<img alt="../_images/7e1eda55c959c697eefa77bb396fb8f0574db9d96c47370582e2219afb92a838.png" src="../_images/7e1eda55c959c697eefa77bb396fb8f0574db9d96c47370582e2219afb92a838.png" />
+<img alt="../_images/b56fe810c1f731fc7a7da06a12cd50e3cc25372305a1fd2799d1aed2b9622f76.png" src="../_images/b56fe810c1f731fc7a7da06a12cd50e3cc25372305a1fd2799d1aed2b9622f76.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1108,8 +1106,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eef77a58f4177da0bc2b89f2aea6b49dfaa950e5fff2797eef55e13c7c24988e.png" src="../_images/eef77a58f4177da0bc2b89f2aea6b49dfaa950e5fff2797eef55e13c7c24988e.png" />
-<img alt="../_images/abf25225f11323a98fa2e7e205f4fa039ff92df13348034127f27d530638ac8b.png" src="../_images/abf25225f11323a98fa2e7e205f4fa039ff92df13348034127f27d530638ac8b.png" />
+<img alt="../_images/0e50ddd3ddce5dab24687600f548b476ce8f474fea6fdfb8790e6cbebd957cb0.png" src="../_images/0e50ddd3ddce5dab24687600f548b476ce8f474fea6fdfb8790e6cbebd957cb0.png" />
+<img alt="../_images/6a3c1062be211dad578dc12e0e14ab74b01f48dabebb3315c855abb640371608.png" src="../_images/6a3c1062be211dad578dc12e0e14ab74b01f48dabebb3315c855abb640371608.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1122,8 +1120,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/21a8bfdacfbc4971f407de0dad0c64d317511a34736725ad1e67c341a23bb0be.png" src="../_images/21a8bfdacfbc4971f407de0dad0c64d317511a34736725ad1e67c341a23bb0be.png" />
-<img alt="../_images/47f87be873be0384798928531e1c9e6bb523e332cf9b60f6abab2813d018d1a3.png" src="../_images/47f87be873be0384798928531e1c9e6bb523e332cf9b60f6abab2813d018d1a3.png" />
+<img alt="../_images/5e7b391124994f42094c32526ea5347377bdbdfcf6f9df8fe86d31648cd57bf3.png" src="../_images/5e7b391124994f42094c32526ea5347377bdbdfcf6f9df8fe86d31648cd57bf3.png" />
+<img alt="../_images/ca9195e19c76df50e654a287f6ebcf67ab14f9c2f87744e4d624bd1aee104ece.png" src="../_images/ca9195e19c76df50e654a287f6ebcf67ab14f9c2f87744e4d624bd1aee104ece.png" />
 </div>
 </div>
 <p>(Plots for <em>SLC17A7</em>, <em>PTPRC</em>, and <em>TTR</em> could be generated the same way, but aren’t shown.)</p>

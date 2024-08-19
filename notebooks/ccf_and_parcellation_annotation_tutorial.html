@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
@@ -216,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
@@ -476,7 +478,7 @@ document.write(`
 <p>Allen Mouse Brain Common Coordinate Framework (CCFv3, <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al, 2020</a>) is a 3D reference space is an average brain at 10um voxel resolution created from serial two-photon tomography images of 1,675 young adult C57Bl6/J mice. Using multimodal reference data, the entire brain parcellated directly in 3D, labeling every voxel with a brain structure spanning 43 isocortical areas and their layers, 314 subcortical gray matter structures, 81 fiber tracts, and 8 ventricular structures. The 2020 version adds new annotations for layers of the Ammon’s horn (CA), main olfactory bulb (MOB) and minor modification of surrounding fiber tracts.</p>
 <p>CCFv3 is used in informatics pipelines and online applications to analyze, visualize and integrate multimodal and multiscale data sets in 3D, and is openly accessible for research use.</p>
 <p>The purpose of this notebook is to provide an overview of the data assets and information associated with the Allen CCFv3 through example use cases.</p>
-<p>You need to be connected to the internet to run this notebook and that you have already downloaded the data via the getting started notebook.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -492,22 +494,18 @@ document.write(`
 </div>
 </div>
 <p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
-<p>The commented section that calls <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> can be used instead when a download of the data already exists on disk or running on CodeOcean with the attached Allen Brain Cell Atlas or similar mounting of the AWS s3 bucket as a directory through <a class="reference external" href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs-fuse</a> or similar.</p>
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../abc_download_root&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_s3_cache</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
-
-<span class="c1"># download_base = Path(&#39;../../data/abc_atlas&#39;) # Path to the already downloaded data or s3fs-fuse mount.</span>
-<span class="c1"># abc_cache = AbcProjectCache.from_local_cache(download_base)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240330/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -542,6 +540,13 @@ document.write(`
 <span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
 <span class="n">annotation_boundary_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_boundary_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_boundary_image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 343M/343M [00:54&lt;00:00, 6.29MMB/s]
+annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 27.5M/27.5M [00:01&lt;00:00, 18.6MMB/s]
+annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████████████████| 27.4M/27.4M [00:01&lt;00:00, 24.1MMB/s]
 </pre></div>
 </div>
 </div>
@@ -615,7 +620,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/519ab26c169092c47a271a8fec39b53e2d63928259ac7b8bde6ec0be7a49f4d1.png" src="../_images/519ab26c169092c47a271a8fec39b53e2d63928259ac7b8bde6ec0be7a49f4d1.png" />
+<img alt="../_images/2c73e0dc515b0d5337062d6eef7980f5b23b45bcdc237d5b639ce7cbae6598bc.png" src="../_images/2c73e0dc515b0d5337062d6eef7980f5b23b45bcdc237d5b639ce7cbae6598bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -627,7 +632,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" src="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" />
+<img alt="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" src="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -639,7 +644,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a34f6daf715dbf6d3e3d6592ebd442cbfd25b0a8566f5643ad2c4f70c41367ec.png" src="../_images/a34f6daf715dbf6d3e3d6592ebd442cbfd25b0a8566f5643ad2c4f70c41367ec.png" />
+<img alt="../_images/5f71d1e660ab8e0743b9752571a9fb11ac8bd8fde17f839fafc48e41f606a59a.png" src="../_images/5f71d1e660ab8e0743b9752571a9fb11ac8bd8fde17f839fafc48e41f606a59a.png" />
 </div>
 </div>
 </section>
@@ -659,7 +664,13 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 408kMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of parcellations: 688
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -777,7 +788,13 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_set.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 5.07kMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of term sets: 5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -872,7 +889,13 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.09MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of terms: 1631
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -992,7 +1015,13 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_set_membership.csv: 100%|████████████████████████████████████████████████████████████████████████████████████| 114k/114k [00:00&lt;00:00, 822kMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 1293
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1073,7 +1102,13 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership.csv: 100%|███████████████████████████████████████████████████████████████████████| 680k/680k [00:00&lt;00:00, 3.75MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 3440
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2261,7 +2296,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" src="../_images/5c07a32453da84cf2fd14f1b36bc39b23eec1b37519f0a2958225278d1932a73.png" />
+<img alt="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" src="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2274,7 +2309,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3bc25f96acbd4ef50623c55e9ae24e08a2c704a4a149511e4f789b5ec0a1f5c2.png" src="../_images/3bc25f96acbd4ef50623c55e9ae24e08a2c704a4a149511e4f789b5ec0a1f5c2.png" />
+<img alt="../_images/cb4251e8d6045486dbcfd8a8fd558a89fd5fd5498863ccfa80e9fe95a9515c61.png" src="../_images/cb4251e8d6045486dbcfd8a8fd558a89fd5fd5498863ccfa80e9fe95a9515c61.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2287,7 +2322,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/98ec2773c734302ccad2504ec132251b4b08e95e0a9b22ffe07d92e2fbebc2f7.png" src="../_images/98ec2773c734302ccad2504ec132251b4b08e95e0a9b22ffe07d92e2fbebc2f7.png" />
+<img alt="../_images/000cc32649250820d7b0074d5504ed2598d24d2d1abb37287bfdf996e6f5caf8.png" src="../_images/000cc32649250820d7b0074d5504ed2598d24d2d1abb37287bfdf996e6f5caf8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2300,7 +2335,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f0558a5c8ae6fc845c3e3a2d4530fa267cdbb7556c2ab5c0ffedcf076f21122.png" src="../_images/0f0558a5c8ae6fc845c3e3a2d4530fa267cdbb7556c2ab5c0ffedcf076f21122.png" />
+<img alt="../_images/c916533aae8d1943186e3b19cbc7d70b661eebc70b3391caec2d216936cafdf0.png" src="../_images/c916533aae8d1943186e3b19cbc7d70b661eebc70b3391caec2d216936cafdf0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2313,7 +2348,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ba8c55264258ecbe09fd732c0adf9682d207bb8673e52d022822ccb5b3ae2d9f.png" src="../_images/ba8c55264258ecbe09fd732c0adf9682d207bb8673e52d022822ccb5b3ae2d9f.png" />
+<img alt="../_images/17ba3705e15794c6716a789cff54372d9f2d561a89069c810b6fa5503cfa3015.png" src="../_images/17ba3705e15794c6716a789cff54372d9f2d561a89069c810b6fa5503cfa3015.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2326,7 +2361,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d1936c196e3ce8a9e5d79bcc7d92b729ef4fd18c748d4bf6c784794c4f4d844.png" src="../_images/6d1936c196e3ce8a9e5d79bcc7d92b729ef4fd18c748d4bf6c784794c4f4d844.png" />
+<img alt="../_images/a36eaf1e726afc8d5ae9511288e94f5c46af4b9cbd51f2fab3edd5ff5b6d028d.png" src="../_images/a36eaf1e726afc8d5ae9511288e94f5c46af4b9cbd51f2fab3edd5ff5b6d028d.png" />
 </div>
 </div>
 </section>
