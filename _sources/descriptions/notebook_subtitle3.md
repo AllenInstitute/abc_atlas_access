@@ -10,7 +10,7 @@
 * [**Part 2b**](../notebooks/merfish_tutorial_part_2b.ipynb): explore the whole
   brain data through visualization and analyses of a set of genes of interest.
 [*notebooks/merfish_tutorial_part_2b.ipynb*]
-* [**Imputed Genes**](../notebooks/merfish_tutorial_part_2b.ipynb): explore the whole
+* [**Imputed Genes**](../notebooks/merfish_imputed_genes_example.ipynb): explore the whole
   brain, imputed gene data through visualization, analyses of a set of genes
   of interest, and comparison to the measured genes.
-[*notebooks/MERFISH-C57BL6J-638850-imputed.md*]
+[*notebooks/merfish_imputed_genes_example.ipynb*]
