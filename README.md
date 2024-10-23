@@ -19,7 +19,7 @@ Note: for scientific questions regarding the data this repository is accessing,
 please use the
 [Allen Institute's community forum](https://community.brain-map.org/).
 If you are having an issue with the code or notebooks not running properly
-please open an issue on this Github respoitory. However, please see below.
+please open an issue on this Github repository. However, please see below.
 
 ## Level of support
 We are not currently supporting this code, but simply releasing it to the
