@@ -38,7 +38,7 @@ AWS Public Dataset:
 | Component | Current Version | Size |
 |---|--|---|
 | Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-3/20230830/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Zhuang-ABCA-3/20230830/) | 1.69 GB |
-| Metadata | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3/20231215](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-3/20231215/) | 0.75 GB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-3/20241115/) | 0.75 GB |
 | CCF Coordinates | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-3-CCF/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-3-CCF/20230830/) | 0.12 GB |
 
 Data is being share under the CC BY 4.0 license.
