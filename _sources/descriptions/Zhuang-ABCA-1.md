@@ -39,11 +39,11 @@ downloaded from the CCF coordinate file in the AWB bucket. Refer to
 The expression matrices and associated metadata is hosted on AWS S3 bucket as a
 AWS Public Dataset:
 
-| Component | Current Version | Size |
-|---|--|---|
+| Component | Current Version                                                                                                                                                                             | Size |
+|---|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
 | Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/Zhuang-ABCA-1/20230830/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Zhuang-ABCA-1/20230830/) | 3.09 GB |
-| Metadata | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1/20231215](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-1/20231215/) | 1.33 GB |
-| CCF Coordinates | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1-CCF/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-1-CCF/20230830/) | 0.21 GB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-1/20241115/)                        | 1.33 GB |
+| CCF Coordinates | [s3://allen-brain-cell-atlas/metadata/Zhuang-ABCA-1-CCF/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zhuang-ABCA-1-CCF/20230830/)                | 0.21 GB |
 
 Data is being share under the CC BY 4.0 license.
 

@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -457,15 +458,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-cells-with-imputed-genes">
+  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-cells-with-imputed-genes">
 <h1>MERFISH whole brain spatial transcriptomics cells with imputed genes<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-cells-with-imputed-genes" title="Permalink to this heading">#</a></h1>
 <p>In the MERFISH tutorial (part 1), we discussed how each cell form the MERFISH data was mapped to the whole mouse brain taxonomy using a hierarchical correlation method. To further integrate the transcriptomics and spatial profiles of each cell type, 10Xv3 expression was projected or imputed into the MERFISH space. The basic idea is to compute the k-nearest neighbors (KNNs) among the 10Xv3 cells for each MERFISH cell and use the average expression of these neighbors for each gene as the impute values. Imputed expression values were generated for 8,460 marker genes. Further details can be found in the methods section of <a class="reference external" href="https://www.nature.com/articles/s41586-023-06812-z">Yao et. al</a>.</p>
 <p>In this notebook, we will show the basics on how to access the imputed gene data and perform some illustrative comparison between expression 10X, MERFISH measured and impute expression similar to <a class="reference external" href="https://www.nature.com/articles/s41586-023-06812-z/figures/14">Extended Data Fig 8</a> in the manuscript.</p>
@@ -496,37 +489,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">manifest_file_names</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;releases/20230630/manifest.json&#39;,
- &#39;releases/20230830/manifest.json&#39;,
- &#39;releases/20231215/manifest.json&#39;,
- &#39;releases/20240330/manifest.json&#39;,
- &#39;releases/20240831/manifest.json&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">manifest_file_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;releases/20240831/manifest.json&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">load_manifest</span><span class="p">(</span><span class="s1">&#39;releases/20240831/manifest.json&#39;</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -544,6 +507,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|█████████████████████████████████████████████| 1.02G/1.02G [00:47&lt;00:00, 21.3MMB/s]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Load the imputed data. Here we use 3 genes used in the comparison shown in the paper <a class="reference external" href="https://www.nature.com/articles/s41586-023-06812-z/figures/14">here</a>.</p>
 <div class="cell docutils container">
@@ -555,7 +523,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-imputed-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████| 50.2G/50.2G [34:06&lt;00:00, 24.5MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-imputed-log2.h5ad: 100%|██████████████████████████████████████████████████████| 50.2G/50.2G [38:49&lt;00:00, 21.6MMB/s]
 </pre></div>
 </div>
 </div>
@@ -625,7 +593,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages/pandas/io/formats/format.py:1458: RuntimeWarning: overflow encountered in cast
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/pandas/io/formats/format.py:1458: RuntimeWarning: overflow encountered in cast
   has_large_values = (abs_vals &gt; 1e6).any()
 </pre></div>
 </div>
@@ -780,11 +748,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">gene_list</span><span class="p">,</span> <span class="s1">&#39;brain_section_label&#39;</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">)))]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d63f4056619c2220851b36982e3f228808ebf3ed2a59a1f0ecd16d01e259f804.png" src="../_images/d63f4056619c2220851b36982e3f228808ebf3ed2a59a1f0ecd16d01e259f804.png" />
+<img alt="../_images/319e4acbf9488385321559b90b03d2a052bd900fe429770ee761d1f9082ace57.png" src="../_images/319e4acbf9488385321559b90b03d2a052bd900fe429770ee761d1f9082ace57.png" />
 </div>
 </div>
 <p>We define a helper function <em>plot_sections</em> to visualize the cells for a specified set of brain sections either by colorized metadata or gene expression.</p>
@@ -829,13 +798,14 @@ document.write(`
 <span class="k">for</span> <span class="n">gene_symbol</span> <span class="ow">in</span> <span class="n">gene_list</span><span class="p">:</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">gene_symbol</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gene Expression: </span><span class="si">{</span><span class="n">gene_symbol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71e6ee9f4b6c331e08de3c223a8bf74cacc4a95e06db296273ca7f616d3b56a3.png" src="../_images/71e6ee9f4b6c331e08de3c223a8bf74cacc4a95e06db296273ca7f616d3b56a3.png" />
-<img alt="../_images/7e61e742b08dc36f86fa6a59b37e24b11d99f46a6eb272c54b71c376e47088b0.png" src="../_images/7e61e742b08dc36f86fa6a59b37e24b11d99f46a6eb272c54b71c376e47088b0.png" />
-<img alt="../_images/d453bf563e380a0048cb975f2ce962209bfd825fbc1bba651c4fb0a2665ff5f4.png" src="../_images/d453bf563e380a0048cb975f2ce962209bfd825fbc1bba651c4fb0a2665ff5f4.png" />
+<img alt="../_images/2046ae55513019af49cceb8c2ae86749090d2ea95d2532e3770a0a7df44b4e81.png" src="../_images/2046ae55513019af49cceb8c2ae86749090d2ea95d2532e3770a0a7df44b4e81.png" />
+<img alt="../_images/252801a250aff145754dca91277c203bed21e72defcd06e94aa694fca1e34912.png" src="../_images/252801a250aff145754dca91277c203bed21e72defcd06e94aa694fca1e34912.png" />
+<img alt="../_images/bd90ceb4c0a30fc8a422ccfc0c0bdb627f727d2a5d61e7923a226adb15a27b57.png" src="../_images/bd90ceb4c0a30fc8a422ccfc0c0bdb627f727d2a5d61e7923a226adb15a27b57.png" />
 </div>
 </div>
 </section>
@@ -857,9 +827,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 7.63G/7.63G [05:07&lt;00:00, 24.8MMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1026,13 +993,14 @@ document.write(`
 <span class="k">for</span> <span class="n">gene_symbol</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Calb2&#39;</span><span class="p">,</span> <span class="s1">&#39;Baiap3&#39;</span><span class="p">,</span> <span class="s1">&#39;Lypd1&#39;</span><span class="p">]:</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section_compraison</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">gene_symbol</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gene Expression: </span><span class="si">{</span><span class="n">gene_symbol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9b17d100d4152700e5de76a4b3d5cfe1700fdce33d804486eae8e3d9535b0643.png" src="../_images/9b17d100d4152700e5de76a4b3d5cfe1700fdce33d804486eae8e3d9535b0643.png" />
-<img alt="../_images/6bd90ab24a1836e2baeb985364a357ecce3493def6a046584bdcbb45e59753d0.png" src="../_images/6bd90ab24a1836e2baeb985364a357ecce3493def6a046584bdcbb45e59753d0.png" />
-<img alt="../_images/7e4f01e4940634ca0e573797dbe756dfd88e0b98021f0e9903f8fd6fc83397e3.png" src="../_images/7e4f01e4940634ca0e573797dbe756dfd88e0b98021f0e9903f8fd6fc83397e3.png" />
+<img alt="../_images/35c3b9c4d73824a118d94f92659c9a97a5f5317f06882a9473dbe041bb2351f6.png" src="../_images/35c3b9c4d73824a118d94f92659c9a97a5f5317f06882a9473dbe041bb2351f6.png" />
+<img alt="../_images/e06095bac1b542f151301ef553d83ff84e8b8794197037216ca60287e35feac0.png" src="../_images/e06095bac1b542f151301ef553d83ff84e8b8794197037216ca60287e35feac0.png" />
+<img alt="../_images/fc7c5a3da3414807b234b54530ded1e78ed3b6d602bc2207362efe54cc227061.png" src="../_images/fc7c5a3da3414807b234b54530ded1e78ed3b6d602bc2207362efe54cc227061.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1041,13 +1009,14 @@ document.write(`
 <span class="k">for</span> <span class="n">gene_symbol</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Calb2&#39;</span><span class="p">,</span> <span class="s1">&#39;Baiap3&#39;</span><span class="p">,</span> <span class="s1">&#39;Lypd1&#39;</span><span class="p">]:</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section_compraison</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">gene_symbol</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gene Expression: </span><span class="si">{</span><span class="n">gene_symbol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/68c49859d501d7df98cd9bafa29883940c4d1bfd747a1dbc003a784a1521ab8e.png" src="../_images/68c49859d501d7df98cd9bafa29883940c4d1bfd747a1dbc003a784a1521ab8e.png" />
-<img alt="../_images/cfb82577676a56b82c858ecf50dc551d30664a8ac7b4cd34ad23b2bbfb4cdd90.png" src="../_images/cfb82577676a56b82c858ecf50dc551d30664a8ac7b4cd34ad23b2bbfb4cdd90.png" />
-<img alt="../_images/8bb35e751d7619bb3c79ebda8299bdbb84c004683598d286453d0777862822fc.png" src="../_images/8bb35e751d7619bb3c79ebda8299bdbb84c004683598d286453d0777862822fc.png" />
+<img alt="../_images/3945a0bde32bc376e3cef3a23cb16738e33a9797f7aeeb263faece31429cc9e5.png" src="../_images/3945a0bde32bc376e3cef3a23cb16738e33a9797f7aeeb263faece31429cc9e5.png" />
+<img alt="../_images/a61425d5ea33fafc8453df1545add025de62cbaff7cfc0f919ab684bd96aebb7.png" src="../_images/a61425d5ea33fafc8453df1545add025de62cbaff7cfc0f919ab684bd96aebb7.png" />
+<img alt="../_images/0e88d40fff01d9ca2c0587cd264adc007e08eacb8c145d05069b5e5a179107be.png" src="../_images/0e88d40fff01d9ca2c0587cd264adc007e08eacb8c145d05069b5e5a179107be.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1056,13 +1025,14 @@ document.write(`
 <span class="k">for</span> <span class="n">gene_symbol</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Calb2&#39;</span><span class="p">,</span> <span class="s1">&#39;Baiap3&#39;</span><span class="p">,</span> <span class="s1">&#39;Lypd1&#39;</span><span class="p">]:</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section_compraison</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">gene_symbol</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gene Expression: </span><span class="si">{</span><span class="n">gene_symbol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/399aba4155969d4254e326b6a7559940bbc0812aea6b9ccbce5dbfe38cf8abf2.png" src="../_images/399aba4155969d4254e326b6a7559940bbc0812aea6b9ccbce5dbfe38cf8abf2.png" />
-<img alt="../_images/d1b98eca9735445516bf795aebaecee2e1c350d76b851d3b0fdb5b1119ceb2eb.png" src="../_images/d1b98eca9735445516bf795aebaecee2e1c350d76b851d3b0fdb5b1119ceb2eb.png" />
-<img alt="../_images/92dc454db75cc7c83479620af3daeba0363d5c464cbe0e33bf0bf793bc16e4d4.png" src="../_images/92dc454db75cc7c83479620af3daeba0363d5c464cbe0e33bf0bf793bc16e4d4.png" />
+<img alt="../_images/4ebfeb550f435b9d153e5c0cddb31133fed5532dfd94130d57298c02af98b769.png" src="../_images/4ebfeb550f435b9d153e5c0cddb31133fed5532dfd94130d57298c02af98b769.png" />
+<img alt="../_images/c6b1b3a72fde2febc05944ba06bf9cbc33300afbe1b6d09753802a079b98a826.png" src="../_images/c6b1b3a72fde2febc05944ba06bf9cbc33300afbe1b6d09753802a079b98a826.png" />
+<img alt="../_images/836790309f6b7599925fbc079cfcc69d8efaef705466ea99eb1241e2e582071d.png" src="../_images/836790309f6b7599925fbc079cfcc69d8efaef705466ea99eb1241e2e582071d.png" />
 </div>
 </div>
 </section>
@@ -1091,11 +1061,12 @@ document.write(`
     <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;MERFISH Imputed&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;MERFISH&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gene: </span><span class="si">{</span><span class="n">gene</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08e16a66aa0f6988e93c24e98fbacf271e93e2a576cf4547ad56eecac07ac2cc.png" src="../_images/08e16a66aa0f6988e93c24e98fbacf271e93e2a576cf4547ad56eecac07ac2cc.png" />
+<img alt="../_images/b393acb741d652a9a714d9a6565eda7003236baa1c5d1028550c861af2af7c86.png" src="../_images/b393acb741d652a9a714d9a6565eda7003236baa1c5d1028550c861af2af7c86.png" />
 </div>
 </div>
 </section>

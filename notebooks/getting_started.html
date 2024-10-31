@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -482,60 +483,71 @@ No account or login is required. The S3 bucket is located here <a class="referen
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting git+https://github.com/alleninstitute/abc_atlas_access
-  Cloning https://github.com/alleninstitute/abc_atlas_access to /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-4e9rhwaj
-  Running command git clone --filter=blob:none --quiet https://github.com/alleninstitute/abc_atlas_access /private/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/pip-req-build-4e9rhwaj
-  Resolved https://github.com/alleninstitute/abc_atlas_access to commit b067b896ea0fada09fe0b46471158df22b2622a0
+  Cloning https://github.com/alleninstitute/abc_atlas_access to /tmp/pip-req-build-xec2y8u2
+  Running command git clone --quiet https://github.com/alleninstitute/abc_atlas_access /tmp/pip-req-build-xec2y8u2
+  Resolved https://github.com/alleninstitute/abc_atlas_access to commit 8b52e7ccc086a7932c9d9289ffe18111630f333f
   Installing build dependencies ... ?25ldone
 ?25h  Getting requirements to build wheel ... ?25ldone
 ?25h  Preparing metadata (pyproject.toml) ... ?25ldone
-?25hRequirement already satisfied: anndata in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (0.10.7)
-Requirement already satisfied: boto3 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (1.34.129)
-Requirement already satisfied: ghp-import in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.1.0)
-Requirement already satisfied: matplotlib in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (3.9.0)
-Requirement already satisfied: moto in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (5.0.9)
-Requirement already satisfied: numpy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.0.0)
-Requirement already satisfied: pandas in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.2.2)
-Requirement already satisfied: pydantic in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.7.4)
-Requirement already satisfied: pytest in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (8.2.2)
-Requirement already satisfied: requests in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.32.3)
-Requirement already satisfied: scipy in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (1.13.1)
-Requirement already satisfied: simpleitk in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (2.3.1)
-Requirement already satisfied: tqdm in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.1.2) (4.66.4)
-Requirement already satisfied: array-api-compat!=1.5,&gt;1.4 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (1.7.1)
-Requirement already satisfied: h5py&gt;=3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (3.11.0)
-Requirement already satisfied: natsort in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (8.4.0)
-Requirement already satisfied: packaging&gt;=20.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.1.2) (24.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.1.2) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.1.2) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.1.2) (2024.1)
-Requirement already satisfied: botocore&lt;1.35.0,&gt;=1.34.129 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.1.2) (1.34.129)
-Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.1.2) (1.0.1)
-Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.1.2) (0.10.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (1.2.1)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (4.53.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (1.4.5)
-Requirement already satisfied: pillow&gt;=8 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (10.3.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.1.2) (3.1.2)
-Requirement already satisfied: cryptography&gt;=3.3.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (42.0.8)
-Requirement already satisfied: xmltodict in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (0.13.0)
-Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,&gt;=0.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (3.0.3)
-Requirement already satisfied: responses&gt;=0.15.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (0.25.3)
-Requirement already satisfied: Jinja2&gt;=2.10.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.1.2) (3.1.4)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (3.7)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (2.2.2)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.1.2) (2024.6.2)
-Requirement already satisfied: annotated-types&gt;=0.4.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.1.2) (0.7.0)
-Requirement already satisfied: pydantic-core==2.18.4 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.1.2) (2.18.4)
-Requirement already satisfied: typing-extensions&gt;=4.6.1 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.1.2) (4.12.2)
-Requirement already satisfied: iniconfig in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.1.2) (2.0.0)
-Requirement already satisfied: pluggy&lt;2.0,&gt;=1.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.1.2) (1.5.0)
-Requirement already satisfied: cffi&gt;=1.12 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.1.2) (1.16.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from Jinja2&gt;=2.10.1-&gt;moto-&gt;abc_atlas_access==0.1.2) (2.1.5)
-Requirement already satisfied: six&gt;=1.5 in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;abc_atlas_access==0.1.2) (1.16.0)
-Requirement already satisfied: pyyaml in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from responses&gt;=0.15.0-&gt;moto-&gt;abc_atlas_access==0.1.2) (6.0.1)
-Requirement already satisfied: pycparser in /Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.1.2) (2.22)
+?25hRequirement already satisfied: anndata in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (0.10.9)
+Requirement already satisfied: boto3 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (1.35.42)
+Requirement already satisfied: ghp-import in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (2.1.0)
+Requirement already satisfied: matplotlib in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (3.9.2)
+Requirement already satisfied: moto in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (5.0.17)
+Requirement already satisfied: numpy in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (2.1.2)
+Requirement already satisfied: pandas in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (2.2.3)
+Requirement already satisfied: pydantic in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (2.9.2)
+Requirement already satisfied: pytest in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (8.3.3)
+Requirement already satisfied: requests in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (2.32.3)
+Requirement already satisfied: scipy in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (1.14.1)
+Requirement already satisfied: simpleitk in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (2.4.0)
+Requirement already satisfied: tqdm in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from abc_atlas_access==0.2.0) (4.66.5)
+Requirement already satisfied: array-api-compat!=1.5,&gt;1.4 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.2.0) (1.9)
+Requirement already satisfied: h5py&gt;=3.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.2.0) (3.12.1)
+Requirement already satisfied: natsort in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.2.0) (8.4.0)
+Requirement already satisfied: packaging&gt;=20.0 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from anndata-&gt;abc_atlas_access==0.2.0) (24.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.2.0) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.2.0) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pandas-&gt;abc_atlas_access==0.2.0) (2024.2)
+Requirement already satisfied: botocore&lt;1.36.0,&gt;=1.35.42 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.2.0) (1.35.42)
+Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.2.0) (1.0.1)
+Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from boto3-&gt;abc_atlas_access==0.2.0) (0.10.3)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.2.0) (1.3.0)
+Requirement already satisfied: cycler&gt;=0.10 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.2.0) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.2.0) (4.54.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.2.0) (1.4.7)
+Requirement already satisfied: pillow&gt;=8 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.2.0) (11.0.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from matplotlib-&gt;abc_atlas_access==0.2.0) (3.2.0)
+Requirement already satisfied: cryptography&gt;=3.3.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.2.0) (43.0.1)
+Requirement already satisfied: xmltodict in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.2.0) (0.14.2)
+Requirement already satisfied: werkzeug!=2.2.0,!=2.2.1,&gt;=0.5 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.2.0) (3.0.4)
+Requirement already satisfied: responses&gt;=0.15.0 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.2.0) (0.25.3)
+Requirement already satisfied: Jinja2&gt;=2.10.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from moto-&gt;abc_atlas_access==0.2.0) (3.1.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.2.0) (3.4.0)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.2.0) (3.10)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.2.0) (2.2.3)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from requests-&gt;abc_atlas_access==0.2.0) (2024.8.30)
+Requirement already satisfied: annotated-types&gt;=0.6.0 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.2.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.23.4 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.2.0) (2.23.4)
+Requirement already satisfied: typing-extensions&gt;=4.6.1 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pydantic-&gt;abc_atlas_access==0.2.0) (4.12.2)
+Requirement already satisfied: iniconfig in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.2.0) (2.0.0)
+Requirement already satisfied: pluggy&lt;2,&gt;=1.5 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from pytest-&gt;abc_atlas_access==0.2.0) (1.5.0)
+Requirement already satisfied: cffi&gt;=1.12 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.2.0) (1.17.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from Jinja2&gt;=2.10.1-&gt;moto-&gt;abc_atlas_access==0.2.0) (2.1.3)
+Requirement already satisfied: six&gt;=1.5 in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;abc_atlas_access==0.2.0) (1.16.0)
+Requirement already satisfied: pyyaml in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from responses&gt;=0.15.0-&gt;moto-&gt;abc_atlas_access==0.2.0) (6.0.2)
+Requirement already satisfied: pycparser in /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=3.3.1-&gt;moto-&gt;abc_atlas_access==0.2.0) (2.22)
+Building wheels for collected packages: abc_atlas_access
+  Building wheel for abc_atlas_access (pyproject.toml) ... ?25ldone
+?25h  Created wheel for abc_atlas_access: filename=abc_atlas_access-0.2.0-py3-none-any.whl size=21329 sha256=083b81a227621479a6b9f839df3d92395811566595dc0b9d75b8c1fd0400e274
+  Stored in directory: /tmp/pip-ephem-wheel-cache-it5hd7hl/wheels/10/64/b1/5ba3e93d1c252bf1b997c46ee8b4aaa4c21e4e5888caeaea20
+Successfully built abc_atlas_access
+Installing collected packages: abc_atlas_access
+  Attempting uninstall: abc_atlas_access
+    Found existing installation: abc_atlas_access 0.1.2
+    Uninstalling abc_atlas_access-0.1.2:
+      Successfully uninstalled abc_atlas_access-0.1.2
+Successfully installed abc_atlas_access-0.2.0
 Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
@@ -555,13 +567,6 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -585,6 +590,13 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:630: OutdatedManifestWarning: You are loading releases/20240831/manifest.json. A more up to date version of the dataset -- releases/20241115/manifest.json -- exists online. To see the changes between the two versions of the dataset, run
+type.compare_manifests(&#39;releases/20240831/manifest.json&#39;, &#39;releases/20241115/manifest.json&#39;)
+To load another version of the dataset, run
+type.load_manifest(&#39;releases/20241115/manifest.json&#39;)
+  warnings.warn(msg, OutdatedManifestWarning)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
 </pre></div>
 </div>
@@ -602,8 +614,8 @@ Note: you may need to restart the kernel to use updated packages.
  &#39;releases/20230830/manifest.json&#39;,
  &#39;releases/20231215/manifest.json&#39;,
  &#39;releases/20240330/manifest.json&#39;,
- &#39;releases/20240831/&#39;,
- &#39;releases/20240831/manifest.json&#39;]
+ &#39;releases/20240831/manifest.json&#39;,
+ &#39;releases/20241115/manifest.json&#39;]
 </pre></div>
 </div>
 </div>
@@ -622,30 +634,17 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:575: OutdatedManifestWarning: 
-
-The manifest file you are loading is not the most up to date manifest file available for this dataset. The most up to data manifest file available for this dataset is 
-
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:648: OutdatedManifestWarning: You are loading
+releases/20241115/manifest.json
+which is newer than the most recent manifest file you have previously been working with
 releases/20240831/manifest.json
-
-To see the differences between these manifests,run
-
-type.compare_manifests(&#39;releases/20240831/manifest.json&#39;, &#39;releases/20230630/manifest.json&#39;)
-
-To see all of the manifest files currently downloaded onto your local system, run
-
-self.list_all_downloaded_manifests()
-
-If you just want to load the latest manifest, run
-
-self.load_latest_manifest()
-
-
+It is possible that some data files have changed between these two data releases, which will force you to re-download those data files (currently downloaded files will not be overwritten). To continue using releases/20240831/manifest.json, run
+type.load_manifest(&#39;releases/20240831/manifest.json&#39;)
   warnings.warn(msg, OutdatedManifestWarning)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>old manifest loaded: releases/20230630/manifest.json
-after latest manifest loaded: releases/20240831/manifest.json
+after latest manifest loaded: releases/20241115/manifest.json
 </pre></div>
 </div>
 </div>
@@ -773,9 +772,9 @@ after latest manifest loaded: releases/20240831/manifest.json
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 27.5M/27.5M [00:01&lt;00:00, 21.2MMB/s]
-annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████████████████| 27.4M/27.4M [00:02&lt;00:00, 13.2MMB/s]
-average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 343M/343M [00:15&lt;00:00, 21.9MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|████████████████████████████████████████████████| 27.5M/27.5M [00:04&lt;00:00, 5.82MMB/s]
+annotation_boundary_10.nii.gz: 100%|███████████████████████████████████████| 27.4M/27.4M [00:04&lt;00:00, 6.03MMB/s]
+average_template_10.nii.gz: 100%|████████████████████████████████████████████| 343M/343M [00:56&lt;00:00, 6.11MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
@@ -795,13 +794,11 @@ average_template_10.nii.gz: 100%|███████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 131k/131k [00:00&lt;00:00, 448kMB/s]
-cluster_annotation_term.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 861k/861k [00:00&lt;00:00, 4.06MMB/s]
-cluster_annotation_term_set.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████| 1.11k/1.11k [00:00&lt;00:00, 6.21kMB/s]
-cluster_annotation_term_with_counts.csv: 100%|████████████████████████████████████████████████████████████████████████████████| 902k/902k [00:00&lt;00:00, 4.18MMB/s]
-cluster_to_cluster_annotation_membership.csv: 100%|█████████████████████████████████████████████████████████████████████████| 2.21M/2.21M [00:00&lt;00:00, 10.9MMB/s]
-cluster_to_cluster_annotation_membership_color.csv: 100%|█████████████████████████████████████████████████████████████████████| 239k/239k [00:00&lt;00:00, 1.82MMB/s]
-cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████████████████████████████████████████████████████████████████| 531k/531k [00:00&lt;00:00, 3.83MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|████████████████████████████████████████████████████████████| 131k/131k [00:00&lt;00:00, 930kMB/s]
+cluster_annotation_term.csv: 100%|███████████████████████████████████████████| 861k/861k [00:00&lt;00:00, 3.29MMB/s]
+cluster_annotation_term_set.csv: 100%|█████████████████████████████████████| 1.11k/1.11k [00:00&lt;00:00, 14.5kMB/s]
+cluster_annotation_term_with_counts.csv: 100%|███████████████████████████████| 902k/902k [00:00&lt;00:00, 3.57MMB/s]
+cluster_to_cluster_annotation_membership.csv: 100%|████████████████████████| 2.21M/2.21M [00:00&lt;00:00, 4.34MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-taxonomy metadata files:
@@ -863,10 +860,10 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 4.14MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 4.04MMB/s]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20231215/gene.csv&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20241115/gene.csv&#39;)
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1018,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 89.3M/89.3M [00:04&lt;00:00, 20.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|██████████████████████████████████████████████| 89.3M/89.3M [00:14&lt;00:00, 6.11MMB/s]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
@@ -1038,7 +1035,7 @@ WMB-taxonomy metadata files:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
 
 <span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:508,</span> in <span class="ni">AbcProjectCache.get_data_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
@@ -1137,7 +1134,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 14.8MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 3.74MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1267,9 +1264,9 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 27.5M/27.5M [00:00&lt;00:00, 34.6MMB/s]
-annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████████████████| 27.4M/27.4M [00:00&lt;00:00, 33.1MMB/s]
-average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 343M/343M [00:07&lt;00:00, 46.0MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|████████████████████████████████████████████████| 27.5M/27.5M [00:04&lt;00:00, 5.82MMB/s]
+annotation_boundary_10.nii.gz: 100%|███████████████████████████████████████| 27.4M/27.4M [00:04&lt;00:00, 5.92MMB/s]
+average_template_10.nii.gz: 100%|████████████████████████████████████████████| 343M/343M [00:53&lt;00:00, 6.36MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
@@ -1292,7 +1289,7 @@ average_template_10.nii.gz: 100%|███████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 6.46M/6.46M [00:00&lt;00:00, 8.72MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|████████████████████████████████████████| 6.46M/6.46M [00:01&lt;00:00, 5.91MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1397,18 +1394,18 @@ average_template_10.nii.gz: 100%|███████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 554kMB/s]
-parcellation_term.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.07MMB/s]
-parcellation_term_set.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 6.64kMB/s]
-parcellation_term_set_membership.csv: 100%|████████████████████████████████████████████████████████████████████████████████████| 114k/114k [00:00&lt;00:00, 828kMB/s]
-parcellation_term_with_counts.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 137k/137k [00:00&lt;00:00, 827kMB/s]
-parcellation_to_parcellation_term_membership.csv: 100%|███████████████████████████████████████████████████████████████████████| 680k/680k [00:00&lt;00:00, 5.16MMB/s]
-parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████████████████████████████████████████████████████████| 22.3k/22.3k [00:00&lt;00:00, 309kMB/s]
-parcellation_to_parcellation_term_membership_blue.csv: 100%|█████████████████████████████████████████████████████████████████| 16.4k/16.4k [00:00&lt;00:00, 115kMB/s]
-parcellation_to_parcellation_term_membership_color.csv: 100%|████████████████████████████████████████████████████████████████| 30.5k/30.5k [00:00&lt;00:00, 478kMB/s]
-parcellation_to_parcellation_term_membership_green.csv: 100%|████████████████████████████████████████████████████████████████| 16.5k/16.5k [00:00&lt;00:00, 117kMB/s]
-parcellation_to_parcellation_term_membership_name.csv: 100%|█████████████████████████████████████████████████████████████████| 75.8k/75.8k [00:00&lt;00:00, 375kMB/s]
-parcellation_to_parcellation_term_membership_red.csv: 100%|██████████████████████████████████████████████████████████████████| 16.0k/16.0k [00:00&lt;00:00, 196kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|█████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 766kMB/s]
+parcellation_term.csv: 100%|█████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.87MMB/s]
+parcellation_term_set.csv: 100%|███████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 9.80kMB/s]
+parcellation_term_set_membership.csv: 100%|███████████████████████████████████| 114k/114k [00:00&lt;00:00, 918kMB/s]
+parcellation_term_with_counts.csv: 100%|█████████████████████████████████████| 137k/137k [00:00&lt;00:00, 1.20MMB/s]
+parcellation_to_parcellation_term_membership.csv: 100%|██████████████████████| 680k/680k [00:00&lt;00:00, 4.86MMB/s]
+parcellation_to_parcellation_term_membership_acronym.csv: 100%|█████████████| 22.3k/22.3k [00:00&lt;00:00, 588kMB/s]
+parcellation_to_parcellation_term_membership_blue.csv: 100%|████████████████| 16.4k/16.4k [00:00&lt;00:00, 321kMB/s]
+parcellation_to_parcellation_term_membership_color.csv: 100%|███████████████| 30.5k/30.5k [00:00&lt;00:00, 382kMB/s]
+parcellation_to_parcellation_term_membership_green.csv: 100%|███████████████| 16.5k/16.5k [00:00&lt;00:00, 163kMB/s]
+parcellation_to_parcellation_term_membership_name.csv: 100%|████████████████| 75.8k/75.8k [00:00&lt;00:00, 609kMB/s]
+parcellation_to_parcellation_term_membership_red.csv: 100%|█████████████████| 16.0k/16.0k [00:00&lt;00:00, 325kMB/s]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),

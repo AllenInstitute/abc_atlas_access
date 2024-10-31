@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -439,6 +440,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-notebooks">Available notebooks:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes">Release Notes</a></li>
 </ul>
             </nav>
@@ -464,13 +466,13 @@ understanding of this amazing organ in ways we never thought possible. The
 ABC Atlas can be accessed at <a class="reference external" href="https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas">here</a>
 and is the primary method of interacting with these data. Any questions or
 issues associated with the ABC Atlas are best directed to the <a class="reference external" href="https://community.brain-map.org/">Allen Institute
-Commnituy Forum</a>. This repository is intended
+Community Forum</a>. This repository is intended
 for users who wish to download the ABC Atlas data and processes it locally.</p>
 <p>Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an
 S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html">arn:aws:s3:::allen-brain-cell-atlas</a>.
-No account or login is required for access. The purpose of this repo is to
+No account or login is required for access. <em><strong>The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
-example use cases.</p>
+example use cases.</strong></em></p>
 <p>The spring 2024 public beta data release includes:</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="descriptions/WMB_dataset.html"><span class="doc std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
@@ -491,11 +493,18 @@ and access more efficient, the 10x transcriptomics datasets have been
 subdivided into smaller packages grouped by method and anatomical origin. The
 notebooks provide example code on how to access data across these individual
 files using the AbcProjectCache.</p>
-<p>Available notebooks:</p>
+<p>If you have used the ABC Atlas visualization to select cells from a dataset and
+with to use your selected cells in an analysis with the data available for
+download here, you find a tutorial to do so in the
+<a class="reference internal" href="notebooks/abc_atlas_selection_example.html"><span class="doc std std-doc">Using cells selected in the ABC Atlas</span></a>
+notebook.</p>
+<section id="available-notebooks">
+<h2>Available notebooks:<a class="headerlink" href="#available-notebooks" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="notebooks/getting_started.html"><span class="doc std std-doc"><strong>Getting started</strong></span></a>: learn how to use the
-AbcProjectCache to facilitate data download and usage.
-[<em>notebooks/getting_started.ipynb</em>]</p></li>
+AbcProjectCache to facilitate data download and usage.</p></li>
+<li><p><a class="reference internal" href="notebooks/abc_atlas_selection_example.html"><span class="doc std std-doc"><strong>Using cells selected in the ABC Atlas</strong></span></a>: learn how
+to use cells selected from an ABC Atlas visualization in your analysis.</p></li>
 <li><p><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html"><span class="doc std std-doc"><strong>Loading genes from expression matrix data</strong></span></a>:
 learn how to select genes from 10X expression matricies and combine them with
 the cell metadata.</p></li>
@@ -507,14 +516,30 @@ mouse brain</span></a>
 <li><p><strong><a class="reference internal" href="descriptions/WHB_notebooks.html"><span class="doc std std-doc">Human whole-brain transcriptomic cell type atlas</span></a>
 (Kimberly Siletti)</strong></p></li>
 </ul>
+</section>
 <section id="release-notes">
 <h2>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
+<li><p><strong>[ABC Sample ID update (version 20241115) ab_atlas_access (v0.3.0)]</strong></p>
+<ul>
+<li><p>Add abc_sample_id to cell_metadatas of the projects listed below. This
+allows users to use cell selections they’ve downloaded from the ABC Atlas
+visualization.</p>
+<ul>
+<li><p>MERFISH-C57BL6J-638850(-imputed)</p></li>
+<li><p>WHB-10Xv3</p></li>
+<li><p>WMB-10X</p></li>
+<li><p>Zhuang-ABCA-(1-4)</p></li>
+</ul>
+</li>
+<li><p>Added notebook showing how to use abc_sample_id.</p></li>
+</ul>
+</li>
 <li><p><strong>[Summer 2024 Public Beta (version 20240831) ab_atlas_access (v0.2.0)]</strong></p>
 <ul>
 <li><p>Released ~8k imputed genes for the MERFISH-C57BL6J-638850 dataset.</p></li>
 <li><p>Added new notebooks and pages for the imputed gene dataset.</p></li>
-<li><p>Updated cache object for better compatiblity across platforms.</p>
+<li><p>Updated cache object for better compatibility across platforms.</p>
 <ul>
 <li><p>Added automatic unittesting via GitHub Actions.</p></li>
 <li><p>Modified cache to autodetect cache type (local or s3) for easier
@@ -626,6 +651,7 @@ checks in the cache class.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-notebooks">Available notebooks:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes">Release Notes</a></li>
 </ul>
   </nav></div>

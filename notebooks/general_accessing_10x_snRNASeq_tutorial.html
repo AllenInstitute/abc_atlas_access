@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/general_accessing_10x_snRNASeq_tutorial';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)" href="../descriptions/WMB_dataset.html" />
+    <link rel="next" title="Using cells selected in the ABC Atlas with Gene Expression data." href="abc_atlas_selection_example.html" />
     <link rel="prev" title="Getting started" href="getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -455,15 +456,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="accessing-10x-rna-seq-gene-expression-data">
+  <section class="tex2jax_ignore mathjax_ignore" id="accessing-10x-rna-seq-gene-expression-data">
 <h1>Accessing 10x RNA-seq gene expression data<a class="headerlink" href="#accessing-10x-rna-seq-gene-expression-data" title="Permalink to this heading">#</a></h1>
 <p>This notebook provides examples and functions for accessing the 10X expression matrix data stored in the ABC Atlas. These files require a large amount of memory to be available to load and analyize them if care is not taken. In this notebook, we present an example of how to access specific gene expressions from the data. The functions used below could be simplily parallized when processing data at scale, however, we leave them simple here.</p>
 <p>Care should still be taken not to attempt too load to many genes from the expression matrices.</p>
@@ -492,7 +485,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -509,7 +502,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 705M/705M [00:33&lt;00:00, 21.0MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████| 830M/830M [00:31&lt;00:00, 26.1MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -545,9 +538,11 @@ document.write(`
       <th>cluster_alias</th>
       <th>region_of_interest_label</th>
       <th>anatomical_division_label</th>
+      <th>abc_sample_id</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -583,6 +578,7 @@ document.write(`
       <td>20</td>
       <td>Human MoAN</td>
       <td>Myelencephalon</td>
+      <td>b3d3a6c0-3dc5-4738-af4c-96cc5ff6033f</td>
     </tr>
     <tr>
       <th>10X383_5:TCTTGCGGTGAATTGA</th>
@@ -601,6 +597,7 @@ document.write(`
       <td>20</td>
       <td>Human MoSR</td>
       <td>Myelencephalon</td>
+      <td>0a7ed99b-d5eb-4c50-b95e-eb31b448d2c7</td>
     </tr>
     <tr>
       <th>10X386_2:CTCATCGGTCGAGCAA</th>
@@ -619,6 +616,7 @@ document.write(`
       <td>17</td>
       <td>Human MoAN</td>
       <td>Myelencephalon</td>
+      <td>458f6409-af8d-4c7c-ac9b-0b0d9b73b36d</td>
     </tr>
     <tr>
       <th>10X378_8:TTGGATGAGACAAGCC</th>
@@ -637,6 +635,7 @@ document.write(`
       <td>18</td>
       <td>Human PnAN</td>
       <td>Pons</td>
+      <td>ff6b2d95-3752-49bf-9421-f17107538868</td>
     </tr>
     <tr>
       <th>10X387_7:TGAACGTAGTATTCCG</th>
@@ -655,9 +654,11 @@ document.write(`
       <td>16</td>
       <td>Human MoAN</td>
       <td>Myelencephalon</td>
+      <td>589a1c5c-839b-480d-babc-4098c467211b</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -691,6 +692,7 @@ document.write(`
       <td>3264</td>
       <td>Human SN</td>
       <td>Midbrain</td>
+      <td>721e951b-b734-46ed-83e3-89f803f74f61</td>
     </tr>
     <tr>
       <th>10X350_4:TTTACCATCGCACGAC</th>
@@ -709,6 +711,7 @@ document.write(`
       <td>3265</td>
       <td>Human CbDN</td>
       <td>Cerebellum</td>
+      <td>8752a645-853b-49a5-8c3a-2cf9f8557b94</td>
     </tr>
     <tr>
       <th>10X225_1:AGAAGCGTCCATATGG</th>
@@ -727,6 +730,7 @@ document.write(`
       <td>3264</td>
       <td>Human PAG</td>
       <td>Midbrain</td>
+      <td>1a1738c0-1efe-4124-ae62-809cd88cb168</td>
     </tr>
     <tr>
       <th>10X221_5:TTGAACGCAGCCTTCT</th>
@@ -745,6 +749,7 @@ document.write(`
       <td>3265</td>
       <td>Human STG</td>
       <td>Cerebral cortex</td>
+      <td>9606ce80-ab0a-4c31-a7bb-65054c0d6e01</td>
     </tr>
     <tr>
       <th>10X385_3:CTACCCAGTGGCGCTT</th>
@@ -763,10 +768,11 @@ document.write(`
       <td>3264</td>
       <td>Human GPi</td>
       <td>Basal nuclei</td>
+      <td>a69fef25-9149-41e6-8056-030e283434ea</td>
     </tr>
   </tbody>
 </table>
-<p>3369219 rows × 15 columns</p>
+<p>3369219 rows × 16 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -777,7 +783,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.23M/4.23M [00:00&lt;00:00, 7.51MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████████████████████████████████████████████████████████████████████████| 4.23M/4.23M [00:00&lt;00:00, 9.05MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -942,7 +948,7 @@ Returns
 -------
 output_gene_data: pandas.DataFrame
     Subset of gene data indexed by cell.
-<span class=" -Color -Color-Red">File:</span>      ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/anndata_utils.py
+<span class=" -Color -Color-Red">File:</span>      /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/anndata_utils.py
 <span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
@@ -985,11 +991,11 @@ output_gene_data: pandas.DataFrame
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loading file: WHB-10Xv3-Nonneurons
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WHB-10Xv3-Nonneurons-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████| 4.78G/4.78G [17:16&lt;00:00, 4.62MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WHB-10Xv3-Nonneurons-log2.h5ad: 100%|████████████████████████████████████████████████████████| 4.78G/4.78G [03:06&lt;00:00, 25.7MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  237.755479
-total time taken: 381.04928600000005
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  242.30124915899998
+total time taken: 287.29828778300003
 	total cells: 888263 processed cells: 888263
 </pre></div>
 </div>
@@ -1184,9 +1190,9 @@ total time taken: 381.04928600000005
       <th>donor_sex</th>
       <th>dataset_label</th>
       <th>...</th>
-      <th>cluster_alias</th>
       <th>region_of_interest_label</th>
       <th>anatomical_division_label</th>
+      <th>abc_sample_id</th>
       <th>PTPRC</th>
       <th>SLC17A6</th>
       <th>SLC32A1</th>
@@ -1234,9 +1240,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>20</td>
       <td>Human MoAN</td>
       <td>Myelencephalon</td>
+      <td>b3d3a6c0-3dc5-4738-af4c-96cc5ff6033f</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1258,9 +1264,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>20</td>
       <td>Human MoSR</td>
       <td>Myelencephalon</td>
+      <td>0a7ed99b-d5eb-4c50-b95e-eb31b448d2c7</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1282,9 +1288,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>17</td>
       <td>Human MoAN</td>
       <td>Myelencephalon</td>
+      <td>458f6409-af8d-4c7c-ac9b-0b0d9b73b36d</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1306,9 +1312,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>18</td>
       <td>Human PnAN</td>
       <td>Pons</td>
+      <td>ff6b2d95-3752-49bf-9421-f17107538868</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1330,9 +1336,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>16</td>
       <td>Human MoAN</td>
       <td>Myelencephalon</td>
+      <td>589a1c5c-839b-480d-babc-4098c467211b</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1378,9 +1384,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>3264</td>
       <td>Human SN</td>
       <td>Midbrain</td>
+      <td>721e951b-b734-46ed-83e3-89f803f74f61</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1402,9 +1408,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>3265</td>
       <td>Human CbDN</td>
       <td>Cerebellum</td>
+      <td>8752a645-853b-49a5-8c3a-2cf9f8557b94</td>
       <td>9.587301</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1426,9 +1432,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>3264</td>
       <td>Human PAG</td>
       <td>Midbrain</td>
+      <td>1a1738c0-1efe-4124-ae62-809cd88cb168</td>
       <td>8.567961</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1450,9 +1456,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>3265</td>
       <td>Human STG</td>
       <td>Cerebral cortex</td>
+      <td>9606ce80-ab0a-4c31-a7bb-65054c0d6e01</td>
       <td>10.119619</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1474,9 +1480,9 @@ total time taken: 381.04928600000005
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>3264</td>
       <td>Human GPi</td>
       <td>Basal nuclei</td>
+      <td>a69fef25-9149-41e6-8056-030e283434ea</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1487,7 +1493,7 @@ total time taken: 381.04928600000005
     </tr>
   </tbody>
 </table>
-<p>3369219 rows × 22 columns</p>
+<p>3369219 rows × 23 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1534,11 +1540,11 @@ total time taken: 381.04928600000005
       </div>
     </a>
     <a class="right-next"
-       href="../descriptions/WMB_dataset.html"
+       href="abc_atlas_selection_example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</p>
+        <p class="prev-next-title">Using cells selected in the ABC Atlas with Gene Expression data.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

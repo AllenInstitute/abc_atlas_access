@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -453,15 +454,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-2b">
+  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-2b">
 <h1>MERFISH whole brain spatial transcriptomics (part 2b)<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-part-2b" title="Permalink to this heading">#</a></h1>
 <p>We can continue to explore our examples looking at the expression of canonical neurotransmitter transporter genes and gene Tac2 over the whole brain.</p>
 <p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
@@ -492,7 +485,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -524,7 +517,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 360M/360M [00:16&lt;00:00, 22.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|██████████████████████████████████████████████████| 360M/360M [00:20&lt;00:00, 17.8MMB/s]
 </pre></div>
 </div>
 </div>
@@ -581,11 +574,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">ntgenes</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="n">ntgenes</span><span class="p">]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22c8da25456b89f0d422febe5ec5d36a1aafeb997e491cf5d8b76dbfb2757edf.png" src="../_images/22c8da25456b89f0d422febe5ec5d36a1aafeb997e491cf5d8b76dbfb2757edf.png" />
+<img alt="../_images/0bbf5bf18bd53c5f5ddcd5c82ef987aa7db6424d15069a7be9b82dff83fd0cee.png" src="../_images/0bbf5bf18bd53c5f5ddcd5c82ef987aa7db6424d15069a7be9b82dff83fd0cee.png" />
 </div>
 </div>
 <p>Grouping expression by dissection region of interest shows that each of these genes have distinct spatial patterns. The MERFISH data allows us to visualize these patterns in anatomical context.</p>
@@ -594,11 +588,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">ntgenes</span><span class="p">,</span> <span class="s1">&#39;brain_section_label&#39;</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">)))]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6b45a3072237a4dc824776dcd8665ef9562451e9d0b9c25e17c3f73b668b64e6.png" src="../_images/6b45a3072237a4dc824776dcd8665ef9562451e9d0b9c25e17c3f73b668b64e6.png" />
+<img alt="../_images/cd6cf57f4208c0b811f51c1911a756155e174415144acc1433699f6db577a995.png" src="../_images/cd6cf57f4208c0b811f51c1911a756155e174415144acc1433699f6db577a995.png" />
 </div>
 </div>
 <p>We define a small helper function <em>plot sections</em> to visualize the cells for a specified set of brain sections either by colorized metadata or gene expression.</p>
@@ -641,81 +636,89 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.51&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.31&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.19&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.01&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/47dbdc03ab0619da880741fc37b83ac18d59104967baa7d892b6917131cd74c7.png" src="../_images/47dbdc03ab0619da880741fc37b83ac18d59104967baa7d892b6917131cd74c7.png" />
+<img alt="../_images/6b7bb9e9e7ff4f4e0dc41de8d1fe314386d2d5c285377ec83f47bd8f9ca3a2fe.png" src="../_images/6b7bb9e9e7ff4f4e0dc41de8d1fe314386d2d5c285377ec83f47bd8f9ca3a2fe.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3c6d03e1de5112d9f9faa7f416c5706bcbe42808800d904d6765852e44439935.png" src="../_images/3c6d03e1de5112d9f9faa7f416c5706bcbe42808800d904d6765852e44439935.png" />
+<img alt="../_images/dda149021136fd97c68b2aee843f2f3365b7a8b47da419e5dba4cb8601ec8170.png" src="../_images/dda149021136fd97c68b2aee843f2f3365b7a8b47da419e5dba4cb8601ec8170.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f24ea1e8460387363bd7869b1fa6fc48b8de0c0add76116ccd8d75323e34107.png" src="../_images/4f24ea1e8460387363bd7869b1fa6fc48b8de0c0add76116ccd8d75323e34107.png" />
+<img alt="../_images/b7d15ee548bb5bea34a40b541d74f93ffe52633e152fd241c51fb3633ba163c2.png" src="../_images/b7d15ee548bb5bea34a40b541d74f93ffe52633e152fd241c51fb3633ba163c2.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc17a8&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88c8dce713ebcf2ed17ac663dcdff24b52a90baccc614ac18f3e9d2d27795d7f.png" src="../_images/88c8dce713ebcf2ed17ac663dcdff24b52a90baccc614ac18f3e9d2d27795d7f.png" />
+<img alt="../_images/e19ac60aac7bc98d90a25f456cf9c0a5a050865e022eb251471f95ba4d245db8.png" src="../_images/e19ac60aac7bc98d90a25f456cf9c0a5a050865e022eb251471f95ba4d245db8.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/351e381bcb6b28b550ef2ee1a1a6592742b70fbb702b6f522cc99f90d8e733ae.png" src="../_images/351e381bcb6b28b550ef2ee1a1a6592742b70fbb702b6f522cc99f90d8e733ae.png" />
+<img alt="../_images/d639e831321f6e8f37f4d991b8e3899a2a9aab6f26fe377ba7d8160d6782aa06.png" src="../_images/d639e831321f6e8f37f4d991b8e3899a2a9aab6f26fe377ba7d8160d6782aa06.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc6a5&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bedfc17cb1045fe5e87cd8d0beeeca910bf23ac13478d76a5ccc8323944e00d7.png" src="../_images/bedfc17cb1045fe5e87cd8d0beeeca910bf23ac13478d76a5ccc8323944e00d7.png" />
+<img alt="../_images/885220371197c5b545ccbf61dacb4833f3f6d6927c7c3d65bf8dcf46e0cf4755.png" src="../_images/885220371197c5b545ccbf61dacb4833f3f6d6927c7c3d65bf8dcf46e0cf4755.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc6a3&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f18248b864c90761f2e809652e6dca152aed55adb42bd887314938ce94990b3a.png" src="../_images/f18248b864c90761f2e809652e6dca152aed55adb42bd887314938ce94990b3a.png" />
+<img alt="../_images/549ad18bb250e646eacc7bc9e6f297befb9623276c9a384eeb2f3cca4d60e5c1.png" src="../_images/549ad18bb250e646eacc7bc9e6f297befb9623276c9a384eeb2f3cca4d60e5c1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc6a4&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/70236ee6a160c841e91f23331ae81eb40627ee2aadd8ca0d2ff1d61a5e14a939.png" src="../_images/70236ee6a160c841e91f23331ae81eb40627ee2aadd8ca0d2ff1d61a5e14a939.png" />
+<img alt="../_images/61ff3d4874b26f0f261fd267e3c32ad5a8e5d5a83a2a869381cc4b79a50e2add.png" src="../_images/61ff3d4874b26f0f261fd267e3c32ad5a8e5d5a83a2a869381cc4b79a50e2add.png" />
 </div>
 </div>
 </section>
@@ -730,11 +733,12 @@ document.write(`
 <span class="n">joined</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/742bc99d949ac8ecca3cfdbaa2750922c44bb77c4aeb12f256c586bf81ed5d19.png" src="../_images/742bc99d949ac8ecca3cfdbaa2750922c44bb77c4aeb12f256c586bf81ed5d19.png" />
+<img alt="../_images/c6c4abae1d20edfc77c15235a32db035f2de47100c0c2ffeae223908bda9bbaf.png" src="../_images/c6c4abae1d20edfc77c15235a32db035f2de47100c0c2ffeae223908bda9bbaf.png" />
 </div>
 </div>
 <p>Grouping by class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic type and “06 CTX-CGE GABA” GABAergic cells originating from the caudal ganglionic eminence (CGE).</p>
@@ -743,11 +747,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">class_list</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/adfac71ac7ed66112f4e8a6b2050585f6eecfbe17681b3a6a26c3d07b597fa70.png" src="../_images/adfac71ac7ed66112f4e8a6b2050585f6eecfbe17681b3a6a26c3d07b597fa70.png" />
+<img alt="../_images/31dd2b1632d5a1042862ce5270382c033d13b9aaa814ece04e8597317f272b46.png" src="../_images/31dd2b1632d5a1042862ce5270382c033d13b9aaa814ece04e8597317f272b46.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass reveals enrichment is highly anatomically localized cell types such as the medial habenula (MH), bed nuclei of the stria terminalis (BST), spinal nucleus of the trigeminal (SPVC), main olfactory blub (MOB), central amygdalar nucleus (CEA) and arcuate hypothalamic nucleus (ARH).</p>
@@ -756,11 +761,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;subclass&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">subclass_list</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7b4991f9c0ba0efd66509e8fe35ac69515880035936050f6fba3218a30a73f4e.png" src="../_images/7b4991f9c0ba0efd66509e8fe35ac69515880035936050f6fba3218a30a73f4e.png" />
+<img alt="../_images/5aaea6c35764b0ba6092999fc672275f90a6b8239da0c9458313fd9d01fcea9c.png" src="../_images/5aaea6c35764b0ba6092999fc672275f90a6b8239da0c9458313fd9d01fcea9c.png" />
 </div>
 </div>
 <p>The MERFISH data allows us to visualize these spatial pattern in anatomical context. We can aggregate Tac2 expression by brain section so that we can find 4 sections where the enriched expression is located. We then visualize cells in those section by Tac2 expression, neurotransmitter identity, cell type classes and subclasses.</p>
@@ -769,52 +775,57 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;brain_section_label&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">)))]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7d45f6e5634f2d869f5c0e5106abd3036ff2a578770b6ccd249bcd6a46a4f1c.png" src="../_images/b7d45f6e5634f2d869f5c0e5106abd3036ff2a578770b6ccd249bcd6a46a4f1c.png" />
+<img alt="../_images/ffcd704875741afcdd275eeca9d0d0b4d6695d27c8c7e0990ea314e0a0c9c5ef.png" src="../_images/ffcd704875741afcdd275eeca9d0d0b4d6695d27c8c7e0990ea314e0a0c9c5ef.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.69&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.38&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.01&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Tac2&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e575eb3571a7142204b49d892d4de0021a8c82b2a349bd7a55b5e7a574cfeb78.png" src="../_images/e575eb3571a7142204b49d892d4de0021a8c82b2a349bd7a55b5e7a574cfeb78.png" />
+<img alt="../_images/b806cbd6c6aae3b85fdf52b5fe9de7c8aa72d2e3a9d0c36ae2ed14cdaba8a40a.png" src="../_images/b806cbd6c6aae3b85fdf52b5fe9de7c8aa72d2e3a9d0c36ae2ed14cdaba8a40a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8f70e6145bb70d475b45d3dbdc6de2e259e89f357e4503500fcfebabbfaa065a.png" src="../_images/8f70e6145bb70d475b45d3dbdc6de2e259e89f357e4503500fcfebabbfaa065a.png" />
+<img alt="../_images/09c432c2c50dbcafb85003ae6747d95d42741baba466caead5cb49a688536050.png" src="../_images/09c432c2c50dbcafb85003ae6747d95d42741baba466caead5cb49a688536050.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;class_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c4388f3e22f69748fc66990a7cf676ee143b88db5a412d9233ef4d36b906fb4.png" src="../_images/0c4388f3e22f69748fc66990a7cf676ee143b88db5a412d9233ef4d36b906fb4.png" />
+<img alt="../_images/7a3706cfc8d6a5b2b9756f34365eb652cffb85d86a90a8f6d502766f5f86e79a.png" src="../_images/7a3706cfc8d6a5b2b9756f34365eb652cffb85d86a90a8f6d502766f5f86e79a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0273b887559de50ee30494ec56e0ff50c8b4cdbcd5fb0ff375e675bb2e03e979.png" src="../_images/0273b887559de50ee30494ec56e0ff50c8b4cdbcd5fb0ff375e675bb2e03e979.png" />
+<img alt="../_images/8b69f8873167552a70ac8d8bfdcb41e228461d7d5d4ae6555ed157a35e16867d.png" src="../_images/8b69f8873167552a70ac8d8bfdcb41e228461d7d5d4ae6555ed157a35e16867d.png" />
 </div>
 </div>
 <p>We can use the Tac2 aggregate by subclass table above and pick out the top 10 most enriched subclasses and plot only them on the same set of brain sections and observed that this set of subclasses is able recapitulate the expression pattern of Tac2.</p>
@@ -823,11 +834,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">subclass_list</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">joined</span><span class="p">[</span><span class="s1">&#39;subclass&#39;</span><span class="p">]]</span>
 <span class="n">filtered</span> <span class="o">=</span> <span class="n">joined</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">filtered</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3ba045ecf2d9f4a16d03deca43bcf4a2ef02dd83e305440c8ced72b635ae37b0.png" src="../_images/3ba045ecf2d9f4a16d03deca43bcf4a2ef02dd83e305440c8ced72b635ae37b0.png" />
+<img alt="../_images/8b2eb838dcb3d796fe0ddc1abca7a29e55f5fd5f67c458222c844d316fd5c6c6.png" src="../_images/8b2eb838dcb3d796fe0ddc1abca7a29e55f5fd5f67c458222c844d316fd5c6c6.png" />
 </div>
 </div>
 <div class="cell docutils container">

@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -465,15 +466,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="allen-mouse-common-coordinate-framework-2020-version">
+  <section class="tex2jax_ignore mathjax_ignore" id="allen-mouse-common-coordinate-framework-2020-version">
 <h1>Allen Mouse Common Coordinate Framework (2020 version)<a class="headerlink" href="#allen-mouse-common-coordinate-framework-2020-version" title="Permalink to this heading">#</a></h1>
 <p>Allen Mouse Brain Common Coordinate Framework (CCFv3, <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al, 2020</a>) is a 3D reference space is an average brain at 10um voxel resolution created from serial two-photon tomography images of 1,675 young adult C57Bl6/J mice. Using multimodal reference data, the entire brain parcellated directly in 3D, labeling every voxel with a brain structure spanning 43 isocortical areas and their layers, 314 subcortical gray matter structures, 81 fiber tracts, and 8 ventricular structures. The 2020 version adds new annotations for layers of the Ammon’s horn (CA), main olfactory bulb (MOB) and minor modification of surrounding fiber tracts.</p>
 <p>CCFv3 is used in informatics pipelines and online applications to analyze, visualize and integrate multimodal and multiscale data sets in 3D, and is openly accessible for research use.</p>
@@ -505,7 +498,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -540,13 +533,6 @@ document.write(`
 <span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
 <span class="n">annotation_boundary_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_boundary_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_boundary_image</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average_template_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 343M/343M [00:54&lt;00:00, 6.29MMB/s]
-annotation_10.nii.gz: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 27.5M/27.5M [00:01&lt;00:00, 18.6MMB/s]
-annotation_boundary_10.nii.gz: 100%|████████████████████████████████████████████████████████████████████████████████████████| 27.4M/27.4M [00:01&lt;00:00, 24.1MMB/s]
 </pre></div>
 </div>
 </div>
@@ -616,11 +602,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">average_template_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;average_template&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c73e0dc515b0d5337062d6eef7980f5b23b45bcdc237d5b639ce7cbae6598bc.png" src="../_images/2c73e0dc515b0d5337062d6eef7980f5b23b45bcdc237d5b639ce7cbae6598bc.png" />
+<img alt="../_images/3e22347cefa4fe6ef9144936dabe38256fb4637dfdb98fc091c1b42ac564289e.png" src="../_images/3e22347cefa4fe6ef9144936dabe38256fb4637dfdb98fc091c1b42ac564289e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -628,11 +615,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" src="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" />
+<img alt="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" src="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -640,11 +628,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_boundary_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5f71d1e660ab8e0743b9752571a9fb11ac8bd8fde17f839fafc48e41f606a59a.png" src="../_images/5f71d1e660ab8e0743b9752571a9fb11ac8bd8fde17f839fafc48e41f606a59a.png" />
+<img alt="../_images/b0c14d4d0db59364f1f9aeca4fa10a59249f122f67ae5313263633e9b2e894c8.png" src="../_images/b0c14d4d0db59364f1f9aeca4fa10a59249f122f67ae5313263633e9b2e894c8.png" />
 </div>
 </div>
 </section>
@@ -664,13 +653,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 41.2k/41.2k [00:00&lt;00:00, 408kMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of parcellations: 688
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -788,13 +771,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_set.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 628/628 [00:00&lt;00:00, 5.07kMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of term sets: 5
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -889,13 +866,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 177k/177k [00:00&lt;00:00, 1.09MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of terms: 1631
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1015,13 +986,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_set_membership.csv: 100%|████████████████████████████████████████████████████████████████████████████████████| 114k/114k [00:00&lt;00:00, 822kMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 1293
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1102,13 +1067,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership.csv: 100%|███████████████████████████████████████████████████████████████████████| 680k/680k [00:00&lt;00:00, 3.75MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 3440
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1431,23 +1390,23 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
       <td>...</td>
     </tr>
     <tr>
-      <th>AllenCCF-Ontology-2017-10703</th>
+      <th>AllenCCF-Ontology-2017-1069</th>
       <td>1</td>
     </tr>
     <tr>
-      <th>AllenCCF-Ontology-2017-10704</th>
+      <th>AllenCCF-Ontology-2017-10671</th>
       <td>1</td>
     </tr>
     <tr>
-      <th>AllenCCF-Ontology-2017-1072</th>
+      <th>AllenCCF-Ontology-2017-1066</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-1064</th>
       <td>1</td>
     </tr>
     <tr>
       <th>AllenCCF-Ontology-2017-1074</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>AllenCCF-Ontology-2017-998</th>
       <td>1</td>
     </tr>
   </tbody>
@@ -1499,12 +1458,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
       <td>697.783214</td>
     </tr>
     <tr>
-      <th>ABC-Ontology-2023-unassigned-structure</th>
+      <th>ABC-Ontology-2023-unassigned-organ</th>
       <td>697783214</td>
       <td>697.783214</td>
     </tr>
     <tr>
-      <th>ABC-Ontology-2023-unassigned-organ</th>
+      <th>ABC-Ontology-2023-unassigned-structure</th>
       <td>697783214</td>
       <td>697.783214</td>
     </tr>
@@ -1524,7 +1483,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
       <td>...</td>
     </tr>
     <tr>
-      <th>ABC-Ontology-2023-c-structure</th>
+      <th>ABC-Ontology-2023-c-substructure</th>
       <td>432</td>
       <td>0.000432</td>
     </tr>
@@ -2292,11 +2251,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" src="../_images/0aa9c7b3584bf5f566292a94aa28ef78f18377f8175f383e211944cebe42d1fc.png" />
+<img alt="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" src="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2305,11 +2265,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cb4251e8d6045486dbcfd8a8fd558a89fd5fd5498863ccfa80e9fe95a9515c61.png" src="../_images/cb4251e8d6045486dbcfd8a8fd558a89fd5fd5498863ccfa80e9fe95a9515c61.png" />
+<img alt="../_images/ea8e81b89a24ac59aeb72f125ebbb3f7384f0dbd1c647dadab5718234e093f9b.png" src="../_images/ea8e81b89a24ac59aeb72f125ebbb3f7384f0dbd1c647dadab5718234e093f9b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2318,11 +2279,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/000cc32649250820d7b0074d5504ed2598d24d2d1abb37287bfdf996e6f5caf8.png" src="../_images/000cc32649250820d7b0074d5504ed2598d24d2d1abb37287bfdf996e6f5caf8.png" />
+<img alt="../_images/d4f57612e8e9d58ea96874c34b2360f7c60a86693e920ebaa93c41ddf100ab31.png" src="../_images/d4f57612e8e9d58ea96874c34b2360f7c60a86693e920ebaa93c41ddf100ab31.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2331,11 +2293,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c916533aae8d1943186e3b19cbc7d70b661eebc70b3391caec2d216936cafdf0.png" src="../_images/c916533aae8d1943186e3b19cbc7d70b661eebc70b3391caec2d216936cafdf0.png" />
+<img alt="../_images/fc690fd07253f38bb0ec03975558817dbdb9a523e1283a833aa41441f70d0b3d.png" src="../_images/fc690fd07253f38bb0ec03975558817dbdb9a523e1283a833aa41441f70d0b3d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2344,11 +2307,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/17ba3705e15794c6716a789cff54372d9f2d561a89069c810b6fa5503cfa3015.png" src="../_images/17ba3705e15794c6716a789cff54372d9f2d561a89069c810b6fa5503cfa3015.png" />
+<img alt="../_images/56124e7efe678fb65464b66459511d1e02cae8ebf9ebe9612d925d0fcb6e925a.png" src="../_images/56124e7efe678fb65464b66459511d1e02cae8ebf9ebe9612d925d0fcb6e925a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2357,11 +2321,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a36eaf1e726afc8d5ae9511288e94f5c46af4b9cbd51f2fab3edd5ff5b6d028d.png" src="../_images/a36eaf1e726afc8d5ae9511288e94f5c46af4b9cbd51f2fab3edd5ff5b6d028d.png" />
+<img alt="../_images/232e94de77dd224c0144069baff33e00c0d39e58c9a0200b6097d49869a05cd1.png" src="../_images/232e94de77dd224c0144069baff33e00c0d39e58c9a0200b6097d49869a05cd1.png" />
 </div>
 </div>
 </section>

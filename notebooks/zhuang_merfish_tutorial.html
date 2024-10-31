@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -462,15 +463,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-mouse-brain-spatial-transcriptomics-xiaowei-zhuang">
+  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-mouse-brain-spatial-transcriptomics-xiaowei-zhuang">
 <h1>MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)<a class="headerlink" href="#merfish-whole-mouse-brain-spatial-transcriptomics-xiaowei-zhuang" title="Permalink to this heading">#</a></h1>
 <p>A collection of in situ, spatially resolved transcriptomic profiles of individual cells in the whole mouse brain by multiplexed error-robust fluorescence in situ hybridization (MERFISH) consisting of ~9 million cells using a 1122 gene panel. We performed MERFISH imaging on 245 coronal and sagittal sections from four animal, obtained 9.3 million segmented cells that passed quality control, and integrated the MERFISH data from the four animals with the scRNA-seq data from the Allen Institute to classify cells. We applied a series of filters to select a subset of cells to be visualized on the ABC atlas. We first removed six fractured tissue slices and 9.1 million cells remained after this step. Then we aligned the spatial coordinates of the cells to the Allen-CCF-2020. For coronal slices that can be registered to the CCF, we used the CCF coordinates to define the coordinates of the center point of the midline and removed cells that substantially passed the midline in the other hemisphere (which has not been registered to the CCF). For the sagittal slices that can be registered to the CCF, we used the CCF coordinates to define the coordinates of the center point of the tissue and removed cells that substantially passed the posterior edge (which has not been registered to the CCF). For the 31 anterior and posterior coronal slices and 3 lateral sagittal slices that cannot be registered to the CCF, we manually aligned and oriented the slices. The x, y coordinates are experimentally measured coordinates after rotating and aligning the tissue slices to the CCF, and the z coordinates are estimated position of each tissue slice in the 3D Allen-CCF 2020 space along the slicing axis based on either the registration results (for slices that can be registered to CCF) or positions of the slices measured during tissue sectioning (for the slices that cannot be registered). The z position is set to zero when the estimated position becomes zero or negative. 8.4 million cells remained after this step. The cell-by-gene matrix of the 8.4 millions cells can be downloaded from the AWS bucket of this animal. We then filtered the cells by cell-classification (label transfer) confidence scores calculated during MERFISH-scRNAseq data integration. 7.0 million cells passed the confidence score threshold for cell subclass label transfer and 5.8 million cells further passed the confidence score threshold for cell cluster label transfer. These 5.8 million cells are included in the cell metadata file that can be downloaded from the the AWS bucket and are displayed on the ABC Atlas. The CCF coordinates of the 5.4 million cells that were registered to the 3D Allen-CCF can be downloaded from the CCF coordinate files in the AWB bucket. The collection spans four mouse specimens (2 coronal sets and 2 sagittal sets). Cells are mapped to the whole mouse brain taxonomy (WMB-taxonomy) and Allen Common Coordinate Framework (Allen-CCF-2020). Refer to <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531348">Zhang et al, 2023</a> for more details.</p>
 <div class="cell docutils container">
@@ -499,7 +492,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -542,25 +535,25 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 556M/556M [00:24&lt;00:00, 23.1MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████| 661M/661M [00:34&lt;00:00, 19.0MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 : Number of cells =  2846908 ,  Number of sections = 147
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 240M/240M [00:10&lt;00:00, 22.3MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████| 286M/286M [00:13&lt;00:00, 20.8MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 : Number of cells =  1227408 ,  Number of sections = 66
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 310M/310M [00:13&lt;00:00, 23.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████| 369M/369M [00:17&lt;00:00, 21.4MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 : Number of cells =  1585843 ,  Number of sections = 23
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 31.9M/31.9M [00:01&lt;00:00, 24.9MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████| 38.0M/38.0M [00:01&lt;00:00, 19.9MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 : Number of cells =  162578 ,  Number of sections = 3
@@ -605,9 +598,11 @@ document.write(`
       <th>subclass_confidence_score</th>
       <th>cluster_confidence_score</th>
       <th>high_quality_transfer</th>
+      <th>abc_sample_id</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -637,6 +632,7 @@ document.write(`
       <td>0.969933</td>
       <td>0.718088</td>
       <td>True</td>
+      <td>79bda012-4dd4-43d7-8f66-1f29997f6780</td>
     </tr>
     <tr>
       <th>221260934538535633595532020856387724686</th>
@@ -652,6 +648,7 @@ document.write(`
       <td>0.850554</td>
       <td>0.850554</td>
       <td>True</td>
+      <td>2f0b3159-2766-4f9e-a8cd-8dd16bae05fa</td>
     </tr>
     <tr>
       <th>22228792606814781533240955623030943708</th>
@@ -667,6 +664,7 @@ document.write(`
       <td>0.888285</td>
       <td>0.649581</td>
       <td>True</td>
+      <td>fe1f5f73-5afb-4e51-b4f0-cf6690257086</td>
     </tr>
     <tr>
       <th>272043042552227961220474294517855477150</th>
@@ -682,6 +680,7 @@ document.write(`
       <td>0.900000</td>
       <td>0.607080</td>
       <td>True</td>
+      <td>a13e1c1c-9828-4d3b-9aae-e2ab055a39ad</td>
     </tr>
     <tr>
       <th>110116287883089187971185374239350249328</th>
@@ -697,9 +696,11 @@ document.write(`
       <td>0.999978</td>
       <td>0.689511</td>
       <td>True</td>
+      <td>add02bc8-456b-486c-9f13-db578c62cc5a</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -727,6 +728,7 @@ document.write(`
       <td>0.971385</td>
       <td>0.943456</td>
       <td>True</td>
+      <td>3e178fe9-3440-4cf1-ab79-2192d25e3d02</td>
     </tr>
     <tr>
       <th>298798481479578578007190103666214714353</th>
@@ -742,6 +744,7 @@ document.write(`
       <td>0.956377</td>
       <td>0.905493</td>
       <td>True</td>
+      <td>22cfcaf3-0c26-41b7-ab14-f76398fd18a4</td>
     </tr>
     <tr>
       <th>330756942354980576352210203729462562749</th>
@@ -757,6 +760,7 @@ document.write(`
       <td>0.811520</td>
       <td>0.788901</td>
       <td>True</td>
+      <td>bc4eb252-c3fd-4ba0-9739-70eff08b29fe</td>
     </tr>
     <tr>
       <th>47305871059582831548494138048361484565</th>
@@ -772,6 +776,7 @@ document.write(`
       <td>0.991924</td>
       <td>0.634152</td>
       <td>True</td>
+      <td>f450f6fa-667b-40bf-a865-000131b57d2c</td>
     </tr>
     <tr>
       <th>64578198410898899234789748167671783948</th>
@@ -787,10 +792,11 @@ document.write(`
       <td>0.889413</td>
       <td>0.645770</td>
       <td>True</td>
+      <td>11b45e69-80fe-4cd7-9480-ce3a04a9b1c5</td>
     </tr>
   </tbody>
 </table>
-<p>2846908 rows × 12 columns</p>
+<p>2846908 rows × 13 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1433,7 +1439,7 @@ document.write(`
     </tr>
   </tbody>
 </table>
-<p>2846908 rows × 22 columns</p>
+<p>2846908 rows × 23 columns</p>
 </div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">cell_extended</span></code> dataframes are available in their respective Zhuang-ABCA-[1,2,3,4] directories as <code class="docutils literal notranslate"><span class="pre">cell_metadata_with_cluster_annotation</span></code>.</p>
@@ -1453,7 +1459,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 84.7k/84.7k [00:00&lt;00:00, 370kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|███████████████████████████████████████████████████████████████████████████████| 84.7k/84.7k [00:00&lt;00:00, 488kMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  1122
@@ -1576,33 +1582,36 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Neurotransmitter Identity&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2a8f9f522310d450893cdf8191e463d38dc7a822adb142ab74921ceb66c9441.png" src="../_images/a2a8f9f522310d450893cdf8191e463d38dc7a822adb142ab74921ceb66c9441.png" />
+<img alt="../_images/ad11a718de488467ebc989f84521b65c7b6b6b81deb3bd41fe802527cd0819e6.png" src="../_images/ad11a718de488467ebc989f84521b65c7b6b6b81deb3bd41fe802527cd0819e6.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="s1">&#39;class_color&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Cell Type Classes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3a9ae355f85069bd6828bc9a2329012c607850f04b7b44de38ea6a044a17f378.png" src="../_images/3a9ae355f85069bd6828bc9a2329012c607850f04b7b44de38ea6a044a17f378.png" />
+<img alt="../_images/1ed1b3f1aa99f850d061f5d579c423641fce4e29a3aedb3b9dd191d0e8de491e.png" src="../_images/1ed1b3f1aa99f850d061f5d579c423641fce4e29a3aedb3b9dd191d0e8de491e.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Cell Type Subclasses&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5593ea455460044069fb3a9e3ab96d171ea390f8def116e539caecfc5b192db3.png" src="../_images/5593ea455460044069fb3a9e3ab96d171ea390f8def116e539caecfc5b192db3.png" />
+<img alt="../_images/bd501a7a2bc84b9601a136ab00e681aa17214542e5cb89c3b474379fcd8aa064.png" src="../_images/bd501a7a2bc84b9601a136ab00e681aa17214542e5cb89c3b474379fcd8aa064.png" />
 </div>
 </div>
 </section>
@@ -1730,28 +1739,28 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1-log2.h5ad: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 2.13G/2.13G [02:23&lt;00:00, 14.8MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1-log2.h5ad: 100%|███████████████████████████████████████████████████████████████| 2.13G/2.13G [01:43&lt;00:00, 20.7MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  19.471441
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  26.035333508999997
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2-log2.h5ad: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 871M/871M [02:38&lt;00:00, 5.49MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████| 871M/871M [00:42&lt;00:00, 20.5MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 - time taken:  10.082500999999993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 - time taken:  11.256206805000005
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3-log2.h5ad: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 1.16G/1.16G [04:33&lt;00:00, 4.24MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3-log2.h5ad: 100%|███████████████████████████████████████████████████████████████| 1.16G/1.16G [00:53&lt;00:00, 21.8MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 - time taken:  9.916156
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 - time taken:  12.770679804999986
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4-log2.h5ad: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 107M/107M [00:04&lt;00:00, 21.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████| 107M/107M [00:05&lt;00:00, 18.2MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 - time taken:  1.1427290000000028
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 - time taken:  1.4481282749999878
 </pre></div>
 </div>
 </div>
@@ -1761,33 +1770,36 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_expression</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Gene Slc17a7&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ba8d62fc5f963a5dcb08843fdb00fac15e654316391c64bbc6d8957fbfe6685.png" src="../_images/8ba8d62fc5f963a5dcb08843fdb00fac15e654316391c64bbc6d8957fbfe6685.png" />
+<img alt="../_images/0f06f1de9b86153a5882f49515c0da494117fac2180c98cf5f305a19b54fac83.png" src="../_images/0f06f1de9b86153a5882f49515c0da494117fac2180c98cf5f305a19b54fac83.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_expression</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Gene Slc17a6&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/393c14868be0b4f7458eca07943d476b4e7717623c5291fc3231073d8ca3a84b.png" src="../_images/393c14868be0b4f7458eca07943d476b4e7717623c5291fc3231073d8ca3a84b.png" />
+<img alt="../_images/6a60a011ac3d9990e0669f74982c1e397c79a1f585e735b9f12db25c23c9164a.png" src="../_images/6a60a011ac3d9990e0669f74982c1e397c79a1f585e735b9f12db25c23c9164a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_expression</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Gene Slc32a1&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f952e7b5c40a774278fca7ba0514e1b2147cbb952a69f52a9e8463026c58d5f4.png" src="../_images/f952e7b5c40a774278fca7ba0514e1b2147cbb952a69f52a9e8463026c58d5f4.png" />
+<img alt="../_images/3e7a476546fdb272a9c75105237fc51f14aace4111ddbc99d06983f580423428.png" src="../_images/3e7a476546fdb272a9c75105237fc51f14aace4111ddbc99d06983f580423428.png" />
 </div>
 </div>
 <section id="ccf-registration-and-parcellation-annotation">
@@ -1811,10 +1823,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 221M/221M [00:08&lt;00:00, 25.8MMB/s]
-ccf_coordinates.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 89.1M/89.1M [00:03&lt;00:00, 22.4MMB/s]
-ccf_coordinates.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 132M/132M [00:05&lt;00:00, 23.2MMB/s]
-ccf_coordinates.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 13.8M/13.8M [00:00&lt;00:00, 17.3MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████| 221M/221M [00:10&lt;00:00, 21.4MMB/s]
+ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████| 89.1M/89.1M [00:04&lt;00:00, 19.3MMB/s]
+ccf_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████| 132M/132M [00:06&lt;00:00, 19.0MMB/s]
+ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████| 13.8M/13.8M [00:01&lt;00:00, 9.53MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1955,6 +1967,12 @@ ccf_coordinates.csv: 100%|██████████████████
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership_acronym.csv: 100%|███████████████████████████████| 22.3k/22.3k [00:00&lt;00:00, 290kMB/s]
+parcellation_to_parcellation_term_membership_color.csv: 100%|█████████████████████████████████| 30.5k/30.5k [00:00&lt;00:00, 481kMB/s]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1969,33 +1987,36 @@ ccf_coordinates.csv: 100%|██████████████████
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="s1">&#39;parcellation_division_color&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Parcellation - division&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4190254aad87a65da7b00da51e46ba13e020b8c351715b35c6d973fc5b5362fc.png" src="../_images/4190254aad87a65da7b00da51e46ba13e020b8c351715b35c6d973fc5b5362fc.png" />
+<img alt="../_images/78eb7d54e767ec71232cb24f443170b8872747d5adcc7c7eea19a8c1b2f9886a.png" src="../_images/78eb7d54e767ec71232cb24f443170b8872747d5adcc7c7eea19a8c1b2f9886a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="s1">&#39;parcellation_structure_color&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Parcellation - structure&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ba38f20309ab208326fb27cb845632db9997d519ca3662264754ba98a8e1748.png" src="../_images/1ba38f20309ab208326fb27cb845632db9997d519ca3662264754ba98a8e1748.png" />
+<img alt="../_images/c77d24d333f361acdf51b441eb6242c61d7ddadf1ae0a82615bf72e518790aa4.png" src="../_images/c77d24d333f361acdf51b441eb6242c61d7ddadf1ae0a82615bf72e518790aa4.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">example_section</span><span class="p">,</span> <span class="s1">&#39;parcellation_substructure_color&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Parcellation - substructure&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/86d5b1c5e6e8a424c7d1fb7be99b08cc0da5008a7662dee3fca22c000530477b.png" src="../_images/86d5b1c5e6e8a424c7d1fb7be99b08cc0da5008a7662dee3fca22c000530477b.png" />
+<img alt="../_images/5a93b6ce889d13e09c2159f16ea16c0b424ebece00ba4a8c660e601132bfa923.png" src="../_images/5a93b6ce889d13e09c2159f16ea16c0b424ebece00ba4a8c660e601132bfa923.png" />
 </div>
 </div>
 </section>

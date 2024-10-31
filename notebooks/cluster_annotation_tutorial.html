@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -471,15 +472,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-clustering-analysis-and-annotation-ccn20230722">
+  <section class="tex2jax_ignore mathjax_ignore" id="x-rna-seq-clustering-analysis-and-annotation-ccn20230722">
 <h1>10x RNA-seq clustering analysis and annotation (CCN20230722)<a class="headerlink" href="#x-rna-seq-clustering-analysis-and-annotation-ccn20230722" title="Permalink to this heading">#</a></h1>
 <p>The Mouse Whole Brain Atlas is a high-resolution transcriptomic and spatial cell-type atlas across the entire mouse brain, integrating several whole-brain single-cell RNA-sequencing (scRNA-seq) datasets. The datasets contain a total of ~4 million cells passing rigorous quality-control (QC) criteria. The integrated transcriptomic taxonomy contains 5,322 clusters that are organized in a hierarchical manner with nested groupings of 34 classes, 338 subclasses, 1,201 supertypes and 5,322 types/clusters. The scRNA-seq data reveal transcriptome-wide gene expression and co-expression patterns for each cell type. The anatomical location of each cell type has been annotated using a comprehensive brain-wide MERFISH dataset with a total of ~4 million segmented and QC-passed cells, probed with a 500-gene panel and registered to the Allen Mouse Brain Common Coordinate Framework (CCF v3). The MERFISH data not only provide accurate spatial annotation of cell types at subclass, supertype and cluster levels, but also reveal fine-resolution spatial distinctions or gradients for cell types. The combination of scRNA-seq and MERFISH data reveals a high degree of correspondence between transcriptomic identity and spatial specificity for each cell type, as well as unique features of cell type organization in different brain regions.</p>
 <p>The purpose of this notebook is to provide an overview of how cluster and cluster annotation information is represented through example use cases.</p>
@@ -509,7 +502,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -1401,7 +1394,7 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/94f84be6ca5ad4e4aee421441b5ba9a4144fe0c125620b3eae7448d341ea063d.png" src="../_images/94f84be6ca5ad4e4aee421441b5ba9a4144fe0c125620b3eae7448d341ea063d.png" />
+<img alt="../_images/298d3912d824511b6430c87bac335c29b8b5cb2cf9fc851e0d88f0362424f9b0.png" src="../_images/298d3912d824511b6430c87bac335c29b8b5cb2cf9fc851e0d88f0362424f9b0.png" />
 </div>
 </div>
 </section>
@@ -1415,7 +1408,7 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3132c1a59bdc4cad0cbad1168cd1439680b4d32c5423ebbe9e3f5ee2ecc707ce.png" src="../_images/3132c1a59bdc4cad0cbad1168cd1439680b4d32c5423ebbe9e3f5ee2ecc707ce.png" />
+<img alt="../_images/72bed8d0a10a89682a0ddebe4112327aca480b9faede3e8961a18b4de186d913.png" src="../_images/72bed8d0a10a89682a0ddebe4112327aca480b9faede3e8961a18b4de186d913.png" />
 </div>
 </div>
 </section>
@@ -1752,11 +1745,11 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_72856/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_16800/1772253940.py:9: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   ax.barh(AxB.index, AxB[col], left=bottom, label=col[1], color=B_colors[i])
 </pre></div>
 </div>
-<img alt="../_images/711a12f86e07d2c4d65d68a83aec06f9b5c224ee2dfe8051028fac302c0593e2.png" src="../_images/711a12f86e07d2c4d65d68a83aec06f9b5c224ee2dfe8051028fac302c0593e2.png" />
+<img alt="../_images/58aa8f7fb71ab1aab277f8ec1d3da0b280c68e914d1fedf2586cb873e4ca748d.png" src="../_images/58aa8f7fb71ab1aab277f8ec1d3da0b280c68e914d1fedf2586cb873e4ca748d.png" />
 </div>
 </div>
 </section>
@@ -1801,7 +1794,7 @@ The finest level of cell type definition in the mouse whole brain taxonomy. Cell
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a34013743ee0ae11d801b9db2d64eb4f377c85d9583f0e07bf7713399cf372af.png" src="../_images/a34013743ee0ae11d801b9db2d64eb4f377c85d9583f0e07bf7713399cf372af.png" />
+<img alt="../_images/665904734a135c68ee25b683fc84327c7231d34296fdb695abdebfda035851b7.png" src="../_images/665904734a135c68ee25b683fc84327c7231d34296fdb695abdebfda035851b7.png" />
 </div>
 </div>
 </section>

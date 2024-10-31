@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -456,15 +457,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-whb-10x-rna-seq-gene-expression-data-part-1">
+  <section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-whb-10x-rna-seq-gene-expression-data-part-1">
 <h1>Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)<a class="headerlink" href="#whole-human-brain-whb-10x-rna-seq-gene-expression-data-part-1" title="Permalink to this heading">#</a></h1>
 <p>The purpose of this set of notebooks is to provide an overview of the data, the file organization, and how to combine data and metadata through example use cases.</p>
 <p>You need to be connected to the internet to run this notebook or connected to a cache that has the WHB data downloaded already.</p>
@@ -495,7 +488,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -555,6 +548,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████| 830M/830M [00:42&lt;00:00, 19.7MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  3369219
 </pre></div>
 </div>
@@ -562,7 +558,7 @@ document.write(`
        &#39;feature_matrix_label&#39;, &#39;entity&#39;, &#39;brain_section_label&#39;,
        &#39;library_method&#39;, &#39;donor_label&#39;, &#39;donor_sex&#39;, &#39;dataset_label&#39;, &#39;x&#39;, &#39;y&#39;,
        &#39;cluster_alias&#39;, &#39;region_of_interest_label&#39;,
-       &#39;anatomical_division_label&#39;],
+       &#39;anatomical_division_label&#39;, &#39;abc_sample_id&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -605,6 +601,7 @@ Number of unique y = 3369219
 Number of unique cluster_alias = 3313 
 Number of unique region_of_interest_label = 109 
 Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &#39;Basal forebrain&#39;, &#39;Basal nuclei&#39;, &#39;Cerebellum&#39;, &#39;Cerebral cortex&#39;, &#39;Claustrum&#39;, &#39;Extended amygdala&#39;, &#39;Hippocampus&#39;, &#39;Hypothalamus&#39;, &#39;Midbrain&#39;, &#39;Myelencephalon&#39;, &#39;Pons&#39;, &#39;Spinal cord&#39;, &#39;Thalamus&#39;]
+Number of unique abc_sample_id = 3369219 
 </pre></div>
 </div>
 </div>
@@ -920,7 +917,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_structure_map.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 8.82k/8.82k [00:00&lt;00:00, 71.8kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_of_interest_structure_map.csv: 100%|██████████████████████████████████████████████████| 8.82k/8.82k [00:00&lt;00:00, 90.7kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1033,7 +1030,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
       <th>donor_sex</th>
       <th>dataset_label</th>
       <th>...</th>
-      <th>anatomical_division_label</th>
+      <th>abc_sample_id</th>
       <th>subcluster</th>
       <th>cluster</th>
       <th>supercluster</th>
@@ -1083,7 +1080,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>b3d3a6c0-3dc5-4738-af4c-96cc5ff6033f</td>
       <td>URL_312_20</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -1107,7 +1104,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>0a7ed99b-d5eb-4c50-b95e-eb31b448d2c7</td>
       <td>URL_312_20</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -1131,7 +1128,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>458f6409-af8d-4c7c-ac9b-0b0d9b73b36d</td>
       <td>URL_312_17</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -1155,7 +1152,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Pons</td>
+      <td>ff6b2d95-3752-49bf-9421-f17107538868</td>
       <td>URL_312_18</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -1179,7 +1176,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>589a1c5c-839b-480d-babc-4098c467211b</td>
       <td>URL_312_16</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -1192,7 +1189,7 @@ Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &
     </tr>
   </tbody>
 </table>
-<p>5 rows × 24 columns</p>
+<p>5 rows × 25 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1217,6 +1214,7 @@ Number of unique y = 3369219
 Number of unique cluster_alias = 3313 
 Number of unique region_of_interest_label = 109 
 Number of unique anatomical_division_label = 14 [&#39;Amygdaloid complex&#39;, &#39;Basal forebrain&#39;, &#39;Basal nuclei&#39;, &#39;Cerebellum&#39;, &#39;Cerebral cortex&#39;, &#39;Claustrum&#39;, &#39;Extended amygdala&#39;, &#39;Hippocampus&#39;, &#39;Hypothalamus&#39;, &#39;Midbrain&#39;, &#39;Myelencephalon&#39;, &#39;Pons&#39;, &#39;Spinal cord&#39;, &#39;Thalamus&#39;]
+Number of unique abc_sample_id = 3369219 
 Number of unique subcluster = 3313 
 Number of unique cluster = 461 
 Number of unique supercluster = 31 
@@ -1276,70 +1274,80 @@ n non-neurons to plot: 107871
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;region_of_interest_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neurons: Dissection Region Of Interest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;region_of_interest_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-neurons: Dissection Region Of Interest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/77391a02be22e28bc89e61b7d8b60cb4175dc39a5d140f01370c0e0803302afa.png" src="../_images/77391a02be22e28bc89e61b7d8b60cb4175dc39a5d140f01370c0e0803302afa.png" />
-<img alt="../_images/f82fa4a64e0d21f0c4a19fda82fb8e72ae6595d1149e12153002d3bb370e1b01.png" src="../_images/f82fa4a64e0d21f0c4a19fda82fb8e72ae6595d1149e12153002d3bb370e1b01.png" />
+<img alt="../_images/cb132026c2f096108490b54125839344b5a7b899e504ccfa45125cfe66da7654.png" src="../_images/cb132026c2f096108490b54125839344b5a7b899e504ccfa45125cfe66da7654.png" />
+<img alt="../_images/cb0b4279fd746237a15ddb8f86612e9fef14114122108a6d39c3b5ed7901c89d.png" src="../_images/cb0b4279fd746237a15ddb8f86612e9fef14114122108a6d39c3b5ed7901c89d.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neurons: Neuortransmitter Identity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-neurons: Neuortransmitter Identity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/82b6aea6c5807a0aea07047159859c3b07a165407aaa1fc3654d2530ad64ef25.png" src="../_images/82b6aea6c5807a0aea07047159859c3b07a165407aaa1fc3654d2530ad64ef25.png" />
-<img alt="../_images/2283c2f3d3943d3b61065173a92de228ed7a8f02bb1ec3f35f4be6f86e1e6efd.png" src="../_images/2283c2f3d3943d3b61065173a92de228ed7a8f02bb1ec3f35f4be6f86e1e6efd.png" />
+<img alt="../_images/21e827b1493435215b4d21d2544757821a17b86c0d9c95c8c86e49f41ca05f46.png" src="../_images/21e827b1493435215b4d21d2544757821a17b86c0d9c95c8c86e49f41ca05f46.png" />
+<img alt="../_images/8a3aa550ce95c15a2f829c9336c133f3796548b5e700bb2b01bd7ab4eea712c7.png" src="../_images/8a3aa550ce95c15a2f829c9336c133f3796548b5e700bb2b01bd7ab4eea712c7.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;supercluster_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron Cell Types: Supercluster&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;supercluster_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-neuron Cell Types: Supercluster&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a799830460d1828b559f909d8c72c1a5527d22dea7bbb92ff717b5e10fe9ba40.png" src="../_images/a799830460d1828b559f909d8c72c1a5527d22dea7bbb92ff717b5e10fe9ba40.png" />
-<img alt="../_images/99a68ba7d45abb30c8fd0c66a8f2b829fc9505baf2ff14632b814cb1ed56a9bd.png" src="../_images/99a68ba7d45abb30c8fd0c66a8f2b829fc9505baf2ff14632b814cb1ed56a9bd.png" />
+<img alt="../_images/84c839ed83c7bc1e16a97defe99411c60f124410b572f55b711be8db897cbcbc.png" src="../_images/84c839ed83c7bc1e16a97defe99411c60f124410b572f55b711be8db897cbcbc.png" />
+<img alt="../_images/06e2bef59909546f6b04247da38aa6a08ae66615c2e3645ac64779092fe451dc.png" src="../_images/06e2bef59909546f6b04247da38aa6a08ae66615c2e3645ac64779092fe451dc.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;cluster_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron Cell Types: Cluster&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;cluster_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-neuron Cell Types: Cluster&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0d511e7f83520b8569b284e9b123db70d08d6567ec27dc380ae8b88c09be8156.png" src="../_images/0d511e7f83520b8569b284e9b123db70d08d6567ec27dc380ae8b88c09be8156.png" />
-<img alt="../_images/c3ca6ed8335cb38185602be10ba09495ec3353064b52ca80f5ee0dd1befc5e6f.png" src="../_images/c3ca6ed8335cb38185602be10ba09495ec3353064b52ca80f5ee0dd1befc5e6f.png" />
+<img alt="../_images/7dc7b7316f38d17924d5768aaddf0ff4e26a4d3b72b6178a0ff2129f84035909.png" src="../_images/7dc7b7316f38d17924d5768aaddf0ff4e26a4d3b72b6178a0ff2129f84035909.png" />
+<img alt="../_images/12a399817b557135f691a9352a09321a2b5b187114d5acafca02bf2b48813c80.png" src="../_images/12a399817b557135f691a9352a09321a2b5b187114d5acafca02bf2b48813c80.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;subcluster_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron Cell Types: Subcluster&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;subcluster_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-neuron Cell Types: Subcluster&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/abe8651dad2c659e3e3f8380038bfb61b3f2db572ce1e9e157f96bc3d3205ed3.png" src="../_images/abe8651dad2c659e3e3f8380038bfb61b3f2db572ce1e9e157f96bc3d3205ed3.png" />
-<img alt="../_images/5e34eb8192deaf618de55131a789ea3eb8afe260703a30cc343be72db599960e.png" src="../_images/5e34eb8192deaf618de55131a789ea3eb8afe260703a30cc343be72db599960e.png" />
+<img alt="../_images/9bdc2ccfc4eb94fd5ea40b154ee8ce30313be3d26c79d5e99323f72d67a0aa41.png" src="../_images/9bdc2ccfc4eb94fd5ea40b154ee8ce30313be3d26c79d5e99323f72d67a0aa41.png" />
+<img alt="../_images/77e8f102baf4c0ee6e339381005183eba9a1da650fca903890f2d868d3affe2b.png" src="../_images/77e8f102baf4c0ee6e339381005183eba9a1da650fca903890f2d868d3affe2b.png" />
 </div>
 </div>
 <p><strong>In part 2 we’ll focus on gene data including using the UMAP to plot gene expression locations in the different clusterings.</strong></p>

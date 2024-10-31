@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -456,15 +457,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-10x-rna-seq-gene-expression-data-part-2">
+  <section class="tex2jax_ignore mathjax_ignore" id="whole-human-brain-10x-rna-seq-gene-expression-data-part-2">
 <h1>Whole Human Brain 10x RNA-seq gene expression data (part 2)<a class="headerlink" href="#whole-human-brain-10x-rna-seq-gene-expression-data-part-2" title="Permalink to this heading">#</a></h1>
 <p>In this notebook we’ll explore some of the gene expression and combine it with the cell metadata we showed in <strong>part 1</strong>.</p>
 <p>You need to be either connected to the internet or connected to a cache that has the WHB data downloaded already and have already downloaded the example data via the getting started notebook to run this notebook.</p>
@@ -493,7 +486,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -580,7 +573,7 @@ document.write(`
       <th>donor_sex</th>
       <th>dataset_label</th>
       <th>...</th>
-      <th>anatomical_division_label</th>
+      <th>abc_sample_id</th>
       <th>subcluster</th>
       <th>cluster</th>
       <th>supercluster</th>
@@ -630,7 +623,7 @@ document.write(`
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>b3d3a6c0-3dc5-4738-af4c-96cc5ff6033f</td>
       <td>URL_312_20</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -654,7 +647,7 @@ document.write(`
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>0a7ed99b-d5eb-4c50-b95e-eb31b448d2c7</td>
       <td>URL_312_20</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -678,7 +671,7 @@ document.write(`
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>458f6409-af8d-4c7c-ac9b-0b0d9b73b36d</td>
       <td>URL_312_17</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -702,7 +695,7 @@ document.write(`
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Pons</td>
+      <td>ff6b2d95-3752-49bf-9421-f17107538868</td>
       <td>URL_312_18</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -726,7 +719,7 @@ document.write(`
       <td>M</td>
       <td>WHB-10Xv3</td>
       <td>...</td>
-      <td>Myelencephalon</td>
+      <td>589a1c5c-839b-480d-babc-4098c467211b</td>
       <td>URL_312_16</td>
       <td>URL_312</td>
       <td>Upper rhombic lip</td>
@@ -739,7 +732,7 @@ document.write(`
     </tr>
   </tbody>
 </table>
-<p>5 rows × 24 columns</p>
+<p>5 rows × 25 columns</p>
 </div></div></div>
 </div>
 <section id="single-cell-transcriptomes">
@@ -775,7 +768,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████████████████████████████████████████████████████████████████████████| 4.23M/4.23M [00:00&lt;00:00, 17.1MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  59357
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -855,7 +854,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|█████████████████████████████████████████████████████████████████████████████████| 233M/233M [00:44&lt;00:00, 5.25MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|██████████████████████████████████████████████████| 233M/233M [00:18&lt;00:00, 12.9MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1005,11 +1004,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">cell_extended_with_genes</span><span class="p">,</span> <span class="n">example_cells_with_genes</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3f5b000d5d50e20ee963c10488dcab1433531afcdbb140bb73765b33f39a1211.png" src="../_images/3f5b000d5d50e20ee963c10488dcab1433531afcdbb140bb73765b33f39a1211.png" />
+<img alt="../_images/0692cebca6f48779e867cae20ded63db2e51346f45816ead63fbe8502a6b194a.png" src="../_images/0692cebca6f48779e867cae20ded63db2e51346f45816ead63fbe8502a6b194a.png" />
 </div>
 </div>
 <p>Below is by dissection region of interest shows that each of these genes are associated with distinct regions.</p>
@@ -1017,11 +1017,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">cell_extended_with_genes</span><span class="p">,</span> <span class="n">example_cells_with_genes</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">&#39;anatomical_division_label&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/59e0852b744f62ac2ef451c7643d828aac2ec5e7e73834feba36a28bfa46b2e4.png" src="../_images/59e0852b744f62ac2ef451c7643d828aac2ec5e7e73834feba36a28bfa46b2e4.png" />
+<img alt="../_images/a8ae84c0e790ab0f65048cc6a7fbfcfd64094a1cacb3b7f1716bfb920261a00f.png" src="../_images/a8ae84c0e790ab0f65048cc6a7fbfcfd64094a1cacb3b7f1716bfb920261a00f.png" />
 </div>
 </div>
 <p>And finally by supercluster from the taxonomy.</p>
@@ -1029,11 +1030,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">cell_extended_with_genes</span><span class="p">,</span> <span class="n">example_cells_with_genes</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">&#39;supercluster&#39;</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1826c05b612b176c521cc548560fc6c5939ef4ccf76d23f94c86f9b0af6bec80.png" src="../_images/1826c05b612b176c521cc548560fc6c5939ef4ccf76d23f94c86f9b0af6bec80.png" />
+<img alt="../_images/0c283b0e6a73769ce1c3371b02f7f61466ec5d31a869bdd2059c3806198177ae.png" src="../_images/0c283b0e6a73769ce1c3371b02f7f61466ec5d31a869bdd2059c3806198177ae.png" />
 </div>
 </div>
 <p>We can also visualize the relationship these genes and their location in the UMAP. Note again as in part one that Neurons and Non-neurons should be plotted seperately.</p>
@@ -1072,56 +1074,64 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;SLC17A6&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron: Gene SLC17A6&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;SLC17A6&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-Neuron: Gene SLC17A6&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f6bc501ed11f228c37ed54d2d5876cc9a10d23fe719b45679f7bcc24424eeed5.png" src="../_images/f6bc501ed11f228c37ed54d2d5876cc9a10d23fe719b45679f7bcc24424eeed5.png" />
-<img alt="../_images/cf43476015629f51221fa1ab4eed704b8f4bc19c04147db441fb324ec3822c01.png" src="../_images/cf43476015629f51221fa1ab4eed704b8f4bc19c04147db441fb324ec3822c01.png" />
+<img alt="../_images/17563170dabe403a5830feb6e7450130fcd710c3c6cce1c2c811682a1c5cad4e.png" src="../_images/17563170dabe403a5830feb6e7450130fcd710c3c6cce1c2c811682a1c5cad4e.png" />
+<img alt="../_images/9b8d74cc46c35a0ccbe276a2987e0252d12b6f7510c974a8d14ffa690ca3b2a1.png" src="../_images/9b8d74cc46c35a0ccbe276a2987e0252d12b6f7510c974a8d14ffa690ca3b2a1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;SLC32A1&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron: Gene SLC32A1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;SLC32A1&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-Neuron: Gene SLC32A1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7e1eda55c959c697eefa77bb396fb8f0574db9d96c47370582e2219afb92a838.png" src="../_images/7e1eda55c959c697eefa77bb396fb8f0574db9d96c47370582e2219afb92a838.png" />
-<img alt="../_images/b56fe810c1f731fc7a7da06a12cd50e3cc25372305a1fd2799d1aed2b9622f76.png" src="../_images/b56fe810c1f731fc7a7da06a12cd50e3cc25372305a1fd2799d1aed2b9622f76.png" />
+<img alt="../_images/29b6b22592613ba48e775f901d056cf7b0a3223445b75543eb01b393300955a4.png" src="../_images/29b6b22592613ba48e775f901d056cf7b0a3223445b75543eb01b393300955a4.png" />
+<img alt="../_images/3a95a8ab050ddc2bcbb3080e56ed7544d313a03340b4d5a1b13b0f05c6884402.png" src="../_images/3a95a8ab050ddc2bcbb3080e56ed7544d313a03340b4d5a1b13b0f05c6884402.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;PLP1&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron: Gene PLP1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;PLP1&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-Neuron: Gene PLP1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0e50ddd3ddce5dab24687600f548b476ce8f474fea6fdfb8790e6cbebd957cb0.png" src="../_images/0e50ddd3ddce5dab24687600f548b476ce8f474fea6fdfb8790e6cbebd957cb0.png" />
-<img alt="../_images/6a3c1062be211dad578dc12e0e14ab74b01f48dabebb3315c855abb640371608.png" src="../_images/6a3c1062be211dad578dc12e0e14ab74b01f48dabebb3315c855abb640371608.png" />
+<img alt="../_images/34da82dbb528678d9e6c92740ecf5e09fff86fc1510acbbd873e66271d6b8145.png" src="../_images/34da82dbb528678d9e6c92740ecf5e09fff86fc1510acbbd873e66271d6b8145.png" />
+<img alt="../_images/70f361b5177f46a17581f5909032bbe8c408b54c3536f1df9690867db280179f.png" src="../_images/70f361b5177f46a17581f5909032bbe8c408b54c3536f1df9690867db280179f.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;AQP4&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuron: Gene AQP4&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">non_neurons_subsampled</span><span class="p">[</span><span class="s1">&#39;AQP4&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Non-Neuron: Gene AQP4&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5e7b391124994f42094c32526ea5347377bdbdfcf6f9df8fe86d31648cd57bf3.png" src="../_images/5e7b391124994f42094c32526ea5347377bdbdfcf6f9df8fe86d31648cd57bf3.png" />
-<img alt="../_images/ca9195e19c76df50e654a287f6ebcf67ab14f9c2f87744e4d624bd1aee104ece.png" src="../_images/ca9195e19c76df50e654a287f6ebcf67ab14f9c2f87744e4d624bd1aee104ece.png" />
+<img alt="../_images/7cdcaecd41ecea9ec66ccae0bc46b79c1c8783bb05c8a587c3b6e365c77d6a3f.png" src="../_images/7cdcaecd41ecea9ec66ccae0bc46b79c1c8783bb05c8a587c3b6e365c77d6a3f.png" />
+<img alt="../_images/91b55349d8fd4bfde653a30d29d8bafc72aa8549ee0fefbce82beab301d01a41.png" src="../_images/91b55349d8fd4bfde653a30d29d8bafc72aa8549ee0fefbce82beab301d01a41.png" />
 </div>
 </div>
 <p>(Plots for <em>SLC17A7</em>, <em>PTPRC</em>, and <em>TTR</em> could be generated the same way, but aren’t shown.)</p>

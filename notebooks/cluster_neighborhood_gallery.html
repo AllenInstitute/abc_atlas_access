@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -458,15 +459,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="cell-type-neighborhood-gallery">
+  <section class="tex2jax_ignore mathjax_ignore" id="cell-type-neighborhood-gallery">
 <h1>Cell type neighborhood gallery<a class="headerlink" href="#cell-type-neighborhood-gallery" title="Permalink to this heading">#</a></h1>
 <p>In this notebook, we will visualize a set of cell type neighborhoods to produce visualizations similar to Figure 2 of <a class="reference external" href="https://doi.org/10.1101/2023.03.06.531121">Yao et al</a>.</p>
 <div class="cell docutils container">
@@ -493,7 +486,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -618,7 +611,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10x_cell_metadata_with_group_membership.csv: 100%|██████████████████████████████████████████████████████████████████████████| 1.57G/1.57G [01:13&lt;00:00, 21.3MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10x_cell_metadata_with_group_membership.csv: 100%|███████████████████████████████████████████| 1.57G/1.57G [00:59&lt;00:00, 26.4MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of 10x cells: 4042976
@@ -639,7 +632,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>merfish_cell_metadata_with_group_membership.csv: 100%|██████████████████████████████████████████████████████████████████████| 1.20G/1.20G [01:07&lt;00:00, 17.8MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>merfish_cell_metadata_with_group_membership.csv: 100%|███████████████████████████████████████| 1.20G/1.20G [00:53&lt;00:00, 22.6MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of merfish cells: 3938808
@@ -729,36 +722,39 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;Pallium-Glut&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-Pallium-Glut.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████| 84.5M/84.5M [00:04&lt;00:00, 20.7MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-Pallium-Glut.csv: 100%|█████████████████████████████████████████████████████████| 84.5M/84.5M [00:04&lt;00:00, 20.1MMB/s]
 </pre></div>
 </div>
-<img alt="../_images/a0f1aebe0347c1ade4a461f730c8dc5c15f36ed702861e4942777a0dcf92b060.png" src="../_images/a0f1aebe0347c1ade4a461f730c8dc5c15f36ed702861e4942777a0dcf92b060.png" />
+<img alt="../_images/8b1117b645b0f9e19ed2d3a15a8393be1d780eec256b86d9db9ce756e0c827b9.png" src="../_images/8b1117b645b0f9e19ed2d3a15a8393be1d780eec256b86d9db9ce756e0c827b9.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cf36ee4fbc61c03be72a37f68fd125b8c4f738d53a095052e69738d1b854b245.png" src="../_images/cf36ee4fbc61c03be72a37f68fd125b8c4f738d53a095052e69738d1b854b245.png" />
+<img alt="../_images/f13a2470d0c9fd12c422a99eb9a403894e43e989d8fe01208d81ee5d8b5ab0e1.png" src="../_images/f13a2470d0c9fd12c422a99eb9a403894e43e989d8fe01208d81ee5d8b5ab0e1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b8b78101a3f27337def947e15d05309aff3343a00ba1190cff086be82243b90e.png" src="../_images/b8b78101a3f27337def947e15d05309aff3343a00ba1190cff086be82243b90e.png" />
+<img alt="../_images/a3435807b89811a09310520605fb21a6be7b742b45bfc1695af508b9286de1cb.png" src="../_images/a3435807b89811a09310520605fb21a6be7b742b45bfc1695af508b9286de1cb.png" />
 </div>
 </div>
 </section>
@@ -769,36 +765,39 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;Subpallium-GABA&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-Subpallium-GABA.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████| 27.7M/27.7M [00:02&lt;00:00, 12.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-Subpallium-GABA.csv: 100%|██████████████████████████████████████████████████████| 27.7M/27.7M [00:01&lt;00:00, 18.8MMB/s]
 </pre></div>
 </div>
-<img alt="../_images/aa63d56cd637e8a2ab89d6e284b89b13532cca5f026fe5054e85f145086f7af3.png" src="../_images/aa63d56cd637e8a2ab89d6e284b89b13532cca5f026fe5054e85f145086f7af3.png" />
+<img alt="../_images/9897e8fbf59e5d44fec1962972162e61b4fe4d10371197787e202ada4d2c6405.png" src="../_images/9897e8fbf59e5d44fec1962972162e61b4fe4d10371197787e202ada4d2c6405.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e6fd8d4264e2bb6467e271f612f51755c2802253e40e92cf3799d4fb9d381c24.png" src="../_images/e6fd8d4264e2bb6467e271f612f51755c2802253e40e92cf3799d4fb9d381c24.png" />
+<img alt="../_images/d107163149b40459f545958560613c79443f86289a4e68077a31dbac2d823ebe.png" src="../_images/d107163149b40459f545958560613c79443f86289a4e68077a31dbac2d823ebe.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bb93d247dd8a834ef14ca0b67bede1199556391607f8c52df2beda05b7d60af1.png" src="../_images/bb93d247dd8a834ef14ca0b67bede1199556391607f8c52df2beda05b7d60af1.png" />
+<img alt="../_images/69db515b0b99f375ebc9f76cf4c9af8929fac3a159587cd547e15d76a3613465.png" src="../_images/69db515b0b99f375ebc9f76cf4c9af8929fac3a159587cd547e15d76a3613465.png" />
 </div>
 </div>
 </section>
@@ -809,33 +808,36 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;HY-EA-Glut-GABA&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/64378b83b67f552344ae40fbd7ca786d854e24c7d8b2a44e533a6b4bdaf33909.png" src="../_images/64378b83b67f552344ae40fbd7ca786d854e24c7d8b2a44e533a6b4bdaf33909.png" />
+<img alt="../_images/7020063242204187da89b589704e9ff174bcd672848d26e016e183558677e3b9.png" src="../_images/7020063242204187da89b589704e9ff174bcd672848d26e016e183558677e3b9.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.52&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.50&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3a56352317c7050dc82f93facdbb4d7df0301e3b3c5da33414d6b66ca5ba3c95.png" src="../_images/3a56352317c7050dc82f93facdbb4d7df0301e3b3c5da33414d6b66ca5ba3c95.png" />
+<img alt="../_images/c120d389db4e1f9facad4c68b2338314fa72175fc68d8d9084197d72a954e90f.png" src="../_images/c120d389db4e1f9facad4c68b2338314fa72175fc68d8d9084197d72a954e90f.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.43&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/17ca96058e15a10e4fd76451fa72c5dbeb2c16847c746b6060326f9503df43e5.png" src="../_images/17ca96058e15a10e4fd76451fa72c5dbeb2c16847c746b6060326f9503df43e5.png" />
+<img alt="../_images/e94b42416da1c4312ace4d4a753e448e21fe94e79c03d1b0b0d605afad291ac1.png" src="../_images/e94b42416da1c4312ace4d4a753e448e21fe94e79c03d1b0b0d605afad291ac1.png" />
 </div>
 </div>
 </section>
@@ -846,36 +848,36 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;TH-EPI-Glut&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 6.46M/6.46M [00:00&lt;00:00, 13.8MMB/s]
-</pre></div>
-</div>
-<img alt="../_images/cfd89e4ca4472d32e6a0207a1a3c6376ef22494cfa5575a6b984adac50e62601.png" src="../_images/cfd89e4ca4472d32e6a0207a1a3c6376ef22494cfa5575a6b984adac50e62601.png" />
+<img alt="../_images/7ec4efcac62daec0648b5ca815a9c529c8417be498208b61b8d4f1bf4d4a48e0.png" src="../_images/7ec4efcac62daec0648b5ca815a9c529c8417be498208b61b8d4f1bf4d4a48e0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.44&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.40&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.38&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb2f29d30e0a7869b555f838cab1698963c906944afcbc2e1f56586e4f974d03.png" src="../_images/eb2f29d30e0a7869b555f838cab1698963c906944afcbc2e1f56586e4f974d03.png" />
+<img alt="../_images/408c4098ec759b42a85b9dc8555560069c8a1a331f4f9d608f44eca3fee9ca53.png" src="../_images/408c4098ec759b42a85b9dc8555560069c8a1a331f4f9d608f44eca3fee9ca53.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.33&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/00ce99f8a58521d565b18ca7a4d485318c0fe994149ea3afd433b3dd94f8d2ca.png" src="../_images/00ce99f8a58521d565b18ca7a4d485318c0fe994149ea3afd433b3dd94f8d2ca.png" />
+<img alt="../_images/ea8fc3c6dfe81dcbf773a4fa348bc9d46cee931b0cf2a99fc916dede25c2f4ef.png" src="../_images/ea8fc3c6dfe81dcbf773a4fa348bc9d46cee931b0cf2a99fc916dede25c2f4ef.png" />
 </div>
 </div>
 </section>
@@ -886,36 +888,39 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;MB-HB-CB-GABA&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-MB-HB-CB-GABA.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 9.32M/9.32M [00:00&lt;00:00, 16.1MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-MB-HB-CB-GABA.csv: 100%|████████████████████████████████████████████████████████| 9.32M/9.32M [00:00&lt;00:00, 9.45MMB/s]
 </pre></div>
 </div>
-<img alt="../_images/0bff627b149acad0b8a892c845ba305c9da739531f8c7533a6e3e238fbe612d9.png" src="../_images/0bff627b149acad0b8a892c845ba305c9da739531f8c7533a6e3e238fbe612d9.png" />
+<img alt="../_images/767332df8ccc5aaf71a3a540bdb130a2821ddbea3f1445b2894f5234922ef936.png" src="../_images/767332df8ccc5aaf71a3a540bdb130a2821ddbea3f1445b2894f5234922ef936.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.26&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f41144b4cc85c0b8559b8c951ca14737b43be9730af5f6fe60d74d849b97bf33.png" src="../_images/f41144b4cc85c0b8559b8c951ca14737b43be9730af5f6fe60d74d849b97bf33.png" />
+<img alt="../_images/d1be3afaa2ae814aef2a6dc3d53c80272589a25de3f35c0b37f46a4d43b166fb.png" src="../_images/d1be3afaa2ae814aef2a6dc3d53c80272589a25de3f35c0b37f46a4d43b166fb.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.08&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b8d7a4a0989c330457251adaf26f100b8a1f5db073009cbe7ac46eb8c96f1466.png" src="../_images/b8d7a4a0989c330457251adaf26f100b8a1f5db073009cbe7ac46eb8c96f1466.png" />
+<img alt="../_images/0abe82f5ba1eaceae308e70cfb230319ada2d673aedf9d6da188896507a838d0.png" src="../_images/0abe82f5ba1eaceae308e70cfb230319ada2d673aedf9d6da188896507a838d0.png" />
 </div>
 </div>
 </section>
@@ -926,36 +931,39 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;MB-HB-Glut-Sero-Dopa&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-MB-HB-Glut-Sero-Dopa.csv: 100%|████████████████████████████████████████████████████████████████████████████████| 8.42M/8.42M [00:00&lt;00:00, 19.5MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-MB-HB-Glut-Sero-Dopa.csv: 100%|█████████████████████████████████████████████████| 8.42M/8.42M [00:00&lt;00:00, 20.2MMB/s]
 </pre></div>
 </div>
-<img alt="../_images/fc900c9bf5445ffa2080e03bf80cd1f829c0207ecb8f97cf92e4a05b61f514af.png" src="../_images/fc900c9bf5445ffa2080e03bf80cd1f829c0207ecb8f97cf92e4a05b61f514af.png" />
+<img alt="../_images/63899f00e512f802f895b046514ecffcae836b064f4b88a13ddadee2012ed83b.png" src="../_images/63899f00e512f802f895b046514ecffcae836b064f4b88a13ddadee2012ed83b.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.30&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.26&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e11bd022af0145fc7c81cd9fd2aee5a00444cd78c67f0158bc7e9a7ad306fcea.png" src="../_images/e11bd022af0145fc7c81cd9fd2aee5a00444cd78c67f0158bc7e9a7ad306fcea.png" />
+<img alt="../_images/d6cebc5014fe8adb7cb906a1201474f9dd744f52341f5850c2bbc2bce0f2fb27.png" src="../_images/d6cebc5014fe8adb7cb906a1201474f9dd744f52341f5850c2bbc2bce0f2fb27.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.08&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5091af90092691674227c407eccc4606efd28b1af7a9d359282e87ec662c2b07.png" src="../_images/5091af90092691674227c407eccc4606efd28b1af7a9d359282e87ec662c2b07.png" />
+<img alt="../_images/20e9b1c70cf1634e825990684c4529bb10661f5749f1b20555a6d7d2bfd13861.png" src="../_images/20e9b1c70cf1634e825990684c4529bb10661f5749f1b20555a6d7d2bfd13861.png" />
 </div>
 </div>
 </section>
@@ -966,36 +974,39 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group</span> <span class="o">=</span> <span class="s1">&#39;NN-IMN-GC&#39;</span>
 <span class="n">coord</span> <span class="o">=</span> <span class="n">fetch_coord</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">cc</span><span class="o">=</span><span class="n">cell_10x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">coord</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-NN-IMN-GC.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 83.4M/83.4M [00:14&lt;00:00, 5.86MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-NN-IMN-GC.csv: 100%|████████████████████████████████████████████████████████████| 83.4M/83.4M [00:04&lt;00:00, 19.6MMB/s]
 </pre></div>
 </div>
-<img alt="../_images/1afbde9ab0c3992f6999a4b0a21afaa11bb0a5c53cf7edd6eb249b37eb2c8cba.png" src="../_images/1afbde9ab0c3992f6999a4b0a21afaa11bb0a5c53cf7edd6eb249b37eb2c8cba.png" />
+<img alt="../_images/b848b056bdbac6df0173ebd069205765720c05e2b4dfa2d6eb5d75e2307ec5d9.png" src="../_images/b848b056bdbac6df0173ebd069205765720c05e2b4dfa2d6eb5d75e2307ec5d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.67&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.60&#39;</span><span class="p">,</span><span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8495f190c9c7d1cb17100a523a24b51b449f5d298f22cfc76f5d0410f1869f5b.png" src="../_images/8495f190c9c7d1cb17100a523a24b51b449f5d298f22cfc76f5d0410f1869f5b.png" />
+<img alt="../_images/1e8a27c048ad8d5b7b381dae5a5ef0af923062ca8bdb593d2558b74a6b086bc1.png" src="../_images/1e8a27c048ad8d5b7b381dae5a5ef0af923062ca8bdb593d2558b74a6b086bc1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.36&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.16&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.04&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">cell_merfish</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a0cb8f25c0bc2153286795b818adfa0902df803e82edc1eacb47884fa21a8db.png" src="../_images/4a0cb8f25c0bc2153286795b818adfa0902df803e82edc1eacb47884fa21a8db.png" />
+<img alt="../_images/3f96bb886a2830556d2b013b3a593ec260f71c95a2b70f989f10a36fb6cdb059.png" src="../_images/3f96bb886a2830556d2b013b3a593ec260f71c95a2b70f989f10a36fb6cdb059.png" />
 </div>
 </div>
 </section>

@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
 <ul class="nav bd-sidenav">
@@ -462,15 +463,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>IPython magic command to render matplotlib plots.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-1">
+  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-1">
 <h1>MERFISH whole brain spatial transcriptomics (part 1)<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-part-1" title="Permalink to this heading">#</a></h1>
 <p>The MERFISH data consists of 59 coronal sections (10 micron thick) covering the whole anterior to posterior extent of the brain (~200 micron apart) from a single adult male mouse. Each section is assayed using the MERSCOPE platform with a 500 gene panel designed to enable us to map cells to the whole mouse brain taxonomy.</p>
 <p>The MERSCOPE platform uses combinatorial labeling, sequential imaging and error robust barcodes to obtain quantitative (counts) RNA-expression of 100s-1000s of genes. Each probe binds to a specific transcripts resulting in “dots” in the image. Cells are segmented using CellPose software based on DAPI/PolyT stains.</p>
@@ -502,7 +495,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20240831/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241115/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -528,7 +521,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 564M/564M [01:46&lt;00:00, 5.32MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████| 710M/710M [00:37&lt;00:00, 18.8MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  3938808
@@ -562,9 +555,11 @@ document.write(`
       <th>x</th>
       <th>y</th>
       <th>z</th>
+      <th>abc_sample_id</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -590,6 +585,7 @@ document.write(`
       <td>7.226245</td>
       <td>4.148963</td>
       <td>6.6</td>
+      <td>c9881423-76a7-4835-ba8b-7942fd384b6b</td>
     </tr>
     <tr>
       <th>1104095349101460194-1</th>
@@ -603,6 +599,7 @@ document.write(`
       <td>5.064889</td>
       <td>7.309543</td>
       <td>4.2</td>
+      <td>aa815488-6487-4e47-8a5e-d82ac9933bc6</td>
     </tr>
     <tr>
       <th>1017092617101450577</th>
@@ -616,6 +613,7 @@ document.write(`
       <td>5.792921</td>
       <td>8.189973</td>
       <td>4.0</td>
+      <td>91ef7a85-8e3e-4410-8ee2-785788df3ebe</td>
     </tr>
     <tr>
       <th>1018093344101130233</th>
@@ -629,6 +627,7 @@ document.write(`
       <td>3.195950</td>
       <td>5.868655</td>
       <td>2.4</td>
+      <td>18991e17-fbd3-4ba0-9c60-1281f56ac520</td>
     </tr>
     <tr>
       <th>1019171912201610094</th>
@@ -642,6 +641,7 @@ document.write(`
       <td>5.635732</td>
       <td>7.995842</td>
       <td>4.4</td>
+      <td>5e155936-e40d-4c6b-8971-e7fb0079274b</td>
     </tr>
   </tbody>
 </table>
@@ -679,6 +679,7 @@ Number of unique donor_sex = 1 [&#39;M&#39;]
 Number of unique x = 3938808 
 Number of unique y = 3938808 
 Number of unique z = 59 
+Number of unique abc_sample_id = 3938808 
 </pre></div>
 </div>
 </div>
@@ -697,6 +698,9 @@ Number of unique z = 59
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership_pivoted.csv: 100%|████████████████████████████████████| 531k/531k [00:00&lt;00:00, 3.56MMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -784,6 +788,9 @@ Number of unique z = 59
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership_color.csv: 100%|██████████████████████████████████████| 239k/239k [00:00&lt;00:00, 1.93MMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -899,6 +906,7 @@ Number of unique z = 59
       <th>x</th>
       <th>y</th>
       <th>z</th>
+      <th>...</th>
       <th>neurotransmitter</th>
       <th>class</th>
       <th>subclass</th>
@@ -912,6 +920,7 @@ Number of unique z = 59
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -947,6 +956,7 @@ Number of unique z = 59
       <td>7.226245</td>
       <td>4.148963</td>
       <td>6.6</td>
+      <td>...</td>
       <td></td>
       <td>04 DG-IMN Glut</td>
       <td>038 DG-PIR Ex IMN</td>
@@ -970,6 +980,7 @@ Number of unique z = 59
       <td>5.064889</td>
       <td>7.309543</td>
       <td>4.2</td>
+      <td>...</td>
       <td>Glut</td>
       <td>23 P Glut</td>
       <td>235 PG-TRN-LRN Fat2 Glut</td>
@@ -993,6 +1004,7 @@ Number of unique z = 59
       <td>5.792921</td>
       <td>8.189973</td>
       <td>4.0</td>
+      <td>...</td>
       <td>Glut</td>
       <td>23 P Glut</td>
       <td>235 PG-TRN-LRN Fat2 Glut</td>
@@ -1016,6 +1028,7 @@ Number of unique z = 59
       <td>3.195950</td>
       <td>5.868655</td>
       <td>2.4</td>
+      <td>...</td>
       <td>Glut</td>
       <td>23 P Glut</td>
       <td>235 PG-TRN-LRN Fat2 Glut</td>
@@ -1039,6 +1052,7 @@ Number of unique z = 59
       <td>5.635732</td>
       <td>7.995842</td>
       <td>4.4</td>
+      <td>...</td>
       <td>Glut</td>
       <td>23 P Glut</td>
       <td>235 PG-TRN-LRN Fat2 Glut</td>
@@ -1052,6 +1066,7 @@ Number of unique z = 59
     </tr>
   </tbody>
 </table>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1071,6 +1086,7 @@ Number of unique donor_sex = 1 [&#39;M&#39;]
 Number of unique x = 3938808 
 Number of unique y = 3938808 
 Number of unique z = 59 
+Number of unique abc_sample_id = 3938808 
 Number of unique neurotransmitter = 10 [&#39;&#39;, &#39;Chol&#39;, &#39;Dopa&#39;, &#39;GABA&#39;, &#39;GABA-Glyc&#39;, &#39;Glut&#39;, &#39;Glut-GABA&#39;, &#39;Hist&#39;, &#39;Nora&#39;, &#39;Sero&#39;]
 Number of unique class = 34 
 Number of unique subclass = 338 
@@ -1101,7 +1117,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 48.4k/48.4k [00:00&lt;00:00, 532kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████████████████████████████████████████████████████████████████████████| 48.4k/48.4k [00:00&lt;00:00, 1.10MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  550
@@ -1205,10 +1221,10 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 7.63G/7.63G [04:53&lt;00:00, 26.0MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C57BL6J-638850-log2.h5ad: 100%|██████████████████████████████████████████████████████████████| 7.63G/7.63G [05:52&lt;00:00, 21.6MMB/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/data/abc_atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1225,7 +1241,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AnnData object with n_obs × n_vars = 4334174 × 550 backed at &#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AnnData object with n_obs × n_vars = 4334174 × 550 backed at &#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad&#39;
     obs: &#39;brain_section_label&#39;
     var: &#39;gene_symbol&#39;, &#39;transcript_identifier&#39;
     uns: &#39;accessed_on&#39;, &#39;src&#39;
@@ -1291,33 +1307,36 @@ Number of unique cluster_color = 5296
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuortransmitter Identity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/844e219b0af0ebfac0a9b5d28d71a260168423a0c9023af98023038b6ad803cb.png" src="../_images/844e219b0af0ebfac0a9b5d28d71a260168423a0c9023af98023038b6ad803cb.png" />
+<img alt="../_images/3da5aabb6738c1cde4aa306e923d669a7e242cb367a43dbd6cb07fab3d3d8c52.png" src="../_images/3da5aabb6738c1cde4aa306e923d669a7e242cb367a43dbd6cb07fab3d3d8c52.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;class_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cell Types: Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7a3a724dc8d075d2b1feea8c7f2e08791b841439f010b9ab629a7e311ffc7c06.png" src="../_images/7a3a724dc8d075d2b1feea8c7f2e08791b841439f010b9ab629a7e311ffc7c06.png" />
+<img alt="../_images/8efe7ee24ef9c2c60928a4401e7a2d888fe7a775a34fdc9143ecaf2a70fd21b3.png" src="../_images/8efe7ee24ef9c2c60928a4401e7a2d888fe7a775a34fdc9143ecaf2a70fd21b3.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cell Types: Subclass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/043760a639202caeeb7cdb2cfa20afaeba21806f5383d84ff3310d954cfe4226.png" src="../_images/043760a639202caeeb7cdb2cfa20afaeba21806f5383d84ff3310d954cfe4226.png" />
+<img alt="../_images/38b2880d3e5e702338f6f81e341f631966828d3514792bb61cc33a13473f41e7.png" src="../_images/38b2880d3e5e702338f6f81e341f631966828d3514792bb61cc33a13473f41e7.png" />
 </div>
 </div>
 </section>
@@ -1419,7 +1438,7 @@ Number of unique cluster_color = 5296
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  7.14711299999999
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  7.094561588000005
 AnnData object with n_obs × n_vars = 4334174 × 8
     obs: &#39;brain_section_label&#39;
     var: &#39;gene_symbol&#39;, &#39;transcript_identifier&#39;
@@ -1487,11 +1506,12 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 <span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">ntexp</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="n">ntgenes</span><span class="p">]</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/418bd6dcbc3cad9198e1ee9e4b98848a8346e1625779deda70c90c8cec38d83f.png" src="../_images/418bd6dcbc3cad9198e1ee9e4b98848a8346e1625779deda70c90c8cec38d83f.png" />
+<img alt="../_images/531de3d08a1af1da6456049092c86346381a9635fc1e2d110eca237ffec10a3e.png" src="../_images/531de3d08a1af1da6456049092c86346381a9635fc1e2d110eca237ffec10a3e.png" />
 </div>
 </div>
 <p>The expression data can also be visualized as scatter point in anatomical context. Gene Slc17a7 is highly enriched in the cortex , hippocampus, medial habenula with some expression in the thalamus. On the other hand gene Slc32a1 is enriched in the striatum with sparse expression on the cortical plate.</p>
@@ -1499,22 +1519,24 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gene Slc17a7&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e1b5bef38646d45cab24c664e0a6bddccaad0c0cc975ead76c81f3e662e012e.png" src="../_images/8e1b5bef38646d45cab24c664e0a6bddccaad0c0cc975ead76c81f3e662e012e.png" />
+<img alt="../_images/71350c28618ad44b88ba1bf9b83c24026419e84f49b483935139749d57936cab.png" src="../_images/71350c28618ad44b88ba1bf9b83c24026419e84f49b483935139749d57936cab.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;Slc32a1&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gene Slc32a1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e32e4e5f3c2dbdb2dc03c00df4eabce768439a5ac85819aadb0dca31b50080bc.png" src="../_images/e32e4e5f3c2dbdb2dc03c00df4eabce768439a5ac85819aadb0dca31b50080bc.png" />
+<img alt="../_images/067c7662c6047f85cc8fdc6467c52d4b8ee660d076014dfc6201f579ff714e67.png" src="../_images/067c7662c6047f85cc8fdc6467c52d4b8ee660d076014dfc6201f579ff714e67.png" />
 </div>
 </div>
 </section>
@@ -1535,15 +1557,16 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">tac2</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_73966/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_28021/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/d6f468a04309de7ec14c4ae209e847057f78c2f9055faf67c2c025a75e29c04e.png" src="../_images/d6f468a04309de7ec14c4ae209e847057f78c2f9055faf67c2c025a75e29c04e.png" />
+<img alt="../_images/6c1cd1b070cbf0af348fc43d02468efe494f218d0b7686f3ec5c6d07b04f71a6.png" src="../_images/6c1cd1b070cbf0af348fc43d02468efe494f218d0b7686f3ec5c6d07b04f71a6.png" />
 </div>
 </div>
 <p>Grouping cells by cell types class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic types.</p>
@@ -1551,15 +1574,16 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">tac2</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_73966/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_28021/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/c4a6dd85183a46cc19a451a2e8deda02f915616ffab910ceea0e0fabb1e456c1.png" src="../_images/c4a6dd85183a46cc19a451a2e8deda02f915616ffab910ceea0e0fabb1e456c1.png" />
+<img alt="../_images/f48e64de9d6c2306cf0426ed6f8bff89546e07585366fa4285f145126339d2b6.png" src="../_images/f48e64de9d6c2306cf0426ed6f8bff89546e07585366fa4285f145126339d2b6.png" />
 </div>
 </div>
 <p>At the next level, grouping by subclass, shows Tac2 is enriched in sublcasses with specificity to the medial habenula (MH), bed muclei of the stria terminalis (BST) and main olfactory blub (MOB).</p>
@@ -1567,15 +1591,16 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">tac2</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;subclass&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_73966/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_28021/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   grouped = grouped.sort_values(by=gnames[0], ascending=False)
 </pre></div>
 </div>
-<img alt="../_images/bf8db37f8259f4b12d7c2753353a256b58b1d82bf2bbd59773ad8f4bc1495985.png" src="../_images/bf8db37f8259f4b12d7c2753353a256b58b1d82bf2bbd59773ad8f4bc1495985.png" />
+<img alt="../_images/b306c5506ddf5e430afd5d5c209cf0f611a427b63e6c20c19c134894f37e5359.png" src="../_images/b306c5506ddf5e430afd5d5c209cf0f611a427b63e6c20c19c134894f37e5359.png" />
 </div>
 </div>
 <p>Plotting Tac2 expression in anatomical coordinates results in a image that is comparable to the ISH image data showing enriched expression in the medial habenula, amydala and hypothalamus and sparse expression in the cortex.</p>
@@ -1583,11 +1608,12 @@ AnnData object with n_obs × n_vars = 4334174 × 8
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">tac2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">tac2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">tac2</span><span class="p">[</span><span class="s1">&#39;Tac2&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gene Tac2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/76a684565c863df4c7f59cb9a696b5bf07060277c8f24aeea86983a131c9f572.png" src="../_images/76a684565c863df4c7f59cb9a696b5bf07060277c8f24aeea86983a131c9f572.png" />
+<img alt="../_images/526a304a7d0a2d74ca9d60fb0693e93665cb56a84b0919aee259bb4ef7452703.png" src="../_images/526a304a7d0a2d74ca9d60fb0693e93665cb56a84b0919aee259bb4ef7452703.png" />
 </div>
 </div>
 <p>Close h5ad file and clean up</p>
