@@ -11,7 +11,7 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version                                                                                                                                              | Size     |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/WHB-10Xv3/20240330](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WHB-10Xv3/20240330/) | 862.1 MB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/WHB-10Xv3/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WHB-10Xv3/20241115/) | 862.1 MB |
 
 Data is being share under the CC BY NC 4.0 license.
 

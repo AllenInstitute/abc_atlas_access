@@ -1209,7 +1209,8 @@ class S3CloudCache(CloudCacheBase):
         for subset in subset_iterator:
             if 'Contents' in subset:
                 for obj in subset['Contents']:
-                    output.append(obj['Key'])
+                    if obj['Key'].endswith('.json'):
+                        output.append(obj['Key'])
 
         output.sort()
         return output

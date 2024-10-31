@@ -11,14 +11,14 @@ understanding of this amazing organ in ways we never thought possible. The
 ABC Atlas can be accessed at [here](https://portal.brain-map.org/atlases-and-data/bkp/abc-atlas)
 and is the primary method of interacting with these data. Any questions or
 issues associated with the ABC Atlas are best directed to the [Allen Institute
-Commnituy Forum](https://community.brain-map.org/). This repository is intended
+Community Forum](https://community.brain-map.org/). This repository is intended
 for users who wish to download the ABC Atlas data and processes it locally.
 
 Data associated with the ABC Atlas is hosted on Amazon Web Services (AWS) in an
 S3 bucket as a AWS Public Dataset, [arn:aws:s3:::allen-brain-cell-atlas](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html).
-No account or login is required for access. The purpose of this repo is to
+No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
-example use cases.
+example use cases.***
 
 The spring 2024 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
@@ -41,11 +41,18 @@ subdivided into smaller packages grouped by method and anatomical origin. The
 notebooks provide example code on how to access data across these individual
 files using the AbcProjectCache.
 
-Available notebooks:
+If you have used the ABC Atlas visualization to select cells from a dataset and
+with to use your selected cells in an analysis with the data available for
+download here, you find a tutorial to do so in the
+[Using cells selected in the ABC Atlas](notebooks/abc_atlas_selection_example.ipynb)
+notebook.
+
+## Available notebooks:
 
 * [**Getting started**](notebooks/getting_started.ipynb): learn how to use the
   AbcProjectCache to facilitate data download and usage.
-[*notebooks/getting_started.ipynb*]
+* [**Using cells selected in the ABC Atlas**](notebooks/abc_atlas_selection_example.ipynb): learn how
+  to use cells selected from an ABC Atlas visualization in your analysis.
 * [**Loading genes from expression matrix data**](notebooks/general_accessing_10x_snRNASeq_tutorial.ipynb):
   learn how to select genes from 10X expression matricies and combine them with
   the cell metadata.
@@ -58,10 +65,19 @@ Available notebooks:
   (Kimberly Siletti)**
 
 ## Release Notes
+* **[ABC Sample ID update (version 20241115) ab_atlas_access (v0.3.0)]**
+  * Add abc_sample_id to cell_metadatas of the projects listed below. This
+    allows users to use cell selections they've downloaded from the ABC Atlas
+    visualization.
+    * MERFISH-C57BL6J-638850(-imputed)
+    * WHB-10Xv3
+    * WMB-10X
+    * Zhuang-ABCA-(1-4)
+  * Added notebook showing how to use abc_sample_id.
 * **[Summer 2024 Public Beta (version 20240831) ab_atlas_access (v0.2.0)]**
   * Released ~8k imputed genes for the MERFISH-C57BL6J-638850 dataset.
   * Added new notebooks and pages for the imputed gene dataset.
-  * Updated cache object for better compatiblity across platforms.
+  * Updated cache object for better compatibility across platforms.
     * Added automatic unittesting via GitHub Actions.
     * Modified cache to autodetect cache type (local or s3) for easier
       compatibility with CodeOcean/s3fs-fuse mounts.

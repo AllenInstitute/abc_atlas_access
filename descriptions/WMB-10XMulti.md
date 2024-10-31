@@ -8,9 +8,9 @@ a high resolution transcriptomic and spatial atlas of cell types described in
 The expression matrices and associated metadata is hosted on AWS S3 bucket as a
 AWS Public Dataset:
 
-| Component | Current Version | Size |
-|---|--|--|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/WMB-10XMulti/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10Xv3/20230630/) | 176.31 GB |
+| Component | Current Version                                                                                                                                                                          | Size   |
+|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/WMB-10XMulti/20230830](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WMB-10XMulti/20230830/) | 211 MB |
 
 Data is being share under the CC BY NC 4.0 license.
 
