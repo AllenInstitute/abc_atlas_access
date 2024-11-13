@@ -65,7 +65,13 @@ notebook.
   (Kimberly Siletti)**
 
 ## Release Notes
-* **[ABC Sample ID update (version 20241115) ab_atlas_access (v0.3.0)]**
+* **[Aging Mouse data (version 20241130), abc_atlas_access (v0.4.0)]**
+  * Add the Zeng et al., aging mouse dataset.
+    * 1.2 million cells divided into adult and aged mouse cells.
+    * 847 cluster taxonomy of cell with identified associations into
+      the supertype and above levels of the Whole Mouse Brain taxonomy.
+    * 2,449 age differential expression genes.
+* **[ABC Sample ID update (version 20241115) abc_atlas_access (v0.3.0)]**
   * Add abc_sample_id to cell_metadatas of the projects listed below. This
     allows users to use cell selections they've downloaded from the ABC Atlas
     visualization.
@@ -74,14 +80,14 @@ notebook.
     * WMB-10X
     * Zhuang-ABCA-(1-4)
   * Added notebook showing how to use abc_sample_id.
-* **[Summer 2024 Public Beta (version 20240831) ab_atlas_access (v0.2.0)]**
+* **[Summer 2024 Public Beta (version 20240831) abc_atlas_access (v0.2.0)]**
   * Released ~8k imputed genes for the MERFISH-C57BL6J-638850 dataset.
   * Added new notebooks and pages for the imputed gene dataset.
   * Updated cache object for better compatibility across platforms.
     * Added automatic unittesting via GitHub Actions.
     * Modified cache to autodetect cache type (local or s3) for easier
       compatibility with CodeOcean/s3fs-fuse mounts.
-    * Simplified notebooks use of the cache.
+    * Simplified notebooks' use of the cache.
 * **[abc_atlas_access (v0.1.2)]**
   * Add matplotlib magic.
   * Fixed bugs in pathlib import in notebooks
