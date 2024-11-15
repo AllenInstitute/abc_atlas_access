@@ -20,8 +20,10 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The spring 2024 public beta data release includes:
+The Winter 2024 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
+  (Hongkui Zeng)**
+* **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_dataset.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole mouse brain](descriptions/Zhuang_dataset.md)
   (Xiaowei Zhuang)**
@@ -57,6 +59,8 @@ notebook.
   learn how to select genes from 10X expression matricies and combine them with
   the cell metadata.
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/notebook_subtitle1.md)
+  (Hongkui Zeng)**
+* **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_notebooks.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole
   mouse brain](descriptions/notebook_subtitle4.md)
