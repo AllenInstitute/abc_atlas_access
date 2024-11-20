@@ -16,7 +16,7 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component | Current Version                                                                                                                                                                                      | Size |
 |---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241115/) | 0.01 GB |
+| Metadata | [s3://allen-brain-cell-atlas/metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241130](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241130/) | 0.01 GB |
 
 Data is being share under the CC BY NC 4.0 license.
 
