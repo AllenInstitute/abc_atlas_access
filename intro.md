@@ -75,6 +75,8 @@ notebook.
     * 847 cluster taxonomy with identified associations into the supertype and
       above levels of the Whole Mouse Brain taxonomy.
     * 2,449 age differential expression genes.
+  * Add aging mouse to create gene expression script.
+  * Update WMB cluster annotations to the latest version.
 * **[ABC Sample ID update (version 20241115) abc_atlas_access (v0.3.0)]**
   * Add abc_sample_id to cell_metadatas of the projects listed below. This
     allows users to use cell selections they've downloaded from the ABC Atlas
