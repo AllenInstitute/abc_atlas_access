@@ -14,9 +14,9 @@ genes) for many neuronal and non-neuronal cell types.
 
 The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
-| Component | Current Version                                                                                                                                                                                      | Size |
-|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241130](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241130/) | 0.01 GB |
+| Component | Current Version                                                                                                                                                                                      | Size   |
+|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+| Metadata | [s3://allen-brain-cell-atlas/metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241130](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241130/) | 286 MB |
 
 Data is being share under the CC BY NC 4.0 license.
 
@@ -26,7 +26,7 @@ Related resources :
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): Learn how to use
   the AbcPorjectCache to facilitate data download and usage.
-* [**10x scRNA-seq clustering analysis and annotation**](../notebooks/Zeng_Aging_Mouse_clustering_analysis_and_annotation.ipynb):
+* [**clustering analysis and annotation**](../notebooks/Zeng_Aging_Mouse_clustering_analysis_and_annotation.ipynb):
   Learn the aging mouse dataset metadata through some example use cases and
   visualization.
 * [**10x scRNA-seq gene expression and ageDE genes**](../notebooks/Zeng_Aging_Mouse_10x_snRNASeq_tutorial.ipynb):
