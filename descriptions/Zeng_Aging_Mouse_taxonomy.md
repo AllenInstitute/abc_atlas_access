@@ -14,9 +14,9 @@ genes) for many neuronal and non-neuronal cell types.
 
 The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
-| Component | Current Version                                                                                                                                                                 | Size |
-|---|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
-| Metadata | [s3://allen-brain-cell-atlas/metadata/Zeng-Aging-Mouse-taxonomy/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zeng-Aging-Mouse-taxonomy/20241115/) | 0.01 GB |
+| Component | Current Version                                                                                                                                                                                      | Size |
+|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
+| Metadata | [s3://allen-brain-cell-atlas/metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Zeng-Aging-Mouse-WMB-taxonomy/20241115/) | 0.01 GB |
 
 Data is being share under the CC BY NC 4.0 license.
 

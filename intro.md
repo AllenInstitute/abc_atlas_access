@@ -72,8 +72,8 @@ notebook.
 * **[Aging Mouse data (version 20241130), abc_atlas_access (v0.4.0)]**
   * Add the Zeng et al., aging mouse dataset.
     * 1.2 million cells divided into adult and aged mouse cells.
-    * 847 cluster taxonomy of cell with identified associations into
-      the supertype and above levels of the Whole Mouse Brain taxonomy.
+    * 847 cluster taxonomy with identified associations into the supertype and
+      above levels of the Whole Mouse Brain taxonomy.
     * 2,449 age differential expression genes.
 * **[ABC Sample ID update (version 20241115) abc_atlas_access (v0.3.0)]**
   * Add abc_sample_id to cell_metadatas of the projects listed below. This
