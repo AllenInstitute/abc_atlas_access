@@ -32,7 +32,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--species",
         help="Which data to load? `mouse` or `human`?",
-        choices=["human", "mouse"]
+        choices=["human", "mouse", "aging_mouse"]
     )
     parser.add_argument(
         "--use_raw",
@@ -68,8 +68,13 @@ if __name__ == "__main__":
 
     if args.species == "human":
         directory_name = "WHB-10Xv3"
+        gene_directory = "WHB-10Xv3"
     elif args.species == "mouse":
         directory_name = "WMB-10X"
+        gene_directory = "WMB-10X"
+    elif args.species == "aging_mouse":
+        directory_name = "Zeng-Aging-Mouse-10Xv3"
+        gene_directory = "WMB-10X"
     else:
         raise ValueError(f"Unknown species requested: {args.species}")
 
@@ -78,7 +83,7 @@ if __name__ == "__main__":
         file_name='cell_metadata'
     ).set_index('cell_label')
     gene = abc_cache.get_metadata_dataframe(
-        directory=directory_name,
+        directory=gene_directory,
         file_name='gene'
     ).set_index('gene_identifier')
 
