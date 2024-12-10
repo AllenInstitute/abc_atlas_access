@@ -23,6 +23,11 @@ parts:
       - file: descriptions/WMB-neighborhoods
       - file: descriptions/Allen-CCF-2020
       - file: descriptions/MERFISH-C57BL6J-638850-CCF
+    - file: descriptions/Zeng_Aging_Mouse_dataset
+      sections:
+        - file: descriptions/Zeng_Aging_Mouse_10Xv3
+        - file: descriptions/Zeng_Aging_Mouse_clustering
+        - file: descriptions/Zeng_Aging_Mouse_taxonomy
     - file: descriptions/Zhuang_dataset
       sections:
       - file: descriptions/Zhuang-ABCA-1
@@ -55,6 +60,10 @@ parts:
       - file: notebooks/cluster_neighborhood_gallery
       - file: notebooks/ccf_and_parcellation_annotation_tutorial
       - file: notebooks/merfish_ccf_registration_tutorial
+    - file: descriptions/Zeng_Aging_Mouse_notebooks
+      sections:
+        - file: notebooks/Zeng_Aging_Mouse_clustering_analysis_and_annotation
+        - file: notebooks/Zeng_Aging_Mouse_10x_snRNASeq_tutorial
     - file: descriptions/notebook_subtitle4
       sections:
       - file: notebooks/zhuang_merfish_tutorial

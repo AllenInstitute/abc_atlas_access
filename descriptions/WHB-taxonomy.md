@@ -1,7 +1,7 @@
 # Human brain taxonomy of cell types
 
 The data presented here from [Siletti et al. 2023](https://www.science.org/doi/10.1126/science.add7046),
-consists of nuclei collect from over three million single cells (apprixmately
+consists of nuclei collect from over three million single cells (approximately
 two million neurons and one million non-neurons) from 100 locations across the
 forebrain, midbrain, and hindbrain. The integrated transcriptomic taxonomy
 contains 31 superclusters, 461 clusters, and 3313 subclusters.
