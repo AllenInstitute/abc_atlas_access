@@ -5,7 +5,6 @@ on:
   push:
     branches:
     - main
-  pull_request:
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
@@ -35,8 +34,8 @@ jobs:
         ./scripts/remove_download.sh
 
     # Push the book's HTML to github-pages
-    # - name: GitHub Pages action
-    #   uses: peaceiris/actions-gh-pages@v3.6.1
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./_build/html
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
