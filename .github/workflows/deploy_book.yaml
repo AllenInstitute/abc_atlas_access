@@ -4,7 +4,7 @@ name: deploy-book
 on:
   push:
     branches:
-    - main 
+    - main
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install ".[jupyter-book]"
 
     # Build the book
     - name: Build the book

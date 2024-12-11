@@ -4,22 +4,15 @@ build-backend = "hatchling.build"
 
 [project]
 name = "abc_atlas_access"
-version = "0.3.0"
+version = "0.4.0"
 description = "A package for accessing/processing data from the ABC Atlas"
 dependencies = [
   "anndata",
   "boto3",
-  "ghp-import",
-  "matplotlib",
-  "moto",
   "numpy",
   "pandas",
   "pydantic",
-  "pytest",
-  "requests",
-  "scipy",
-  "SimpleITK",
-  "tqdm",
+  "tqdm"
 ]
 requires-python = ">=3.8"
 authors = [
@@ -30,4 +23,19 @@ license = {file = "LICENSE"}
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+notebooks = [
+    "matplotlib",
+    "scipy",
+    "SimpleITK"
+]
+jupyter-book = [
+    "ghp-import",
+    "jupyter-book"
+]
+test = [
+    "moto",
+    "pytest"
 ]
