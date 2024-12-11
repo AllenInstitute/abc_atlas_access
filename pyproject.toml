@@ -27,9 +27,9 @@ classifiers = [
 
 [project.optional-dependencies]
 notebooks = [
-  "matplotlib",
-  "scipy",
-  "SimpleITK"
+    "matplotlib",
+    "scipy",
+    "SimpleITK"
 ]
 jupyter-book = [
     "ghp-import",
