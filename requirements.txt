@@ -1,9 +1,0 @@
-requests
-anndata
-numpy
-matplotlib
-pandas
-scipy
-SimpleITK
-ghp-import
-jupyter-book
