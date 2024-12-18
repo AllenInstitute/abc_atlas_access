@@ -19,7 +19,7 @@ AWS Public Dataset:
 Data is being share under the CC BY NC 4.0 license.
 
 Related resources :
-* 847 clusters and map into Whole Mouse Brain Taxonomy [Zeng Aging Mouse Taxonomy](Zeng_Aging_Mouse_taxonomy))
+* 847 clusters that are mappped into Whole Mouse Brain Taxonomy [Zeng Aging Mouse Taxonomy](Zeng_Aging_Mouse_taxonomy))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): Learn how to use

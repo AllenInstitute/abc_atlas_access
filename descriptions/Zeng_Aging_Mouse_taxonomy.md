@@ -7,7 +7,7 @@ from regions spanning the forebrain, midbrain, and hindbrain. High-resolution
 de novo clustering of all cells results in 847 cell clusters and reveals at
 least 14 age-biased clusters that are mostly glial types. Clusters in the study
 were mapped to the Whole Mouse Brain taxonomy ([WMB-taxonomy](WMB-taxonomy.md))
-to provided class, subclass and supertype annotations. At the broader cell
+to provide class, subclass and supertype annotations. At the broader cell
 subclass and supertype levels, age-associated gene expression signatures were
 analyzed resulting in a list of 2,449 differentially expressed genes (age-DE
 genes) for many neuronal and non-neuronal cell types.
