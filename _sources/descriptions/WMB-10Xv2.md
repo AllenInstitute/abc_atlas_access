@@ -19,7 +19,7 @@ Related resources :
 * Whole mouse brain mouse taxonomy of cell types ([WMB-taxonomy](WMB-taxonomy.md))
 
 Associated notebooks:
-* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the AbcPorjectCache to
+* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the AbcProjectCache to
   facilitate data download and usage.
 * [**10x scRNA-seq clustering analysis and annotation**](../notebooks/cluster_annotation_tutorial.ipynb): learn about the
   whole mouse brain taxonomy through some example use cases and visualization.
