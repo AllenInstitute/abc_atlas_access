@@ -69,6 +69,8 @@ notebook.
   (Kimberly Siletti)**
 
 ## Release Notes
+* **[Update aging Mouse UMAP (version 20250131), abc_atlas_access (v0.5.0)]**
+  * Fix 588 cells with missing UMAP coordinates.
 * **[Aging Mouse data (version 20241130), abc_atlas_access (v0.4.0)]**
   * Add the Jin et al., aging mouse dataset.
     * 1.2 million cells divided into adult and aged mouse cells.
