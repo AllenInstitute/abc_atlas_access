@@ -501,13 +501,13 @@ document.write(`
 <p>The notebook presented here shows quick visualizations from precomputed metadata in the atlas. For examples on accessing the expression matrices, specifically selecting genes from expression matrices, see the <code class="docutils literal notranslate"><span class="pre">general_acessing_10x_snRNASeq_tutorial.ipynb</span></code> tutorial/example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">anndata</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">anndata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
 </div>
 </div>
@@ -524,7 +524,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241130/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250131/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -587,6 +587,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|████████████████████████████████████████████████████████████████████████████████████| 419M/419M [00:13&lt;00:00, 31.8MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  1162565
 </pre></div>
 </div>
@@ -784,7 +787,7 @@ document.write(`
 <p>We can use pandas groupby function to see how many unique items are associated for each field and list them out if the number of items is small.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_column_info</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_column_info</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
         <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -807,8 +810,8 @@ document.write(`
 Number of unique gene_count = 9838 
 Number of unique umi_count = 81632 
 Number of unique doublet_score = 874 
-Number of unique x = 1146862 
-Number of unique y = 1146950 
+Number of unique x = 1147449 
+Number of unique y = 1147537 
 Number of unique cluster_alias = 847 
 Number of unique cell_in_wmb_study = 2 [False, True]
 Number of unique wmb_cluster_alias = 2656 
@@ -848,6 +851,9 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_annotation_colors.csv: 100%|█████████████████████████████████████████████████████████████████████████| 76.1M/76.1M [00:03&lt;00:00, 20.3MMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1156,7 +1162,7 @@ Number of unique abc_sample_id = 1162565
 <p>We define a small helper function <em>plot umap</em> to visualize the cells on the UMAP. In this example will plot associated cell information colorized by dissection region of interest, neurotransmitter identity, sex, taxonomy level, age category, and age depletion/enrichment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_umap</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_umap</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
@@ -1167,7 +1173,7 @@ Number of unique abc_sample_id = 1162565
         <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
         <span class="n">unique_colors</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
         <span class="n">rects</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">unique_colors</span><span class="p">:</span>
@@ -1200,7 +1206,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c37d837fb797e41af3ece7f117a4f482b9202bbe0539b1869965c328f6c44d59.png" src="../_images/c37d837fb797e41af3ece7f117a4f482b9202bbe0539b1869965c328f6c44d59.png" />
+<img alt="../_images/e7e519f22b453292ade9526a310052dbbc6b24a147bdd805721c031eeb1cb9a5.png" src="../_images/e7e519f22b453292ade9526a310052dbbc6b24a147bdd805721c031eeb1cb9a5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1216,7 +1222,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/efc38915894ea4d05eeb856fd07dc579390807095ece5adaec56e3b817c9d883.png" src="../_images/efc38915894ea4d05eeb856fd07dc579390807095ece5adaec56e3b817c9d883.png" />
+<img alt="../_images/c42f1de3d80f1a90770209ff89f6e8c2b6c5cf79b9197fa75be2fa7177df7738.png" src="../_images/c42f1de3d80f1a90770209ff89f6e8c2b6c5cf79b9197fa75be2fa7177df7738.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1233,7 +1239,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d041ed388c3547de3ffdf6650737a21fd00556f8673c733602e6668ead27684f.png" src="../_images/d041ed388c3547de3ffdf6650737a21fd00556f8673c733602e6668ead27684f.png" />
+<img alt="../_images/f107df904815ad11599b7f2db7256e81037891144b336ee8fab69c29a0792c8d.png" src="../_images/f107df904815ad11599b7f2db7256e81037891144b336ee8fab69c29a0792c8d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1250,7 +1256,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/787d4644bdc4dfa283a419bfe877526b7d8a6fe62923b94310d60c74d5917081.png" src="../_images/787d4644bdc4dfa283a419bfe877526b7d8a6fe62923b94310d60c74d5917081.png" />
+<img alt="../_images/5aaee821502aca0c426d4ab87d34222c23a343de972805e845d24685cd03d6a3.png" src="../_images/5aaee821502aca0c426d4ab87d34222c23a343de972805e845d24685cd03d6a3.png" />
 </div>
 </div>
 </section>
@@ -1269,6 +1275,9 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████| 174k/174k [00:00&lt;00:00, 1.24MMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1663,7 +1672,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d096d6ec2680d0054695ec3059a3cca92bcaba8804cde8921684c451576b9572.png" src="../_images/d096d6ec2680d0054695ec3059a3cca92bcaba8804cde8921684c451576b9572.png" />
+<img alt="../_images/e82cc4bfe439937bb3d161be902effd3861ae5905976cdb92abb9864b15be605.png" src="../_images/e82cc4bfe439937bb3d161be902effd3861ae5905976cdb92abb9864b15be605.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1675,7 +1684,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9c2731063972117f85dc452900c818c364796fb57c76a2f7fca5dc78a7e47d03.png" src="../_images/9c2731063972117f85dc452900c818c364796fb57c76a2f7fca5dc78a7e47d03.png" />
+<img alt="../_images/4398f1bd0c90992ede91330f094f47f6fcea907f14defe5489b6c02ef8b7233c.png" src="../_images/4398f1bd0c90992ede91330f094f47f6fcea907f14defe5489b6c02ef8b7233c.png" />
 </div>
 </div>
 <section id="aging-information">
@@ -1696,7 +1705,7 @@ Number of unique abc_sample_id = 1162565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83f4feb0de23e8dd7292da7ea6a64de7abd5c2c5fb23f9d40d4fc17570cdd460.png" src="../_images/83f4feb0de23e8dd7292da7ea6a64de7abd5c2c5fb23f9d40d4fc17570cdd460.png" />
+<img alt="../_images/01ff73b589b9c41934ff0973caba095b9b86a344557aeb975883e407fc7b18d6.png" src="../_images/01ff73b589b9c41934ff0973caba095b9b86a344557aeb975883e407fc7b18d6.png" />
 </div>
 </div>
 <p>Finally, we show the clusters that are identified as aging-enriched and aging-depleted based on their odds ratio. (-2.5 &gt; log2_odds_ratio, log2_odds_ratio &gt; 2.5).</p>
@@ -1712,9 +1721,6 @@ Number of unique abc_sample_id = 1162565
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/7104e4deeeb5447bb9c659636725450123daf35248a7dcf45324f037947c71b2.png" src="../_images/7104e4deeeb5447bb9c659636725450123daf35248a7dcf45324f037947c71b2.png" />
 </div>
 </div>
 </section>
@@ -1733,126 +1739,6 @@ Number of unique abc_sample_id = 1162565
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cluster_alias</th>
-      <th>cluster_label</th>
-      <th>cluster_order</th>
-      <th>cluster_name</th>
-      <th>cluster_color</th>
-      <th>class_name</th>
-      <th>subclass_name</th>
-      <th>supertype_name</th>
-      <th>class_color</th>
-      <th>subclass_color</th>
-      <th>supertype_color</th>
-    </tr>
-    <tr>
-      <th>cell_label</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>AAACCCAAGGACACTG-367_B04</th>
-      <td>273</td>
-      <td>CS20241021_0273</td>
-      <td>272</td>
-      <td>273_STR D1 Gaba_8</td>
-      <td>#669ff8</td>
-      <td>09 CNU-LGE GABA</td>
-      <td>061 STR D1 Gaba</td>
-      <td>0272 STR D1 Gaba_8</td>
-      <td>#B199FF</td>
-      <td>#005B66</td>
-      <td>#660F13</td>
-    </tr>
-    <tr>
-      <th>AAACCCAAGTAAACGT-367_B04</th>
-      <td>787</td>
-      <td>CS20241021_0787</td>
-      <td>786</td>
-      <td>787_Astro-TE NN_3</td>
-      <td>#daf288</td>
-      <td>30 Astro-Epen</td>
-      <td>319 Astro-TE NN</td>
-      <td>1163 Astro-TE NN_3</td>
-      <td>#594a26</td>
-      <td>#3DCCB1</td>
-      <td>#a8afa5</td>
-    </tr>
-    <tr>
-      <th>AAACCCACATTGAGCT-367_B04</th>
-      <td>833</td>
-      <td>CS20241021_0833</td>
-      <td>832</td>
-      <td>833_Endo NN_1</td>
-      <td>#096577</td>
-      <td>33 Vascular</td>
-      <td>333 Endo NN</td>
-      <td>1193 Endo NN_1</td>
-      <td>#858881</td>
-      <td>#994567</td>
-      <td>#00992A</td>
-    </tr>
-    <tr>
-      <th>AAACGAAAGCCGTAAG-367_B04</th>
-      <td>787</td>
-      <td>CS20241021_0787</td>
-      <td>786</td>
-      <td>787_Astro-TE NN_3</td>
-      <td>#daf288</td>
-      <td>30 Astro-Epen</td>
-      <td>319 Astro-TE NN</td>
-      <td>1163 Astro-TE NN_3</td>
-      <td>#594a26</td>
-      <td>#3DCCB1</td>
-      <td>#a8afa5</td>
-    </tr>
-    <tr>
-      <th>AAACGAAAGCTACAAA-367_B04</th>
-      <td>815</td>
-      <td>CS20241021_0815</td>
-      <td>814</td>
-      <td>815_MOL NN_4</td>
-      <td>#c4dd47</td>
-      <td>31 OPC-Oligo</td>
-      <td>327 Oligo NN</td>
-      <td>1184 MOL NN_4</td>
-      <td>#03045E</td>
-      <td>#99FFBC</td>
-      <td>#99CAFF</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1875,70 +1761,6 @@ Number of unique abc_sample_id = 1162565
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 997258 
-Number of unique gene_count = 9838 
-Number of unique umi_count = 81632 
-Number of unique doublet_score = 874 
-Number of unique x = 1146862 
-Number of unique y = 1146950 
-Number of unique cluster_alias = 847 
-Number of unique cell_in_wmb_study = 2 [False, True]
-Number of unique wmb_cluster_alias = 2656 
-Number of unique library_label = 287 
-Number of unique alignment_job_id = 287 
-Number of unique library_method = 2 [&#39;10Xv3&#39;, &#39;10xV3.1&#39;]
-Number of unique barcoded_cell_sample_label = 287 
-Number of unique enrichment_population = 6 [&#39;Calcein-positive, Hoechst-positive&#39;, &#39;Hoechst-positive&#39;, &#39;No FACS&#39;, &#39;RFP-positive, Calcein-positive, Hoechst-positive&#39;, &#39;RFP-positive, DAPI-negative&#39;, &#39;RFP-positive, Hoechst-positive&#39;]
-Number of unique region_of_interest_label = 16 [&#39;HPF - ENT&#39;, &#39;HPF - HIP&#39;, &#39;HPF - PAR-POST-PRE-SUB-ProS&#39;, &#39;HY - HY&#39;, &#39;Iscortex  - ACA&#39;, &#39;Isocortex  - AI&#39;, &#39;Isocortex - PL-ILA-ORB&#39;, &#39;Isocortex - RSP&#39;, &#39;MB - PAG-RAmb&#39;, &#39;MB - VTA-SN&#39;, &#39;P - Pmot/sat-ant&#39;, &#39;P - Pmot/sat-post&#39;, &#39;PAL - PAL&#39;, &#39;STR - STRd&#39;, &#39;STR - STRv&#39;, &#39;STR - sAMY&#39;]
-Number of unique anatomical_division_label = 7 [&#39;HPF&#39;, &#39;HY&#39;, &#39;Isocortex&#39;, &#39;MB&#39;, &#39;P&#39;, &#39;PAL&#39;, &#39;STR&#39;]
-Number of unique library_in_wmb_study = 2 [False, True]
-Number of unique donor_label = 108 
-Number of unique population_sampling = 2 [&#39;Snap25+ neurons&#39;, &#39;unbiased&#39;]
-Number of unique donor_genotype = 3 [&#39;Ai14(RCL-tdT)/wt&#39;, &#39;Snap25-IRES2-Cre/wt;Ai14(RCL-tdT)/wt&#39;, &#39;wt/wt&#39;]
-Number of unique donor_sex = 2 [&#39;F&#39;, &#39;M&#39;]
-Number of unique donor_age = 30 
-Number of unique donor_age_category = 2 [&#39;adult&#39;, &#39;aged&#39;]
-Number of unique donor_in_wmb_study = 2 [False, True]
-Number of unique feature_matrix_label = 1 [&#39;Zeng-Aging-Mouse-10Xv3&#39;]
-Number of unique dataset_label = 1 [&#39;Zeng-Aging-Mouse-10Xv3&#39;]
-Number of unique abc_sample_id = 1162565 
-Number of unique anatomical_division_color = 7 [&#39;#70FF71&#39;, &#39;#7ED04B&#39;, &#39;#8599CC&#39;, &#39;#98D6F9&#39;, &#39;#E64438&#39;, &#39;#FF64FF&#39;, &#39;#FF9B88&#39;]
-Number of unique anatomical_division_order = 7 [0, 1, 2, 3, 4, 5, 6]
-Number of unique donor_age_category_color = 2 [&#39;#9ACA3C&#39;, &#39;#CC6828&#39;]
-Number of unique donor_age_category_order = 2 [0, 1]
-Number of unique donor_sex_color = 2 [&#39;#735AA6&#39;, &#39;#FAAA5B&#39;]
-Number of unique donor_sex_order = 2 [0, 1]
-Number of unique region_of_interest_color = 15 [&#39;#1AA698&#39;, &#39;#219866&#39;, &#39;#2FA850&#39;, &#39;#32B825&#39;, &#39;#40A666&#39;, &#39;#72D569&#39;, &#39;#7ED04B&#39;, &#39;#80C0E2&#39;, &#39;#80CDF8&#39;, &#39;#8599CC&#39;, &#39;#98D6F9&#39;, &#39;#E64438&#39;, &#39;#FF90FF&#39;, &#39;#FFAE6F&#39;, &#39;#FFC395&#39;]
-Number of unique region_of_interest_order = 16 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-Number of unique number_of_cells = 502 
-Number of unique cluster_label = 847 
-Number of unique cluster_order = 847 
-Number of unique cluster_name = 847 
-Number of unique cluster_color = 847 
-Number of unique max_region_of_interest_label = 16 [&#39;HPF - ENT&#39;, &#39;HPF - HIP&#39;, &#39;HPF - PAR-POST-PRE-SUB-ProS&#39;, &#39;HY - HY&#39;, &#39;Iscortex  - ACA&#39;, &#39;Isocortex  - AI&#39;, &#39;Isocortex - PL-ILA-ORB&#39;, &#39;Isocortex - RSP&#39;, &#39;MB - PAG-RAmb&#39;, &#39;MB - VTA-SN&#39;, &#39;P - Pmot/sat-ant&#39;, &#39;P - Pmot/sat-post&#39;, &#39;PAL - PAL&#39;, &#39;STR - STRd&#39;, &#39;STR - STRv&#39;, &#39;STR - sAMY&#39;]
-Number of unique proportion_max_region_of_interest_label = 681 
-Number of unique number_of_adult_cells = 395 
-Number of unique number_of_aged_cells = 416 
-Number of unique proportion_adult_cells = 823 
-Number of unique proportion_aged_cells = 823 
-Number of unique odds_ratio = 846 
-Number of unique log2_odds_ratio = 846 
-Number of unique cluster_age_bias = 3 [&#39;aging-depleted&#39;, &#39;aging-enriched&#39;, &#39;unassigned&#39;]
-Number of unique max_region_of_interest_color = 15 [&#39;#1AA698&#39;, &#39;#219866&#39;, &#39;#2FA850&#39;, &#39;#32B825&#39;, &#39;#40A666&#39;, &#39;#72D569&#39;, &#39;#7ED04B&#39;, &#39;#80C0E2&#39;, &#39;#80CDF8&#39;, &#39;#8599CC&#39;, &#39;#98D6F9&#39;, &#39;#E64438&#39;, &#39;#FF90FF&#39;, &#39;#FFAE6F&#39;, &#39;#FFC395&#39;]
-Number of unique cluster_age_bias_color = 3 [&#39;#9BCB3C&#39;, &#39;#CD6828&#39;, &#39;#DADEDF&#39;]
-Number of unique neurotransmitter_combined_label = 15 [&#39;GABA&#39;, &#39;GABA-Chol&#39;, &#39;GABA-Dopa&#39;, &#39;GABA-Glyc&#39;, &#39;GABA-Hist&#39;, &#39;GABA-Sero&#39;, &#39;Glut&#39;, &#39;Glut-Chol&#39;, &#39;Glut-Dopa&#39;, &#39;Glut-GABA&#39;, &#39;Glut-GABA-Dopa&#39;, &#39;Glut-GABA-Glyc&#39;, &#39;Glut-GABA-Sero&#39;, &#39;Glut-Sero&#39;, &#39;No-NT&#39;]
-Number of unique neurotransmitter_label = 9 [&#39;Chol&#39;, &#39;Dopa&#39;, &#39;GABA&#39;, &#39;GABA-Glyc&#39;, &#39;Glut&#39;, &#39;Glut-GABA&#39;, &#39;Hist&#39;, &#39;No-NT&#39;, &#39;Sero&#39;]
-Number of unique neurotransmitter_color = 9 [&#39;#0a9964&#39;, &#39;#2B93DF&#39;, &#39;#533691&#39;, &#39;#666666&#39;, &#39;#73E785&#39;, &#39;#820e57&#39;, &#39;#FF3358&#39;, &#39;#fcf04b&#39;, &#39;#ff7621&#39;]
-Number of unique class_name = 25 [&#39;01 IT-ET Glut&#39;, &#39;02 NP-CT-L6b Glut&#39;, &#39;03 OB-CR Glut&#39;, &#39;04 DG-IMN Glut&#39;, &#39;05 OB-IMN GABA&#39;, &#39;06 CTX-CGE GABA&#39;, &#39;07 CTX-MGE GABA&#39;, &#39;08 CNU-MGE GABA&#39;, &#39;09 CNU-LGE GABA&#39;, &#39;11 CNU-HYa GABA&#39;, &#39;12 HY GABA&#39;, &#39;13 CNU-HYa Glut&#39;, &#39;14 HY Glut&#39;, &#39;16 HY MM Glut&#39;, &#39;19 MB Glut&#39;, &#39;20 MB GABA&#39;, &#39;21 MB Dopa&#39;, &#39;22 MB-HB Sero&#39;, &#39;23 P Glut&#39;, &#39;24 MY Glut&#39;, &#39;26 P GABA&#39;, &#39;30 Astro-Epen&#39;, &#39;31 OPC-Oligo&#39;, &#39;33 Vascular&#39;, &#39;34 Immune&#39;]
-Number of unique subclass_name = 172 
-Number of unique supertype_name = 432 
-Number of unique class_color = 25 [&#39;#007200&#39;, &#39;#01d669&#39;, &#39;#03045E&#39;, &#39;#16f2f2&#39;, &#39;#1b4332&#39;, &#39;#38B000&#39;, &#39;#450099&#39;, &#39;#594a26&#39;, &#39;#61e2a4&#39;, &#39;#6b5ca5&#39;, &#39;#70E000&#39;, &#39;#72195a&#39;, &#39;#825f45&#39;, &#39;#858881&#39;, &#39;#90E0EF&#39;, &#39;#9EF01A&#39;, &#39;#AA0DFE&#39;, &#39;#B199FF&#39;, &#39;#CCFF33&#39;, &#39;#D00000&#39;, &#39;#EC4067&#39;, &#39;#F0A0FF&#39;, &#39;#FA0087&#39;, &#39;#FF6600&#39;, &#39;#f954ee&#39;]
-Number of unique subclass_color = 172 
-Number of unique supertype_color = 432 
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now that the information on the WMB taxonomy has been merged into our cell metadata, we plot them here. Note again that the colors here are the same as those in WMB.</p>
 <div class="cell docutils container">
@@ -1949,9 +1771,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/700539c0452969b1803b30d414b555894350b544e5d3f64701d9baca3a6a5d99.png" src="../_images/700539c0452969b1803b30d414b555894350b544e5d3f64701d9baca3a6a5d99.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1961,9 +1780,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/c9335cedc0a0255a36f4202ba80363375619ad81f4469951c49c412e0b32b351.png" src="../_images/c9335cedc0a0255a36f4202ba80363375619ad81f4469951c49c412e0b32b351.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1972,9 +1788,6 @@ Number of unique supertype_color = 432
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/58e27e69ed35344a1972a15278b1d9a3be2ea3ae20c601e03b0c143f8f7fcfaf.png" src="../_images/58e27e69ed35344a1972a15278b1d9a3be2ea3ae20c601e03b0c143f8f7fcfaf.png" />
 </div>
 </div>
 <section id="aggregating-cluster-and-cells-counts-per-term">
@@ -1993,140 +1806,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cluster_label</th>
-      <th>cluster_order</th>
-      <th>cluster_name</th>
-      <th>cluster_color</th>
-      <th>cluster_annotation_term_label</th>
-      <th>cluster_annotation_term_name</th>
-      <th>cluster_annotation_term_set_label</th>
-      <th>parent_term_label</th>
-      <th>parent_term_set_label</th>
-      <th>term_set_order</th>
-      <th>term_order</th>
-      <th>cluster_annotation_term_set_name</th>
-      <th>color_hex_triplet</th>
-    </tr>
-    <tr>
-      <th>cluster_alias</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>CS20241021_0001</td>
-      <td>0</td>
-      <td>1_CLA-EPd-CTX Car3 Glut_1</td>
-      <td>#f7c27a</td>
-      <td>CS20230722_SUPT_0001</td>
-      <td>0001 CLA-EPd-CTX Car3 Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_001</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>0</td>
-      <td>supertype</td>
-      <td>#99822E</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>CS20241021_0002</td>
-      <td>1</td>
-      <td>2_IT EP-CLA Glut_1</td>
-      <td>#5c1a34</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>supertype</td>
-      <td>#994563</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>CS20241021_0003</td>
-      <td>2</td>
-      <td>3_IT EP-CLA Glut_1</td>
-      <td>#b96cf0</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>supertype</td>
-      <td>#994563</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>CS20241021_0004</td>
-      <td>3</td>
-      <td>4_IT EP-CLA Glut_1</td>
-      <td>#bff691</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>supertype</td>
-      <td>#994563</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>CS20241021_0005</td>
-      <td>4</td>
-      <td>5_IT EP-CLA Glut_1</td>
-      <td>#39fbfa</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>supertype</td>
-      <td>#994563</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Merge in cluster info to get the full set of colors and neurotransmitter identities.</p>
 <div class="cell docutils container">
@@ -2136,197 +1815,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cluster_label</th>
-      <th>cluster_order</th>
-      <th>cluster_name</th>
-      <th>cluster_color</th>
-      <th>cluster_annotation_term_label</th>
-      <th>cluster_annotation_term_name</th>
-      <th>cluster_annotation_term_set_label</th>
-      <th>parent_term_label</th>
-      <th>parent_term_set_label</th>
-      <th>term_set_order</th>
-      <th>...</th>
-      <th>proportion_adult_cells</th>
-      <th>proportion_aged_cells</th>
-      <th>odds_ratio</th>
-      <th>log2_odds_ratio</th>
-      <th>cluster_age_bias</th>
-      <th>max_region_of_interest_color</th>
-      <th>cluster_age_bias_color</th>
-      <th>neurotransmitter_combined_label</th>
-      <th>neurotransmitter_label</th>
-      <th>neurotransmitter_color</th>
-    </tr>
-    <tr>
-      <th>cluster_alias</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>CS20241021_0001</td>
-      <td>0</td>
-      <td>1_CLA-EPd-CTX Car3 Glut_1</td>
-      <td>#f7c27a</td>
-      <td>CS20230722_SUPT_0001</td>
-      <td>0001 CLA-EPd-CTX Car3 Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_001</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>...</td>
-      <td>0.215041</td>
-      <td>0.784959</td>
-      <td>1.453797</td>
-      <td>0.539826</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>CS20241021_0002</td>
-      <td>1</td>
-      <td>2_IT EP-CLA Glut_1</td>
-      <td>#5c1a34</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>...</td>
-      <td>0.484848</td>
-      <td>0.515152</td>
-      <td>0.421595</td>
-      <td>-1.246071</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>CS20241021_0003</td>
-      <td>2</td>
-      <td>3_IT EP-CLA Glut_1</td>
-      <td>#b96cf0</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>...</td>
-      <td>0.407470</td>
-      <td>0.592530</td>
-      <td>0.576896</td>
-      <td>-0.793616</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>CS20241021_0004</td>
-      <td>3</td>
-      <td>4_IT EP-CLA Glut_1</td>
-      <td>#bff691</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>...</td>
-      <td>0.516908</td>
-      <td>0.483092</td>
-      <td>0.371035</td>
-      <td>-1.430373</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>CS20241021_0005</td>
-      <td>4</td>
-      <td>5_IT EP-CLA Glut_1</td>
-      <td>#39fbfa</td>
-      <td>CS20230722_SUPT_0003</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>...</td>
-      <td>0.305932</td>
-      <td>0.694068</td>
-      <td>0.900735</td>
-      <td>-0.150825</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 32 columns</p>
-</div></div></div>
 </div>
 <p>One final set of data to create is to calculate the number of clusters that are members of a given supertype, subclass, and class in the taxonomy.</p>
 <div class="cell docutils container">
@@ -2338,56 +1826,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>number_of_clusters</th>
-    </tr>
-    <tr>
-      <th>cluster_annotation_term_label</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CS20230722_CLAS_01</th>
-      <td>156</td>
-    </tr>
-    <tr>
-      <th>CS20230722_CLAS_02</th>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>CS20230722_CLAS_03</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>CS20230722_CLAS_04</th>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>CS20230722_CLAS_05</th>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2397,202 +1835,11 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>cluster_label</th>
-      <th>cluster_order</th>
-      <th>cluster_name</th>
-      <th>cluster_color</th>
-      <th>cluster_annotation_term_name</th>
-      <th>cluster_annotation_term_set_label</th>
-      <th>parent_term_label</th>
-      <th>parent_term_set_label</th>
-      <th>term_set_order</th>
-      <th>term_order</th>
-      <th>...</th>
-      <th>proportion_aged_cells</th>
-      <th>odds_ratio</th>
-      <th>log2_odds_ratio</th>
-      <th>cluster_age_bias</th>
-      <th>max_region_of_interest_color</th>
-      <th>cluster_age_bias_color</th>
-      <th>neurotransmitter_combined_label</th>
-      <th>neurotransmitter_label</th>
-      <th>neurotransmitter_color</th>
-      <th>number_of_clusters</th>
-    </tr>
-    <tr>
-      <th>cluster_annotation_term_label</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CS20230722_SUPT_0001</th>
-      <td>CS20241021_0001</td>
-      <td>0</td>
-      <td>1_CLA-EPd-CTX Car3 Glut_1</td>
-      <td>#f7c27a</td>
-      <td>0001 CLA-EPd-CTX Car3 Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_001</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0.784959</td>
-      <td>1.453797</td>
-      <td>0.539826</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>CS20230722_SUPT_0003</th>
-      <td>CS20241021_0002</td>
-      <td>1</td>
-      <td>2_IT EP-CLA Glut_1</td>
-      <td>#5c1a34</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0.515152</td>
-      <td>0.421595</td>
-      <td>-1.246071</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>CS20230722_SUPT_0003</th>
-      <td>CS20241021_0003</td>
-      <td>2</td>
-      <td>3_IT EP-CLA Glut_1</td>
-      <td>#b96cf0</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0.592530</td>
-      <td>0.576896</td>
-      <td>-0.793616</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>CS20230722_SUPT_0003</th>
-      <td>CS20241021_0004</td>
-      <td>3</td>
-      <td>4_IT EP-CLA Glut_1</td>
-      <td>#bff691</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0.483092</td>
-      <td>0.371035</td>
-      <td>-1.430373</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>CS20230722_SUPT_0003</th>
-      <td>CS20241021_0005</td>
-      <td>4</td>
-      <td>5_IT EP-CLA Glut_1</td>
-      <td>#39fbfa</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>CCN20230722_SUPT</td>
-      <td>CS20230722_SUBC_002</td>
-      <td>CCN20230722_SUBC</td>
-      <td>3</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0.694068</td>
-      <td>0.900735</td>
-      <td>-0.150825</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 32 columns</p>
-</div></div></div>
 </div>
 <p>Let’s visualize cluster and cells counts for of the classification levels using bar plots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mf">8.5</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mf">8.5</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
     
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
@@ -2632,9 +1879,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/d844239d6e616d51cdc2e2e41ff26a0a52d6da6fdedf795e5f2a049b554b5cca.png" src="../_images/d844239d6e616d51cdc2e2e41ff26a0a52d6da6fdedf795e5f2a049b554b5cca.png" />
-</div>
 </div>
 </section>
 <section id="class-level-cluster-and-cell-counts">
@@ -2645,9 +1889,6 @@ Number of unique supertype_color = 432
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/f5e09cdf4ad146a5467dec54616876558c96d1cab817c61684bed4e4c2d0386f.png" src="../_images/f5e09cdf4ad146a5467dec54616876558c96d1cab817c61684bed4e4c2d0386f.png" />
 </div>
 </div>
 </section>
@@ -2663,197 +1904,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>class</th>
-      <th>subclass</th>
-      <th>supertype</th>
-      <th>number_of_cells</th>
-      <th>cluster_label</th>
-      <th>cluster_order</th>
-      <th>cluster_name</th>
-      <th>cluster_color</th>
-      <th>max_region_of_interest_label</th>
-      <th>proportion_max_region_of_interest_label</th>
-      <th>...</th>
-      <th>proportion_adult_cells</th>
-      <th>proportion_aged_cells</th>
-      <th>odds_ratio</th>
-      <th>log2_odds_ratio</th>
-      <th>cluster_age_bias</th>
-      <th>max_region_of_interest_color</th>
-      <th>cluster_age_bias_color</th>
-      <th>neurotransmitter_combined_label</th>
-      <th>neurotransmitter_label</th>
-      <th>neurotransmitter_color</th>
-    </tr>
-    <tr>
-      <th>cluster_alias</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>01 IT-ET Glut</td>
-      <td>001 CLA-EPd-CTX Car3 Glut</td>
-      <td>0001 CLA-EPd-CTX Car3 Glut_1</td>
-      <td>851</td>
-      <td>CS20241021_0001</td>
-      <td>0</td>
-      <td>1_CLA-EPd-CTX Car3 Glut_1</td>
-      <td>#f7c27a</td>
-      <td>Isocortex  - AI</td>
-      <td>0.831962</td>
-      <td>...</td>
-      <td>0.215041</td>
-      <td>0.784959</td>
-      <td>1.453797</td>
-      <td>0.539826</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>01 IT-ET Glut</td>
-      <td>002 IT EP-CLA Glut</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>330</td>
-      <td>CS20241021_0002</td>
-      <td>1</td>
-      <td>2_IT EP-CLA Glut_1</td>
-      <td>#5c1a34</td>
-      <td>Isocortex  - AI</td>
-      <td>0.969697</td>
-      <td>...</td>
-      <td>0.484848</td>
-      <td>0.515152</td>
-      <td>0.421595</td>
-      <td>-1.246071</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>01 IT-ET Glut</td>
-      <td>002 IT EP-CLA Glut</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>589</td>
-      <td>CS20241021_0003</td>
-      <td>2</td>
-      <td>3_IT EP-CLA Glut_1</td>
-      <td>#b96cf0</td>
-      <td>Isocortex  - AI</td>
-      <td>0.894737</td>
-      <td>...</td>
-      <td>0.407470</td>
-      <td>0.592530</td>
-      <td>0.576896</td>
-      <td>-0.793616</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>01 IT-ET Glut</td>
-      <td>002 IT EP-CLA Glut</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>207</td>
-      <td>CS20241021_0004</td>
-      <td>3</td>
-      <td>4_IT EP-CLA Glut_1</td>
-      <td>#bff691</td>
-      <td>Isocortex  - AI</td>
-      <td>0.971014</td>
-      <td>...</td>
-      <td>0.516908</td>
-      <td>0.483092</td>
-      <td>0.371035</td>
-      <td>-1.430373</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>01 IT-ET Glut</td>
-      <td>002 IT EP-CLA Glut</td>
-      <td>0003 IT EP-CLA Glut_1</td>
-      <td>2141</td>
-      <td>CS20241021_0005</td>
-      <td>4</td>
-      <td>5_IT EP-CLA Glut_1</td>
-      <td>#39fbfa</td>
-      <td>Isocortex  - AI</td>
-      <td>0.987389</td>
-      <td>...</td>
-      <td>0.305932</td>
-      <td>0.694068</td>
-      <td>0.900735</td>
-      <td>-0.150825</td>
-      <td>unassigned</td>
-      <td>#219866</td>
-      <td>#DADEDF</td>
-      <td>Glut</td>
-      <td>Glut</td>
-      <td>#2B93DF</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 22 columns</p>
-</div></div></div>
 </div>
 <p>We can also obtain a cluster annotation color pivot table in the same way.</p>
 <div class="cell docutils container">
@@ -2864,70 +1914,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>class_color</th>
-      <th>subclass_color</th>
-      <th>supertype_color</th>
-    </tr>
-    <tr>
-      <th>cluster_alias</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>#FA0087</td>
-      <td>#64c2fc</td>
-      <td>#99822E</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#FA0087</td>
-      <td>#1F665D</td>
-      <td>#994563</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#FA0087</td>
-      <td>#1F665D</td>
-      <td>#994563</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#FA0087</td>
-      <td>#1F665D</td>
-      <td>#994563</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#FA0087</td>
-      <td>#1F665D</td>
-      <td>#994563</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2942,7 +1928,7 @@ Number of unique supertype_color = 432
 <p>For a given pair of term sets A and B, we compute a cluster count table where the rows are terms in term set A, columns are terms in term set B with the table values being the number of clusters that are shared between the terms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distribution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">B_color</span><span class="p">)</span> <span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distribution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">B_color</span><span class="p">)</span> <span class="p">:</span>
     
     <span class="n">AxB</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">])[[</span><span class="s1">&#39;cluster_name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="n">AxB</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">]</span>
@@ -2958,7 +1944,7 @@ Number of unique supertype_color = 432
 <p>Function <em>stacked_bar_distribution</em> takes the results of <em>distribution</em> as input to create distribution stacked bar plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stacked_bar_distribution</span><span class="p">(</span><span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">6</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">stacked_bar_distribution</span><span class="p">(</span><span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">6</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -2990,9 +1976,6 @@ Number of unique supertype_color = 432
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/554aa36c2f2e0b2f44afaedc0e5ba49da6c82be571d9683babd640032d330664.png" src="../_images/554aa36c2f2e0b2f44afaedc0e5ba49da6c82be571d9683babd640032d330664.png" />
-</div>
 </div>
 </section>
 <section id="distribution-of-age-enriched-vs-age-depleted-clusters">
@@ -3003,9 +1986,6 @@ Number of unique supertype_color = 432
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">stacked_bar_distribution</span><span class="p">(</span><span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/f22f495de451587f076f156b9aaf0252aab926a84126fbb1f2ca0c7236221d8e.png" src="../_images/f22f495de451587f076f156b9aaf0252aab926a84126fbb1f2ca0c7236221d8e.png" />
 </div>
 </div>
 </section>
@@ -3030,9 +2010,6 @@ Number of unique supertype_color = 432
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">stacked_bar_distribution</span><span class="p">(</span><span class="n">adult_vs_aged</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/0086600589afc77f0a74cd2a07a5481e388dab5002247f0bbd5fef7e14d40a13.png" src="../_images/0086600589afc77f0a74cd2a07a5481e388dab5002247f0bbd5fef7e14d40a13.png" />
 </div>
 </div>
 </section>
@@ -3076,9 +2053,6 @@ Number of unique supertype_color = 432
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/68c7547dcf446d63ede55b841ce3bc9f3d334d2c3029134472d4b02cfeac6acd.png" src="../_images/68c7547dcf446d63ede55b841ce3bc9f3d334d2c3029134472d4b02cfeac6acd.png" />
 </div>
 </div>
 <p><strong>In part 2 we’ll focus on gene data including using the UMAP to plot gene expression locations as well as age Differential (ageDE) genes identified in Zeng et al.</strong></p>

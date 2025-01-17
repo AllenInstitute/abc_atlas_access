@@ -569,8 +569,8 @@ Note: you may need to restart the kernel to use updated packages.
 <p>IPython magic command to render matplotlib plots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span> <span class="kn">import</span> <span class="n">AbcProjectCache</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
 </pre></div>
 </div>
 </div>
@@ -1064,7 +1064,7 @@ WMB-taxonomy metadata files:
 <span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="k">return</span> <span class="n">data_path</span>
 
 <span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.12/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:836,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="k">def</span> <span class="nf">download_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_data</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="bp">self</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -1082,7 +1082,7 @@ WMB-taxonomy metadata files:
 <span class="g g-Whitespace">    </span><span class="mi">839</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
 
 <span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.12/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:403,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="k">def</span> <span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="k">def</span><span class="w"> </span><span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">375</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">376</span><span class="sd">     Return the local path to a data file, and test for the</span>
 <span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">     file&#39;s existence</span>
@@ -1093,7 +1093,7 @@ WMB-taxonomy metadata files:
 <span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="k">return</span> <span class="n">output</span>
 
 <span class="nn">File ~/src/miniconda3/envs/abc_atlas_access/lib/python3.12/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:329,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">def</span> <span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">def</span><span class="w"> </span><span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">301</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">302</span><span class="sd">     Return the local path to a data file, and test for the</span>
 <span class="g g-Whitespace">    </span><span class="mi">303</span><span class="sd">     file&#39;s existence.</span>
