@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "abc_atlas_access"
-version = "0.4.0"
+version = "0.5.0"
 description = "A package for accessing/processing data from the ABC Atlas"
 dependencies = [
   "anndata",
