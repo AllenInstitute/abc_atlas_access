@@ -29,6 +29,8 @@ The Winter 2024 public beta data release includes:
   (Xiaowei Zhuang)**
 * **[Human whole-brain transcriptomic cell type atlas](descriptions/WHB_dataset.md)
   (Kimberly Siletti)**
+* **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_dataset.md)
+  (ASAP)**
 
 We provide a lightweight python object, the AbcProjectCache, to handle
 downloading of the data and managing different release versions for the user.
@@ -67,8 +69,17 @@ notebook.
   (Xiaowei Zhuang)**
 * **[Human whole-brain transcriptomic cell type atlas](descriptions/WHB_notebooks.md)
   (Kimberly Siletti)**
+* **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_notebooks.md)
+  (ASAP)**
 
 ## Release Notes
+* **[Add ASAP-PMDBS dataset and MapMyCells results (version 20250331), abc_atlas_access (v0.6.0)]**
+  * Added single cell transscriptomics from the 3 million cell, Aligning Science
+    Across Parkinson’s (ASAP) Human Postmortem-Derived Brain Sequencing
+    Collection (PMDBS).
+    * 3 million cells from 5 teams over 220 donors.
+    * Results of MapMyCells run on the 3 million cells mapping them into
+      the Whole Human Brain and SEA-AD taxonomies.
 * **[Update aging Mouse UMAP (version 20250131), abc_atlas_access (v0.5.0)]**
   * Fix 588 cells with missing UMAP coordinates.
 * **[Aging Mouse data (version 20241130), abc_atlas_access (v0.4.0)]**

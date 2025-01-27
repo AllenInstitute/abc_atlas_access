@@ -280,7 +280,7 @@ if __name__ == "__main__":
         "--datasets_to_skip",
         nargs='+',
         type=str,
-        default=['releases', 'SEAAD', 'SEA-AD', 'Zhuang-C57BL6J'],
+        default=['releases', 'SEAAD-10X', 'SEAAD-MERFISH', 'SEA-AD', 'Zhuang-C57BL6J'],
         help="Skip a given project for all directories that start with the "
              "given pattern. (e.g. SEAD will exclude all directories that "
                 "start with that pattern for example, SEAD-taxonomy etc.)"
