@@ -30,7 +30,7 @@ Data is being share under the CC BY NC 4.0 license.
 
 Related resources:
 * Results of running mapping the ~3 million ASAP-PMDBS cells into the WHB
-  and SEA-AD taxonomies ([ASAP-PMDBS-taxonomy](ASAP-PMDBS-taxonomy.md))
+  and SEA-AD taxonomies ([ASAP-PMDBS-MapMyCells](ASAP-PMDBS-MapMyCells.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
