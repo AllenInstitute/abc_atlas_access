@@ -1,0 +1,51 @@
+# ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview 
+
+The Michael J. Fox Foundation (MJFF) and the Allen Institute for Brain Science
+(AIBS) are conducting a pilot project to at look at ways to explore, annotate
+and add knowledge to the growing data catalog in the Aligning Science Across
+Parkinson’s (ASAP) Collaborative Research Network (CRN) program through
+integration of cell types taxonomies using the Allen Institute’s MapMyCell
+tool and visualization through the Allen Brain Cell Atlas web application. 
+
+The pilot focuses on the Human Postmortem-derived Brain Sequencing Collection
+(PMDBS), a harmonized repository comprising of single nucleus and PolyA RNA-seq
+data contributed from five ASAP CRN teams. Sequencing data were uniformly
+aligned to the GRCh38.p13 reference genome (Gencode V32), basic quality control
+was performed and low quality cells were filtered out. A set highly variable
+genes were identified and used scVI workflow resulting in an integrated latent
+variable representation, 2D UMAP coordinates and a set of 30 clusters.
+Currently the repository span roughly 3 millions cell obtained from 9 brain
+regions and spanning 211 donors with various pathologies (including healthy
+control). For more details on this dataset, please visit the [ASAP webpage](https://cloud.parkinsonsroadmap.org/collections/postmortem-derived-brain-sequencing-collection/overview).
+
+The simplified data created by AIBS in the form of expression matrices and
+associated metadata are hosted on AWS S3 bucket as a AWS Public Dataset:
+
+| Component | Current Version                                                                                                                                                                                                       | Size  |
+|---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| Expression Matrices | [s3://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/expression_matrices/ASAP-PMDBS-10X/20250331/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/ASAP-PMDBS-10X/20250331/) | 29 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/ASAP-PMDBS-10X/20250331/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/ASAP-PMDBS-10X/20250331/)                    | 660 MB |
+
+Data is being share under the CC BY NC 4.0 license.
+
+Related resources:
+* Results of running mapping the ~3 million ASAP-PMDBS cells into the WHB
+  and SEA-AD taxonomies ([ASAP-PMDBS-taxonomy](ASAP-PMDBS-taxonomy.md))
+
+Associated notebooks:
+* [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
+  facilitate data download and usage.
+* [**Accessing 10X gene expression data**](../notebooks/general_accessing_10x_snRNASeq_tutorial.ipynb):
+  learn how to load individual genes from the 10X expression data.
+* [**ASAP Data Overview**](../notebooks/asap_pmdbs_data_and_metadata.ipynb):
+  Learn about the ASAP-PMDBS harmonized, single cell dataset including
+  disease indicators and UMAP.
+* [**Mapping to the Whole Human Brain Taxonomy**](../notebooks/asap_pmdbs_siletti_taxonomy.ipynb):
+  Explore the mapping of the ASAP-PMDBS cells to the Siletti, Whole Human Brain
+  (WHB) taxonomy produced by MapMyCells.
+* [**Mapping to the SEA-AD**](../notebooks/asap_pmdbs_seaad_taxonomy.ipynb):
+  Explore the mapping of the ASAP-PMDBS cells to the SEA-AD, Whole Human Brain 
+  taxonomy produced by MapMyCells.
+* [**10X Gene Expression**](../notebooks/asap_pmdbs_gene_expression.ipynb):
+  Learn how to extract gene expression data for specific genes and visualize
+  them in a UMAP.
