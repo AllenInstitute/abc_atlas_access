@@ -17,9 +17,9 @@ Brain Sequencing Collection (PMDBS), a harmonized repository comprising of
 single nucleus and PolyA RNA-seq data contributed by five ASAP CRN teams.
 Sequencing data were uniformly aligned to the GRCh38.p13 reference genome
 (Gencode V32), basic quality control was performed and low quality cells were
-filtered out. A set of highly variable genes were identified and usedthe scVI
-workflow resulteding in an integrated latent variable representation, 2D UMAP
-coordinates and a set of 30 clusters. Currently the repository spans roughly 3
+filtered out. A set of highly variable genes were identified and used the scVI
+workflow resulting in an integrated latent variable representation, 2D UMAP
+coordinates and a set of 30 clusters. Currently, the repository spans roughly 3
 millions cells obtained from 9 brain regions and spanning 211 donors with
 various pathologies (including healthy control). For more details on this
 dataset, please visit the [ASAP webpage](https://cloud.parkinsonsroadmap.org/collections/postmortem-derived-brain-sequencing-collection/overview).
