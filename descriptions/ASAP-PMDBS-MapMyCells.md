@@ -30,7 +30,7 @@ on S3:
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|
 | Taxonomy  | [s3://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/ASAP-PMDBS-taxonomy/20250331/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/ASAP-PMDBS-taxonomy/20250331/) | 2 GB |
 
-Data is being share under the CC BY NC 4.0 license.
+Data is being shared under the CC BY 4.0 license.
 
 Related resources:
 * Overview of the ~3 million cell ASAP-PMDBS, harmonized dataset
