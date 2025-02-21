@@ -1,28 +1,29 @@
 # ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview 
 
+ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview
+
 The Michael J. Fox Foundation (MJFF) and the Allen Institute for Brain Science
 (AIBS) are teaming up to further the mission of the Aligning Science Across
 Parkinson’s (ASAP) Collaborative Research Network (CRN) program, to accelerate
 discoveries in the Parkinson’s disease (PD) and neurodegenerative disease
 research communities. Together we will annotate, enhance and add knowledge to
-the growing data catalog in the ASAP CRN Cloud through integration of cell type
-taxonomies using the Allen Institute’s MapMyCells tool and visualization
+the growing data catalog in the ASAP CRN Cloud through integration of cell
+type taxonomies using the Allen Institute’s MapMyCells tool and visualization
 through the Allen Brain Cell (ABC) Atlas web application. This integration of
 data and knowledge will allow users to visualize and explore the changes in
 gene expression of specific, highly resolved brain cell types in the context of
 a large PD cohort of donors.
 
 This initial collaboration focuses on the Human Postmortem-derived Brain
-Sequencing Collection (PMDBS), a harmonized repository comprised of single 
+Sequencing Collection (PMDBS), a harmonized repository comprised of single
 nucleus and PolyA RNA-seq data contributed by five ASAP CRN teams. Sequencing
 data were uniformly aligned to the GRCh38.p13 reference genome (Gencode V32),
-quality control was performed and low-quality cells were filtered out. A
-set of highly variable genes were identified and the scVI workflow
-resulted in an integrated latent variable representation, 2D UMAP coordinates
-and a set of 30 clusters. Currently, the repository spans roughly 3 millions
-cells obtained from 9 brain regions and 211 donors with various pathologies
-(including healthy control). For more details on this dataset, please visit the
-[ASAP webpage](https://cloud.parkinsonsroadmap.org/collections/postmortem-derived-brain-sequencing-collection/overview).
+quality control was performed and low-quality cells were filtered out. A set of
+highly variable genes were identified and the scVI workflow resulted in an
+integrated latent variable representation, 2D UMAP coordinates and a set of 30
+clusters. Currently, the repository spans roughly 3 millions cells obtained
+from 9 brain regions and 211 donors with various pathologies (including healthy
+control). For more details on this dataset, please visit the [ASAP webpage](https://cloud.parkinsonsroadmap.org/collections/postmortem-derived-brain-sequencing-collection/overview).
 
 The simplified data created by AIBS in the form of expression matrices and
 associated metadata are hosted on AWS S3 bucket as a AWS Public Dataset:
