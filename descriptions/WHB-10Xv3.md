@@ -13,6 +13,7 @@ a AWS Public Dataset:
 |---|--|---------|
 | Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/WHB-10Xv3/20240330/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/WHB-10Xv3/20240330/) | 70.0 GB |
 | Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/WHB-10Xv3/20241115](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/WHB-10Xv3/20241115/) | 862.1 MB |
+| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/WHB-10Xv3/20240831/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/WHB-10Xv3/20240831/) | 8.1 GB |
 
 
 Data is being share under the CC BY NC 4.0 license.

@@ -26,7 +26,6 @@ parts:
     - file: descriptions/Zeng_Aging_Mouse_dataset
       sections:
         - file: descriptions/Zeng_Aging_Mouse_10Xv3
-        - file: descriptions/Zeng_Aging_Mouse_clustering
         - file: descriptions/Zeng_Aging_Mouse_taxonomy
     - file: descriptions/Zhuang_dataset
       sections:
@@ -43,6 +42,11 @@ parts:
       sections:
         - file: descriptions/ASAP-PMDBS-10X.md
         - file: descriptions/ASAP-PMDBS-MapMyCells.md
+    - file: descriptions/HMBA-BG_dataset
+      sections:
+        - file: descriptions/HMBA-10XMultiome-BG-Aligned
+        - file: descriptions/HMBA-10XMultiome-BG
+        - file: descriptions/HMBA-BG-taxonomy-CCN20250428
 
   - caption: NOTEBOOKS
     chapters:
@@ -82,11 +86,17 @@ parts:
         - file: notebooks/asap_pmdbs_siletti_taxonomy
         - file: notebooks/asap_pmdbs_seaad_taxonomy
         - file: notebooks/asap_pmdbs_gene_expression
+    - file: descriptions/HMBA-BG_notebooks
+      sections:
+        - file: notebooks/hmba_bg_clustering_analysis_and_annotation
+        - file: notebooks/hmba_bg_10X_snRNASeq_tutorial
+
 
   - caption: ADDITIONAL RESOURCES
     chapters:
     - file: docs/README
       sections:
-      - file: docs/gene_lists/README
+      - file: docs/abbreviation_terms/README
       - file: docs/cluster_annotations/README
+      - file: docs/gene_lists/README
       - file: docs/parcellation_annotations/README

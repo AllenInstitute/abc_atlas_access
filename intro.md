@@ -20,7 +20,7 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The Winter 2024 public beta data release includes:
+The Spring 2025 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_dataset.md)
@@ -31,6 +31,8 @@ The Winter 2024 public beta data release includes:
   (Kimberly Siletti)**
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_dataset.md)
   (ASAP)**
+* **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_dataset.md)
+  (HMBA)**
 
 We provide a lightweight python object, the AbcProjectCache, to handle
 downloading of the data and managing different release versions for the user.
@@ -71,8 +73,21 @@ notebook.
   (Kimberly Siletti)**
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_notebooks.md)
   (ASAP)**
+* **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
+  (HMBA)**
 
 ## Release Notes
+* **[Add HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250531), abc_atlas_access (v0.7.0)]**
+  * Added the Human-Mammalian Brain - Basal Ganglia (HMBA-BG) 10X dataset.
+    * ~2 million single cell transcriptomes with ~16k genes aligned across
+      Human, Macaque, and Marmoset.
+    * Cross-species taxonomy containing 1435 clusters with annotations
+    * Individual single cell transcriptome datasets for each of the species in
+      this release including:
+      * 1,683,105 Human cells, 36,601 genes
+      * 839,102 Macaque cells, 35,219 genes
+      * 414,575 Marmoset cells, 35,787 genes
+    * MapMyCells files for each of the individual species.
 * **[Add ASAP-PMDBS dataset and MapMyCells results (version 20250331), abc_atlas_access (v0.6.0)]**
   * Added single cell transscriptomics from the 3 million cell, Aligning Science
     Across Parkinson’s (ASAP) Human Postmortem-Derived Brain Sequencing
