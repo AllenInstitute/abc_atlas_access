@@ -39,6 +39,10 @@ parts:
         - file: descriptions/WHB-10Xv3
         - file: descriptions/WHB-10X-clustering
         - file: descriptions/WHB-taxonomy
+    - file: descriptions/ASAP-PMDBS_dataset
+      sections:
+        - file: descriptions/ASAP-PMDBS-10X.md
+        - file: descriptions/ASAP-PMDBS-MapMyCells.md
 
   - caption: NOTEBOOKS
     chapters:
@@ -72,6 +76,12 @@ parts:
       - file: notebooks/WHB_cluster_annotation_tutorial
       - file: notebooks/WHB-10x_snRNASeq_tutorial_part_1
       - file: notebooks/WHB-10x_snRNASeq_tutorial_part_2
+    - file: descriptions/ASAP-PMDBS_notebooks
+      sections:
+        - file: notebooks/asap_pmdbs_data_and_metadata
+        - file: notebooks/asap_pmdbs_siletti_taxonomy
+        - file: notebooks/asap_pmdbs_seaad_taxonomy
+        - file: notebooks/asap_pmdbs_gene_expression
 
   - caption: ADDITIONAL RESOURCES
     chapters:
