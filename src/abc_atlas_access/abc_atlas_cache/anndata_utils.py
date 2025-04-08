@@ -60,7 +60,7 @@ def get_gene_data(
     # to load.
     matrices = all_cells.groupby(
         ['dataset_label', 'feature_matrix_label']
-    )[['library_label']].count()
+    )[[all_cells.columns[0]]].count()
     matrices.columns = ['cell_count']
 
     total_start = time.process_time()
