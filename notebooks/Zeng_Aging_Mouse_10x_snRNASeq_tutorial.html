@@ -519,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250131/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250331/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -580,7 +580,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_cluster_mapping_annotations.csv: 100%|█████████████████████████████████████████████████████████████████| 173M/173M [00:06&lt;00:00, 27.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 419M/419M [00:58&lt;00:00, 7.12MMB/s]
+cell_annotation_colors.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 76.1M/76.1M [00:10&lt;00:00, 7.35MMB/s]
+cluster.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 174k/174k [00:00&lt;00:00, 1.34MMB/s]
+cell_cluster_mapping_annotations.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 173M/173M [00:24&lt;00:00, 7.20MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -789,10 +792,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 8.40MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 6.90MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  32285
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -879,7 +885,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|█████████████████████████████████████████████████████████████| 77.0M/77.0M [00:03&lt;00:00, 21.6MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|███████████████████████████████████████████████████████████████████████████████████| 77.0M/77.0M [00:11&lt;00:00, 6.72MMB/s]
 </pre></div>
 </div>
 </div>
@@ -1224,7 +1230,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aging_degenes.csv: 100%|██████████████████████████████████████████████████████████████████████████████████| 1.13M/1.13M [00:00&lt;00:00, 6.78MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aging_degenes.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.13M/1.13M [00:00&lt;00:00, 5.50MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1346,7 +1352,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_mapping_pivot.csv: 100%|████████████████████████████████████████████████████████████████████████████| 118k/118k [00:00&lt;00:00, 1.25MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_mapping_pivot.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 118k/118k [00:00&lt;00:00, 862kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1611,7 +1617,7 @@ document.write(`
     <span class="n">output_df</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">celltypes</span> <span class="o">=</span> <span class="n">level_degenes</span><span class="p">[</span><span class="s1">&#39;grouping_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">celltype</span> <span class="ow">in</span> <span class="n">celltypes</span><span class="p">:</span>
-        <span class="n">subdf</span> <span class="o">=</span> <span class="n">degenes</span><span class="p">[</span><span class="n">degenes</span><span class="p">[</span><span class="s1">&#39;grouping_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">celltype</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;adjusted_pvalue&#39;</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">subdf</span> <span class="o">=</span> <span class="n">degenes</span><span class="p">[</span><span class="n">degenes</span><span class="p">[</span><span class="s1">&#39;grouping_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">celltype</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;adjusted_pvalue&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subdf</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">top_n</span><span class="p">:</span>
             <span class="n">output_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subdf</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1667,70 +1673,70 @@ document.write(`
       <td>supertype</td>
       <td>CS20230722_SUPT_1186</td>
       <td>1186 ABC NN_1</td>
-      <td>ENSMUSG00000002602</td>
-      <td>Axl</td>
+      <td>ENSMUSG00000052477</td>
+      <td>C130026I21Rik</td>
       <td>False</td>
-      <td>1.443417</td>
-      <td>8.056410e-07</td>
-      <td>0.008445</td>
-      <td>2.006174</td>
-      <td>0.880659</td>
+      <td>2.714264</td>
+      <td>4.619190e-26</td>
+      <td>4.841834e-22</td>
+      <td>3.369042</td>
+      <td>2.059486</td>
     </tr>
     <tr>
       <th>1</th>
       <td>supertype</td>
       <td>CS20230722_SUPT_1186</td>
       <td>1186 ABC NN_1</td>
-      <td>ENSMUSG00000019929</td>
-      <td>Dcn</td>
+      <td>ENSMUSG00000000184</td>
+      <td>Ccnd2</td>
       <td>False</td>
-      <td>-1.809868</td>
-      <td>6.742604e-07</td>
-      <td>0.007068</td>
-      <td>-1.104921</td>
-      <td>-2.514814</td>
+      <td>-3.401134</td>
+      <td>1.515504e-24</td>
+      <td>1.588551e-20</td>
+      <td>-2.796106</td>
+      <td>-4.006162</td>
     </tr>
     <tr>
       <th>2</th>
       <td>supertype</td>
       <td>CS20230722_SUPT_1186</td>
       <td>1186 ABC NN_1</td>
-      <td>ENSMUSG00000049148</td>
-      <td>Plcxd3</td>
+      <td>ENSMUSG00000024610</td>
+      <td>Cd74</td>
       <td>False</td>
-      <td>1.054319</td>
-      <td>4.960283e-07</td>
-      <td>0.005199</td>
-      <td>1.571687</td>
-      <td>0.536952</td>
+      <td>3.550094</td>
+      <td>8.157661e-22</td>
+      <td>8.550860e-18</td>
+      <td>4.268748</td>
+      <td>2.831439</td>
     </tr>
     <tr>
       <th>3</th>
       <td>supertype</td>
       <td>CS20230722_SUPT_1186</td>
       <td>1186 ABC NN_1</td>
-      <td>ENSMUSG00000079547</td>
-      <td>H2-DMb1</td>
+      <td>ENSMUSG00000036594</td>
+      <td>H2-Aa</td>
       <td>False</td>
-      <td>1.707299</td>
-      <td>4.853269e-07</td>
-      <td>0.005087</td>
-      <td>2.326934</td>
-      <td>1.087663</td>
+      <td>2.852235</td>
+      <td>3.852163e-18</td>
+      <td>4.037837e-14</td>
+      <td>3.502760</td>
+      <td>2.201709</td>
     </tr>
     <tr>
       <th>4</th>
       <td>supertype</td>
       <td>CS20230722_SUPT_1186</td>
       <td>1186 ABC NN_1</td>
-      <td>ENSMUSG00000052974</td>
-      <td>Cyp2f2</td>
+      <td>ENSMUSG00000060586</td>
+      <td>H2-Eb1</td>
       <td>False</td>
-      <td>-1.323712</td>
-      <td>2.652985e-07</td>
-      <td>0.002781</td>
-      <td>-0.836481</td>
-      <td>-1.810943</td>
+      <td>2.467009</td>
+      <td>3.964547e-16</td>
+      <td>4.155638e-12</td>
+      <td>3.097659</td>
+      <td>1.836359</td>
     </tr>
   </tbody>
 </table>
