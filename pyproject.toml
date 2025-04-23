@@ -27,6 +27,7 @@ classifiers = [
 
 [project.optional-dependencies]
 notebooks = [
+    "geojson",
     "matplotlib",
     "scipy",
     "SimpleITK"
