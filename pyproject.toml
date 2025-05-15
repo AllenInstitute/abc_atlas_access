@@ -14,7 +14,7 @@ dependencies = [
   "pydantic",
   "tqdm"
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 authors = [
   {name = "Christopher Morrison", email = "chris.morrison@allenintitute.org"},
 ]
