@@ -46,10 +46,10 @@ class TestLocalCache(BaseCacheTestCase):
                                    bucket_name=self.test_bucket_name)
         for version in ['20200101', '20220101']:
             cloud_cache.load_manifest(f'releases/{version}/manifest.json')
-            cloud_cache.download_data(directory=test_directory,
+            cloud_cache.download_file(directory=test_directory,
                                       file_name=data_file)
-            cloud_cache.download_metadata(directory=test_directory,
-                                          file_name=metadata_file)
+            cloud_cache.download_file(directory=test_directory,
+                                      file_name=metadata_file)
         del cloud_cache
 
         local_cache = LocalCache(self.cache_dir)
@@ -59,21 +59,21 @@ class TestLocalCache(BaseCacheTestCase):
                                 'releases/20220101/manifest.json'}
 
         local_cache.load_manifest('releases/20200101/manifest.json')
-        attr = local_cache.data_path(directory=test_directory,
-                                     file_name=data_file)
+        attr = local_cache.get_file_path(directory=test_directory,
+                                         file_name=data_file)
         assert attr['exists']
         assert '20200101' in str(attr['local_path'])
-        attr = local_cache.metadata_path(directory=test_directory,
+        attr = local_cache.get_file_path(directory=test_directory,
                                          file_name=metadata_file)
         assert attr['exists']
         assert '20200101' in str(attr['local_path'])
 
         local_cache.load_manifest('releases/20220101/manifest.json')
-        attr = local_cache.data_path(directory=test_directory,
-                                     file_name=data_file)
+        attr = local_cache.get_file_path(directory=test_directory,
+                                         file_name=data_file)
         assert attr['exists']
         assert '20220101' in str(attr['local_path'])
-        attr = local_cache.metadata_path(directory=test_directory,
+        attr = local_cache.get_file_path(directory=test_directory,
                                          file_name=metadata_file)
         assert attr['exists']
         assert '20220101' in str(attr['local_path'])
