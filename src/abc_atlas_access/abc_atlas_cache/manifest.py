@@ -1,8 +1,9 @@
 from typing import Dict, List, Any, Union
 import json
 import pathlib
-from abc_atlas_access.abc_atlas_cache.file_attributes import \
-    CacheFileAttributes  # noqa: E501
+from abc_atlas_access.abc_atlas_cache.file_attributes import (
+    CacheFileAttributes,
+)  # noqa: E501
 
 """Methods for accessing and manipulating manifest.json files associated with
 the ABC atlas data. Adapted from
@@ -33,36 +34,38 @@ class Manifest(object):
     """
 
     def __init__(
-            self,
-            cache_dir: Union[str, pathlib.Path],
-            json_input,
+        self,
+        cache_dir: Union[str, pathlib.Path],
+        json_input,
     ):
         if isinstance(cache_dir, str):
             self._cache_dir = pathlib.Path(cache_dir).resolve()
         elif isinstance(cache_dir, pathlib.Path):
             self._cache_dir = cache_dir.resolve()
         else:
-            raise ValueError("cache_dir must be either a str "
-                             "or a pathlib.Path; "
-                             f"got {type(cache_dir)}")
+            raise ValueError(
+                "cache_dir must be either a str "
+                "or a pathlib.Path; "
+                f"got {type(cache_dir)}"
+            )
 
         self._data: Dict[str, Any] = json.load(json_input)
         if not isinstance(self._data, dict):
-            raise ValueError("Expected to deserialize manifest into a dict; "
-                             f"instead got {type(self._data)}")
+            raise ValueError(
+                "Expected to deserialize manifest into a dict; "
+                f"instead got {type(self._data)}"
+            )
 
-        self._version: str = self._data['version']
-        self._resource_uri: str = self._data['resource_uri']
+        self._version: str = self._data["version"]
+        self._resource_uri: str = self._data["resource_uri"]
 
-        self._directory_list: List[str] = list(
-            self._data['directory_listing'].keys()
-        )
+        self._directory_list: List[str] = list(self._data["directory_listing"].keys())
         self._directory_list.sort()
 
     def _list_data_in_directory(
-            self,
-            directory: str,
-            is_metadata=False,
+        self,
+        directory: str,
+        data_kind: str,
     ) -> List[str]:
         """
         Get a list of all files of in a directory either for metadata files or
@@ -82,37 +85,26 @@ class Manifest(object):
             directory.
         """
         output_data_list = []
-        sub_directories = self._data['file_listing'][directory]
-        if is_metadata:
-            if 'metadata' not in sub_directories.keys():
-                raise DataTypeNotInDirectory(
-                    f"No metadata files found in directory {directory}. No "
-                    "metadata sub-directory found."
-                )
-            output_data_list.extend(list(sub_directories['metadata'].keys()))
-        else:
-            for sub_dir in sub_directories.keys():
-                if sub_dir == 'metadata' or sub_dir == 'mapmycells':
-                    continue
-                for sub_dir_key in sub_directories[sub_dir].keys():
-                    # Check for files with multiple kinds (e.g. raw and log2)
-                    if "files" in sub_directories[sub_dir][sub_dir_key].keys():
-                        output_data_list.append(sub_dir_key)
-                    else:
-                        output_data_list.extend(
-                            ["%s/%s" % (sub_dir_key, key)
-                             for key in sub_directories[sub_dir][
-                                 sub_dir_key].keys()]
-                        )
+        sub_directories = self._data["file_listing"][directory]
+        for sub_dir in sub_directories.keys():
+            if sub_dir != data_kind:
+                continue
+            for sub_dir_key in sub_directories[sub_dir].keys():
+                # Check for files with multiple kinds (e.g. raw and log2)
+                if "files" in sub_directories[sub_dir][sub_dir_key].keys():
+                    output_data_list.append(sub_dir_key)
+                else:
+                    output_data_list.extend(
+                        [
+                            "%s/%s" % (sub_dir_key, key)
+                            for key in sub_directories[sub_dir][sub_dir_key].keys()
+                        ]
+                    )
         output_data_list.sort()
-        if len(output_data_list) == 0 and is_metadata:
+        if len(output_data_list) == 0:
             raise DataTypeNotInDirectory(
-                f"No metadata files found in directory {directory}. Metadata "
-                "sub-directory is empty."
-            )
-        elif len(output_data_list) == 0 and not is_metadata:
-            raise DataTypeNotInDirectory(
-                f"No data files found in directory {directory}."
+                f"No {data_kind} files found in directory {directory}. "
+                f"{data_kind} sub-directory is empty."
             )
         return output_data_list
 
@@ -158,9 +150,27 @@ class Manifest(object):
         list of str
             List of all metadata files in the specified directory.
         """
-        return self._list_data_in_directory(directory, is_metadata=True)
+        return self._list_data_in_directory(directory, data_kind="metadata")
 
-    def list_data_files(self, directory: str) -> List[str]:
+    def list_expression_matrix_files(self, directory: str) -> List[str]:
+        """
+        List all expression matrix files that are not data in the specified
+        directory.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to list data files in.
+
+        Returns
+        -------
+        list of str
+            List of all data files that are not metadata in the specified
+            directory.
+        """
+        return self._list_data_in_directory(directory, data_kind="expression_matrices")
+
+    def list_image_volume_files(self, directory: str) -> List[str]:
         """
         List all data files that are not data in the specified directory.
 
@@ -175,12 +185,29 @@ class Manifest(object):
             List of all data files that are not metadata in the specified
             directory.
         """
-        return self._list_data_in_directory(directory, is_metadata=False)
+        return self._list_data_in_directory(directory, data_kind="image_volumes")
+
+    def list_mapmycells_files(self, directory: str) -> List[str]:
+        """
+        List all data files that are not data in the specified directory.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to list data files in.
+
+        Returns
+        -------
+        list of str
+            List of all data files that are not metadata in the specified
+            directory.
+        """
+        return self._list_data_in_directory(directory, data_kind="mapmycells")
 
     def get_file_attributes(
-            self,
-            directory: str,
-            file_name: str,
+        self,
+        directory: str,
+        file_name: str,
     ) -> CacheFileAttributes:
         """
         Get the data file with the specified name in the specified directory.
@@ -197,14 +224,14 @@ class Manifest(object):
         CacheFileAttributes
             The file attributes for the requested file.
         """
-        file_name = file_name.split('/')
+        file_name = file_name.split("/")
         if len(file_name) == 1:
             file_name = file_name[0]
             kind = None
         else:
             kind = file_name[1]
             file_name = file_name[0]
-        directory_data = self._data['file_listing'][directory]
+        directory_data = self._data["file_listing"][directory]
 
         file_attributes = None
         for sub_dir in directory_data.keys():
@@ -213,26 +240,26 @@ class Manifest(object):
                 if "files" in files_data.keys():
                     file_type = list(files_data["files"].keys())[0]
                     file_attributes = self._create_file_attributes(
-                        remote_path=files_data["files"][file_type]['url'],
-                        version=files_data["files"][file_type]['version'],
-                        size=files_data["files"][file_type]['size'],
-                        relative_path=files_data["files"][file_type][
-                            'relative_path'],
+                        remote_path=files_data["files"][file_type]["url"],
+                        version=files_data["files"][file_type]["version"],
+                        size=files_data["files"][file_type]["size"],
+                        relative_path=files_data["files"][file_type]["relative_path"],
                         file_type=file_type,
-                        file_hash=files_data["files"][file_type]['file_hash']
+                        file_hash=files_data["files"][file_type]["file_hash"],
                     )
                 elif kind in files_data.keys():
-                    file_type = list(files_data[kind]['files'].keys())[0]
+                    file_type = list(files_data[kind]["files"].keys())[0]
                     file_attributes = self._create_file_attributes(
-                        remote_path=files_data[kind]["files"][file_type][
-                            'url'],
-                        version=files_data[kind]["files"][file_type][
-                            'version'],
-                        size=files_data[kind]["files"][file_type]['size'],
+                        remote_path=files_data[kind]["files"][file_type]["url"],
+                        version=files_data[kind]["files"][file_type]["version"],
+                        size=files_data[kind]["files"][file_type]["size"],
                         relative_path=files_data[kind]["files"][file_type][
-                            'relative_path'],
+                            "relative_path"
+                        ],
                         file_type=file_type,
-                        file_hash=files_data[kind]["files"][file_type]['file_hash']  # noqa: E501
+                        file_hash=files_data[kind]["files"][file_type][
+                            "file_hash"
+                        ],  # noqa: E501
                     )
                 elif kind is None and "files" not in files_data.keys():
                     raise KeyError(
@@ -242,20 +269,19 @@ class Manifest(object):
                         f"{['%s/%s' % (file_name, key) for key in files_data.keys()]}"  # noqa: E501
                     )
         if file_attributes is None:
-            raise KeyError(
-                f"File {file_name} not found in directory {directory}."
-            )
+            raise KeyError(f"File {file_name} not found in directory {directory}.")
 
         return file_attributes
 
-    def _create_file_attributes(self,
-                                remote_path: str,
-                                version: str,
-                                size: int,
-                                relative_path: str,
-                                file_type: str,
-                                file_hash: str
-                                ) -> CacheFileAttributes:
+    def _create_file_attributes(
+        self,
+        remote_path: str,
+        version: str,
+        size: int,
+        relative_path: str,
+        file_type: str,
+        file_hash: str,
+    ) -> CacheFileAttributes:
         """
         Create the cache_file_attributes describing a file.
         This method does the work of assigning a local_path for a remote file.
@@ -291,14 +317,37 @@ class Manifest(object):
             file_size=size,
             file_type=file_type,
             relative_path=relative_path,
-            file_hash=file_hash
+            file_hash=file_hash,
         )
 
         return obj
+    
+    def get_directory_size_by_kind(
+        self,
+        directory: str,
+        data_kind: str,
+    ) -> str:
+        """
+        Get the size of a directory in the requested in GB or MB.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+        data_kind: str
+            The kind of data to get the size of (e.g. 'metadata', 'expression_matrices', 'image_volumes', 'mapmycells').
+
+        Returns
+        -------
+        size: str
+            The size of the directory in either GB or MB.
+        """
+        file_list = self._list_data_in_directory(directory, data_kind=data_kind)
+        return self._get_directory_size(directory=directory, file_list=file_list)
 
     def get_directory_metadata_size(
-            self,
-            directory: str,
+        self,
+        directory: str,
     ) -> str:
         """
         Get the size of a metadata directory in GB or MB.
@@ -308,19 +357,17 @@ class Manifest(object):
         directory: str
             The directory to get the size of.
 
-
         Returns
         -------
         size: str
             The size of the directory in either GB or MB.
         """
         file_list = self.list_metadata_files(directory=directory)
-        return self._get_directory_size(directory=directory,
-                                        file_list=file_list)
+        return self._get_directory_size(directory=directory, file_list=file_list)
 
-    def get_directory_data_size(
-            self,
-            directory: str,
+    def get_directory_expression_matrix_size(
+        self,
+        directory: str,
     ) -> str:
         """
         Get the size of a data directory in the requested in GB or MB.
@@ -335,14 +382,53 @@ class Manifest(object):
         size: str
             The size of the directory in either GB or MB.
         """
-        file_list = self.list_data_files(directory=directory)
-        return self._get_directory_size(directory=directory,
-                                        file_list=file_list)
+        file_list = self.list_expression_matrix_files(directory=directory)
+        return self._get_directory_size(directory=directory, file_list=file_list)
+
+    def get_directory_image_volume_size(
+        self,
+        directory: str,
+    ) -> str:
+        """
+        Get the size of a data directory in the requested in GB or MB.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in either GB or MB.
+        """
+        file_list = self.list_image_volume_files(directory=directory)
+        return self._get_directory_size(directory=directory, file_list=file_list)
+
+    def get_directory_mapmycells_size(
+        self,
+        directory: str,
+    ) -> str:
+        """
+        Get the size of a data directory in the requested in GB or MB.
+
+        Parameters
+        ----------
+        directory: str
+            The directory to get the size of.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in either GB or MB.
+        """
+        file_list = self.list_mapmycells_files(directory=directory)
+        return self._get_directory_size(directory=directory, file_list=file_list)
 
     def _get_directory_size(
-            self,
-            directory: str,
-            file_list: List[str],
+        self,
+        directory: str,
+        file_list: List[str],
     ) -> str:
         """
         Get the size of a directory in the requested in GB or MB.
@@ -358,12 +444,11 @@ class Manifest(object):
             The size of the directory in either GB or MB.
         """
         total_size = 0
-        unit_size = 1024 ** 3
+        unit_size = 1024**3
         unit = "GB"
         for file_name in file_list:
             file_attributes = self.get_file_attributes(
-                directory=directory,
-                file_name=file_name
+                directory=directory, file_name=file_name
             )
             total_size += file_attributes.file_size
         total_size /= unit_size
