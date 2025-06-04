@@ -343,7 +343,7 @@ class BasicLocalCache(ABC):
         size: str
             The size of the directory in bytes
         """
-        return self._manifest.get_directory_data_size(directory)
+        return self._manifest.get_directory_expression_matrix_size(directory)
     
     def get_directory_image_volume_size(self, directory: str) -> str:
         """
