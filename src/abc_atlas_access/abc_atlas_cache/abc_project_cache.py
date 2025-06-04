@@ -571,7 +571,7 @@ class AbcProjectCache(object):
             file_name=file_name,
             force_download=force_download,
             skip_hash_check=skip_hash_check
-        )['file_path']
+        )
         return pd.read_csv(path, **kwargs)
 
     def _get_local_path(
@@ -638,7 +638,7 @@ class AbcProjectCache(object):
         """
         return self.cache.get_directory_metadata_size(directory)
 
-    def get_directory_data_size(self, directory: str) -> str:
+    def get_directory_expression_matrix_size(self, directory: str) -> str:
         """
         Return the size of the data in the requested directory in an
         appropriate unit (GB or MB).
@@ -653,7 +653,7 @@ class AbcProjectCache(object):
         size: str
             The size of the directory in bytes.
         """
-        return self.cache.get_directory_data_size(directory)
+        return self.cache.get_directory_expression_matrix_size(directory)
     
     def get_directory_image_volume_size(self, directory: str) -> str:
         """
