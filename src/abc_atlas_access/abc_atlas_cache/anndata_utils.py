@@ -72,7 +72,7 @@ def get_gene_data(
 
         print("loading file:", matrix_file)
 
-        file_path = abc_atlas_cache.get_data_path(
+        file_path = abc_atlas_cache.get_file_path(
             directory=directory,
             file_name=f"{matrix_file}/{data_type}"
         )

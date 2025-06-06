@@ -140,26 +140,26 @@ class TestAbcProjectCache(BaseCacheTestCase):
             f'releases/{self.new_version}/manifest.json'
         ]
         assert cache.list_directories == ["second_dir", "test_directory"]
-        assert cache.list_data_files("second_dir") == [self.new_file]
-        assert cache.list_data_files("test_directory") == [self.data_file]
+        assert cache.list_expression_matrix_files("second_dir") == [self.new_file]
+        assert cache.list_expression_matrix_files("test_directory") == [self.data_file]
         assert cache.list_metadata_files("test_directory") == [
             "metadata_file"
         ]
         # Test the directory from the older manifest is not available.
         with pytest.raises(KeyError, match="first_dir"):
-            cache.list_data_files("first_dir")
+            cache.list_expression_matrix_files("first_dir")
 
         # Download data and test that the downloaded file exists on disk.
-        data_path = cache.get_data_path(directory="second_dir",
+        data_path = cache.get_file_path(directory="second_dir",
                                         file_name=self.new_file)
         assert data_path.exists()
         assert data_path == self.cache_dir / self.new_file_attr.relative_path
-        data_path = cache.get_data_path(directory="test_directory",
+        data_path = cache.get_file_path(directory="test_directory",
                                         file_name="data_file/log2")
         assert data_path.exists()
         assert data_path == self.cache_dir / self.new_data_path
-        metadata_path = cache.get_metadata_path(directory="test_directory",
-                                                file_name="metadata_file")
+        metadata_path = cache.get_file_path(directory="test_directory",
+                                            file_name="metadata_file")
         assert metadata_path.exists()
         assert metadata_path == self.cache_dir / self.new_metadata_path
 
@@ -173,22 +173,22 @@ class TestAbcProjectCache(BaseCacheTestCase):
             f'releases/{self.new_version}/manifest.json'
         ]
         assert cache.list_directories == ["first_dir", "test_directory"]
-        assert cache.list_data_files("first_dir") == [self.old_file]
-        assert cache.list_data_files("test_directory") == [self.data_file]
+        assert cache.list_expression_matrix_files("first_dir") == [self.old_file]
+        assert cache.list_expression_matrix_files("test_directory") == [self.data_file]
         assert cache.list_metadata_files("test_directory") == [
             "metadata_file"
         ]
         # Test that the newer manifest's directory is not present.
         with pytest.raises(KeyError, match="second_dir"):
-            cache.list_data_files("second_dir")
+            cache.list_expression_matrix_files("second_dir")
 
         # Download the older files and test for their expected paths.
-        data_paths = cache.get_directory_data(directory="first_dir")
+        data_paths = cache.get_directory_expression_matrices(directory="first_dir")
         assert data_paths[0].exists()
         assert data_paths == [
             self.cache_dir / self.old_file_attr.relative_path
         ]
-        data_paths = cache.get_directory_data(directory="test_directory")
+        data_paths = cache.get_directory_expression_matrices(directory="test_directory")
         assert data_paths[0].exists()
         assert data_paths == [self.cache_dir / self.old_data_path]
         metadata_paths = cache.get_directory_metadata(
@@ -209,12 +209,12 @@ class TestAbcProjectCache(BaseCacheTestCase):
         cache = AbcProjectCache.from_s3_cache(self.cache_dir)
 
         # Download data into the local cache.
-        cache.get_data_path(directory="second_dir",
+        cache.get_file_path(directory="second_dir",
                             file_name=self.new_file)
-        cache.get_data_path(directory="test_directory",
+        cache.get_file_path(directory="test_directory",
                             file_name=self.data_file)
-        cache.get_metadata_path(directory="test_directory",
-                                file_name="metadata_file")
+        cache.get_file_path(directory="test_directory",
+                            file_name="metadata_file")
 
         # Remove the previous cache object.
         del cache
@@ -229,28 +229,28 @@ class TestAbcProjectCache(BaseCacheTestCase):
             f'releases/{self.new_version}/manifest.json'
         ]
         assert cache.list_directories == ["second_dir", "test_directory"]
-        assert cache.list_data_files("second_dir") == [self.new_file]
-        assert cache.list_data_files("test_directory") == [self.data_file]
+        assert cache.list_expression_matrix_files("second_dir") == [self.new_file]
+        assert cache.list_expression_matrix_files("test_directory") == [self.data_file]
         assert cache.list_metadata_files("test_directory") == [
             "metadata_file"
         ]
         with pytest.raises(KeyError, match="first_dir"):
-            cache.list_data_files("first_dir")
+            cache.list_expression_matrix_files("first_dir")
 
-        data_path = cache.get_data_path(directory="second_dir",
+        data_path = cache.get_file_path(directory="second_dir",
                                         file_name=self.new_file)
         assert data_path.exists()
         assert data_path == self.cache_dir / self.new_file_attr.relative_path
-        data_path = cache.get_data_path(directory="test_directory",
+        data_path = cache.get_file_path(directory="test_directory",
                                         file_name=self.data_file)
         assert data_path.exists()
         assert data_path == self.cache_dir / self.new_data_path
-        metadata_path = cache.get_metadata_path(directory="test_directory",
-                                                file_name="metadata_file")
+        metadata_path = cache.get_file_path(directory="test_directory",
+                                            file_name="metadata_file")
         assert metadata_path.exists()
         assert metadata_path == self.cache_dir / self.new_metadata_path
 
-        data_paths = cache.get_directory_data(directory="test_directory")
+        data_paths = cache.get_directory_expression_matrices(directory="test_directory")
         assert data_paths == [self.cache_dir / self.new_data_path]
         metadata_paths = cache.get_directory_metadata(
             directory="test_directory"
@@ -267,12 +267,12 @@ class TestAbcProjectCache(BaseCacheTestCase):
         assert isinstance(cache.cache, S3CloudCache)
 
         # Download data into the local cache.
-        cache.get_data_path(directory="second_dir",
+        cache.get_file_path(directory="second_dir",
                             file_name=self.new_file)
-        cache.get_data_path(directory="test_directory",
+        cache.get_file_path(directory="test_directory",
                             file_name=self.data_file)
-        cache.get_metadata_path(directory="test_directory",
-                                file_name="metadata_file")
+        cache.get_file_path(directory="test_directory",
+                            file_name="metadata_file")
 
         # Remove the previous cache object.
         del cache

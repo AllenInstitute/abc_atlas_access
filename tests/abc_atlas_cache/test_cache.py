@@ -276,7 +276,7 @@ class TestCache(BaseCacheTestCase):
 
         # test data_path
         directory = data_path.split('/')[1]
-        attr = cache.data_path(
+        attr = cache.get_file_path(
             directory=directory,
             file_name=f"{data_path.split('/')[-1].split('.')[0]}/log2"
         )
@@ -287,7 +287,7 @@ class TestCache(BaseCacheTestCase):
         assert not expected_path.exists()
 
         directory = metadata_path.split('/')[1]
-        attr = cache.metadata_path(
+        attr = cache.get_file_path(
             directory,
             metadata_path.split('/')[-1].split('.')[0]
         )
@@ -483,7 +483,7 @@ class TestCache(BaseCacheTestCase):
 
         # test data_path
         directory = data_path.split('/')[1]
-        data_path_list = cache.download_directory_data(
+        data_path_list = cache.download_directory_expression_matrices(
             directory=directory
         )
         assert data_path_list == [expected_data_path]
@@ -536,7 +536,7 @@ class TestCache(BaseCacheTestCase):
         directory = data_path.split('/')[1]
         with pytest.raises(RuntimeError,
                            match=f"Could not download {data_path}"):
-            cache.download_data(
+            cache.download_file(
                 directory=directory,
                 file_name=f"{data_path.split('/')[-1].split('.')[0]}/log2"
             )
@@ -544,20 +544,20 @@ class TestCache(BaseCacheTestCase):
         # test download_metadta fails on bad hash.
         with pytest.raises(RuntimeError,
                            match=f"Could not download {metadata_path}"):
-            cache.download_metadata(
+            cache.download_file(
                 directory=directory,
                 file_name=metadata_path.split('/')[-1].split('.')[0]
             )
         assert not expected_metadata_path.exists()
 
-        full_data_path = cache.download_data(
+        full_data_path = cache.download_file(
             directory=directory,
             file_name=f"{data_path.split('/')[-1].split('.')[0]}/log2",
             skip_hash_check=True
         )
         assert full_data_path.exists()
         assert full_data_path == expected_data_path
-        full_metadata_path = cache.download_metadata(
+        full_metadata_path = cache.download_file(
             directory=directory,
             file_name=metadata_path.split('/')[-1].split('.')[0],
             skip_hash_check=True
