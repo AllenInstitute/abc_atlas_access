@@ -494,6 +494,45 @@ class AbcProjectCache(object):
                         f'\tTotal directory size = {size} GB\n\n',
                 category=LargeDataSizeWarning)
             
+    def get_data_path(
+            self,
+            directory: str,
+            file_name: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+        ):
+        warnings.warn(
+            "get_data_path is deprecated and will be removed in a future release. "
+            "Use get_file_path instead.",
+            DeprecationWarning
+        )
+        return self.get_file_path(
+            directory=directory,
+            file_name=file_name,
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+    
+    def get_metadata_path(
+            self,
+            directory: str,
+            file_name: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ):
+        warnings.warn(
+            "get_metadata_path is deprecated and will be removed in a future release. "
+            "Use get_file_path instead.",
+            DeprecationWarning
+        )
+        return self.get_file_path(
+            directory=directory,
+            file_name=file_name,
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+                          
+            
     def get_file_path(
             self,
             directory: str,
