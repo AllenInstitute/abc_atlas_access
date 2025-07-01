@@ -1273,14 +1273,23 @@ class S3CloudCache(CloudCacheBase):
     ui_class_name: Optional[str]
         Name of the class users are actually using to maniuplate this
         functionality (used to populate helpful error messages)
+
+    auth_required: bool
+        If True, use authentication to access the S3 bucket. Will use
+        the ``default`` credentials in a aws credentials file. If False,
+        assume the bucket is public and use unsigned access. Defaults to False.
     """
 
-    def __init__(self,
-                 cache_dir: Union[str, Path],
-                 bucket_name: str,
-                 ui_class_name=None):
+    def __init__(
+            self,
+            cache_dir: Union[str, Path],
+            bucket_name: str,
+            ui_class_name=None,
+            auth_required: bool = False,
+        ):
         self._manifest = None
         self._bucket_name = bucket_name
+        self._auth_required = auth_required
 
         super().__init__(cache_dir=cache_dir,
                          ui_class_name=ui_class_name)
@@ -1294,7 +1303,10 @@ class S3CloudCache(CloudCacheBase):
     @property
     def s3_client(self):
         if self._s3_client is None:
-            s3_config = Config(signature_version=UNSIGNED)
+            if self._auth_required:
+                s3_config = Config()
+            else:
+                s3_config = Config(signature_version=UNSIGNED)
             self._s3_client = boto3.client('s3',
                                            config=s3_config)
         return self._s3_client

@@ -37,7 +37,7 @@ def version_check(manifest_version: str,
 
 class AbcProjectCache(object):
     MANIFEST_COMPATIBILITY = ["20230101", "20300101"]
-    _bucket_name = "allen-brain-cell-atlas"
+    _default_bucket_name = "allen-brain-cell-atlas"
     """API for downloading data released on S3 and returning tables.
 
     Parameters
@@ -95,7 +95,9 @@ class AbcProjectCache(object):
     @classmethod
     def from_s3_cache(
         cls,
-        cache_dir: Union[str, Path]
+        cache_dir: Union[str, Path],
+        s3_bucket: str = None,
+        auth_required: bool = False
     ) -> "ProjectCloudApiBase":
         """Instantiates this object with a connection to a s3 bucket and/or
         a local cache related to that bucket. Will download data from s3 and
@@ -105,13 +107,24 @@ class AbcProjectCache(object):
         ----------
         cache_dir: str or pathlib.Path
             Path to the directory where data will be stored on the local system
+        s3_bucket: str
+            Name of the s3 bucket to use. If None, will use the default
+            bucket for this class.
+        auth_required: bool
+            If True, use authentication to access the S3 bucket using the
+            ``default`` credentials in a aws credentials file. If False,
+            assume the bucket is public and use unsigned access. Defaults to
+            False.  
 
         Returns
         -------
         BehaviorProjectCloudApi instance
         """
+        if s3_bucket is None:
+            s3_bucket = cls._default_bucket_name
         cache = S3CloudCache(cache_dir=cache_dir,
-                             bucket_name=cls._bucket_name,
+                             bucket_name=s3_bucket,
+                             auth_required=auth_required,
                              ui_class_name=cls.__class__.__name__)
         return cls(cache)
 
@@ -142,6 +155,8 @@ class AbcProjectCache(object):
     def from_cache_dir(
             cls,
             cache_dir: Union[str, Path],
+            s3_bucket: str = None,
+            auth_required: bool = False
     ) -> "ProjectCloudApiBase":
         """Instantiate either a local_cache or s3_cache instance of the class.
 
@@ -152,16 +167,30 @@ class AbcProjectCache(object):
         ----------
         cache_dir: str or pathlib.Path
             Path to the directory where data will be stored on the local system
+        s3_bucket: str
+            Name of the s3 bucket to use. If None, will use the default
+            bucket for this class.
+        auth_required: bool
+            If True, use authentication to access the S3 bucket using the
+            ``default`` credentials in a aws credentials file. If False,
+            assume the bucket is public and use unsigned access. Defaults to
+            False.
 
         Returns
         -------
         ProjectCloudApiBase instance
         """
         cache_dir = Path(cache_dir)
+        if s3_bucket is None:
+            s3_bucket = cls._default_bucket_name
         # If the directory does not exist or we have write access to it
         # we will use the s3 cache. Else we will use the local cache.
         if not cache_dir.exists() or os.access(cache_dir, os.W_OK):
-            return cls.from_s3_cache(cache_dir)
+            return cls.from_s3_cache(
+                cache_dir=cache_dir,
+                s3_bucket=s3_bucket,
+                auth_required=auth_required
+            )
         elif cache_dir.exists() and not os.access(cache_dir, os.W_OK):
             return cls.from_local_cache(cache_dir)
         else:
