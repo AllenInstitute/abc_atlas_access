@@ -42,6 +42,7 @@ Related resources :
   ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
 * Single cell transcriptomes for each individual species in the
   HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
+* Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb):
@@ -55,3 +56,9 @@ Associated notebooks:
 [*notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb*]
 * [**10X scRNA-seq gene expression**](../notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb):
   Interact with HMBA-BG 10X-Aligned gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
+* [**Spatial transcriptomic slab coordinates and annotation**](../notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb):
+  Learn about the HMBA-BG spatial data/metadata structure and mapping to the BG taxonomy through example use
+  cases and visualization.
+[*notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb*]
+* [**Spatial transcriptomic gene expression**](../notebooks/hmba_bg_spatial_genes.ipynb):
+  Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_spatial_genes.ipynb*]
