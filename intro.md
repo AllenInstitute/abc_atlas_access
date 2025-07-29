@@ -77,6 +77,16 @@ notebook.
   (HMBA)**
 
 ## Release Notes
+* **[Add HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250630), abc_atlas_access (v0.8.0)]**
+  * Updated colors for the cross-species, HMBA-BG taxonomy.
+  * Added basal ganglia, spatial transcriptomic dataset
+    * ~5.4 million human basal ganglia and adjacent cells
+    * ~3.2 million macaque basal ganglia and adjacent cells
+    * ~1.3 million macaque basal ganglia and adjacent cells
+    * Mapping of all cells into the HMBA-BG taxonomy
+    * Basal Ganglia, parcellation annotations for each cell and annotation polygons.
+  * AbcProjecctCache: Added explicit accessors for expression_matrices, image_volumes, and mapmycells.
+    * get_(metadata)data_path, generalized to get_file_path. Deprecation warning added to get_data_path.
 * **[Add HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250531), abc_atlas_access (v0.7.0)]**
   * Added the Human-Mammalian Brain - Basal Ganglia (HMBA-BG) 10X dataset.
     * ~2 million single cell transcriptomes with ~16k genes aligned across
