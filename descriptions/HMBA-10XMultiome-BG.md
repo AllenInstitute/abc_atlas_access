@@ -1,7 +1,13 @@
 # Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression
 
-Gene expression data and metadata for each individual species in the HMBA-BG
-10X dataset. Currently includes:
+The basal ganglia are a set of subcortical structures critical for motor
+control, particularly in the context of action selection, motor learning and
+emotional state, whose coarse functional organization is well-described in the
+literature.
+
+Gene expression data and metadata for each individual species in the
+Human-Mammalian Brain - Basal Ganglia (HMBA-BG) 10X dataset. Currently
+this includes:
 - 1,683,105 Human cells, 36,601 genes
 - 839,102 Macaque cells, 35,219 genes
 - 414,575 Marmoset cells, 35,787 genes
@@ -16,9 +22,9 @@ as a AWS Public Dataset:
 
 | Component | Current Version | Size |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG/20250531/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG/20250531/) | 50.5 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG/20250531/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG/20250531/) | 581 MB |
-| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-10xMultiome-BG/20250531/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-10xMultiome-BG/20250531/) | 2.14 GB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG/20250630/) | 50.5 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG/20250630/) | 778.8 MB |
+| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-10xMultiome-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-10xMultiome-BG/20250630/) | 2.1 GB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
