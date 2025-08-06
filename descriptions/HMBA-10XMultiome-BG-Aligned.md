@@ -1,8 +1,14 @@
 # Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species
 
-Data and metadata for the HMBA-BG 10X gene expression data, with 16,630
-genes aligned across the species. In total there are 2,035,898 cells in this
-gene aligned dataset.
+The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context
+of action selection, motor learning and emotional state, whose coarse functional organization is
+well-described in the literature.
+
+This page describes and links to and metadata for the HMBA-BG 10X gene
+expression data, with 16,630 genes aligned across the species. In total there
+are 2,035,898 cells in this gene aligned dataset. These data are a QCed subset
+of those from described in the ([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
+page.
 
 These data from the basis of the cross species [Basal Ganglia (BG) taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
 
@@ -14,8 +20,8 @@ a AWS Public Dataset:
 
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Aligned/20250531/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Aligned/20250531/) | 33.6 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Aligned/20250531/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Aligned/20250531/) | 429 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Aligned/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Aligned/20250630/) | 30.7 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Aligned/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Aligned/20250630/) | 535.2 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
