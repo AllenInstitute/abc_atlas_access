@@ -5,8 +5,9 @@ control, particularly in the context of action selection, motor learning and
 emotional state, whose coarse functional organization is well-described in the
 literature.
 
-Gene expression data and metadata for each individual species in the HMBA-BG
-10X dataset. Currently includes:
+Gene expression data and metadata for each individual species in the
+Human-Mammalian Brain - Basal Ganglia (HMBA-BG) 10X dataset. Currently
+this includes:
 - 1,683,105 Human cells, 36,601 genes
 - 839,102 Macaque cells, 35,219 genes
 - 414,575 Marmoset cells, 35,787 genes
