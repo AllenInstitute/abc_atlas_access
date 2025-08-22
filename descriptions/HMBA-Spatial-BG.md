@@ -12,7 +12,7 @@ enables spatial profiling of hundreds of genes for each cell, enabling the mappi
 
 These data form the basis of the cross species [Basal Ganglia (BG) taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
 
-For more information on the dataset, please refer to the following webpage: [Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/). Additionally, you can see the associated notebooks linked at the end of this page.
+For more information on the taxonomy, please refer to the following webpage: [Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/). Additionally, you can see the associated notebooks linked at the end of this page.
 
 
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
@@ -22,8 +22,8 @@ The three species are broken up by their donor ID. These are:
 - Human: H22.30.001
 - Macaque: QM23.50.001
 - Marmoset: CJ23.56.004
-Each release directory also includes the platform used either MERSCOPE (Human and Macaque) or Xenium
-(Marmoset).
+Each release directory also includes the name of the  platform used, either MERSCOPE (Human and Macaque) or
+Xenium (Marmoset).
 
 Below are links to the directories containing h5ad files of the expression
 matrixes for each species both the raw counts and the log2 of the counts per
