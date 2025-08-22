@@ -18,6 +18,13 @@ For more information on the dataset, please refer to the following webpage: [Mam
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset. We'll describe each component below.
 
+The three species are broken up by their donor ID. These are:
+- Human: H22.30.001
+- Macaque: QM23.50.001
+- Marmoset: CJ23.56.004
+Each release directory also includes the platform used either MERSCOPE (Human and Macaque) or Xenium
+(Marmoset).
+
 Below are links to the directories containing h5ad files of the expression
 matrixes for each species both the raw counts and the log2 of the counts per
 million for each cell.
@@ -36,8 +43,7 @@ different tables, see the the spatial notebooks linked below.
 | Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 1.4 GB |
 | Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/]) | 762.8 MB |
 
-The links below contain geojson files that define the polygons that represent the parcellation annotation
-regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page.
+The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data and subset the data into more manageable, anatomically-related chunks.”
 | Component | Current Version | Size    |
 |---|--|---------|
 | Human: Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/) | 86.6 KB |
