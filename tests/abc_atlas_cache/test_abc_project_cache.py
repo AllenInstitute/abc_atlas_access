@@ -126,7 +126,7 @@ class TestAbcProjectCache(BaseCacheTestCase):
         from_s3_cache.
         """
         # Initialize the cache, overwriting the bucket name.
-        AbcProjectCache._bucket_name = self.test_bucket_name
+        AbcProjectCache._default_bucket_name = self.test_bucket_name
         cache = AbcProjectCache.from_s3_cache(self.cache_dir)
 
         # Test that the expected manifests are available and the directories
@@ -205,7 +205,7 @@ class TestAbcProjectCache(BaseCacheTestCase):
         """Run a suite of integration tests on the AbcProjectCache class
         from_local_cache.
         """
-        AbcProjectCache._bucket_name = self.test_bucket_name
+        AbcProjectCache._default_bucket_name = self.test_bucket_name
         cache = AbcProjectCache.from_s3_cache(self.cache_dir)
 
         # Download data into the local cache.
@@ -262,7 +262,7 @@ class TestAbcProjectCache(BaseCacheTestCase):
         correctly as either a S3CloudCache or LocalCache object when
         appropreate.
         """
-        AbcProjectCache._bucket_name = self.test_bucket_name
+        AbcProjectCache._default_bucket_name = self.test_bucket_name
         cache = AbcProjectCache.from_cache_dir(self.cache_dir)
         assert isinstance(cache.cache, S3CloudCache)
 
