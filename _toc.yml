@@ -102,3 +102,4 @@ parts:
       - file: docs/cluster_annotations/README
       - file: docs/gene_lists/README
       - file: docs/parcellation_annotations/README
+      - file: docs/supplemental_metadata_descriptions/README

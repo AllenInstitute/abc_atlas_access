@@ -14,7 +14,6 @@ These data form the basis of the cross species [Basal Ganglia (BG) taxonomy](HMB
 
 For more information on the taxonomy, please refer to the following webpage: [Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/). Additionally, you can see the associated notebooks linked at the end of this page.
 
-
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset. We'll describe each component below.
 
@@ -36,7 +35,8 @@ million for each cell.
 
 The following links contain metadata tables summarizing the cells, specimens the cells originate from, donors,
 and coordinates. For more information on how the metadata is laid out and examples on using and joining the
-different tables, see the the spatial notebooks linked below.
+different tables, see the the spatial notebooks linked below. For the metadata, a supplementary table
+of quality control and other metrics is available. You can find descriptions of the columns on the Resources page under [Supplemental Metadata Descriptions](../docs/supplemental_metadata_descriptions/README.md).
 | Component | Current Version | Size    |
 |---|--|---------|
 | Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-H22.30.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-H22.30.001-BG/20250630/) | 2.4 GB |
