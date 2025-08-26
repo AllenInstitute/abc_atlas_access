@@ -4,11 +4,12 @@
 
 Below we list column names and descriptions for the columns available in the
 cell_supplemental_metadata table for the species in the spatial BG dataset.
+The cell_metadata tables includes a the column
+- 'qc_pass': aggregate of any/all QC metrics used to filter out low-quality cells
    
 - All species
     - 'total_counts': detected counts of all spots, includes both genes and any control probes or codewords (controls differ slightly between MERSCOPE and Xenium platforms; see individual species for breakdown)
     - 'total_counts_genes': detected counts of gene transcripts
-    - 'qc_pass': aggregate of any/all QC metrics used to filter out low-quality cells
 - Human (H22.30.001) & Macaque (QM23.50.001):
     - ['total_counts_Blank', 'pct_counts_Blank']: control for MERSCOPE platform
     - 'n_genes_by_counts': number of unique genes per cell
