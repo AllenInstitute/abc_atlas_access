@@ -7,7 +7,7 @@ of action selection, motor learning and emotional state, whose coarse functional
 well-described in the literature. Although single-cell RNA-Seq studies have greatly enhanced our
 understanding of cellular diversity in the brain, the exact spatial distribution of cell types within the
 brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium
-enables spatial profiling of hundreds of genes for each cell, enabling the mapping the cells to the
+enabling spatial profiling of hundreds of genes for each cell, and the mapping the cells to the
 [consensus basal ganglia cell type taxonomy](https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html).
 
 These data form the basis of the cross species [Basal Ganglia (BG) taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
@@ -21,6 +21,7 @@ The three species are broken up by their donor ID. These are:
 - Human: H22.30.001
 - Macaque: QM23.50.001
 - Marmoset: CJ23.56.004
+
 Each release directory also includes the name of the  platform used, either MERSCOPE (Human and Macaque) or
 Xenium (Marmoset).
 
@@ -43,7 +44,7 @@ of quality control and other metrics is available. You can find descriptions of 
 | Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 1.4 GB |
 | Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/]) | 762.8 MB |
 
-The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data and subset the data into more manageable, anatomically-related chunks.”
+The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data.”
 | Component | Current Version | Size    |
 |---|--|---------|
 | Human: Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/) | 86.6 KB |
