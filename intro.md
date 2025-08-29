@@ -20,7 +20,7 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The Winter 2026 public beta data release includes:
+The Early-Winter 2026 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) (Evan Macosko, Hongkui Zeng)**
@@ -84,6 +84,11 @@ notebook.
 
 
 ## Release Notes
+* **[Add HMBA-Macaque-Patchseq data (version 20260228), abc_atlas_access (v1.3.0)]**
+  * Add HMBA-Macaque-PatchSeq data
+    * 717 Macaque Patch-Seq cells mapped to the HMBA-BG taxonomy.
+    * Electrophysiological and Morphological summary features for select cells.
+  * Provide CCF coordinates for roughly ~4 million human, basal ganglia cells.
 * **[Add Developing Mouse - Visual Cortex data (version 20260131), abc_atlas_access (v1.2.0)]**
   * Add Developing Mouse - Visual Cortex dataset.
     * ~500 thousand, single cells in the visual cortex from 53 mice ranging in age from embryo to adult.
