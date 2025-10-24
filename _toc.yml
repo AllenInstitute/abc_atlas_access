@@ -33,6 +33,10 @@ parts:
       - file: descriptions/Zhuang-ABCA-2
       - file: descriptions/Zhuang-ABCA-3
       - file: descriptions/Zhuang-ABCA-4
+    - file: descriptions/Consensus-Mouse-dataset
+      sections:
+      - file: descriptions/Consensus-Mouse-10X
+      - file: descriptions/Consensus-Mouse-taxonomy
     - file: descriptions/WHB_dataset
       sections:
         - file: descriptions/WHB-10Xv3
@@ -69,6 +73,10 @@ parts:
       - file: notebooks/cluster_neighborhood_gallery
       - file: notebooks/ccf_and_parcellation_annotation_tutorial
       - file: notebooks/merfish_ccf_registration_tutorial
+    - file: descriptions/Consensus-Mouse-notebooks
+      sections:
+      - file: notebooks/consensus_mouse_clustering_analysis_and_annotation
+      - file: notebooks/consensus_mouse_10X_snRNASeq
     - file: descriptions/Zeng_Aging_Mouse_notebooks
       sections:
         - file: notebooks/Zeng_Aging_Mouse_clustering_analysis_and_annotation

@@ -23,6 +23,7 @@ example use cases.***
 The Fall 2025 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
+* **[Consensus Mouse cell type atlas](descriptions/Consensus-Mouse-dataset.md) **
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_dataset.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole mouse brain](descriptions/Zhuang_dataset.md)
@@ -64,6 +65,7 @@ notebook.
   the cell metadata.
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/notebook_subtitle1.md)
   (Hongkui Zeng)**
+* **[Consensus Mouse Notebooks](descriptions/Consensus-Mouse-notebooks.md) **
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_notebooks.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole
@@ -75,6 +77,7 @@ notebook.
   (ASAP)**
 * **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
   (HMBA)**
+
 
 ## Release Notes
 * **[Add HMBA-BG spatial data. Update HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250930), abc_atlas_access (v1.0.0)]**
