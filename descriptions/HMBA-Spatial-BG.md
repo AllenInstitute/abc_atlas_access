@@ -30,9 +30,9 @@ matrixes for each species both the raw counts and the log2 of the counts per
 million for each cell.
 | Component | Current Version | Size    |
 |---|--|---------|
-| Human: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-H22.30.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-H22.30.001-BG/20250630/) | 1.34 GB |
+| Human: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-H22.30.001-BG/20250930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-H22.30.001-BG/20250930/) | 1.34 GB |
 | Macaque: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-QM23.50.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 1.52 GB |
-| Marmoset: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#/expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20250630/]) | 0.61 GB |
+| Marmoset: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20250630/) | 0.61 GB |
 
 The following links contain metadata tables summarizing the cells, specimens the cells originate from, donors,
 and coordinates. For more information on how the metadata is laid out and examples on using and joining the
@@ -40,16 +40,16 @@ different tables, see the the spatial notebooks linked below. For the metadata, 
 of quality control and other metrics is available. You can find descriptions of the columns on the Resources page under [Supplemental Metadata Descriptions](../docs/supplemental_metadata_descriptions/README.md).
 | Component | Current Version | Size    |
 |---|--|---------|
-| Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-H22.30.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-H22.30.001-BG/20250630/) | 2.4 GB |
+| Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-H22.30.001-BG/20250930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-H22.30.001-BG/20250930/) | 2.4 GB |
 | Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 1.4 GB |
-| Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/]) | 762.8 MB |
+| Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/) | 762.8 MB |
 
 The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data.”
 | Component | Current Version | Size    |
 |---|--|---------|
 | Human: Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/) | 86.6 KB |
 | Macaque: Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-MERSCOPE-QM23.50.001-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 114.6 KB |
-| Marmoset: Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#/image_volumes/HMBA-Xenium-CJ23.56.004-BG/20250630/]) | 422.5 KB |
+| Marmoset: Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-Xenium-CJ23.56.004-BG/20250630/) | 422.5 KB |
 
 
 Data is being shared under the CC BY NC 4.0 license.
