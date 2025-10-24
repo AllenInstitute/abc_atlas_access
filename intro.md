@@ -20,7 +20,7 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The Spring 2025 public beta data release includes:
+The Fall 2025 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_dataset.md)
@@ -77,7 +77,7 @@ notebook.
   (HMBA)**
 
 ## Release Notes
-* **[Add HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250630), abc_atlas_access (v0.8.0)]**
+* **[Add HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20250930), abc_atlas_access (v1.0.0)]**
   * Updated colors for the cross-species, HMBA-BG taxonomy.
   * Added basal ganglia, spatial transcriptomic dataset
     * ~5.4 million human basal ganglia and adjacent cells
