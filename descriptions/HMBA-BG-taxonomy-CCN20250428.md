@@ -1,4 +1,4 @@
-# Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations
+# Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations
 
 The basal ganglia (BG) are a system of interconnected brain structures that
 play a crucial role in motor control, learning, behavior, and emotion. With 
@@ -15,16 +15,16 @@ the maturation of machine learning technologies have enabled the integration of
 these taxonomies across species.
 
 Our consensus basal ganglia cell type taxonomy is the result of iterative
-clustering and cross-species integration of transcriptomic data. The taxonomy
-encompasses neurons from key structures within the basal ganglia, including the
-caudate (Ca), putamen (Pu), nucleus accumbens (NAc), the external and internal
-segments of the globus pallidus (GPe, GPi), subthalamic nucleus (STN), and
-substantia nigra (SN). By combining data from multiple primate and rodent
-species, we have developed a consensus taxonomy that highlights both conserved
-and species-specific cell types. We validate our taxonomy through marker gene
-expression analysis, comparison with previously published taxonomies, and
-self-projection, ensuring the accuracy and robustness of each level in the
-taxonomic hierarchy.
+clustering and cross-species integration of transcriptomic data linked in the
+related resources linked below. The taxonomy encompasses neurons from key
+structures within the basal ganglia, including the caudate (Ca), putamen (Pu),
+nucleus accumbens (NAc), the external and internal segments of the globus
+pallidus (GPe, GPi), subthalamic nucleus (STN), and substantia nigra (SN). By
+combining data from multiple primate species, we have developed a consensus
+taxonomy that highlights both conserved and species-specific cell types. We
+validate our taxonomy through marker gene expression analysis, comparison with
+previously published taxonomies, and self-projection, ensuring the accuracy and
+robustness of each level in the taxonomic hierarchy across all the species.
 
 For more information on the dataset, please refer to the following webpage:
 [Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/).
@@ -33,7 +33,8 @@ The associated metadata is hosted in a AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-BG-taxonomy-CCN20250428/20250531/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-taxonomy-CCN20250428/20250531/) | 196.6 MB |
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-BG-taxonomy-CCN20250428/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-taxonomy-CCN20250428/20250630/) | 188.9 MB |
+| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-BG-taxonomy-CCN20250428/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-BG-taxonomy-CCN20250428/20250630/) | 2.1 GB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
@@ -42,6 +43,7 @@ Related resources :
   ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
 * Single cell transcriptomes for each individual species in the
   HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
+* Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb):
@@ -55,3 +57,9 @@ Associated notebooks:
 [*notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb*]
 * [**10X scRNA-seq gene expression**](../notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb):
   Interact with HMBA-BG 10X-Aligned gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
+* [**Spatial transcriptomic slab coordinates and annotation**](../notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb):
+  Learn about the HMBA-BG spatial data/metadata structure and mapping to the BG taxonomy through example use
+  cases and visualization.
+[*notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb*]
+* [**Spatial transcriptomic gene expression**](../notebooks/hmba_bg_spatial_genes.ipynb):
+  Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_spatial_genes.ipynb*]

@@ -178,9 +178,9 @@ def populate_datasets(
 
             for file_path in ["*", "*/*"]:
 
-                for full_path in glob.glob(
+                for full_path in sorted(glob.glob(
                     os.path.join(data_dir, file_path), recursive=True
-                ):
+                )):
                     if os.path.isdir(full_path):
                         continue
 
@@ -207,7 +207,7 @@ def populate_datasets(
                         "file_hash": file_hash,
                     }
 
-                    if ext in ["csv", "json", "h5", "geojson"]:
+                    if ext in ["csv", "json", "h5", "geojson", "db"]:
                         tag = bsplit[0]
                         dataset_lookup[dataset][data_kind][tag] = {}
                         dataset_lookup[dataset][data_kind][tag]["files"] = {}
