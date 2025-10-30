@@ -77,8 +77,29 @@
 </details>
 
 
-## Neuroglancer views
-*Click thumbnails to launch Neuroglancer view*
+## Neuroglancer views - coordinate spaces
+*Click thumbnails to launch Neuroglancer for each coordinate space*
+
+The cell coordinates are registered to four different reference spaces, each serving a distinct purpose.
+
+### Slab  
+The coordinate system of the *slab face images* that each spatial transcriptomics plane belongs to.  
+This view shows cells in the context of the imaging assets used for mosaicking (e.g., block-face and slab-face images).
+
+### Donor  
+The native *MRI space* corresponding to the individual donor from whom the spatial transcriptomics sections were sampled.  
+This view preserves subject-specific anatomy before normalization to any common template.
+
+### CCF (Common Coordinate Framework)  
+The standardized reference space for the donor’s species, enabling cross-donor and cross-dataset comparisons.  
+[See this link for more details.](http://54.70.216.109:8080/)
+
+### HiP-CT (Cellular-Resolution Volumetric Scan)  
+A *cellular-resolution (25 µm)* volumetric scan of the human brain.  
+[Details about the HiP-CT dataset and donor](https://human-organ-atlas.esrf.fr/datasets/1773964319).  
+**Note:** The spatial transcriptomics data were not sampled from the same donor; alignment is used only for anatomical correspondence.
+
+
 
 | Species | Donor | Slab | Donor | CCF | HiP-CT |
 |---|---|---|---|---|---|
