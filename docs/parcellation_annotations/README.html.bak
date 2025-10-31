@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/parcellation_annotations/README';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HMBA Basal Ganglia: Neuroglancer Views" href="../neuroglancer_hmba/README.html" />
     <link rel="prev" title="Gene lists" href="../gene_lists/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -277,6 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
 </ul>
@@ -521,6 +523,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Gene lists</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../neuroglancer_hmba/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">HMBA Basal Ganglia: Neuroglancer Views</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Gene lists &#8212; Allen Brain Cell Atlas - Data Access</title>
+    <title>HMBA Basal Ganglia: Neuroglancer Views &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
   
@@ -63,11 +63,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/gene_lists/README';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/neuroglancer_hmba/README';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Parcellation annotations" href="../parcellation_annotations/README.html" />
-    <link rel="prev" title="Cluster annotations" href="../cluster_annotations/README.html" />
+    <link rel="prev" title="Parcellation annotations" href="../parcellation_annotations/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -276,9 +275,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">Resource Pages</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../abbreviation_terms/README.html">Abbreviation lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cluster_annotations/README.html">Cluster annotations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../parcellation_annotations/README.html">Parcellation annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
 </ul>
@@ -352,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fdocs/gene_lists/README.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fdocs/neuroglancer_hmba/README.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/gene_lists/README.md" target="_blank"
+      <li><a href="../../_sources/docs/neuroglancer_hmba/README.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +452,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -464,11 +465,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Gene lists</h1>
+    <h1>HMBA Basal Ganglia: Neuroglancer Views</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guide">Quick Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroglancer-views-coordinate-spaces">Neuroglancer views - coordinate spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slab">Slab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor">Donor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccf-common-coordinate-framework">CCF (Common Coordinate Framework)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-ct-cellular-resolution-volumetric-scan">HiP-CT (Cellular-Resolution Volumetric Scan)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -478,20 +494,139 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gene-lists">
-<h1>Gene lists<a class="headerlink" href="#gene-lists" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/e5de21874094520f9e487a226dd9f48b/gene_list.html"><span class="xref download myst">WMB-10X and Zeng Aging Mouse (32285 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/2a6c4e9d0e838217b2d258d272d8749a/gene_list.html"><span class="xref download myst">WHB-10X (59357 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/54f8c94c59bb7c322c5f933e0b151681/gene_list.html"><span class="xref download myst">MERFISH-C57BL6J-638850 (500 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/dc021637ff5faed3d794ef829b50d8c6/gene_list.html"><span class="xref download myst">MERFISH-C57BL6J-638850-imputed (8460 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/94cc4adeccbb444b45046cd9ea170138/gene_list.html"><span class="xref download myst">Zhuang-ABCA-1 (1122 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/b125929d9658ae823cf7df6b7b306e71/gene_list.html"><span class="xref download myst">ASAP-PMDBS-10X (36601 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/69248ab1d6064168546cee646919345d/gene_list.html"><span class="xref download myst">HMBA-10xMultiome-BG-Aligned (16630 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/d734b711efd7aa6c4f7ef2afc0274fac/human_gene_list.html"><span class="xref download myst">HMBA-10xMultiome-BG: Human (36601 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/1c6316f1f9c3b06d91cf35de445b773e/macaque_gene_list.html"><span class="xref download myst">HMBA-10xMultiome-BG: Macaque (35219 genes)</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/b59b8bc2a33bf0b258bc736c6dbde858/marmoset_gene_list.html"><span class="xref download myst">HMBA-10xMultiome-BG: Marmoset (35787 genes)</span></a></p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="hmba-basal-ganglia-neuroglancer-views">
+<h1>HMBA Basal Ganglia: Neuroglancer Views<a class="headerlink" href="#hmba-basal-ganglia-neuroglancer-views" title="Permalink to this heading">#</a></h1>
+<section id="quick-guide">
+<h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this heading">#</a></h2>
+<p><em>Click a section title to expand/collapse.</em></p>
+<details>
+  <summary><strong>1. Filter annotations by cell types</strong></summary>
+  <div>
+    <ol>
+      <li>From the right pane, pick taxonomic cell types to show or hide (yellow box).</li>
+      <li>To filter cell types by taxonomic level, click the + or − buttons next the taxonomic level (red box).</li>
+      <li>If right panel is not visible, right-click the <b>cell_types</b> tab on the top left.</li>
+      <li>In that panel, select the <b>seg</b> tab.</li>
+    </ol>
+    <img src="images/guide/cell_types.png" alt="Selecting cell types in the seg tab" width="300">
+  </div>
+</details>
+<details>
+  <summary><strong>2. Color annotations by taxonomic level; set annotation size &amp; opacity</strong></summary>
+  <div>
+    <ol>
+      <li>Select the <b>cells</b> tab from the top left, then choose the <b>rendering</b> tab in the right pane.</li>
+      <li>Choose a taxonomic level for coloring with the <b>level_color_selector</b>:
+        <ul>
+          <li><b>1:</b> Neighborhood</li>
+          <li><b>2:</b> Class</li>
+          <li><b>3:</b> Subclass</li>
+          <li><b>4:</b> Group (default)</li>
+        </ul>
+        <p>
+          <img src="images/guide/annotation_taxonomic_colors.png" width="800" alt="taxonomic colors">
+        </p>
+      </li>
+      <li>Adjust <b>annotation size</b> and <b>opacity</b>.</li>
+    </ol>
+    <img src="images/guide/annotation_rendering.png" width="300" alt="Rendering tab with taxonomic coloring, size, and opacity">
+  </div>
+</details>
+<details>
+  <summary><strong>3. View annotation metadata</strong></summary>
+  <div>
+    <p>To see metadata for an annotation:</p>
+    <ol>
+      <li>Click the hamburger icon (third icon) from the top right to toggle <i>Selection Details Panel</i>.</li>
+      <img src="images/guide/selection_icon.png" alt="Toggle Selection Details Panel icon">
+      <li>Mouse over an annotation to view its metadata from the right panel.</li>
+    </ol>
+    <img src="images/guide/annotation_metadata.png" alt="Viewing annotation metadata in the Selection Details Panel" width="300">
+  </div>
+</details>
+<details>
+  <summary><strong>4. Align view with cell sections by tilting cross-section plane</strong></summary>
+  <div>
+    <p>Tilting the cross-section plane helps match views to cell section planes.</p>
+    <ol>
+      <li>Click inside a view (coronal, transverse, sagittal) to focus it.</li>
+      <li>Rotate with keys: <kbd>e</kbd> (left) and <kbd>r</kbd> (right).</li>
+      <li>Alternatively, hold <kbd>Shift</kbd> and <b>drag with the mouse</b> to tilt across all axes.</li>
+    </ol>
+    <p><i>Before tilting</i></p>
+    <img src="images/guide/crosssection_before.png" alt="Before tilting cross-section plane">
+    <p><i>After tilting</i></p>
+    <img src="images/guide/crosssection_after.png" alt="After tilting cross-section plane">
+  </div>
+</details>
+<details>
+  <summary><strong>5. Increase annotation view depth</strong></summary>
+  <div>
+    <p>If only a partial coronal cell-section plane is visible, increase the annotation view depth.</p>
+    <p><b>Shortcut:</b> Hold <kbd>Alt</kbd> and use the <b>mouse wheel</b>.</p>
+  </div>
+</details>
+</section>
+<section id="neuroglancer-views-coordinate-spaces">
+<h2>Neuroglancer views - coordinate spaces<a class="headerlink" href="#neuroglancer-views-coordinate-spaces" title="Permalink to this heading">#</a></h2>
+<p><em>Click thumbnails to launch Neuroglancer for each coordinate space</em></p>
+<p>The cell coordinates are registered to four different reference spaces, each serving a distinct purpose.</p>
+<section id="slab">
+<h3>Slab<a class="headerlink" href="#slab" title="Permalink to this heading">#</a></h3>
+<p>The coordinate system of the <em>slab face images</em> that each spatial transcriptomics plane belongs to.<br />
+This view shows cells in the context of the imaging assets used for mosaicking (e.g., block-face and slab-face images).</p>
+</section>
+<section id="donor">
+<h3>Donor<a class="headerlink" href="#donor" title="Permalink to this heading">#</a></h3>
+<p>The native <em>MRI space</em> corresponding to the individual donor from whom the spatial transcriptomics sections were sampled.<br />
+This view preserves subject-specific anatomy before normalization to any common template.</p>
+</section>
+<section id="ccf-common-coordinate-framework">
+<h3>CCF (Common Coordinate Framework)<a class="headerlink" href="#ccf-common-coordinate-framework" title="Permalink to this heading">#</a></h3>
+<p>The standardized reference space for the donor’s species, enabling cross-donor and cross-dataset comparisons.<br />
+<a class="reference external" href="https://alleninstitute.github.io/CCF-MAP/index.html">See this link for more details.</a></p>
+</section>
+<section id="hip-ct-cellular-resolution-volumetric-scan">
+<h3>HiP-CT (Cellular-Resolution Volumetric Scan)<a class="headerlink" href="#hip-ct-cellular-resolution-volumetric-scan" title="Permalink to this heading">#</a></h3>
+<p>A <em>cellular-resolution (25 µm)</em> volumetric scan of the human brain.<br />
+<a class="reference external" href="https://human-organ-atlas.esrf.fr/datasets/1773964319">Details about the HiP-CT dataset and donor</a>.<br />
+<strong>Note:</strong> The spatial transcriptomics data were not sampled from the same donor; alignment is used only for anatomical correspondence.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Species</p></th>
+<th class="head"><p>Donor</p></th>
+<th class="head"><p>Slab</p></th>
+<th class="head"><p>Donor</p></th>
+<th class="head"><p>CCF</p></th>
+<th class="head"><p>HiP-CT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Human</strong></p></td>
+<td><p><strong>H22.30.001</strong></p></td>
+<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-H22.30.001-BG/20250630/viewer_state/H22.30.001_slab.json"><img src="images/H22.30.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
+<td><p>—</p></td>
+<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct_ccf.json"><img src="images/H22.30.001_CCF%20template.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
+<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct.json"><img src="images/H22.30.001_HiP-CT.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Macaque</strong></p></td>
+<td><p><strong>QM23.50.001</strong> (Red)</p></td>
+<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-QM23.50.001-BG/20250630/viewer_state/QM23.50.001_slab.json"><img src="images/QM23.50.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
+<td><p>ETA 2026</p></td>
+<td><p>ETA 2026</p></td>
+<td><p>TBD</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Marmoset</strong></p></td>
+<td><p><strong>CJ23.56.004</strong> (Tank)</p></td>
+<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-Xenium-CJ23.56.004-BG/20250630/viewer_state/CJ23.56.004_slab.json"><img src="images/CJ23.56.004_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
+<td><p>ETA 2026</p></td>
+<td><p>ETA 2026</p></td>
+<td><p>TBD</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -507,7 +642,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs/gene_lists"
+            path: "./docs/neuroglancer_hmba"
         },
         predefinedOutput: true
     }
@@ -525,22 +660,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../cluster_annotations/README.html"
+       href="../parcellation_annotations/README.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cluster annotations</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../parcellation_annotations/README.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Parcellation annotations</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -548,6 +674,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guide">Quick Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroglancer-views-coordinate-spaces">Neuroglancer views - coordinate spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slab">Slab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor">Donor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccf-common-coordinate-framework">CCF (Common Coordinate Framework)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-ct-cellular-resolution-volumetric-scan">HiP-CT (Cellular-Resolution Volumetric Scan)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
