@@ -92,7 +92,7 @@ This view preserves subject-specific anatomy before normalization to any common 
 
 ### CCF (Common Coordinate Framework)  
 The standardized reference space for the donor’s species, enabling cross-donor and cross-dataset comparisons.  
-[See this link for more details.](http://54.70.216.109:8080/)
+[See this link for more details.](https://alleninstitute.github.io/CCF-MAP/index.html)
 
 ### HiP-CT (Cellular-Resolution Volumetric Scan)  
 A *cellular-resolution (25 µm)* volumetric scan of the human brain.  
@@ -104,5 +104,5 @@ A *cellular-resolution (25 µm)* volumetric scan of the human brain.
 | Species | Donor | Slab | Donor | CCF | HiP-CT |
 |---|---|---|---|---|---|
 | **Human** | **H22.30.001** | [<img src="images/H22.30.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-H22.30.001-BG/20250630/viewer_state/H22.30.001_slab.json) | — | [<img src="images/H22.30.001_CCF%20template.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct_ccf.json) | [<img src="images/H22.30.001_HiP-CT.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct.json) |
-| **Macaque** | **QM23.50.001** (Red) | [<img src="images/QM23.50.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-QM23.50.001-BG/20250630/viewer_state/QM23.50.001_slab.json) | ETA 2026 Q1 | ETA 2026 Q1 | TBD |
-| **Marmoset** | **CJ23.56.004** (Tank) | [<img src="images/CJ23.56.004_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-Xenium-CJ23.56.004-BG/20250630/viewer_state/CJ23.56.004_slab.json) | ETA 2026 Q1 | ETA 2026 Q1 | TBD |
+| **Macaque** | **QM23.50.001** (Red) | [<img src="images/QM23.50.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-QM23.50.001-BG/20250630/viewer_state/QM23.50.001_slab.json) | ETA 2026 | ETA 2026 | TBD |
+| **Marmoset** | **CJ23.56.004** (Tank) | [<img src="images/CJ23.56.004_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;">](https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-Xenium-CJ23.56.004-BG/20250630/viewer_state/CJ23.56.004_slab.json) | ETA 2026 | ETA 2026 | TBD |
