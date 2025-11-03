@@ -9,22 +9,22 @@ a AWS Public Dataset:
 Below are links to the data and metadata from the WMB-Macosko whole mouse brain, snRNA-seq data.
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/Consensus-WMB-Macosko-10X/20251031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Consensus-WMB-Macosko-10X/20251031/) | XX GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/Consensus-WMB-Macosko-10X/20251031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Consensus-WMB-Macosko-10X/20251031/) | XX MB |
+| Macosko: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/Consensus-WMB-Macosko-10X/20251031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Consensus-WMB-Macosko-10X/20251031/) | 42.7 GB |
+| Macosko: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/Consensus-WMB-Macosko-10X/20251031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Consensus-WMB-Macosko-10X/20251031/) | 798.3 MB |
 
 This release re-uses the AIBS [WMB](WMB_dataset.md) scRNA-seq dataset expression matrices, specifically
 the [WMB-10Xv2](WMB-10Xv2.md) and [WMB-10Xv3](WMB-10Xv3.md) data. We do release a set of updated metadata that contain the cells which pass the Consensus WMB taxonomy QC. [Consensus Mouse Taxonomy](Consensus-WMB-taxonomy.md). The set of cells in this metadata are largely the same set of cells as those listed in the [WMB-10X](WMB-10X.md) metadata, differing only by roughly a few thousand.
 | Component | Current Version | Size    |
 |---|--|---------|
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/Consensus-WMB-AIBS-10X/20251031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Consensus-WMB-AIBS-10X/20251031/) | XX MB |
+| AIBS: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/Consensus-WMB-AIBS-10X/20251031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Consensus-WMB-AIBS-10X/20251031/) | 634.9 MB |
 
 
-Data is being share under the CC BY NC 4.0 license.
+Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
 * Taxonomy derived from 7 million single nucleus transcriptomes spanning the
   both whole mouse brain datasets ([Consensus-WMB-integrated-taxonomy](Consensus-WMB-taxonomy.md))
-* The WMB dataset ([WMB_dataset](WMB_dataset.md))
+* The WMB-AIBS dataset ([WMB-AIBS dataset](WMB_dataset.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
