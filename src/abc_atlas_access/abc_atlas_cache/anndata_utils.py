@@ -3,6 +3,7 @@ import time
 import pandas as pd
 import numpy as np
 import anndata
+import warnings
 from abc_atlas_access.abc_atlas_cache.abc_project_cache import AbcProjectCache
 
 
@@ -50,6 +51,14 @@ def get_gene_data(
     # Create a mask for the requested genes.
     gene_mask = np.isin(all_genes.gene_symbol, selected_genes)
     gene_filtered = all_genes[gene_mask]
+    if len(gene_filtered) > len(selected_genes):
+        msg = (
+            f"You asked for {len(selected_genes)} genes, but "
+            f"get_gene_data is selecting {len(gene_filtered)}; "
+            "probably some of the gene symbols you specified are "
+            "associated with more than one gene"
+        )
+        warnings.warn(msg)
 
     # wait to create output dataframe until we have read in the
     # first chunk and know the dtype we need
