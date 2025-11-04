@@ -50,9 +50,10 @@ def get_gene_data(
     # Create a mask for the requested genes.
     gene_mask = np.isin(all_genes.gene_symbol, selected_genes)
     gene_filtered = all_genes[gene_mask]
-    # Initialize our output DataFrame.
-    output_gene_data = pd.DataFrame(index=all_cells.index,
-                                    columns=gene_filtered.index)
+
+    # wait to create output dataframe until we have read in the
+    # first chunk and know the dtype we need
+    output_gene_data = None
 
     num_total_cells = len(all_cells)
 
@@ -88,9 +89,18 @@ def get_gene_data(
             cell_mask = cell_indexes.isin(all_cells.index)
             subcell_indexes = cell_indexes[cell_mask]
             num_processed_cells += len(subcell_indexes)
+
+            chunk = chunk.toarray()[cell_mask, :][:, gene_mask]
+
+            if output_gene_data is None:
+                output_gene_data = pd.DataFrame(
+                    index=all_cells.index,
+                    columns=gene_filtered.index,
+                    dtype=chunk.dtype
+                )
+
             output_gene_data.loc[
-                    subcell_indexes, gene_filtered.index] = \
-                chunk.toarray()[cell_mask][:, gene_mask]
+                    subcell_indexes, gene_filtered.index] = chunk
 
         expression_data.file.close()
         del expression_data  # Clean up our loaded file.
