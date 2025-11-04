@@ -475,14 +475,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guide">Quick Guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroglancer-views-coordinate-spaces">Neuroglancer views - coordinate spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroglancer-views-coordinate-spaces">Neuroglancer Views – Coordinate Spaces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slab">Slab</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor">Donor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccf-common-coordinate-framework">CCF (Common Coordinate Framework)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-ct-cellular-resolution-volumetric-scan">HiP-CT (Cellular-Resolution Volumetric Scan)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guide">Quick Guide</a></li>
 </ul>
             </nav>
         </div>
@@ -496,84 +496,53 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hmba-basal-ganglia-neuroglancer-views">
 <h1>HMBA Basal Ganglia: Neuroglancer Views<a class="headerlink" href="#hmba-basal-ganglia-neuroglancer-views" title="Permalink to this heading">#</a></h1>
-<section id="quick-guide">
-<h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this heading">#</a></h2>
-<p><em>Click a section title to expand/collapse.</em></p>
-<details>
-  <summary><strong>1. Filter annotations by cell types</strong></summary>
-  <div>
-    <ol>
-      <li>From the right pane, pick taxonomic cell types to show or hide (yellow box).</li>
-      <li>To filter cell types by taxonomic level, click the + or − buttons next the taxonomic level (red box).</li>
-      <li>If right panel is not visible, right-click the <b>cell_types</b> tab on the top left.</li>
-      <li>In that panel, select the <b>seg</b> tab.</li>
-    </ol>
-    <img src="images/guide/cell_types.png" alt="Selecting cell types in the seg tab" width="300">
-  </div>
-</details>
-<details>
-  <summary><strong>2. Color annotations by taxonomic level; set annotation size &amp; opacity</strong></summary>
-  <div>
-    <ol>
-      <li>Select the <b>cells</b> tab from the top left, then choose the <b>rendering</b> tab in the right pane.</li>
-      <li>Choose a taxonomic level for coloring with the <b>level_color_selector</b>:
-        <ul>
-          <li><b>1:</b> Neighborhood</li>
-          <li><b>2:</b> Class</li>
-          <li><b>3:</b> Subclass</li>
-          <li><b>4:</b> Group (default)</li>
-        </ul>
-        <p>
-          <img src="images/guide/annotation_taxonomic_colors.png" width="800" alt="taxonomic colors">
-        </p>
-      </li>
-      <li>Adjust <b>annotation size</b> and <b>opacity</b>.</li>
-    </ol>
-    <img src="images/guide/annotation_rendering.png" width="300" alt="Rendering tab with taxonomic coloring, size, and opacity">
-  </div>
-</details>
-<details>
-  <summary><strong>3. View annotation metadata</strong></summary>
-  <div>
-    <p>To see metadata for an annotation:</p>
-    <ol>
-      <li>Click the hamburger icon (third icon) from the top right to toggle <i>Selection Details Panel</i>.</li>
-      <img src="images/guide/selection_icon.png" alt="Toggle Selection Details Panel icon">
-      <li>Mouse over an annotation to view its metadata from the right panel.</li>
-    </ol>
-    <img src="images/guide/annotation_metadata.png" alt="Viewing annotation metadata in the Selection Details Panel" width="300">
-  </div>
-</details>
-<details>
-  <summary><strong>4. Align view with cell sections by tilting cross-section plane</strong></summary>
-  <div>
-    <p>Tilting the cross-section plane helps match views to cell section planes.</p>
-    <ol>
-      <li>Click inside a view (coronal, transverse, sagittal) to focus it.</li>
-      <li>Rotate with keys: <kbd>e</kbd> (left) and <kbd>r</kbd> (right).</li>
-      <li>Alternatively, hold <kbd>Shift</kbd> and <b>drag with the mouse</b> to tilt across all axes.</li>
-    </ol>
-    <p><i>Before tilting</i></p>
-    <img src="images/guide/crosssection_before.png" alt="Before tilting cross-section plane">
-    <p><i>After tilting</i></p>
-    <img src="images/guide/crosssection_after.png" alt="After tilting cross-section plane">
-  </div>
-</details>
-<details>
-  <summary><strong>5. Increase annotation view depth</strong></summary>
-  <div>
-    <p>If only a partial coronal cell-section plane is visible, increase the annotation view depth.</p>
-    <p><b>Shortcut:</b> Hold <kbd>Alt</kbd> and use the <b>mouse wheel</b>.</p>
-  </div>
-</details>
-</section>
 <section id="neuroglancer-views-coordinate-spaces">
-<h2>Neuroglancer views - coordinate spaces<a class="headerlink" href="#neuroglancer-views-coordinate-spaces" title="Permalink to this heading">#</a></h2>
-<p><em>Click thumbnails to launch Neuroglancer for each coordinate space</em></p>
+<h2>Neuroglancer Views – Coordinate Spaces<a class="headerlink" href="#neuroglancer-views-coordinate-spaces" title="Permalink to this heading">#</a></h2>
+<p><em>Click thumbnails to launch Neuroglancer for each coordinate space.</em></p>
+<table class="table" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Neuroglancer links</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Species</strong></p></th>
+<th class="head"><p><strong>Donor</strong></p></th>
+<th class="head"><p><strong>Slab</strong></p></th>
+<th class="head"><p><strong>Donor</strong></p></th>
+<th class="head"><p><strong>CCF</strong></p></th>
+<th class="head"><p><strong>HiP-CT</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Human</strong></p></td>
+<td><p><strong>H22.30.001</strong></p></td>
+<td><a class="reference external image-reference" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-H22.30.001-BG/20250630/viewer_state/H22.30.001_slab.json"><img alt="H22.30.001 slab" src="../../_images/H22.30.001_slab.png" style="width: 400px;" /></a>
+</td>
+<td><p>—</p></td>
+<td><a class="reference external image-reference" href="https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct_ccf.json"><img alt="H22.30.001 CCF" src="../../_images/H22.30.001_CCF_template.png" style="width: 400px;" /></a>
+</td>
+<td><a class="reference external image-reference" href="https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct.json"><img alt="H22.30.001 HiP-CT" src="../../_images/H22.30.001_HiP-CT.png" style="width: 400px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Macaque</strong></p></td>
+<td><p><strong>QM23.50.001 (Red)</strong></p></td>
+<td><a class="reference external image-reference" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-QM23.50.001-BG/20250630/viewer_state/QM23.50.001_slab.json"><img alt="QM23.50.001 slab" src="../../_images/QM23.50.001_slab.png" style="width: 400px;" /></a>
+</td>
+<td><p><em>ETA 2026</em></p></td>
+<td><p><em>ETA 2026</em></p></td>
+<td><p><em>TBD</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Marmoset</strong></p></td>
+<td><p><strong>CJ23.56.004 (Tank)</strong></p></td>
+<td><a class="reference external image-reference" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-Xenium-CJ23.56.004-BG/20250630/viewer_state/CJ23.56.004_slab.json"><img alt="CJ23.56.004 slab" src="../../_images/CJ23.56.004_slab.png" style="width: 400px;" /></a>
+</td>
+<td><p><em>ETA 2026</em></p></td>
+<td><p><em>ETA 2026</em></p></td>
+<td><p><em>TBD</em></p></td>
+</tr>
+</tbody>
+</table>
 <p>The cell coordinates are registered to four different reference spaces, each serving a distinct purpose.</p>
 <section id="slab">
 <h3>Slab<a class="headerlink" href="#slab" title="Permalink to this heading">#</a></h3>
-<p>The coordinate system of the <em>slab face images</em> that each spatial transcriptomics plane belongs to.<br />
+<p>The coordinate system of the <em>slab-face images</em> that each spatial transcriptomics plane belongs to.<br />
 This view shows cells in the context of the imaging assets used for mosaicking (e.g., block-face and slab-face images).</p>
 </section>
 <section id="donor">
@@ -591,41 +560,95 @@ This view preserves subject-specific anatomy before normalization to any common 
 <p>A <em>cellular-resolution (25 µm)</em> volumetric scan of the human brain.<br />
 <a class="reference external" href="https://human-organ-atlas.esrf.fr/datasets/1773964319">Details about the HiP-CT dataset and donor</a>.<br />
 <strong>Note:</strong> The spatial transcriptomics data were not sampled from the same donor; alignment is used only for anatomical correspondence.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Species</p></th>
-<th class="head"><p>Donor</p></th>
-<th class="head"><p>Slab</p></th>
-<th class="head"><p>Donor</p></th>
-<th class="head"><p>CCF</p></th>
-<th class="head"><p>HiP-CT</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Human</strong></p></td>
-<td><p><strong>H22.30.001</strong></p></td>
-<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-H22.30.001-BG/20250630/viewer_state/H22.30.001_slab.json"><img src="images/H22.30.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
-<td><p>—</p></td>
-<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct_ccf.json"><img src="images/H22.30.001_CCF%20template.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
-<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://neuroglancer-hmba/cifar/neuroglancer/H22.30.001_hipct.json"><img src="images/H22.30.001_HiP-CT.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Macaque</strong></p></td>
-<td><p><strong>QM23.50.001</strong> (Red)</p></td>
-<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-MERSCOPE-QM23.50.001-BG/20250630/viewer_state/QM23.50.001_slab.json"><img src="images/QM23.50.001_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
-<td><p>ETA 2026</p></td>
-<td><p>ETA 2026</p></td>
-<td><p>TBD</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Marmoset</strong></p></td>
-<td><p><strong>CJ23.56.004</strong> (Tank)</p></td>
-<td><p><a class="reference external" href="https://neuroglancer-demo.appspot.com/#!s3://allen-hmba-releases/neuroglancer/HMBA-Xenium-CJ23.56.004-BG/20250630/viewer_state/CJ23.56.004_slab.json"><img src="images/CJ23.56.004_slab.png" width="220" style="border-radius:10px;border:2px solid #ccc;"></a></p></td>
-<td><p>ETA 2026</p></td>
-<td><p>ETA 2026</p></td>
-<td><p>TBD</p></td>
-</tr>
-</tbody>
-</table>
 </section>
+</section>
+<hr class="docutils" />
+<section id="quick-guide">
+<h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this heading">#</a></h2>
+<p><em>Click a section title to expand/collapse.</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+1 · Filter annotations by cell types<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">From the right pane, pick taxonomic cell types to show or hide (yellow box).</p></li>
+<li><p class="sd-card-text">To filter by taxonomic level, click the + or − buttons next to each taxonomic level (red box).</p></li>
+<li><p class="sd-card-text">If the right panel is not visible, right-click the <strong>cell_types</strong> tab on the top left.</p></li>
+<li><p class="sd-card-text">In that panel, select the <strong>seg</strong> tab.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/cell_types.png"><img alt="Selecting cell types in the seg tab" src="../../_images/cell_types.png" style="width: 300px;" /></a>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+2 · Color annotations by taxonomic level – set annotation size &amp; opacity<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Select the <strong>cells</strong> tab from the top left, then choose the <strong>rendering</strong> tab in the right pane.</p></li>
+<li><p class="sd-card-text">Choose a taxonomic level for coloring with the <strong>level_color_selector</strong>:</p>
+<p class="sd-card-text">• <strong>1:</strong> Neighborhood<br />
+• <strong>2:</strong> Class<br />
+• <strong>3:</strong> Subclass<br />
+• <strong>4:</strong> Group (default)</p>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/annotation_taxonomic_colors.png"><img alt="Taxonomic coloring examples" src="../../_images/annotation_taxonomic_colors.png" style="width: 800px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Adjust <strong>annotation size</strong> and <strong>opacity</strong>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/annotation_rendering.png"><img alt="Rendering tab with taxonomic coloring, size, and opacity" src="../../_images/annotation_rendering.png" style="width: 300px;" /></a>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+3 · View annotation metadata<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To see metadata for an annotation:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Click the hamburger icon (third icon) from the top right to toggle <em>Selection Details Panel</em>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/selection_icon.png"><img alt="Toggle Selection Details Panel icon" src="../../_images/selection_icon.png" style="width: 200px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Mouse over an annotation to view its metadata from the right panel.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/annotation_metadata.png"><img alt="Viewing annotation metadata" src="../../_images/annotation_metadata.png" style="width: 300px;" /></a>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+4 · Align view with cell sections by tilting cross-section plane<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Tilting the cross-section plane helps match views to cell section planes.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Click inside a view (coronal, transverse, sagittal) to focus it.</p></li>
+<li><p class="sd-card-text">Rotate with keys: <strong>e</strong> (left) and <strong>r</strong> (right).</p></li>
+<li><p class="sd-card-text">Or hold <strong>Shift</strong> and drag with the mouse to tilt across all axes.</p></li>
+</ol>
+<p class="sd-card-text"><em>Before tilting</em></p>
+<img alt="Before tilting cross-section plane" src="../../_images/crosssection_before.png" />
+<p class="sd-card-text"><em>After tilting</em></p>
+<img alt="After tilting cross-section plane" src="../../_images/crosssection_after.png" />
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+5 · Increase annotation view depth<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If only a partial coronal cell-section plane is visible, increase the annotation view depth.<br />
+<strong>Shortcut:</strong> Hold <code class="docutils literal notranslate"><span class="pre">Alt</span></code> and use the mouse wheel.</p>
+</div>
+</details><hr class="docutils" />
 </section>
 </section>
 
@@ -683,14 +706,14 @@ This view preserves subject-specific anatomy before normalization to any common 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guide">Quick Guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroglancer-views-coordinate-spaces">Neuroglancer views - coordinate spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroglancer-views-coordinate-spaces">Neuroglancer Views – Coordinate Spaces</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slab">Slab</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor">Donor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccf-common-coordinate-framework">CCF (Common Coordinate Framework)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-ct-cellular-resolution-volumetric-scan">HiP-CT (Cellular-Resolution Volumetric Scan)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guide">Quick Guide</a></li>
 </ul>
   </nav></div>
 
