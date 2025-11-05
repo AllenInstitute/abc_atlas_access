@@ -26,11 +26,11 @@ a AWS Public Dataset:
 Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
-* Single cell transcriptomes for each individual species in the
-  HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
 * Taxonomy and Clustering analysis of ~2 million single cell
   transcriptomes from the aligned dataset.
   ([HMBA-BG-taxonomy-CCN20250428](HMBA-BG-taxonomy-CCN20250428.md))
+* Single cell transcriptomes for each individual species in the
+  HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
 
 Associated notebooks:

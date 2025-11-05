@@ -15,7 +15,7 @@ this includes:
 This release also includes data for running [MapMyCells](https://portal.brain-map.org/atlases-and-data/bkp/mapmycells) for each of the currently released species using the associated [taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
 
 For more information on the dataset, please refer to the following webpage:
-[Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/).
+[Mammalian Basal Ganglia Consensus Cell Type Atlas](HMBA-BG-taxonomy-CCN20250428.md).
 
 The expression matrices and associated metadata are hosted in a AWS S3 bucket
 as a AWS Public Dataset:
@@ -29,11 +29,11 @@ as a AWS Public Dataset:
 Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
-* ~2 million single cell transcriptomes with aligned genes across species.
-  ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
 * Taxonomy and Clustering analysis of ~2 million single cell
   transcriptomes from the aligned dataset.
   ([HMBA-BG-taxonomy-CCN20250428](HMBA-BG-taxonomy-CCN20250428.md))
+* ~2 million single cell transcriptomes with aligned genes across species.
+  ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
 
 Associated notebooks:
