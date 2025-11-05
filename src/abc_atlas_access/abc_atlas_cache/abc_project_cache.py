@@ -37,7 +37,7 @@ def version_check(manifest_version: str,
 
 class AbcProjectCache(object):
     MANIFEST_COMPATIBILITY = ["20230101", "20300101"]
-    _bucket_name = "allen-brain-cell-atlas"
+    _default_bucket_name = "allen-brain-cell-atlas"
     """API for downloading data released on S3 and returning tables.
 
     Parameters
@@ -95,7 +95,9 @@ class AbcProjectCache(object):
     @classmethod
     def from_s3_cache(
         cls,
-        cache_dir: Union[str, Path]
+        cache_dir: Union[str, Path],
+        s3_bucket: str = None,
+        auth_required: bool = False
     ) -> "ProjectCloudApiBase":
         """Instantiates this object with a connection to a s3 bucket and/or
         a local cache related to that bucket. Will download data from s3 and
@@ -105,13 +107,24 @@ class AbcProjectCache(object):
         ----------
         cache_dir: str or pathlib.Path
             Path to the directory where data will be stored on the local system
+        s3_bucket: str
+            Name of the s3 bucket to use. If None, will use the default
+            bucket for this class.
+        auth_required: bool
+            If True, use authentication to access the S3 bucket using the
+            ``default`` credentials in a aws credentials file. If False,
+            assume the bucket is public and use unsigned access. Defaults to
+            False.  
 
         Returns
         -------
         BehaviorProjectCloudApi instance
         """
+        if s3_bucket is None:
+            s3_bucket = cls._default_bucket_name
         cache = S3CloudCache(cache_dir=cache_dir,
-                             bucket_name=cls._bucket_name,
+                             bucket_name=s3_bucket,
+                             auth_required=auth_required,
                              ui_class_name=cls.__class__.__name__)
         return cls(cache)
 
@@ -142,6 +155,8 @@ class AbcProjectCache(object):
     def from_cache_dir(
             cls,
             cache_dir: Union[str, Path],
+            s3_bucket: str = None,
+            auth_required: bool = False
     ) -> "ProjectCloudApiBase":
         """Instantiate either a local_cache or s3_cache instance of the class.
 
@@ -152,16 +167,30 @@ class AbcProjectCache(object):
         ----------
         cache_dir: str or pathlib.Path
             Path to the directory where data will be stored on the local system
+        s3_bucket: str
+            Name of the s3 bucket to use. If None, will use the default
+            bucket for this class.
+        auth_required: bool
+            If True, use authentication to access the S3 bucket using the
+            ``default`` credentials in a aws credentials file. If False,
+            assume the bucket is public and use unsigned access. Defaults to
+            False.
 
         Returns
         -------
         ProjectCloudApiBase instance
         """
         cache_dir = Path(cache_dir)
+        if s3_bucket is None:
+            s3_bucket = cls._default_bucket_name
         # If the directory does not exist or we have write access to it
         # we will use the s3 cache. Else we will use the local cache.
         if not cache_dir.exists() or os.access(cache_dir, os.W_OK):
-            return cls.from_s3_cache(cache_dir)
+            return cls.from_s3_cache(
+                cache_dir=cache_dir,
+                s3_bucket=s3_bucket,
+                auth_required=auth_required
+            )
         elif cache_dir.exists() and not os.access(cache_dir, os.W_OK):
             return cls.from_local_cache(cache_dir)
         else:
@@ -248,12 +277,83 @@ class AbcProjectCache(object):
         """
         return self.cache.list_metadata_files(directory)
 
-    def list_data_files(self, directory: str) -> List[str]:
+    def list_expression_matrix_files(self, directory: str) -> List[str]:
         """
-        Return a list of all metadata files in a directory both downloaded and
-        not.
+        Return a list of all expression matrix files in a directory both
+        downloaded and not.
         """
-        return self.cache.list_data_files(directory)
+        return self.cache.list_expression_matrix_files(directory)
+    
+    def list_image_volume_files(self, directory: str) -> List[str]:
+        """
+        Return a list of all image volume files in a directory both
+        downloaded and not.
+        """
+        return self.cache.list_image_volume_files(directory)
+    
+    def list_mapmycells_files(self, directory: str) -> List[str]:
+        """
+        Return a list of all mapmycells files in a directory both
+        downloaded and not.
+        """
+        return self.cache.list_mapmycells_files(directory)
+    
+    def _get_directory_files(
+            self,
+            directory: str,
+            data_kind: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
+        """
+        Return a list of all files in a directory. If the cache is local,
+        this will return the local paths to the available files. If the cache
+        is not local, this will download the files if needed and return the
+        local paths to the downloaded files.
+
+        Parameters
+        ----------
+        directory: str
+            The directory in which the data files are stored.
+        data_kind: str
+            The kind of data to retrieve (e.g., 'metadata', 'data').
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        data_paths: List[Path]
+            List of local paths to the downloaded data files.
+        """
+        if self._local:
+            data_files = self.cache.list_files(directory, data_kind)
+            output_paths = []
+            for file_name in data_files:
+                try:
+                    output_paths.append(self.cache.get_file_path(
+                        directory=directory,
+                        file_name=file_name,
+                    )['local_path'])
+                except FileNotFoundError:
+                    warnings.warn(
+                        message=f"Expected file: {file_name} in "
+                                f"directory: {directory} was not found in "
+                                "the local cache.",
+                        category=FileMissingWarning
+                    )
+            return output_paths
+        else:
+            self._warn_directory_size(directory=directory,
+                                      data_kind=data_kind)
+            return self.cache.download_directory(
+                directory=directory,
+                data_kind=data_kind,
+                force_download=force_download,
+                skip_hash_check=skip_hash_check
+            )
 
     def get_directory_metadata(
             self,
@@ -284,43 +384,25 @@ class AbcProjectCache(object):
         data_paths: List[Path]
             List of local paths to the downloaded data files.
         """
-        if self._local:
-            data_files = self.list_metadata_files(directory)
-            output_paths = []
-            for file_name in data_files:
-                try:
-                    output_paths.append(self.get_metadata_path(
-                        directory=directory,
-                        file_name=file_name
-                    ))
-                except FileNotFoundError:
-                    warnings.warn(
-                        message=f"Expected file: {file_name} in "
-                                "directory: {directory} was not found in the "
-                                "local cache.",
-                        category=FileMissingWarning
-                    )
-            return output_paths
-        else:
-            self._warn_directory_size(directory=directory,
-                                      is_metadata=True)
-            return self.cache.download_directory_metadata(
-                directory=directory,
-                force_download=force_download,
-                skip_hash_check=skip_hash_check
-            )
+        return self._get_directory_files(
+            directory=directory,
+            data_kind='metadata',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
 
-    def get_directory_data(
+    def get_directory_expression_matrices(
             self,
             directory: str,
             force_download: bool = False,
             skip_hash_check: bool = False
     ) -> List[Path]:
         """
-        Return a list of all data files in a directory. If the cache
-        is local, this will return the local paths to the available data files.
-        If the cache is not local, this will download the data files if needed
-        and return the local paths to the downloaded data files.
+        Return a list of all expression matrix files in a directory. If the
+        cache is local, this will return the local paths to the available
+        expression matrix files. If the cache is not local, this will download
+        the expression matrix files if needed and return the local paths to
+        the downloaded expression matrix files.
 
         Parameters
         ----------
@@ -337,32 +419,84 @@ class AbcProjectCache(object):
         data_paths: List[Path]
             List of local paths to the downloaded data files.
         """
-        if self._local:
-            data_files = self.list_data_files(directory)
-            output_paths = []
-            for file_name in data_files:
-                try:
-                    output_paths.append(self.get_data_path(
-                        directory=directory,
-                        file_name=file_name
-                    ))
-                except FileNotFoundError:
-                    warnings.warn(
-                        message=f"Expected file: {file_name} in directory: "
-                                f"{directory} was not found in the local "
-                                "cache. Continuing",
-                        category=FileMissingWarning
-                    )
-            return output_paths
-        else:
-            self._warn_directory_size(directory=directory)
-            return self.cache.download_directory_data(
-                directory=directory,
-                force_download=force_download,
-                skip_hash_check=skip_hash_check
-            )
+        return self._get_directory_files(
+            directory=directory,
+            data_kind='expression_matrices',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+    
+    def get_directory_image_volumes(
+            self,
+            directory: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
+        """
+        Return a list of all image volume files in a directory. If the
+        cache is local, this will return the local paths to the available
+        image volume files. If the cache is not local, this will download
+        the image volume files if needed and return the local paths to
+        the downloaded image volume files.
 
-    def _warn_directory_size(self, directory: str, is_metadata=False):
+        Parameters
+        ----------
+        directory: str
+            The directory in which the data files are stored.
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        data_paths: List[Path]
+            List of local paths to the downloaded data files.
+        """
+        return self._get_directory_files(
+            directory=directory,
+            data_kind='image_volumes',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+    
+    def get_directory_mapmycells(
+            self,
+            directory: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
+        """
+        Return a list of all mapmycells files in a directory. If the
+        cache is local, this will return the local paths to the available
+        mapmycells files. If the cache is not local, this will download
+        the mapmycells files if needed and return the local paths to
+        the downloaded mapmycells files.
+
+        Parameters
+        ----------
+        directory: str
+            The directory in which the data files are stored.
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        data_paths: List[Path]
+            List of local paths to the downloaded data files.
+        """
+        return self._get_directory_files(
+            directory=directory,
+            data_kind='mapmycells',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+
+    def _warn_directory_size(self, directory: str, data_kind: str):
         """
         Warn the user if the directory they are downloading contains a
         significant amount of data.
@@ -375,10 +509,10 @@ class AbcProjectCache(object):
             If True, warn about the size of the metadata directory. If False,
             warn about the size of the data directory.
         """
-        if is_metadata:
-            size = self.get_directory_metadata_size(directory)
-        else:
-            size = self.get_directory_data_size(directory)
+        size = self.get_directory_size_by_kind(
+            directory=directory,
+            data_kind=data_kind
+        )
         unit = size.split(' ')[1]
         size = float(size.split(' ')[0])
         if unit == 'GB' and size > 10:
@@ -388,6 +522,86 @@ class AbcProjectCache(object):
                         'enough space on your system.\n\n'
                         f'\tTotal directory size = {size} GB\n\n',
                 category=LargeDataSizeWarning)
+            
+    def get_data_path(
+            self,
+            directory: str,
+            file_name: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+        ):
+        warnings.warn(
+            "get_data_path is deprecated and will be removed in a future release. "
+            "Use get_file_path instead.",
+            DeprecationWarning
+        )
+        return self.get_file_path(
+            directory=directory,
+            file_name=file_name,
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+    
+    def get_metadata_path(
+            self,
+            directory: str,
+            file_name: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ):
+        warnings.warn(
+            "get_metadata_path is deprecated and will be removed in a future release. "
+            "Use get_file_path instead.",
+            DeprecationWarning
+        )
+        return self.get_file_path(
+            directory=directory,
+            file_name=file_name,
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+                          
+            
+    def get_file_path(
+            self,
+            directory: str,
+            file_name: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> dict:
+        """
+        Return the path to a downloaded file. Download the file if
+        using a S3Cache and the file is not currently on disk.
+
+        Parameters
+        ----------
+        directory: str
+            The directory in which the data file is stored.
+        file_name: str
+            The name of the data file.
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        file_path: dict
+            Dictionary containing 'exists' (bool) and 'local_path' (Path) keys.
+        """
+        if self._local:
+            return self.cache.get_file_path(
+                directory=directory,
+                file_name=file_name
+            )['local_path']
+        else:
+            return self.cache.download_file(
+                directory=directory,
+                file_name=file_name,
+                force_download=force_download,
+                skip_hash_check=skip_hash_check
+            )
 
     def get_metadata_dataframe(
             self,
@@ -420,98 +634,13 @@ class AbcProjectCache(object):
         data_frame: pandas.DataFrame
             Dataframe of the requested metadata file.
         """
-        path = self.get_metadata_path(
+        path = self.get_file_path(
             directory=directory,
             file_name=file_name,
             force_download=force_download,
             skip_hash_check=skip_hash_check
         )
         return pd.read_csv(path, **kwargs)
-
-    def get_metadata_path(
-            self,
-            directory: str,
-            file_name: str,
-            force_download: bool = False,
-            skip_hash_check: bool = False
-    ):
-        """
-        Return the path to a downloaded metadata file. Download the file if
-        using a S3Cache and the file is not currently on disk.
-
-        Parameters
-        ----------
-        directory: str
-            The directory in which the metadata file is stored.
-        file_name: str
-            The name of the metadata file.
-        force_download: bool
-            If True, force the file to be downloaded even if it already exists
-            locally.
-        skip_hash_check: bool
-            If True, skip the file hash check for file integrity.
-
-        Returns
-        -------
-        metadata_path: Path
-            Path to the requested metadata file.
-        """
-        if self._local:
-            path = self._get_local_path(
-                directory=directory,
-                file_name=file_name,
-                is_metadata=True
-            )
-        else:
-            path = self.cache.download_metadata(
-                directory=directory,
-                file_name=file_name,
-                force_download=force_download,
-                skip_hash_check=skip_hash_check
-            )
-        return path
-
-    def get_data_path(
-            self,
-            directory: str,
-            file_name: str,
-            force_download: bool = False,
-            skip_hash_check: bool = False
-    ):
-        """
-        Return the path to a downloaded data file. Download the file if
-        using an S3Cache and the file is not currently on disk.
-
-        Parameters
-        ----------
-        directory: str
-            The directory in which the data file is stored.
-        file_name: str
-            The name of the data file.
-        force_download: bool
-            If True, force the file to be downloaded even if it already exists
-            locally.
-        skip_hash_check: bool
-            If True, skip the file hash check for file integrity.
-
-        Returns
-        -------
-        data_path: Path
-            Path to the requested data file.
-        """
-        if self._local:
-            data_path = self._get_local_path(
-                directory=directory,
-                file_name=file_name
-            )
-        else:
-            data_path = self.cache.download_data(
-                directory=directory,
-                file_name=file_name,
-                force_download=force_download,
-                skip_hash_check=skip_hash_check
-            )
-        return data_path
 
     def _get_local_path(
             self,
@@ -537,6 +666,28 @@ class AbcProjectCache(object):
                                     f'connection to s3 and {local_path} is '
                                     'not already on your system')
         return local_path
+    
+    def get_directory_size_by_kind(
+            self,
+            directory: str,
+            data_kind: str
+    ) -> str:
+        """
+        Return the size of the directory in an appropriate unit (GB or MB).
+
+        Parameters
+        ----------
+        directory: str
+            The directory in which the data file is stored.
+        data_kind: str
+            The kind of data to retrieve (e.g., 'metadata', 'data').
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes.
+        """
+        return self.cache.get_directory_size_by_kind(directory, data_kind)
 
     def get_directory_metadata_size(self, directory: str) -> str:
         """
@@ -555,7 +706,7 @@ class AbcProjectCache(object):
         """
         return self.cache.get_directory_metadata_size(directory)
 
-    def get_directory_data_size(self, directory: str) -> str:
+    def get_directory_expression_matrix_size(self, directory: str) -> str:
         """
         Return the size of the data in the requested directory in an
         appropriate unit (GB or MB).
@@ -570,4 +721,38 @@ class AbcProjectCache(object):
         size: str
             The size of the directory in bytes.
         """
-        return self.cache.get_directory_data_size(directory)
+        return self.cache.get_directory_expression_matrix_size(directory)
+    
+    def get_directory_image_volume_size(self, directory: str) -> str:
+        """
+        Return the size of the image volumes in the requested directory in an
+        appropriate unit (GB or MB).
+
+        Parameters
+        ----------
+        directory: str
+            The directory in which the image volume file is stored.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes.
+        """
+        return self.cache.get_directory_image_volume_size(directory)
+    
+    def get_directory_mapmycells_size(self, directory: str) -> str:
+        """
+        Return the size of the mapmycells files in the requested directory in an
+        appropriate unit (GB or MB).
+
+        Parameters
+        ----------
+        directory: str
+            The directory in which the mapmycells file is stored.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes.
+        """
+        return self.cache.get_directory_mapmycells_size(directory)

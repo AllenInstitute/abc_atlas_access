@@ -44,9 +44,10 @@ parts:
         - file: descriptions/ASAP-PMDBS-MapMyCells.md
     - file: descriptions/HMBA-BG_dataset
       sections:
+        - file: descriptions/HMBA-BG-taxonomy-CCN20250428
         - file: descriptions/HMBA-10XMultiome-BG-Aligned
         - file: descriptions/HMBA-10XMultiome-BG
-        - file: descriptions/HMBA-BG-taxonomy-CCN20250428
+        - file: descriptions/HMBA-Spatial-BG
 
   - caption: NOTEBOOKS
     chapters:
@@ -90,7 +91,8 @@ parts:
       sections:
         - file: notebooks/hmba_bg_clustering_analysis_and_annotation
         - file: notebooks/hmba_bg_10X_snRNASeq_tutorial
-
+        - file: notebooks/hmba_bg_spatial_slabs_and_taxonomy
+        - file: notebooks/hmba_bg_spatial_genes
 
   - caption: ADDITIONAL RESOURCES
     chapters:
@@ -100,4 +102,5 @@ parts:
       - file: docs/cluster_annotations/README
       - file: docs/gene_lists/README
       - file: docs/parcellation_annotations/README
+      - file: docs/supplemental_metadata_descriptions/README
       - file: docs/neuroglancer_hmba/README

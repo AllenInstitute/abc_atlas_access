@@ -129,6 +129,28 @@ class BasicLocalCache(ABC):
 
     # ====================== BasicLocalCache methods ==========================
 
+    def list_files(self, directory: str, data_kind: str) -> List[str]:
+        """
+        List the files in a directory
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the files
+        data_kind: str
+            The kind of data to list. Either 'metadata', 'expression_matricies',
+            'image_volumes', or 'mapmycells'.
+
+        Returns
+        -------
+        List[str]
+            List of files in the directory
+        """
+        return self._manifest._list_data_in_directory(
+            directory=directory,
+            data_kind=data_kind
+        )
+
     def list_metadata_files(self, directory: str) -> List[str]:
         """
         List the metadata files in a directory
@@ -145,9 +167,9 @@ class BasicLocalCache(ABC):
         """
         return self._manifest.list_metadata_files(directory)
 
-    def list_data_files(self, directory: str) -> List[str]:
+    def list_expression_matrix_files(self, directory: str) -> List[str]:
         """
-        List the data files in a directory
+        List the expression matrix files in a directory
 
         Parameters
         ----------
@@ -159,7 +181,39 @@ class BasicLocalCache(ABC):
         List[str]
             List of data files in the directory
         """
-        return self._manifest.list_data_files(directory)
+        return self._manifest.list_expression_matrix_files(directory)
+    
+    def list_image_volume_files(self, directory: str) -> List[str]:
+        """
+        List the image volume files in a directory
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the image volume files
+
+        Returns
+        -------
+        List[str]
+            List of image volume files in the directory
+        """
+        return self._manifest.list_image_volume_files(directory)
+    
+    def list_mapmycells_files(self, directory: str) -> List[str]:
+        """
+        List the mapmycells files in a directory
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the mapmycells files
+
+        Returns
+        -------
+        List[str]
+            List of mapmycells files in the directory
+        """
+        return self._manifest.list_mapmycells_files(directory)
 
     @abstractmethod
     def _list_all_manifests(self) -> list:
@@ -230,6 +284,33 @@ class BasicLocalCache(ABC):
         self._manifest = self._load_manifest(manifest_name)
         self._manifest_name = manifest_name
 
+    def get_directory_size_by_kind(
+        self,
+        directory: str,
+        data_kind: str
+    ) -> str:
+        """
+        Return the size of a directory in gigabytes or megabytes,
+        which ever is appropriate.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the files
+        data_kind: str
+            The kind of data to get the size for. Either 'metadata',
+            'expression_matricies', 'image_volumes', or 'mapmycells'.
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes
+        """
+        return self._manifest.get_directory_size_by_kind(
+            directory=directory,
+            data_kind=data_kind
+        )
+
     def get_directory_metadata_size(self, directory: str) -> str:
         """
         Return the size of a metadata directory in gigabytes or megabytes,
@@ -247,7 +328,7 @@ class BasicLocalCache(ABC):
         """
         return self._manifest.get_directory_metadata_size(directory)
 
-    def get_directory_data_size(self, directory: str) -> str:
+    def get_directory_expression_matrix_size(self, directory: str) -> str:
         """
         Return the size of a data directory in gigabytes or megabytes,
         which ever is appropriate.
@@ -262,7 +343,41 @@ class BasicLocalCache(ABC):
         size: str
             The size of the directory in bytes
         """
-        return self._manifest.get_directory_data_size(directory)
+        return self._manifest.get_directory_expression_matrix_size(directory)
+    
+    def get_directory_image_volume_size(self, directory: str) -> str:
+        """
+        Return the size of an image volume directory in gigabytes or megabytes,
+        which ever is appropriate.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the image volume files
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes
+        """
+        return self._manifest.get_directory_image_volume_size(directory)
+    
+    def get_directory_mapmycells_size(self, directory: str) -> str:
+        """
+        Return the size of a mapmycells directory in gigabytes or megabytes,
+        which ever is appropriate.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the mapmycells files
+
+        Returns
+        -------
+        size: str
+            The size of the directory in bytes
+        """
+        return self._manifest.get_directory_mapmycells_size(directory)
 
     def _file_exists(self, file_attributes: CacheFileAttributes) -> bool:
         """
@@ -297,7 +412,7 @@ class BasicLocalCache(ABC):
 
         return file_exists
 
-    def _get_file_path(self, directory: str, file_name: str) -> dict:
+    def get_file_path(self, directory: str, file_name: str) -> dict:
         """
         Return the local path to a data file, and test for the
         file's existence.
@@ -335,72 +450,6 @@ class BasicLocalCache(ABC):
         output = {'local_path': local_path,
                   'exists': exists,
                   'file_attributes': file_attributes}
-
-        return output
-
-    def metadata_path(self, directory: str, file_name: str) -> dict:
-        """
-        Return the local path to a metadata file, and test for the
-        file's existence
-
-        Parameters
-        ----------
-        directory: str
-            The name of the directory containing the metadata file
-        file_name: str
-            The name of the metadata file to be accessed
-
-        Returns
-        -------
-        dict
-
-            'path' will be a pathlib.Path pointing to the file's location
-
-            'exists' will be a boolean indicating if the file
-            exists in a valid state
-
-            'file_attributes' is a CacheFileAttributes describing the file
-            in more detail
-
-        Raises
-        ------
-        RuntimeError
-            If the file cannot be downloaded
-        """
-        output = self._get_file_path(directory=directory, file_name=file_name)
-
-        return output
-
-    def data_path(self, directory: str, file_name: str) -> dict:
-        """
-        Return the local path to a data file, and test for the
-        file's existence
-
-        Parameters
-        ----------
-        directory: str
-            The name of the directory containing the metadata file
-        file_name: str
-            The name of the metadata file to be accessed
-
-        Returns
-        -------
-        dict
-
-            'local_path' will be a pathlib.Path pointing to the file's location
-
-            'exists' will be a boolean indicating if the file
-            exists in a valid state
-
-            'file_attributes' is a CacheFileAttributes describing the file
-            in more detail
-
-        Raises
-        ------
-        RuntimeError
-            If the file cannot be downloaded
-        """
-        output = self._get_file_path(directory=directory, file_name=file_name)
 
         return output
 
@@ -799,7 +848,7 @@ class CloudCacheBase(BasicLocalCache):
 
         return False
 
-    def download_data(
+    def download_file(
         self,
         directory: str,
         file_name: str,
@@ -807,15 +856,15 @@ class CloudCacheBase(BasicLocalCache):
         skip_hash_check: bool = False
     ) -> Path:
         """
-        Return the local path to a data file, downloading the file
+        Return the local path to a file, downloading the file
         if necessary
 
         Parameters
         ----------
         directory: str
-            The name of the directory containing the data file
+            The name of the directory containing the file
         file_name: str
-            The name of the data file to be accessed
+            The name of the file to be accessed
         force_download: bool
             If True, force the file to be downloaded even if it already exists
             locally
@@ -833,8 +882,8 @@ class CloudCacheBase(BasicLocalCache):
         RuntimeError
             If the file cannot be downloaded
         """
-        super_attributes = self.data_path(directory=directory,
-                                          file_name=file_name)
+        super_attributes = self.get_file_path(directory=directory,
+                                              file_name=file_name)
         file_attributes = super_attributes['file_attributes']
         # If the file exists, check that it was downloaded successfully.
         if super_attributes['exists'] \
@@ -848,53 +897,50 @@ class CloudCacheBase(BasicLocalCache):
         )
         return file_attributes.local_path
 
-    def download_metadata(self,
-                          directory: str,
-                          file_name: str,
-                          force_download: bool = False,
-                          skip_hash_check: bool = False) -> Path:
+    def download_directory(
+            self,
+            directory: str,
+            data_kind: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False,
+    ) -> List[Path]:
         """
-        Return the local path to a metadata file, downloading the
-        file if necessary
+        Download all of the files in a directory.
 
         Parameters
         ----------
         directory: str
-            The name of the directory containing the metadata file
-        file_name: str
-            The name of the metadata file to be accessed
+            The name of the directory containing the files
+        data_kind: str
+            The kind of data to download. Either 'metadata', 'expression_matricies',
+            'image_volumes', or 'mapmycells'.
         force_download: bool
             If True, force the file to be downloaded even if it already exists
-            locally
+            locally.
         skip_hash_check: bool
-            If True, skip the file hash check
+            If True, skip the file hash check for file integrity.
 
         Returns
         -------
-        pathlib.Path
-            The path indicating where the file is stored on the
-            local system
-
-        Raises
-        ------
-        RuntimeError
-            If the file cannot be downloaded
+        output_paths: list Paths
+            List of paths to the downloaded metadata files
         """
-        super_attributes = self.metadata_path(
-            directory=directory, file_name=file_name)
-        # If the file exists, check that it was downloaded successfully.
-        if super_attributes['exists'] \
-                and not self._check_successful_download(
-                    file_attributes=super_attributes['file_attributes']):
-            force_download = True
-        file_attributes = super_attributes['file_attributes']
-        self._download_file(
-            file_attributes=file_attributes,
-            force_download=force_download,
-            skip_hash_check=skip_hash_check
+        file_list = self._manifest._list_data_in_directory(
+            directory=directory,
+            data_kind=data_kind
         )
-        return file_attributes.local_path
-
+        output_files = []
+        for file_name in file_list:
+            output_files.append(
+                self.download_file(
+                    directory=directory,
+                    file_name=file_name,
+                    force_download=force_download,
+                    skip_hash_check=skip_hash_check
+                )
+            )
+        return output_files
+    
     def download_directory_metadata(
             self,
             directory: str,
@@ -902,7 +948,7 @@ class CloudCacheBase(BasicLocalCache):
             skip_hash_check: bool = False
     ) -> List[Path]:
         """
-        Download all of the metadata files in a directory.
+        Download all the metadata files in a directory.
 
         Parameters
         ----------
@@ -919,32 +965,26 @@ class CloudCacheBase(BasicLocalCache):
         output_paths: list Paths
             List of paths to the downloaded metadata files
         """
-        metadata_list = self.list_metadata_files(directory)
-        output_metadata = []
-        for file_name in metadata_list:
-            output_metadata.append(
-                self.download_metadata(
-                    directory=directory,
-                    file_name=file_name,
-                    force_download=force_download,
-                    skip_hash_check=skip_hash_check
-                )
-            )
-        return output_metadata
+        return self.download_directory(
+            directory=directory,
+            data_kind='metadata',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
 
-    def download_directory_data(
+    def download_directory_expression_matrices(
             self,
             directory: str,
             force_download: bool = False,
             skip_hash_check: bool = False
     ) -> List[Path]:
         """
-        Download all the data files in a directory.
+        Download all the data the expression_matrices in a directory.
 
         Parameters
         ----------
         directory: str
-            The name of the directory containing the data files
+            The name of the directory containing the expression matrix files
         force_download: bool
             If True, force the file to be downloaded even if it already exists
             locally.
@@ -956,18 +996,74 @@ class CloudCacheBase(BasicLocalCache):
         output_paths: list Paths
             List of paths to the downloaded data files
         """
-        data_list = self.list_data_files(directory)
-        output_data = []
-        for file_name in data_list:
-            output_data.append(
-                self.download_data(
-                    directory=directory,
-                    file_name=file_name,
-                    force_download=force_download,
-                    skip_hash_check=skip_hash_check
-                )
-            )
-        return output_data
+        return self.download_directory(
+            directory=directory,
+            data_kind='expression_matrices',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+    
+    def download_directory_image_volumes(
+            self,
+            directory: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
+        """
+        Download all the image volume files in a directory.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the image volume files
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        output_paths: list Paths
+            List of paths to the downloaded image volume files
+        """
+        return self.download_directory(
+            directory=directory,
+            data_kind='image_volumes',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
+    
+    def download_directory_mapmycells(
+            self,
+            directory: str,
+            force_download: bool = False,
+            skip_hash_check: bool = False
+    ) -> List[Path]:
+        """
+        Download all the mapmycells files in a directory.
+
+        Parameters
+        ----------
+        directory: str
+            The name of the directory containing the mapmycells files
+        force_download: bool
+            If True, force the file to be downloaded even if it already exists
+            locally.
+        skip_hash_check: bool
+            If True, skip the file hash check for file integrity.
+
+        Returns
+        -------
+        output_paths: list Paths
+            List of paths to the downloaded mapmycells files
+        """
+        return self.download_directory(
+            directory=directory,
+            data_kind='mapmycells',
+            force_download=force_download,
+            skip_hash_check=skip_hash_check
+        )
 
     def _compare_directories(
         self,
@@ -1007,7 +1103,7 @@ class CloudCacheBase(BasicLocalCache):
         self,
         manifest_0: Manifest,
         manifest_1: Manifest,
-        is_metadata: bool = False
+        data_kind: str
     ) -> dict:
         """
         Compare two manifests from this dataset. Return a dict of new and
@@ -1019,9 +1115,9 @@ class CloudCacheBase(BasicLocalCache):
             "new" manifest to compare to "old"
         manifest_1: abc_atlas_cache.manifest.Manifest
             "old" manifest to compare to "new"
-        is_metadata: bool
-            If True, compare metadata files. If False, compare data files.
-
+        data_kind: str
+            The kind of data to compare. Either "metadata", "expression_matricies",
+            "image_volumes", or "mapmycells".
         Returns
         -------
         output_dict: dict
@@ -1041,7 +1137,6 @@ class CloudCacheBase(BasicLocalCache):
               files that were changed between the two manifests, but the
               version number did not change.
         """
-        file_kind = 'metadata' if is_metadata else 'data_file'
         output_dict = {}
 
         file_list0 = []
@@ -1051,7 +1146,7 @@ class CloudCacheBase(BasicLocalCache):
                     '%s: %s' % (directory, file_name)
                     for file_name in manifest_0._list_data_in_directory(
                         directory=directory,
-                        is_metadata=is_metadata
+                        data_kind=data_kind
                     )
                 ]
             except DataTypeNotInDirectory:
@@ -1063,7 +1158,7 @@ class CloudCacheBase(BasicLocalCache):
                     '%s: %s' % (directory, file_name)
                     for file_name in manifest_1._list_data_in_directory(
                         directory=directory,
-                        is_metadata=is_metadata
+                        data_kind=data_kind
                     )
                 ]
             except DataTypeNotInDirectory:
@@ -1072,17 +1167,17 @@ class CloudCacheBase(BasicLocalCache):
         file_list0 = set(file_list0)
         file_list1 = set(file_list1)
 
-        output_dict[f'new_{file_kind}'] = list(
+        output_dict[f'new_{data_kind}'] = list(
             file_list0.difference(file_list1)
         )
-        output_dict[f'new_{file_kind}'].sort()
-        output_dict[f'removed_{file_kind}'] = list(
+        output_dict[f'new_{data_kind}'].sort()
+        output_dict[f'removed_{data_kind}'] = list(
             file_list1.difference(file_list0)
         )
-        output_dict[f'removed_{file_kind}'].sort()
+        output_dict[f'removed_{data_kind}'].sort()
 
-        output_dict[f'changed_{file_kind}'] = []
-        output_dict[f'manifest_error_{file_kind}'] = []
+        output_dict[f'changed_{data_kind}'] = []
+        output_dict[f'manifest_error_{data_kind}'] = []
         for file_name in file_list0.intersection(file_list1):
             directory, metadata_file = file_name.split(': ')
             file_attr_0 = manifest_0.get_file_attributes(directory,
@@ -1092,12 +1187,12 @@ class CloudCacheBase(BasicLocalCache):
 
             if file_attr_0 != file_attr_1 and \
                     file_attr_0.version == file_attr_1.version:
-                output_dict[f'manifest_error_{file_kind}'].append(file_name)
+                output_dict[f'manifest_error_{data_kind}'].append(file_name)
             elif file_attr_0 != file_attr_1 and \
                     file_attr_0.version != file_attr_1.version:
-                output_dict[f'changed_{file_kind}'].append(file_name)
-        output_dict[f'changed_{file_kind}'].sort()
-        output_dict[f'manifest_error_{file_kind}'].sort()
+                output_dict[f'changed_{data_kind}'].append(file_name)
+        output_dict[f'changed_{data_kind}'].sort()
+        output_dict[f'manifest_error_{data_kind}'].sort()
 
         return output_dict
 
@@ -1140,12 +1235,22 @@ class CloudCacheBase(BasicLocalCache):
         results['metadata_changes'] = self._compare_files(
             manifest_0=manifest_0,
             manifest_1=manifest_1,
-            is_metadata=True
+            data_kind="metadata"
         )
-        results['data_file_changes'] = self._compare_files(
+        results['expression_matrix_file_changes'] = self._compare_files(
             manifest_0=manifest_0,
             manifest_1=manifest_1,
-            is_metadata=False
+            data_kind="expression_matrices"
+        )
+        results['image_volume_file_changes'] = self._compare_files(
+            manifest_0=manifest_0,
+            manifest_1=manifest_1,
+            data_kind="image_volumes"
+        )
+        results['mapmycells_file_changes'] = self._compare_files(
+            manifest_0=manifest_0,
+            manifest_1=manifest_1,
+            data_kind="mapmycells"
         )
 
         return results
@@ -1168,14 +1273,23 @@ class S3CloudCache(CloudCacheBase):
     ui_class_name: Optional[str]
         Name of the class users are actually using to maniuplate this
         functionality (used to populate helpful error messages)
+
+    auth_required: bool
+        If True, use authentication to access the S3 bucket. Will use
+        the ``default`` credentials in a aws credentials file. If False,
+        assume the bucket is public and use unsigned access. Defaults to False.
     """
 
-    def __init__(self,
-                 cache_dir: Union[str, Path],
-                 bucket_name: str,
-                 ui_class_name=None):
+    def __init__(
+            self,
+            cache_dir: Union[str, Path],
+            bucket_name: str,
+            ui_class_name=None,
+            auth_required: bool = False,
+        ):
         self._manifest = None
         self._bucket_name = bucket_name
+        self._auth_required = auth_required
 
         super().__init__(cache_dir=cache_dir,
                          ui_class_name=ui_class_name)
@@ -1189,7 +1303,10 @@ class S3CloudCache(CloudCacheBase):
     @property
     def s3_client(self):
         if self._s3_client is None:
-            s3_config = Config(signature_version=UNSIGNED)
+            if self._auth_required:
+                s3_config = Config()
+            else:
+                s3_config = Config(signature_version=UNSIGNED)
             self._s3_client = boto3.client('s3',
                                            config=s3_config)
         return self._s3_client

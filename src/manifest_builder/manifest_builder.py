@@ -13,16 +13,14 @@ from abc_atlas_access.abc_atlas_cache.utils import file_hash_from_path
 
 def _validate_version(version: str) -> bool:
     try:
-        datetime.datetime.strptime(version, '%Y%m%d').date()
+        datetime.datetime.strptime(version, "%Y%m%d").date()
         return True
     except ValueError:
         return False
 
 
 def find_directories(
-        base_dir: Union[str, Path],
-        version: str,
-        dirs_to_skip: List[str]
+    base_dir: Union[str, Path], version: str, dirs_to_skip: List[str]
 ) -> dict:
     """Crawl ``base_dir`` to find all sub-directories with versions up to and
     including ``version``.
@@ -52,7 +50,7 @@ def find_directories(
     release = {
         "version": version,
         "resource_uri": "s3://allen-brain-cell-atlas/",
-        "directory_listing": {}
+        "directory_listing": {},
     }
     for directory in os.walk(base_dir):
         version_list = []
@@ -64,7 +62,7 @@ def find_directories(
         # If we find a version  select either the max version
         if version_list:
             max_version = max(version_list)
-            split_dir = str(PurePosixPath(directory[0])).split('/')
+            split_dir = str(PurePosixPath(directory[0])).split("/")
             data_set = split_dir[-1]
             if any([data_set.startswith(skip) for skip in dirs_to_skip]):
                 find_logger.info(f"Skipping dataset: {data_set}")
@@ -72,22 +70,20 @@ def find_directories(
             if version < max_version and version not in version_list:
                 continue
             data_kind = split_dir[-2]
-            if data_set not in release['directory_listing']:
-                release['directory_listing'][data_set] = {}
-                release['directory_listing'][data_set]['directories'] = {}
-            release['directory_listing'][data_set]['directories'][data_kind] = {
-                'version': version if version < max_version else max_version
+            if data_set not in release["directory_listing"]:
+                release["directory_listing"][data_set] = {}
+                release["directory_listing"][data_set]["directories"] = {}
+            release["directory_listing"][data_set]["directories"][data_kind] = {
+                "version": version if version < max_version else max_version
             }
-    release['directory_listing'] = OrderedDict(
-        sorted(release['directory_listing'].items()))
+    release["directory_listing"] = OrderedDict(
+        sorted(release["directory_listing"].items())
+    )
     return release
 
 
 def populate_directories(
-        base_dir: Union[str, Path],
-        release: dict,
-        bucket_prefix: str,
-        browse_prefix: str
+    base_dir: Union[str, Path], release: dict, bucket_prefix: str, browse_prefix: str
 ) -> dict:
     """Populate paths and urls for each dataset/directory in the release.
 
@@ -109,38 +105,38 @@ def populate_directories(
         populated.
     """
     dir_logger = logging.getLogger("populate_directories")
-    dir_logger.info('Populating paths and urls for each dataset/directory')
-    for data_set in release['directory_listing'].keys():
+    dir_logger.info("Populating paths and urls for each dataset/directory")
+    for data_set in release["directory_listing"].keys():
 
-        dir_logger.info(f'- {data_set}')
-        ds_dict = release['directory_listing'][data_set]['directories']
+        dir_logger.info(f"- {data_set}")
+        ds_dict = release["directory_listing"][data_set]["directories"]
 
         for data_dir in ds_dict.keys():
 
-            dir_logger.info(f'-- {data_dir}')
+            dir_logger.info(f"-- {data_dir}")
             ver_dict = ds_dict[data_dir]
-            rel_path = os.path.join(data_dir, data_set, ver_dict['version'])
+            rel_path = os.path.join(data_dir, data_set, ver_dict["version"])
             full_path = os.path.join(base_dir, rel_path)
-            bucket_url = bucket_prefix + rel_path + '/'
-            browse_url = browse_prefix + rel_path + '/'
+            bucket_url = bucket_prefix + rel_path + "/"
+            browse_url = browse_prefix + rel_path + "/"
 
             if not os.path.isdir(full_path):
                 raise FileNotFoundError(f"{full_path} is not a directory")
 
-            dir_logger.debug(f'--- {rel_path}')
-            dir_logger.debug(f'--- {bucket_url}')
-            dir_logger.debug(f'--- {browse_url}')
+            dir_logger.debug(f"--- {rel_path}")
+            dir_logger.debug(f"--- {bucket_url}")
+            dir_logger.debug(f"--- {browse_url}")
 
-            ver_dict['relative_path'] = rel_path
-            ver_dict['url'] = bucket_url
-            ver_dict['view_link'] = browse_url
+            ver_dict["relative_path"] = rel_path
+            ver_dict["url"] = bucket_url
+            ver_dict["view_link"] = browse_url
     return release
 
 
 def populate_datasets(
-        base_dir: Union[str, Path],
-        release: dict,
-        bucket_prefix: str,
+    base_dir: Union[str, Path],
+    release: dict,
+    bucket_prefix: str,
 ) -> dict:
     """Populate all files in the manifest by crawling the base directory.
 
@@ -161,32 +157,30 @@ def populate_datasets(
         and files populated.
     """
     dataset_logger = logging.getLogger("populate_datasets")
-    dataset_logger.info("Populating files and hashes for each "
-                        "dataset/directory")
+    dataset_logger.info("Populating files and hashes for each " "dataset/directory")
     dataset_lookup = {}
 
-    for dataset in release['directory_listing'].keys():
+    for dataset in release["directory_listing"].keys():
 
-        dataset_logger.info(f'- {dataset}')
-        ds_dict = release['directory_listing'][dataset]['directories']
+        dataset_logger.info(f"- {dataset}")
+        ds_dict = release["directory_listing"][dataset]["directories"]
         dataset_lookup[dataset] = {}
 
         for data_kind in ds_dict.keys():
 
-            dataset_logger.info(f'-- {data_kind}')
+            dataset_logger.info(f"-- {data_kind}")
             dataset_lookup[dataset][data_kind] = {}
             ver_dict = ds_dict[data_kind]
 
-            data_dir = os.path.join(base_dir, ver_dict['relative_path'])
+            data_dir = os.path.join(base_dir, ver_dict["relative_path"])
 
             total_size = 0
 
-            for file_path in ['*', '*/*']:
+            for file_path in ["*", "*/*"]:
 
-                for full_path in glob.glob(
-                        os.path.join(data_dir, file_path),
-                        recursive=True
-                ):
+                for full_path in sorted(glob.glob(
+                    os.path.join(data_dir, file_path), recursive=True
+                )):
                     if os.path.isdir(full_path):
                         continue
 
@@ -200,52 +194,55 @@ def populate_datasets(
 
                     bsplit = os.path.splitext(bname)
                     ext = bsplit[1]
-                    ext = ext.replace('.', '')
+                    ext = ext.replace(".", "")
 
                     file_hash = file_hash_from_path(full_path)
 
                     # Metadata for an individual file.
                     file_dict = {
-                        'version': ds_dict[data_kind]['version'],
-                        'relative_path': rel_path,
-                        'url': bucket_prefix + rel_path,
-                        'size': file_size,
-                        'file_hash': file_hash
+                        "version": ds_dict[data_kind]["version"],
+                        "relative_path": rel_path,
+                        "url": bucket_prefix + rel_path,
+                        "size": file_size,
+                        "file_hash": file_hash,
                     }
 
-                    if ext in ['csv', 'json', 'h5']:
+                    if ext in ["csv", "json", "h5", "geojson", "db"]:
                         tag = bsplit[0]
                         dataset_lookup[dataset][data_kind][tag] = {}
-                        dataset_lookup[dataset][data_kind][tag]['files'] = {}
-                        dataset_lookup[dataset][data_kind][tag]['files'][
-                            ext] = file_dict
-                    elif ext == 'h5ad':
+                        dataset_lookup[dataset][data_kind][tag]["files"] = {}
+                        dataset_lookup[dataset][data_kind][tag]["files"][
+                            ext
+                        ] = file_dict
+                    elif ext == "h5ad":
 
-                        if '-raw.h5ad' in bname:
-                            tag = bname.split('-raw.h5ad')[0]
-                            norm = 'raw'
-                        elif '-log2.h5ad' in bname:
-                            tag = bname.split('-log2.h5ad')[0]
-                            norm = 'log2'
+                        if "-raw.h5ad" in bname:
+                            tag = bname.split("-raw.h5ad")[0]
+                            norm = "raw"
+                        elif "-log2.h5ad" in bname:
+                            tag = bname.split("-log2.h5ad")[0]
+                            norm = "log2"
 
                         if tag not in dataset_lookup[dataset][data_kind].keys():
                             dataset_lookup[dataset][data_kind][tag] = {}
 
                         dataset_lookup[dataset][data_kind][tag][norm] = {}
-                        dataset_lookup[dataset][data_kind][tag][norm]['files'] = {}
-                        dataset_lookup[dataset][data_kind][tag][norm]['files'][
-                            ext] = file_dict
-                    elif ext == 'gz':
-                        ext = 'nii.gz'
-                        tag = bname.replace('.nii.gz', '')
+                        dataset_lookup[dataset][data_kind][tag][norm]["files"] = {}
+                        dataset_lookup[dataset][data_kind][tag][norm]["files"][
+                            ext
+                        ] = file_dict
+                    elif ext == "gz":
+                        ext = "nii.gz"
+                        tag = bname.replace(".nii.gz", "")
                         dataset_lookup[dataset][data_kind][tag] = {}
-                        dataset_lookup[dataset][data_kind][tag]['files'] = {}
-                        dataset_lookup[dataset][data_kind][tag]['files'][
-                            ext] = file_dict
+                        dataset_lookup[dataset][data_kind][tag]["files"] = {}
+                        dataset_lookup[dataset][data_kind][tag]["files"][
+                            ext
+                        ] = file_dict
 
-                ver_dict['total_size'] = total_size
+                ver_dict["total_size"] = total_size
 
-    release['file_listing'] = dataset_lookup
+    release["file_listing"] = dataset_lookup
     return release
 
 
@@ -255,42 +252,39 @@ if __name__ == "__main__":
         "--abc_atlas_staging_path",
         type=str,
         required=True,
-        help="Path to the ABC Atlas staging directory.  "
+        help="Path to the ABC Atlas staging directory.  ",
     )
     parser.add_argument(
-        "--output_file",
-        type=str,
-        required=True,
-        help="File to output the manifest to."
+        "--output_file", type=str, required=True, help="File to output the manifest to."
     )
     parser.add_argument(
         "--manifest_version",
         type=str,
         required=True,
         help="Verion of the manifest to build. Should be in the format "
-             "%Y%m%d. (e.g. 20240315)"
+        "%Y%m%d. (e.g. 20240315)",
     )
     parser.add_argument(
         "--bucket_prefix",
         type=str,
         default="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/",
-        help=""
+        help="",
     )
     parser.add_argument(
         "--datasets_to_skip",
-        nargs='+',
+        nargs="+",
         type=str,
-        default=['releases', 'SEAAD-10X', 'SEAAD-MERFISH', 'SEA-AD', 'Zhuang-C57BL6J'],
+        default=["releases", "SEAAD-10X", "SEAAD-MERFISH", "SEA-AD", "Zhuang-C57BL6J"],
         help="Skip a given project for all directories that start with the "
-             "given pattern. (e.g. SEAD will exclude all directories that "
-                "start with that pattern for example, SEAD-taxonomy etc.)"
+        "given pattern. (e.g. SEAD will exclude all directories that "
+        "start with that pattern for example, SEAD-taxonomy etc.)",
     )
     parser.add_argument(
         "--logging_level",
         type=str,
-        choices=['INFO', 'DEBUG'],
+        choices=["INFO", "DEBUG"],
         default="INFO",
-        help="Set the logging level."
+        help="Set the logging level.",
     )
     args = parser.parse_args()
     logger = logging.getLogger(__name__)
@@ -302,30 +296,27 @@ if __name__ == "__main__":
     base_dir = Path(args.abc_atlas_staging_path)
     version = args.manifest_version
     if not _validate_version(args.manifest_version):
-        raise ValueError("Invalid version format. Please use %Y%m%d format "
-                         "(e.g. 20240315)")
+        raise ValueError(
+            "Invalid version format. Please use %Y%m%d format " "(e.g. 20240315)"
+        )
     bucket_prefix = args.bucket_prefix
-    browse_prefix = args.bucket_prefix + 'index.html#'
+    browse_prefix = args.bucket_prefix + "index.html#"
     datasets_to_skip = args.datasets_to_skip
 
     logger.info(f"Building manifest for version: {version}")
     output_release = find_directories(
-        base_dir=base_dir,
-        version=version,
-        dirs_to_skip=datasets_to_skip
+        base_dir=base_dir, version=version, dirs_to_skip=datasets_to_skip
     )
     output_release = populate_directories(
         base_dir=base_dir,
         release=output_release,
         bucket_prefix=bucket_prefix,
-        browse_prefix=browse_prefix
+        browse_prefix=browse_prefix,
     )
     output_release = populate_datasets(
-        base_dir=base_dir,
-        release=output_release,
-        bucket_prefix=bucket_prefix
+        base_dir=base_dir, release=output_release, bucket_prefix=bucket_prefix
     )
 
     logger.info(f"Writing manifest to {args.output_file}")
-    with open(args.output_file, 'w') as jfile:
+    with open(args.output_file, "w") as jfile:
         json.dump(output_release, jfile, indent=4)

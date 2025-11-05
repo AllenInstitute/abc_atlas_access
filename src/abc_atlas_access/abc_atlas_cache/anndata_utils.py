@@ -3,6 +3,7 @@ import time
 import pandas as pd
 import numpy as np
 import anndata
+import warnings
 from abc_atlas_access.abc_atlas_cache.abc_project_cache import AbcProjectCache
 
 
@@ -50,9 +51,18 @@ def get_gene_data(
     # Create a mask for the requested genes.
     gene_mask = np.isin(all_genes.gene_symbol, selected_genes)
     gene_filtered = all_genes[gene_mask]
-    # Initialize our output DataFrame.
-    output_gene_data = pd.DataFrame(index=all_cells.index,
-                                    columns=gene_filtered.index)
+    if len(gene_filtered) > len(selected_genes):
+        msg = (
+            f"You asked for {len(selected_genes)} genes, but "
+            f"get_gene_data is selecting {len(gene_filtered)}; "
+            "probably some of the gene symbols you specified are "
+            "associated with more than one gene"
+        )
+        warnings.warn(msg)
+
+    # wait to create output dataframe until we have read in the
+    # first chunk and know the dtype we need
+    output_gene_data = None
 
     num_total_cells = len(all_cells)
 
@@ -72,7 +82,7 @@ def get_gene_data(
 
         print("loading file:", matrix_file)
 
-        file_path = abc_atlas_cache.get_data_path(
+        file_path = abc_atlas_cache.get_file_path(
             directory=directory,
             file_name=f"{matrix_file}/{data_type}"
         )
@@ -88,9 +98,18 @@ def get_gene_data(
             cell_mask = cell_indexes.isin(all_cells.index)
             subcell_indexes = cell_indexes[cell_mask]
             num_processed_cells += len(subcell_indexes)
+
+            chunk = chunk.toarray()[cell_mask, :][:, gene_mask]
+
+            if output_gene_data is None:
+                output_gene_data = pd.DataFrame(
+                    index=all_cells.index,
+                    columns=gene_filtered.index,
+                    dtype=chunk.dtype
+                )
+
             output_gene_data.loc[
-                    subcell_indexes, gene_filtered.index] = \
-                chunk.toarray()[cell_mask][:, gene_mask]
+                    subcell_indexes, gene_filtered.index] = chunk
 
         expression_data.file.close()
         del expression_data  # Clean up our loaded file.
