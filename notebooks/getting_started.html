@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -481,7 +485,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-data-files-or-metadata-files-in-a-directory">Downloading all data files or metadata files in a directory.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-files">Downloading individual files.</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-metadata-files">Downloading individual metadata files</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-data-files">Downloading individual data files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-expression-matrix-files">Downloading individual expression matrix files</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options">Advanced Options</a><ul class="nav section-nav flex-column">
@@ -637,7 +641,11 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:575: OutdatedManifestWarning: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>old manifest loaded: releases/20230630/manifest.json
+after latest manifest loaded: releases/20250531/manifest.json
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:624: OutdatedManifestWarning: 
 
 The manifest file you are loading is not the most up to date manifest file available for this dataset. The most up to data manifest file available for this dataset is 
 
@@ -657,10 +665,13 @@ self.load_latest_manifest()
 
 
   warnings.warn(msg, OutdatedManifestWarning)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>old manifest loaded: releases/20230630/manifest.json
-after latest manifest loaded: releases/20250531/manifest.json
+/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:697: OutdatedManifestWarning: You are loading
+releases/20250531/manifest.json
+which is newer than the most recent manifest file you have previously been working with
+releases/20250630/manifest.json
+It is possible that some data files have changed between these two data releases, which will force you to re-download those data files (currently downloaded files will not be overwritten). To continue using releases/20250630/manifest.json, run
+type.load_manifest(&#39;releases/20250630/manifest.json&#39;)
+  warnings.warn(msg, OutdatedManifestWarning)
 </pre></div>
 </div>
 </div>
@@ -709,7 +720,7 @@ after latest manifest loaded: releases/20250531/manifest.json
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -756,10 +767,39 @@ after latest manifest loaded: releases/20250531/manifest.json
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;annotation_10&#39;,
+ &#39;annotation_25&#39;,
+ &#39;annotation_boundary_10&#39;,
+ &#39;annotation_boundary_25&#39;,
+ &#39;average_template_10&#39;,
+ &#39;average_template_25&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_mapmycells_files</span><span class="p">(</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;precomputed_stats.siletti.training&#39;, &#39;query_markers.n10.20240221800&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <p>Before we start downloading data, we can check how much total data is in a given directory for both data files and metadata files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data_size</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_expression_matrix_size</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -781,6 +821,30 @@ after latest manifest loaded: releases/20250531/manifest.json
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volume_size</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;417.02 MB&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_mapmycells_size</span><span class="p">(</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;8.13 GB&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="downloading-files">
 <h2>Downloading files<a class="headerlink" href="#downloading-files" title="Permalink to this heading">#</a></h2>
@@ -791,22 +855,14 @@ after latest manifest loaded: releases/20250531/manifest.json
 <p>The user should be warned that several directories are significant in size, &gt;100 GB. If a directory is over 10 GB in size total, the cache will warn the user when requesting to download the data in the directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_25.nii.gz: 100%|██████████| 3.63M/3.63M [00:00&lt;00:00, 13.8MMB/s]
-annotation_boundary_25.nii.gz: 100%|██████████| 3.13M/3.13M [00:00&lt;00:00, 9.63MMB/s]
-average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00:01&lt;00:00, 25.3MMB/s]  
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)]
 </pre></div>
 </div>
 </div>
@@ -819,20 +875,8 @@ average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 131k/131k [00:00&lt;00:00, 892kMB/s]  
-cluster_annotation_term.csv: 100%|██████████| 861k/861k [00:00&lt;00:00, 4.37MMB/s] 
-cluster_annotation_term_set.csv: 100%|██████████| 1.11k/1.11k [00:00&lt;00:00, 17.6kMB/s]
-cluster_annotation_term_with_counts.csv: 100%|██████████| 902k/902k [00:00&lt;00:00, 5.01MMB/s] 
-cluster_to_cluster_annotation_membership.csv: 100%|██████████| 2.21M/2.21M [00:00&lt;00:00, 13.9MMB/s]
-cluster_to_cluster_annotation_membership_color.csv: 100%|██████████| 239k/239k [00:00&lt;00:00, 1.63MMB/s] 
-cluster_to_cluster_annotation_membership_pivoted.csv: 100%|██████████| 531k/531k [00:00&lt;00:00, 4.16MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-taxonomy metadata files:
-	 [PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
 </pre></div>
 </div>
 </div>
@@ -840,7 +884,7 @@ cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████
 <p>Note that, after downloading the file successfully, running the <code class="docutils literal notranslate"><span class="pre">get_directory_data</span></code> or <code class="docutils literal notranslate"><span class="pre">get_directory_metadata</span></code> methods will return the list of the local paths without having to redownload the files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
@@ -849,11 +893,11 @@ cluster_to_cluster_annotation_membership_pivoted.csv: 100%|███████
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)] 
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)] 
 
 
 WMB-taxonomy metadata files:
-	 [PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
 </pre></div>
 </div>
 </div>
@@ -882,15 +926,12 @@ WMB-taxonomy metadata files:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 5.43MMB/s]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20241115/gene.csv&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20241115/gene.csv&#39;)
 </pre></div>
 </div>
 </div>
@@ -1023,11 +1064,11 @@ WMB-taxonomy metadata files:
 </div></div></div>
 </div>
 </section>
-<section id="downloading-individual-data-files">
-<h4>Downloading individual data files<a class="headerlink" href="#downloading-individual-data-files" title="Permalink to this heading">#</a></h4>
+<section id="downloading-individual-expression-matrix-files">
+<h4>Downloading individual expression matrix files<a class="headerlink" href="#downloading-individual-expression-matrix-files" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1040,107 +1081,93 @@ WMB-taxonomy metadata files:
 <p>Note how <code class="docutils literal notranslate"><span class="pre">log2</span></code> and <code class="docutils literal notranslate"><span class="pre">raw</span></code> is added to the end of the file name returned by the above function and used below. If we were not to specify this in the input, the code will throw an error describing the ambiguity.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti/log2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti/log2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|██████████| 89.3M/89.3M [00:03&lt;00:00, 27.2MMB/s]  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|██████████| 89.3M/89.3M [00:08&lt;00:00, 10.1MMB/s]  
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
 
-<span class="nn">File /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:508,</span> in <span class="ni">AbcProjectCache.get_data_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_local_path</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">508</span>     <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="n">force_download</span><span class="o">=</span><span class="n">force_download</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span>         <span class="n">skip_hash_check</span><span class="o">=</span><span class="n">skip_hash_check</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="k">return</span> <span class="n">data_path</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:531,</span> in <span class="ni">AbcProjectCache.get_file_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="p">)[</span><span class="s1">&#39;local_path&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">531</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span>         <span class="n">force_download</span><span class="o">=</span><span class="n">force_download</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>         <span class="n">skip_hash_check</span><span class="o">=</span><span class="n">skip_hash_check</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="p">)</span>
 
-<span class="nn">File /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:836,</span> in <span class="ni">CloudCacheBase.download_data</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:885,</span> in <span class="ni">CloudCacheBase.download_file</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_file</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span>     <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">807</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span><span class="sd">     Return the local path to a data file, downloading the file</span>
-<span class="g g-Whitespace">    </span><span class="mi">811</span><span class="sd">     if necessary</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="sd">     Return the local path to a file, downloading the file</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span><span class="sd">     if necessary</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">834</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">836</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">837</span>                                       <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">838</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">839</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">885</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span>                                           <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
 
-<span class="nn">File /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:403,</span> in <span class="ni">BasicLocalCache.data_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="k">def</span><span class="w"> </span><span class="nf">data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">375</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">     file&#39;s existence</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:444,</span> in <span class="ni">BasicLocalCache.get_file_path</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span><span class="sd">     Return the local path to a data file, and test for the</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span><span class="sd">     file&#39;s existence.</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">403</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="k">return</span> <span class="n">output</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span><span class="sd">         If the file cannot be downloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">444</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
 
-<span class="nn">File /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/cloud_cache.py:329,</span> in <span class="ni">BasicLocalCache._get_file_path</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">def</span><span class="w"> </span><span class="nf">_get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="sd">     file&#39;s existence.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">329</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_exists</span><span class="p">(</span><span class="n">file_attributes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="n">local_path</span> <span class="o">=</span> <span class="n">file_attributes</span><span class="o">.</span><span class="n">local_path</span>
-
-<span class="nn">File /allen/aibs/informatics/chris.morrison/miniconda/envs/abc_atlas_access/lib/python3.11/site-packages/abc_atlas_access/abc_atlas_cache/manifest.py:238,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>             <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_file_attributes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span>                 <span class="n">remote_path</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>                     <span class="s1">&#39;url&#39;</span><span class="p">],</span>
+<span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/manifest.py:265,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span>             <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_file_attributes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>                 <span class="n">remote_path</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>                 <span class="n">version</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s2">&quot;version&quot;</span><span class="p">],</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>                 <span class="n">file_hash</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s1">&#39;file_hash&#39;</span><span class="p">]</span>  <span class="c1"># noqa: E501</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="k">elif</span> <span class="n">kind</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">238</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>                 <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> found in directory but multiple &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>                 <span class="sa">f</span><span class="s2">&quot;files found: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">. Please &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>                 <span class="s2">&quot;specify the file name as one of &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa: E501</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="k">if</span> <span class="n">file_attributes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>         <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found in directory </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>                 <span class="p">],</span>  <span class="c1"># noqa: E501</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>         <span class="k">elif</span> <span class="n">kind</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">265</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>                 <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> found in directory but multiple &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>                 <span class="sa">f</span><span class="s2">&quot;files found: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">. Please &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>                 <span class="s2">&quot;specify the file name as one of &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa: E501</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">file_attributes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found in directory </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
 <span class="ne">KeyError</span>: &quot;File WMB-10XMulti found in directory but multiple files found: [&#39;log2&#39;, &#39;raw&#39;]. Please specify the file name as one of [&#39;WMB-10XMulti/log2&#39;, &#39;WMB-10XMulti/raw&#39;]&quot;
 </pre></div>
@@ -1161,7 +1188,7 @@ WMB-taxonomy metadata files:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 10.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 4.76MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1285,22 +1312,22 @@ WMB-taxonomy metadata files:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_data</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:01&lt;00:00, 25.9MMB/s]
-annotation_25.nii.gz: 100%|██████████| 3.63M/3.63M [00:00&lt;00:00, 21.7MMB/s]
-annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:01&lt;00:00, 20.4MMB/s]  
-annotation_boundary_25.nii.gz: 100%|██████████| 3.13M/3.13M [00:00&lt;00:00, 16.8MMB/s]
-average_template_10.nii.gz: 100%|██████████| 343M/343M [00:11&lt;00:00, 28.9MMB/s]    
-average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00:00&lt;00:00, 55.8MMB/s]  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:02&lt;00:00, 9.39MMB/s]
+annotation_25.nii.gz: 100%|██████████| 3.63M/3.63M [00:00&lt;00:00, 6.96MMB/s]
+annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:03&lt;00:00, 9.02MMB/s]  
+annotation_boundary_25.nii.gz: 100%|██████████| 3.13M/3.13M [00:00&lt;00:00, 7.01MMB/s]
+average_template_10.nii.gz: 100%|██████████| 343M/343M [00:39&lt;00:00, 8.67MMB/s]    
+average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00:03&lt;00:00, 8.81MMB/s]  
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)]
+	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1319,7 +1346,7 @@ average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|██████████| 6.46M/6.46M [00:00&lt;00:00, 17.3MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UMAP20230830-TH-EPI-Glut.csv: 100%|██████████| 6.46M/6.46M [00:00&lt;00:00, 6.51MMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1424,25 +1451,30 @@ average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_with_counts.csv: 100%|██████████| 137k/137k [00:00&lt;00:00, 1.19MMB/s]
-parcellation_to_parcellation_term_membership_blue.csv: 100%|██████████| 16.4k/16.4k [00:00&lt;00:00, 179kMB/s]
-parcellation_to_parcellation_term_membership_green.csv: 100%|██████████| 16.5k/16.5k [00:00&lt;00:00, 254kMB/s]
-parcellation_to_parcellation_term_membership_name.csv: 100%|██████████| 75.8k/75.8k [00:00&lt;00:00, 688kMB/s]
-parcellation_to_parcellation_term_membership_red.csv: 100%|██████████| 16.0k/16.0k [00:00&lt;00:00, 223kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████| 41.2k/41.2k [00:00&lt;00:00, 368kMB/s]
+parcellation_term.csv: 100%|██████████| 177k/177k [00:00&lt;00:00, 2.00MMB/s]
+parcellation_term_set.csv: 100%|██████████| 628/628 [00:00&lt;00:00, 10.5kMB/s]
+parcellation_term_set_membership.csv: 100%|██████████| 114k/114k [00:00&lt;00:00, 778kMB/s]  
+parcellation_term_with_counts.csv: 100%|██████████| 137k/137k [00:00&lt;00:00, 1.11MMB/s] 
+parcellation_to_parcellation_term_membership.csv: 100%|██████████| 680k/680k [00:00&lt;00:00, 3.34MMB/s] 
+parcellation_to_parcellation_term_membership_blue.csv: 100%|██████████| 16.4k/16.4k [00:00&lt;00:00, 122kMB/s] 
+parcellation_to_parcellation_term_membership_green.csv: 100%|██████████| 16.5k/16.5k [00:00&lt;00:00, 178kMB/s]
+parcellation_to_parcellation_term_membership_name.csv: 100%|██████████| 75.8k/75.8k [00:00&lt;00:00, 551kMB/s] 
+parcellation_to_parcellation_term_membership_red.csv: 100%|██████████| 16.0k/16.0k [00:00&lt;00:00, 240kMB/s]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv&#39;),
- PosixPath(&#39;/allen/scratch/aibstemp/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv&#39;),
+ PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv&#39;)]
 </pre></div>
 </div>
 </div>
@@ -1520,7 +1552,7 @@ parcellation_to_parcellation_term_membership_red.csv: 100%|███████
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-data-files-or-metadata-files-in-a-directory">Downloading all data files or metadata files in a directory.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-files">Downloading individual files.</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-metadata-files">Downloading individual metadata files</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-data-files">Downloading individual data files</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-individual-expression-matrix-files">Downloading individual expression matrix files</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-options">Advanced Options</a><ul class="nav section-nav flex-column">

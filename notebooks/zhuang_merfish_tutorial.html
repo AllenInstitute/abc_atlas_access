@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -527,7 +531,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20241130/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -570,28 +574,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 661M/661M [00:27&lt;00:00, 23.7MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 : Number of cells =  2846908 ,  Number of sections = 147
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 286M/286M [00:11&lt;00:00, 24.0MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 : Number of cells =  1227408 ,  Number of sections = 66
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 369M/369M [00:14&lt;00:00, 24.8MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 : Number of cells =  1585843 ,  Number of sections = 23
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 38.0M/38.0M [00:01&lt;00:00, 20.3MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 : Number of cells =  162578 ,  Number of sections = 3
+Zhuang-ABCA-2 : Number of cells =  1227408 ,  Number of sections = 66
+Zhuang-ABCA-3 : Number of cells =  1585843 ,  Number of sections = 23
+Zhuang-ABCA-4 : Number of cells =  162578 ,  Number of sections = 3
 </pre></div>
 </div>
 </div>
@@ -1494,13 +1480,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 84.7k/84.7k [00:00&lt;00:00, 689kMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  1122
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1742,7 +1722,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;Zhuang-ABCA-2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;Zhuang-ABCA-2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1757,7 +1737,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_expression</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span>    
-    <span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">/log2&quot;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">/log2&quot;</span><span class="p">)</span>
     
     <span class="n">adata</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     
@@ -1774,28 +1754,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.13G/2.13G [01:12&lt;00:00, 29.2MMB/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  19.86417
+Zhuang-ABCA-2 - time taken:  9.300148999999998
+Zhuang-ABCA-3 - time taken:  9.771411999999998
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-1 - time taken:  26.463893791000004
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4-log2.h5ad: 100%|██████████| 107M/107M [04:16&lt;00:00, 416kMB/s]    
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 871M/871M [00:35&lt;00:00, 24.9MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-2 - time taken:  11.567487181999994
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3-log2.h5ad: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.16G/1.16G [00:43&lt;00:00, 26.8MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-3 - time taken:  12.91951303800002
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4-log2.h5ad: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 107M/107M [00:04&lt;00:00, 24.0MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 - time taken:  1.3839122699999962
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zhuang-ABCA-4 - time taken:  1.0832089999999965
 </pre></div>
 </div>
 </div>
@@ -1858,10 +1825,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 221M/221M [00:08&lt;00:00, 25.4MMB/s]
-ccf_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 89.1M/89.1M [00:03&lt;00:00, 23.9MMB/s]
-ccf_coordinates.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 132M/132M [00:04&lt;00:00, 26.5MMB/s]
-ccf_coordinates.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 13.8M/13.8M [00:00&lt;00:00, 18.4MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|██████████| 221M/221M [00:16&lt;00:00, 13.1MMB/s]   
+ccf_coordinates.csv: 100%|██████████| 89.1M/89.1M [00:06&lt;00:00, 13.6MMB/s]  
+ccf_coordinates.csv: 100%|██████████| 132M/132M [00:09&lt;00:00, 13.3MMB/s]   
+ccf_coordinates.csv: 100%|██████████| 13.8M/13.8M [00:01&lt;00:00, 11.8MMB/s]
 </pre></div>
 </div>
 </div>

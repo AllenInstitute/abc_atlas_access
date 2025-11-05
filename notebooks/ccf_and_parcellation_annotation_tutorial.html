@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -545,7 +549,7 @@ document.write(`
 <p>There are 3 volumetric data files associated with AllenCCFv3. The “average_template_10” volume is the anatomical template of the CCF constructed as the shape and intensity average of 1675 specime brains. The “annotation_10” volume is the parcellation of the brain with respect to a heirachical partonomy of anatomical structures. The “annotation_boundary_10” volume is a mask that identifies all the voxel with on the boundary of a parcellation to support data visualization. The volumes are stored in compressed NIFTI (.nii.gz) format. In this notebook  uses the <a class="reference external" href="https://simpleitk.org/">SimpleITK</a> library to open the volume.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -562,24 +566,17 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;average_template_10&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;average_template_10&#39;</span><span class="p">)</span>
 <span class="n">average_template_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">average_template_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">average_template_image</span><span class="p">)</span>
 
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
 <span class="n">annotation_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
 <span class="n">annotation_boundary_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_boundary_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_boundary_image</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average_template_10.nii.gz: 100%|██████████| 343M/343M [00:10&lt;00:00, 33.7MMB/s]    
-annotation_10.nii.gz: 100%|██████████| 27.5M/27.5M [00:01&lt;00:00, 23.8MMB/s]
-annotation_boundary_10.nii.gz: 100%|██████████| 27.4M/27.4M [00:01&lt;00:00, 26.8MMB/s]  
 </pre></div>
 </div>
 </div>
@@ -700,13 +697,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation.csv: 100%|██████████| 41.2k/41.2k [00:00&lt;00:00, 376kMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of parcellations: 688
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -824,13 +815,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_set.csv: 100%|██████████| 628/628 [00:00&lt;00:00, 5.56kMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of term sets: 5
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -925,9 +910,6 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term.csv: 100%|██████████| 177k/177k [00:00&lt;00:00, 955kMB/s]  
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of terms: 1631
 </pre></div>
 </div>
@@ -1048,13 +1030,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_term_set_membership.csv: 100%|██████████| 114k/114k [00:00&lt;00:00, 1.29MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 1293
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1135,9 +1111,6 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership.csv: 100%|██████████| 680k/680k [00:00&lt;00:00, 5.37MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 3440
 </pre></div>
 </div>
@@ -1461,23 +1434,23 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
       <td>...</td>
     </tr>
     <tr>
-      <th>AllenCCF-Ontology-2017-1069</th>
+      <th>AllenCCF-Ontology-2017-10703</th>
       <td>1</td>
     </tr>
     <tr>
-      <th>AllenCCF-Ontology-2017-10671</th>
+      <th>AllenCCF-Ontology-2017-10704</th>
       <td>1</td>
     </tr>
     <tr>
-      <th>AllenCCF-Ontology-2017-1066</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>AllenCCF-Ontology-2017-1064</th>
+      <th>AllenCCF-Ontology-2017-1072</th>
       <td>1</td>
     </tr>
     <tr>
       <th>AllenCCF-Ontology-2017-1074</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-998</th>
       <td>1</td>
     </tr>
   </tbody>
@@ -1529,12 +1502,12 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
       <td>697.783214</td>
     </tr>
     <tr>
-      <th>ABC-Ontology-2023-unassigned-organ</th>
+      <th>ABC-Ontology-2023-unassigned-structure</th>
       <td>697783214</td>
       <td>697.783214</td>
     </tr>
     <tr>
-      <th>ABC-Ontology-2023-unassigned-structure</th>
+      <th>ABC-Ontology-2023-unassigned-organ</th>
       <td>697783214</td>
       <td>697.783214</td>
     </tr>
@@ -1554,7 +1527,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
       <td>...</td>
     </tr>
     <tr>
-      <th>ABC-Ontology-2023-c-substructure</th>
+      <th>ABC-Ontology-2023-c-structure</th>
       <td>432</td>
       <td>0.000432</td>
     </tr>

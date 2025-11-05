@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hmba_bg_10X_snRNASeq_tutorial';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Resource Pages" href="../docs/README.html" />
-    <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations" href="hmba_bg_clustering_analysis_and_annotation.html" />
+    <link rel="next" title="Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation" href="hmba_bg_spatial_slabs_and_taxonomy.html" />
+    <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations" href="hmba_bg_clustering_analysis_and_annotation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -496,7 +500,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-10x-snranseq-analysis-gene-expression">
 <h1>Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-10x-snranseq-analysis-gene-expression" title="Permalink to this heading">#</a></h1>
 <p>In this notebook we’ll explore some gene expressions and combine them with the cell metadata we showed in the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">previous clustering analysis</a> tutorial.</p>
-<p>You need to be connected to the internet to run this notebook or connected to a cache that has the HMBA-BG data downloaded already.</p>
+<p>You need to be connected to the internet to run this notebook or connected to a cache that has the Human-Mammalian Brain Atlas - Basal Ganglia (HMBA-BG) data downloaded already.</p>
 <p>The notebook presented here shows quick visualizations from precomputed metadata in the atlas. For examples on accessing the expression matrices, specifically selecting genes from expression matrices, see the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html">general Accessing expression data</a> tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -504,6 +508,7 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.anndata_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_gene_data</span>
@@ -511,19 +516,21 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requested data on disk. For metadata, the cache can also directly serve up a Pandas DataFrame. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requested data on disk. For metadata, the cache can also directly serve up a Pandas DataFrame. See the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html"><code class="docutils literal notranslate"><span class="pre">getting_started</span></code></a> notebook for more details on using the cache including installing it if it has not already been.</p>
 <p><strong>Change the download_base variable to where you would like to download the data to your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
-<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span>
+    <span class="n">download_base</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250930/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -579,7 +586,7 @@ document.write(`
     <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
 <span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">)</span>
-<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_common_name&#39;</span><span class="p">)</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_genus&#39;</span><span class="p">)</span>
 <span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_scientific_name&#39;</span><span class="p">)</span>
 <span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;donor_sex&#39;</span><span class="p">)</span>
 
@@ -610,7 +617,6 @@ document.write(`
     <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term&#39;</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
-<span class="n">cluster_annotation_term_with_cells</span> <span class="o">=</span> <span class="n">cluster_annotation_term</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 
 <span class="n">cell_to_cluster_membership</span> <span class="o">=</span> <span class="n">cell_to_cluster_membership</span><span class="p">[</span><span class="n">cell_to_cluster_membership</span><span class="p">[</span><span class="s1">&#39;cluster_label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cluster_annotation_term</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
 
@@ -618,7 +624,11 @@ document.write(`
     <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership&#39;</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
-<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">cluster_to_cluster_annotation_membership</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_annotation_term_with_cells</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_anno_term&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">cluster_to_cluster_annotation_membership</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">cluster</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)[[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span>
+<span class="p">)</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">cluster_to_cluster_annotation_membership</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_annotation_term</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_anno_term&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">membership_groupby</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
     <span class="p">[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span>
 <span class="p">)</span>
@@ -628,7 +638,6 @@ document.write(`
     <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term_set&#39;</span>
 <span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span>
 
-<span class="c1"># term_sets = abc_cache.get_metadata_dataframe(directory=&#39;WHB-taxonomy&#39;, file_name=&#39;cluster_annotation_term_set&#39;).set_index(&#39;label&#39;)</span>
 <span class="n">cluster_details</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 <span class="n">cluster_order</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;term_order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 <span class="n">cluster_order</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -659,7 +668,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/miniconda3/envs/abc_atlas_access/lib/python3.12/site-packages/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:429: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
   return pd.read_csv(path, **kwargs)
 </pre></div>
 </div>
@@ -730,70 +739,22 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>CACATACAGGGATGCG-936_C03</th>
-      <td>CACATACAGGGATGCG</td>
-      <td>Q21.26.002</td>
-      <td>936_C03</td>
-      <td>L8XR_211118_02_C04</td>
-      <td>44c17a26ca9c6f204075ddc6f10e1029fdcea4c5</td>
-      <td>0.020000</td>
-      <td>12196.0</td>
+      <th>GAACCTGTCACTTTAC-1959_C02</th>
+      <td>GAACCTGTCACTTTAC</td>
+      <td>H23.30.001</td>
+      <td>1959_C02</td>
+      <td>L8XR_231116_02_B09</td>
+      <td>d7924909ac635d27a5aaf99c11ea0373b9c3bb07</td>
+      <td>0.000000</td>
+      <td>3414.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>981e6fb1-a376-4786-b87a-0d274cf603be</td>
+      <td>f6482d6f-cf79-4650-8cbb-a327d424d7d0</td>
       <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#253c8c</td>
-      <td>#aec7e8</td>
-      <td>#2fd6d6</td>
-      <td>10</td>
-      <td>1189</td>
-      <td>53</td>
-      <td>3</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>GTCTAATCAGCTTAGC-2054_A08</th>
-      <td>GTCTAATCAGCTTAGC</td>
-      <td>QM23.50.003</td>
-      <td>2054_A08</td>
-      <td>L8XR_240208_01_B04</td>
-      <td>36c190e9e62974ee4454085dc4d3b27b83c7739d</td>
-      <td>0.011236</td>
-      <td>4245.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>d591e3d3-56f0-4286-8434-fef4250f1cd2</td>
-      <td>...</td>
-      <td>#f2ca7d</td>
-      <td>#8605d4</td>
-      <td>#def476</td>
-      <td>#488edc</td>
-      <td>#62620e</td>
-      <td>3</td>
-      <td>146</td>
-      <td>9</td>
-      <td>1</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>AGTGCGGAGGCTACTG-2540_A02</th>
-      <td>AGTGCGGAGGCTACTG</td>
-      <td>H24.30.007</td>
-      <td>2540_A02</td>
-      <td>L8XR_241031_21_B02</td>
-      <td>98123d9e5e7a10180d2694f55c4f538179489b6e</td>
-      <td>0.035714</td>
-      <td>5658.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>8ea6fa29-dbe9-4171-ab22-640b419fe430</td>
-      <td>...</td>
-      <td>#f2ca7d</td>
-      <td>#8605d4</td>
-      <td>#def476</td>
-      <td>#488edc</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#66391F</td>
       <td>#a9de1a</td>
       <td>3</td>
       <td>142</td>
@@ -802,22 +763,22 @@ document.write(`
       <td>7</td>
     </tr>
     <tr>
-      <th>AATCTCAAGCAAACCT-948_C03</th>
-      <td>AATCTCAAGCAAACCT</td>
+      <th>GCTAGCCAGGCATTGT-948_C03</th>
+      <td>GCTAGCCAGGCATTGT</td>
       <td>QM21.26.003</td>
       <td>948_C03</td>
       <td>L8XR_211124_02_G10</td>
       <td>86af4e5bdd31f92b8a1e2d7cc3d65c513b954d91</td>
-      <td>0.050000</td>
-      <td>26865.0</td>
+      <td>0.012500</td>
+      <td>78709.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>d3f278c5-803d-4224-8782-17f41fd70f03</td>
+      <td>e584c92e-7751-4d83-be8f-a09bf3e0ed9f</td>
       <td>...</td>
       <td>#91f4bb</td>
       <td>#0433b4</td>
       <td>#77f0ca</td>
-      <td>#854098</td>
+      <td>#D7AAE4</td>
       <td>#2e50ba</td>
       <td>6</td>
       <td>449</td>
@@ -826,37 +787,85 @@ document.write(`
       <td>16</td>
     </tr>
     <tr>
-      <th>GAACTTATCCCTGACT-847_A04</th>
-      <td>GAACTTATCCCTGACT</td>
-      <td>H18.30.001</td>
-      <td>847_A04</td>
-      <td>L8XR_211007_02_H02</td>
-      <td>237fca61a138a6c86f149b0271a293f75f8e4a0b</td>
-      <td>0.020000</td>
-      <td>26418.0</td>
+      <th>ACCAAACTCTTGTCCA-2263_C01</th>
+      <td>ACCAAACTCTTGTCCA</td>
+      <td>H24.30.004</td>
+      <td>2263_C01</td>
+      <td>L8XR_240606_22_C02</td>
+      <td>b81b8dba1caf0524bbdc75a4f6f7ab0dd8257074</td>
+      <td>0.080460</td>
+      <td>11922.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>85e3457b-8f6e-4868-907e-745c2a274ff4</td>
+      <td>de1c9452-80d1-4a02-a596-b40ce3d263a6</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#6af4cf</td>
+      <td>3</td>
+      <td>161</td>
+      <td>10</td>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>CACATGCCACTAAGTT-1169_B01</th>
+      <td>CACATGCCACTAAGTT</td>
+      <td>QM21.26.003</td>
+      <td>1169_B01</td>
+      <td>L8XR_220331_02_D10</td>
+      <td>7cec95f752307fa028f4192ceef2efc9201bf185</td>
+      <td>0.027778</td>
+      <td>4341.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>c8b71355-a138-4a6f-9a60-c87f9d7f0fc4</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#69e4a2</td>
+      <td>3</td>
+      <td>163</td>
+      <td>10</td>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>ATCGCCCGTCATCATC-911_D03</th>
+      <td>ATCGCCCGTCATCATC</td>
+      <td>Q21.26.010</td>
+      <td>911_D03</td>
+      <td>L8XR_211104_02_E11</td>
+      <td>eba42ed12567f81b09a06d4c2270ab0aa8ce1ddc</td>
+      <td>0.000000</td>
+      <td>6175.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>61685219-acc0-48c5-897a-7fdc7ab80efe</td>
       <td>...</td>
       <td>#19613b</td>
       <td>#d0b83c</td>
       <td>#253c8c</td>
       <td>#aec7e8</td>
-      <td>#39c6ab</td>
+      <td>#97f1d7</td>
       <td>10</td>
-      <td>1185</td>
+      <td>1190</td>
       <td>53</td>
       <td>3</td>
       <td>32</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 53 columns</p>
+<p>5 rows × 59 columns</p>
 </div></div></div>
 </div>
 <section id="single-cell-transcriptomes">
 <h2>Single cell transcriptomes<a class="headerlink" href="#single-cell-transcriptomes" title="Permalink to this heading">#</a></h2>
-<p>The ~2 million, 10X single cell dataset of HMBA-BG is available in two separate packages. The first contains a single aligned h5ad file containing ~16k genes that have been aligned across all species. We use this single aligned dataset in this notebook. The other package is split across each species with a separate h5ad file for each species. These individually containing roughly ~30k genes for each species.</p>
+<p>The ~2 million, 10X single cell dataset of HMBA-BG is available in two separate packages. The first contains a single aligned h5ad file containing ~16k genes that have been aligned across all species. We use this single aligned dataset in this notebook. The other package is split across each species with a separate h5ad file for each species. These individually containing roughly ~36k genes for each species.</p>
 <p>Below we show some interactions with data from the 10X expression matrices in the HMBA-BG dataset. For a deeper dive into how to access specific gene data from the expression matrices, take a look at <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html">general accessing expression data</a> tutorial.</p>
 <p>First, we list the available metadata in the HMBA-BG 10X dataset again.</p>
 <div class="cell docutils container">
@@ -876,6 +885,19 @@ document.write(`
 </div>
 </div>
 </div>
+<p>For completeness, we list the available expression matrix files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;HMBA-10xMultiome-BG-Aligned/log2&#39;, &#39;HMBA-10xMultiome-BG-Aligned/raw&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <p>We first load the gene data for the Aligned dataset covering all species in the BG dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -889,7 +911,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 1.15M/1.15M [00:00&lt;00:00, 5.23MMB/s]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of aligned genes =  16630
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -956,7 +984,7 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<p>Below we list the genes we load and the example method used to load the expression for these specific genes from the h5ad file. Note that we provide a the set of example gene expressions as a csv file for brevity in this tutorial. To process and extract the gene expressions for yourself, uncomment the code block below. More details on how to extract specific genes from the data see our <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html">accessing gene expression data tutorial</a></p>
+<p>Below we list the genes we will use in this notebook and the example method used to load the expression for these specific genes from the h5ad file. Note that we provide a set of example gene expressions as a csv file for brevity in this tutorial. To process and extract the gene expressions for yourself, uncomment the code block below. More details on how to extract specific genes from the data see our <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html">accessing gene expression data tutorial</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SLC17A6&#39;</span><span class="p">,</span> <span class="s1">&#39;SLC32A1&#39;</span><span class="p">,</span> <span class="s1">&#39;PTPRC&#39;</span><span class="p">,</span> <span class="s1">&#39;PLP1&#39;</span><span class="p">,</span> <span class="s1">&#39;AQP4&#39;</span><span class="p">,</span> <span class="s1">&#39;DRD1&#39;</span><span class="p">,</span> <span class="s1">&#39;DRD2&#39;</span><span class="p">]</span>
@@ -988,6 +1016,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_gene_expression.csv: 100%|██████████| 135M/135M [00:07&lt;00:00, 18.4MMB/s]   
+</pre></div>
+</div>
+</div>
 </div>
 <p>Next, we’ll concatenate the gene data together and merge them into our cell metadata.</p>
 <div class="cell docutils container">
@@ -1000,39 +1033,76 @@ document.write(`
 </section>
 <section id="example-use-cases">
 <h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h2>
-<p><strong>Note these genes are examples. A final selection for the released notebook can be substituted later on.</strong></p>
 <p>In this section, we show a use case with the example genes <em>SLC17A6</em>, <em>SLC32A1</em>, <em>PTPRC</em>, <em>PLP1</em>, <em>AQP4</em>, <em>DRD1</em>, and <em>DRD2</em>. These genes were selected because they are marker genes for glutamatergic (<em>SLC17A6</em>) and GABAergic (<em>SLC32A1</em>) neurons, immune cells (<em>PTPRC</em>), oligodendrocytes (<em>PLP1</em>), astrocytes (<em>AQP4</em>), and D1/D2 medium spiny neurons (<em>DRD1</em>, <em>DRD2</em>).  “Marker genes” have much higher expression in the specified cell type or anatomic structure when compared to all other cells, and in many cases are functionally relevant for those cell types.</p>
-<p>We define a helper functions <em>aggregate_by_metadata</em> to compute the average expression for a given category and later <em>plot_umap</em> to plot cells in a UMAP colorized by metadata or expression values similar to what was used in part 1.</p>
 <p>The helper function below creates a heatmap showing the relation between various parameters in the combined cell metadata and the genes we loaded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_species_heatmap</span><span class="p">(</span>
-    <span class="n">df</span><span class="p">,</span>
-    <span class="n">gnames</span><span class="p">,</span>
-    <span class="n">value</span><span class="p">,</span>
-    <span class="n">species_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">fig_width</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-    <span class="n">fig_height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-    <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_species_heatmap</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">gnames</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">species_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">sort</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">fig_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span>
 <span class="p">):</span>
-    <span class="k">if</span> <span class="n">species_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">species_list</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_common_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a heatmap of gene expression values for a list of genes across species.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing cell metadata and gene expression values.</span>
+<span class="sd">    gnames : list</span>
+<span class="sd">        List of gene names to plot.</span>
+<span class="sd">    value : str</span>
+<span class="sd">        Column name in df to group by (e.g., &#39;species_genus&#39;).</span>
+<span class="sd">    species_list : list, optional</span>
+<span class="sd">        List of species to include in the plot. If None, all unique species in df are used.</span>
+<span class="sd">    sort : bool, optional</span>
+<span class="sd">        Whether to sort the gene expression values within each species.</span>
+<span class="sd">    fig_width : float, optional</span>
+<span class="sd">        Width of the figure in inches.</span>
+<span class="sd">    fig_height : float, optional</span>
+<span class="sd">        Height of the figure in inches.</span>
+<span class="sd">    vmax : float, optional</span>
+<span class="sd">        Maximum value for the color scale. If None, it is set to the maximum value in the data.</span>
+<span class="sd">    cmap : matplotlib colormap, optional</span>
+<span class="sd">        Colormap to use for the heatmap.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    fig : matplotlib.figure.Figure</span>
+<span class="sd">        The figure object containing the heatmap.</span>
+<span class="sd">    ax : array of matplotlib.axes.Axes</span>
+<span class="sd">        The axes objects for each species.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">species_list</span><span class="p">))</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
 
     <span class="n">all_unique_values</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
     <span class="k">try</span><span class="p">:</span>
         <span class="n">order</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">_order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
         <span class="n">all_unique_values</span> <span class="o">=</span> <span class="n">all_unique_values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">order</span><span class="p">)]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="n">order</span> <span class="o">=</span> <span class="kc">None</span>
 
+    <span class="n">all_grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">value</span><span class="p">)[</span><span class="n">gnames</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">vmin</span> <span class="o">=</span> <span class="n">all_grouped</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">vmax</span> <span class="o">=</span> <span class="n">all_grouped</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">sm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">()</span>
+
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">species</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">species_list</span><span class="p">):</span>
         
-        <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_common_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_genus&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
         
         <span class="n">grouped</span> <span class="o">=</span> <span class="n">filtered</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">value</span><span class="p">)[</span><span class="n">gnames</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">sort</span><span class="p">:</span>
@@ -1051,7 +1121,7 @@ document.write(`
 
         <span class="n">arr</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
 
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
         <span class="n">xlabs</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
         <span class="n">ylabs</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
 
@@ -1065,6 +1135,8 @@ document.write(`
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">xlabs</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
 
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sm</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Mean Expression [log2(CPM + 1)]&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.00</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.00</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
@@ -1074,7 +1146,7 @@ document.write(`
 </div>
 <section id="expression-of-selected-genes-in-the-basal-ganglia">
 <h3>Expression of selected genes in the Basal Ganglia<a class="headerlink" href="#expression-of-selected-genes-in-the-basal-ganglia" title="Permalink to this heading">#</a></h3>
-<p>Below we use our heatmap function to plot the gene expression as a function of a feature in our data. For the first two plots, we show the expression for all species against the Neighborhood and Group levels of the taxonomy. We observe that the expression across the species are similar as we would expect if these cell types are conserved across species. Note that a band of white denotes a Group (or other feature) that is not present in for the given species.</p>
+<p>Below we use our heatmap function to plot the gene expression as a function of a feature in our data. For the first two plots, we show the expression for all species against the Neighborhood and Group levels of the taxonomy. Note that a band of white denotes a Group (or other feature) that is not present in for the given species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_species_heatmap</span><span class="p">(</span>
@@ -1091,7 +1163,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a988e446901cec255fb09a5d8a377a427662f8c469c7a8482c2d13e344de839e.png" src="../_images/a988e446901cec255fb09a5d8a377a427662f8c469c7a8482c2d13e344de839e.png" />
+<img alt="../_images/e926f2a43f0c4a4997a18c307c494edadc04eef0825a3b8d02fa8fae8925a5c0.png" src="../_images/e926f2a43f0c4a4997a18c307c494edadc04eef0825a3b8d02fa8fae8925a5c0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1110,7 +1182,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab110b0479e82b446e2afa2a49d6735712601b6e96a563e609b6ce889751d3b4.png" src="../_images/ab110b0479e82b446e2afa2a49d6735712601b6e96a563e609b6ce889751d3b4.png" />
+<img alt="../_images/66930f7bf9e176c5e842e41325382b6ce096218087bbf69f3eb3b41f4298d65f.png" src="../_images/66930f7bf9e176c5e842e41325382b6ce096218087bbf69f3eb3b41f4298d65f.png" />
 </div>
 </div>
 <p>Now we perform the same heatmap comparison against the region of interest in the brain the cell was extracted from. Note that currently the Marmoset has no fine grained identification of brain region.</p>
@@ -1130,43 +1202,104 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aad32c19afa11219b3a0e283d7adb4b833fe919d43776adc7ac80a5064a00feb.png" src="../_images/aad32c19afa11219b3a0e283d7adb4b833fe919d43776adc7ac80a5064a00feb.png" />
+<img alt="../_images/457eaaa185c640b8783c14cd50a598207373cfed66f87e668c6d1997a90b1cb3.png" src="../_images/457eaaa185c640b8783c14cd50a598207373cfed66f87e668c6d1997a90b1cb3.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="expression-in-the-umap">
 <h2>Expression in the UMAP<a class="headerlink" href="#expression-in-the-umap" title="Permalink to this heading">#</a></h2>
-<p>We can also visualize the relationship between these genes and their location in the UMAP. We’ll plot the two species side by side with the lightgrey cells in each plot representing those from the other species that do not overlap with the plotted one. Overall the expressions between species agree across the UMAP.</p>
+<p>We can also visualize the relationship between these genes and their location in the UMAP. We’ll plot the species side by side with the dark grey cells in each plot representing those from the other species that do not overlap with the plotted one. We select a minium expression value of which effectively masks out zero expression cells from the plots, showing a bit more contrast. The cells below are selected value are plotted as a light grey. Feel free to experiment with different vmin and vmax values in investigate the gene expressions more in depth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_umap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">species_list</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">:</span>
-    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_umap</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">feature</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">species_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fig_width</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span>
+        <span class="n">fig_height</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot UMAP scatter plots for a given feature across multiple species.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing cell metadata including &#39;x&#39;, &#39;y&#39;, and &#39;species_genus&#39; columns.</span>
+<span class="sd">    feature : str</span>
+<span class="sd">        Column name in df to color the points by (e.g., gene expression).</span>
+<span class="sd">    species_list : list</span>
+<span class="sd">        List of species to include in the plot.</span>
+<span class="sd">    cmap : matplotlib colormap, optional</span>
+<span class="sd">        Colormap to use for coloring the points. If None, uses the feature values as colors directly.</span>
+<span class="sd">    vmin: float, optional</span>
+<span class="sd">        Minimum value for color mapping. Defaults to min of values in the feature column. Cells with</span>
+<span class="sd">        expression below this value will be plotted as light grey.</span>
+<span class="sd">    vmax: float, optional</span>
+<span class="sd">        Maximum value for color mapping. Defaults to max of values in the feature column.  Cells with</span>
+<span class="sd">        expression above this value will be plotted as light grey.</span>
+<span class="sd">    fig_width : float, optional</span>
+<span class="sd">        Width of the figure in inches.</span>
+<span class="sd">    fig_height : float, optional</span>
+<span class="sd">        Height of the figure in inches.</span>
+<span class="sd">        </span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    fig : matplotlib.figure.Figure</span>
+<span class="sd">        The figure object containing the UMAP plots.</span>
+<span class="sd">    ax : array of matplotlib.axes.Axes</span>
+<span class="sd">        The axes objects for each species.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">species_list</span><span class="p">))</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
 
     <span class="n">all_xx</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
     <span class="n">all_yy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
-    
+
+    <span class="n">vv</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="n">vv</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">vmax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">vv</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">sm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">()</span>
+
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">species</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">species_list</span><span class="p">):</span>
-        
-        <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_common_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+
+        <span class="n">species_mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;species_genus&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">species_mask</span><span class="p">]</span>
         <span class="n">xx</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
         <span class="n">yy</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
         <span class="n">vv</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_xx</span><span class="p">,</span> <span class="n">all_yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#D3D3D3&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="p">:</span>
-            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_xx</span><span class="p">,</span> <span class="n">all_yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#636363&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Other Species&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">vv</span> <span class="o">&gt;=</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vv</span> <span class="o">&lt;=</span> <span class="n">vmax</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">yy</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;#D3D3D3&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">yy</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">vv</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
         <span class="k">else</span> <span class="p">:</span>
             <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-            
+
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
         
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        
+    
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sm</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;[log2(CPM + 1)]&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">markerscale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
 </pre></div>
@@ -1180,7 +1313,9 @@ document.write(`
         <span class="n">cell_extended_with_genes</span><span class="p">,</span>
         <span class="n">feature</span><span class="o">=</span><span class="n">gene_name</span><span class="p">,</span>
         <span class="n">species_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Macaque&#39;</span><span class="p">,</span> <span class="s1">&#39;Marmoset&#39;</span><span class="p">],</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span>
     <span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Gene Expression: </span><span class="si">{</span><span class="n">gene_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1188,15 +1323,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/82a944014a6c8c7f9af054b6767fa72e586d4b332c2326507fcd2a577445c3ee.png" src="../_images/82a944014a6c8c7f9af054b6767fa72e586d4b332c2326507fcd2a577445c3ee.png" />
-<img alt="../_images/e5023e77ef314e2472a6609bd67fbeb82ec1d4a1fdfa0ad69e8068217a6f6145.png" src="../_images/e5023e77ef314e2472a6609bd67fbeb82ec1d4a1fdfa0ad69e8068217a6f6145.png" />
-<img alt="../_images/d6218b83e42f394e3053b18ad9b8680fc78c2a5f6ac0e832093ef952f770b5e6.png" src="../_images/d6218b83e42f394e3053b18ad9b8680fc78c2a5f6ac0e832093ef952f770b5e6.png" />
-<img alt="../_images/7ff322edfdb41e29e5befe074944d9564b89354c33b910a616cb0266614ab23f.png" src="../_images/7ff322edfdb41e29e5befe074944d9564b89354c33b910a616cb0266614ab23f.png" />
-<img alt="../_images/6b4920b3dd40762855b34b383b6e6edbc3b8b238269b584808d24e02e36183e9.png" src="../_images/6b4920b3dd40762855b34b383b6e6edbc3b8b238269b584808d24e02e36183e9.png" />
-<img alt="../_images/fa88a34b99cb60c6975aef3c49a16348215df6a517de56ea8aa0cf54af2332ae.png" src="../_images/fa88a34b99cb60c6975aef3c49a16348215df6a517de56ea8aa0cf54af2332ae.png" />
-<img alt="../_images/66507e8e53c48fdddf4d27b8f2e19480bbea6d27284c467374a13eb3cbacdc71.png" src="../_images/66507e8e53c48fdddf4d27b8f2e19480bbea6d27284c467374a13eb3cbacdc71.png" />
+<img alt="../_images/ac8a3f34635b764ec729672bfac51ab018cb4b1a1cc3d36f9b64af0984f95220.png" src="../_images/ac8a3f34635b764ec729672bfac51ab018cb4b1a1cc3d36f9b64af0984f95220.png" />
+<img alt="../_images/e1a53833adadf144f160f43d61000a077a89b8fe8503c19043e97a5880bf35b2.png" src="../_images/e1a53833adadf144f160f43d61000a077a89b8fe8503c19043e97a5880bf35b2.png" />
+<img alt="../_images/0d6f4c03ed589d7543085c18723e6dae8eeb4b3dd0e256da13fcd044f772f223.png" src="../_images/0d6f4c03ed589d7543085c18723e6dae8eeb4b3dd0e256da13fcd044f772f223.png" />
+<img alt="../_images/ac734d2214bc79e01da0e74409f4ea7c4252a6b6a7f9d3c6b577ab34ff18fcbc.png" src="../_images/ac734d2214bc79e01da0e74409f4ea7c4252a6b6a7f9d3c6b577ab34ff18fcbc.png" />
+<img alt="../_images/650a5bf74f5279c33c3e95402e614a0ed7534ee3d2e9fe0c0c58f8854e97cedf.png" src="../_images/650a5bf74f5279c33c3e95402e614a0ed7534ee3d2e9fe0c0c58f8854e97cedf.png" />
+<img alt="../_images/b62c2d37fe09b92728857b7f610968652a63031803963c3b3bc18a0e2c26b408.png" src="../_images/b62c2d37fe09b92728857b7f610968652a63031803963c3b3bc18a0e2c26b408.png" />
+<img alt="../_images/724ad95ef64b91d9fe67707866a6a081ff88571e371db63d9c41c08c4506698b.png" src="../_images/724ad95ef64b91d9fe67707866a6a081ff88571e371db63d9c41c08c4506698b.png" />
 </div>
 </div>
+<p>To learn more about the taxonomy and metadata used in this notebook see the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">HMBA-BG Clustering Analysis and Taxonomy notebook</a>.</p>
 </section>
 </section>
 
@@ -1236,15 +1372,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</p>
+        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</p>
       </div>
     </a>
     <a class="right-next"
-       href="../docs/README.html"
+       href="hmba_bg_spatial_slabs_and_taxonomy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Resource Pages</p>
+        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

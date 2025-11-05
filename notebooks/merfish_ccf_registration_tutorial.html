@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -546,9 +550,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata_with_cluster_annotation.csv: 100%|██████████| 1.02G/1.02G [00:32&lt;00:00, 31.1MMB/s]   
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -750,9 +751,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reconstructed_coordinates.csv: 100%|██████████| 256M/256M [00:08&lt;00:00, 30.1MMB/s]   
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1042,9 +1040,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ccf_coordinates.csv: 100%|██████████| 296M/296M [00:09&lt;00:00, 30.2MMB/s]    
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1429,9 +1424,6 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership_acronym.csv: 100%|██████████| 22.3k/22.3k [00:00&lt;00:00, 233kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1521,9 +1513,6 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>parcellation_to_parcellation_term_membership_color.csv: 100%|██████████| 30.5k/30.5k [00:00&lt;00:00, 399kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2112,7 +2101,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
       <td>1</td>
     </tr>
     <tr>
-      <th>PO</th>
+      <th>MD</th>
       <td>1</td>
     </tr>
   </tbody>
@@ -2369,7 +2358,7 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 <p>The anatomical template, parcellation and boundary volume in resample CCF coordinates are also available for download for visualization and analysis</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_data_files</span><span class="p">(</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2384,19 +2373,19 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reading resampled_average_template&quot;</span><span class="p">)</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">,</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">,</span>
                                <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;resampled_average_template&#39;</span><span class="p">)</span>
 <span class="n">average_template_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">average_template_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">average_template_image</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reading resampled_annotation&quot;</span><span class="p">)</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">,</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">,</span>
                                <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;resampled_annotation&#39;</span><span class="p">)</span>
 <span class="n">annotation_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reading resampled_annotation_boundary&quot;</span><span class="p">)</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_data_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">,</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850-CCF&#39;</span><span class="p">,</span>
                                <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;resampled_annotation_boundary&#39;</span><span class="p">)</span>
 <span class="n">annotation_boundary_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_boundary_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_boundary_image</span><span class="p">)</span>
@@ -2405,21 +2394,8 @@ x_ccf values: [6.32598314 6.32656693 6.3266852  ... 7.16574148 7.16579943 7.1659
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_average_template
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_average_template.nii.gz: 100%|██████████| 117M/117M [00:05&lt;00:00, 22.6MMB/s]   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_annotation
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation.nii.gz: 100%|██████████| 2.12M/2.12M [00:00&lt;00:00, 10.8MMB/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reading resampled_annotation_boundary
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>resampled_annotation_boundary.nii.gz: 100%|██████████| 1.55M/1.55M [00:00&lt;00:00, 9.71MMB/s]
+reading resampled_annotation
+reading resampled_annotation_boundary
 </pre></div>
 </div>
 </div>

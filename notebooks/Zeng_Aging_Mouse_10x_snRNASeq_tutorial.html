@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -532,7 +536,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250331/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -593,10 +597,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 419M/419M [00:58&lt;00:00, 7.12MMB/s]
-cell_annotation_colors.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 76.1M/76.1M [00:10&lt;00:00, 7.35MMB/s]
-cluster.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 174k/174k [00:00&lt;00:00, 1.34MMB/s]
-cell_cluster_mapping_annotations.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████| 173M/173M [00:24&lt;00:00, 7.20MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 419M/419M [02:10&lt;00:00, 3.20MMB/s]    
+cell_annotation_colors.csv: 100%|██████████| 76.1M/76.1M [00:17&lt;00:00, 4.31MMB/s]  
+cluster.csv: 100%|██████████| 174k/174k [00:00&lt;00:00, 828kMB/s]  
+cell_cluster_mapping_annotations.csv: 100%|██████████| 173M/173M [00:52&lt;00:00, 3.30MMB/s]   
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -805,13 +809,7 @@ cell_cluster_mapping_annotations.csv: 100%|████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.30M/2.30M [00:00&lt;00:00, 6.90MMB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  32285
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -898,7 +896,7 @@ cell_cluster_mapping_annotations.csv: 100%|████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|███████████████████████████████████████████████████████████████████████████████████| 77.0M/77.0M [00:11&lt;00:00, 6.72MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_genes_all_cells_expression.csv: 100%|██████████| 77.0M/77.0M [00:21&lt;00:00, 3.56MMB/s]  
 </pre></div>
 </div>
 </div>
@@ -1243,7 +1241,7 @@ cell_cluster_mapping_annotations.csv: 100%|████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aging_degenes.csv: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.13M/1.13M [00:00&lt;00:00, 5.50MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aging_degenes.csv: 100%|██████████| 1.13M/1.13M [00:01&lt;00:00, 903kMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1365,7 +1363,7 @@ cell_cluster_mapping_annotations.csv: 100%|████████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_mapping_pivot.csv: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 118k/118k [00:00&lt;00:00, 862kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_mapping_pivot.csv: 100%|██████████| 118k/118k [00:00&lt;00:00, 641kMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>

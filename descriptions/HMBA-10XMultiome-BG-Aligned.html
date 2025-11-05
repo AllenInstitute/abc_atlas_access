@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression" href="HMBA-10XMultiome-BG.html" />
-    <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia: Data" href="HMBA-BG_dataset.html" />
+    <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations" href="HMBA-BG-taxonomy-CCN20250428.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -214,9 +214,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 </ul>
 </li>
 </ul>
@@ -266,8 +267,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
 </ul>
 </li>
@@ -480,9 +484,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-10x-snranseq-data-aligned-gene-expression-across-species">
 <h1>Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-10x-snranseq-data-aligned-gene-expression-across-species" title="Permalink to this heading">#</a></h1>
-<p>Data and metadata for the HMBA-BG 10X gene expression data, with 16,630
-genes aligned across the species. In total there are 2,035,898 cells in this
-gene aligned dataset.</p>
+<p>The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context
+of action selection, motor learning and emotional state, whose coarse functional organization is
+well-described in the literature.</p>
+<p>This page describes and links to and metadata for the HMBA-BG 10X gene
+expression data, with 16,630 genes aligned across the species. In total there
+are 2,035,898 cells in this gene aligned dataset. These data are a QCed subset
+of those from described in the (<a class="reference internal" href="HMBA-10XMultiome-BG.html"><span class="doc std std-doc">HMBA-10XMultiome-BG</span></a>)
+page.</p>
 <p>These data from the basis of the cross species <a class="reference internal" href="HMBA-BG-taxonomy-CCN20250428.html"><span class="doc std std-doc">Basal Ganglia (BG) taxonomy</span></a>.</p>
 <p>For more information on the dataset, please refer to the following webpage:
 <a class="reference external" href="https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/">Mammalian Basal Ganglia Consensus Cell Type Atlas</a>.</p>
@@ -497,23 +506,24 @@ a AWS Public Dataset:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Expression Matrices</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Aligned/20250531/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Aligned/20250531/</a></p></td>
-<td><p>33.6 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Aligned/20250630/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Aligned/20250630/</a></p></td>
+<td><p>30.7 GB</p></td>
 </tr>
 <tr class="row-odd"><td><p>Cell and gene metadata</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Aligned/20250531/">s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Aligned/20250531/</a></p></td>
-<td><p>429 MB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Aligned/20250630/">s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Aligned/20250630/</a></p></td>
+<td><p>535.2 MB</p></td>
 </tr>
 </tbody>
 </table>
 <p>Data is being shared under the CC BY NC 4.0 license.</p>
 <p>Related resources:</p>
 <ul class="simple">
-<li><p>Single cell transcriptomes for each individual species in the
-HMBA-BG dataset.(<a class="reference internal" href="HMBA-10XMultiome-BG.html"><span class="doc std std-doc">HMBA-10XMultiome-BG</span></a>)</p></li>
 <li><p>Taxonomy and Clustering analysis of ~2 million single cell
 transcriptomes from the aligned dataset.
 (<a class="reference internal" href="HMBA-BG-taxonomy-CCN20250428.html"><span class="doc std std-doc">HMBA-BG-taxonomy-CCN20250428</span></a>)</p></li>
+<li><p>Single cell transcriptomes for each individual species in the
+HMBA-BG dataset.(<a class="reference internal" href="HMBA-10XMultiome-BG.html"><span class="doc std std-doc">HMBA-10XMultiome-BG</span></a>)</p></li>
+<li><p>Spatial transcriptomic data for three species and donors (<a class="reference internal" href="HMBA-Spatial-BG.html"><span class="doc std std-doc">HMBA-Spatial-BG</span></a>)</p></li>
 </ul>
 <p>Associated notebooks:</p>
 <ul class="simple">
@@ -528,6 +538,12 @@ visualization.
 [<em>notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb</em>]</p></li>
 <li><p><a class="reference internal" href="../notebooks/hmba_bg_10X_snRNASeq_tutorial.html"><span class="doc std std-doc"><strong>10X scRNA-seq gene expression</strong></span></a>:
 Interact with HMBA-BG 10X-Aligned gene expression data. [<em>notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="../notebooks/hmba_bg_spatial_slabs_and_taxonomy.html"><span class="doc std std-doc"><strong>Spatial transcriptomic slab coordinates and annotation</strong></span></a>:
+Learn about the HMBA-BG spatial data/metadata structure and mapping to the BG taxonomy through example use
+cases and visualization.
+[<em>notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb</em>]</p></li>
+<li><p><a class="reference internal" href="../notebooks/hmba_bg_spatial_genes.html"><span class="doc std std-doc"><strong>Spatial transcriptomic gene expression</strong></span></a>:
+Interact with HMBA-BG spatial transcriptomic gene expression data. [<em>notebooks/hmba_bg_spatial_genes.ipynb</em>]</p></li>
 </ul>
 </section>
 
@@ -562,12 +578,12 @@ Interact with HMBA-BG 10X-Aligned gene expression data. [<em>notebooks/hmba_bg_1
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="HMBA-BG_dataset.html"
+       href="HMBA-BG-taxonomy-CCN20250428.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia: Data</p>
+        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</p>
       </div>
     </a>
     <a class="right-next"
