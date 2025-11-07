@@ -1,0 +1,3250 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hmba_bg_clustering_analysis_and_annotation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression" href="hmba_bg_10X_snRNASeq_tutorial.html" />
+    <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia: Notebooks" href="../descriptions/HMBA-BG_notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas - Data Access
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_dataset.html">Aging Mouse dataset (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_10Xv3.html">Zeng Aging Mouse 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_taxonomy.html">Zeng Aging Mouse clustering and mapping to the WMB taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-dataset.html">Consensus Whole Mouse Brain dataset</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-10X.html">Consensus Whole Mouse Brain single cell/nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_dataset.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-10X.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-MapMyCells.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain (WHB) and Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD) Taxonomies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-notebooks.html">Consensus Mouse notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_clustering_analysis_and_annotation.html">Mouse Aging clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_10x_snRNASeq_tutorial.html">Mouse Aging 10X RNA-seq gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_notebooks.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS) Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_data_and_metadata.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_siletti_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_seaad_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the SEA-AD Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_gene_expression.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Gene Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docs/abbreviation_terms/README.html">Abbreviation lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fnotebooks/hmba_bg_clustering_analysis_and_annotation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor-and-library-metadata">Donor and Library metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-color-and-feature-order">Adding color and feature order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umap-spatial-embedding">UMAP spatial embedding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-information">Taxonomy Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-taxonomy">Plotting the taxonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-cluster-and-cells-counts-per-term-per-species">Aggregating cluster and cells counts per term per species.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-bg-taxonomy">Visualizing the BG taxonomy</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-10x-snrnaseq-analysis-clustering-and-annotations">
+<h1>Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-10x-snrnaseq-analysis-clustering-and-annotations" title="Link to this heading">#</a></h1>
+<p>The basal ganglia (BG) are a system of interconnected brain structures that play a crucial role in motor control, learning, behavior, and emotion. With approximately 200 million neurons in the human basal ganglia alone, these structures are involved in a wide range of neurological processes and are implicated in numerous disorders affecting human health, including Parkinson’s disease, Huntington’s disease, and substance abuse disorders. To further understand the complexity of the basal ganglia, researchers have historically classified its neurons into various types based on their cytoarchitecture, connectivity, molecular profile, and functional properties. However, recent advancements in high-throughput transcriptomic profiling have revolutionized our ability to systematically categorize these cell types within species, while the maturation of machine learning technologies have enabled the integration of these taxonomies across species.</p>
+<p>Our <strong>consensus basal ganglia cell type taxonomy</strong> is the result of iterative clustering and cross-species integration of transcriptomic data. The taxonomy encompasses neurons from key structures within the basal ganglia, including the caudate (Ca), putamen (Pu), nucleus accumbens (NAc), the external and internal segments of the globus pallidus (GPe, GPi), subthalamic nucleus (STN), and substantia nigra (SN). By combining data from multiple primate and rodent species, we have developed a consensus taxonomy that highlights both conserved and species-specific cell types. We validate our taxonomy through marker gene expression analysis, comparison with previously published taxonomies, and self-projection, ensuring the accuracy and robustness of each level in the taxonomic hierarchy.</p>
+<p>You need to be connected to the internet to run this notebook or connected to a cache that has the HMBA-BG data downloaded already.</p>
+<p>The notebook presented here shows quick visualizations from precomputed metadata in the atlas. For examples on accessing the expression matrices, specifically selecting genes from expression matrices, see the  <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html"><code class="docutils literal notranslate"><span class="pre">general_accessing_10x_snRNASeq_tutorial.ipynb</span></code></a> tutorial/example. In a related tutorial, we also show how to access and use <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_10X_snRNASeq_tutorial.html">HMBA-BG gene expression data</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object downloads data requested by the user, tracks which files have already been downloaded to your local system, and serves the path to the requested data on disk. For metadata, the cache can also directly serve up a Pandas DataFrame. See the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html"><code class="docutils literal notranslate"><span class="pre">getting_started</span></code></a> notebook for more details on using the cache including installing it if it has not already been.</p>
+<p><strong>Change the download_base variable to where you would like to download the data in your system.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span>
+    <span class="n">download_base</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20251031/manifest.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-overview">
+<h2>Data overview<a class="headerlink" href="#data-overview" title="Link to this heading">#</a></h2>
+<p>We’ll quickly walk through the data we will be using in this notebook. The HMBA-BG 10X datasets are located across several directories listed in the <code class="docutils literal notranslate"><span class="pre">ABCProjectCache</span></code>. In this notebook, we will be looking at the Aligned HMBA-BG 10X dataset. These data combine the there species with an aligned set of ~16k across the species. We will be using data and metadata from the following directories:</p>
+<ul class="simple">
+<li><p>HMBA-10xMultiome-BG-Aligned</p></li>
+<li><p>HMBA-BG-taxonomy-CCN20250428</p></li>
+</ul>
+<p>Note that data for each individual species is available in the directory <code class="docutils literal notranslate"><span class="pre">HMBA-10xMultiome-BG</span></code>.</p>
+<p>Below we list the data and metadata in the HMBA-10xMultiome-BG-Aligned dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HMBA-10xMultiome-BG-Aligned: gene expression data (h5ad)</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HMBA-10xMultiome-BG-Aligned: metadata (csv)</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-10xMultiome-BG-Aligned: gene expression data (h5ad)
+	 [&#39;HMBA-10xMultiome-BG-Aligned/log2&#39;, &#39;HMBA-10xMultiome-BG-Aligned/raw&#39;]
+HMBA-10xMultiome-BG-Aligned: metadata (csv)
+	 [&#39;cell_metadata&#39;, &#39;donor&#39;, &#39;example_gene_expression&#39;, &#39;gene&#39;, &#39;library&#39;, &#39;value_sets&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also use metadata from the HMBA-BG taxonomy directory. Below is the list of available files:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HMBA-BG-taxonomy-CCN20250428: metadata (csv)</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-BG-taxonomy-CCN20250428: metadata (csv)
+	 [&#39;abbreviation_term&#39;, &#39;cell_2d_embedding_coordinates&#39;, &#39;cell_to_cluster_membership&#39;, &#39;cluster&#39;, &#39;cluster_annotation_term&#39;, &#39;cluster_annotation_term_set&#39;, &#39;cluster_annotation_to_abbreviation_map&#39;, &#39;cluster_to_cluster_annotation_membership&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cell-metadata">
+<h3>Cell metadata<a class="headerlink" href="#cell-metadata" title="Link to this heading">#</a></h3>
+<p>Essential cell metadata is stored as a CSV file that we load as a Pandas DataFrame. Each row represents one cell indexed by a <em>cell label</em>. The <em>cell label</em> is the concatenation of barcode and name of the sample. In this context, the sample is the <em>barcoded cell sample</em> that represents a single load into one port of the 10x Chromium. Note that cell barcodes are only unique within a single <em>barcoded cell sample</em> and that the same barcode can be reused. This metadata file contains cells across all species in the HMBA-BG dataset.</p>
+<p>Each cell is associated with a <em>library label</em>, <em>donor label</em>, <em>alignment_job_id</em>, <em>feature_matrix_label</em> and <em>dataset_label</em> identifying which data package this cell is part of. This metadata file will be combined with other metadata files that ship with this package to add information associated with the donor, UMAP coordinates, cluster assignments, and more.</p>
+<p>Below, we load the first of the metadata used in this tutorial. This represents the cell metadata for the aligned dataset.</p>
+<p>The command we use below both downloads the data if it is not already available in the local cache and loads the data as a Pandas DataFrame. This pattern of loading metadata is repeated throughout the tutorials.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;cell_label&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of cells = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 425M/425M [01:19&lt;00:00, 5.32MMB/s]    
+/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
+  return pd.read_csv(path, **kwargs)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  1896133
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_barcode</th>
+      <th>donor_label</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>library_label</th>
+      <th>alignment_job_id</th>
+      <th>doublet_score</th>
+      <th>umi_count</th>
+      <th>feature_matrix_label</th>
+      <th>dataset_label</th>
+      <th>abc_sample_id</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AAACAGCCAAATGCCC-2362_A05</th>
+      <td>AAACAGCCAAATGCCC</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.027027</td>
+      <td>15259.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>38447b19-a5dc-4eca-9021-56ae191e8809</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAATTGAGA-2362_A05</th>
+      <td>AAACAGCCAATTGAGA</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.054795</td>
+      <td>20645.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>3dc4dc1f-4b8a-4012-bb07-e3906ad70da0</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAGCATGTC-2362_A05</th>
+      <td>AAACAGCCAGCATGTC</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.000000</td>
+      <td>2551.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>291d6ebf-ca70-4d9d-8dde-10fa841dba93</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGACAT-2362_A05</th>
+      <td>AAACAGCCATTGACAT</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.000000</td>
+      <td>2341.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>12153419-9b49-4d5f-a10d-ddb7837a729d</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGTGGC-2362_A05</th>
+      <td>AAACAGCCATTGTGGC</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.027397</td>
+      <td>8326.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>5716499d-d69d-489e-b4ed-6841b6ba051d</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can use pandas <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function to see how many unique items are associated for each field and list them out if the number of unique items is small.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_column_info</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="n">members</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="n">members</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">grouped</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of unique </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%d</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">),</span> <span class="n">members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_column_info</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 680274 
+Number of unique donor_label = 22 [&#39;CJ23.56.002&#39;, &#39;CJ23.56.003&#39;, &#39;CJ24.56.001&#39;, &#39;CJ24.56.004&#39;, &#39;H18.30.001&#39;, &#39;H19.30.004&#39;, &#39;H20.30.001&#39;, &#39;H20.30.002&#39;, &#39;H21.30.004&#39;, &#39;H23.30.001&#39;, &#39;H24.30.001&#39;, &#39;H24.30.003&#39;, &#39;H24.30.004&#39;, &#39;H24.30.007&#39;, &#39;Q19.26.010&#39;, &#39;Q21.26.002&#39;, &#39;Q21.26.010&#39;, &#39;QM21.26.001&#39;, &#39;QM21.26.003&#39;, &#39;QM23.50.001&#39;, &#39;QM23.50.002&#39;, &#39;QM23.50.003&#39;]
+Number of unique barcoded_cell_sample_label = 417 
+Number of unique library_label = 417 
+Number of unique alignment_job_id = 303 
+Number of unique doublet_score = 1422 
+Number of unique umi_count = 85704 
+Number of unique feature_matrix_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
+Number of unique dataset_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
+Number of unique abc_sample_id = 1863243 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="donor-and-library-metadata">
+<h3>Donor and Library metadata<a class="headerlink" href="#donor-and-library-metadata" title="Link to this heading">#</a></h3>
+<p>The first two associated metadata we load are the <code class="docutils literal notranslate"><span class="pre">donor</span></code> and <code class="docutils literal notranslate"><span class="pre">library</span></code> tables. The donor table contains species, sex, and age information. The library table contains information on 10X methods and brain region of interest the tissue was extracted from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">donor</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;donor&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;donor_label&#39;</span><span class="p">)</span>
+<span class="n">donor</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 1.97k/1.97k [00:00&lt;00:00, 30.3kMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>donor_species</th>
+      <th>species_scientific_name</th>
+      <th>species_genus</th>
+      <th>donor_sex</th>
+      <th>donor_age</th>
+      <th>donor_age_value</th>
+      <th>donor_age_unit</th>
+      <th>donor_nhash_id</th>
+    </tr>
+    <tr>
+      <th>donor_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>QM23.50.003</th>
+      <td>NCBITaxon:9544</td>
+      <td>Macaca mulatta</td>
+      <td>Macaque</td>
+      <td>Male</td>
+      <td>6 yrs</td>
+      <td>6.0</td>
+      <td>years</td>
+      <td>DO-HHOI8925</td>
+    </tr>
+    <tr>
+      <th>QM21.26.001</th>
+      <td>NCBITaxon:9544</td>
+      <td>Macaca mulatta</td>
+      <td>Macaque</td>
+      <td>Male</td>
+      <td>6 yrs</td>
+      <td>6.0</td>
+      <td>years</td>
+      <td>DO-MCUM5797</td>
+    </tr>
+    <tr>
+      <th>Q19.26.010</th>
+      <td>NCBITaxon:9544</td>
+      <td>Macaca mulatta</td>
+      <td>Macaque</td>
+      <td>Female</td>
+      <td>10 yrs</td>
+      <td>10.0</td>
+      <td>years</td>
+      <td>DO-XYBX6133</td>
+    </tr>
+    <tr>
+      <th>H24.30.003</th>
+      <td>NCBITaxon:9606</td>
+      <td>Homo sapiens</td>
+      <td>Human</td>
+      <td>Female</td>
+      <td>19 yrs</td>
+      <td>19.0</td>
+      <td>years</td>
+      <td>DO-OSUT8071</td>
+    </tr>
+    <tr>
+      <th>H21.30.004</th>
+      <td>NCBITaxon:9606</td>
+      <td>Homo sapiens</td>
+      <td>Human</td>
+      <td>Male</td>
+      <td>57 yrs</td>
+      <td>57.0</td>
+      <td>years</td>
+      <td>DO-XWIW2465</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;library&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;library_label&#39;</span><span class="p">)</span>
+<span class="n">library</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 85.3k/85.3k [00:00&lt;00:00, 474kMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>library_method</th>
+      <th>library_nhash_id</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>enrichment_population</th>
+      <th>cell_specimen_type</th>
+      <th>parcellation_term_identifier</th>
+      <th>region_of_interest_name</th>
+      <th>region_of_interest_label</th>
+      <th>anatomical_division_label</th>
+      <th>donor_label</th>
+      <th>specimen_dissected_roi_label</th>
+      <th>specimen_dissected_roi_nhash_id</th>
+      <th>slab_label</th>
+      <th>slab_nhash_id</th>
+    </tr>
+    <tr>
+      <th>library_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L8XR_240222_21_H03</th>
+      <td>10xMultiome;GEX</td>
+      <td>LI-LXVEUM541384</td>
+      <td>2077_A02</td>
+      <td>50% NeuN+, 35% OLIG2-, 15% OLIG2+</td>
+      <td>Nuclei</td>
+      <td>DHBA:11538</td>
+      <td>caudal putamen</td>
+      <td>PuC</td>
+      <td>Basal ganglia</td>
+      <td>QM23.50.003</td>
+      <td>QM23.50.003.CX.08.PuC.01</td>
+      <td>RI-KHNKLI464991</td>
+      <td>QM23.50.003.CX.08</td>
+      <td>SL-HHOIKA892526</td>
+    </tr>
+    <tr>
+      <th>L8XR_220428_02_A05</th>
+      <td>10xMultiome;GEX</td>
+      <td>LI-RNSEIM617503</td>
+      <td>1224_A04</td>
+      <td>10% NeuN+, 49% OLIG2-, 25% OLIG2+, 16% Nurr1+</td>
+      <td>Nuclei</td>
+      <td>DHBA:12261</td>
+      <td>ventral tegmental area</td>
+      <td>VTA</td>
+      <td>Basal ganglia</td>
+      <td>QM21.26.001</td>
+      <td>Q21.26.001.CX44.SN.001</td>
+      <td>RI-VYYVBV771518</td>
+      <td>QM21.26.001.CX.44</td>
+      <td>SL-MCUMVX579790</td>
+    </tr>
+    <tr>
+      <th>L8XR_220428_02_C04</th>
+      <td>10xMultiome;GEX</td>
+      <td>LI-IHJMHI295497</td>
+      <td>1222_A02</td>
+      <td>60% NeuN+, 27% OLIG2-, 13% OLIG2+</td>
+      <td>Nuclei</td>
+      <td>DHBA:10466</td>
+      <td>subthalamic nucleus</td>
+      <td>STH</td>
+      <td>Basal ganglia</td>
+      <td>Q19.26.010</td>
+      <td>Q19.26.010.CX42.STH.001</td>
+      <td>RI-IMHMMG443226</td>
+      <td>Q19.26.010.CX.42</td>
+      <td>SL-XYBXSZ613335</td>
+    </tr>
+    <tr>
+      <th>L8XR_240705_01_A06</th>
+      <td>10xMultiome;GEX</td>
+      <td>LI-EBDPMM615369</td>
+      <td>2305_E01</td>
+      <td>50% NeuN+, 35% OLIG2-, 15% OLIG2+</td>
+      <td>Nuclei</td>
+      <td>DHBA:11537</td>
+      <td>rostral putamen</td>
+      <td>PuR</td>
+      <td>Basal ganglia</td>
+      <td>H24.30.003</td>
+      <td>H24.30.003.CX.14.PuR.01</td>
+      <td>RI-XZUAVY396052</td>
+      <td>H24.30.003.CX.14</td>
+      <td>SL-OSUTGV807183</td>
+    </tr>
+    <tr>
+      <th>L8XR_240919_21_B05</th>
+      <td>10xMultiome;GEX</td>
+      <td>LI-GUPMNR700763</td>
+      <td>2453_A02</td>
+      <td>70% NeuN+, 20% OLIG2-, 10% OLIG2+</td>
+      <td>Nuclei</td>
+      <td>DHBA:10345</td>
+      <td>Ventral pallidus</td>
+      <td>VeP</td>
+      <td>Basal ganglia</td>
+      <td>H21.30.004</td>
+      <td>H21.30.004.CX.18.VEP.01</td>
+      <td>RI-XVBWXT892729</td>
+      <td>H21.30.004.CX.18</td>
+      <td>SL-XWIWGI246585</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We combine these into an extended cell metadata table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">donor</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;donor_label&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;library_label&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_library_table&#39;</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">cell</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we use a pandas <code class="docutils literal notranslate"><span class="pre">groupby</span></code> to show the number of cells from each species.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species_genus&#39;</span><span class="p">)[[</span><span class="s1">&#39;feature_matrix_label&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feature_matrix_label</th>
+    </tr>
+    <tr>
+      <th>species_genus</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Human</th>
+      <td>1034819</td>
+    </tr>
+    <tr>
+      <th>Macaque</th>
+      <td>548281</td>
+    </tr>
+    <tr>
+      <th>Marmoset</th>
+      <td>313033</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function to show the number of cells in each region of interest extracted from the BG.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region_of_interest_name&#39;</span><span class="p">)[[</span><span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region_of_interest_label</th>
+    </tr>
+    <tr>
+      <th>region_of_interest_name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ventral pallidus</th>
+      <td>36512</td>
+    </tr>
+    <tr>
+      <th>body of caudate</th>
+      <td>187160</td>
+    </tr>
+    <tr>
+      <th>brain</th>
+      <td>313033</td>
+    </tr>
+    <tr>
+      <th>caudal putamen</th>
+      <td>166106</td>
+    </tr>
+    <tr>
+      <th>caudate nucleus</th>
+      <td>27672</td>
+    </tr>
+    <tr>
+      <th>core of nucleus accumbens</th>
+      <td>19192</td>
+    </tr>
+    <tr>
+      <th>external segment of globus pallidus</th>
+      <td>204481</td>
+    </tr>
+    <tr>
+      <th>globus pallidus</th>
+      <td>4567</td>
+    </tr>
+    <tr>
+      <th>head of caudate</th>
+      <td>132071</td>
+    </tr>
+    <tr>
+      <th>internal segment of globus pallidus</th>
+      <td>131680</td>
+    </tr>
+    <tr>
+      <th>nucleus accumbens</th>
+      <td>149878</td>
+    </tr>
+    <tr>
+      <th>peri-caudate ependymal and subependymal zone</th>
+      <td>8376</td>
+    </tr>
+    <tr>
+      <th>posteroventral putamen</th>
+      <td>74232</td>
+    </tr>
+    <tr>
+      <th>putamen</th>
+      <td>34951</td>
+    </tr>
+    <tr>
+      <th>rostral putamen</th>
+      <td>196244</td>
+    </tr>
+    <tr>
+      <th>shell of nucleus accumbens</th>
+      <td>9385</td>
+    </tr>
+    <tr>
+      <th>substantia nigra</th>
+      <td>33156</td>
+    </tr>
+    <tr>
+      <th>subthalamic nucleus</th>
+      <td>58570</td>
+    </tr>
+    <tr>
+      <th>tail of caudate</th>
+      <td>87073</td>
+    </tr>
+    <tr>
+      <th>ventral tegmental area</th>
+      <td>21794</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="adding-color-and-feature-order">
+<h3>Adding color and feature order<a class="headerlink" href="#adding-color-and-feature-order" title="Link to this heading">#</a></h3>
+<p>Each major feature in the donor and library table is associated with unique colors and an ordering with the set of values. Below we load the <code class="docutils literal notranslate"><span class="pre">value_sets</span></code> DataFrame which is a mapping from the various value in the donor and species tables to those colors and orderings. We incorporate these values into the cell metadata table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_sets</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;value_sets&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+<span class="n">value_sets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.16k/4.16k [00:00&lt;00:00, 31.7kMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>table</th>
+      <th>field</th>
+      <th>description</th>
+      <th>order</th>
+      <th>external_identifier</th>
+      <th>parent_label</th>
+      <th>color_hex_triplet</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>donor</td>
+      <td>donor_sex</td>
+      <td>Female</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>#565353</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>donor</td>
+      <td>donor_sex</td>
+      <td>Male</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>#ADC4C3</td>
+    </tr>
+    <tr>
+      <th>Human</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Human</td>
+      <td>1</td>
+      <td>NCBITaxon:9605</td>
+      <td>NaN</td>
+      <td>#377eb8</td>
+    </tr>
+    <tr>
+      <th>Macaque</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Macaque</td>
+      <td>2</td>
+      <td>NCBITaxon:9539</td>
+      <td>NaN</td>
+      <td>#4daf4a</td>
+    </tr>
+    <tr>
+      <th>Marmoset</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Marmoset</td>
+      <td>3</td>
+      <td>NCBITaxon:9481</td>
+      <td>NaN</td>
+      <td>#FF5F5D</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We define a convince function to add colors for the various values in the data (e.g. unique region of interest or donor sex values).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extract_value_set</span><span class="p">(</span><span class="n">cell_metadata_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">input_value_set</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">input_value_set_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add color and order columns to the cell metadata dataframe based on the input</span>
+<span class="sd">    value set.</span>
+
+<span class="sd">    Columns are added as {input_value_set_label}_color and {input_value_set_label}_order.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cell_metadata_df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing cell metadata.</span>
+<span class="sd">    input_value_set : pd.DataFrame</span>
+<span class="sd">        DataFrame containing the value set information.</span>
+<span class="sd">    input_value_set_label : str</span>
+<span class="sd">        The the column name to extract color and order information for. will be added to the cell metadata.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
+        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
+        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use our function to add the relevant color and order columns to our cell_metadata table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add region of interest color and order</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">)</span>
+<span class="c1"># Add species common name color and order</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_genus&#39;</span><span class="p">)</span>
+<span class="c1"># Add species scientific name color and order</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_scientific_name&#39;</span><span class="p">)</span>
+<span class="c1"># Add donor sex color and order</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;donor_sex&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_barcode</th>
+      <th>donor_label</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>library_label</th>
+      <th>alignment_job_id</th>
+      <th>doublet_score</th>
+      <th>umi_count</th>
+      <th>feature_matrix_label</th>
+      <th>dataset_label</th>
+      <th>abc_sample_id</th>
+      <th>...</th>
+      <th>slab_label</th>
+      <th>slab_nhash_id</th>
+      <th>region_of_interest_label_color</th>
+      <th>region_of_interest_label_order</th>
+      <th>species_genus_color</th>
+      <th>species_genus_order</th>
+      <th>species_scientific_name_color</th>
+      <th>species_scientific_name_order</th>
+      <th>donor_sex_color</th>
+      <th>donor_sex_order</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AAACAGCCAAATGCCC-2362_A05</th>
+      <td>AAACAGCCAAATGCCC</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.027027</td>
+      <td>15259.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>38447b19-a5dc-4eca-9021-56ae191e8809</td>
+      <td>...</td>
+      <td>H24.30.001.CX.18</td>
+      <td>SL-IKLFNM543824</td>
+      <td>#53DB33</td>
+      <td>15</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#ADC4C3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAATTGAGA-2362_A05</th>
+      <td>AAACAGCCAATTGAGA</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.054795</td>
+      <td>20645.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>3dc4dc1f-4b8a-4012-bb07-e3906ad70da0</td>
+      <td>...</td>
+      <td>H24.30.001.CX.18</td>
+      <td>SL-IKLFNM543824</td>
+      <td>#53DB33</td>
+      <td>15</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#ADC4C3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAGCATGTC-2362_A05</th>
+      <td>AAACAGCCAGCATGTC</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.000000</td>
+      <td>2551.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>291d6ebf-ca70-4d9d-8dde-10fa841dba93</td>
+      <td>...</td>
+      <td>H24.30.001.CX.18</td>
+      <td>SL-IKLFNM543824</td>
+      <td>#53DB33</td>
+      <td>15</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#ADC4C3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGACAT-2362_A05</th>
+      <td>AAACAGCCATTGACAT</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.000000</td>
+      <td>2341.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>12153419-9b49-4d5f-a10d-ddb7837a729d</td>
+      <td>...</td>
+      <td>H24.30.001.CX.18</td>
+      <td>SL-IKLFNM543824</td>
+      <td>#53DB33</td>
+      <td>15</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#ADC4C3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGTGGC-2362_A05</th>
+      <td>AAACAGCCATTGTGGC</td>
+      <td>H24.30.001</td>
+      <td>2362_A05</td>
+      <td>L8XR_240808_01_E02</td>
+      <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
+      <td>0.027397</td>
+      <td>8326.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>5716499d-d69d-489e-b4ed-6841b6ba051d</td>
+      <td>...</td>
+      <td>H24.30.001.CX.18</td>
+      <td>SL-IKLFNM543824</td>
+      <td>#53DB33</td>
+      <td>15</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#377eb8</td>
+      <td>1</td>
+      <td>#ADC4C3</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 40 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="umap-spatial-embedding">
+<h3>UMAP spatial embedding<a class="headerlink" href="#umap-spatial-embedding" title="Link to this heading">#</a></h3>
+<p>Now that we’ve merged our donor and library metadata into the main cells data, our next step is to plot these values in the Uniform Manifold Approximation and Projection (UMAP) for cells in the dataset. The UMAP is a dimension reduction technique that can be used for visualizing and exploring large-dimension datasets.</p>
+<p>Below we load this 2-D embedding for a sub selection of our cells and merge the x-y coordinates into the extended cell metadata we are creating.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_2d_embedding_coordinates</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_2d_embedding_coordinates&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+<span class="n">cell_2d_embedding_coordinates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 86.7M/86.7M [00:14&lt;00:00, 5.85MMB/s]  
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AAACAGCCAAATGCCC-2362_A05</th>
+      <td>0.452302</td>
+      <td>2.938630</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAATTGAGA-2362_A05</th>
+      <td>0.051495</td>
+      <td>16.282684</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAGCATGTC-2362_A05</th>
+      <td>-1.233702</td>
+      <td>8.666612</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGACAT-2362_A05</th>
+      <td>0.517126</td>
+      <td>15.368365</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGTGGC-2362_A05</th>
+      <td>-3.697715</td>
+      <td>-1.647361</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cell_2d_embedding_coordinates</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">cell_2d_embedding_coordinates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a small helper function <em>plot_umap</em> to visualize the cells on the UMAP. In the examples below we will plot associated cell information colorized by dissection donor species, sex, and region of interest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_umap</span><span class="p">(</span>
+    <span class="n">xx</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">yy</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">cc</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">val</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">fig_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Colormap</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">labels</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">term_orders</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">colorbar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">sizes</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>
+ <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot a scatter plot of the UMAP coordinates.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xx : array-like</span>
+<span class="sd">        x-coordinates of the points to plot.</span>
+<span class="sd">    yy : array-like</span>
+<span class="sd">        y-coordinates of the points to plot.</span>
+<span class="sd">    cc : array-like, optional</span>
+<span class="sd">        colors of the points to plot. If None, the points will be colored by the values in `val`.</span>
+<span class="sd">    val : array-like, optional</span>
+<span class="sd">        values of the points to plot. If None, the points will be colored by the values in `cc`.</span>
+<span class="sd">    fig_width : float, optional</span>
+<span class="sd">        width of the figure in inches. Default is 8.</span>
+<span class="sd">    fig_height : float, optional</span>
+<span class="sd">        height of the figure in inches. Default is 8.</span>
+<span class="sd">    cmap : str, optional</span>
+<span class="sd">        colormap to use for coloring the points. If None, the points will be colored by the values in `cc`.</span>
+<span class="sd">    labels : array-like, optional</span>
+<span class="sd">        labels for the points to plot. If None, no labels will be added to the plot.</span>
+<span class="sd">    term_orders : array-like, optional</span>
+<span class="sd">        order of the labels for the legend. If None, the labels will be ordered by their appearance in `labels`.</span>
+<span class="sd">    colorbar : bool, optional</span>
+<span class="sd">        whether to add a colorbar to the plot. Default is False.</span>
+<span class="sd">    sizes : array-like, optional</span>
+<span class="sd">        sizes of the points to plot. If None, all points will have the same size.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sizes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">sizes</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">cc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">sizes</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+        <span class="n">unique_label_colors</span> <span class="o">=</span> <span class="p">(</span><span class="n">labels</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="n">cc</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_color</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">label_color</span> <span class="ow">in</span> <span class="n">unique_label_colors</span><span class="p">])</span>
+        <span class="n">unique_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_color</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">label_color</span> <span class="ow">in</span> <span class="n">unique_label_colors</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">term_orders</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">unique_order</span> <span class="o">=</span> <span class="n">term_orders</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+            <span class="n">term_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">unique_order</span><span class="p">)</span>
+            <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">unique_labels</span><span class="p">[</span><span class="n">term_order</span><span class="p">]</span>
+            <span class="n">unique_colors</span> <span class="o">=</span> <span class="n">unique_colors</span><span class="p">[</span><span class="n">term_order</span><span class="p">]</span>
+            
+        <span class="n">rects</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">unique_colors</span><span class="p">:</span>
+            <span class="n">rects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+        <span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">rects</span><span class="p">,</span> <span class="n">unique_labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># ax.add_artist(legend)</span>
+
+    <span class="k">if</span> <span class="n">colorbar</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatt</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the various donor and library metadata available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_genus_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_genus&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_genus_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;species_genus&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3f4680c607cdaa8b862c9d62c16196547dc68470714b2a18f3f42ee9a7890be8.png" src="../_images/3f4680c607cdaa8b862c9d62c16196547dc68470714b2a18f3f42ee9a7890be8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_scientific_name_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_scientific_name&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_scientific_name_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;species_scientific_name&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/cfb6985eaba7fd71b784d091aa803d285c1b916160f1e2d6a0d5e3ef46eb01f3.png" src="../_images/cfb6985eaba7fd71b784d091aa803d285c1b916160f1e2d6a0d5e3ef46eb01f3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;donor_sex_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;donor_sex&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;donor_sex_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;donor_sex&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c3a30604afc2f41a5666fe2e4ce273a9aa69795caa32782c5b6707146f15cd2e.png" src="../_images/c3a30604afc2f41a5666fe2e4ce273a9aa69795caa32782c5b6707146f15cd2e.png" />
+</div>
+</div>
+<p>Below we show the region of interest for the three species. Note, however, that Marmoset does not have fine grained ROIs available and is marked as <code class="docutils literal notranslate"><span class="pre">Br</span> <span class="pre">-</span> <span class="pre">Brain</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;region_of_interest_label_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;region_of_interest_label_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;region_of_interest_label&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9f3ad41c764a7e10c935bac46b1ccdca19f203a3ed42ed6cf0876f42720b0393.png" src="../_images/9f3ad41c764a7e10c935bac46b1ccdca19f203a3ed42ed6cf0876f42720b0393.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="taxonomy-information">
+<h2>Taxonomy Information<a class="headerlink" href="#taxonomy-information" title="Link to this heading">#</a></h2>
+<p>The final set of metadata we load into our extended cell metadata file maps the cells into their assigned cluster in the taxonomy. We additionally load metadata for the clusters and compute useful information, such as the number of cells in each taxon at each level of the taxonomy.</p>
+<p>First, we load information associated with each Cluster in the taxonomy. This includes a useful alias value for each cluster as well as the number of cells in each cluster.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">:</span> <span class="s1">&#39;Int64&#39;</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 79.9k/79.9k [00:00&lt;00:00, 485kMB/s] 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster_alias</th>
+      <th>number_of_cells</th>
+    </tr>
+    <tr>
+      <th>cluster_annotation_term_label</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CS20250428_CLUST_0161</th>
+      <td>Human-143</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>CS20250428_CLUST_0162</th>
+      <td>Human-145</td>
+      <td>1783</td>
+    </tr>
+    <tr>
+      <th>CS20250428_CLUST_0163</th>
+      <td>Human-146</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <th>CS20250428_CLUST_0164</th>
+      <td>Human-149</td>
+      <td>2649</td>
+    </tr>
+    <tr>
+      <th>CS20250428_CLUST_0165</th>
+      <td>Human-150</td>
+      <td>1359</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next, we load the table that describes the levels in the taxonomy from Neighborhood at the highest to Cluster at the lowest level.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_annotation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term_set&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span>
+<span class="n">cluster_annotation_term_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 223/223 [00:00&lt;00:00, 3.37kMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster_annotation_term_label</th>
+      <th>name</th>
+      <th>description</th>
+      <th>order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>Neighborhood</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CCN20250428_LEVEL_1</td>
+      <td>Class</td>
+      <td>Class</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CCN20250428_LEVEL_2</td>
+      <td>Subclass</td>
+      <td>Subclass</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CCN20250428_LEVEL_3</td>
+      <td>Group</td>
+      <td>Group</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Cluster</td>
+      <td>Cluster</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>For the clusters, we load information on the annotations for each cluster. This also includes the term order and color information which we will use to plot later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_annotation_term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+<span class="n">cluster_annotation_term</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 206k/206k [00:00&lt;00:00, 921kMB/s] 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>cluster_annotation_term_set_label</th>
+      <th>cluster_annotation_term_set_name</th>
+      <th>color_hex_triplet</th>
+      <th>term_order</th>
+      <th>term_set_order</th>
+      <th>parent_term_label</th>
+      <th>parent_term_name</th>
+      <th>parent_term_set_label</th>
+    </tr>
+    <tr>
+      <th>cluster_annotation_term_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CS20250428_NEIGH_0001</th>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#a8afa5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CS20250428_NEIGH_0000</th>
+      <td>Glut Sero Dopa</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#91f4bb</td>
+      <td>2</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CS20250428_NEIGH_0002</th>
+      <td>Subpallium GABA</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#19613b</td>
+      <td>3</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CS20250428_NEIGH_0003</th>
+      <td>Subpallium GABA-Glut</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#7e1d19</td>
+      <td>4</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CS20250428_CLASS_0000</th>
+      <td>Astro-Epen</td>
+      <td>CCN20250428_LEVEL_1</td>
+      <td>Class</td>
+      <td>#401e66</td>
+      <td>1</td>
+      <td>1</td>
+      <td>CS20250428_NEIGH_0001</td>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, we load the cluster to cluster annotation membership table. Each row in this table is a mapping between the clusters and every level of the taxonomy it belongs to, including itself. We’ll use this table in a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>s to allow us to count up the number of clusters at each taxonomy level and sum the number of cells in each taxon in the taxonomy a all levels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_to_cluster_annotation_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">cluster_to_cluster_annotation_membership</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">cluster</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)[[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span>
+<span class="p">)</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_annotation_term</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_anno_term&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">membership_groupby</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 539k/539k [00:00&lt;00:00, 2.07MMB/s] 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster_annotation_term_label</th>
+      <th>cluster_annotation_term_set_label</th>
+      <th>cluster_alias</th>
+      <th>cluster_annotation_term_set_name</th>
+      <th>cluster_annotation_term_name</th>
+      <th>number_of_cells</th>
+      <th>name</th>
+      <th>cluster_annotation_term_set_label_anno_term</th>
+      <th>cluster_annotation_term_set_name_anno_term</th>
+      <th>color_hex_triplet</th>
+      <th>term_order</th>
+      <th>term_set_order</th>
+      <th>parent_term_label</th>
+      <th>parent_term_name</th>
+      <th>parent_term_set_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CS20250428_CLUST_0161</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Human-143</td>
+      <td>Cluster</td>
+      <td>Human-143</td>
+      <td>91</td>
+      <td>Human-143</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Cluster</td>
+      <td>#4ac0ed</td>
+      <td>0</td>
+      <td>4</td>
+      <td>CS20250428_GROUP_0039</td>
+      <td>Astrocyte</td>
+      <td>CCN20250428_LEVEL_3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CS20250428_CLUST_0162</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Human-145</td>
+      <td>Cluster</td>
+      <td>Human-145</td>
+      <td>1783</td>
+      <td>Human-145</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Cluster</td>
+      <td>#8af851</td>
+      <td>1</td>
+      <td>4</td>
+      <td>CS20250428_GROUP_0039</td>
+      <td>Astrocyte</td>
+      <td>CCN20250428_LEVEL_3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CS20250428_CLUST_0163</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Human-146</td>
+      <td>Cluster</td>
+      <td>Human-146</td>
+      <td>172</td>
+      <td>Human-146</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Cluster</td>
+      <td>#d1dd68</td>
+      <td>2</td>
+      <td>4</td>
+      <td>CS20250428_GROUP_0039</td>
+      <td>Astrocyte</td>
+      <td>CCN20250428_LEVEL_3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CS20250428_CLUST_0164</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Human-149</td>
+      <td>Cluster</td>
+      <td>Human-149</td>
+      <td>2649</td>
+      <td>Human-149</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Cluster</td>
+      <td>#95daf6</td>
+      <td>3</td>
+      <td>4</td>
+      <td>CS20250428_GROUP_0039</td>
+      <td>Astrocyte</td>
+      <td>CCN20250428_LEVEL_3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CS20250428_CLUST_0165</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Human-150</td>
+      <td>Cluster</td>
+      <td>Human-150</td>
+      <td>1359</td>
+      <td>Human-150</td>
+      <td>CCN20250428_LEVEL_4</td>
+      <td>Cluster</td>
+      <td>#26827e</td>
+      <td>4</td>
+      <td>4</td>
+      <td>CS20250428_GROUP_0039</td>
+      <td>Astrocyte</td>
+      <td>CCN20250428_LEVEL_3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>From the membership table, we create three tables via a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>. First the name of each cluster and its parents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># term_sets = abc_cache.get_metadata_dataframe(directory=&#39;WHB-taxonomy&#39;, file_name=&#39;cluster_annotation_term_set&#39;).set_index(&#39;label&#39;)</span>
+<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">cluster_details</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;Other&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cluster_annotation_term_set_name</th>
+      <th>Neighborhood</th>
+      <th>Class</th>
+      <th>Subclass</th>
+      <th>Group</th>
+      <th>Cluster</th>
+    </tr>
+    <tr>
+      <th>cluster_alias</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Human-128</th>
+      <td>Glut Sero Dopa</td>
+      <td>F M Glut</td>
+      <td>F Glut</td>
+      <td>BF SKOR1 Glut</td>
+      <td>Human-128</td>
+    </tr>
+    <tr>
+      <th>Human-129</th>
+      <td>Glut Sero Dopa</td>
+      <td>F M Glut</td>
+      <td>F Glut</td>
+      <td>BF SKOR1 Glut</td>
+      <td>Human-129</td>
+    </tr>
+    <tr>
+      <th>Human-130</th>
+      <td>Glut Sero Dopa</td>
+      <td>F M Glut</td>
+      <td>F Glut</td>
+      <td>BF SKOR1 Glut</td>
+      <td>Human-130</td>
+    </tr>
+    <tr>
+      <th>Human-423</th>
+      <td>Glut Sero Dopa</td>
+      <td>F M Glut</td>
+      <td>F Glut</td>
+      <td>BF SKOR1 Glut</td>
+      <td>Human-423</td>
+    </tr>
+    <tr>
+      <th>Human-426</th>
+      <td>Glut Sero Dopa</td>
+      <td>F M Glut</td>
+      <td>F Glut</td>
+      <td>BF SKOR1 Glut</td>
+      <td>Human-426</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next the plotting order of each of the clusters and their parents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_order</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;term_order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_order</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_order</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">:</span> <span class="s1">&#39;Neighborhood_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="s1">&#39;Class_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Subclass&#39;</span><span class="p">:</span> <span class="s1">&#39;Subclass_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="s1">&#39;Group_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Cluster&#39;</span><span class="p">:</span> <span class="s1">&#39;Cluster_order&#39;</span><span class="p">},</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">cluster_order</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cluster_annotation_term_set_name</th>
+      <th>Class_order</th>
+      <th>Cluster_order</th>
+      <th>Group_order</th>
+      <th>Neighborhood_order</th>
+      <th>Subclass_order</th>
+    </tr>
+    <tr>
+      <th>cluster_alias</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Human-143</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Human-145</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Human-146</th>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Human-149</th>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Human-150</th>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, the colors we will use to plot for each of the unique taxons at all levels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">cluster_colors</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span>
+<span class="n">cluster_colors</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_colors</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>cluster_annotation_term_set_name</th>
+      <th>Neighborhood</th>
+      <th>Class</th>
+      <th>Subclass</th>
+      <th>Group</th>
+      <th>Cluster</th>
+    </tr>
+    <tr>
+      <th>cluster_alias</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Marmoset-323</th>
+      <td>#19613b</td>
+      <td>#26e8bb</td>
+      <td>#1bc06a</td>
+      <td>#fc2b80</td>
+      <td>#00d86e</td>
+    </tr>
+    <tr>
+      <th>Marmoset-307</th>
+      <td>#19613b</td>
+      <td>#26e8bb</td>
+      <td>#1bc06a</td>
+      <td>#fc2b80</td>
+      <td>#0454b2</td>
+    </tr>
+    <tr>
+      <th>Marmoset-325</th>
+      <td>#19613b</td>
+      <td>#26e8bb</td>
+      <td>#1bc06a</td>
+      <td>#fc2b80</td>
+      <td>#094a6f</td>
+    </tr>
+    <tr>
+      <th>Human-346</th>
+      <td>#19613b</td>
+      <td>#26e8bb</td>
+      <td>#1bc06a</td>
+      <td>#fc2b80</td>
+      <td>#0f6331</td>
+    </tr>
+    <tr>
+      <th>Marmoset-301</th>
+      <td>#19613b</td>
+      <td>#26e8bb</td>
+      <td>#1bc06a</td>
+      <td>#fc2b80</td>
+      <td>#1140be</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next, we bring it all together by loading the mapping of cells to cluster and join into our final metadata table. Note here that not every cell is currently associated into the taxonomy hence the NaN values for many of the taxonomy information columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_to_cluster_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_to_cluster_membership&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+<span class="n">cell_to_cluster_membership</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 111M/111M [00:19&lt;00:00, 5.54MMB/s]   
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cluster_alias</th>
+      <th>cluster_label</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AAACAGCCAAATGCCC-2362_A05</th>
+      <td>Human-451</td>
+      <td>CS20250428_CLUST_0268</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAATTGAGA-2362_A05</th>
+      <td>Human-1</td>
+      <td>CS20250428_CLUST_0227</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCAGCATGTC-2362_A05</th>
+      <td>Human-153</td>
+      <td>CS20250428_CLUST_0215</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGACAT-2362_A05</th>
+      <td>Human-1</td>
+      <td>CS20250428_CLUST_0227</td>
+    </tr>
+    <tr>
+      <th>AAACAGCCATTGTGGC-2362_A05</th>
+      <td>Human-14</td>
+      <td>CS20250428_CLUST_0249</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We merge this table with information from our clusters. Note again that not all clusters are associated into the taxonomy hence we use an left join here to use only those clusters with annotations. These un-annotated clusters are in part what make up the Adjacent taxons described in <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">HMBA-BG spatial notebook</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cell_to_cluster_membership</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_cell_to_cluster_membership&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_color&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">cell_to_cluster_membership</span>
+
+<span class="n">cell_extended</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cell_barcode</th>
+      <th>donor_label</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>library_label</th>
+      <th>alignment_job_id</th>
+      <th>doublet_score</th>
+      <th>umi_count</th>
+      <th>feature_matrix_label</th>
+      <th>dataset_label</th>
+      <th>abc_sample_id</th>
+      <th>...</th>
+      <th>Neighborhood_color</th>
+      <th>Class_color</th>
+      <th>Subclass_color</th>
+      <th>Group_color</th>
+      <th>Cluster_color</th>
+      <th>Class_order</th>
+      <th>Cluster_order</th>
+      <th>Group_order</th>
+      <th>Neighborhood_order</th>
+      <th>Subclass_order</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CGGAATCGTTAAGCCA-911_A03</th>
+      <td>CGGAATCGTTAAGCCA</td>
+      <td>Q21.26.010</td>
+      <td>911_A03</td>
+      <td>L8XR_211104_02_A11</td>
+      <td>56a3779592d1a5f694aed91af2c315df789dd3fb</td>
+      <td>0.14</td>
+      <td>10664.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>2fb8690e-8309-456d-8af7-a80f65c79c95</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#253c8c</td>
+      <td>#aec7e8</td>
+      <td>#c8c254</td>
+      <td>10</td>
+      <td>1193</td>
+      <td>53</td>
+      <td>3</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>TCCATCATCGGCTATG-2021_B04</th>
+      <td>TCCATCATCGGCTATG</td>
+      <td>QM23.50.002</td>
+      <td>2021_B04</td>
+      <td>L8XR_240118_21_A03</td>
+      <td>1ab73e9c3d2154ea04c1c06cabe46d93b5be2969</td>
+      <td>0.00</td>
+      <td>3646.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>43bab3bc-fced-4652-ad3d-c3613efd675f</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#69e4a2</td>
+      <td>3</td>
+      <td>163</td>
+      <td>10</td>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>ATCTATGAGAACAAGT-P0053_1</th>
+      <td>ATCTATGAGAACAAGT</td>
+      <td>CJ24.56.001</td>
+      <td>P0053_1</td>
+      <td>LPLCXR_240710_1_G5</td>
+      <td>241212</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>1365bddb-7927-4eb7-a01c-b864032cc14b</td>
+      <td>...</td>
+      <td>#91f4bb</td>
+      <td>#7d0f09</td>
+      <td>#39e1e2</td>
+      <td>#f57e20</td>
+      <td>#5723dd</td>
+      <td>5</td>
+      <td>306</td>
+      <td>18</td>
+      <td>2</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>CGTACGGGTTCAAGCA-911_B03</th>
+      <td>CGTACGGGTTCAAGCA</td>
+      <td>Q19.26.010</td>
+      <td>911_B03</td>
+      <td>L8XR_211104_02_D11</td>
+      <td>931293d1062a54528909385949e19cc804d4eee5</td>
+      <td>0.00</td>
+      <td>10363.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>ea22594d-a6d0-40c7-a12b-29e7e898ae3e</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#1655f2</td>
+      <td>#339933</td>
+      <td>#1b8c83</td>
+      <td>10</td>
+      <td>1120</td>
+      <td>51</td>
+      <td>3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>GATTACGGTCCTTTAA-1110_A07</th>
+      <td>GATTACGGTCCTTTAA</td>
+      <td>H18.30.001</td>
+      <td>1110_A07</td>
+      <td>L8XR_220303_03_F12</td>
+      <td>efb22b586b870994a08b60e0547ee50c94649a3f</td>
+      <td>0.00</td>
+      <td>3111.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>37a744d2-31ea-4560-886b-92cab9ac6314</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#995C60</td>
+      <td>#995C60</td>
+      <td>#995C60</td>
+      <td>#475713</td>
+      <td>2</td>
+      <td>92</td>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 59 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_column_info</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 680274 
+Number of unique donor_label = 22 [&#39;CJ23.56.002&#39;, &#39;CJ23.56.003&#39;, &#39;CJ24.56.001&#39;, &#39;CJ24.56.004&#39;, &#39;H18.30.001&#39;, &#39;H19.30.004&#39;, &#39;H20.30.001&#39;, &#39;H20.30.002&#39;, &#39;H21.30.004&#39;, &#39;H23.30.001&#39;, &#39;H24.30.001&#39;, &#39;H24.30.003&#39;, &#39;H24.30.004&#39;, &#39;H24.30.007&#39;, &#39;Q19.26.010&#39;, &#39;Q21.26.002&#39;, &#39;Q21.26.010&#39;, &#39;QM21.26.001&#39;, &#39;QM21.26.003&#39;, &#39;QM23.50.001&#39;, &#39;QM23.50.002&#39;, &#39;QM23.50.003&#39;]
+Number of unique barcoded_cell_sample_label = 417 
+Number of unique library_label = 417 
+Number of unique alignment_job_id = 303 
+Number of unique doublet_score = 1422 
+Number of unique umi_count = 85704 
+Number of unique feature_matrix_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
+Number of unique dataset_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
+Number of unique abc_sample_id = 1863243 
+Number of unique donor_species = 4 [&#39;NCBITaxon:9483&#39;, &#39;NCBITaxon:9544&#39;, &#39;NCBITaxon:9545&#39;, &#39;NCBITaxon:9606&#39;]
+Number of unique species_scientific_name = 4 [&#39;Callithrix jacchus&#39;, &#39;Homo sapiens&#39;, &#39;Macaca mulatta&#39;, &#39;Macaca nemestrina&#39;]
+Number of unique species_genus = 3 [&#39;Human&#39;, &#39;Macaque&#39;, &#39;Marmoset&#39;]
+Number of unique donor_sex = 2 [&#39;Female&#39;, &#39;Male&#39;]
+Number of unique donor_age = 20 [&#39;10 yrs&#39;, &#39;11 yrs&#39;, &#39;14 yrs&#39;, &#39;18 yrs&#39;, &#39;19 yrs&#39;, &#39;2.0 yrs&#39;, &#39;25 yrs&#39;, &#39;38 yrs&#39;, &#39;4.0 yrs&#39;, &#39;44 yrs&#39;, &#39;5 yrs&#39;, &#39;5.4 yrs&#39;, &#39;50 yrs&#39;, &#39;57 yrs&#39;, &#39;58 yrs&#39;, &#39;6 yrs&#39;, &#39;6.6 yrs&#39;, &#39;60 yrs&#39;, &#39;61 yrs&#39;, &#39;7 yrs&#39;]
+Number of unique donor_age_value = 20 [1.95890411, 3.956284153, 5.0, 5.391780822, 6.0, 6.555924845, 7.0, 10.0, 11.0, 14.0, 18.0, 19.0, 25.0, 38.0, 44.0, 50.0, 57.0, 58.0, 60.0, 61.0]
+Number of unique donor_age_unit = 1 [&#39;years&#39;]
+Number of unique donor_nhash_id = 18 [&#39;DO-CDHB6032&#39;, &#39;DO-CYPH5324&#39;, &#39;DO-DZDZ2547&#39;, &#39;DO-EDVH3478&#39;, &#39;DO-ELEX3409&#39;, &#39;DO-HHOI8925&#39;, &#39;DO-IJUP7054&#39;, &#39;DO-IKLF5438&#39;, &#39;DO-KEEN9676&#39;, &#39;DO-LQEV7887&#39;, &#39;DO-MCUM5797&#39;, &#39;DO-OSUT8071&#39;, &#39;DO-SSTM7863&#39;, &#39;DO-TTGU1761&#39;, &#39;DO-TWCQ9791&#39;, &#39;DO-VVYV1997&#39;, &#39;DO-XWIW2465&#39;, &#39;DO-XYBX6133&#39;]
+Number of unique library_method = 1 [&#39;10xMultiome;GEX&#39;]
+Number of unique library_nhash_id = 294 
+Number of unique barcoded_cell_sample_label_library_table = 417 
+Number of unique enrichment_population = 83 
+Number of unique cell_specimen_type = 1 [&#39;Nuclei&#39;]
+Number of unique parcellation_term_identifier = 20 [&#39;DHBA:10155&#39;, &#39;DHBA:10334&#39;, &#39;DHBA:10335&#39;, &#39;DHBA:10336&#39;, &#39;DHBA:10337&#39;, &#39;DHBA:10338&#39;, &#39;DHBA:10339&#39;, &#39;DHBA:10340&#39;, &#39;DHBA:10341&#39;, &#39;DHBA:10342&#39;, &#39;DHBA:10343&#39;, &#39;DHBA:10344&#39;, &#39;DHBA:10345&#39;, &#39;DHBA:10466&#39;, &#39;DHBA:11537&#39;, &#39;DHBA:11538&#39;, &#39;DHBA:12251&#39;, &#39;DHBA:12261&#39;, &#39;DHBA:146034742&#39;, &#39;DHBA:146034754&#39;]
+Number of unique region_of_interest_name = 20 [&#39;Ventral pallidus&#39;, &#39;body of caudate&#39;, &#39;brain&#39;, &#39;caudal putamen&#39;, &#39;caudate nucleus&#39;, &#39;core of nucleus accumbens&#39;, &#39;external segment of globus pallidus&#39;, &#39;globus pallidus&#39;, &#39;head of caudate&#39;, &#39;internal segment of globus pallidus&#39;, &#39;nucleus accumbens&#39;, &#39;peri-caudate ependymal and subependymal zone&#39;, &#39;posteroventral putamen&#39;, &#39;putamen&#39;, &#39;rostral putamen&#39;, &#39;shell of nucleus accumbens&#39;, &#39;substantia nigra&#39;, &#39;subthalamic nucleus&#39;, &#39;tail of caudate&#39;, &#39;ventral tegmental area&#39;]
+Number of unique region_of_interest_label = 20 [&#39;Br&#39;, &#39;Ca&#39;, &#39;CaB&#39;, &#39;CaH&#39;, &#39;CaT&#39;, &#39;Eca&#39;, &#39;GP&#39;, &#39;GPe&#39;, &#39;GPi&#39;, &#39;NAC&#39;, &#39;NACc&#39;, &#39;NACs&#39;, &#39;Pu&#39;, &#39;PuC&#39;, &#39;PuPV&#39;, &#39;PuR&#39;, &#39;SN&#39;, &#39;STH&#39;, &#39;VTA&#39;, &#39;VeP&#39;]
+Number of unique anatomical_division_label = 2 [&#39;Basal ganglia&#39;, &#39;Brain&#39;]
+Number of unique donor_label_library_table = 22 [&#39;CJ23.56.002&#39;, &#39;CJ23.56.003&#39;, &#39;CJ24.56.001&#39;, &#39;CJ24.56.004&#39;, &#39;H18.30.001&#39;, &#39;H19.30.004&#39;, &#39;H20.30.001&#39;, &#39;H20.30.002&#39;, &#39;H21.30.004&#39;, &#39;H23.30.001&#39;, &#39;H24.30.001&#39;, &#39;H24.30.003&#39;, &#39;H24.30.004&#39;, &#39;H24.30.007&#39;, &#39;Q19.26.010&#39;, &#39;Q21.26.002&#39;, &#39;Q21.26.010&#39;, &#39;QM21.26.001&#39;, &#39;QM21.26.003&#39;, &#39;QM23.50.001&#39;, &#39;QM23.50.002&#39;, &#39;QM23.50.003&#39;]
+Number of unique specimen_dissected_roi_label = 289 
+Number of unique specimen_dissected_roi_nhash_id = 289 
+Number of unique slab_label = 123 
+Number of unique slab_nhash_id = 123 
+Number of unique region_of_interest_label_color = 20 [&#39;#0010d9&#39;, &#39;#0060ff&#39;, &#39;#00bfa0&#39;, &#39;#00bfff&#39;, &#39;#53DB33&#39;, &#39;#7AE361&#39;, &#39;#89522A&#39;, &#39;#907991&#39;, &#39;#9BA2FF&#39;, &#39;#9b19f5&#39;, &#39;#A7DB33&#39;, &#39;#B8003A&#39;, &#39;#C29515&#39;, &#39;#E0E0E0&#39;, &#39;#E60049&#39;, &#39;#c941a7&#39;, &#39;#e6d800&#39;, &#39;#fe0ccf&#39;, &#39;#ff6b9a&#39;, &#39;#ffa300&#39;]
+Number of unique region_of_interest_label_order = 20 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+Number of unique species_genus_color = 3 [&#39;#377eb8&#39;, &#39;#4daf4a&#39;, &#39;#FF5F5D&#39;]
+Number of unique species_genus_order = 3 [1, 2, 3]
+Number of unique species_scientific_name_color = 4 [&#39;#377eb8&#39;, &#39;#4daf4a&#39;, &#39;#FF5F5D&#39;, &#39;#b2df8a&#39;]
+Number of unique species_scientific_name_order = 4 [1, 2, 3, 4]
+Number of unique donor_sex_color = 2 [&#39;#565353&#39;, &#39;#ADC4C3&#39;]
+Number of unique donor_sex_order = 2 [1, 2]
+Number of unique x = 1844471 
+Number of unique y = 1820193 
+Number of unique cluster_alias = 1435 
+Number of unique cluster_label = 1435 
+Number of unique Neighborhood = 4 [&#39;Glut Sero Dopa&#39;, &#39;Nonneuron&#39;, &#39;Subpallium GABA&#39;, &#39;Subpallium GABA-Glut&#39;]
+Number of unique Class = 12 [&#39;Astro-Epen&#39;, &#39;CN CGE GABA&#39;, &#39;CN GABA-Glut&#39;, &#39;CN LGE GABA&#39;, &#39;CN MGE GABA&#39;, &#39;Cx GABA&#39;, &#39;F M GABA&#39;, &#39;F M Glut&#39;, &#39;Immune&#39;, &#39;M Dopa&#39;, &#39;OPC-Oligo&#39;, &#39;Vascular&#39;]
+Number of unique Subclass = 36 
+Number of unique Group = 61 
+Number of unique Cluster = 1435 
+Number of unique Neighborhood_color = 4 [&#39;#19613b&#39;, &#39;#7e1d19&#39;, &#39;#91f4bb&#39;, &#39;#a8afa5&#39;]
+Number of unique Class_color = 12 [&#39;#0433b4&#39;, &#39;#1c8d83&#39;, &#39;#26e8bb&#39;, &#39;#401e66&#39;, &#39;#594a26&#39;, &#39;#7d0f09&#39;, &#39;#995C60&#39;, &#39;#a8afa5&#39;, &#39;#cd0f13&#39;, &#39;#ce4c27&#39;, &#39;#d0b83c&#39;, &#39;#ebb3a7&#39;]
+Number of unique Subclass_color = 36 
+Number of unique Group_color = 61 
+Number of unique Cluster_color = 1434 
+Number of unique Class_order = 12 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+Number of unique Cluster_order = 1435 
+Number of unique Group_order = 61 
+Number of unique Neighborhood_order = 4 [1, 2, 3, 4]
+Number of unique Subclass_order = 36 
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plotting-the-taxonomy">
+<h3>Plotting the taxonomy<a class="headerlink" href="#plotting-the-taxonomy" title="Link to this heading">#</a></h3>
+<p>Now that we have our cells with associated taxonomy information, we’ll plot them into the UMAP we showed previously.</p>
+<p>Below we plot the taxonomy mapping of the cells for each level in the taxonomy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Neighborhood_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Neighborhood_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neighborhood&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a14d37ac51637bc6731307cab00f832485687a910604069e98e96194948bc1e1.png" src="../_images/a14d37ac51637bc6731307cab00f832485687a910604069e98e96194948bc1e1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Class_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Class_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f302dc28541ba9223d7953588a66b8c5f828abb90f7cffd75a0a986465e30292.png" src="../_images/f302dc28541ba9223d7953588a66b8c5f828abb90f7cffd75a0a986465e30292.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Subclass_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Subclass&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Subclass_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Subclass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/eb2c411de1a3f93381c4f7861dfb19c682d540d0a6056597dc9b3d1567a844be.png" src="../_images/eb2c411de1a3f93381c4f7861dfb19c682d540d0a6056597dc9b3d1567a844be.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Group_color&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Group_order&#39;</span><span class="p">],</span>
+    <span class="n">fig_width</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
+    <span class="n">fig_height</span><span class="o">=</span><span class="mi">18</span>
+<span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Group&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/42d475548cbca476c8cce74200dfd54ab531f7a6f6c06fdc8aa7c2c18735d575.png" src="../_images/42d475548cbca476c8cce74200dfd54ab531f7a6f6c06fdc8aa7c2c18735d575.png" />
+</div>
+</div>
+<p>Note that we do not plot the cluster level here. Comparison of the clusters across species is not recommended and any cross species analysis should use the Group level at the lowest. Clusters should only be used when looking at individual species as we do below.</p>
+</section>
+<section id="aggregating-cluster-and-cells-counts-per-term-per-species">
+<h3>Aggregating cluster and cells counts per term per species.<a class="headerlink" href="#aggregating-cluster-and-cells-counts-per-term-per-species" title="Link to this heading">#</a></h3>
+<p>Let’s investigate the taxonomy information a bit more. In this section, we’ll create bar plots showing the number of clusters and cells at each level in the taxonomy. We do this on a per-species basis as the number of clusters and cells as between species comparisons of clusters is not recommended.</p>
+<p>First, we need to compute the number of clusters that are in each of the cell type taxons above it. We do this for each species.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of clusters associated with each cluster annotation term</span>
+
+<span class="n">species_term_with_counts</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Macaque&#39;</span><span class="p">,</span> <span class="s1">&#39;Marmoset&#39;</span><span class="p">,</span> <span class="s1">&#39;All&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">species</span> <span class="o">==</span> <span class="s1">&#39;All&#39;</span><span class="p">:</span>
+        <span class="n">species_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">membership_with_cluster_info</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">species_mask</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
+
+    <span class="n">term_cluster_count</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="n">species_mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">]</span>
+    <span class="p">)[[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">term_cluster_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">]</span>
+
+    <span class="n">term_cell_count</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="n">species_mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">]</span>
+    <span class="p">)[[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">term_cell_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]</span>
+
+    <span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">cluster_annotation_term</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_cluster_count</span><span class="p">)</span>
+    <span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_cell_count</span><span class="p">)</span>
+
+    <span class="n">species_term_with_counts</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="o">~</span><span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">term_with_counts</span><span class="o">.</span><span class="n">number_of_cells</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we create a function to plot the cluster and cell counts in a bar graph, coloring by the associated taxon level.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fig_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">8.5</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the number of cells by the specified level.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing cluster annotation terms with counts.</span>
+<span class="sd">    level : str</span>
+<span class="sd">        The level of the taxonomy to plot (e.g., &#39;Neighborhood&#39;, &#39;Class&#39;, &#39;Subclass&#39;, &#39;Group&#39;, &#39;Cluster&#39;).</span>
+<span class="sd">    fig_width : float, optional</span>
+<span class="sd">        Width of the figure in inches. Default is 8.5.</span>
+<span class="sd">    fig_height : float, optional</span>
+<span class="sd">        Height of the figure in inches. Default is 4.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ctype</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;clusters&#39;</span><span class="p">,</span> <span class="s1">&#39;cells&#39;</span><span class="p">]):</span>
+
+        <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
+        <span class="n">sort_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;term_order&#39;</span><span class="p">])</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;number_of_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
+        
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of </span><span class="si">%s</span><span class="s1"> by </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ctype</span><span class="p">,</span><span class="n">level</span><span class="p">))</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ctype</span> <span class="o">==</span> <span class="s1">&#39;cells&#39;</span><span class="p">:</span>
+            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s plot the counts for each of the taxonomy levels above Cluster.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Macaque&#39;</span><span class="p">,</span> <span class="s1">&#39;Marmoset&#39;</span><span class="p">]:</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">species_term_with_counts</span><span class="p">[</span><span class="n">species</span><span class="p">],</span> <span class="s1">&#39;Class&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/62283c290c7b4c2084e6cd45f3c9ef78902e6b35a16caf8bb69560e66f4e7bb6.png" src="../_images/62283c290c7b4c2084e6cd45f3c9ef78902e6b35a16caf8bb69560e66f4e7bb6.png" />
+<img alt="../_images/a2218a7681f07890e668775b9d164df215ebf4f39809206d747a61437f1ec42f.png" src="../_images/a2218a7681f07890e668775b9d164df215ebf4f39809206d747a61437f1ec42f.png" />
+<img alt="../_images/6b19d6438311611d0145cd9c4eda8d1ec6108746b324ca59e9fef67f40c3aedc.png" src="../_images/6b19d6438311611d0145cd9c4eda8d1ec6108746b324ca59e9fef67f40c3aedc.png" />
+</div>
+</div>
+</section>
+<section id="visualizing-the-bg-taxonomy">
+<h3>Visualizing the BG taxonomy<a class="headerlink" href="#visualizing-the-bg-taxonomy" title="Link to this heading">#</a></h3>
+<p>Term sets: Neighborhood, Class, Subclass, and Group define the cross-species taxonomy. We can visualize the taxonomy as a sunburst diagram that shows the single inheritance hierarchy through a series of rings, that are sliced for each annotation term. Each ring corresponds to a level in the hierarchy. We have ordered the rings so that the Neighborhood level. Rings are divided based on their hierarchical relationship to the parent slice. We use the number of cells in each taxon to define the angle of the taxon in the sunburst diagram.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Copy the term order of the parent into each of the level below it.</span>
+<span class="n">all_term_with_counts</span> <span class="o">=</span> <span class="n">species_term_with_counts</span><span class="p">[</span><span class="s1">&#39;All&#39;</span><span class="p">]</span>
+<span class="n">all_term_with_counts</span><span class="p">[</span><span class="s1">&#39;parent_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;parent_term_label&#39;</span><span class="p">]):</span>
+        <span class="k">continue</span>
+    <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s1">&#39;parent_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;parent_term_label&#39;</span><span class="p">]][</span><span class="s1">&#39;term_order&#39;</span><span class="p">]</span>
+
+<span class="n">all_term_with_counts</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">lvl</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">:</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lvl</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;parent_order&#39;</span><span class="p">,</span> <span class="s1">&#39;term_order&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mf">0.15</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lvl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">levels</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">lvl</span> <span class="o">==</span> <span class="s1">&#39;Neighborhood&#39;</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">],</span>
+               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">],</span>
+               <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+               <span class="n">rotatelabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">labeldistance</span><span class="o">=</span><span class="mf">1.025</span><span class="p">,</span>
+               <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+               <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">],</span>
+               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">],</span>
+               <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">size</span><span class="p">,</span>
+               <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+               <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/29f14deff4e6d6ee00ba29395d99f1d3f8902d70ad087dca3bb340eee84cd62e.png" src="../_images/29f14deff4e6d6ee00ba29395d99f1d3f8902d70ad087dca3bb340eee84cd62e.png" />
+</div>
+</div>
+<p>In the next tutorial, we show how to access and use <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_10X_snRNASeq_tutorial.html">HMBA-BG gene expression data</a>.</p>
+<p>To see how this taxonomy can is used in spatial transcriptomic data, see the take look at the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">HBMA-BG Spatial Slabs and Taxonomy notebook</a>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../descriptions/HMBA-BG_notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia: Notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hmba_bg_10X_snRNASeq_tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor-and-library-metadata">Donor and Library metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-color-and-feature-order">Adding color and feature order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umap-spatial-embedding">UMAP spatial embedding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-information">Taxonomy Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-taxonomy">Plotting the taxonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-cluster-and-cells-counts-per-term-per-species">Aggregating cluster and cells counts per term per species.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-bg-taxonomy">Visualizing the BG taxonomy</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

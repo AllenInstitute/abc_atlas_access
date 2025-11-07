@@ -1,0 +1,2534 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Allen Mouse Common Coordinate Framework (2020 version) &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ccf_and_parcellation_annotation_tutorial';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MERFISH CCF mapped coordinates" href="merfish_ccf_registration_tutorial.html" />
+    <link rel="prev" title="Cell type neighborhood gallery" href="cluster_neighborhood_gallery.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas - Data Access
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_dataset.html">Aging Mouse dataset (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_10Xv3.html">Zeng Aging Mouse 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_taxonomy.html">Zeng Aging Mouse clustering and mapping to the WMB taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-dataset.html">Consensus Whole Mouse Brain dataset</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-10X.html">Consensus Whole Mouse Brain single cell/nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_dataset.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-10X.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-MapMyCells.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain (WHB) and Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD) Taxonomies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-notebooks.html">Consensus Mouse notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_clustering_analysis_and_annotation.html">Mouse Aging clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_10x_snRNASeq_tutorial.html">Mouse Aging 10X RNA-seq gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_notebooks.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS) Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_data_and_metadata.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_siletti_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_seaad_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the SEA-AD Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_gene_expression.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Gene Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docs/abbreviation_terms/README.html">Abbreviation lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fnotebooks/ccf_and_parcellation_annotation_tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/ccf_and_parcellation_annotation_tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Allen Mouse Common Coordinate Framework (2020 version)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-template-and-parcellations">Reference template and parcellations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-structures-and-parcellation-annotation">Anatomical structures and parcellation annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellations">Parcellations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellation-term-sets">Parcellation term sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellation-terms-and-term-set-membership">Parcellation terms and term set membership</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellation-to-parcellation-term-membership">Parcellation to parcellation term membership</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-parcellations-and-voxels-per-term">Aggregate parcellations and voxels per term</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-parcellation-annotation-at-each-hierachy-level">Visualizing parcellation annotation at each hierachy level</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="allen-mouse-common-coordinate-framework-2020-version">
+<h1>Allen Mouse Common Coordinate Framework (2020 version)<a class="headerlink" href="#allen-mouse-common-coordinate-framework-2020-version" title="Link to this heading">#</a></h1>
+<p>Allen Mouse Brain Common Coordinate Framework (CCFv3, <a class="reference external" href="https://doi.org/10.1016/j.cell.2020.04.007">Wang et al, 2020</a>) is a 3D reference space is an average brain at 10um voxel resolution created from serial two-photon tomography images of 1,675 young adult C57Bl6/J mice. Using multimodal reference data, the entire brain parcellated directly in 3D, labeling every voxel with a brain structure spanning 43 isocortical areas and their layers, 314 subcortical gray matter structures, 81 fiber tracts, and 8 ventricular structures. The 2020 version adds new annotations for layers of the Ammon’s horn (CA), main olfactory bulb (MOB) and minor modification of surrounding fiber tracts.</p>
+<p>CCFv3 is used in informatics pipelines and online applications to analyze, visualize and integrate multimodal and multiscale data sets in 3D, and is openly accessible for research use.</p>
+<p>The purpose of this notebook is to provide an overview of the data assets and information associated with the Allen CCFv3 through example use cases.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">SimpleITK</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sitk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
+<p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-overview">
+<h2>Data Overview<a class="headerlink" href="#data-overview" title="Link to this heading">#</a></h2>
+<section id="reference-template-and-parcellations">
+<h3>Reference template and parcellations<a class="headerlink" href="#reference-template-and-parcellations" title="Link to this heading">#</a></h3>
+<p>There are 3 volumetric data files associated with AllenCCFv3. The “average_template_10” volume is the anatomical template of the CCF constructed as the shape and intensity average of 1675 specime brains. The “annotation_10” volume is the parcellation of the brain with respect to a heirachical partonomy of anatomical structures. The “annotation_boundary_10” volume is a mask that identifies all the voxel with on the boundary of a parcellation to support data visualization. The volumes are stored in compressed NIFTI (.nii.gz) format. In this notebook  uses the <a class="reference external" href="https://simpleitk.org/">SimpleITK</a> library to open the volume.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;annotation_10&#39;,
+ &#39;annotation_25&#39;,
+ &#39;annotation_boundary_10&#39;,
+ &#39;annotation_boundary_25&#39;,
+ &#39;average_template_10&#39;,
+ &#39;average_template_25&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;average_template_10&#39;</span><span class="p">)</span>
+<span class="n">average_template_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">average_template_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">average_template_image</span><span class="p">)</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">annotation_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">annotation_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
+<span class="n">annotation_boundary_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">annotation_boundary_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_boundary_image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a helper function to print out some basic metadata about a volume</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to print out image information</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">image_info</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;size: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetSize</span><span class="p">()</span><span class="si">}</span><span class="s1"> voxels&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;spacing: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetSpacing</span><span class="p">()</span><span class="si">}</span><span class="s1"> mm&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;direction: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetDirection</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;origin: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetOrigin</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each volume is of size 1320 x 800 x 1140 voxels with voxel dimension being 10 x 10 x 10 micrometers. The volume is ASL orientation such that first (x) axis is anterior-to-posterior, the second (y) axis is superior-to-inferior (dorsal-to-ventral) and third (z) axis is left-to-right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_info</span><span class="p">(</span><span class="n">average_template_image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>size: (1320, 800, 1140) voxels
+spacing: (0.009999999776482582, 0.009999999776482582, 0.009999999776482582) mm
+direction: (-0.0, 0.0, -1.0, 1.0, -0.0, 0.0, 0.0, -1.0, 0.0)
+origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spacing</span> <span class="o">=</span> <span class="n">average_template_image</span><span class="o">.</span><span class="n">GetSpacing</span><span class="p">()</span>
+<span class="n">voxel_volume</span> <span class="o">=</span> <span class="n">spacing</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">spacing</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">spacing</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;voxel volume in mm^3:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%0.2E</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">voxel_volume</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>voxel volume in mm^3: 1.00E-06
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a helper function to visualize the sanme coronal section of the average template, annotation and boundary volumes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_section</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys_r</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="nb">slice</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zindex</span> <span class="o">=</span> <span class="mi">720</span>
+<span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">average_template_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;average_template&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3e22347cefa4fe6ef9144936dabe38256fb4637dfdb98fc091c1b42ac564289e.png" src="../_images/3e22347cefa4fe6ef9144936dabe38256fb4637dfdb98fc091c1b42ac564289e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" src="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_boundary_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b0c14d4d0db59364f1f9aeca4fa10a59249f122f67ae5313263633e9b2e894c8.png" src="../_images/b0c14d4d0db59364f1f9aeca4fa10a59249f122f67ae5313263633e9b2e894c8.png" />
+</div>
+</div>
+</section>
+<section id="anatomical-structures-and-parcellation-annotation">
+<h3>Anatomical structures and parcellation annotation<a class="headerlink" href="#anatomical-structures-and-parcellation-annotation" title="Link to this heading">#</a></h3>
+</section>
+<section id="parcellations">
+<h3>Parcellations<a class="headerlink" href="#parcellations" title="Link to this heading">#</a></h3>
+<p>The annotation volume represents tiling of set of parcellations. Each row of the parcellation dataframe has a label (human readable string that is unique in the database), a parcellation index representing the value in the annotation volume and the number of voxel and volume of that parcellation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation&#39;</span><span class="p">)</span>
+<span class="n">parcellation</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of parcellations:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation</span><span class="p">))</span>
+<span class="n">parcellation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of parcellations: 688
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>voxel_count</th>
+      <th>volume_mm3</th>
+    </tr>
+    <tr>
+      <th>parcellation_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>987</th>
+      <td>AllenCCF-Annotation-2020-997</td>
+      <td>3564320</td>
+      <td>3.564320</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>AllenCCF-Annotation-2020-68</td>
+      <td>256520</td>
+      <td>0.256520</td>
+    </tr>
+    <tr>
+      <th>657</th>
+      <td>AllenCCF-Annotation-2020-667</td>
+      <td>232608</td>
+      <td>0.232608</td>
+    </tr>
+    <tr>
+      <th>1288</th>
+      <td>AllenCCF-Annotation-2020-526157192</td>
+      <td>371584</td>
+      <td>0.371584</td>
+    </tr>
+    <tr>
+      <th>1289</th>
+      <td>AllenCCF-Annotation-2020-526157196</td>
+      <td>112222</td>
+      <td>0.112222</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>AllenCCF-Annotation-2020-140</td>
+      <td>405256</td>
+      <td>0.405256</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>AllenCCF-Annotation-2020-145</td>
+      <td>499566</td>
+      <td>0.499566</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>AllenCCF-Annotation-2020-153</td>
+      <td>461680</td>
+      <td>0.461680</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>AllenCCF-Annotation-2020-164</td>
+      <td>432</td>
+      <td>0.000432</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>AllenCCF-Annotation-2020-0</td>
+      <td>697783214</td>
+      <td>697.783214</td>
+    </tr>
+  </tbody>
+</table>
+<p>688 rows × 3 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="parcellation-term-sets">
+<h3>Parcellation term sets<a class="headerlink" href="#parcellation-term-sets" title="Link to this heading">#</a></h3>
+<p>For the purpose of ABC atlas visualization and analysis, we have created a simplifed 5 level anatomical heirarchy. Each of these level is represented as a parcellation term set. Each term set consists of a set of ordered terms. Each term set has a label (human readable string that is unique in the database), a name, description and order among the term sets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_term_set&#39;</span><span class="p">)</span>
+<span class="n">parcellation_term_set</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of term sets:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term_set</span><span class="p">))</span>
+<span class="n">parcellation_term_set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of term sets: 5
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>description</th>
+      <th>name</th>
+      <th>parcellation_terminology_label</th>
+      <th>term_set_order</th>
+      <th>parent_term_set_label</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AllenCCF-Ontology-2017-ORGA</th>
+      <td>organ</td>
+      <td>organ</td>
+      <td>AllenCCF-Ontology-2017</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-CATE</th>
+      <td>mouse brain anatomical catergories</td>
+      <td>category</td>
+      <td>AllenCCF-Ontology-2017</td>
+      <td>1</td>
+      <td>AllenCCF-Ontology-2017-ORGA</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-DIVI</th>
+      <td>mouse brain divisions</td>
+      <td>division</td>
+      <td>AllenCCF-Ontology-2017</td>
+      <td>2</td>
+      <td>AllenCCF-Ontology-2017-CATE</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-STRU</th>
+      <td>mouse brain structures</td>
+      <td>structure</td>
+      <td>AllenCCF-Ontology-2017</td>
+      <td>3</td>
+      <td>AllenCCF-Ontology-2017-DIVI</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-SUBS</th>
+      <td>mouse brain substructures</td>
+      <td>substructure</td>
+      <td>AllenCCF-Ontology-2017</td>
+      <td>4</td>
+      <td>AllenCCF-Ontology-2017-STRU</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="parcellation-terms-and-term-set-membership">
+<h3>Parcellation terms and term set membership<a class="headerlink" href="#parcellation-terms-and-term-set-membership" title="Link to this heading">#</a></h3>
+<p>A parcellation term represents an anatomical structure at a single heirarchy level. Each term has a label (human readable string that is unique in the database), a name, acronym, reference atlas color as hex triplet or as RGB values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_term&#39;</span><span class="p">)</span>
+<span class="n">parcellation_term</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of terms:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term</span><span class="p">))</span>
+<span class="n">parcellation_term</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of terms: 1631
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>acronym</th>
+      <th>name</th>
+      <th>color_hex_triplet</th>
+      <th>graph_order</th>
+      <th>identifier</th>
+      <th>red</th>
+      <th>green</th>
+      <th>blue</th>
+      <th>parent_identifier</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AllenCCF-Ontology-2017-997</th>
+      <td>brain</td>
+      <td>brain</td>
+      <td>#FFFFFF</td>
+      <td>0.0</td>
+      <td>MBA:997</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-8</th>
+      <td>grey</td>
+      <td>Basic cell groups and regions</td>
+      <td>#BFDAE3</td>
+      <td>1.0</td>
+      <td>MBA:8</td>
+      <td>191</td>
+      <td>218</td>
+      <td>227</td>
+      <td>MBA:997</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-567</th>
+      <td>CH</td>
+      <td>Cerebrum</td>
+      <td>#B0F0FF</td>
+      <td>2.0</td>
+      <td>MBA:567</td>
+      <td>176</td>
+      <td>240</td>
+      <td>255</td>
+      <td>MBA:8</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-688</th>
+      <td>CTX</td>
+      <td>Cerebral cortex</td>
+      <td>#B0FFB8</td>
+      <td>3.0</td>
+      <td>MBA:688</td>
+      <td>176</td>
+      <td>255</td>
+      <td>184</td>
+      <td>MBA:567</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-695</th>
+      <td>CTXpl</td>
+      <td>Cortical plate</td>
+      <td>#70FF70</td>
+      <td>4.0</td>
+      <td>MBA:695</td>
+      <td>112</td>
+      <td>255</td>
+      <td>112</td>
+      <td>MBA:688</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>A parcellation is a member of at most one parcellation term set. This membership is represented as a row in the parcellation term set memership dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term_set_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span>
+                                                                    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_term_set_membership&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of memberships:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term_set_membership</span><span class="p">))</span>
+<span class="n">parcellation_term_set_membership</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 1293
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>parcellation_term_label</th>
+      <th>parcellation_term_set_label</th>
+      <th>parent_term_label</th>
+      <th>term_order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AllenCCF-Ontology-2017-997</td>
+      <td>AllenCCF-Ontology-2017-ORGA</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AllenCCF-Ontology-2017-8</td>
+      <td>AllenCCF-Ontology-2017-CATE</td>
+      <td>AllenCCF-Ontology-2017-997</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AllenCCF-Ontology-2017-1009</td>
+      <td>AllenCCF-Ontology-2017-CATE</td>
+      <td>AllenCCF-Ontology-2017-997</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AllenCCF-Ontology-2017-73</td>
+      <td>AllenCCF-Ontology-2017-CATE</td>
+      <td>AllenCCF-Ontology-2017-997</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AllenCCF-Ontology-2017-315</td>
+      <td>AllenCCF-Ontology-2017-DIVI</td>
+      <td>AllenCCF-Ontology-2017-8</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="parcellation-to-parcellation-term-membership">
+<h3>Parcellation to parcellation term membership<a class="headerlink" href="#parcellation-to-parcellation-term-membership" title="Link to this heading">#</a></h3>
+<p>The association between a parcellation and parcellation term is represented as “parcellation to parcellation term membership” within the context of anatomical structure level.  It is expected that a parcellation in only associated with one term within a specific term set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_annotation</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span>
+                                                           <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_to_parcellation_term_membership&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of memberships:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_annotation</span><span class="p">))</span>
+<span class="n">parcellation_annotation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of memberships: 3440
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>parcellation_label</th>
+      <th>parcellation_term_label</th>
+      <th>parcellation_term_set_label</th>
+      <th>parcellation_index</th>
+      <th>voxel_count</th>
+      <th>volume_mm3</th>
+      <th>color_hex_triplet</th>
+      <th>red</th>
+      <th>green</th>
+      <th>blue</th>
+      <th>parcellation_term_name</th>
+      <th>parcellation_term_acronym</th>
+      <th>parcellation_term_set_name</th>
+      <th>term_set_order</th>
+      <th>term_order</th>
+      <th>parent_term_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AllenCCF-Annotation-2020-997</td>
+      <td>AllenCCF-Ontology-2017-997</td>
+      <td>AllenCCF-Ontology-2017-ORGA</td>
+      <td>987</td>
+      <td>3564320</td>
+      <td>3.564320</td>
+      <td>#FFFFFF</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+      <td>brain</td>
+      <td>brain</td>
+      <td>organ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AllenCCF-Annotation-2020-68</td>
+      <td>AllenCCF-Ontology-2017-997</td>
+      <td>AllenCCF-Ontology-2017-ORGA</td>
+      <td>63</td>
+      <td>256520</td>
+      <td>0.256520</td>
+      <td>#FFFFFF</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+      <td>brain</td>
+      <td>brain</td>
+      <td>organ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AllenCCF-Annotation-2020-68</td>
+      <td>AllenCCF-Ontology-2017-8</td>
+      <td>AllenCCF-Ontology-2017-CATE</td>
+      <td>63</td>
+      <td>256520</td>
+      <td>0.256520</td>
+      <td>#BFDAE3</td>
+      <td>191</td>
+      <td>218</td>
+      <td>227</td>
+      <td>Basic cell groups and regions</td>
+      <td>grey</td>
+      <td>category</td>
+      <td>1</td>
+      <td>1</td>
+      <td>AllenCCF-Ontology-2017-997</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AllenCCF-Annotation-2020-68</td>
+      <td>AllenCCF-Ontology-2017-315</td>
+      <td>AllenCCF-Ontology-2017-DIVI</td>
+      <td>63</td>
+      <td>256520</td>
+      <td>0.256520</td>
+      <td>#70FF71</td>
+      <td>112</td>
+      <td>255</td>
+      <td>113</td>
+      <td>Isocortex</td>
+      <td>Isocortex</td>
+      <td>division</td>
+      <td>2</td>
+      <td>1</td>
+      <td>AllenCCF-Ontology-2017-8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AllenCCF-Annotation-2020-68</td>
+      <td>AllenCCF-Ontology-2017-184</td>
+      <td>AllenCCF-Ontology-2017-STRU</td>
+      <td>63</td>
+      <td>256520</td>
+      <td>0.256520</td>
+      <td>#268F45</td>
+      <td>38</td>
+      <td>143</td>
+      <td>69</td>
+      <td>Frontal pole, cerebral cortex</td>
+      <td>FRP</td>
+      <td>structure</td>
+      <td>3</td>
+      <td>1</td>
+      <td>AllenCCF-Ontology-2017-315</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3435</th>
+      <td>AllenCCF-Annotation-2020-145</td>
+      <td>ABC-Ontology-2023-V4-structure</td>
+      <td>AllenCCF-Ontology-2017-STRU</td>
+      <td>140</td>
+      <td>499566</td>
+      <td>0.499566</td>
+      <td>#AAAAAA</td>
+      <td>170</td>
+      <td>170</td>
+      <td>170</td>
+      <td>fourth ventricle, unassigned</td>
+      <td>V4-unassigned</td>
+      <td>structure</td>
+      <td>3</td>
+      <td>367</td>
+      <td>AllenCCF-Ontology-2017-145</td>
+    </tr>
+    <tr>
+      <th>3436</th>
+      <td>AllenCCF-Annotation-2020-145</td>
+      <td>ABC-Ontology-2023-V4-substructure</td>
+      <td>AllenCCF-Ontology-2017-SUBS</td>
+      <td>140</td>
+      <td>499566</td>
+      <td>0.499566</td>
+      <td>#AAAAAA</td>
+      <td>170</td>
+      <td>170</td>
+      <td>170</td>
+      <td>fourth ventricle, unassigned</td>
+      <td>V4-unassigned</td>
+      <td>substructure</td>
+      <td>4</td>
+      <td>885</td>
+      <td>ABC-Ontology-2023-V4-structure</td>
+    </tr>
+    <tr>
+      <th>3437</th>
+      <td>AllenCCF-Annotation-2020-153</td>
+      <td>ABC-Ontology-2023-V4r-substructure</td>
+      <td>AllenCCF-Ontology-2017-SUBS</td>
+      <td>148</td>
+      <td>461680</td>
+      <td>0.461680</td>
+      <td>#AAAAAA</td>
+      <td>170</td>
+      <td>170</td>
+      <td>170</td>
+      <td>lateral recess</td>
+      <td>V4r</td>
+      <td>substructure</td>
+      <td>4</td>
+      <td>886</td>
+      <td>AllenCCF-Ontology-2017-153</td>
+    </tr>
+    <tr>
+      <th>3438</th>
+      <td>AllenCCF-Annotation-2020-164</td>
+      <td>ABC-Ontology-2023-c-structure</td>
+      <td>AllenCCF-Ontology-2017-STRU</td>
+      <td>159</td>
+      <td>432</td>
+      <td>0.000432</td>
+      <td>#AAAAAA</td>
+      <td>170</td>
+      <td>170</td>
+      <td>170</td>
+      <td>central canal, spinal cord/medulla</td>
+      <td>c</td>
+      <td>structure</td>
+      <td>3</td>
+      <td>369</td>
+      <td>AllenCCF-Ontology-2017-164</td>
+    </tr>
+    <tr>
+      <th>3439</th>
+      <td>AllenCCF-Annotation-2020-164</td>
+      <td>ABC-Ontology-2023-c-substructure</td>
+      <td>AllenCCF-Ontology-2017-SUBS</td>
+      <td>159</td>
+      <td>432</td>
+      <td>0.000432</td>
+      <td>#AAAAAA</td>
+      <td>170</td>
+      <td>170</td>
+      <td>170</td>
+      <td>central canal, spinal cord/medulla</td>
+      <td>c</td>
+      <td>substructure</td>
+      <td>4</td>
+      <td>887</td>
+      <td>ABC-Ontology-2023-c-structure</td>
+    </tr>
+  </tbody>
+</table>
+<p>3440 rows × 16 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="example-use-cases">
+<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Link to this heading">#</a></h2>
+<section id="aggregate-parcellations-and-voxels-per-term">
+<h3>Aggregate parcellations and voxels per term<a class="headerlink" href="#aggregate-parcellations-and-voxels-per-term" title="Link to this heading">#</a></h3>
+<p>We can obtain parcellation and voxel count per parcellation annotation term using the pandas groupby function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of parcellation associated with each parcellation term</span>
+<span class="n">term_parcellation_count</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_term_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">term_parcellation_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">]</span>
+<span class="n">term_parcellation_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">term_parcellation_count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>number_of_parcellations</th>
+    </tr>
+    <tr>
+      <th>parcellation_term_label</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AllenCCF-Ontology-2017-997</th>
+      <td>687</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-8</th>
+      <td>597</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-315</th>
+      <td>241</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-1009</th>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-313</th>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-10703</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-10704</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-1072</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-1074</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-998</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>1072 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of voxels associated with each parcellation term</span>
+<span class="n">term_voxel_count</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_term_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span><span class="s1">&#39;volume_mm3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">term_voxel_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">term_voxel_count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>voxel_count</th>
+      <th>volume_mm3</th>
+    </tr>
+    <tr>
+      <th>parcellation_term_label</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ABC-Ontology-2023-unassigned-substructure</th>
+      <td>697783214</td>
+      <td>697.783214</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-unassigned-structure</th>
+      <td>697783214</td>
+      <td>697.783214</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-unassigned-organ</th>
+      <td>697783214</td>
+      <td>697.783214</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-unassigned-division</th>
+      <td>697783214</td>
+      <td>697.783214</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-unassigned-category</th>
+      <td>697783214</td>
+      <td>697.783214</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-c-structure</th>
+      <td>432</td>
+      <td>0.000432</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-CA1-substructure</th>
+      <td>6</td>
+      <td>0.000006</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-1051</th>
+      <td>4</td>
+      <td>0.000004</td>
+    </tr>
+    <tr>
+      <th>ABC-Ontology-2023-CA3-substructure</th>
+      <td>2</td>
+      <td>0.000002</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-545</th>
+      <td>2</td>
+      <td>0.000002</td>
+    </tr>
+  </tbody>
+</table>
+<p>1072 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join counts with the term dataframe</span>
+<span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">parcellation_term</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_parcellation_count</span><span class="p">[</span><span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">term_with_counts</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;label&#39;</span>
+<span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_voxel_count</span><span class="p">[[</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span><span class="s1">&#39;volume_mm3&#39;</span><span class="p">]])</span>
+<span class="n">term_with_counts</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">,</span> <span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span> <span class="s1">&#39;volume_mm3&#39;</span><span class="p">]]</span>
+<span class="n">term_with_counts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>acronym</th>
+      <th>name</th>
+      <th>color_hex_triplet</th>
+      <th>graph_order</th>
+      <th>identifier</th>
+      <th>red</th>
+      <th>green</th>
+      <th>blue</th>
+      <th>parent_identifier</th>
+      <th>number_of_parcellations</th>
+      <th>voxel_count</th>
+      <th>volume_mm3</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AllenCCF-Ontology-2017-997</th>
+      <td>brain</td>
+      <td>brain</td>
+      <td>#FFFFFF</td>
+      <td>0.0</td>
+      <td>MBA:997</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+      <td>NaN</td>
+      <td>687</td>
+      <td>506056786</td>
+      <td>506.056786</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-8</th>
+      <td>grey</td>
+      <td>Basic cell groups and regions</td>
+      <td>#BFDAE3</td>
+      <td>1.0</td>
+      <td>MBA:8</td>
+      <td>191</td>
+      <td>218</td>
+      <td>227</td>
+      <td>MBA:997</td>
+      <td>597</td>
+      <td>449681182</td>
+      <td>449.681182</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-315</th>
+      <td>Isocortex</td>
+      <td>Isocortex</td>
+      <td>#70FF71</td>
+      <td>5.0</td>
+      <td>MBA:315</td>
+      <td>112</td>
+      <td>255</td>
+      <td>113</td>
+      <td>MBA:695</td>
+      <td>241</td>
+      <td>123282624</td>
+      <td>123.282624</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-184</th>
+      <td>FRP</td>
+      <td>Frontal pole, cerebral cortex</td>
+      <td>#268F45</td>
+      <td>6.0</td>
+      <td>MBA:184</td>
+      <td>38</td>
+      <td>143</td>
+      <td>69</td>
+      <td>MBA:315</td>
+      <td>5</td>
+      <td>973876</td>
+      <td>0.973876</td>
+    </tr>
+    <tr>
+      <th>AllenCCF-Ontology-2017-68</th>
+      <td>FRP1</td>
+      <td>Frontal pole, layer 1</td>
+      <td>#268F45</td>
+      <td>7.0</td>
+      <td>MBA:68</td>
+      <td>38</td>
+      <td>143</td>
+      <td>69</td>
+      <td>MBA:184</td>
+      <td>1</td>
+      <td>256520</td>
+      <td>0.256520</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># validate that term with the same acronym have the same number of voxels</span>
+<span class="n">alist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">alist</span> <span class="p">:</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="n">term_with_counts</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">aa</span><span class="p">]</span>
+    <span class="n">vlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">vlist</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span> <span class="n">vlist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The dataframe <code class="docutils literal notranslate"><span class="pre">term_with_counts</span></code> is available in the cache as <code class="docutils literal notranslate"><span class="pre">parcellation_term_with_counts</span></code>.</p>
+</section>
+<section id="visualizing-parcellation-annotation-at-each-hierachy-level">
+<h3>Visualizing parcellation annotation at each hierachy level<a class="headerlink" href="#visualizing-parcellation-annotation-at-each-hierachy-level" title="Link to this heading">#</a></h3>
+<p>We can explore the relationship and distribution of parcellations between term sets by creating a pivot table using pandas groupby fuunction. Each row of the resulting dataframe represents a parcellation, each column represents a term set and the value in the table is the name of the term that has been associated with the cluster for that specific term set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span><span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;parcellation_term_acronym&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">pivot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>parcellation_term_set_name</th>
+      <th>organ</th>
+      <th>category</th>
+      <th>division</th>
+      <th>structure</th>
+      <th>substructure</th>
+    </tr>
+    <tr>
+      <th>parcellation_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>unassigned</td>
+      <td>unassigned</td>
+      <td>unassigned</td>
+      <td>unassigned</td>
+      <td>unassigned</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>HY</td>
+      <td>TMv</td>
+      <td>TMv</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>Isocortex</td>
+      <td>SSp-m</td>
+      <td>SSp-m6b</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>brain</td>
+      <td>fiber tracts</td>
+      <td>lfbs</td>
+      <td>cst</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>P</td>
+      <td>PSV</td>
+      <td>PSV</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1323</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>MB</td>
+      <td>IPN</td>
+      <td>IPI</td>
+    </tr>
+    <tr>
+      <th>1324</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>MB</td>
+      <td>IPN</td>
+      <td>IPDM</td>
+    </tr>
+    <tr>
+      <th>1325</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>MB</td>
+      <td>IPN</td>
+      <td>IPDL</td>
+    </tr>
+    <tr>
+      <th>1326</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>MB</td>
+      <td>IPN</td>
+      <td>IPRL</td>
+    </tr>
+    <tr>
+      <th>1327</th>
+      <td>brain</td>
+      <td>grey</td>
+      <td>MB</td>
+      <td>PAG</td>
+      <td>Su3</td>
+    </tr>
+  </tbody>
+</table>
+<p>688 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;parcellation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>parcellation_term_set_name</th>
+      <th>organ</th>
+      <th>category</th>
+      <th>division</th>
+      <th>structure</th>
+      <th>substructure</th>
+    </tr>
+    <tr>
+      <th>parcellation_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>unassigned</td>
+      <td>unassigned</td>
+      <td>unassigned</td>
+      <td>unassigned</td>
+      <td>unassigned</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Hypothalamus</td>
+      <td>Tuberomammillary nucleus, ventral part</td>
+      <td>Tuberomammillary nucleus, ventral part</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Isocortex</td>
+      <td>Primary somatosensory area, mouth</td>
+      <td>Primary somatosensory area, mouth, layer 6b</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>brain</td>
+      <td>fiber tracts</td>
+      <td>lateral forebrain bundle system</td>
+      <td>corticospinal tract</td>
+      <td>internal capsule</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Pons</td>
+      <td>Principal sensory nucleus of the trigeminal</td>
+      <td>Principal sensory nucleus of the trigeminal</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1323</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Midbrain</td>
+      <td>Interpeduncular nucleus</td>
+      <td>Interpeduncular nucleus, intermediate</td>
+    </tr>
+    <tr>
+      <th>1324</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Midbrain</td>
+      <td>Interpeduncular nucleus</td>
+      <td>Interpeduncular nucleus, dorsomedial</td>
+    </tr>
+    <tr>
+      <th>1325</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Midbrain</td>
+      <td>Interpeduncular nucleus</td>
+      <td>Interpeduncular nucleus, dorsolateral</td>
+    </tr>
+    <tr>
+      <th>1326</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Midbrain</td>
+      <td>Interpeduncular nucleus</td>
+      <td>Interpeduncular nucleus, rostrolateral</td>
+    </tr>
+    <tr>
+      <th>1327</th>
+      <td>brain</td>
+      <td>Basic cell groups and regions</td>
+      <td>Midbrain</td>
+      <td>Periaqueductal gray</td>
+      <td>Supraoculomotor periaqueductal gray</td>
+    </tr>
+  </tbody>
+</table>
+<p>688 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>We can also obtain parcellation term color pivot tables in the same way</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">color</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_color&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">color</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>organ_color</th>
+      <th>category_color</th>
+      <th>division_color</th>
+      <th>structure_color</th>
+      <th>substructure_color</th>
+    </tr>
+    <tr>
+      <th>parcellation_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>#000000</td>
+      <td>#000000</td>
+      <td>#000000</td>
+      <td>#000000</td>
+      <td>#000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#E64438</td>
+      <td>#FF4C3E</td>
+      <td>#FF4C3E</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#70FF71</td>
+      <td>#188064</td>
+      <td>#188064</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>#FFFFFF</td>
+      <td>#CCCCCC</td>
+      <td>#CCCCCC</td>
+      <td>#CCCCCC</td>
+      <td>#CCCCCC</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#FF9B88</td>
+      <td>#FFAE6F</td>
+      <td>#FFAE6F</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1323</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#FF64FF</td>
+      <td>#FFA6FF</td>
+      <td>#FFA6FF</td>
+    </tr>
+    <tr>
+      <th>1324</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#FF64FF</td>
+      <td>#FFA6FF</td>
+      <td>#FFA6FF</td>
+    </tr>
+    <tr>
+      <th>1325</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#FF64FF</td>
+      <td>#FFA6FF</td>
+      <td>#FFA6FF</td>
+    </tr>
+    <tr>
+      <th>1326</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#FF64FF</td>
+      <td>#FFA6FF</td>
+      <td>#FFA6FF</td>
+    </tr>
+    <tr>
+      <th>1327</th>
+      <td>#FFFFFF</td>
+      <td>#BFDAE3</td>
+      <td>#FF64FF</td>
+      <td>#FF90FF</td>
+      <td>#FF90FF</td>
+    </tr>
+  </tbody>
+</table>
+<p>688 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span> <span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">channels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>organ_color</th>
+      <th>category_color</th>
+      <th>division_color</th>
+      <th>structure_color</th>
+      <th>substructure_color</th>
+    </tr>
+    <tr>
+      <th>parcellation_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>255</td>
+      <td>191</td>
+      <td>230</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>255</td>
+      <td>191</td>
+      <td>112</td>
+      <td>24</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>255</td>
+      <td>204</td>
+      <td>204</td>
+      <td>204</td>
+      <td>204</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>255</td>
+      <td>191</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1323</th>
+      <td>255</td>
+      <td>191</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>1324</th>
+      <td>255</td>
+      <td>191</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>1325</th>
+      <td>255</td>
+      <td>191</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>1326</th>
+      <td>255</td>
+      <td>191</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>1327</th>
+      <td>255</td>
+      <td>191</td>
+      <td>255</td>
+      <td>255</td>
+      <td>255</td>
+    </tr>
+  </tbody>
+</table>
+<p>688 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>The dataframes created here (<code class="docutils literal notranslate"><span class="pre">pivot</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">channels</span></code>) are stored in the cache as <code class="docutils literal notranslate"><span class="pre">parcellation_to_parcellation_term_membership_acronym</span></code>, <code class="docutils literal notranslate"><span class="pre">parcellation_to_parcellation_term_membership_name</span></code>, <code class="docutils literal notranslate"><span class="pre">parcellation_to_parcellation_term_membership_color</span></code>, and <code class="docutils literal notranslate"><span class="pre">parcellation_to_parcellation_term_membership_&lt;channel&gt;</span></code>.</p>
+<p>We define a helper function to colorized parcellation by its reference atlas color for each anatomical level</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">):</span>
+
+    <span class="c1"># create a 3d array to store rgb image</span>
+    <span class="n">sshape</span> <span class="o">=</span> <span class="n">zslice</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">colorized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">sshape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sshape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">sshape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sshape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">channels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">zslice</span><span class="o">.</span><span class="n">flat</span><span class="p">[:],</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_color&#39;</span> <span class="o">%</span> <span class="n">term_set</span><span class="p">]</span>
+        <span class="n">colorized</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="k">return</span> <span class="n">colorized</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zindex</span> <span class="o">=</span> <span class="mi">720</span>
+<span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" src="../_images/9d4246eb86fb578c068b30c63af5e9b7dbce58d84309b418e9a19d3b40581767.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;organ&#39;</span>
+<span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ea8e81b89a24ac59aeb72f125ebbb3f7384f0dbd1c647dadab5718234e093f9b.png" src="../_images/ea8e81b89a24ac59aeb72f125ebbb3f7384f0dbd1c647dadab5718234e093f9b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;category&#39;</span>
+<span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d4f57612e8e9d58ea96874c34b2360f7c60a86693e920ebaa93c41ddf100ab31.png" src="../_images/d4f57612e8e9d58ea96874c34b2360f7c60a86693e920ebaa93c41ddf100ab31.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;division&#39;</span>
+<span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fc690fd07253f38bb0ec03975558817dbdb9a523e1283a833aa41441f70d0b3d.png" src="../_images/fc690fd07253f38bb0ec03975558817dbdb9a523e1283a833aa41441f70d0b3d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;structure&#39;</span>
+<span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/56124e7efe678fb65464b66459511d1e02cae8ebf9ebe9612d925d0fcb6e925a.png" src="../_images/56124e7efe678fb65464b66459511d1e02cae8ebf9ebe9612d925d0fcb6e925a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;substructure&#39;</span>
+<span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/232e94de77dd224c0144069baff33e00c0d39e58c9a0200b6097d49869a05cd1.png" src="../_images/232e94de77dd224c0144069baff33e00c0d39e58c9a0200b6097d49869a05cd1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cluster_neighborhood_gallery.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cell type neighborhood gallery</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="merfish_ccf_registration_tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MERFISH CCF mapped coordinates</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-template-and-parcellations">Reference template and parcellations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-structures-and-parcellation-annotation">Anatomical structures and parcellation annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellations">Parcellations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellation-term-sets">Parcellation term sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellation-terms-and-term-set-membership">Parcellation terms and term set membership</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parcellation-to-parcellation-term-membership">Parcellation to parcellation term membership</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-parcellations-and-voxels-per-term">Aggregate parcellations and voxels per term</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-parcellation-annotation-at-each-hierachy-level">Visualizing parcellation annotation at each hierachy level</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

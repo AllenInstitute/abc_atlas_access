@@ -1,0 +1,1801 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MERFISH whole brain spatial transcriptomics (part 1) &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/merfish_tutorial_part_1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MERFISH whole brain spatial transcriptomics (part 2a)" href="merfish_tutorial_part_2a.html" />
+    <link rel="prev" title="MERFISH whole brain spatial transcriptomics" href="../descriptions/notebook_subtitle3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas - Data Access
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_dataset.html">Aging Mouse dataset (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_10Xv3.html">Zeng Aging Mouse 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_taxonomy.html">Zeng Aging Mouse clustering and mapping to the WMB taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-dataset.html">Consensus Whole Mouse Brain dataset</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-10X.html">Consensus Whole Mouse Brain single cell/nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_dataset.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-10X.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-MapMyCells.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain (WHB) and Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD) Taxonomies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-notebooks.html">Consensus Mouse notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_clustering_analysis_and_annotation.html">Mouse Aging clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_10x_snRNASeq_tutorial.html">Mouse Aging 10X RNA-seq gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_notebooks.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS) Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_data_and_metadata.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_siletti_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_seaad_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the SEA-AD Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_gene_expression.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Gene Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docs/abbreviation_terms/README.html">Abbreviation lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fnotebooks/merfish_tutorial_part_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/merfish_tutorial_part_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MERFISH whole brain spatial transcriptomics (part 1)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-panel">Gene panel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrix">Gene expression matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-canonical-neurotransmitter-transporter-genes">Expression of canonical neurotransmitter transporter genes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain">Expression of Tachykinin 2 (Tac2) in the whole brain</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="merfish-whole-brain-spatial-transcriptomics-part-1">
+<h1>MERFISH whole brain spatial transcriptomics (part 1)<a class="headerlink" href="#merfish-whole-brain-spatial-transcriptomics-part-1" title="Link to this heading">#</a></h1>
+<p>The MERFISH data consists of 59 coronal sections (10 micron thick) covering the whole anterior to posterior extent of the brain (~200 micron apart) from a single adult male mouse. Each section is assayed using the MERSCOPE platform with a 500 gene panel designed to enable us to map cells to the whole mouse brain taxonomy.</p>
+<p>The MERSCOPE platform uses combinatorial labeling, sequential imaging and error robust barcodes to obtain quantitative (counts) RNA-expression of 100s-1000s of genes. Each probe binds to a specific transcripts resulting in “dots” in the image. Cells are segmented using CellPose software based on DAPI/PolyT stains.</p>
+<p>Gene expression data is stored either as individual sections or all sections in a single file. The puprose of this set of notebooks is to provide and overview of the data, the file organization and how to combine the data and metadata through example use cases.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">anndata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requsted data on disk. For metadata, the cache can also directly serve a up a Pandas Dataframe. See the <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> notebook for more details on using the cache including installing it if it has not already been.</p>
+<p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
+
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-overview">
+<h2>Data overview<a class="headerlink" href="#data-overview" title="Link to this heading">#</a></h2>
+<section id="cell-metadata">
+<h3>Cell metadata<a class="headerlink" href="#cell-metadata" title="Link to this heading">#</a></h3>
+<p>Essential cell metadata is stored as a dataframe. Each row represents one cell indexed by a <em>cell label</em>.</p>
+<p>Each cell is associated with a <em>brain section label</em>, <em>donor label</em>, <em>donor genotype</em> and <em>donor sex</em>. Each cell also has a set of x, y, z coordinates generated by rotating each section so that it is upright with midline approximatedly in the middle of the frame. The z coordinate takes into account the phyiscal spacing between each section.</p>
+<p>Each cell is mapped to the whole mouse brain taxonomy using a hierachical correlation method, resulting in the assignment of a *cluster alias” and <em>average correlation score</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of cells = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  3938808
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brain_section_label</th>
+      <th>cluster_alias</th>
+      <th>average_correlation_score</th>
+      <th>feature_matrix_label</th>
+      <th>donor_label</th>
+      <th>donor_genotype</th>
+      <th>donor_sex</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>abc_sample_id</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1019171907102340387-1</th>
+      <td>C57BL6J-638850.37</td>
+      <td>1408</td>
+      <td>0.596276</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>7.226245</td>
+      <td>4.148963</td>
+      <td>6.6</td>
+      <td>c9881423-76a7-4835-ba8b-7942fd384b6b</td>
+    </tr>
+    <tr>
+      <th>1104095349101460194-1</th>
+      <td>C57BL6J-638850.26</td>
+      <td>4218</td>
+      <td>0.641180</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>5.064889</td>
+      <td>7.309543</td>
+      <td>4.2</td>
+      <td>aa815488-6487-4e47-8a5e-d82ac9933bc6</td>
+    </tr>
+    <tr>
+      <th>1017092617101450577</th>
+      <td>C57BL6J-638850.25</td>
+      <td>4218</td>
+      <td>0.763531</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>5.792921</td>
+      <td>8.189973</td>
+      <td>4.0</td>
+      <td>91ef7a85-8e3e-4410-8ee2-785788df3ebe</td>
+    </tr>
+    <tr>
+      <th>1018093344101130233</th>
+      <td>C57BL6J-638850.13</td>
+      <td>4218</td>
+      <td>0.558073</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>3.195950</td>
+      <td>5.868655</td>
+      <td>2.4</td>
+      <td>18991e17-fbd3-4ba0-9c60-1281f56ac520</td>
+    </tr>
+    <tr>
+      <th>1019171912201610094</th>
+      <td>C57BL6J-638850.27</td>
+      <td>4218</td>
+      <td>0.591009</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>5.635732</td>
+      <td>7.995842</td>
+      <td>4.4</td>
+      <td>5e155936-e40d-4c6b-8971-e7fb0079274b</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We define a small helper fuction that uses pandas groupby function to see how many unique items are associated for each field and list them out if the number of items is small.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_column_info</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="n">members</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="n">members</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">grouped</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of unique </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%d</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">),</span> <span class="n">members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_column_info</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique brain_section_label = 59 
+Number of unique cluster_alias = 5320 
+Number of unique average_correlation_score = 3932069 
+Number of unique feature_matrix_label = 1 [&#39;C57BL6J-638850&#39;]
+Number of unique donor_label = 1 [&#39;C57BL6J-638850&#39;]
+Number of unique donor_genotype = 1 [&#39;wt/wt&#39;]
+Number of unique donor_sex = 1 [&#39;M&#39;]
+Number of unique x = 3938808 
+Number of unique y = 3938808 
+Number of unique z = 59 
+Number of unique abc_sample_id = 3938808 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also bring in the pivot table from the “cluster annotation tutorial” to associate each cell with terms at each cell type classification level and the corresponding color.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_details</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership_pivoted&#39;</span><span class="p">,</span>
+    <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>neurotransmitter</th>
+      <th>class</th>
+      <th>subclass</th>
+      <th>supertype</th>
+      <th>cluster</th>
+    </tr>
+    <tr>
+      <th>cluster_alias</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Glut</td>
+      <td>01 IT-ET Glut</td>
+      <td>018 L2 IT PPP-APr Glut</td>
+      <td>0082 L2 IT PPP-APr Glut_3</td>
+      <td>0326 L2 IT PPP-APr Glut_3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Glut</td>
+      <td>01 IT-ET Glut</td>
+      <td>018 L2 IT PPP-APr Glut</td>
+      <td>0082 L2 IT PPP-APr Glut_3</td>
+      <td>0327 L2 IT PPP-APr Glut_3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Glut</td>
+      <td>01 IT-ET Glut</td>
+      <td>018 L2 IT PPP-APr Glut</td>
+      <td>0081 L2 IT PPP-APr Glut_2</td>
+      <td>0322 L2 IT PPP-APr Glut_2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Glut</td>
+      <td>01 IT-ET Glut</td>
+      <td>018 L2 IT PPP-APr Glut</td>
+      <td>0081 L2 IT PPP-APr Glut_2</td>
+      <td>0323 L2 IT PPP-APr Glut_2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Glut</td>
+      <td>01 IT-ET Glut</td>
+      <td>018 L2 IT PPP-APr Glut</td>
+      <td>0081 L2 IT PPP-APr Glut_2</td>
+      <td>0325 L2 IT PPP-APr Glut_2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership_color&#39;</span><span class="p">)</span>
+<span class="n">cluster_colors</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_colors</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>neurotransmitter_color</th>
+      <th>class_color</th>
+      <th>subclass_color</th>
+      <th>supertype_color</th>
+      <th>cluster_color</th>
+    </tr>
+    <tr>
+      <th>cluster_alias</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>#2B93DF</td>
+      <td>#FA0087</td>
+      <td>#0F6632</td>
+      <td>#266DFF</td>
+      <td>#64661F</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>#2B93DF</td>
+      <td>#FA0087</td>
+      <td>#0F6632</td>
+      <td>#266DFF</td>
+      <td>#CCA73D</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>#2B93DF</td>
+      <td>#FA0087</td>
+      <td>#0F6632</td>
+      <td>#002BCC</td>
+      <td>#99000D</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>#2B93DF</td>
+      <td>#FA0087</td>
+      <td>#0F6632</td>
+      <td>#002BCC</td>
+      <td>#5C8899</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>#2B93DF</td>
+      <td>#FA0087</td>
+      <td>#0F6632</td>
+      <td>#002BCC</td>
+      <td>#473D66</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+<span class="n">cell_extended</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brain_section_label</th>
+      <th>cluster_alias</th>
+      <th>average_correlation_score</th>
+      <th>feature_matrix_label</th>
+      <th>donor_label</th>
+      <th>donor_genotype</th>
+      <th>donor_sex</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>...</th>
+      <th>neurotransmitter</th>
+      <th>class</th>
+      <th>subclass</th>
+      <th>supertype</th>
+      <th>cluster</th>
+      <th>neurotransmitter_color</th>
+      <th>class_color</th>
+      <th>subclass_color</th>
+      <th>supertype_color</th>
+      <th>cluster_color</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1019171907102340387-1</th>
+      <td>C57BL6J-638850.37</td>
+      <td>1408</td>
+      <td>0.596276</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>7.226245</td>
+      <td>4.148963</td>
+      <td>6.6</td>
+      <td>...</td>
+      <td></td>
+      <td>04 DG-IMN Glut</td>
+      <td>038 DG-PIR Ex IMN</td>
+      <td>0141 DG-PIR Ex IMN_2</td>
+      <td>0515 DG-PIR Ex IMN_2</td>
+      <td>#666666</td>
+      <td>#16f2f2</td>
+      <td>#3D53CC</td>
+      <td>#CC7A3D</td>
+      <td>#73FFBF</td>
+    </tr>
+    <tr>
+      <th>1104095349101460194-1</th>
+      <td>C57BL6J-638850.26</td>
+      <td>4218</td>
+      <td>0.641180</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>5.064889</td>
+      <td>7.309543</td>
+      <td>4.2</td>
+      <td>...</td>
+      <td>Glut</td>
+      <td>23 P Glut</td>
+      <td>235 PG-TRN-LRN Fat2 Glut</td>
+      <td>0953 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>4199 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>#2B93DF</td>
+      <td>#6b5ca5</td>
+      <td>#9B7ACC</td>
+      <td>#990041</td>
+      <td>#663D63</td>
+    </tr>
+    <tr>
+      <th>1017092617101450577</th>
+      <td>C57BL6J-638850.25</td>
+      <td>4218</td>
+      <td>0.763531</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>5.792921</td>
+      <td>8.189973</td>
+      <td>4.0</td>
+      <td>...</td>
+      <td>Glut</td>
+      <td>23 P Glut</td>
+      <td>235 PG-TRN-LRN Fat2 Glut</td>
+      <td>0953 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>4199 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>#2B93DF</td>
+      <td>#6b5ca5</td>
+      <td>#9B7ACC</td>
+      <td>#990041</td>
+      <td>#663D63</td>
+    </tr>
+    <tr>
+      <th>1018093344101130233</th>
+      <td>C57BL6J-638850.13</td>
+      <td>4218</td>
+      <td>0.558073</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>3.195950</td>
+      <td>5.868655</td>
+      <td>2.4</td>
+      <td>...</td>
+      <td>Glut</td>
+      <td>23 P Glut</td>
+      <td>235 PG-TRN-LRN Fat2 Glut</td>
+      <td>0953 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>4199 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>#2B93DF</td>
+      <td>#6b5ca5</td>
+      <td>#9B7ACC</td>
+      <td>#990041</td>
+      <td>#663D63</td>
+    </tr>
+    <tr>
+      <th>1019171912201610094</th>
+      <td>C57BL6J-638850.27</td>
+      <td>4218</td>
+      <td>0.591009</td>
+      <td>C57BL6J-638850</td>
+      <td>C57BL6J-638850</td>
+      <td>wt/wt</td>
+      <td>M</td>
+      <td>5.635732</td>
+      <td>7.995842</td>
+      <td>4.4</td>
+      <td>...</td>
+      <td>Glut</td>
+      <td>23 P Glut</td>
+      <td>235 PG-TRN-LRN Fat2 Glut</td>
+      <td>0953 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>4199 PG-TRN-LRN Fat2 Glut_1</td>
+      <td>#2B93DF</td>
+      <td>#6b5ca5</td>
+      <td>#9B7ACC</td>
+      <td>#990041</td>
+      <td>#663D63</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_column_info</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique brain_section_label = 59 
+Number of unique cluster_alias = 5320 
+Number of unique average_correlation_score = 3932069 
+Number of unique feature_matrix_label = 1 [&#39;C57BL6J-638850&#39;]
+Number of unique donor_label = 1 [&#39;C57BL6J-638850&#39;]
+Number of unique donor_genotype = 1 [&#39;wt/wt&#39;]
+Number of unique donor_sex = 1 [&#39;M&#39;]
+Number of unique x = 3938808 
+Number of unique y = 3938808 
+Number of unique z = 59 
+Number of unique abc_sample_id = 3938808 
+Number of unique neurotransmitter = 10 [&#39;&#39;, &#39;Chol&#39;, &#39;Dopa&#39;, &#39;GABA&#39;, &#39;GABA-Glyc&#39;, &#39;Glut&#39;, &#39;Glut-GABA&#39;, &#39;Hist&#39;, &#39;Nora&#39;, &#39;Sero&#39;]
+Number of unique class = 34 
+Number of unique subclass = 338 
+Number of unique supertype = 1201 
+Number of unique cluster = 5320 
+Number of unique neurotransmitter_color = 10 [&#39;#03EDFF&#39;, &#39;#0a9964&#39;, &#39;#2B93DF&#39;, &#39;#533691&#39;, &#39;#666666&#39;, &#39;#73E785&#39;, &#39;#820e57&#39;, &#39;#FF3358&#39;, &#39;#fcf04b&#39;, &#39;#ff7621&#39;]
+Number of unique class_color = 34 
+Number of unique subclass_color = 338 
+Number of unique supertype_color = 1201 
+Number of unique cluster_color = 5296 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cell_extended</span></code> dataframe created above is available in the cache as <code class="docutils literal notranslate"><span class="pre">cell_metadata_with_cluster_annotation</span></code>.</p>
+</section>
+<section id="gene-panel">
+<h3>Gene panel<a class="headerlink" href="#gene-panel" title="Link to this heading">#</a></h3>
+<p>A 500 gene panel was selected to enable faciliate the mapping to the whole mouse brain taxonomy. Each gene is uniquely identifier by an Ensembl ID. It is best practice to gene identifier to for tracking and data interchange as gene symbols are not unique and can change over time. The expression matrices also includes data for 50 “blanks” codewords in the spatial transcriptomic codebook that are not associated with any gene. They are included to measure the false discovery rate of gene detection.</p>
+<p>Each row of the gene dataframe has Ensembl gene identifier, the identifier of the transcript the probe targets, a gene symbol and name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
+<span class="n">gene</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;gene_identifier&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of genes = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">gene</span><span class="p">))</span>
+<span class="n">gene</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  550
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_symbol</th>
+      <th>transcript_identifier</th>
+      <th>name</th>
+      <th>mapped_ncbi_identifier</th>
+    </tr>
+    <tr>
+      <th>gene_identifier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ENSMUSG00000026778</th>
+      <td>Prkcq</td>
+      <td>ENSMUST00000028118</td>
+      <td>protein kinase C, theta</td>
+      <td>NCBIGene:18761</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000026837</th>
+      <td>Col5a1</td>
+      <td>ENSMUST00000028280</td>
+      <td>collagen, type V, alpha 1</td>
+      <td>NCBIGene:12831</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000001985</th>
+      <td>Grik3</td>
+      <td>ENSMUST00000030676</td>
+      <td>glutamate receptor, ionotropic, kainate 3</td>
+      <td>NCBIGene:14807</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000039323</th>
+      <td>Igfbp2</td>
+      <td>ENSMUST00000047328</td>
+      <td>insulin-like growth factor binding protein 2</td>
+      <td>NCBIGene:16008</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000048387</th>
+      <td>Osr1</td>
+      <td>ENSMUST00000057021</td>
+      <td>odd-skipped related transcription factor 1</td>
+      <td>NCBIGene:23967</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="gene-expression-matrix">
+<h3>Gene expression matrix<a class="headerlink" href="#gene-expression-matrix" title="Link to this heading">#</a></h3>
+<p>Expression values for all sections are stored in an anndata h5ad format with minimal metadata. There are two h5ad files one storing the raw counts and the other log normalization of it. In this next section, we provide example code on how to open the file and connect with the rich cell level metadata discussed above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C57BL6J-638850/log2&#39;, &#39;C57BL6J-638850/raw&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;C57BL6J-638850/log2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/data/abc_atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the anndata’s <em>read_h5ad</em> function to open the package for the log2 normalization file. The “backed=’r’” makes use of the lazy loading functionality to only load required data. By default, anndata will load the entire expression matrix in memory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adata</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AnnData object with n_obs × n_vars = 4334174 × 550 backed at &#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/MERFISH-C57BL6J-638850/20230830/C57BL6J-638850-log2.h5ad&#39;
+    obs: &#39;brain_section_label&#39;
+    var: &#39;gene_symbol&#39;, &#39;transcript_identifier&#39;
+    uns: &#39;accessed_on&#39;, &#39;src&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Genes are represented as “variables”. For this data, the var dataframe is indexed by the Ensembl gene identifier with one metadata column gene symbol</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of genes = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">))</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of genes =  550
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;ENSMUSG00000026778&#39;, &#39;ENSMUSG00000026837&#39;, &#39;ENSMUSG00000001985&#39;,
+       &#39;ENSMUSG00000039323&#39;, &#39;ENSMUSG00000048387&#39;],
+      dtype=&#39;object&#39;, name=&#39;gene_identifier&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a small helper function <em>plot section</em> to visualize the cells in anatomical context colorized by: neurotransmitter identity, cell types division, class and subclass.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_section</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">cc</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">cc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let pick one section “C57BL6J-638850.38” for visualization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;brain_section_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;C57BL6J-638850.38&#39;</span><span class="p">)</span>
+<span class="n">section</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of cells in section:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">section</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells in section: 120186
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">])</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neuortransmitter Identity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3da5aabb6738c1cde4aa306e923d669a7e242cb367a43dbd6cb07fab3d3d8c52.png" src="../_images/3da5aabb6738c1cde4aa306e923d669a7e242cb367a43dbd6cb07fab3d3d8c52.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;class_color&#39;</span><span class="p">])</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cell Types: Class&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8efe7ee24ef9c2c60928a4401e7a2d888fe7a775a34fdc9143ecaf2a70fd21b3.png" src="../_images/8efe7ee24ef9c2c60928a4401e7a2d888fe7a775a34fdc9143ecaf2a70fd21b3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">section</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">section</span><span class="p">[</span><span class="s1">&#39;subclass_color&#39;</span><span class="p">])</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cell Types: Subclass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/38b2880d3e5e702338f6f81e341f631966828d3514792bb61cc33a13473f41e7.png" src="../_images/38b2880d3e5e702338f6f81e341f631966828d3514792bb61cc33a13473f41e7.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="example-use-cases">
+<h2>Example use cases<a class="headerlink" href="#example-use-cases" title="Link to this heading">#</a></h2>
+<p>In this section, we explore the same two use cases as with the 10x data. The first example looks at the expression of nine canonical neurotransmitter transporter genes and the second the expression of gene Tac2. To support these use cases, we will create a smaller submatrix (all cells and 10 genes) that read it into memory. <em>Note this operation takes around 10 seconds</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc17a8&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a5&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a3&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a4&#39;</span><span class="p">]</span>
+<span class="n">exgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tac2&#39;</span><span class="p">]</span>
+<span class="n">gnames</span> <span class="o">=</span> <span class="n">ntgenes</span> <span class="o">+</span> <span class="n">exgenes</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">gnames</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">]</span>
+<span class="n">gene_filtered</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
+<span class="n">gene_filtered</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_symbol</th>
+      <th>transcript_identifier</th>
+    </tr>
+    <tr>
+      <th>gene_identifier</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ENSMUSG00000030500</th>
+      <td>Slc17a6</td>
+      <td>ENSMUST00000032710</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000037771</th>
+      <td>Slc32a1</td>
+      <td>ENSMUST00000045738</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000025400</th>
+      <td>Tac2</td>
+      <td>ENSMUST00000026466</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000039728</th>
+      <td>Slc6a5</td>
+      <td>ENSMUST00000056442</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000070570</th>
+      <td>Slc17a7</td>
+      <td>ENSMUST00000085374</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000019935</th>
+      <td>Slc17a8</td>
+      <td>ENSMUST00000020102</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000021609</th>
+      <td>Slc6a3</td>
+      <td>ENSMUST00000022100</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000020838</th>
+      <td>Slc6a4</td>
+      <td>ENSMUST00000021195</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+<span class="n">asubset</span> <span class="o">=</span> <span class="n">adata</span><span class="p">[:,</span> <span class="n">gene_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">to_memory</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;time taken: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">asubset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time taken:  6.386244999999995
+AnnData object with n_obs × n_vars = 4334174 × 8
+    obs: &#39;brain_section_label&#39;
+    var: &#39;gene_symbol&#39;, &#39;transcript_identifier&#39;
+    uns: &#39;accessed_on&#39;, &#39;src&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define two helper functions to (1) <em>create_expression_dataframe</em>: create joined gene expression and cell metadata dataframe based for a set of input genes and (2) <em>aggregate_by_metadata</em> which computes the average expression for each term in a given category.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_expression_dataframe</span><span class="p">(</span><span class="n">ad</span><span class="p">,</span> <span class="n">gf</span><span class="p">):</span>
+    <span class="n">gdata</span> <span class="o">=</span> <span class="n">ad</span><span class="p">[:,</span> <span class="n">gf</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+    <span class="n">gdata</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span>
+    <span class="n">joined</span> <span class="o">=</span> <span class="n">section</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gdata</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">joined</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">aggregate_by_metadata</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">gnames</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">sort</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">value</span><span class="p">)[</span><span class="n">gnames</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">sort</span><span class="p">:</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">gnames</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">grouped</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="expression-of-canonical-neurotransmitter-transporter-genes">
+<h3>Expression of canonical neurotransmitter transporter genes<a class="headerlink" href="#expression-of-canonical-neurotransmitter-transporter-genes" title="Link to this heading">#</a></h3>
+<p>During analysis, clusters were assigned neurotransmitter identities based on the expression of of canonical neurotransmitter transporter genes. In this example, we create a dataframe comprising of cells in the ‘C57BL6J-638850.40’ section and expression of the 9 solute carrier family genes. We then group the cells by the assigned neurotransmitter class and compute the mean expression for each group and visualized as a colorized table. The results are similar of the 10x data restricted to cells from the thalamus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">fig_width</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">fig_height</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">):</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
+
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">xlabs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ylabs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xlabs</span><span class="p">)))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">xlabs</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ylabs</span><span class="p">)))</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">ylabs</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">im</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">ntgenes</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">asubset</span><span class="o">.</span><span class="n">var</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">]</span>
+<span class="n">gf</span> <span class="o">=</span> <span class="n">asubset</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
+
+<span class="n">ntexp</span> <span class="o">=</span> <span class="n">create_expression_dataframe</span><span class="p">(</span><span class="n">asubset</span><span class="p">,</span> <span class="n">gf</span><span class="p">)</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">ntexp</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="n">ntgenes</span><span class="p">]</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/531de3d08a1af1da6456049092c86346381a9635fc1e2d110eca237ffec10a3e.png" src="../_images/531de3d08a1af1da6456049092c86346381a9635fc1e2d110eca237ffec10a3e.png" />
+</div>
+</div>
+<p>The expression data can also be visualized as scatter point in anatomical context. Gene Slc17a7 is highly enriched in the cortex , hippocampus, medial habenula with some expression in the thalamus. On the other hand gene Slc32a1 is enriched in the striatum with sparse expression on the cortical plate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gene Slc17a7&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/71350c28618ad44b88ba1bf9b83c24026419e84f49b483935139749d57936cab.png" src="../_images/71350c28618ad44b88ba1bf9b83c24026419e84f49b483935139749d57936cab.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">ntexp</span><span class="p">[</span><span class="s1">&#39;Slc32a1&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gene Slc32a1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/067c7662c6047f85cc8fdc6467c52d4b8ee660d076014dfc6201f579ff714e67.png" src="../_images/067c7662c6047f85cc8fdc6467c52d4b8ee660d076014dfc6201f579ff714e67.png" />
+</div>
+</div>
+</section>
+<section id="expression-of-tachykinin-2-tac2-in-the-whole-brain">
+<h3>Expression of Tachykinin 2 (Tac2) in the whole brain<a class="headerlink" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain" title="Link to this heading">#</a></h3>
+<p>In mice, the tachykinin 2 (Tac2) gene encodes neuropeptide called neurokinin B (NkB). Tac2 is produced by neurons in specific regions of the brain know to be invovled in emotion and social behavior. Based on <a class="reference external" href="https://mouse.brain-map.org/experiment/siv?id=77279001&amp;amp;imageId=77284584&amp;amp;initImage=ish&amp;amp;coordSystem=pixel&amp;amp;x=5384.5&amp;amp;y=3832.5&amp;amp;z=3">ISH data</a> from the Allen Mouse Brain Atlas, Tac 2 is sparsely expressed in the mouse isocortex and densely enriched is specific subcortical regions such the medial habenula (MH), the amygdala and hypothalamus.</p>
+<p>In this example, we create a dataframe comprising of cells in section ‘C57BL6J-638850.40’ and expression values of Tac2 in those cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span> <span class="o">=</span> <span class="n">asubset</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="n">asubset</span><span class="o">.</span><span class="n">var</span><span class="o">.</span><span class="n">gene_symbol</span> <span class="o">==</span> <span class="s1">&#39;Tac2&#39;</span><span class="p">]</span>
+<span class="n">tac2</span> <span class="o">=</span> <span class="n">create_expression_dataframe</span><span class="p">(</span><span class="n">asubset</span><span class="p">,</span> <span class="n">gf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grouping cells by neurotransmitter identites and computing the mean expression in each group, we can observed that Tac2 gene is highly enriched in cholinergic cell types with some expression in Glut-GABA types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">tac2</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_55092/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  grouped = grouped.sort_values(by=gnames[0], ascending=False)
+</pre></div>
+</div>
+<img alt="../_images/6c1cd1b070cbf0af348fc43d02468efe494f218d0b7686f3ec5c6d07b04f71a6.png" src="../_images/6c1cd1b070cbf0af348fc43d02468efe494f218d0b7686f3ec5c6d07b04f71a6.png" />
+</div>
+</div>
+<p>Grouping cells by cell types class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">tac2</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_55092/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  grouped = grouped.sort_values(by=gnames[0], ascending=False)
+</pre></div>
+</div>
+<img alt="../_images/f48e64de9d6c2306cf0426ed6f8bff89546e07585366fa4285f145126339d2b6.png" src="../_images/f48e64de9d6c2306cf0426ed6f8bff89546e07585366fa4285f145126339d2b6.png" />
+</div>
+</div>
+<p>At the next level, grouping by subclass, shows Tac2 is enriched in sublcasses with specificity to the medial habenula (MH), bed muclei of the stria terminalis (BST) and main olfactory blub (MOB).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">tac2</span><span class="p">,</span> <span class="n">gf</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">,</span> <span class="s1">&#39;subclass&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kc/7glrmt5n67x16yj_tg86t49c0000gp/T/ipykernel_55092/2280752953.py:4: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  grouped = grouped.sort_values(by=gnames[0], ascending=False)
+</pre></div>
+</div>
+<img alt="../_images/b306c5506ddf5e430afd5d5c209cf0f611a427b63e6c20c19c134894f37e5359.png" src="../_images/b306c5506ddf5e430afd5d5c209cf0f611a427b63e6c20c19c134894f37e5359.png" />
+</div>
+</div>
+<p>Plotting Tac2 expression in anatomical coordinates results in a image that is comparable to the ISH image data showing enriched expression in the medial habenula, amydala and hypothalamus and sparse expression in the cortex.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">tac2</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">tac2</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">val</span><span class="o">=</span><span class="n">tac2</span><span class="p">[</span><span class="s1">&#39;Tac2&#39;</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gene Tac2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/526a304a7d0a2d74ca9d60fb0693e93665cb56a84b0919aee259bb4ef7452703.png" src="../_images/526a304a7d0a2d74ca9d60fb0693e93665cb56a84b0919aee259bb4ef7452703.png" />
+</div>
+</div>
+<p>Close h5ad file and clean up</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adata</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">adata</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../descriptions/notebook_subtitle3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MERFISH whole brain spatial transcriptomics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="merfish_tutorial_part_2a.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MERFISH whole brain spatial transcriptomics (part 2a)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-panel">Gene panel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrix">Gene expression matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-canonical-neurotransmitter-transporter-genes">Expression of canonical neurotransmitter transporter genes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain">Expression of Tachykinin 2 (Tac2) in the whole brain</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
