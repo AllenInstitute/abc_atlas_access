@@ -23,7 +23,7 @@ example use cases.***
 The Fall 2025 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
-* **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) (AIBS & Macosko)**
+* **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) ((Evan Macosko, Hongkui Zeng) )**
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_dataset.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole mouse brain](descriptions/Zhuang_dataset.md)
@@ -65,7 +65,7 @@ notebook.
   the cell metadata.
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/notebook_subtitle1.md)
   (Hongkui Zeng)**
-* **[Consensus Whole Mouse Brain Notebooks](descriptions/Consensus-WMB-notebooks.md) (AIBS & Macosko)**
+* **[Consensus Whole Mouse Brain Notebooks](descriptions/Consensus-WMB-notebooks.md) (Evan Macosko, Hongkui Zeng)**
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_notebooks.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole
