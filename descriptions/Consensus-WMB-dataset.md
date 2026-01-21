@@ -1,4 +1,4 @@
-# Consensus Whole Mouse Brain dataset
+# Consensus Whole Mouse Brain dataset (Macosko, Zeng)
 
 * Integrated taxonomy derived from two whole mouse brain datasets.
   ([Consensus-WMB-integrated-taxonomy](Consensus-WMB-taxonomy.md))
