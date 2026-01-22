@@ -35,6 +35,8 @@ Related resources:
 * ~2 million single cell transcriptomes with aligned genes across species.
   ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
+* 717 Macaque Patch-Seq cells with summary electro-physiology and morphology features.
+([HMBA-Macaque-PatchSeq-BG](HMBA-Macaque-PatchSeq-BG.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb):
@@ -54,3 +56,5 @@ Associated notebooks:
 [*notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb*]
 * [**Spatial transcriptomic gene expression**](../notebooks/hmba_bg_spatial_genes.ipynb):
   Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_spatial_genes.ipynb*]
+* [**Macaque Patch-Seq notebooks**](../notebooks/hmba_bg_macaque_patchseq.ipynb):
+  Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_macaque_patchseq.ipynb*]

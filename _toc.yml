@@ -56,6 +56,7 @@ parts:
         - file: descriptions/HMBA-10XMultiome-BG-Aligned
         - file: descriptions/HMBA-10XMultiome-BG
         - file: descriptions/HMBA-Spatial-BG
+        - file: descriptions/HMBA-Macaque-PatchSeq-BG
 
   - caption: NOTEBOOKS
     chapters:
@@ -109,6 +110,7 @@ parts:
         - file: notebooks/hmba_bg_10X_snRNASeq_tutorial
         - file: notebooks/hmba_bg_spatial_slabs_and_taxonomy
         - file: notebooks/hmba_bg_spatial_genes
+        - file: notebooks/hmba_bg_macaque_patchseq
 
   - caption: ADDITIONAL RESOURCES
     chapters:
