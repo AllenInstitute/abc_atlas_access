@@ -10,12 +10,12 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Developing-Mouse-Vis-Cortex-10X/20260131/) | 1.2 GB |
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Developing-Mouse-Vis-Cortex-10X/20260131/) | 52.2 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
-* Approximately 500 thousand single cells from mouse brains ranging in age from
+* Approximately 500k single cells from mouse brains ranging in age from
   embryo to adult. ([Dev-Mouse-Vis-Cortex-10X](Dev-Mouse-Vis-Cortex-10X.md))
 
 
