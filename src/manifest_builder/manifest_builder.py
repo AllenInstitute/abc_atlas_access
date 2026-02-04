@@ -1,12 +1,15 @@
 import argparse
 from collections import OrderedDict
 import datetime
+from functools import partial
 import glob
 import json
 import logging
+import multiprocessing
+from multiprocessing import Pool
 import os
 from pathlib import Path, PurePosixPath
-from typing import List, Union
+from typing import List, Optional, Union
 
 from abc_atlas_access.abc_atlas_cache.utils import file_hash_from_path
 
@@ -133,6 +136,37 @@ def populate_directories(
     return release
 
 
+def _file_hasher(
+        full_path: str,
+        base_dir: str,
+        ds_dict: dict,
+        data_kind: str,
+        dataset_logger
+    ) -> Optional[dict]:
+    if os.path.isdir(full_path):
+        return None
+
+    dataset_logger.debug(full_path)
+    file_size = os.path.getsize(full_path)
+    rel_path = os.path.relpath(full_path, base_dir)
+
+    bname = os.path.basename(full_path)
+
+    bsplit = os.path.splitext(bname)
+    ext = bsplit[1]
+    ext = ext.replace(".", "")
+
+    file_hash = file_hash_from_path(full_path)
+    file_dict = {
+        "version": ds_dict[data_kind]["version"],
+        "relative_path": rel_path,
+        "url": bucket_prefix + rel_path,
+        "size": file_size,
+        "file_hash": file_hash,
+    }
+    return file_dict
+
+
 def populate_datasets(
     base_dir: Union[str, Path],
     release: dict,
@@ -160,6 +194,8 @@ def populate_datasets(
     dataset_logger.info("Populating files and hashes for each " "dataset/directory")
     dataset_lookup = {}
 
+    n_jobs = multiprocessing.cpu_count()
+
     for dataset in release["directory_listing"].keys():
 
         dataset_logger.info(f"- {dataset}")
@@ -178,34 +214,31 @@ def populate_datasets(
 
             for file_path in ["*", "*/*"]:
 
-                for full_path in sorted(glob.glob(
+                full_paths = sorted(glob.glob(
                     os.path.join(data_dir, file_path), recursive=True
-                )):
-                    if os.path.isdir(full_path):
+                ))
+                partial_hasher = partial(
+                    _file_hasher,
+                    base_dir=base_dir,
+                    ds_dict=ds_dict,
+                    data_kind=data_kind,
+                    dataset_logger=dataset_logger
+                )
+                with Pool(processes=n_jobs) as pool:
+                    file_dicts = pool.map(partial_hasher, full_paths)
+
+                for file_dict, full_path in zip(file_dicts, full_paths):
+                    if file_dict is None:
                         continue
 
-                    dataset_logger.debug(full_path)
-                    file_size = os.path.getsize(full_path)
+                    file_size = file_dict["size"]
                     total_size += file_size
-
-                    rel_path = os.path.relpath(full_path, base_dir)
 
                     bname = os.path.basename(full_path)
 
                     bsplit = os.path.splitext(bname)
                     ext = bsplit[1]
                     ext = ext.replace(".", "")
-
-                    file_hash = file_hash_from_path(full_path)
-
-                    # Metadata for an individual file.
-                    file_dict = {
-                        "version": ds_dict[data_kind]["version"],
-                        "relative_path": rel_path,
-                        "url": bucket_prefix + rel_path,
-                        "size": file_size,
-                        "file_hash": file_hash,
-                    }
 
                     if ext in ["csv", "json", "h5", "geojson", "db"]:
                         tag = bsplit[0]
@@ -274,7 +307,10 @@ if __name__ == "__main__":
         "--datasets_to_skip",
         nargs="+",
         type=str,
-        default=["releases", "SEAAD-10X", "SEAAD-MERFISH", "SEA-AD", "Zhuang-C57BL6J"],
+        default=[
+            "releases", "SEAAD-10X", "SEAAD-MERFISH", "SEA-AD", "Zhuang-C57BL6J", "neuroglancer",
+            "abc_kb_ingest"
+        ],
         help="Skip a given project for all directories that start with the "
         "given pattern. (e.g. SEAD will exclude all directories that "
         "start with that pattern for example, SEAD-taxonomy etc.)",

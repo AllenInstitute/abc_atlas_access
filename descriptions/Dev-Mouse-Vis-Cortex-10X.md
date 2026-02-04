@@ -9,8 +9,8 @@ a AWS Public Dataset:
 
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Developing-Mouse-Vis-Cortex-10X/20260131/) | 42.7 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Developing-Mouse-Vis-Cortex-10X/20260131/) | 798.3 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/Developing-Mouse-Vis-Cortex-10X/20260131/) | 14.2 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Developing-Mouse-Vis-Cortex-10X/20260131/) | 180.1 MB |
 
 
 Data is being shared under the CC BY NC 4.0 license.
