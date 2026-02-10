@@ -10,7 +10,7 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/Developing-Mouse-Vis-Cortex-10X/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Developing-Mouse-Vis-Cortex-10X/20260131/) | 52.2 MB |
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/Developing-Mouse-Vis-Cortex-taxonomy/20260131/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/Developing-Mouse-Vis-Cortex-taxonomy/20260131/) | 52.2 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
