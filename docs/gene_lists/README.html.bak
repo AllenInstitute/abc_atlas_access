@@ -218,6 +218,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/Dev-Mouse-Vis-Cortex-dataset.html">Developing Mouse - Visual Cortex</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/Dev-Mouse-Vis-Cortex-10X.html">Developing Mouse - Visual Cortex single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/Dev-Mouse-Vis-Cortex-taxonomy.html">Developing Mouse - Visual Cortex taxonomy</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
@@ -264,6 +269,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
 
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/Dev-Mouse-Vis-Cortex-notebooks.html">Developing Mouse - Visual Cortex notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/dev_mouse_vis_cortex_clustering_analysis_and_annotation.html">Developing Mouse - Visual Cortex 10X scRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/dev_mouse_vis_cortex_10X_scRNASeq.html">Developing Mouse - Visual Cortex: 10X gene expression</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -507,7 +517,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="gene-lists">
 <h1>Gene lists<a class="headerlink" href="#gene-lists" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/e5de21874094520f9e487a226dd9f48b/gene_list.html"><span class="xref download myst">WMB-10X and Zeng Aging Mouse (32285 genes)</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/e5de21874094520f9e487a226dd9f48b/gene_list.html"><span class="xref download myst">WMB-10X, Developing Mouse, Zeng Aging Mouse (32285 genes)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/2a6c4e9d0e838217b2d258d272d8749a/gene_list.html"><span class="xref download myst">WHB-10X (59357 genes)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/54f8c94c59bb7c322c5f933e0b151681/gene_list.html"><span class="xref download myst">MERFISH-C57BL6J-638850 (500 genes)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/dc021637ff5faed3d794ef829b50d8c6/gene_list.html"><span class="xref download myst">MERFISH-C57BL6J-638850-imputed (8460 genes)</span></a></p></li>

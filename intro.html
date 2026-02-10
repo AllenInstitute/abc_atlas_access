@@ -219,6 +219,11 @@
 <li class="toctree-l2"><a class="reference internal" href="descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-dataset.html">Developing Mouse - Visual Cortex</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-10X.html">Developing Mouse - Visual Cortex single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-taxonomy.html">Developing Mouse - Visual Cortex taxonomy</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
@@ -265,6 +270,11 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
 
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-notebooks.html">Developing Mouse - Visual Cortex notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/dev_mouse_vis_cortex_clustering_analysis_and_annotation.html">Developing Mouse - Visual Cortex 10X scRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/dev_mouse_vis_cortex_10X_scRNASeq.html">Developing Mouse - Visual Cortex: 10X gene expression</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -536,12 +546,14 @@ S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://a
 No account or login is required for access. <em><strong>The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.</strong></em></p>
-<p>The Fall 2025 public beta data release includes:</p>
+<p>The Winter 2026 public beta data release includes:</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="descriptions/WMB_dataset.html"><span class="std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
 (Hongkui Zeng)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/Consensus-WMB-dataset.html"><span class="std std-doc">Consensus Whole Mouse Brain cell type atlas</span></a> (Evan Macosko, Hongkui Zeng)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_dataset.html"><span class="std std-doc">Aging Mouse transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-dataset.html"><span class="std std-doc">Developing Mouse - Visual Cortex</span></a>
 (Hongkui Zeng)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/Zhuang_dataset.html"><span class="std std-doc">A molecularly defined and spatially resolved cell atlas of the whole mouse brain</span></a>
 (Xiaowei Zhuang)</strong></p></li>
@@ -576,12 +588,14 @@ AbcProjectCache to facilitate data download and usage.</p></li>
 <li><p><a class="reference internal" href="notebooks/abc_atlas_selection_example.html"><span class="std std-doc"><strong>Using cells selected in the ABC Atlas</strong></span></a>: learn how
 to use cells selected from an ABC Atlas visualization in your analysis.</p></li>
 <li><p><a class="reference internal" href="notebooks/general_accessing_10x_snRNASeq_tutorial.html"><span class="std std-doc"><strong>Loading genes from expression matrix data</strong></span></a>:
-learn how to select genes from 10X expression matricies and combine them with
+learn how to select genes from 10X expression matrices and combine them with
 the cell metadata.</p></li>
 <li><p><strong><a class="reference internal" href="descriptions/notebook_subtitle1.html"><span class="std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
 (Hongkui Zeng)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/Consensus-WMB-notebooks.html"><span class="std std-doc">Consensus Whole Mouse Brain Notebooks</span></a> (Evan Macosko, Hongkui Zeng)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/Zeng_Aging_Mouse_notebooks.html"><span class="std std-doc">Aging Mouse transcriptomic cell type atlas</span></a>
+(Hongkui Zeng)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/Dev-Mouse-Vis-Cortex-notebooks.html"><span class="std std-doc">Developing Mouse - Visual Cortex</span></a>
 (Hongkui Zeng)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/notebook_subtitle4.html"><span class="std std-doc">A molecularly defined and spatially resolved cell atlas of the whole
 mouse brain</span></a>
@@ -597,7 +611,18 @@ mouse brain</span></a>
 <section id="release-notes">
 <h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>[Add HMBA-BG spatial data. Update HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20251031), abc_atlas_access (v1.1.0)]</strong></p>
+<li><p><strong>[Add Developing Mouse - Visual Cortex data (version 20260131), abc_atlas_access (v1.2.0)]</strong></p>
+<ul>
+<li><p>Add Developing Mouse - Visual Cortex dataset.</p>
+<ul>
+<li><p>~500 thousand, single cells in the visual cortex from 53 mice ranging in age from embryo to adult.</p></li>
+<li><p>Taxonomy across cross this range of ages in a 4 level hierarchy
+containing 714 clusters</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Add Consensus Whole Mouse Brain datasets (version 20251031), abc_atlas_access (v1.1.0)]</strong></p>
 <ul>
 <li><p>Add Consensus Whole Mouse brain datasets.</p>
 <ul>

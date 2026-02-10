@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/consensus_mouse_10X_snRNASeq';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Aging Mouse Notebooks (Hongkui Zeng)" href="../descriptions/Zeng_Aging_Mouse_notebooks.html" />
+    <link rel="next" title="Developing Mouse - Visual Cortex notebooks" href="../descriptions/Dev-Mouse-Vis-Cortex-notebooks.html" />
     <link rel="prev" title="Consensus Whole Mouse Brain #1: Clustering and Annotations" href="consensus_mouse_clustering_analysis_and_annotation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -218,6 +218,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-dataset.html">Developing Mouse - Visual Cortex</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-10X.html">Developing Mouse - Visual Cortex single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-taxonomy.html">Developing Mouse - Visual Cortex taxonomy</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
@@ -264,6 +269,11 @@
 <li class="toctree-l2"><a class="reference internal" href="consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
 
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-notebooks.html">Developing Mouse - Visual Cortex notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_mouse_vis_cortex_clustering_analysis_and_annotation.html">Developing Mouse - Visual Cortex 10X scRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_mouse_vis_cortex_10X_scRNASeq.html">Developing Mouse - Visual Cortex: 10X gene expression</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -560,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20251031/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260131/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -688,6 +698,22 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 310M/310M [00:09&lt;00:00, 31.5MMB/s]    
+cluster.csv: 100%|██████████| 203k/203k [00:00&lt;00:00, 1.19MMB/s] 
+cluster_annotation_term.csv: 100%|██████████| 1.38M/1.38M [00:00&lt;00:00, 9.28MMB/s]
+cluster_annotation_term_set.csv: 100%|██████████| 388/388 [00:00&lt;00:00, 7.09kMB/s]
+cluster_to_cluster_annotation_membership.csv: 100%|██████████| 3.07M/3.07M [00:00&lt;00:00, 5.83MMB/s]
+cell_metadata.csv: 100%|██████████| 506M/506M [00:16&lt;00:00, 31.1MMB/s]    
+cell_metadata.csv: 100%|██████████| 375M/375M [00:11&lt;00:00, 33.9MMB/s]    
+library.csv: 100%|██████████| 59.0k/59.0k [00:00&lt;00:00, 457kMB/s]
+donor.csv: 100%|██████████| 16.6k/16.6k [00:00&lt;00:00, 244kMB/s]
+library.csv: 100%|██████████| 27.7k/27.7k [00:00&lt;00:00, 233kMB/s]
+donor.csv: 100%|██████████| 1.29k/1.29k [00:00&lt;00:00, 17.0kMB/s]
+value_sets.csv: 100%|██████████| 2.47k/2.47k [00:00&lt;00:00, 12.0kMB/s]
+</pre></div>
+</div>
+</div>
 </div>
 <section id="single-cell-and-nuclei-transcriptomes">
 <h2>Single cell and nuclei transcriptomes<a class="headerlink" href="#single-cell-and-nuclei-transcriptomes" title="Link to this heading">#</a></h2>
@@ -705,7 +731,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 3.69MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 2.30M/2.30M [00:00&lt;00:00, 8.20MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of aligned genes =  32285
@@ -795,13 +821,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 546k/546k [00:00&lt;00:00, 2.29MMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 546k/546k [00:00&lt;00:00, 2.83MMB/s] 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of aligned genes =  21205
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -910,8 +933,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_gene_expression.csv: 100%|██████████| 330M/330M [00:59&lt;00:00, 5.51MMB/s]    
-example_gene_expression.csv: 100%|██████████| 291M/291M [00:53&lt;00:00, 5.38MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_gene_expression.csv: 100%|██████████| 330M/330M [00:09&lt;00:00, 34.0MMB/s]    
+example_gene_expression.csv: 100%|██████████| 291M/291M [00:08&lt;00:00, 33.9MMB/s]    
 </pre></div>
 </div>
 </div>
@@ -1179,6 +1202,9 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 490M/490M [00:15&lt;00:00, 31.0MMB/s]    
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1314,91 +1340,67 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
   </thead>
   <tbody>
     <tr>
-      <th>GATCGCGTCCCTAACC-040_B01</th>
-      <td>GATCGCGTCCCTAACC</td>
-      <td>040_B01</td>
-      <td>L8TX_180815_01_D08</td>
+      <th>pBICCNsMMrENTiM017d210119A2_GACGTTATCGATTGGT</th>
+      <td>GACGTTATCGATTGGT</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrENTiM017d210119A2</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-HPF</td>
+      <td>1696</td>
+      <td>001 IT-ET Glut</td>
+      <td>0197 L2-IT-PIR-ENTl_Glut 2</td>
+      <td>Pallium-Glut</td>
+      <td>Glut</td>
+      <td>...</td>
+      <td>7.861371</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>6.520203</td>
+      <td>-4.227495</td>
+    </tr>
+    <tr>
+      <th>CATGCCTAGTATCGAA-044_D01</th>
+      <td>CATGCCTAGTATCGAA</td>
+      <td>044_D01</td>
+      <td>L8TX_180829_01_E09</td>
       <td>WMB-10Xv2</td>
       <td>WMB-10Xv2-TH</td>
-      <td>10653</td>
-      <td>019 TH Glut</td>
-      <td>2997 AM-IAD_Col27a1:Calb1_Glut 2</td>
+      <td>10834</td>
+      <td>018 MH-LH Glut</td>
+      <td>2937 MH_Tac2_Glut 2</td>
       <td>TH-EPI-Glut</td>
       <td>Glut</td>
       <td>...</td>
+      <td>7.909847</td>
+      <td>0.0</td>
+      <td>8.492808</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>9.888697</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-14.503504</td>
-      <td>5.820190</td>
+      <td>-0.706705</td>
+      <td>19.370281</td>
     </tr>
     <tr>
-      <th>pBICCNsMMrMBL5iM012d200825_CACACAAGTTCAAAGA</th>
-      <td>CACACAAGTTCAAAGA</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrMBL5iM012d200825</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-MB</td>
-      <td>13369</td>
-      <td>039 OPC-Oligo</td>
-      <td>6600 OPC_NN 2</td>
-      <td>NN-IMN</td>
-      <td>NN</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-6.966048</td>
-      <td>-12.871844</td>
-    </tr>
-    <tr>
-      <th>pBICCNsMMrCTXANGiM022d210602C1_AGGCCACCACACGGTC</th>
-      <td>AGGCCACCACACGGTC</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrCTXANGiM022d210602C1</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-Isocortex</td>
-      <td>15760</td>
-      <td>037 Astro-Epen</td>
-      <td>6538 Astro-TE_NN 4</td>
-      <td>NN-IMN</td>
-      <td>NN</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-14.124741</td>
-      <td>-1.272918</td>
-    </tr>
-    <tr>
-      <th>ATCACGAGTCATAACC-415_D01</th>
-      <td>ATCACGAGTCATAACC</td>
-      <td>415_D01</td>
-      <td>L8TX_201105_01_A02</td>
+      <th>TGCTCCATCGAGTGAG-463_A05</th>
+      <td>TGCTCCATCGAGTGAG</td>
+      <td>463_A05</td>
+      <td>L8TX_201210_01_G03</td>
       <td>WMB-10Xv3</td>
-      <td>WMB-10Xv3-STR</td>
-      <td>5188</td>
-      <td>009 CNU-LGE GABA</td>
-      <td>1247 STR_D2_Gaba 2</td>
-      <td>Subpallium-GABA</td>
+      <td>WMB-10Xv3-TH</td>
+      <td>5463</td>
+      <td>012 HY GABA</td>
+      <td>1979 ZI_Pax6:Pou6f2:Meis2_Gaba 4</td>
+      <td>HY-EA-Glut-GABA</td>
       <td>GABA</td>
       <td>...</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>0.0</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -1406,23 +1408,23 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>-6.348766</td>
-      <td>-2.057016</td>
+      <td>0.569090</td>
+      <td>4.921452</td>
     </tr>
     <tr>
-      <th>pBICCNsMMrBSL4iM008d190717_GCTGCAGCACTGCGAC</th>
-      <td>GCTGCAGCACTGCGAC</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrBSL4iM008d190717</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-MY-Pons-BS</td>
-      <td>13118</td>
+      <th>GGAGCAAAGGGCAGGA-323_A02</th>
+      <td>GGAGCAAAGGGCAGGA</td>
+      <td>323_A02</td>
+      <td>L8TX_200813_01_D10</td>
+      <td>WMB-10Xv3</td>
+      <td>WMB-10Xv3-CTXsp</td>
+      <td>13235</td>
       <td>039 OPC-Oligo</td>
-      <td>6613 Oligo_NN MOL</td>
+      <td>6603 OPC_NN 3</td>
       <td>NN-IMN</td>
       <td>NN</td>
       <td>...</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>0.0</td>
       <td>0.000000</td>
       <td>0.0</td>
@@ -1430,8 +1432,32 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>-3.101157</td>
-      <td>-11.179463</td>
+      <td>-8.545147</td>
+      <td>-14.040805</td>
+    </tr>
+    <tr>
+      <th>pBICCNsMMrVISiF022d210719A2_ACGTAGTCAGCACGAA</th>
+      <td>ACGTAGTCAGCACGAA</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrVISiF022d210719A2</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-Isocortex</td>
+      <td>16618</td>
+      <td>001 IT-ET Glut</td>
+      <td>0055 L4/5-IT-CTX_Glut 7</td>
+      <td>Pallium-Glut</td>
+      <td>Glut</td>
+      <td>...</td>
+      <td>8.098426</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>11.389247</td>
+      <td>-4.361753</td>
     </tr>
   </tbody>
 </table>
@@ -1567,8 +1593,8 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7666f3d30ff01f2964c60c6ab31f4a967ef37a4d6d9fa1c887d075a118b2f284.png" src="../_images/7666f3d30ff01f2964c60c6ab31f4a967ef37a4d6d9fa1c887d075a118b2f284.png" />
-<img alt="../_images/3eed529751703dcf003c8f82a9b3d06a1883ce47dd3561de2aca64c8123ec5cc.png" src="../_images/3eed529751703dcf003c8f82a9b3d06a1883ce47dd3561de2aca64c8123ec5cc.png" />
+<img alt="../_images/c2cd412fb5cc0447df87a7bd8ac565179624b8b18bd56eb4224ff33e33dc8a24.png" src="../_images/c2cd412fb5cc0447df87a7bd8ac565179624b8b18bd56eb4224ff33e33dc8a24.png" />
+<img alt="../_images/ce060262c2f12182d130b767939d967d83350314be577a4eb0e60255b0ee5351.png" src="../_images/ce060262c2f12182d130b767939d967d83350314be577a4eb0e60255b0ee5351.png" />
 </div>
 </div>
 </section>
@@ -1624,15 +1650,42 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/421ec00460a17475af7267c00caa4efe84a5acd059cda05982affff40d61a05b.png" src="../_images/421ec00460a17475af7267c00caa4efe84a5acd059cda05982affff40d61a05b.png" />
-<img alt="../_images/07ae4110ef063a09ff970e74dfa4ed0d626195921a9c8b4a7d19c199e451072e.png" src="../_images/07ae4110ef063a09ff970e74dfa4ed0d626195921a9c8b4a7d19c199e451072e.png" />
-<img alt="../_images/59593a8b2d33f1eeac262b37637e5f587f167a072cd0e323061d5802e448fd6e.png" src="../_images/59593a8b2d33f1eeac262b37637e5f587f167a072cd0e323061d5802e448fd6e.png" />
-<img alt="../_images/962a5fe67caddf48aaf03ba97f85427fa8906fc2c4177be7a938a9bf0911c522.png" src="../_images/962a5fe67caddf48aaf03ba97f85427fa8906fc2c4177be7a938a9bf0911c522.png" />
-<img alt="../_images/fa43bd49a7af0ef76591a2a0b01b4194f3e45020444032c0d9450ca207e75b85.png" src="../_images/fa43bd49a7af0ef76591a2a0b01b4194f3e45020444032c0d9450ca207e75b85.png" />
-<img alt="../_images/5ffeea4f9fbc0d9ef34ae57fed1b962e5f643c1f4f7ffa73221ced07503f276b.png" src="../_images/5ffeea4f9fbc0d9ef34ae57fed1b962e5f643c1f4f7ffa73221ced07503f276b.png" />
-<img alt="../_images/69e0063ce4cd2f7fbfca8e61c2284e33f5312dc7a1ac3a13b34bf0ccc2896229.png" src="../_images/69e0063ce4cd2f7fbfca8e61c2284e33f5312dc7a1ac3a13b34bf0ccc2896229.png" />
-<img alt="../_images/a4e41a5927e630c4c7cdb9feb87cb2c9506b2b2b42a12c676fd977d186f23121.png" src="../_images/a4e41a5927e630c4c7cdb9feb87cb2c9506b2b2b42a12c676fd977d186f23121.png" />
-<img alt="../_images/2b5dd228e87650a3ad0fcded88975fb6c19a02ab51fc5ad7dbb9419795b855dc.png" src="../_images/2b5dd228e87650a3ad0fcded88975fb6c19a02ab51fc5ad7dbb9419795b855dc.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pallium-Glut_cell_2d_embedding_coordinates.csv: 100%|██████████| 138M/138M [00:03&lt;00:00, 36.0MMB/s]   
+</pre></div>
+</div>
+<img alt="../_images/58893dfd230e2317bce2a0f9df7b4288c29b03b01b0734e8229b6c5133f9efc1.png" src="../_images/58893dfd230e2317bce2a0f9df7b4288c29b03b01b0734e8229b6c5133f9efc1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Subpallium-GABA_cell_2d_embedding_coordinates.csv: 100%|██████████| 53.7M/53.7M [00:01&lt;00:00, 33.2MMB/s]  
+</pre></div>
+</div>
+<img alt="../_images/081653066aeee12871c7ccae456bf6e2ffa5e49a248b499dde73b2d0f425064b.png" src="../_images/081653066aeee12871c7ccae456bf6e2ffa5e49a248b499dde73b2d0f425064b.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HY-EA-Glut-GABA_cell_2d_embedding_coordinates.csv: 100%|██████████| 16.5M/16.5M [00:00&lt;00:00, 22.7MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/2f84664b5d4b4e74f15d8a37a71fa1058b5563a363af90c44a8f739c0d70759f.png" src="../_images/2f84664b5d4b4e74f15d8a37a71fa1058b5563a363af90c44a8f739c0d70759f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MB-Glut-Dopa-Sero_cell_2d_embedding_coordinates.csv: 100%|██████████| 15.2M/15.2M [00:00&lt;00:00, 24.3MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/fb4915bc29a7922eb378de49c96598dd2bdf8f615812f898cd179b1eef8d4010.png" src="../_images/fb4915bc29a7922eb378de49c96598dd2bdf8f615812f898cd179b1eef8d4010.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TH-EPI-Glut_cell_2d_embedding_coordinates.csv: 100%|██████████| 15.8M/15.8M [00:00&lt;00:00, 25.6MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/2a5b9923ac38cb89bb608d69bb44d8d691dbecf906f15a21083b1361d18e9a45.png" src="../_images/2a5b9923ac38cb89bb608d69bb44d8d691dbecf906f15a21083b1361d18e9a45.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MB-GABA_cell_2d_embedding_coordinates.csv: 100%|██████████| 8.94M/8.94M [00:00&lt;00:00, 19.0MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/39472785416b0ea48e7e0c444a98bf158d8d5933d98123849b69838a14f3d5fb.png" src="../_images/39472785416b0ea48e7e0c444a98bf158d8d5933d98123849b69838a14f3d5fb.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P-MY-CB-Glut_cell_2d_embedding_coordinates.csv: 100%|██████████| 55.5M/55.5M [00:01&lt;00:00, 29.7MMB/s]  
+</pre></div>
+</div>
+<img alt="../_images/683a1d030fca54e8f4820af75e1e4e861ecb00c7dfbc31275e91be3b9a6e5ec2.png" src="../_images/683a1d030fca54e8f4820af75e1e4e861ecb00c7dfbc31275e91be3b9a6e5ec2.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P-MY-CB-GABA_cell_2d_embedding_coordinates.csv: 100%|██████████| 11.1M/11.1M [00:00&lt;00:00, 23.5MMB/s]
+</pre></div>
+</div>
+<img alt="../_images/10875d849dcfe8f0ab760b43773f76317ad9e905af9b6e3d84398ad6d8a9c029.png" src="../_images/10875d849dcfe8f0ab760b43773f76317ad9e905af9b6e3d84398ad6d8a9c029.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NN-IMN_cell_2d_embedding_coordinates.csv: 100%|██████████| 184M/184M [00:05&lt;00:00, 35.1MMB/s]   
+</pre></div>
+</div>
+<img alt="../_images/07db38670801c70eb52aae6182c3b1941e66d3b75ac992fea524a776484478e1.png" src="../_images/07db38670801c70eb52aae6182c3b1941e66d3b75ac992fea524a776484478e1.png" />
 </div>
 </div>
 <p>Check out the previous exploration of the taxonomy and clustering annotations <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/consensus_mouse_clustering_analysis_and_annotation.html">here</a>. The notebooks for the AIBS, Whole Mouse Brain dataset can be found <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/descriptions/notebook_subtitle1.html">here</a>.</p>
@@ -1678,11 +1731,11 @@ example_gene_expression.csv: 100%|██████████| 291M/291M [00:
       </div>
     </a>
     <a class="right-next"
-       href="../descriptions/Zeng_Aging_Mouse_notebooks.html"
+       href="../descriptions/Dev-Mouse-Vis-Cortex-notebooks.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Aging Mouse Notebooks (Hongkui Zeng)</p>
+        <p class="prev-next-title">Developing Mouse - Visual Cortex notebooks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
