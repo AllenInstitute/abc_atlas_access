@@ -20,11 +20,13 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The Fall 2025 public beta data release includes:
+The Winter 2026 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) (Evan Macosko, Hongkui Zeng)**
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_dataset.md)
+  (Hongkui Zeng)**
+* **[Developing Mouse - Visual Cortex](descriptions/Dev-Mouse-Vis-Cortex-dataset.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole mouse brain](descriptions/Zhuang_dataset.md)
   (Xiaowei Zhuang)**
@@ -61,12 +63,14 @@ notebook.
 * [**Using cells selected in the ABC Atlas**](notebooks/abc_atlas_selection_example.ipynb): learn how
   to use cells selected from an ABC Atlas visualization in your analysis.
 * [**Loading genes from expression matrix data**](notebooks/general_accessing_10x_snRNASeq_tutorial.ipynb):
-  learn how to select genes from 10X expression matricies and combine them with
+  learn how to select genes from 10X expression matrices and combine them with
   the cell metadata.
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/notebook_subtitle1.md)
   (Hongkui Zeng)**
 * **[Consensus Whole Mouse Brain Notebooks](descriptions/Consensus-WMB-notebooks.md) (Evan Macosko, Hongkui Zeng)**
 * **[Aging Mouse transcriptomic cell type atlas](descriptions/Zeng_Aging_Mouse_notebooks.md)
+  (Hongkui Zeng)**
+* **[Developing Mouse - Visual Cortex](descriptions/Dev-Mouse-Vis-Cortex-notebooks.md)
   (Hongkui Zeng)**
 * **[A molecularly defined and spatially resolved cell atlas of the whole
   mouse brain](descriptions/notebook_subtitle4.md)
@@ -80,7 +84,12 @@ notebook.
 
 
 ## Release Notes
-* **[Add HMBA-BG spatial data. Update HMBA-BG 10X taxonomy, data, and metadata and MapMyCells files (version 20251031), abc_atlas_access (v1.1.0)]**
+* **[Add Developing Mouse - Visual Cortex data (version 20260131), abc_atlas_access (v1.2.0)]**
+  * Add Developing Mouse - Visual Cortex dataset.
+    * ~500 thousand, single cells in the visual cortex from 53 mice ranging in age from embryo to adult.
+    * Taxonomy across cross this range of ages in a 4 level hierarchy
+    containing 714 clusters
+* **[Add Consensus Whole Mouse Brain datasets (version 20251031), abc_atlas_access (v1.1.0)]**
   * Add Consensus Whole Mouse brain datasets.
     * New Consensus-WMB-AIBS-10X, ~3.9 million, single cell metadata derived
     from the WMB-10X release hosted through this tool. This release reuses the
