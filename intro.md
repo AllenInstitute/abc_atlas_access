@@ -84,6 +84,10 @@ notebook.
 
 
 ## Release Notes
+* **[Add HMBA-Macaque-Patchseq data (version 20260228), abc_atlas_access (v1.3.0)]**
+  * Add HMBA-Macaque-PatchSeq data
+    * 717 Macaque Patch-Seq cells mapped to the HMBA-BG taxonomy.
+    * Electrophysiological and Morphological summary features for select cells.
 * **[Add Developing Mouse - Visual Cortex data (version 20260131), abc_atlas_access (v1.2.0)]**
   * Add Developing Mouse - Visual Cortex dataset.
     * ~500 thousand, single cells in the visual cortex from 53 mice ranging in age from embryo to adult.
