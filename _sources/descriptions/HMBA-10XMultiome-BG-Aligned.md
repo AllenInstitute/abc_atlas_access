@@ -13,7 +13,7 @@ page.
 These data from the basis of the cross species [Basal Ganglia (BG) taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
 
 For more information on the dataset, please refer to the following webpage:
-[Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/).
+[Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).
 
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset:
@@ -26,12 +26,14 @@ a AWS Public Dataset:
 Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
+* Single cell transcriptomes for each individual species in the
+  HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
 * Taxonomy and Clustering analysis of ~2 million single cell
   transcriptomes from the aligned dataset.
   ([HMBA-BG-taxonomy-CCN20250428](HMBA-BG-taxonomy-CCN20250428.md))
-* Single cell transcriptomes for each individual species in the
-  HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
+* 717 Macaque Patch-Seq cells with summary electro-physiology and morphology features.
+([HMBA-Macaque-PatchSeq-BG](HMBA-Macaque-PatchSeq-BG.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb):
@@ -51,3 +53,5 @@ Associated notebooks:
 [*notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb*]
 * [**Spatial transcriptomic gene expression**](../notebooks/hmba_bg_spatial_genes.ipynb):
   Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_spatial_genes.ipynb*]
+* [**Macaque Patch-Seq notebooks**](../notebooks/hmba_bg_macaque_patchseq.ipynb):
+  Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_macaque_patchseq.ipynb*]

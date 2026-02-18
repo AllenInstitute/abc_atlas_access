@@ -1,0 +1,2595 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Human-Mammalian Brain - Basal Ganglia Patchseq &#8212; Allen Brain Cell Atlas - Data Access</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hmba_bg_macaque_patchseq';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Resource Pages" href="../docs/README.html" />
+    <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression" href="hmba_bg_spatial_genes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Allen Brain Cell Atlas - Data Access
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abc_atlas_selection_example.html">Using cells selected in the ABC Atlas with Gene Expression data.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WMB_dataset.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv2.html">Whole mouse brain 10Xv2 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10Xv3.html">Whole mouse brain 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10XMulti.html">Whole mouse brain 10XMulti single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-10X.html">Clustering analysis of whole adult mouse brain 10X single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-taxonomy.html">Whole adult mouse brain taxonomy of cell types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-imputed.html">Imputed MERFISH spatial transcriptomics of a single adult mouse brain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WMB-neighborhoods.html">Cluster groups and neighborhood specific UMAP embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Allen-CCF-2020.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/MERFISH-C57BL6J-638850-CCF.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_dataset.html">Aging Mouse dataset (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_10Xv3.html">Zeng Aging Mouse 10Xv3 single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_taxonomy.html">Zeng Aging Mouse clustering and mapping to the WMB taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zhuang_dataset.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-1.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-2.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-3.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Zhuang-ABCA-4.html">MERFISH spatial transcriptomics dataset of a single adult mouse brain (Zhuang-ABCA-4)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-dataset.html">Consensus Whole Mouse Brain dataset (Macosko, Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-10X.html">Consensus Whole Mouse Brain single cell/nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Consensus-WMB-taxonomy.html">Consensus Whole Mouse Brain integrated taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-dataset.html">Developing Mouse - Visual Cortex</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-10X.html">Developing Mouse - Visual Cortex single cell transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-taxonomy.html">Developing Mouse - Visual Cortex taxonomy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_dataset.html">Human whole-brain transcriptomic cell type atlas (Kimberly Siletti)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10Xv3.html">Human brain 10Xv3 single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-10X-clustering.html">Clustering analysis of whole human brain 10X single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/WHB-taxonomy.html">Human brain taxonomy of cell types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_dataset.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-10X.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/ASAP-PMDBS-MapMyCells.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain (WHB) and Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD) Taxonomies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle1.html">Mouse whole-brain transcriptomic cell type atlas (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="cluster_annotation_tutorial.html">10x RNA-seq clustering analysis and annotation (CCN20230722)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle2.html">10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_1.html">10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2a.html">10x RNA-seq gene expression data (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10x_snRNASeq_tutorial_part_2b.html">10x RNA-seq gene expression data (part 2b)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle3.html">MERFISH whole brain spatial transcriptomics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_1.html">MERFISH whole brain spatial transcriptomics (part 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2a.html">MERFISH whole brain spatial transcriptomics (part 2a)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_tutorial_part_2b.html">MERFISH whole brain spatial transcriptomics (part 2b)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merfish_imputed_genes_example.html">MERFISH whole brain spatial transcriptomics cells with imputed genes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_groups_and_embeddings_tutorial.html">Cluster neighborhoods and embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluster_neighborhood_gallery.html">Cell type neighborhood gallery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccf_and_parcellation_annotation_tutorial.html">Allen Mouse Common Coordinate Framework (2020 version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merfish_ccf_registration_tutorial.html">MERFISH CCF mapped coordinates</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Consensus-WMB-notebooks.html">Consensus Mouse notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_clustering_analysis_and_annotation.html">Consensus Whole Mouse Brain #1: Clustering and Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consensus_mouse_10X_snRNASeq.html">Consensus Whole Mouse Brain #2: 10X gene expression</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Dev-Mouse-Vis-Cortex-notebooks.html">Developing Mouse - Visual Cortex notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_mouse_vis_cortex_clustering_analysis_and_annotation.html">Developing Mouse - Visual Cortex 10X scRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev_mouse_vis_cortex_10X_scRNASeq.html">Developing Mouse - Visual Cortex: 10X gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/Zeng_Aging_Mouse_notebooks.html">Aging Mouse Notebooks (Hongkui Zeng)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_clustering_analysis_and_annotation.html">Mouse Aging clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Zeng_Aging_Mouse_10x_snRNASeq_tutorial.html">Mouse Aging 10X RNA-seq gene expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/notebook_subtitle4.html">A molecularly defined and spatially resolved cell atlas of the whole mouse brain (Xiaowei Zhuang)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="zhuang_merfish_tutorial.html">MERFISH whole mouse brain spatial transcriptomics (Xiaowei Zhuang)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/WHB_notebooks.html">Whole Human Brain 10x scRNA-seq gene expression data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="WHB_cluster_annotation_tutorial.html">Whole Human Brain 10x RNA-seq clustering analysis and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_1.html">Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WHB-10x_snRNASeq_tutorial_part_2.html">Whole Human Brain 10x RNA-seq gene expression data (part 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/ASAP-PMDBS_notebooks.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (ASAP-PMDBS) Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_data_and_metadata.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Data Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_siletti_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the Whole Human Brain Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_seaad_taxonomy.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Mapping to the SEA-AD Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asap_pmdbs_gene_expression.html">ASAP Human Postmortem-Derived Brain Sequencing Collection (PMDBS): Gene Expression</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../descriptions/HMBA-BG_notebooks.html">Human-Mammalian Brain - Basal Ganglia: Notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_clustering_analysis_and_annotation.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_10X_snRNASeq_tutorial.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ADDITIONAL RESOURCES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docs/README.html">Resource Pages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docs/abbreviation_terms/README.html">Abbreviation lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AllenInstitute/abc_atlas_access/issues/new?title=Issue%20on%20page%20%2Fnotebooks/hmba_bg_macaque_patchseq.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/hmba_bg_macaque_patchseq.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Human-Mammalian Brain - Basal Ganglia Patchseq</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-data">Gene expression data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-heatmap-expression-data">Plotting heatmap expression data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-gene-expression-for-selected-genes-by-roi">Visualize gene expression for selected genes by ROI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-mapping">Taxonomy mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-gene-expression-for-selected-genes-by-the-hmba-bg-taxonomy">Visualize gene expression for selected genes by the HMBA-BG taxonomy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-features">Other Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electrophysiological-features">Electrophysiological features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morphological-features">Morphological Features</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-patchseq">
+<h1>Human-Mammalian Brain - Basal Ganglia Patchseq<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-patchseq" title="Link to this heading">#</a></h1>
+<p>The basal ganglia (BG) constitute a system of interconnected brain structures that play a crucial role in motor control, learning, behavior, and emotion. These structures are implicated in numerous disorders affecting human health, including Parkinson’s disease, Huntington’s disease, and substance abuse disorders. Despite their importance, little is known about the cellular-level functional properties of the BG in humans and translationally relevant primate species. To address this gap, we performed Patch-seq experiments – integrating patch clamp electrophysiology with single cell RNA-sequencing anchored in the high-resolution, cross-species HMBA consensus basal ganglia cell type taxonomy. This approach enables us to reveal the morpho-electric properties of transcriptomically-defined striatal cell types in primates. Following electrophysiological characterization, nuclei were aspirated for RNA sequencing (SMART-Seq v4), and transcriptomic profiles were mapped to the consensus taxonomy. Each sample was assigned spatial coordinates within an anatomical reference, and cells with high-quality fills and mappings were subsequently reconstructed to obtain morphological features. The data derive from macaque (Macaca mulatta and Macaca nemestrina) striatal tissue obtained through a Tissue Distribution Program. These data are directly comparable to mouse basal ganglia datasets collected using the same protocols.</p>
+<p>Patch-seq samples were mapped to striatal neuronal types using the Hierarchical Approximate Nearest Neighbor (HANN) method implemented in the <a class="reference external" href="https://brain-map.org/bkp/analyze/mapmycells">Allen Institute MapMyCells package</a>, excluding non-neuronal types. After applying quality control to the mapping results, 717 macaque samples were retained. For more information on the taxonomy, please refer to the following webpage: <a class="reference external" href="https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/">Mammalian Basal Ganglia Consensus Cell Type Atlas</a>. Additionally, you can see the associated notebooks linked at the end of this page.</p>
+<p>In this notebook, we’ll look at gene expression for these 717 Macaque cells for different regions and taxonomy assignments. We’ll also look at the electrophysiology and morphology summary stats as a function of the taxonomy.</p>
+<p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.abc_project_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbcProjectCache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc_atlas_access.abc_atlas_cache.anndata_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_gene_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will interact with the data using the <strong>AbcProjectCache</strong>. This cache object tracks which data has been downloaded and serves the path to the requested data on disk. For metadata, the cache can also directly serve a up a Pandas DataFrame. See the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html"><code class="docutils literal notranslate"><span class="pre">getting_started</span></code></a> notebook for more details on using the cache including installing the cache if it has not already been.</p>
+<p><strong>Change the download_base variable to where you would like to download the data in your system.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span>
+    <span class="n">download_base</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260228/manifest.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cell-metadata">
+<h2>Cell metadata<a class="headerlink" href="#cell-metadata" title="Link to this heading">#</a></h2>
+<p>Below we load the metadata associated with the individual patchseq cells and donor and library metadata. We join the donor and library data into the cell_metadata, this gives us e.g. donor_sex, donor_age information and region of interest labels from the library information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+
+<span class="n">macaque_donor</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;donor&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;donor_label&#39;</span><span class="p">)</span>
+
+<span class="n">macaque_library</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;library&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;library_label&#39;</span><span class="p">)</span>
+
+<span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">macaque_donor</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;donor_label&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_donor&#39;</span><span class="p">)</span>
+<span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">macaque_library</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;library_label&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_library&#39;</span><span class="p">)</span>
+<span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 109k/109k [00:00&lt;00:00, 998kMB/s]
+donor.csv: 100%|██████████| 6.56k/6.56k [00:00&lt;00:00, 77.2kMB/s]
+library.csv: 100%|██████████| 142k/142k [00:00&lt;00:00, 919kMB/s]  
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>library_label</th>
+      <th>library_aliquot_label</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>donor_label</th>
+      <th>dataset_label</th>
+      <th>feature_matrix_label</th>
+      <th>alignment_id</th>
+      <th>donor_age_value</th>
+      <th>donor_age_unit</th>
+      <th>age_at_death_reference_point</th>
+      <th>...</th>
+      <th>library_aliquot_label_library</th>
+      <th>barcoded_cell_sample_label_library</th>
+      <th>barcoded_cell_sample_technique</th>
+      <th>amplified_cdna_label</th>
+      <th>tissue_sample_local_name</th>
+      <th>donor_label_library</th>
+      <th>region_of_interest_label</th>
+      <th>region_of_interest_id</th>
+      <th>library_aliquot_nhash_id</th>
+      <th>library_nhash_id</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>QN22.26.002.14.05.04</th>
+      <td>L8S4_220222_04_H05</td>
+      <td>AB-S40302_S424_E1-50</td>
+      <td>P4S4_220131_155_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710839</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>AB-S40302_S424_E1-50</td>
+      <td>P4S4_220131_155_A01</td>
+      <td>PatchSeq-SmartSeq</td>
+      <td>A8S4_220215_06_H05</td>
+      <td>QN22.26.002.14.05</td>
+      <td>QN22.26.002</td>
+      <td>Ca</td>
+      <td>HOMBA:10334</td>
+      <td>LA-JEACHN795730XCYBFE242803</td>
+      <td>LI-JEACHN795730</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.05</th>
+      <td>L8S4_220222_04_A06</td>
+      <td>AB-S40302_S425_E1-50</td>
+      <td>P4S4_220131_156_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710837</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>AB-S40302_S425_E1-50</td>
+      <td>P4S4_220131_156_A01</td>
+      <td>PatchSeq-SmartSeq</td>
+      <td>A8S4_220215_06_A06</td>
+      <td>QN22.26.002.14.05</td>
+      <td>QN22.26.002</td>
+      <td>Ca</td>
+      <td>HOMBA:10334</td>
+      <td>LA-WCXYWT453000XCYBFE242803</td>
+      <td>LI-WCXYWT453000</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.06</th>
+      <td>L8S4_220222_04_B06</td>
+      <td>AB-S40302_S426_E1-50</td>
+      <td>P4S4_220131_157_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710836</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>AB-S40302_S426_E1-50</td>
+      <td>P4S4_220131_157_A01</td>
+      <td>PatchSeq-SmartSeq</td>
+      <td>A8S4_220215_06_B06</td>
+      <td>QN22.26.002.14.05</td>
+      <td>QN22.26.002</td>
+      <td>Ca</td>
+      <td>HOMBA:10334</td>
+      <td>LA-JMJMOH539975XCYBFE242803</td>
+      <td>LI-JMJMOH539975</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.08</th>
+      <td>L8S4_220222_04_C06</td>
+      <td>AB-S40302_S427_E1-50</td>
+      <td>P4S4_220131_158_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710835</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>AB-S40302_S427_E1-50</td>
+      <td>P4S4_220131_158_A01</td>
+      <td>PatchSeq-SmartSeq</td>
+      <td>A8S4_220215_06_C06</td>
+      <td>QN22.26.002.14.05</td>
+      <td>QN22.26.002</td>
+      <td>Ca</td>
+      <td>HOMBA:10334</td>
+      <td>LA-NJMQPI138328XCYBFE242803</td>
+      <td>LI-NJMQPI138328</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.09</th>
+      <td>L8S4_220222_04_D06</td>
+      <td>AB-S40302_S428_E1-50</td>
+      <td>P4S4_220131_159_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710834</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>AB-S40302_S428_E1-50</td>
+      <td>P4S4_220131_159_A01</td>
+      <td>PatchSeq-SmartSeq</td>
+      <td>A8S4_220215_06_D06</td>
+      <td>QN22.26.002.14.05</td>
+      <td>QN22.26.002</td>
+      <td>Ca</td>
+      <td>HOMBA:10334</td>
+      <td>LA-HIEYXR972206XCYBFE242803</td>
+      <td>LI-HIEYXR972206</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div></div></div>
+</div>
+<p>We load a value set table that defines colors for various features in the dataset as well as orders for those feature terms. We use these orders later in this notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_sets</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;value_sets&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+<span class="n">value_sets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 1.68k/1.68k [00:00&lt;00:00, 26.1kMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>table</th>
+      <th>field</th>
+      <th>description</th>
+      <th>order</th>
+      <th>external_identifier</th>
+      <th>parent_label</th>
+      <th>color_hex_triplet</th>
+    </tr>
+    <tr>
+      <th>label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>donor</td>
+      <td>donor_sex</td>
+      <td>Female</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>#565353</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>donor</td>
+      <td>donor_sex</td>
+      <td>Male</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>#ADC4C3</td>
+    </tr>
+    <tr>
+      <th>Human</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Human</td>
+      <td>1</td>
+      <td>NCBITaxon:9605</td>
+      <td>NaN</td>
+      <td>#377eb8</td>
+    </tr>
+    <tr>
+      <th>Macaque</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Macaque</td>
+      <td>2</td>
+      <td>NCBITaxon:9539</td>
+      <td>NaN</td>
+      <td>#4daf4a</td>
+    </tr>
+    <tr>
+      <th>Marmoset</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Marmoset</td>
+      <td>3</td>
+      <td>NCBITaxon:9481</td>
+      <td>NaN</td>
+      <td>#FF5F5D</td>
+    </tr>
+    <tr>
+      <th>Squirrel monkey</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Squirrel monkey</td>
+      <td>4</td>
+      <td>NCBITaxon:9520</td>
+      <td>NaN</td>
+      <td>#ffa300</td>
+    </tr>
+    <tr>
+      <th>Mouse</th>
+      <td>donor</td>
+      <td>species_genus</td>
+      <td>Mouse</td>
+      <td>5</td>
+      <td>NCBITaxon:10088</td>
+      <td>NaN</td>
+      <td>#c941a7</td>
+    </tr>
+    <tr>
+      <th>Homo sapiens</th>
+      <td>donor</td>
+      <td>species_scientific_name</td>
+      <td>Homo sapiens</td>
+      <td>1</td>
+      <td>NCBITaxon:9606</td>
+      <td>NaN</td>
+      <td>#377eb8</td>
+    </tr>
+    <tr>
+      <th>Macaca mulatta</th>
+      <td>donor</td>
+      <td>species_scientific_name</td>
+      <td>Macaca mulatta</td>
+      <td>2</td>
+      <td>NCBITaxon:9544</td>
+      <td>NaN</td>
+      <td>#4daf4a</td>
+    </tr>
+    <tr>
+      <th>Macaca nemestrina</th>
+      <td>donor</td>
+      <td>species_scientific_name</td>
+      <td>Macaca nemestrina</td>
+      <td>3</td>
+      <td>NCBITaxon:9545</td>
+      <td>NaN</td>
+      <td>#b2df8a</td>
+    </tr>
+    <tr>
+      <th>Callithrix jacchus</th>
+      <td>donor</td>
+      <td>species_scientific_name</td>
+      <td>Callithrix jacchus</td>
+      <td>4</td>
+      <td>NCBITaxon:9483</td>
+      <td>NaN</td>
+      <td>#FF5F5D</td>
+    </tr>
+    <tr>
+      <th>Saimiri sciureus</th>
+      <td>donor</td>
+      <td>species_scientific_name</td>
+      <td>Saimiri sciureus</td>
+      <td>5</td>
+      <td>NCBITaxon:9521</td>
+      <td>NaN</td>
+      <td>#FF5F5D</td>
+    </tr>
+    <tr>
+      <th>Mus musculus</th>
+      <td>donor</td>
+      <td>species_scientific_name</td>
+      <td>Mus musculus</td>
+      <td>6</td>
+      <td>NCBITaxon:10090</td>
+      <td>NaN</td>
+      <td>#ffa300</td>
+    </tr>
+    <tr>
+      <th>STR</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>striatum (neostriatum)</td>
+      <td>1</td>
+      <td>HOMBA:10333</td>
+      <td>NaN</td>
+      <td>#048359</td>
+    </tr>
+    <tr>
+      <th>DS</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>dorsal striatum (caudoputamen complex-CP, STRd)</td>
+      <td>2</td>
+      <td>HOMBA:AA30192</td>
+      <td>STR</td>
+      <td>#ff399a</td>
+    </tr>
+    <tr>
+      <th>Ca</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>caudate nucleus (mediodorsal division of the CP)</td>
+      <td>3</td>
+      <td>HOMBA:10334</td>
+      <td>DS</td>
+      <td>#ff6b9a</td>
+    </tr>
+    <tr>
+      <th>Pu</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>putamen (lateroventral division of the CP)</td>
+      <td>4</td>
+      <td>HOMBA:10338</td>
+      <td>DS</td>
+      <td>#9ba2ff</td>
+    </tr>
+    <tr>
+      <th>VS</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>ventral striatum (STRv)</td>
+      <td>5</td>
+      <td>HOMBA:AA30195</td>
+      <td>STR</td>
+      <td>#ffe119</td>
+    </tr>
+    <tr>
+      <th>NAC</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>nucleus accumbens</td>
+      <td>6</td>
+      <td>HOMBA:10339</td>
+      <td>VS</td>
+      <td>#c29515</td>
+    </tr>
+    <tr>
+      <th>ic</th>
+      <td>library</td>
+      <td>region_of_interest_label</td>
+      <td>internal capsule</td>
+      <td>7</td>
+      <td>HOMBA:10581</td>
+      <td>NaN</td>
+      <td>#ffd7b4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We define a convenience function to add colors for the various values in the data (e.g. unique region of interest or donor sex values).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extract_value_set</span><span class="p">(</span><span class="n">cell_metadata_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">input_value_set</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">input_value_set_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add color and order columns to the cell metadata dataframe based on the input</span>
+<span class="sd">    value set.</span>
+
+<span class="sd">    Columns are added as {input_value_set_label}_color and {input_value_set_label}_order.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cell_metadata_df : pd.DataFrame</span>
+<span class="sd">        DataFrame containing cell metadata.</span>
+<span class="sd">    input_value_set : pd.DataFrame</span>
+<span class="sd">        DataFrame containing the value set information.</span>
+<span class="sd">    input_value_set_label : str</span>
+<span class="sd">        The column name to extract color and order information for. The information will then be added to</span>
+<span class="sd">        the cell metadata.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
+        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
+        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use our function to add the relevant color and order columns to our cell_metadata table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add region of interest color and order</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">macaque_cell_metadata</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gene-expression-data">
+<h2>Gene expression data<a class="headerlink" href="#gene-expression-data" title="Link to this heading">#</a></h2>
+<p>Now we extract expression for specific genes from the h5ad files and pair it with our gene metadata. In general, we can use the function <code class="docutils literal notranslate"><span class="pre">get_gene_data</span></code> to extract the expression of specific genes for all the cells in a given dataset or a subset of cells. For more details on using this convenience function, see the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html">Accessing 10x RNA-seq gene expression data</a> tutorial notebook.</p>
+<p>For this tutorial we will use precomputed tables of the expression for specific genes to compare expression by spatial location or by transcriptomic group.</p>
+<p>To use the gene expression data, we first load the set of genes for the patch-seq data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_genes</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;gene_identifier&#39;</span><span class="p">)</span>
+<span class="n">macaque_genes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 3.33M/3.33M [00:00&lt;00:00, 9.36MMB/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gene_symbol</th>
+      <th>description</th>
+      <th>gene_id</th>
+      <th>molecular_type</th>
+      <th>synonym</th>
+    </tr>
+    <tr>
+      <th>gene_identifier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NCBIGene:712737</th>
+      <td>A1BG</td>
+      <td>alpha-1-B glycoprotein</td>
+      <td>712737</td>
+      <td>protein_coding</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>NCBIGene:703806</th>
+      <td>A1CF</td>
+      <td>APOBEC1 complementation factor</td>
+      <td>703806</td>
+      <td>protein_coding</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>NCBIGene:716616</th>
+      <td>A2ML1</td>
+      <td>alpha-2-macroglobulin like 1</td>
+      <td>716616</td>
+      <td>protein_coding</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>NCBIGene:711045</th>
+      <td>A3GALT2</td>
+      <td>alpha 1,3-galactosyltransferase 2</td>
+      <td>711045</td>
+      <td>protein_coding</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>NCBIGene:710998</th>
+      <td>A4GALT</td>
+      <td>alpha 1,4-galactosyltransferase</td>
+      <td>710998</td>
+      <td>protein_coding</td>
+      <td>[]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Below we list the genes we will use in this notebook and the example method used to load the expression for these specific genes from the h5ad file. More details on how to extract specific genes from the data see our <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/general_accessing_10x_snRNASeq_tutorial.html">accessing gene expression data tutorial</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;WFS1&quot;</span><span class="p">,</span> <span class="s2">&quot;CNR1&quot;</span><span class="p">,</span> <span class="s2">&quot;CHRM3&quot;</span><span class="p">,</span> <span class="s2">&quot;MYO16&quot;</span><span class="p">,</span> <span class="s2">&quot;PTHLH&quot;</span><span class="p">,</span> <span class="s2">&quot;DRD1&quot;</span><span class="p">,</span> <span class="s2">&quot;DRD2&quot;</span><span class="p">,</span> <span class="s2">&quot;TAC3&quot;</span><span class="p">,</span> <span class="s2">&quot;SST&quot;</span><span class="p">]</span> 
+
+<span class="n">macaque_gene_data</span> <span class="o">=</span> <span class="n">get_gene_data</span><span class="p">(</span>
+    <span class="n">abc_atlas_cache</span><span class="o">=</span><span class="n">abc_cache</span><span class="p">,</span>
+    <span class="n">all_cells</span><span class="o">=</span><span class="n">macaque_cell_metadata</span><span class="p">,</span>
+    <span class="n">all_genes</span><span class="o">=</span><span class="n">macaque_genes</span><span class="p">,</span>
+    <span class="n">selected_genes</span><span class="o">=</span><span class="n">gene_names</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;log2&#39;</span>
+<span class="p">)</span>
+<span class="n">macaque_gene_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loading file: HMBA-Macaque-PatchSeq-BG
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-Macaque-PatchSeq-BG-log2.h5ad: 100%|██████████| 63.8M/63.8M [00:02&lt;00:00, 23.9MMB/s]  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - time taken:  0.115348
+total time taken: 0.905653
+	total cells: 717 processed cells: 717
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>gene_symbol</th>
+      <th>CHRM3</th>
+      <th>CNR1</th>
+      <th>DRD1</th>
+      <th>DRD2</th>
+      <th>MYO16</th>
+      <th>PTHLH</th>
+      <th>SST</th>
+      <th>TAC3</th>
+      <th>WFS1</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>QN22.26.002.14.05.04</th>
+      <td>10.811937</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>8.153246</td>
+      <td>4.933148</td>
+      <td>3.680369</td>
+      <td>6.044661</td>
+      <td>0.0</td>
+      <td>5.300721</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.05</th>
+      <td>2.088328</td>
+      <td>5.323032</td>
+      <td>6.759345</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>4.358629</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.06</th>
+      <td>7.193662</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.467582</td>
+      <td>4.027162</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>6.536435</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.08</th>
+      <td>7.406147</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.258967</td>
+      <td>6.859893</td>
+      <td>2.354068</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>3.205592</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.09</th>
+      <td>9.808509</td>
+      <td>0.000000</td>
+      <td>8.067217</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>6.322538</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now that we’ve loaded our expression matrix tables, indexed by cell_label, we can merge them into our cell metadata tables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">macaque_gene_data</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plotting-heatmap-expression-data">
+<h3>Plotting heatmap expression data<a class="headerlink" href="#plotting-heatmap-expression-data" title="Link to this heading">#</a></h3>
+<p>We define a helper functions <em>aggregate_by_metadata</em> to compute the average expression for a given category. Note that this is a simple wrapper of the Pandas GroupBy functionality. Other summary statistics beyond just the <code class="docutils literal notranslate"><span class="pre">mean</span></code> are listed here: <a class="reference external" href="https://pandas.pydata.org/docs/reference/groupby.html#dataframegroupby-computations-descriptive-stats">https://pandas.pydata.org/docs/reference/groupby.html#dataframegroupby-computations-descriptive-stats</a></p>
+<p>We also define a function to plot the resultant averaged data in a heatmap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">aggregate_by_metadata</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">gnames</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sort</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aggregate gene expression data by metadata.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pandas.DataFrame</span>
+<span class="sd">        DataFrame containing gene expression and metadata.</span>
+<span class="sd">    gnames: List[str]</span>
+<span class="sd">        List of gene names to aggregate.</span>
+<span class="sd">    value: str</span>
+<span class="sd">        Metadata column to group by.</span>
+<span class="sd">    sort: bool</span>
+<span class="sd">        If True, sort the output by the first gene in gnames.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        DataFrame with aggregated gene expression values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">value</span><span class="p">)[</span><span class="n">gnames</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">sort</span><span class="p">:</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">gnames</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">_order&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;_order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())]]</span>
+    <span class="k">return</span> <span class="n">grouped</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_heatmap</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">fig_width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">fig_height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colormaps</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;[log2(CPM + 1)]&#39;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a heatmap from a DataFrame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pandas.DataFrame</span>
+<span class="sd">        DataFrame to plot as a heatmap.</span>
+<span class="sd">    fig_width: int</span>
+<span class="sd">        Width of the figure (inches).</span>
+<span class="sd">    fig_height: int</span>
+<span class="sd">        Height of the figure (inches).</span>
+<span class="sd">    cmap: matplotlib.colors.Colormap</span>
+<span class="sd">        Colormap to use for the heatmap.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    fig: matplotlib.pyplot.Figure</span>
+<span class="sd">        Figure object containing the heatmap.</span>
+<span class="sd">    ax: matplotlib.pyplot.Axes</span>
+<span class="sd">        Axes object containing the heatmap.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">vmax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">sm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ScalarMappable</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">()</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">xlabs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ylabs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xlabs</span><span class="p">)))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">xlabs</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ylabs</span><span class="p">)))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">ylabs</span><span class="p">)</span>
+
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sm</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-gene-expression-for-selected-genes-by-roi">
+<h3>Visualize gene expression for selected genes by ROI<a class="headerlink" href="#visualize-gene-expression-for-selected-genes-by-roi" title="Link to this heading">#</a></h3>
+<p>We plot the gene expression as a heat map showing the average expression as a function of region of interest (ROI) label. The full names for the region of interest acronyms can be found in the <code class="docutils literal notranslate"><span class="pre">values_sets</span></code> table we loaded earlier. Note that samples that were not precisely pinned anatomically were assigned to dorsal or ventral striatum based on the patch-clamp experimentalist’s original notes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DRD1&#39;</span><span class="p">,</span> <span class="s1">&#39;DRD2&#39;</span><span class="p">,</span> <span class="s1">&#39;PTHLH&#39;</span><span class="p">,</span> <span class="s1">&#39;SST&#39;</span><span class="p">,</span> <span class="s1">&#39;TAC3&#39;</span><span class="p">,</span> <span class="s1">&#39;CHRM3&#39;</span><span class="p">,</span> <span class="s1">&#39;CNR1&#39;</span><span class="p">,</span> <span class="s1">&#39;MYO16&#39;</span><span class="p">,</span> <span class="s1">&#39;WFS1&#39;</span><span class="p">]</span>
+
+<span class="n">feature_name</span> <span class="o">=</span> <span class="s2">&quot;region_of_interest_label&quot;</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">macaque_cell_metadata_with_genes</span><span class="p">,</span> <span class="n">macaque_gene_names</span><span class="p">,</span> <span class="n">feature_name</span><span class="p">)</span>
+<span class="c1"># We drop ic here as it has a very small number or cells.</span>
+<span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;ic&#39;</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># vmin and vmax set based on observed expression ranges</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Macaque - </span><span class="si">{</span><span class="n">feature_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b80f14abe1e036f198a5bbb8a62e23113f11fa4112b0d85098a1fd783ee92841.png" src="../_images/b80f14abe1e036f198a5bbb8a62e23113f11fa4112b0d85098a1fd783ee92841.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="taxonomy-mapping">
+<h2>Taxonomy mapping<a class="headerlink" href="#taxonomy-mapping" title="Link to this heading">#</a></h2>
+<p>Finally, let’s load the taxonomy information so that we can plot gene expression versus various taxons in a heatmap for each species. Below, we load and merge all the information we need to plot cell colors and taxonomy as done in the previous <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">HMBA tutorial</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">:</span> <span class="s1">&#39;Int64&#39;</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+<span class="n">cluster_annotation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term_set&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span>
+
+<span class="n">cluster_annotation_term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+
+<span class="n">cluster_to_cluster_annotation_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">cluster_to_cluster_annotation_membership</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">cluster</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)[[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span>
+<span class="p">)</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_annotation_term</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_anno_term&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">membership_groupby</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">cluster_annotation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term_set&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span>
+
+<span class="c1"># term_sets = abc_cache.get_metadata_dataframe(directory=&#39;WHB-taxonomy&#39;, file_name=&#39;cluster_annotation_term_set&#39;).set_index(&#39;label&#39;)</span>
+<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_order</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;term_order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_order</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_order</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">:</span> <span class="s1">&#39;Neighborhood_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="s1">&#39;Class_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Subclass&#39;</span><span class="p">:</span> <span class="s1">&#39;Subclass_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="s1">&#39;Group_order&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Cluster&#39;</span><span class="p">:</span> <span class="s1">&#39;Cluster_order&#39;</span><span class="p">},</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">cluster_colors</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span>
+<span class="n">cluster_colors</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The macaque patch-seq gene expression has been mapped to the HMBA-BG taxonomy using MapMyCells, excluding non-neuronal nodes. We load this table below. A more lightweight version of this table with only mappings between cells to cluster_alias. The table is named <code class="docutils literal notranslate"><span class="pre">cell_to_cluster_membership</span></code>.</p>
+<p>Below we load the complete MMC results with probabilities and correlation coefficients for all assignments at all levels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_mmc</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;mmc_results&#39;</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+<span class="n">macaque_mmc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mmc_results.csv: 100%|██████████| 201k/201k [00:00&lt;00:00, 1.42MMB/s] 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Neighborhood_label</th>
+      <th>Neighborhood_name</th>
+      <th>Neighborhood_bootstrapping_probability</th>
+      <th>Neighborhood_aggregate_probability</th>
+      <th>Neighborhood_correlation_coefficient</th>
+      <th>Class_label</th>
+      <th>Class_name</th>
+      <th>Class_bootstrapping_probability</th>
+      <th>Class_aggregate_probability</th>
+      <th>Class_correlation_coefficient</th>
+      <th>...</th>
+      <th>Group_label</th>
+      <th>Group_name</th>
+      <th>Group_bootstrapping_probability</th>
+      <th>Group_aggregate_probability</th>
+      <th>Group_correlation_coefficient</th>
+      <th>Cluster_label</th>
+      <th>cluster_alias</th>
+      <th>Cluster_bootstrapping_probability</th>
+      <th>Cluster_aggregate_probability</th>
+      <th>Cluster_correlation_coefficient</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>QN22.26.002.14.05.04</th>
+      <td>CS20250428_NEIGH_0002</td>
+      <td>Subpallium GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.7190</td>
+      <td>CS20250428_CLASS_0003</td>
+      <td>CN LGE GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.7093</td>
+      <td>...</td>
+      <td>CS20250428_GROUP_0054</td>
+      <td>STRd D2 Striosome MSN</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.5715</td>
+      <td>CS20250428_CLUST_0986</td>
+      <td>Macaque-429</td>
+      <td>1.00</td>
+      <td>1.0000</td>
+      <td>0.5615</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.05</th>
+      <td>CS20250428_NEIGH_0002</td>
+      <td>Subpallium GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.7634</td>
+      <td>CS20250428_CLASS_0003</td>
+      <td>CN LGE GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.7466</td>
+      <td>...</td>
+      <td>CS20250428_GROUP_0049</td>
+      <td>STRd D1 Matrix MSN</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.6477</td>
+      <td>CS20250428_CLUST_0949</td>
+      <td>Macaque-467</td>
+      <td>0.99</td>
+      <td>0.9900</td>
+      <td>0.5517</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.06</th>
+      <td>CS20250428_NEIGH_0002</td>
+      <td>Subpallium GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.6603</td>
+      <td>CS20250428_CLASS_0003</td>
+      <td>CN LGE GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.6376</td>
+      <td>...</td>
+      <td>CS20250428_GROUP_0054</td>
+      <td>STRd D2 Striosome MSN</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.4564</td>
+      <td>CS20250428_CLUST_0986</td>
+      <td>Macaque-429</td>
+      <td>0.62</td>
+      <td>0.6200</td>
+      <td>0.4341</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.08</th>
+      <td>CS20250428_NEIGH_0002</td>
+      <td>Subpallium GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.6162</td>
+      <td>CS20250428_CLASS_0003</td>
+      <td>CN LGE GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.5980</td>
+      <td>...</td>
+      <td>CS20250428_GROUP_0052</td>
+      <td>STRd D2 Matrix MSN</td>
+      <td>0.88</td>
+      <td>0.88</td>
+      <td>0.4317</td>
+      <td>CS20250428_CLUST_0973</td>
+      <td>Macaque-465</td>
+      <td>1.00</td>
+      <td>0.8800</td>
+      <td>0.4515</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.09</th>
+      <td>CS20250428_NEIGH_0002</td>
+      <td>Subpallium GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.6987</td>
+      <td>CS20250428_CLASS_0003</td>
+      <td>CN LGE GABA</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.6847</td>
+      <td>...</td>
+      <td>CS20250428_GROUP_0049</td>
+      <td>STRd D1 Matrix MSN</td>
+      <td>0.99</td>
+      <td>0.99</td>
+      <td>0.5025</td>
+      <td>CS20250428_CLUST_0949</td>
+      <td>Macaque-467</td>
+      <td>0.57</td>
+      <td>0.5643</td>
+      <td>0.3415</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">macaque_mmc</span><span class="p">)</span>
+<span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+<span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_color&#39;</span><span class="p">)</span>
+<span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+
+<span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>library_label</th>
+      <th>library_aliquot_label</th>
+      <th>barcoded_cell_sample_label</th>
+      <th>donor_label</th>
+      <th>dataset_label</th>
+      <th>feature_matrix_label</th>
+      <th>alignment_id</th>
+      <th>donor_age_value</th>
+      <th>donor_age_unit</th>
+      <th>age_at_death_reference_point</th>
+      <th>...</th>
+      <th>Neighborhood_color</th>
+      <th>Class_color</th>
+      <th>Subclass_color</th>
+      <th>Group_color</th>
+      <th>Cluster_color</th>
+      <th>Class_order</th>
+      <th>Cluster_order</th>
+      <th>Group_order</th>
+      <th>Neighborhood_order</th>
+      <th>Subclass_order</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>QN22.26.002.14.05.04</th>
+      <td>L8S4_220222_04_H05</td>
+      <td>AB-S40302_S424_E1-50</td>
+      <td>P4S4_220131_155_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710839</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#253c8c</td>
+      <td>#ff9896</td>
+      <td>#561430</td>
+      <td>10</td>
+      <td>1290</td>
+      <td>55</td>
+      <td>3</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.05</th>
+      <td>L8S4_220222_04_A06</td>
+      <td>AB-S40302_S425_E1-50</td>
+      <td>P4S4_220131_156_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710837</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#1655f2</td>
+      <td>#1f77b4</td>
+      <td>#b83642</td>
+      <td>10</td>
+      <td>1059</td>
+      <td>50</td>
+      <td>3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.06</th>
+      <td>L8S4_220222_04_B06</td>
+      <td>AB-S40302_S426_E1-50</td>
+      <td>P4S4_220131_157_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710836</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#253c8c</td>
+      <td>#ff9896</td>
+      <td>#561430</td>
+      <td>10</td>
+      <td>1290</td>
+      <td>55</td>
+      <td>3</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.08</th>
+      <td>L8S4_220222_04_C06</td>
+      <td>AB-S40302_S427_E1-50</td>
+      <td>P4S4_220131_158_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710835</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#253c8c</td>
+      <td>#aec7e8</td>
+      <td>#d71b39</td>
+      <td>10</td>
+      <td>1194</td>
+      <td>53</td>
+      <td>3</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>QN22.26.002.14.05.09</th>
+      <td>L8S4_220222_04_D06</td>
+      <td>AB-S40302_S428_E1-50</td>
+      <td>P4S4_220131_159_A01</td>
+      <td>QN22.26.002</td>
+      <td>HMBA-Macaque-PatchSeq</td>
+      <td>HMBA-Macaque-PatchSeq-BG</td>
+      <td>1200710834</td>
+      <td>15</td>
+      <td>years</td>
+      <td>birth</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#1655f2</td>
+      <td>#1f77b4</td>
+      <td>#b83642</td>
+      <td>10</td>
+      <td>1059</td>
+      <td>50</td>
+      <td>3</td>
+      <td>31</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 78 columns</p>
+</div></div></div>
+</div>
+<section id="visualize-gene-expression-for-selected-genes-by-the-hmba-bg-taxonomy">
+<h3>Visualize gene expression for selected genes by the HMBA-BG taxonomy<a class="headerlink" href="#visualize-gene-expression-for-selected-genes-by-the-hmba-bg-taxonomy" title="Link to this heading">#</a></h3>
+<p>Below we plot the gene expression for the cells as a function the Group level in the taxonomy they were associated with. We plot the MSNs cell-types only. We’ll also use a subset of the genes we extracted from the gene expression matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DRD1&#39;</span><span class="p">,</span> <span class="s1">&#39;DRD2&#39;</span><span class="p">,</span> <span class="s1">&#39;PTHLH&#39;</span><span class="p">,</span> <span class="s1">&#39;SST&#39;</span><span class="p">,</span> <span class="s1">&#39;TAC3&#39;</span><span class="p">,</span> <span class="s1">&#39;CHRM3&#39;</span><span class="p">,</span> <span class="s1">&#39;CNR1&#39;</span><span class="p">,</span> <span class="s1">&#39;MYO16&#39;</span><span class="p">,</span> <span class="s1">&#39;WFS1&#39;</span><span class="p">]</span>
+
+<span class="n">feature_name</span> <span class="o">=</span> <span class="s2">&quot;Group&quot;</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span>
+    <span class="n">macaque_cell_metadata_with_genes</span><span class="p">,</span>
+    <span class="n">macaque_gene_names</span><span class="p">,</span>
+    <span class="n">feature_name</span>
+<span class="p">)</span>
+
+
+<span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">7.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Macaque - </span><span class="si">{</span><span class="n">feature_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7477300dc4b16b6e2773126a78550661216dc5283a02e97913c7ea82ebf7fced.png" src="../_images/7477300dc4b16b6e2773126a78550661216dc5283a02e97913c7ea82ebf7fced.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="other-features">
+<h2>Other Features<a class="headerlink" href="#other-features" title="Link to this heading">#</a></h2>
+<p>In addition to gene expression, we also look at electrophysiology and morphology features.</p>
+<section id="electrophysiological-features">
+<h3>Electrophysiological features<a class="headerlink" href="#electrophysiological-features" title="Link to this heading">#</a></h3>
+<p>The electrophysiological features are across 4 tables: ap_features, chirp_features, cross_sweep_long_square_features, and sweep_features. In the below example, we load the ap_features table and merge it into our cell_metadata table.</p>
+<p>A full list of the electrophysiological features with some short descriptions can be downloaded <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/HMBA-Macaque-PatchSeq/20260228/electrophysiological_feature_lookup.xlsx">here</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ap_features</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;ap_features&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+
+<span class="c1"># most cells have no measurement for these features so we filter those with values just to see what the data looks like. </span>
+<span class="n">ap_features</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">ap_features</span><span class="p">[</span><span class="s1">&#39;adp_v_last_rheo&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ap_features.csv: 100%|██████████| 496k/496k [00:00&lt;00:00, 3.00MMB/s] 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>adp_v_last_rheo</th>
+      <th>ahp_delay_5spike</th>
+      <th>ahp_delay_hero</th>
+      <th>ahp_delay_ratio_5spike</th>
+      <th>ahp_delay_ratio_hero</th>
+      <th>downstroke_adapt_ratio</th>
+      <th>downstroke_hero</th>
+      <th>downstroke_ramp</th>
+      <th>downstroke_rheo</th>
+      <th>downstroke_short_square</th>
+      <th>...</th>
+      <th>width_adapt_ratio</th>
+      <th>width_hero</th>
+      <th>width_ramp</th>
+      <th>width_rheo</th>
+      <th>width_rheo_ms</th>
+      <th>width_short_square</th>
+      <th>width_suprathresh_hero</th>
+      <th>width_suprathresh_ramp</th>
+      <th>width_suprathresh_rheo</th>
+      <th>width_suprathresh_short_square</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Q21.26.003.12.03.01</th>
+      <td>-55.000004</td>
+      <td>0.021870</td>
+      <td>0.000980</td>
+      <td>0.191146</td>
+      <td>0.034789</td>
+      <td>0.879896</td>
+      <td>-267.810016</td>
+      <td>NaN</td>
+      <td>-256.109021</td>
+      <td>-277.295319</td>
+      <td>...</td>
+      <td>1.090909</td>
+      <td>0.000375</td>
+      <td>NaN</td>
+      <td>0.000385</td>
+      <td>0.385</td>
+      <td>0.000370</td>
+      <td>0.000345</td>
+      <td>NaN</td>
+      <td>0.000355</td>
+      <td>0.000335</td>
+    </tr>
+    <tr>
+      <th>Q21.26.006.14.01.04</th>
+      <td>-50.093750</td>
+      <td>0.043635</td>
+      <td>0.043635</td>
+      <td>0.237018</td>
+      <td>0.237018</td>
+      <td>0.879694</td>
+      <td>-87.819662</td>
+      <td>NaN</td>
+      <td>-88.143416</td>
+      <td>-99.554269</td>
+      <td>...</td>
+      <td>1.086124</td>
+      <td>0.001045</td>
+      <td>NaN</td>
+      <td>0.001055</td>
+      <td>1.055</td>
+      <td>0.000935</td>
+      <td>0.000945</td>
+      <td>NaN</td>
+      <td>0.000955</td>
+      <td>0.000850</td>
+    </tr>
+    <tr>
+      <th>Q21.26.009.12.01.03</th>
+      <td>-51.000004</td>
+      <td>0.155950</td>
+      <td>0.001390</td>
+      <td>0.483124</td>
+      <td>0.066763</td>
+      <td>0.900912</td>
+      <td>-179.379158</td>
+      <td>NaN</td>
+      <td>-169.956722</td>
+      <td>-191.220558</td>
+      <td>...</td>
+      <td>1.070707</td>
+      <td>0.000475</td>
+      <td>NaN</td>
+      <td>0.000485</td>
+      <td>0.485</td>
+      <td>0.000460</td>
+      <td>0.000430</td>
+      <td>NaN</td>
+      <td>0.000455</td>
+      <td>0.000415</td>
+    </tr>
+    <tr>
+      <th>Q21.26.009.12.02.03</th>
+      <td>-61.062504</td>
+      <td>0.030185</td>
+      <td>0.026850</td>
+      <td>0.120473</td>
+      <td>0.188131</td>
+      <td>0.789810</td>
+      <td>-72.779128</td>
+      <td>NaN</td>
+      <td>-69.267846</td>
+      <td>-80.596543</td>
+      <td>...</td>
+      <td>1.152610</td>
+      <td>0.001270</td>
+      <td>NaN</td>
+      <td>0.001305</td>
+      <td>1.305</td>
+      <td>0.001220</td>
+      <td>0.001175</td>
+      <td>NaN</td>
+      <td>0.001185</td>
+      <td>0.001125</td>
+    </tr>
+    <tr>
+      <th>Q21.26.009.12.01.04</th>
+      <td>-52.812500</td>
+      <td>0.037275</td>
+      <td>0.026275</td>
+      <td>0.250311</td>
+      <td>0.255842</td>
+      <td>0.982069</td>
+      <td>-73.422130</td>
+      <td>NaN</td>
+      <td>-71.413402</td>
+      <td>-79.772097</td>
+      <td>...</td>
+      <td>1.101770</td>
+      <td>0.001120</td>
+      <td>NaN</td>
+      <td>0.001140</td>
+      <td>1.140</td>
+      <td>0.001085</td>
+      <td>0.001045</td>
+      <td>NaN</td>
+      <td>0.001050</td>
+      <td>0.000990</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 57 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ap_features</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below, we create a function to create a box plot for a given feature by e.g. a taxonomy level, ROI structure, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_boxplot_by_column</span><span class="p">(</span>
+        <span class="n">dataframe</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">value_col</span>
+    <span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots a boxplot of the specified value column grouped by the specified column.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dataframe : pd.DataFrame</span>
+<span class="sd">        The input dataframe containing the data to plot.</span>
+<span class="sd">    col_name : str</span>
+<span class="sd">        The name of the column to group by.</span>
+<span class="sd">    value_col : str</span>
+<span class="sd">        The name of the column containing the values to plot.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">box_values</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">col_name</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()[</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">col_name</span><span class="si">}</span><span class="s2">_order&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="c1"># Order by the specified order column</span>
+    <span class="p">]:</span>
+        <span class="n">col_values</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dataframe</span><span class="p">[</span><span class="n">col_name</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">,</span> <span class="n">value_col</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">col_values</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">box_values</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">=</span> <span class="n">col_values</span><span class="p">[</span><span class="o">~</span><span class="n">col_values</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># Use non-NA values for the boxplot</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+        <span class="n">box_values</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span>
+        <span class="n">ticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">box_values</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">box_values</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+        <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">value_col</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value_col</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">col_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll plot the ephys feature, <code class="docutils literal notranslate"><span class="pre">width_rheo</span></code> in a boxplot against the Groups in this dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_boxplot_by_column</span><span class="p">(</span><span class="n">dataframe</span><span class="o">=</span><span class="n">macaque_cell_metadata_with_genes</span><span class="p">,</span> <span class="n">col_name</span><span class="o">=</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="n">value_col</span><span class="o">=</span><span class="s1">&#39;width_rheo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a0926e597d265f8c1687facbce71b649c82c7d045ab8201c55dd621b7d198e01.png" src="../_images/a0926e597d265f8c1687facbce71b649c82c7d045ab8201c55dd621b7d198e01.png" />
+</div>
+</div>
+</section>
+<section id="morphological-features">
+<h3>Morphological Features<a class="headerlink" href="#morphological-features" title="Link to this heading">#</a></h3>
+<p>We now load our morphological features and merge them into the cell metadata. A full list of the morphological features with short descriptions can be downloaded <a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/metadata/HMBA-Macaque-PatchSeq/20260228/morphology_features.csv">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">morphology_features</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-Macaque-PatchSeq&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;morphology_features&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+<span class="n">morphology_features</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>morphology_features.csv: 100%|██████████| 97.4k/97.4k [00:00&lt;00:00, 642kMB/s] 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>23_Sholl_PC0</th>
+      <th>23_Sholl_PC1</th>
+      <th>2_Sholl_PC0</th>
+      <th>2_Sholl_PC1</th>
+      <th>3_Sholl_PC0</th>
+      <th>3_Sholl_PC1</th>
+      <th>axon_bias_dorsal</th>
+      <th>axon_bias_medial</th>
+      <th>axon_exit_distance</th>
+      <th>axon_exit_theta_coronal</th>
+      <th>...</th>
+      <th>basal_dendrite_mean_diameter</th>
+      <th>basal_dendrite_num_branches</th>
+      <th>basal_dendrite_soma_percentile_dorsal</th>
+      <th>basal_dendrite_soma_percentile_medial</th>
+      <th>basal_dendrite_stem_exit_MedialLateral</th>
+      <th>basal_dendrite_stem_exit_dorsal</th>
+      <th>basal_dendrite_stem_exit_ventral</th>
+      <th>basal_dendrite_total_length</th>
+      <th>basal_dendrite_total_surface_area</th>
+      <th>soma_surface_area</th>
+    </tr>
+    <tr>
+      <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Q19.26.014.11.04.01</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Q19.26.014.11.01.01</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Q19.26.014.11.01.04</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>168.820400</td>
+      <td>29.150249</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.667150</td>
+      <td>...</td>
+      <td>0.573221</td>
+      <td>56.0</td>
+      <td>0.468694</td>
+      <td>0.334369</td>
+      <td>0.5</td>
+      <td>0.125</td>
+      <td>0.375</td>
+      <td>5241.027500</td>
+      <td>9442.031612</td>
+      <td>548.486434</td>
+    </tr>
+    <tr>
+      <th>Q19.26.014.11.01.05</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>282.741349</td>
+      <td>-36.067186</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.875211</td>
+      <td>...</td>
+      <td>0.565709</td>
+      <td>69.0</td>
+      <td>0.489853</td>
+      <td>0.428372</td>
+      <td>0.4</td>
+      <td>0.200</td>
+      <td>0.400</td>
+      <td>5909.886270</td>
+      <td>10526.672804</td>
+      <td>359.438955</td>
+    </tr>
+    <tr>
+      <th>Q19.26.014.11.05.01</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>276.829831</td>
+      <td>-84.814559</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.447964</td>
+      <td>...</td>
+      <td>0.609324</td>
+      <td>77.0</td>
+      <td>0.576005</td>
+      <td>0.407282</td>
+      <td>0.8</td>
+      <td>0.200</td>
+      <td>0.000</td>
+      <td>5946.308781</td>
+      <td>11421.095519</td>
+      <td>502.026310</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 39 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata_with_genes</span> <span class="o">=</span> <span class="n">macaque_cell_metadata_with_genes</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">morphology_features</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we plot the soma surface area feature against the taxonomy Group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_boxplot_by_column</span><span class="p">(</span><span class="n">dataframe</span><span class="o">=</span><span class="n">macaque_cell_metadata_with_genes</span><span class="p">,</span> <span class="n">col_name</span><span class="o">=</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="n">value_col</span><span class="o">=</span><span class="s1">&#39;soma_surface_area&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04263ddc8191f30ebbd97707c0fcc1109e1ab90ad0705d25e33b6882ecc8affb.png" src="../_images/04263ddc8191f30ebbd97707c0fcc1109e1ab90ad0705d25e33b6882ecc8affb.png" />
+</div>
+</div>
+<p>To learn more about the spatial transcriptomic data see the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">HMBA-BG Spatial Slabs and Taxonomy notebook</a>.</p>
+<p>To learn more about the taxonomy used in this notebook and the data it is derived from, see the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">HMBA-BG Clustering Analysis and Taxonomy notebook</a>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hmba_bg_spatial_genes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../docs/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Resource Pages</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-data">Gene expression data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-heatmap-expression-data">Plotting heatmap expression data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-gene-expression-for-selected-genes-by-roi">Visualize gene expression for selected genes by ROI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-mapping">Taxonomy mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-gene-expression-for-selected-genes-by-the-hmba-bg-taxonomy">Visualize gene expression for selected genes by the HMBA-BG taxonomy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-features">Other Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electrophysiological-features">Electrophysiological features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morphological-features">Morphological Features</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Allen Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

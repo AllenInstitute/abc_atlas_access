@@ -14,3 +14,4 @@
 * [HMBA-MERSCOPE-H22.30.001-BG: Human (314 genes)](HMBA-MERSCOPE-H22.30.001-BG/gene_list.html)
 * [HMBA-MERSCOPE-QM23.50.001-BG: Macaque (315 genes)](HMBA-MERSCOPE-QM23.50.001-BG/gene_list.html)
 * [HMBA-MERSCOPE-CJ23.56.004-BG: Marmoset (300 genes)](HMBA-Xenium-CJ23.56.004-BG/gene_list.html)
+* [HMBA-Macaque-PatchSeq: Macaque (39670 genes)](HMBA-Macaque-PatchSeq/gene_list.html)
