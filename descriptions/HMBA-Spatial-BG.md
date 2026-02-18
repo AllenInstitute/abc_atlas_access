@@ -12,7 +12,7 @@ enabling spatial profiling of hundreds of genes for each cell, and the mapping t
 
 These data form the basis of the cross species [Basal Ganglia (BG) taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
 
-For more information on the taxonomy, please refer to the following webpage: [Mammalian Basal Ganglia Consensus Cell Type Atlas](https://alleninstitute.github.io/HMBA_BasalGanglia_Consensus_Taxonomy/). Additionally, you can see the associated notebooks linked at the end of this page.
+For more information on the taxonomy, please refer to the following webpage: [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).. Additionally, you can see the associated notebooks linked at the end of this page.
 
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset. We'll describe each component below.
@@ -40,9 +40,9 @@ different tables, see the the spatial notebooks linked below. For the metadata, 
 of quality control and other metrics is available. You can find descriptions of the columns on the Resources page under [Supplemental Metadata Descriptions](../docs/supplemental_metadata_descriptions/README.md).
 | Component | Current Version | Size    |
 |---|--|---------|
-| Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-H22.30.001-BG/20250930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-H22.30.001-BG/20250930/) | 2.4 GB |
-| Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 1.4 GB |
-| Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/) | 762.8 MB |
+| Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-H22.30.001-BG/20260228/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-H22.30.001-BG/20260228/) | 4.2 GB |
+| Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/) | 2.5 GB |
+| Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/) | 1.2 GB |
 
 The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data.”
 | Component | Current Version | Size    |
@@ -63,6 +63,8 @@ Related resources:
   ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
 * Single cell transcriptomes for each individual species in the
   HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
+* 717 Macaque Patch-Seq cells with summary electro-physiology and morphology features.
+([HMBA-Macaque-PatchSeq-BG](HMBA-Macaque-PatchSeq-BG.md))
 
 
 Associated notebooks:

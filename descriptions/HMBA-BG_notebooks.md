@@ -12,3 +12,5 @@
 [*notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb*]
 * [**Spatial transcriptomic gene expression**](../notebooks/hmba_bg_spatial_genes.ipynb):
   Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_spatial_genes.ipynb*]
+* [**Macaque Patch-Seq notebooks**](../notebooks/hmba_bg_macaque_patchseq.ipynb):
+  Interact with HMBA-BG spatial transcriptomic gene expression data. [*notebooks/hmba_bg_macaque_patchseq.ipynb*]
