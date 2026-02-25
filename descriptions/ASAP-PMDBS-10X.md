@@ -21,9 +21,7 @@ low-quality cells were filtered out. A set of highly variable genes were
 identified and the scVI workflow resulted in an integrated latent variable
 representation, 2D UMAP coordinates and a set of 30 clusters. Currently, the
 repository spans roughly 3 millions cells obtained from 9 brain regions and 211
-donors with various pathologies (including healthy control). For more details
-on this dataset and to access the raw data used in its preparation, please
-visit the [ASAP CRN Cloud webpage](https://cloud.parkinsonsroadmap.org/collections/postmortem-derived-brain-sequencing-collection/overview).
+donors with various pathologies (including healthy control). For more details the specific version of the dataset we use here, please see [ASAP CRN Cloud Release v2.0.0](https://zenodo.org/records/14270014).
 
 The simplified data created by AIBS in the form of expression matrices and
 associated metadata are hosted on AWS S3 bucket as a AWS Public Dataset:
