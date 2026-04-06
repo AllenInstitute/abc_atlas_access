@@ -84,6 +84,11 @@ notebook.
 
 
 ## Release Notes
+* **[Bug fix release (version 2026031), abc_atlas_access (v1.3.11)]**
+  * HMBA-10XMultiome-BG-Aligned
+    * Fixed issue with h5ad files having the incorrect normalization. raw is now correctly counts and log2 is log2(CPM+1)
+  * Dev-Mouse-Vis-Cortex-taxonomy
+    * Fixed issue with sub cluster label numbers in cluster.csv and cell_to_cluster_membership.csv
 * **[Add HMBA-Macaque-Patchseq data (version 20260228), abc_atlas_access (v1.3.0)]**
   * Add HMBA-Macaque-PatchSeq data
     * 717 Macaque Patch-Seq cells mapped to the HMBA-BG taxonomy.
