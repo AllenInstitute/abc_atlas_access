@@ -84,7 +84,7 @@ notebook.
 
 
 ## Release Notes
-* **[Bug fix release (version 2026031), abc_atlas_access (v1.3.11)]**
+* **[Bug fix release (version 2026031), abc_atlas_access (v1.3.1)]**
   * HMBA-10XMultiome-BG-Aligned
     * Fixed issue with h5ad files having the incorrect normalization. raw is now correctly counts and log2 is log2(CPM+1)
   * Dev-Mouse-Vis-Cortex-taxonomy
