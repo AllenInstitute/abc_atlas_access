@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -65,6 +68,7 @@
     <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia: Notebooks" href="../descriptions/HMBA-BG_notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,21 +148,17 @@
     
     
     <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
-    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -327,9 +316,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -459,7 +453,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -473,25 +467,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -571,7 +557,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20251031/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260331/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -634,7 +620,7 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 425M/425M [01:19&lt;00:00, 5.32MMB/s]    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 425M/425M [00:27&lt;00:00, 15.4MMB/s]    
 /Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
   return pd.read_csv(path, **kwargs)
 </pre></div>
@@ -806,7 +792,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 1.97k/1.97k [00:00&lt;00:00, 30.3kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 1.97k/1.97k [00:00&lt;00:00, 30.7kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -919,7 +905,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 85.3k/85.3k [00:00&lt;00:00, 474kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 85.3k/85.3k [00:00&lt;00:00, 421kMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1257,7 +1243,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.16k/4.16k [00:00&lt;00:00, 31.7kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.16k/4.16k [00:00&lt;00:00, 57.0kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1603,7 +1589,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 86.7M/86.7M [00:14&lt;00:00, 5.85MMB/s]  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 86.7M/86.7M [00:11&lt;00:00, 7.44MMB/s]  
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1772,7 +1758,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3f4680c607cdaa8b862c9d62c16196547dc68470714b2a18f3f42ee9a7890be8.png" src="../_images/3f4680c607cdaa8b862c9d62c16196547dc68470714b2a18f3f42ee9a7890be8.png" />
+<img alt="../_images/fd61a0bd3bdff9a258543051533407afd9fd715d83f3f5ddb1d208b8ede37d48.png" src="../_images/fd61a0bd3bdff9a258543051533407afd9fd715d83f3f5ddb1d208b8ede37d48.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1792,7 +1778,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cfb6985eaba7fd71b784d091aa803d285c1b916160f1e2d6a0d5e3ef46eb01f3.png" src="../_images/cfb6985eaba7fd71b784d091aa803d285c1b916160f1e2d6a0d5e3ef46eb01f3.png" />
+<img alt="../_images/d562f3ff73a0cd82eaff4187923e80fb95a5d0fb7936bcf63ad70ca794565fee.png" src="../_images/d562f3ff73a0cd82eaff4187923e80fb95a5d0fb7936bcf63ad70ca794565fee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1812,7 +1798,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3a30604afc2f41a5666fe2e4ce273a9aa69795caa32782c5b6707146f15cd2e.png" src="../_images/c3a30604afc2f41a5666fe2e4ce273a9aa69795caa32782c5b6707146f15cd2e.png" />
+<img alt="../_images/6b1e05ff382ac9580edcec2e4501eeee909f3716d214e8d2c5a374875965d70c.png" src="../_images/6b1e05ff382ac9580edcec2e4501eeee909f3716d214e8d2c5a374875965d70c.png" />
 </div>
 </div>
 <p>Below we show the region of interest for the three species. Note, however, that Marmoset does not have fine grained ROIs available and is marked as <code class="docutils literal notranslate"><span class="pre">Br</span> <span class="pre">-</span> <span class="pre">Brain</span></code>.</p>
@@ -1833,7 +1819,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f3ad41c764a7e10c935bac46b1ccdca19f203a3ed42ed6cf0876f42720b0393.png" src="../_images/9f3ad41c764a7e10c935bac46b1ccdca19f203a3ed42ed6cf0876f42720b0393.png" />
+<img alt="../_images/7e709e08c3c4c22ed60fb3d79b67cd53a7e5ae3e600ae0a73391309d1db973c3.png" src="../_images/7e709e08c3c4c22ed60fb3d79b67cd53a7e5ae3e600ae0a73391309d1db973c3.png" />
 </div>
 </div>
 </section>
@@ -1854,7 +1840,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 79.9k/79.9k [00:00&lt;00:00, 485kMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 79.9k/79.9k [00:00&lt;00:00, 421kMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1926,7 +1912,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 223/223 [00:00&lt;00:00, 3.37kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 223/223 [00:00&lt;00:00, 3.63kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2005,7 +1991,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 206k/206k [00:00&lt;00:00, 921kMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 206k/206k [00:00&lt;00:00, 1.13MMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2134,7 +2120,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 539k/539k [00:00&lt;00:00, 2.07MMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 539k/539k [00:00&lt;00:00, 2.69MMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2555,7 +2541,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 111M/111M [00:19&lt;00:00, 5.54MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 111M/111M [00:06&lt;00:00, 18.0MMB/s]   
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2697,113 +2683,17 @@ Number of unique abc_sample_id = 1863243
   </thead>
   <tbody>
     <tr>
-      <th>CGGAATCGTTAAGCCA-911_A03</th>
-      <td>CGGAATCGTTAAGCCA</td>
-      <td>Q21.26.010</td>
-      <td>911_A03</td>
-      <td>L8XR_211104_02_A11</td>
-      <td>56a3779592d1a5f694aed91af2c315df789dd3fb</td>
-      <td>0.14</td>
-      <td>10664.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>2fb8690e-8309-456d-8af7-a80f65c79c95</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#253c8c</td>
-      <td>#aec7e8</td>
-      <td>#c8c254</td>
-      <td>10</td>
-      <td>1193</td>
-      <td>53</td>
-      <td>3</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>TCCATCATCGGCTATG-2021_B04</th>
-      <td>TCCATCATCGGCTATG</td>
-      <td>QM23.50.002</td>
-      <td>2021_B04</td>
-      <td>L8XR_240118_21_A03</td>
-      <td>1ab73e9c3d2154ea04c1c06cabe46d93b5be2969</td>
-      <td>0.00</td>
-      <td>3646.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>43bab3bc-fced-4652-ad3d-c3613efd675f</td>
-      <td>...</td>
-      <td>#a8afa5</td>
-      <td>#594a26</td>
-      <td>#594a26</td>
-      <td>#594a26</td>
-      <td>#69e4a2</td>
-      <td>3</td>
-      <td>163</td>
-      <td>10</td>
-      <td>1</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>ATCTATGAGAACAAGT-P0053_1</th>
-      <td>ATCTATGAGAACAAGT</td>
-      <td>CJ24.56.001</td>
-      <td>P0053_1</td>
-      <td>LPLCXR_240710_1_G5</td>
-      <td>241212</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>1365bddb-7927-4eb7-a01c-b864032cc14b</td>
-      <td>...</td>
-      <td>#91f4bb</td>
-      <td>#7d0f09</td>
-      <td>#39e1e2</td>
-      <td>#f57e20</td>
-      <td>#5723dd</td>
-      <td>5</td>
-      <td>306</td>
-      <td>18</td>
-      <td>2</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>CGTACGGGTTCAAGCA-911_B03</th>
-      <td>CGTACGGGTTCAAGCA</td>
-      <td>Q19.26.010</td>
-      <td>911_B03</td>
-      <td>L8XR_211104_02_D11</td>
-      <td>931293d1062a54528909385949e19cc804d4eee5</td>
-      <td>0.00</td>
-      <td>10363.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>ea22594d-a6d0-40c7-a12b-29e7e898ae3e</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#1655f2</td>
-      <td>#339933</td>
-      <td>#1b8c83</td>
-      <td>10</td>
-      <td>1120</td>
-      <td>51</td>
-      <td>3</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>GATTACGGTCCTTTAA-1110_A07</th>
-      <td>GATTACGGTCCTTTAA</td>
+      <th>TTCACTGTCAGGGCCT-858_D03</th>
+      <td>TTCACTGTCAGGGCCT</td>
       <td>H18.30.001</td>
-      <td>1110_A07</td>
-      <td>L8XR_220303_03_F12</td>
-      <td>efb22b586b870994a08b60e0547ee50c94649a3f</td>
-      <td>0.00</td>
-      <td>3111.0</td>
+      <td>858_D03</td>
+      <td>L8XR_211007_02_B04</td>
+      <td>9cd08865b2655622f88cc505022438efb76d620e</td>
+      <td>0.000000</td>
+      <td>9835.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>37a744d2-31ea-4560-886b-92cab9ac6314</td>
+      <td>45e8088f-da16-4834-b779-863bdd8c40a7</td>
       <td>...</td>
       <td>#a8afa5</td>
       <td>#995C60</td>
@@ -2815,6 +2705,102 @@ Number of unique abc_sample_id = 1863243
       <td>4</td>
       <td>1</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <th>CTATTACTCGGGATTT-2018_A01</th>
+      <td>CTATTACTCGGGATTT</td>
+      <td>H23.30.001</td>
+      <td>2018_A01</td>
+      <td>L8XR_240111_01_E09</td>
+      <td>e40c7d288236f8ef3e38aa396c1aaefa83312fb8</td>
+      <td>0.000000</td>
+      <td>7366.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>771e67d7-2607-47ba-909b-664774bec5ed</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#66391F</td>
+      <td>#a9de1a</td>
+      <td>3</td>
+      <td>142</td>
+      <td>9</td>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>AATTAGCGTTAATGAC-1054_A09</th>
+      <td>AATTAGCGTTAATGAC</td>
+      <td>Q19.26.010</td>
+      <td>1054_A09</td>
+      <td>L8XR_220203_02_C03</td>
+      <td>02954e706ebfe8bfdcaf2e40913026fe3595962b</td>
+      <td>0.000000</td>
+      <td>24162.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>ac7c0a09-5a80-4e47-824e-e53ac7a722a0</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#1655f2</td>
+      <td>#339933</td>
+      <td>#c82ddf</td>
+      <td>10</td>
+      <td>1104</td>
+      <td>51</td>
+      <td>3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>TAGGCTGTCACTCGCT-2523_C07</th>
+      <td>TAGGCTGTCACTCGCT</td>
+      <td>H24.30.007</td>
+      <td>2523_C07</td>
+      <td>L8XR_241024_21_F09</td>
+      <td>116779e51ff04e5a250c4610737fc5f4a2750a8a</td>
+      <td>0.156250</td>
+      <td>40876.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>0078c421-3806-4d66-9821-ced247cf6e31</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#79bdf4</td>
+      <td>#e377c2</td>
+      <td>#73f9d4</td>
+      <td>10</td>
+      <td>1330</td>
+      <td>57</td>
+      <td>3</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>TGATCAATCAAAGGCA-2271_A08</th>
+      <td>TGATCAATCAAAGGCA</td>
+      <td>H24.30.004</td>
+      <td>2271_A08</td>
+      <td>L8XR_240613_01_B08</td>
+      <td>8c3d4596be432e469850d9c58cc8826666399652</td>
+      <td>0.016667</td>
+      <td>2686.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>15f66488-a542-467a-a8f6-69c5ae1be577</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#66391F</td>
+      <td>#a9de1a</td>
+      <td>3</td>
+      <td>142</td>
+      <td>9</td>
+      <td>1</td>
+      <td>7</td>
     </tr>
   </tbody>
 </table>
@@ -2912,7 +2898,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a14d37ac51637bc6731307cab00f832485687a910604069e98e96194948bc1e1.png" src="../_images/a14d37ac51637bc6731307cab00f832485687a910604069e98e96194948bc1e1.png" />
+<img alt="../_images/2743addae68174af0c19e51fe6cf29e2ee5ccdc65431e7a1d3cba9598fe830e6.png" src="../_images/2743addae68174af0c19e51fe6cf29e2ee5ccdc65431e7a1d3cba9598fe830e6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2932,7 +2918,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f302dc28541ba9223d7953588a66b8c5f828abb90f7cffd75a0a986465e30292.png" src="../_images/f302dc28541ba9223d7953588a66b8c5f828abb90f7cffd75a0a986465e30292.png" />
+<img alt="../_images/a5a7df0a7e9da9e8c452ba2881c6f9c22f544564961e0d2d607c6678ec7ccbee.png" src="../_images/a5a7df0a7e9da9e8c452ba2881c6f9c22f544564961e0d2d607c6678ec7ccbee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2952,7 +2938,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb2c411de1a3f93381c4f7861dfb19c682d540d0a6056597dc9b3d1567a844be.png" src="../_images/eb2c411de1a3f93381c4f7861dfb19c682d540d0a6056597dc9b3d1567a844be.png" />
+<img alt="../_images/42eae02fd59ed0463710b457d90aadb3f2672d267f455ae6344cc980bf7bb451.png" src="../_images/42eae02fd59ed0463710b457d90aadb3f2672d267f455ae6344cc980bf7bb451.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2972,7 +2958,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/42d475548cbca476c8cce74200dfd54ab531f7a6f6c06fdc8aa7c2c18735d575.png" src="../_images/42d475548cbca476c8cce74200dfd54ab531f7a6f6c06fdc8aa7c2c18735d575.png" />
+<img alt="../_images/245707ee7ba273fe0ad4bbd747a381a3d22cbf5713827c40be48d63eb9262cf1.png" src="../_images/245707ee7ba273fe0ad4bbd747a381a3d22cbf5713827c40be48d63eb9262cf1.png" />
 </div>
 </div>
 <p>Note that we do not plot the cluster level here. Comparison of the clusters across species is not recommended and any cross species analysis should use the Group level at the lowest. Clusters should only be used when looking at individual species as we do below.</p>
@@ -3183,14 +3169,16 @@ Number of unique Subclass_order = 36
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
@@ -3253,8 +3241,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

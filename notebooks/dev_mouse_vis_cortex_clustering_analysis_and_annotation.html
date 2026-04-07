@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -65,6 +68,7 @@
     <link rel="prev" title="Developing Mouse - Visual Cortex notebooks" href="../descriptions/Dev-Mouse-Vis-Cortex-notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,21 +148,17 @@
     
     
     <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
-    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -327,9 +316,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -459,7 +453,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -473,25 +467,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -572,7 +558,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260131/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260331/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -633,7 +619,7 @@ Developing-Mouse-Vis-Cortex-10X: metadata (csv)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 105M/105M [00:03&lt;00:00, 30.0MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 105M/105M [00:06&lt;00:00, 15.9MMB/s]   
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  568654
@@ -801,10 +787,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv:   0%|          | 0.00/5.08k [00:00&lt;?, ?MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 5.08k/5.08k [00:00&lt;00:00, 96.1kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 5.08k/5.08k [00:00&lt;00:00, 89.2kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -925,7 +908,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 11.2k/11.2k [00:00&lt;00:00, 138kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 11.2k/11.2k [00:00&lt;00:00, 62.1kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1224,7 +1207,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.33k/4.33k [00:00&lt;00:00, 66.6kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.33k/4.33k [00:00&lt;00:00, 49.1kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1643,7 +1626,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 25.7M/25.7M [00:00&lt;00:00, 31.2MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 25.7M/25.7M [00:06&lt;00:00, 3.95MMB/s]  
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1812,7 +1795,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1864e20e45ae4c393bdec86da65744e9c77dd75f89292f5ba834339d22b80441.png" src="../_images/1864e20e45ae4c393bdec86da65744e9c77dd75f89292f5ba834339d22b80441.png" />
+<img alt="../_images/447d2e481105330ac8787fd6bbd7f48d9e5883310e23c18ff8fa0e7234ab5993.png" src="../_images/447d2e481105330ac8787fd6bbd7f48d9e5883310e23c18ff8fa0e7234ab5993.png" />
 </div>
 </div>
 <p>Below we show the region of interest for the cells in the dataset.</p>
@@ -1833,7 +1816,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4fa50d4ffa4dbac0b4b95529db2c3bc0522a6a4a5ce9704c95b37710810dd41e.png" src="../_images/4fa50d4ffa4dbac0b4b95529db2c3bc0522a6a4a5ce9704c95b37710810dd41e.png" />
+<img alt="../_images/f8a9f443ddf51b1933f9916a0ef8b89b4d929c08019517e46a1c8645e190b97d.png" src="../_images/f8a9f443ddf51b1933f9916a0ef8b89b4d929c08019517e46a1c8645e190b97d.png" />
 </div>
 </div>
 <p>The UMAP with donor age.</p>
@@ -1854,7 +1837,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dfc5734600dbc4b2fcfe339a37cb1e0f3827a7ddbe3b5f4ea60669bf46b31f04.png" src="../_images/dfc5734600dbc4b2fcfe339a37cb1e0f3827a7ddbe3b5f4ea60669bf46b31f04.png" />
+<img alt="../_images/9a314601169f77d4310c8d278ee2db88b4e03ec4e9a82f6813cc0a77a936d61c.png" src="../_images/9a314601169f77d4310c8d278ee2db88b4e03ec4e9a82f6813cc0a77a936d61c.png" />
 </div>
 </div>
 </section>
@@ -1875,7 +1858,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 20.5k/20.5k [00:00&lt;00:00, 210kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 19.8k/19.8k [00:00&lt;00:00, 336kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1907,27 +1890,27 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
   </thead>
   <tbody>
     <tr>
-      <th>CS20260131_SCLU_0001</th>
+      <th>CS20260131_SCLU_001</th>
       <td>1</td>
       <td>77</td>
     </tr>
     <tr>
-      <th>CS20260131_SCLU_0002</th>
+      <th>CS20260131_SCLU_002</th>
       <td>2</td>
       <td>126</td>
     </tr>
     <tr>
-      <th>CS20260131_SCLU_0003</th>
+      <th>CS20260131_SCLU_003</th>
       <td>3</td>
       <td>184</td>
     </tr>
     <tr>
-      <th>CS20260131_SCLU_0004</th>
+      <th>CS20260131_SCLU_004</th>
       <td>4</td>
       <td>186</td>
     </tr>
     <tr>
-      <th>CS20260131_SCLU_0005</th>
+      <th>CS20260131_SCLU_005</th>
       <td>5</td>
       <td>25</td>
     </tr>
@@ -1947,7 +1930,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 268/268 [00:00&lt;00:00, 2.76kMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 268/268 [00:00&lt;00:00, 2.84kMB/s]
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2024,7 +2007,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 129k/129k [00:00&lt;00:00, 1.10MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 129k/129k [00:00&lt;00:00, 662kMB/s]  
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2239,10 +2222,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv:   0%|          | 0.00/189k [00:00&lt;?, ?MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 189k/189k [00:00&lt;00:00, 1.45MMB/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 189k/189k [00:00&lt;00:00, 1.13MMB/s] 
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2644,10 +2624,7 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv:   0%|          | 0.00/28.5M [00:00&lt;?, ?MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 28.5M/28.5M [00:01&lt;00:00, 26.1MMB/s]  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 27.9M/27.9M [00:01&lt;00:00, 15.9MMB/s]  
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2681,27 +2658,27 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
     <tr>
       <th>AAACCCAAGGATTTAG-898_A02</th>
       <td>50</td>
-      <td>CS20260131_SCLU_0050</td>
+      <td>CS20260131_SCLU_050</td>
     </tr>
     <tr>
       <th>AAACCCACACATTCTT-898_A02</th>
       <td>122</td>
-      <td>CS20260131_SCLU_0122</td>
+      <td>CS20260131_SCLU_122</td>
     </tr>
     <tr>
       <th>AAACCCACACTTACAG-898_A02</th>
       <td>118</td>
-      <td>CS20260131_SCLU_0118</td>
+      <td>CS20260131_SCLU_118</td>
     </tr>
     <tr>
       <th>AAACGAATCACTCTTA-898_A02</th>
       <td>108</td>
-      <td>CS20260131_SCLU_0108</td>
+      <td>CS20260131_SCLU_108</td>
     </tr>
     <tr>
       <th>AAACGAATCGACCAAT-898_A02</th>
       <td>690</td>
-      <td>CS20260131_SCLU_0690</td>
+      <td>CS20260131_SCLU_690</td>
     </tr>
   </tbody>
 </table>
@@ -2789,14 +2766,110 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
   </thead>
   <tbody>
     <tr>
-      <th>CCTCCAAAGTAAGAGG-482_A06</th>
-      <td>CCTCCAAAGTAAGAGG</td>
-      <td>482_A06</td>
-      <td>L8TX_210107_01_D09</td>
-      <td>1157582376</td>
-      <td>241.8102</td>
-      <td>P21</td>
-      <td>Snap25-IRES2-Cre;Ai14-562459</td>
+      <th>GTGGAAGCACTTGAGT-322_B01</th>
+      <td>GTGGAAGCACTTGAGT</td>
+      <td>322_B01</td>
+      <td>L8TX_200813_01_D08</td>
+      <td>1157582307</td>
+      <td>386.5182</td>
+      <td>P14</td>
+      <td>Snap25-IRES2-Cre;Ai14-544387</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>NCBITaxon:10090</td>
+      <td>...</td>
+      <td>5281_NFOL NN_2</td>
+      <td>5281_NFOL NN_2_1</td>
+      <td>#03045E</td>
+      <td>#99FFBC</td>
+      <td>#bdbdbd</td>
+      <td>#756bb1</td>
+      <td>10</td>
+      <td>64</td>
+      <td>22</td>
+      <td>524</td>
+    </tr>
+    <tr>
+      <th>ACAACCACACCTGAAT-849.3_A07</th>
+      <td>ACAACCACACCTGAAT</td>
+      <td>849.3_A07</td>
+      <td>L8TX_210930_01_A01</td>
+      <td>1157582476</td>
+      <td>351.2539</td>
+      <td>P7</td>
+      <td>Snap25-IRES2-Cre;Ai14-601660</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>NCBITaxon:10090</td>
+      <td>...</td>
+      <td>803_Sst Gaba_10</td>
+      <td>803_Sst Gaba_10_4</td>
+      <td>#f954ee</td>
+      <td>#99F2FF</td>
+      <td>#d6616b</td>
+      <td>#e7ba52</td>
+      <td>12</td>
+      <td>126</td>
+      <td>32</td>
+      <td>670</td>
+    </tr>
+    <tr>
+      <th>CGGGTGTCATCGGAAG-530_B01</th>
+      <td>CGGGTGTCATCGGAAG</td>
+      <td>530_B01</td>
+      <td>L8TX_210218_01_D08</td>
+      <td>1157582472</td>
+      <td>410.1769</td>
+      <td>P7</td>
+      <td>Snap25-IRES2-Cre;Ai14-571642</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>NCBITaxon:10090</td>
+      <td>...</td>
+      <td>110_L2/3 IT CTX Glut_2</td>
+      <td>110_L2/3 IT CTX Glut_2_5</td>
+      <td>#FA0087</td>
+      <td>#E9530F</td>
+      <td>#7b4173</td>
+      <td>#393b79</td>
+      <td>7</td>
+      <td>42</td>
+      <td>18</td>
+      <td>422</td>
+    </tr>
+    <tr>
+      <th>ACTTCGCGTGTCTTAG-607_C03</th>
+      <td>ACTTCGCGTGTCTTAG</td>
+      <td>607_C03</td>
+      <td>L8TX_210415_01_F01</td>
+      <td>1157582316</td>
+      <td>405.0460</td>
+      <td>P15</td>
+      <td>Snap25-IRES2-Cre;Ai14-577574</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>Developing-Mouse-Vis-Cortex-10X</td>
+      <td>NCBITaxon:10090</td>
+      <td>...</td>
+      <td>56_L5 IT CTX Glut_1</td>
+      <td>56_L5 IT CTX Glut_1_6</td>
+      <td>#FA0087</td>
+      <td>#660F38</td>
+      <td>#b5cf6b</td>
+      <td>#9e9ac8</td>
+      <td>7</td>
+      <td>32</td>
+      <td>16</td>
+      <td>335</td>
+    </tr>
+    <tr>
+      <th>CAGTTCCTCATCAGTG-265_A02</th>
+      <td>CAGTTCCTCATCAGTG</td>
+      <td>265_A02</td>
+      <td>L8TX_200618_01_H05</td>
+      <td>1157582268</td>
+      <td>261.3416</td>
+      <td>P14</td>
+      <td>Snap25-IRES2-Cre;Ai14-536764</td>
       <td>Developing-Mouse-Vis-Cortex-10X</td>
       <td>Developing-Mouse-Vis-Cortex-10X</td>
       <td>NCBITaxon:10090</td>
@@ -2811,102 +2884,6 @@ Number of unique feature_matrix_label = 1 [&#39;Developing-Mouse-Vis-Cortex-10X&
       <td>146</td>
       <td>39</td>
       <td>712</td>
-    </tr>
-    <tr>
-      <th>GAGGCAACAGCTTTCC-479_A03</th>
-      <td>GAGGCAACAGCTTTCC</td>
-      <td>479_A03</td>
-      <td>L8TX_210107_01_A09</td>
-      <td>1157582337</td>
-      <td>431.3020</td>
-      <td>P56</td>
-      <td>Snap25-IRES2-Cre;Ai14-562811</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>NCBITaxon:10090</td>
-      <td>...</td>
-      <td>741_Pvalb Gaba_3</td>
-      <td>741_Pvalb Gaba_3_8</td>
-      <td>#f954ee</td>
-      <td>#b13667</td>
-      <td>#c7e9c0</td>
-      <td>#969696</td>
-      <td>12</td>
-      <td>106</td>
-      <td>31</td>
-      <td>617</td>
-    </tr>
-    <tr>
-      <th>ATCGGATCACCCATAA-441_B01</th>
-      <td>ATCGGATCACCCATAA</td>
-      <td>441_B01</td>
-      <td>L8TX_201120_01_H09</td>
-      <td>1178468076</td>
-      <td>457.6961</td>
-      <td>P56</td>
-      <td>Snap25-IRES2-Cre;Ai14-553679</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>NCBITaxon:10090</td>
-      <td>...</td>
-      <td>437_L6 CT CTX Glut_1</td>
-      <td>437_L6 CT CTX Glut_1_15</td>
-      <td>#61e2a4</td>
-      <td>#34661F</td>
-      <td>#c7e9c0</td>
-      <td>#cedb9c</td>
-      <td>6</td>
-      <td>13</td>
-      <td>11</td>
-      <td>204</td>
-    </tr>
-    <tr>
-      <th>AAGAACACATTGCCGG-418_C04</th>
-      <td>AAGAACACATTGCCGG</td>
-      <td>418_C04</td>
-      <td>L8TX_201105_01_C02</td>
-      <td>1157582427</td>
-      <td>416.2293</td>
-      <td>P28</td>
-      <td>Snap25-IRES2-Cre;Ai14-555355</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>NCBITaxon:10090</td>
-      <td>...</td>
-      <td>118_L2/3 IT CTX Glut_4</td>
-      <td>118_L2/3 IT CTX Glut_4_2</td>
-      <td>#FA0087</td>
-      <td>#E9530F</td>
-      <td>#de9ed6</td>
-      <td>#c7e9c0</td>
-      <td>7</td>
-      <td>45</td>
-      <td>18</td>
-      <td>453</td>
-    </tr>
-    <tr>
-      <th>GTGAGCCGTCTACACA-634_A03</th>
-      <td>GTGAGCCGTCTACACA</td>
-      <td>634_A03</td>
-      <td>L8TX_210506_01_D07</td>
-      <td>1157582451</td>
-      <td>370.9672</td>
-      <td>P5</td>
-      <td>Snap25-IRES2-Cre;Ai14-582040</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>Developing-Mouse-Vis-Cortex-10X</td>
-      <td>NCBITaxon:10090</td>
-      <td>...</td>
-      <td>439_L6 CT CTX Glut_1</td>
-      <td>439_L6 CT CTX Glut_1_6</td>
-      <td>#61e2a4</td>
-      <td>#34661F</td>
-      <td>#756bb1</td>
-      <td>#d6616b</td>
-      <td>6</td>
-      <td>14</td>
-      <td>11</td>
-      <td>211</td>
     </tr>
   </tbody>
 </table>
@@ -3001,7 +2978,7 @@ Number of unique subcluster_order = 714
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5733afe7f47adc898bde17879d8f704d2002aa25925ec0560f006e2a3e5be88.png" src="../_images/b5733afe7f47adc898bde17879d8f704d2002aa25925ec0560f006e2a3e5be88.png" />
+<img alt="../_images/b4e7dbb7c35d1ba449fd1e20d24c416df53173b5ed672c451368f5e234f067dd.png" src="../_images/b4e7dbb7c35d1ba449fd1e20d24c416df53173b5ed672c451368f5e234f067dd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3021,7 +2998,7 @@ Number of unique subcluster_order = 714
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f30603d5232aa7e2894d5c4c86f1cc1a8a053e942956eecb1784dc28798f7c79.png" src="../_images/f30603d5232aa7e2894d5c4c86f1cc1a8a053e942956eecb1784dc28798f7c79.png" />
+<img alt="../_images/347ae487b46e6f04327624cd503148e1813d30dd87f99dff390bdf1a306b29e3.png" src="../_images/347ae487b46e6f04327624cd503148e1813d30dd87f99dff390bdf1a306b29e3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3039,7 +3016,7 @@ Number of unique subcluster_order = 714
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cc9f4c44b4294a1430f2c30c70bc34e6cae3e041e454e4d6193adc6ee489961c.png" src="../_images/cc9f4c44b4294a1430f2c30c70bc34e6cae3e041e454e4d6193adc6ee489961c.png" />
+<img alt="../_images/6295fd3b735ee586bb8aa2600fbde458c474668ed3d20cd9a794046a359f24b7.png" src="../_images/6295fd3b735ee586bb8aa2600fbde458c474668ed3d20cd9a794046a359f24b7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3057,7 +3034,7 @@ Number of unique subcluster_order = 714
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06445a29af185e80408229f39db80c279fa79ec57f3886a7f5987dfd6c2af092.png" src="../_images/06445a29af185e80408229f39db80c279fa79ec57f3886a7f5987dfd6c2af092.png" />
+<img alt="../_images/eedf4e0cc430cf36aef75aa101432a90919da71262324ce6ea3d0aaa4fe69232.png" src="../_images/eedf4e0cc430cf36aef75aa101432a90919da71262324ce6ea3d0aaa4fe69232.png" />
 </div>
 </div>
 </section>
@@ -3544,7 +3521,7 @@ Number of unique subcluster_order = 714
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x169890590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x33b7a1700&gt;
 </pre></div>
 </div>
 <img alt="../_images/d73adb88d410fe6b624b9b55c788d6f4dbf4355a805284498effaadb0565d1ef.png" src="../_images/d73adb88d410fe6b624b9b55c788d6f4dbf4355a805284498effaadb0565d1ef.png" />
@@ -3664,14 +3641,16 @@ Number of unique subcluster_order = 714
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
@@ -3735,8 +3714,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -65,6 +68,7 @@
     <link rel="prev" title="Human-Mammalian Brain - Basal Ganglia 10X snRNASeq analysis: clustering and annotations" href="hmba_bg_clustering_analysis_and_annotation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,21 +148,17 @@
     
     
     <img src="../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
-    <script>document.write(`<img src="../_static/allen_logo.jpeg" class="logo__image only-dark" alt="Allen Brain Cell Atlas - Data Access - Home"/>`);</script>
+    <img src="../_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -327,9 +316,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -459,7 +453,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -473,25 +467,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -564,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20251031/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260331/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -773,113 +759,89 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>CTAACCTGTTGTAACG-2471_B04</th>
-      <td>CTAACCTGTTGTAACG</td>
-      <td>H21.30.004</td>
-      <td>2471_B04</td>
-      <td>L8XR_241003_21_E07</td>
-      <td>ce33cb198c15ce3065e8bd86c86ddd87ee9e4756</td>
-      <td>0.012658</td>
-      <td>4408.0</td>
+      <th>AGTAACCTCCTTAATC-1697_C04</th>
+      <td>AGTAACCTCCTTAATC</td>
+      <td>QM23.50.001</td>
+      <td>1697_C04</td>
+      <td>L8XR_230505_01_A08</td>
+      <td>0cac73b6e5f54f68d219e6e1449ad26964c65fd6</td>
+      <td>0.00</td>
+      <td>5161.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>46dc7809-c7cd-4892-8f02-0e5401f53d58</td>
-      <td>...</td>
-      <td>#a8afa5</td>
-      <td>#995C60</td>
-      <td>#995C60</td>
-      <td>#995C60</td>
-      <td>#475713</td>
-      <td>2</td>
-      <td>92</td>
-      <td>4</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>GGAACAATCATGAAGG-2372_C04</th>
-      <td>GGAACAATCATGAAGG</td>
-      <td>H24.30.001</td>
-      <td>2372_C04</td>
-      <td>L8XR_240815_01_E06</td>
-      <td>06043bb557ca604218ca7f91581e83d93a4625e7</td>
-      <td>0.011236</td>
-      <td>4233.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>e18b7dee-a291-4aba-96a0-6d1088b4bdee</td>
+      <td>d305088f-31f5-46b5-b788-1a226d3f4e54</td>
       <td>...</td>
       <td>#a8afa5</td>
       <td>#401e66</td>
       <td>#401e66</td>
       <td>#195f8d</td>
-      <td>#d0d47d</td>
+      <td>#5afd90</td>
       <td>1</td>
-      <td>7</td>
+      <td>21</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>TTAGCTGCAGGTTATT-1750_B01</th>
-      <td>TTAGCTGCAGGTTATT</td>
-      <td>QM23.50.001</td>
-      <td>1750_B01</td>
-      <td>L8XR_230629_22_H11</td>
-      <td>50c29f65910dc6faa1990f1ff9601c25bb909822</td>
-      <td>0.027778</td>
-      <td>13469.0</td>
+      <th>ATCGCCCGTAACAGGG-2229_A06</th>
+      <td>ATCGCCCGTAACAGGG</td>
+      <td>H24.30.004</td>
+      <td>2229_A06</td>
+      <td>L8XR_240516_21_D12</td>
+      <td>257acbad4daec630edb9e1275971e151093a9b97</td>
+      <td>0.05</td>
+      <td>7171.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>4840681c-2c78-4cf8-b3d2-ff05e743e1bf</td>
+      <td>5b3172d0-bfef-45c4-9a14-061f47cf0bf2</td>
       <td>...</td>
-      <td>#19613b</td>
-      <td>#26e8bb</td>
-      <td>#1bc06a</td>
-      <td>#fc2b80</td>
-      <td>#1a3373</td>
-      <td>8</td>
-      <td>714</td>
-      <td>37</td>
-      <td>3</td>
-      <td>24</td>
+      <td>#a8afa5</td>
+      <td>#401e66</td>
+      <td>#401e66</td>
+      <td>#195f8d</td>
+      <td>#3534d4</td>
+      <td>1</td>
+      <td>17</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>TATTGACCATCCGTAA-2511_B02</th>
-      <td>TATTGACCATCCGTAA</td>
-      <td>H24.30.007</td>
-      <td>2511_B02</td>
-      <td>L8XR_241017_21_A07</td>
-      <td>0ad387162a225d22193a66dd2f692dfae34ffd7d</td>
-      <td>0.000000</td>
-      <td>17882.0</td>
+      <th>TTTCTTGCAGCAACCT-2229_A06</th>
+      <td>TTTCTTGCAGCAACCT</td>
+      <td>H24.30.004</td>
+      <td>2229_A06</td>
+      <td>L8XR_240516_21_D12</td>
+      <td>257acbad4daec630edb9e1275971e151093a9b97</td>
+      <td>0.10</td>
+      <td>2115.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>2d48bd29-4df8-4e0c-bf73-9b2ebe3ac729</td>
+      <td>71394bfb-3f99-402f-a3c3-fba115aeb674</td>
       <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#9160cb</td>
-      <td>#ff7f0e</td>
-      <td>#bde4a4</td>
-      <td>10</td>
-      <td>1400</td>
-      <td>59</td>
-      <td>3</td>
-      <td>34</td>
+      <td>#a8afa5</td>
+      <td>#401e66</td>
+      <td>#401e66</td>
+      <td>#195f8d</td>
+      <td>#e1706a</td>
+      <td>1</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>TGTAACTCAGGCATGA-2459_C05</th>
-      <td>TGTAACTCAGGCATGA</td>
+      <th>AGAGAAGCACTAAATC-2459_B05</th>
+      <td>AGAGAAGCACTAAATC</td>
       <td>H21.30.004</td>
-      <td>2459_C05</td>
-      <td>L8XR_240926_21_H09</td>
-      <td>5a8e588147c0131ac4ce05e5c60022a277062572</td>
-      <td>0.000000</td>
-      <td>3296.0</td>
+      <td>2459_B05</td>
+      <td>L8XR_240926_21_G09</td>
+      <td>9df076b587ec0d9bfbd6e52976ebccfad78972a7</td>
+      <td>0.00</td>
+      <td>4590.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>63fb0ca8-9664-46ad-8d97-f494768d7ad1</td>
+      <td>16e67220-9fb6-49d9-a02a-425b7ae2a341</td>
       <td>...</td>
       <td>#a8afa5</td>
       <td>#594a26</td>
@@ -891,6 +853,30 @@ document.write(`
       <td>9</td>
       <td>1</td>
       <td>7</td>
+    </tr>
+    <tr>
+      <th>GATGACTTCCCGCATT-2289_D04</th>
+      <td>GATGACTTCCCGCATT</td>
+      <td>H24.30.003</td>
+      <td>2289_D04</td>
+      <td>L8XR_240627_21_A02</td>
+      <td>65dd629a0037be17954a4fe363a62a5de2075478</td>
+      <td>0.16</td>
+      <td>7003.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>ab93f81c-7094-4354-a745-62dff72b55b4</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#253c8c</td>
+      <td>#aec7e8</td>
+      <td>#3d70fc</td>
+      <td>10</td>
+      <td>1178</td>
+      <td>53</td>
+      <td>3</td>
+      <td>32</td>
     </tr>
   </tbody>
 </table>
@@ -945,7 +931,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 1.15M/1.15M [00:00&lt;00:00, 3.15MMB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gene.csv: 100%|██████████| 1.15M/1.15M [00:00&lt;00:00, 5.17MMB/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of aligned genes =  16630
@@ -1051,7 +1037,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_gene_expression.csv: 100%|██████████| 135M/135M [00:24&lt;00:00, 5.63MMB/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_gene_expression.csv: 100%|██████████| 115M/115M [00:08&lt;00:00, 13.5MMB/s]   
 </pre></div>
 </div>
 </div>
@@ -1197,7 +1183,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e926f2a43f0c4a4997a18c307c494edadc04eef0825a3b8d02fa8fae8925a5c0.png" src="../_images/e926f2a43f0c4a4997a18c307c494edadc04eef0825a3b8d02fa8fae8925a5c0.png" />
+<img alt="../_images/730e6969f98a9c7f1204d30f165930325b78694360051c12749db8045d520415.png" src="../_images/730e6969f98a9c7f1204d30f165930325b78694360051c12749db8045d520415.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1216,7 +1202,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66930f7bf9e176c5e842e41325382b6ce096218087bbf69f3eb3b41f4298d65f.png" src="../_images/66930f7bf9e176c5e842e41325382b6ce096218087bbf69f3eb3b41f4298d65f.png" />
+<img alt="../_images/7f5870428e144e6ada7a7098e1d7590ad6f5639fe75a8c84b94a37b54a241943.png" src="../_images/7f5870428e144e6ada7a7098e1d7590ad6f5639fe75a8c84b94a37b54a241943.png" />
 </div>
 </div>
 <p>Now we perform the same heatmap comparison against the region of interest in the brain the cell was extracted from. Note that currently the Marmoset has no fine grained identification of brain region.</p>
@@ -1236,7 +1222,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/457eaaa185c640b8783c14cd50a598207373cfed66f87e668c6d1997a90b1cb3.png" src="../_images/457eaaa185c640b8783c14cd50a598207373cfed66f87e668c6d1997a90b1cb3.png" />
+<img alt="../_images/1589edb054b1b40c9b9e0d24895b373bfcca059e1688641bfd8cafea13421f80.png" src="../_images/1589edb054b1b40c9b9e0d24895b373bfcca059e1688641bfd8cafea13421f80.png" />
 </div>
 </div>
 </section>
@@ -1357,13 +1343,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/37a8750cc827aa108da7d547ddbc513f9fb88ce04a23cc0fdbe954ce48e7a4c4.png" src="../_images/37a8750cc827aa108da7d547ddbc513f9fb88ce04a23cc0fdbe954ce48e7a4c4.png" />
-<img alt="../_images/5dc2d0759dbd16dbc73cf47a89141825387596cf37269d3b536acce278969f44.png" src="../_images/5dc2d0759dbd16dbc73cf47a89141825387596cf37269d3b536acce278969f44.png" />
-<img alt="../_images/88d6ffc900612b10ba834ea47375d994c7f63a16bf1207f6fc6302675215fd72.png" src="../_images/88d6ffc900612b10ba834ea47375d994c7f63a16bf1207f6fc6302675215fd72.png" />
-<img alt="../_images/31046fc89c539e7fbf5f874d568b5d44e94487f2cb4eb206ed0d1ba19d5dc384.png" src="../_images/31046fc89c539e7fbf5f874d568b5d44e94487f2cb4eb206ed0d1ba19d5dc384.png" />
-<img alt="../_images/5ee3a38a4c2c6f7a7cc45dae7bc299e096b4d582f5034435f1fa7a04fa882136.png" src="../_images/5ee3a38a4c2c6f7a7cc45dae7bc299e096b4d582f5034435f1fa7a04fa882136.png" />
-<img alt="../_images/715c4615af797c3be740346ea412bfb8d11c67abd18f42815132124ae10e4c3a.png" src="../_images/715c4615af797c3be740346ea412bfb8d11c67abd18f42815132124ae10e4c3a.png" />
-<img alt="../_images/35daf7f37ecf118f6f26e8fad318532d1c2151559872cd20759ee4ddff308c0e.png" src="../_images/35daf7f37ecf118f6f26e8fad318532d1c2151559872cd20759ee4ddff308c0e.png" />
+<img alt="../_images/20bcb6df9e27cdd71a970d9d45b49ed90cce3867d64e095bcb9f9f617bdc9240.png" src="../_images/20bcb6df9e27cdd71a970d9d45b49ed90cce3867d64e095bcb9f9f617bdc9240.png" />
+<img alt="../_images/f7309d1a1fbacad572e722708f57e29c7cdbefdad5d8abd67a031b0b72d49ccc.png" src="../_images/f7309d1a1fbacad572e722708f57e29c7cdbefdad5d8abd67a031b0b72d49ccc.png" />
+<img alt="../_images/13a83e480e902cfe91a31c9c14817762ec1736a5e844d0bfbfb86ea44c885326.png" src="../_images/13a83e480e902cfe91a31c9c14817762ec1736a5e844d0bfbfb86ea44c885326.png" />
+<img alt="../_images/a57085c7029c979ad53dd062cc6c4d64162ba718a84e1d5fb9e83b7df64f7b4f.png" src="../_images/a57085c7029c979ad53dd062cc6c4d64162ba718a84e1d5fb9e83b7df64f7b4f.png" />
+<img alt="../_images/e75841cfb312ac029a52ea9176e5258392d39d09e0cb1a407ec5160d450916ee.png" src="../_images/e75841cfb312ac029a52ea9176e5258392d39d09e0cb1a407ec5160d450916ee.png" />
+<img alt="../_images/dc51cdfa387839075e7b331b02525fa9ff77f70296a966213d4c221677f541dc.png" src="../_images/dc51cdfa387839075e7b331b02525fa9ff77f70296a966213d4c221677f541dc.png" />
+<img alt="../_images/734a54b2bfccc28ca034391c69a3b5a036b1606d68d6e9e1c7077024f6c8b993.png" src="../_images/734a54b2bfccc28ca034391c69a3b5a036b1606d68d6e9e1c7077024f6c8b993.png" />
 </div>
 </div>
 <p>To learn more about the taxonomy and metadata used in this notebook see the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">HMBA-BG Clustering Analysis and Taxonomy notebook</a>.</p>
@@ -1425,14 +1411,16 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-cell-transcriptomes">Single cell transcriptomes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a><ul class="nav section-nav flex-column">
@@ -1488,8 +1476,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
