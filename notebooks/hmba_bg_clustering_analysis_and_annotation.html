@@ -549,7 +549,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span>
-    <span class="n">download_base</span><span class="p">,</span>
+    <span class="n">cache_dir</span><span class="o">=</span><span class="n">download_base</span>
 <span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -557,7 +557,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260331/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260415/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -620,8 +620,7 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 425M/425M [00:27&lt;00:00, 15.4MMB/s]    
-/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
   return pd.read_csv(path, **kwargs)
 </pre></div>
 </div>
@@ -772,7 +771,7 @@ Number of unique doublet_score = 1422
 Number of unique umi_count = 85704 
 Number of unique feature_matrix_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
 Number of unique dataset_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
-Number of unique abc_sample_id = 1863243 
+Number of unique abc_sample_id = 1896133 
 </pre></div>
 </div>
 </div>
@@ -792,9 +791,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 1.97k/1.97k [00:00&lt;00:00, 30.7kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -905,9 +901,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 85.3k/85.3k [00:00&lt;00:00, 421kMB/s] 
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1243,9 +1236,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.16k/4.16k [00:00&lt;00:00, 57.0kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1589,9 +1579,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 86.7M/86.7M [00:11&lt;00:00, 7.44MMB/s]  
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1758,7 +1745,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fd61a0bd3bdff9a258543051533407afd9fd715d83f3f5ddb1d208b8ede37d48.png" src="../_images/fd61a0bd3bdff9a258543051533407afd9fd715d83f3f5ddb1d208b8ede37d48.png" />
+<img alt="../_images/7bae15a068ff80e4eddf14e4174b93f1932551db64575a965daf0d664f79cae8.png" src="../_images/7bae15a068ff80e4eddf14e4174b93f1932551db64575a965daf0d664f79cae8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1778,7 +1765,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d562f3ff73a0cd82eaff4187923e80fb95a5d0fb7936bcf63ad70ca794565fee.png" src="../_images/d562f3ff73a0cd82eaff4187923e80fb95a5d0fb7936bcf63ad70ca794565fee.png" />
+<img alt="../_images/d2d4f8c8ae5dfc8ea6918a18e36f0cf1319159fd9362d003e5e8556193a0d114.png" src="../_images/d2d4f8c8ae5dfc8ea6918a18e36f0cf1319159fd9362d003e5e8556193a0d114.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1798,7 +1785,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6b1e05ff382ac9580edcec2e4501eeee909f3716d214e8d2c5a374875965d70c.png" src="../_images/6b1e05ff382ac9580edcec2e4501eeee909f3716d214e8d2c5a374875965d70c.png" />
+<img alt="../_images/dec5aa1eb5df8c7a1f072adc08485769c19c1331fb92fb152662ef6592417911.png" src="../_images/dec5aa1eb5df8c7a1f072adc08485769c19c1331fb92fb152662ef6592417911.png" />
 </div>
 </div>
 <p>Below we show the region of interest for the three species. Note, however, that Marmoset does not have fine grained ROIs available and is marked as <code class="docutils literal notranslate"><span class="pre">Br</span> <span class="pre">-</span> <span class="pre">Brain</span></code>.</p>
@@ -1819,7 +1806,7 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7e709e08c3c4c22ed60fb3d79b67cd53a7e5ae3e600ae0a73391309d1db973c3.png" src="../_images/7e709e08c3c4c22ed60fb3d79b67cd53a7e5ae3e600ae0a73391309d1db973c3.png" />
+<img alt="../_images/ee08d6fb7e60398047eb8e43cc7fc00e33e5b5ea529f73caad3eaa87b9cef75e.png" src="../_images/ee08d6fb7e60398047eb8e43cc7fc00e33e5b5ea529f73caad3eaa87b9cef75e.png" />
 </div>
 </div>
 </section>
@@ -1840,9 +1827,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 79.9k/79.9k [00:00&lt;00:00, 421kMB/s] 
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1912,9 +1896,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 223/223 [00:00&lt;00:00, 3.63kMB/s]
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1991,9 +1972,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 206k/206k [00:00&lt;00:00, 1.13MMB/s] 
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2120,9 +2098,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 539k/539k [00:00&lt;00:00, 2.69MMB/s] 
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2541,9 +2516,6 @@ Number of unique abc_sample_id = 1863243
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 111M/111M [00:06&lt;00:00, 18.0MMB/s]   
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2683,17 +2655,113 @@ Number of unique abc_sample_id = 1863243
   </thead>
   <tbody>
     <tr>
-      <th>TTCACTGTCAGGGCCT-858_D03</th>
-      <td>TTCACTGTCAGGGCCT</td>
-      <td>H18.30.001</td>
-      <td>858_D03</td>
-      <td>L8XR_211007_02_B04</td>
-      <td>9cd08865b2655622f88cc505022438efb76d620e</td>
+      <th>AAAGGCTCAGCTACGT-P0008_2</th>
+      <td>AAAGGCTCAGCTACGT</td>
+      <td>CJ23.56.002</td>
+      <td>P0008_2</td>
+      <td>LPLCXR_231024_1_G6</td>
+      <td>231224</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>042e9d1a-d56c-4556-8829-f7ae90559c1a</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#401e66</td>
+      <td>#401e66</td>
+      <td>#195f8d</td>
+      <td>#9c3de0</td>
+      <td>1</td>
+      <td>36</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>AGGTGAGGTCAGGCAT-2370_C03</th>
+      <td>AGGTGAGGTCAGGCAT</td>
+      <td>H24.30.001</td>
+      <td>2370_C03</td>
+      <td>L8XR_240815_01_F06</td>
+      <td>a26d08904b8a440c93694baea94a094ccddb0474</td>
+      <td>0.013699</td>
+      <td>37176.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>ff6a4f7b-9248-4698-800a-1f3e09d39a6b</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#1655f2</td>
+      <td>#1f77b4</td>
+      <td>#e77ae0</td>
+      <td>10</td>
+      <td>1050</td>
+      <td>50</td>
+      <td>3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>ACCCGCTGTGTTTCAC-897_A03</th>
+      <td>ACCCGCTGTGTTTCAC</td>
+      <td>QM21.26.003</td>
+      <td>897_A03</td>
+      <td>L8XR_211028_02_D09</td>
+      <td>b5ec3031069e481049e6a57a736b42f4514d51f8</td>
+      <td>0.060000</td>
+      <td>6887.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>bed82a9c-cd0d-4509-975c-7b61a165a1dc</td>
+      <td>...</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#1655f2</td>
+      <td>#339933</td>
+      <td>#1b8c83</td>
+      <td>10</td>
+      <td>1120</td>
+      <td>51</td>
+      <td>3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>GGTAGGAGTCATCATC-2103_D02</th>
+      <td>GGTAGGAGTCATCATC</td>
+      <td>QM23.50.003</td>
+      <td>2103_D02</td>
+      <td>L8XR_240307_02_E04</td>
+      <td>f008f9c799f3d5584b644a584b8c9941f40fc570</td>
       <td>0.000000</td>
-      <td>9835.0</td>
+      <td>4360.0</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
       <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>45e8088f-da16-4834-b779-863bdd8c40a7</td>
+      <td>83dda5c9-8f7e-415a-8e8b-809e974a6848</td>
+      <td>...</td>
+      <td>#a8afa5</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#594a26</td>
+      <td>#69e4a2</td>
+      <td>3</td>
+      <td>163</td>
+      <td>10</td>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>CTCATTTAGGCTAGAA-2368_B02</th>
+      <td>CTCATTTAGGCTAGAA</td>
+      <td>H24.30.001</td>
+      <td>2368_B02</td>
+      <td>L8XR_240815_01_D05</td>
+      <td>0bde255f925875e8c2710673628ac8259c4e44ec</td>
+      <td>0.000000</td>
+      <td>4294.0</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>11528690-d563-4079-b995-c1cf6ee52cac</td>
       <td>...</td>
       <td>#a8afa5</td>
       <td>#995C60</td>
@@ -2705,102 +2773,6 @@ Number of unique abc_sample_id = 1863243
       <td>4</td>
       <td>1</td>
       <td>3</td>
-    </tr>
-    <tr>
-      <th>CTATTACTCGGGATTT-2018_A01</th>
-      <td>CTATTACTCGGGATTT</td>
-      <td>H23.30.001</td>
-      <td>2018_A01</td>
-      <td>L8XR_240111_01_E09</td>
-      <td>e40c7d288236f8ef3e38aa396c1aaefa83312fb8</td>
-      <td>0.000000</td>
-      <td>7366.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>771e67d7-2607-47ba-909b-664774bec5ed</td>
-      <td>...</td>
-      <td>#a8afa5</td>
-      <td>#594a26</td>
-      <td>#594a26</td>
-      <td>#66391F</td>
-      <td>#a9de1a</td>
-      <td>3</td>
-      <td>142</td>
-      <td>9</td>
-      <td>1</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>AATTAGCGTTAATGAC-1054_A09</th>
-      <td>AATTAGCGTTAATGAC</td>
-      <td>Q19.26.010</td>
-      <td>1054_A09</td>
-      <td>L8XR_220203_02_C03</td>
-      <td>02954e706ebfe8bfdcaf2e40913026fe3595962b</td>
-      <td>0.000000</td>
-      <td>24162.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>ac7c0a09-5a80-4e47-824e-e53ac7a722a0</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#1655f2</td>
-      <td>#339933</td>
-      <td>#c82ddf</td>
-      <td>10</td>
-      <td>1104</td>
-      <td>51</td>
-      <td>3</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>TAGGCTGTCACTCGCT-2523_C07</th>
-      <td>TAGGCTGTCACTCGCT</td>
-      <td>H24.30.007</td>
-      <td>2523_C07</td>
-      <td>L8XR_241024_21_F09</td>
-      <td>116779e51ff04e5a250c4610737fc5f4a2750a8a</td>
-      <td>0.156250</td>
-      <td>40876.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>0078c421-3806-4d66-9821-ced247cf6e31</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#79bdf4</td>
-      <td>#e377c2</td>
-      <td>#73f9d4</td>
-      <td>10</td>
-      <td>1330</td>
-      <td>57</td>
-      <td>3</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>TGATCAATCAAAGGCA-2271_A08</th>
-      <td>TGATCAATCAAAGGCA</td>
-      <td>H24.30.004</td>
-      <td>2271_A08</td>
-      <td>L8XR_240613_01_B08</td>
-      <td>8c3d4596be432e469850d9c58cc8826666399652</td>
-      <td>0.016667</td>
-      <td>2686.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>15f66488-a542-467a-a8f6-69c5ae1be577</td>
-      <td>...</td>
-      <td>#a8afa5</td>
-      <td>#594a26</td>
-      <td>#594a26</td>
-      <td>#66391F</td>
-      <td>#a9de1a</td>
-      <td>3</td>
-      <td>142</td>
-      <td>9</td>
-      <td>1</td>
-      <td>7</td>
     </tr>
   </tbody>
 </table>
@@ -2823,7 +2795,7 @@ Number of unique doublet_score = 1422
 Number of unique umi_count = 85704 
 Number of unique feature_matrix_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
 Number of unique dataset_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
-Number of unique abc_sample_id = 1863243 
+Number of unique abc_sample_id = 1896133 
 Number of unique donor_species = 4 [&#39;NCBITaxon:9483&#39;, &#39;NCBITaxon:9544&#39;, &#39;NCBITaxon:9545&#39;, &#39;NCBITaxon:9606&#39;]
 Number of unique species_scientific_name = 4 [&#39;Callithrix jacchus&#39;, &#39;Homo sapiens&#39;, &#39;Macaca mulatta&#39;, &#39;Macaca nemestrina&#39;]
 Number of unique species_genus = 3 [&#39;Human&#39;, &#39;Macaque&#39;, &#39;Marmoset&#39;]
@@ -2898,7 +2870,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2743addae68174af0c19e51fe6cf29e2ee5ccdc65431e7a1d3cba9598fe830e6.png" src="../_images/2743addae68174af0c19e51fe6cf29e2ee5ccdc65431e7a1d3cba9598fe830e6.png" />
+<img alt="../_images/ec93b7aa58839a8fbce62e9f2d4af1405506d7bbfc46ecd653e2c087ca94c4e3.png" src="../_images/ec93b7aa58839a8fbce62e9f2d4af1405506d7bbfc46ecd653e2c087ca94c4e3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2918,7 +2890,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a5a7df0a7e9da9e8c452ba2881c6f9c22f544564961e0d2d607c6678ec7ccbee.png" src="../_images/a5a7df0a7e9da9e8c452ba2881c6f9c22f544564961e0d2d607c6678ec7ccbee.png" />
+<img alt="../_images/d732ef5ba906e7988a6b857f93920c2833b78316f174596d732d5c1fd1144d55.png" src="../_images/d732ef5ba906e7988a6b857f93920c2833b78316f174596d732d5c1fd1144d55.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2938,7 +2910,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/42eae02fd59ed0463710b457d90aadb3f2672d267f455ae6344cc980bf7bb451.png" src="../_images/42eae02fd59ed0463710b457d90aadb3f2672d267f455ae6344cc980bf7bb451.png" />
+<img alt="../_images/f325138d5595d26e1c0f59f6d743212d8ddd3be2f0912b98534ce726fe429ea4.png" src="../_images/f325138d5595d26e1c0f59f6d743212d8ddd3be2f0912b98534ce726fe429ea4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2958,7 +2930,7 @@ Number of unique Subclass_order = 36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/245707ee7ba273fe0ad4bbd747a381a3d22cbf5713827c40be48d63eb9262cf1.png" src="../_images/245707ee7ba273fe0ad4bbd747a381a3d22cbf5713827c40be48d63eb9262cf1.png" />
+<img alt="../_images/38d319ab04daabff4f984819b52c03652c3bd5c44f842c7a213d24cec37abf8d.png" src="../_images/38d319ab04daabff4f984819b52c03652c3bd5c44f842c7a213d24cec37abf8d.png" />
 </div>
 </div>
 <p>Note that we do not plot the cluster level here. Comparison of the clusters across species is not recommended and any cross species analysis should use the Group level at the lowest. Clusters should only be used when looking at individual species as we do below.</p>

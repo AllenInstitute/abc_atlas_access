@@ -555,7 +555,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span>
-    <span class="n">download_base</span>
+    <span class="n">cache_dir</span><span class="o">=</span><span class="n">download_base</span>
 <span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -563,7 +563,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260131/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260415/manifest.json&#39;
 </pre></div>
 </div>
 </div>
@@ -731,6 +731,10 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (4) have mixed types. Specify dtype option on import or set low_memory=False.
+  return pd.read_csv(path, **kwargs)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of cells =  3915432
 </pre></div>
 </div>
@@ -755,11 +759,13 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
       <th>cell_barcode</th>
       <th>barcoded_cell_sample_label</th>
       <th>library_label</th>
+      <th>alignment_job_id</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -773,6 +779,7 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
       <td>GCGAGAAGTTAAGGGC</td>
       <td>410_B05</td>
       <td>L8TX_201030_01_C12</td>
+      <td>1177903638</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
     </tr>
@@ -781,6 +788,7 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
       <td>AATGGCTCAGCTCCTT</td>
       <td>411_B06</td>
       <td>L8TX_201029_01_E10</td>
+      <td>1177903464</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
     </tr>
@@ -789,6 +797,7 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
       <td>AACACACGTTGCTTGA</td>
       <td>410_B05</td>
       <td>L8TX_201030_01_C12</td>
+      <td>1177903638</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
     </tr>
@@ -797,6 +806,7 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
       <td>CACAGATAGAGGCGGA</td>
       <td>410_A05</td>
       <td>L8TX_201029_01_A10</td>
+      <td>1177903446</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
     </tr>
@@ -805,6 +815,7 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
       <td>GATCGTATCGAATCCA</td>
       <td>411_B06</td>
       <td>L8TX_201029_01_E10</td>
+      <td>1177903464</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
     </tr>
@@ -837,6 +848,7 @@ Consensus-WMB-Macosko-10X: gene expression data (h5ad)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 3580247 
 Number of unique barcoded_cell_sample_label = 781 
 Number of unique library_label = 1434 
+Number of unique alignment_job_id = 1536 
 Number of unique dataset_label = 3 [&#39;Consensus-WMB-Macosko-10X&#39;, &#39;WMB-10Xv2&#39;, &#39;WMB-10Xv3&#39;]
 Number of unique feature_matrix_label = 33 
 </pre></div>
@@ -1638,6 +1650,7 @@ Number of unique feature_matrix_label = 33
       <th>cell_barcode</th>
       <th>barcoded_cell_sample_label</th>
       <th>library_label</th>
+      <th>alignment_job_id</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
       <th>library_method</th>
@@ -1676,6 +1689,7 @@ Number of unique feature_matrix_label = 33
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -1684,6 +1698,7 @@ Number of unique feature_matrix_label = 33
       <td>GCGAGAAGTTAAGGGC</td>
       <td>410_B05</td>
       <td>L8TX_201030_01_C12</td>
+      <td>1177903638</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
       <td>10Xv3</td>
@@ -1706,6 +1721,7 @@ Number of unique feature_matrix_label = 33
       <td>AATGGCTCAGCTCCTT</td>
       <td>411_B06</td>
       <td>L8TX_201029_01_E10</td>
+      <td>1177903464</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
       <td>10Xv3</td>
@@ -1728,6 +1744,7 @@ Number of unique feature_matrix_label = 33
       <td>AACACACGTTGCTTGA</td>
       <td>410_B05</td>
       <td>L8TX_201030_01_C12</td>
+      <td>1177903638</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
       <td>10Xv3</td>
@@ -1750,6 +1767,7 @@ Number of unique feature_matrix_label = 33
       <td>CACAGATAGAGGCGGA</td>
       <td>410_A05</td>
       <td>L8TX_201029_01_A10</td>
+      <td>1177903446</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
       <td>10Xv3</td>
@@ -1772,6 +1790,7 @@ Number of unique feature_matrix_label = 33
       <td>GATCGTATCGAATCCA</td>
       <td>411_B06</td>
       <td>L8TX_201029_01_E10</td>
+      <td>1177903464</td>
       <td>WMB-10Xv3</td>
       <td>WMB-10Xv3-HPF</td>
       <td>10Xv3</td>
@@ -1993,7 +2012,7 @@ Number of unique feature_matrix_label = 33
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d2de09942cfda7d9732a3d1aa229b3fe0109ea1a86de5af3f4fa16bea2e1c4f2.png" src="../_images/d2de09942cfda7d9732a3d1aa229b3fe0109ea1a86de5af3f4fa16bea2e1c4f2.png" />
+<img alt="../_images/2022950e6aba3b23ca94c8fec71ea3a0869381360f1e1fc2f6e9828cd118616a.png" src="../_images/2022950e6aba3b23ca94c8fec71ea3a0869381360f1e1fc2f6e9828cd118616a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2013,7 +2032,7 @@ Number of unique feature_matrix_label = 33
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/629daee14288bc481ce947155f7853bd4d9d71033684a7722080760ba82d8f4b.png" src="../_images/629daee14288bc481ce947155f7853bd4d9d71033684a7722080760ba82d8f4b.png" />
+<img alt="../_images/eb3d4c6a4bf77c84778f89d750c5d8cb736cc1834c6a387a798ebcc17c4b6b5d.png" src="../_images/eb3d4c6a4bf77c84778f89d750c5d8cb736cc1834c6a387a798ebcc17c4b6b5d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2033,7 +2052,7 @@ Number of unique feature_matrix_label = 33
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34c40aa580924c5be422ed61c927ac5034b1fb80450dfe9d085226a7b60905de.png" src="../_images/34c40aa580924c5be422ed61c927ac5034b1fb80450dfe9d085226a7b60905de.png" />
+<img alt="../_images/52d71a29ce4285b30ed1c65ca0bd8d1c2c6e0fd7f4e0fa98e7db612f33ef9a7a.png" src="../_images/52d71a29ce4285b30ed1c65ca0bd8d1c2c6e0fd7f4e0fa98e7db612f33ef9a7a.png" />
 </div>
 </div>
 </section>
@@ -2927,13 +2946,13 @@ Number of unique feature_matrix_label = 33
       <th>cell_barcode</th>
       <th>barcoded_cell_sample_label</th>
       <th>library_label</th>
+      <th>alignment_job_id</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
       <th>library_method</th>
       <th>alignment_id</th>
       <th>region_of_interest_acronym</th>
       <th>anatomical_division_label</th>
-      <th>donor_label</th>
       <th>...</th>
       <th>class_color</th>
       <th>subclass_color</th>
@@ -2973,128 +2992,128 @@ Number of unique feature_matrix_label = 33
   </thead>
   <tbody>
     <tr>
-      <th>GACGCTGTCGCACGAC-426_C04</th>
-      <td>GACGCTGTCGCACGAC</td>
-      <td>426_C04</td>
-      <td>L8TX_201113_01_F06</td>
-      <td>WMB-10Xv3</td>
-      <td>WMB-10Xv3-P</td>
-      <td>10Xv3</td>
-      <td>1177903895</td>
-      <td>P</td>
-      <td>MY-Pons-BS</td>
-      <td>Snap25-IRES2-Cre;Ai14-550468</td>
+      <th>pBICCNsMMrLSXLSNSHiM015d210204_GGATCTACAAAGAACT</th>
+      <td>GGATCTACAAAGAACT</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrLSXLSNSHiM015d210204</td>
+      <td>NaN</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-STR</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>LSX</td>
+      <td>STR</td>
       <td>...</td>
-      <td>#858881</td>
-      <td>#653D66</td>
-      <td>#524F69</td>
-      <td>#2E7099</td>
-      <td>41</td>
-      <td>6661</td>
-      <td>9</td>
+      <td>#1b4332</td>
+      <td>#819945</td>
+      <td>#2d42b7</td>
+      <td>#00CC5A</td>
+      <td>5</td>
+      <td>808</td>
+      <td>2</td>
       <td>25</td>
-      <td>404</td>
-      <td>1354</td>
+      <td>53</td>
+      <td>186</td>
     </tr>
     <tr>
-      <th>pBICCNsMMrCBDECiM006d190313c_TCCATCGCAGCAGTTT</th>
-      <td>TCCATCGCAGCAGTTT</td>
+      <th>pBICCNsMMrMOpPiF005d190318b_TTCTAGTCAAATCAGA</th>
+      <td>TTCTAGTCAAATCAGA</td>
       <td>NaN</td>
-      <td>pBICCNsMMrCBDECiM006d190313c</td>
+      <td>pBICCNsMMrMOpPiF005d190318b</td>
+      <td>NaN</td>
       <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-CB</td>
+      <td>Macosko-10X-Isocortex</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>CB</td>
-      <td>CB</td>
-      <td>M006</td>
+      <td>MOp</td>
+      <td>Isocortex</td>
       <td>...</td>
-      <td>#9D0208</td>
-      <td>#FF4826</td>
-      <td>#BC1010</td>
-      <td>#FFF4CC</td>
-      <td>35</td>
-      <td>6497</td>
-      <td>7</td>
+      <td>#FA0087</td>
+      <td>#E9530F</td>
+      <td>#5C6899</td>
+      <td>#FFDFA0</td>
       <td>1</td>
-      <td>387</td>
-      <td>1299</td>
+      <td>26</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>6</td>
     </tr>
     <tr>
-      <th>CGAATTGAGGTCGTGA-478_B02</th>
-      <td>CGAATTGAGGTCGTGA</td>
-      <td>478_B02</td>
-      <td>L8TX_210107_02_F10</td>
+      <th>TGGGCGTAGTGTACAA-389_A01</th>
+      <td>TGGGCGTAGTGTACAA</td>
+      <td>389_A01</td>
+      <td>L8TX_201016_01_A04</td>
+      <td>1178487388</td>
       <td>WMB-10Xv3</td>
-      <td>WMB-10Xv3-CB</td>
+      <td>WMB-10Xv3-HY</td>
       <td>10Xv3</td>
-      <td>1178469596</td>
-      <td>CB</td>
-      <td>CB</td>
-      <td>Snap25-IRES2-Cre;Ai14-556943</td>
+      <td>1178487388</td>
+      <td>HY</td>
+      <td>HY</td>
       <td>...</td>
-      <td>#9D0208</td>
-      <td>#FF4826</td>
-      <td>#BC1010</td>
-      <td>#99457A</td>
-      <td>35</td>
-      <td>6498</td>
-      <td>7</td>
+      <td>#AA0DFE</td>
+      <td>#CC0048</td>
+      <td>#00DD75</td>
+      <td>#CC755C</td>
+      <td>15</td>
+      <td>2773</td>
+      <td>4</td>
       <td>1</td>
-      <td>387</td>
-      <td>1299</td>
+      <td>161</td>
+      <td>630</td>
     </tr>
     <tr>
-      <th>pBICCNsMMrMBM6iM014d201007_CGGGACTCATCCGATA</th>
-      <td>CGGGACTCATCCGATA</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrMBM6iM014d201007</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-MB</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>MB</td>
-      <td>MB</td>
-      <td>M014</td>
+      <th>TATCAGGTCTGCGACG-058_C01</th>
+      <td>TATCAGGTCTGCGACG</td>
+      <td>058_C01</td>
+      <td>L8TX_181011_01_B03</td>
+      <td>1178473354</td>
+      <td>WMB-10Xv2</td>
+      <td>WMB-10Xv2-Isocortex-1</td>
+      <td>10Xv2</td>
+      <td>1178473354</td>
+      <td>SS-GU-VISC</td>
+      <td>Isocortex</td>
       <td>...</td>
-      <td>#594a26</td>
-      <td>#AD5CCC</td>
-      <td>#0F6635</td>
-      <td>#2C00FF</td>
+      <td>#61e2a4</td>
+      <td>#7B7ACC</td>
+      <td>#54661F</td>
+      <td>#0F6660</td>
+      <td>2</td>
+      <td>587</td>
+      <td>1</td>
+      <td>1</td>
       <td>37</td>
-      <td>6508</td>
-      <td>9</td>
-      <td>25</td>
-      <td>392</td>
-      <td>1305</td>
+      <td>140</td>
     </tr>
     <tr>
-      <th>pBICCNsMMrTHT5iM013d210226A2_CTGCTCAAGAGTGTGC</th>
-      <td>CTGCTCAAGAGTGTGC</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrTHT5iM013d210226A2</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-TH</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>TH</td>
-      <td>TH</td>
-      <td>M013</td>
+      <th>CCCAATCCATTAGCCA-002_A01</th>
+      <td>CCCAATCCATTAGCCA</td>
+      <td>002_A01</td>
+      <td>L8TX_180115_01_A11</td>
+      <td>1178482786</td>
+      <td>WMB-10Xv2</td>
+      <td>WMB-10Xv2-Isocortex-2</td>
+      <td>10Xv2</td>
+      <td>1178482786</td>
+      <td>VIS</td>
+      <td>Isocortex</td>
       <td>...</td>
-      <td>#03045E</td>
-      <td>#99FFBC</td>
-      <td>#564860</td>
-      <td>#5A662E</td>
-      <td>39</td>
-      <td>6613</td>
-      <td>9</td>
-      <td>25</td>
-      <td>401</td>
-      <td>1346</td>
+      <td>#FA0087</td>
+      <td>#3DCCB7</td>
+      <td>#009743</td>
+      <td>#FFFFC2</td>
+      <td>1</td>
+      <td>55</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>14</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 40 columns</p>
+<p>5 rows × 41 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -3107,6 +3126,7 @@ Number of unique feature_matrix_label = 33
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 3578991 
 Number of unique barcoded_cell_sample_label = 781 
 Number of unique library_label = 1434 
+Number of unique alignment_job_id = 1521 
 Number of unique dataset_label = 3 [&#39;Consensus-WMB-Macosko-10X&#39;, &#39;WMB-10Xv2&#39;, &#39;WMB-10Xv3&#39;]
 Number of unique feature_matrix_label = 33 
 Number of unique library_method = 2 [&#39;10Xv2&#39;, &#39;10Xv3&#39;]
@@ -3176,7 +3196,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e575b5c51d4b91654075282751b7abcca65c41b6c632cceef6c26970a289773d.png" src="../_images/e575b5c51d4b91654075282751b7abcca65c41b6c632cceef6c26970a289773d.png" />
+<img alt="../_images/aac93b74f97c9078d400642b4cd2826e9648d5c526fc5c863b4418d9b9085cad.png" src="../_images/aac93b74f97c9078d400642b4cd2826e9648d5c526fc5c863b4418d9b9085cad.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3196,7 +3216,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/374ebb794df011925d533b5e6d8ffe70fbd5321444ec70abbfe60cf88812e28d.png" src="../_images/374ebb794df011925d533b5e6d8ffe70fbd5321444ec70abbfe60cf88812e28d.png" />
+<img alt="../_images/abc9c7bfa59ac80b09143f7a2a716bf76bd9d3c45eb3b99aeaa654ab37935e97.png" src="../_images/abc9c7bfa59ac80b09143f7a2a716bf76bd9d3c45eb3b99aeaa654ab37935e97.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3214,7 +3234,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/749fe240b0cb96f59d24fd01b7a9f09c75c769b38b084bff600dccb33be80552.png" src="../_images/749fe240b0cb96f59d24fd01b7a9f09c75c769b38b084bff600dccb33be80552.png" />
+<img alt="../_images/a8d58dac7f3c7b3807811438b2bb27b32087c4a16dffc5c0bd8ee726afd6e01b.png" src="../_images/a8d58dac7f3c7b3807811438b2bb27b32087c4a16dffc5c0bd8ee726afd6e01b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3232,7 +3252,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34475f6e15a0d547ebc124ffe55da80ccc774563478b0a8abc19e37eba3fdd1e.png" src="../_images/34475f6e15a0d547ebc124ffe55da80ccc774563478b0a8abc19e37eba3fdd1e.png" />
+<img alt="../_images/b18b86c6af3c954b7a1dafa06478a4e872ad08acf5b2206946ca179049b43568.png" src="../_images/b18b86c6af3c954b7a1dafa06478a4e872ad08acf5b2206946ca179049b43568.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3250,7 +3270,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3cc6ef5a10e3a3ec56c855482eeb17f2f34b11adbcaa06e769c2cb8b5b74aea.png" src="../_images/e3cc6ef5a10e3a3ec56c855482eeb17f2f34b11adbcaa06e769c2cb8b5b74aea.png" />
+<img alt="../_images/2ce17c289d754ea4c7d97967a8d1122c78bf772fdc49d1c3e6590a99a04eb5fc.png" src="../_images/2ce17c289d754ea4c7d97967a8d1122c78bf772fdc49d1c3e6590a99a04eb5fc.png" />
 </div>
 </div>
 <p>Additionally, we plot by neurotransmitter.</p>
@@ -3271,7 +3291,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d8af6a0659de0233b9bda8b3fee75a4bead7f3794ba069ea10c67de463857e49.png" src="../_images/d8af6a0659de0233b9bda8b3fee75a4bead7f3794ba069ea10c67de463857e49.png" />
+<img alt="../_images/ec76fb01c6a28b594f8dc2ea688cbbf79998425418a1bfd194289c7bb34fa29d.png" src="../_images/ec76fb01c6a28b594f8dc2ea688cbbf79998425418a1bfd194289c7bb34fa29d.png" />
 </div>
 </div>
 <section id="neighborhood-umaps">
@@ -3307,13 +3327,13 @@ Number of unique supertype_order = 1386
       <th>cell_barcode</th>
       <th>barcoded_cell_sample_label</th>
       <th>library_label</th>
+      <th>alignment_job_id</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
       <th>library_method</th>
       <th>alignment_id</th>
       <th>region_of_interest_acronym</th>
       <th>anatomical_division_label</th>
-      <th>donor_label</th>
       <th>...</th>
       <th>class_color</th>
       <th>subclass_color</th>
@@ -3353,128 +3373,128 @@ Number of unique supertype_order = 1386
   </thead>
   <tbody>
     <tr>
-      <th>pBICCNsMMrCTXANGiF021d210525C2_GACAGCCGTGTACGCC</th>
-      <td>GACAGCCGTGTACGCC</td>
+      <th>pBICCNsMMrMOpPiF005d190318b_TTCTAGTCAAATCAGA</th>
+      <td>TTCTAGTCAAATCAGA</td>
       <td>NaN</td>
-      <td>pBICCNsMMrCTXANGiF021d210525C2</td>
+      <td>pBICCNsMMrMOpPiF005d190318b</td>
+      <td>NaN</td>
       <td>Consensus-WMB-Macosko-10X</td>
       <td>Macosko-10X-Isocortex</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>CTX</td>
+      <td>MOp</td>
       <td>Isocortex</td>
-      <td>F021</td>
-      <td>...</td>
-      <td>#FA0087</td>
-      <td>#660F38</td>
-      <td>#456199</td>
-      <td>#FBFFAE</td>
-      <td>1</td>
-      <td>78</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>CCTAGCTCACGAAAGC-070_B01</th>
-      <td>CCTAGCTCACGAAAGC</td>
-      <td>070_B01</td>
-      <td>L8TX_181206_01_E12</td>
-      <td>WMB-10Xv2</td>
-      <td>WMB-10Xv2-Isocortex-1</td>
-      <td>10Xv2</td>
-      <td>1178471645</td>
-      <td>MO-FRP</td>
-      <td>Isocortex</td>
-      <td>Snap25-IRES2-Cre;Ai14-426004</td>
-      <td>...</td>
-      <td>#61e2a4</td>
-      <td>#34661F</td>
-      <td>#00EEEE</td>
-      <td>#30660F</td>
-      <td>2</td>
-      <td>572</td>
-      <td>1</td>
-      <td>1</td>
-      <td>35</td>
-      <td>133</td>
-    </tr>
-    <tr>
-      <th>pBICCNsMMrVISiF022d210719A1_ACAGAAAGTCTTCGAA</th>
-      <td>ACAGAAAGTCTTCGAA</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrVISiF022d210719A1</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-Isocortex</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>VIS</td>
-      <td>Isocortex</td>
-      <td>F022</td>
-      <td>...</td>
-      <td>#FA0087</td>
-      <td>#999145</td>
-      <td>#3F8E78</td>
-      <td>#FFFF00</td>
-      <td>1</td>
-      <td>6</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>pBICCNsMMrACAiF019d210630A6_AGAACAACAGCGTACC</th>
-      <td>AGAACAACAGCGTACC</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrACAiF019d210630A6</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-Isocortex</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>ACA</td>
-      <td>Isocortex</td>
-      <td>F019</td>
-      <td>...</td>
-      <td>#FA0087</td>
-      <td>#3DCCB7</td>
-      <td>#638600</td>
-      <td>#661B0F</td>
-      <td>1</td>
-      <td>47</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>GTCTGTCCAATCACGT-480_A04</th>
-      <td>GTCTGTCCAATCACGT</td>
-      <td>480_A04</td>
-      <td>L8TX_210107_01_F09</td>
-      <td>WMB-10Xv3</td>
-      <td>WMB-10Xv3-Isocortex-1</td>
-      <td>10Xv3</td>
-      <td>1178469599</td>
-      <td>VIS</td>
-      <td>Isocortex</td>
-      <td>Snap25-IRES2-Cre;Ai14-556846</td>
       <td>...</td>
       <td>#FA0087</td>
       <td>#E9530F</td>
       <td>#5C6899</td>
-      <td>#F0FF9B</td>
+      <td>#FFDFA0</td>
       <td>1</td>
-      <td>27</td>
+      <td>26</td>
       <td>1</td>
       <td>1</td>
       <td>2</td>
       <td>6</td>
     </tr>
+    <tr>
+      <th>TATCAGGTCTGCGACG-058_C01</th>
+      <td>TATCAGGTCTGCGACG</td>
+      <td>058_C01</td>
+      <td>L8TX_181011_01_B03</td>
+      <td>1178473354</td>
+      <td>WMB-10Xv2</td>
+      <td>WMB-10Xv2-Isocortex-1</td>
+      <td>10Xv2</td>
+      <td>1178473354</td>
+      <td>SS-GU-VISC</td>
+      <td>Isocortex</td>
+      <td>...</td>
+      <td>#61e2a4</td>
+      <td>#7B7ACC</td>
+      <td>#54661F</td>
+      <td>#0F6660</td>
+      <td>2</td>
+      <td>587</td>
+      <td>1</td>
+      <td>1</td>
+      <td>37</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>CCCAATCCATTAGCCA-002_A01</th>
+      <td>CCCAATCCATTAGCCA</td>
+      <td>002_A01</td>
+      <td>L8TX_180115_01_A11</td>
+      <td>1178482786</td>
+      <td>WMB-10Xv2</td>
+      <td>WMB-10Xv2-Isocortex-2</td>
+      <td>10Xv2</td>
+      <td>1178482786</td>
+      <td>VIS</td>
+      <td>Isocortex</td>
+      <td>...</td>
+      <td>#FA0087</td>
+      <td>#3DCCB7</td>
+      <td>#009743</td>
+      <td>#FFFFC2</td>
+      <td>1</td>
+      <td>55</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>pBICCNsMMrRSPPiF017d210210A3_GGTTAACCAAGTGCAG</th>
+      <td>GGTTAACCAAGTGCAG</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrRSPPiF017d210210A3</td>
+      <td>NaN</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-Isocortex</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>RSP</td>
+      <td>Isocortex</td>
+      <td>...</td>
+      <td>#FA0087</td>
+      <td>#999145</td>
+      <td>#3F8E78</td>
+      <td>#00990A</td>
+      <td>1</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>pBICCNsMMrMBL2iM013d201007_ACTTATCGTAGAGATT</th>
+      <td>ACTTATCGTAGAGATT</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrMBL2iM013d201007</td>
+      <td>NaN</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-MB</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>MB</td>
+      <td>MB</td>
+      <td>...</td>
+      <td>#FA0087</td>
+      <td>#925C99</td>
+      <td>#E03415</td>
+      <td>#31FF00</td>
+      <td>1</td>
+      <td>352</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20</td>
+      <td>84</td>
+    </tr>
   </tbody>
 </table>
-<p>5 rows × 40 columns</p>
+<p>5 rows × 41 columns</p>
 </div></div></div>
 </div>
 <p>Now we load and join in the coordinates of the neighborhood UMAP. Note the inner join and the suffix added to the joined DataFrame as we already have ‘x’ and ‘y’ columns.</p>
@@ -3514,13 +3534,13 @@ Number of unique supertype_order = 1386
       <th>cell_barcode</th>
       <th>barcoded_cell_sample_label</th>
       <th>library_label</th>
+      <th>alignment_job_id</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
       <th>library_method</th>
       <th>alignment_id</th>
       <th>region_of_interest_acronym</th>
       <th>anatomical_division_label</th>
-      <th>donor_label</th>
       <th>...</th>
       <th>supertype_color</th>
       <th>cluster_color</th>
@@ -3560,128 +3580,128 @@ Number of unique supertype_order = 1386
   </thead>
   <tbody>
     <tr>
-      <th>pBICCNsMMrCTXANGiF021d210525C2_GACAGCCGTGTACGCC</th>
-      <td>GACAGCCGTGTACGCC</td>
+      <th>pBICCNsMMrMOpPiF005d190318b_TTCTAGTCAAATCAGA</th>
+      <td>TTCTAGTCAAATCAGA</td>
       <td>NaN</td>
-      <td>pBICCNsMMrCTXANGiF021d210525C2</td>
+      <td>pBICCNsMMrMOpPiF005d190318b</td>
+      <td>NaN</td>
       <td>Consensus-WMB-Macosko-10X</td>
       <td>Macosko-10X-Isocortex</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>CTX</td>
+      <td>MOp</td>
       <td>Isocortex</td>
-      <td>F021</td>
       <td>...</td>
-      <td>#456199</td>
-      <td>#FBFFAE</td>
+      <td>#5C6899</td>
+      <td>#FFDFA0</td>
       <td>1</td>
-      <td>78</td>
+      <td>26</td>
       <td>1</td>
       <td>1</td>
-      <td>4</td>
-      <td>19</td>
-      <td>14.378285</td>
-      <td>14.850556</td>
+      <td>2</td>
+      <td>6</td>
+      <td>12.045706</td>
+      <td>10.739746</td>
     </tr>
     <tr>
-      <th>CCTAGCTCACGAAAGC-070_B01</th>
-      <td>CCTAGCTCACGAAAGC</td>
-      <td>070_B01</td>
-      <td>L8TX_181206_01_E12</td>
+      <th>TATCAGGTCTGCGACG-058_C01</th>
+      <td>TATCAGGTCTGCGACG</td>
+      <td>058_C01</td>
+      <td>L8TX_181011_01_B03</td>
+      <td>1178473354</td>
       <td>WMB-10Xv2</td>
       <td>WMB-10Xv2-Isocortex-1</td>
       <td>10Xv2</td>
-      <td>1178471645</td>
-      <td>MO-FRP</td>
+      <td>1178473354</td>
+      <td>SS-GU-VISC</td>
       <td>Isocortex</td>
-      <td>Snap25-IRES2-Cre;Ai14-426004</td>
       <td>...</td>
-      <td>#00EEEE</td>
-      <td>#30660F</td>
+      <td>#54661F</td>
+      <td>#0F6660</td>
       <td>2</td>
-      <td>572</td>
+      <td>587</td>
       <td>1</td>
       <td>1</td>
-      <td>35</td>
-      <td>133</td>
-      <td>19.161156</td>
-      <td>14.687316</td>
+      <td>37</td>
+      <td>140</td>
+      <td>22.077094</td>
+      <td>12.612509</td>
     </tr>
     <tr>
-      <th>pBICCNsMMrVISiF022d210719A1_ACAGAAAGTCTTCGAA</th>
-      <td>ACAGAAAGTCTTCGAA</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrVISiF022d210719A1</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-Isocortex</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>CCCAATCCATTAGCCA-002_A01</th>
+      <td>CCCAATCCATTAGCCA</td>
+      <td>002_A01</td>
+      <td>L8TX_180115_01_A11</td>
+      <td>1178482786</td>
+      <td>WMB-10Xv2</td>
+      <td>WMB-10Xv2-Isocortex-2</td>
+      <td>10Xv2</td>
+      <td>1178482786</td>
       <td>VIS</td>
       <td>Isocortex</td>
-      <td>F022</td>
       <td>...</td>
-      <td>#3F8E78</td>
-      <td>#FFFF00</td>
+      <td>#009743</td>
+      <td>#FFFFC2</td>
       <td>1</td>
-      <td>6</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>8.557347</td>
-      <td>16.247175</td>
-    </tr>
-    <tr>
-      <th>pBICCNsMMrACAiF019d210630A6_AGAACAACAGCGTACC</th>
-      <td>AGAACAACAGCGTACC</td>
-      <td>NaN</td>
-      <td>pBICCNsMMrACAiF019d210630A6</td>
-      <td>Consensus-WMB-Macosko-10X</td>
-      <td>Macosko-10X-Isocortex</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>ACA</td>
-      <td>Isocortex</td>
-      <td>F019</td>
-      <td>...</td>
-      <td>#638600</td>
-      <td>#661B0F</td>
-      <td>1</td>
-      <td>47</td>
+      <td>55</td>
       <td>1</td>
       <td>1</td>
       <td>3</td>
-      <td>11</td>
-      <td>10.338338</td>
-      <td>13.062096</td>
+      <td>14</td>
+      <td>11.737135</td>
+      <td>12.442655</td>
     </tr>
     <tr>
-      <th>GTCTGTCCAATCACGT-480_A04</th>
-      <td>GTCTGTCCAATCACGT</td>
-      <td>480_A04</td>
-      <td>L8TX_210107_01_F09</td>
-      <td>WMB-10Xv3</td>
-      <td>WMB-10Xv3-Isocortex-1</td>
-      <td>10Xv3</td>
-      <td>1178469599</td>
-      <td>VIS</td>
+      <th>pBICCNsMMrRSPPiF017d210210A3_GGTTAACCAAGTGCAG</th>
+      <td>GGTTAACCAAGTGCAG</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrRSPPiF017d210210A3</td>
+      <td>NaN</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-Isocortex</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>RSP</td>
       <td>Isocortex</td>
-      <td>Snap25-IRES2-Cre;Ai14-556846</td>
       <td>...</td>
-      <td>#5C6899</td>
-      <td>#F0FF9B</td>
+      <td>#3F8E78</td>
+      <td>#00990A</td>
       <td>1</td>
-      <td>27</td>
+      <td>8</td>
+      <td>1</td>
       <td>1</td>
       <td>1</td>
       <td>2</td>
-      <td>6</td>
-      <td>11.338059</td>
-      <td>12.067234</td>
+      <td>8.578862</td>
+      <td>17.325754</td>
+    </tr>
+    <tr>
+      <th>pBICCNsMMrMBL2iM013d201007_ACTTATCGTAGAGATT</th>
+      <td>ACTTATCGTAGAGATT</td>
+      <td>NaN</td>
+      <td>pBICCNsMMrMBL2iM013d201007</td>
+      <td>NaN</td>
+      <td>Consensus-WMB-Macosko-10X</td>
+      <td>Macosko-10X-MB</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>MB</td>
+      <td>MB</td>
+      <td>...</td>
+      <td>#E03415</td>
+      <td>#31FF00</td>
+      <td>1</td>
+      <td>352</td>
+      <td>1</td>
+      <td>1</td>
+      <td>20</td>
+      <td>84</td>
+      <td>6.447958</td>
+      <td>20.925599</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 42 columns</p>
+<p>5 rows × 43 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -3701,7 +3721,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/99c2c2c67b60aab9209995f85c1a3001e1269442fbed2d3d79f743ba36d6985f.png" src="../_images/99c2c2c67b60aab9209995f85c1a3001e1269442fbed2d3d79f743ba36d6985f.png" />
+<img alt="../_images/49d57e74a8bba91235689d54f3db5f921c5092018c5d3cec7ea053fdb745af56.png" src="../_images/49d57e74a8bba91235689d54f3db5f921c5092018c5d3cec7ea053fdb745af56.png" />
 </div>
 </div>
 <p>Below is a block of code that will plot a given term (e.g. taxonomy class, origin_dataset, donor_sex) in each of the 9 neighborhood UMAPS. Change the value in term_to_plot to any of the other columns we used above to visualize that data in each of the 9 neighborhoods.</p>
@@ -3738,7 +3758,7 @@ Number of unique supertype_order = 1386
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2f869880170fd8d776ce23d3675bd2caf2b8ae590b7c11c57b266aeedb1c87d9.png" src="../_images/2f869880170fd8d776ce23d3675bd2caf2b8ae590b7c11c57b266aeedb1c87d9.png" />
+<img alt="../_images/209f5175478d4028fb0b0d8a388bb22154d5d23f2dd57ab993a4220cf5081082.png" src="../_images/209f5175478d4028fb0b0d8a388bb22154d5d23f2dd57ab993a4220cf5081082.png" />
 </div>
 </div>
 </section>
