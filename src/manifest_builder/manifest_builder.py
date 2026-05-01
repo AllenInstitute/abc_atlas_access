@@ -308,7 +308,7 @@ if __name__ == "__main__":
         nargs="+",
         type=str,
         default=[
-            "releases", "SEAAD-10X", "SEAAD-MERFISH", "SEA-AD", "Zhuang-C57BL6J", "neuroglancer",
+            "releases", "SEAAD-10X", "SEAAD-MERFISH", "Zhuang-C57BL6J", "neuroglancer",
             "abc_kb_ingest"
         ],
         help="Skip a given project for all directories that start with the "
