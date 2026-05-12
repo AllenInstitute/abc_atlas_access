@@ -1,4 +1,4 @@
-# Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Aligned gene expression across species
+# Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species
 
 The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context
 of action selection, motor learning and emotional state, whose coarse functional organization is
