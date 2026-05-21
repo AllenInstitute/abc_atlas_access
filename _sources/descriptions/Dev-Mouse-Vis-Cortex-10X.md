@@ -1,8 +1,8 @@
 # Developing Mouse - Visual Cortex single cell transcriptomes
 
-The Developing Mouse - Visual Cortext taxonomy is derived from a single cell transcriptomic dataset containing 568,654 cells from 53 donors ranging in age from embryonic to adult.
+The Developing Mouse - Visual Cortex taxonomy is derived from a single cell transcriptomic dataset containing 568,654 cells from 53 donors ranging in age from embryonic to adult.
 
-All associated metadata is publicly available as an AWS Public Dataset hosted on Amazon S3 and through the Allen Brain Cell Atlass Access (abc_atlas_access) package. 
+All associated metadata is publicly available as an AWS Public Dataset hosted on Amazon S3 and through the Allen Brain Cell Atlas Access (abc_atlas_access) package. 
 
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset:
