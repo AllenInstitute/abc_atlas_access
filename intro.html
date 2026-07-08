@@ -61,6 +61,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -148,8 +150,8 @@
       
     
     
-    <img src="_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
-    <img src="_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="_static/allen_logo.png" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="_static/allen_logo.png" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
@@ -232,6 +234,13 @@
 <li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/SEA-AD-dataset.html">SEA-AD datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/SEA-AD-Multiregion-taxonomy.html">SEA-AD - Multiregion taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/SEA-AD-Multiregion-10X.html">SEA-AD - Multiregion single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/SEA-AD-CaH-taxonomy.html">SEA-AD - Caudate Nucleus taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/SEA-AD-CaH-10X.html">SEA-AD - Caudate Nucleus single nucleus transcriptomes</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="nav bd-sidenav">
@@ -295,6 +304,13 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_macaque_patchseq.html">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/SEA-AD-notebooks.html">SEA-AD - notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.html">SEA-AD Multiregion taxonomy and snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sea-ad_multiregion_10X_RNASeq.html">SEA-AD Mutlitregion taxonomy and snRNASeq analysis: 10X gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sea-ad_cah_clustering_analysis_and_annotation.html">SEA-AD CaH snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/sea-ad_cah_10X_RNASeq.html">SEA-AD CaH: 10X gene expression</a></li>
 </ul>
 </details></li>
 </ul>
@@ -551,6 +567,8 @@ example use cases.</strong></em></p>
 (ASAP)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_dataset.html"><span class="std std-doc">Human-Mammalian Brain - Basal Ganglia</span></a>
 (HMBA)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/SEA-AD-dataset.html"><span class="std std-doc">SEA-AD: Multiregion and Caudate datasets</span></a>
+(SEA-AD)</strong></p></li>
 </ul>
 <p>We provide a lightweight python object, the AbcProjectCache, to handle
 downloading of the data and managing different release versions for the user.
@@ -594,11 +612,29 @@ mouse brain</span></a>
 (ASAP)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_notebooks.html"><span class="std std-doc">Human-Mammalian Brain - Basal Ganglia</span></a>
 (HMBA)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/SEA-AD-notebooks.html"><span class="std std-doc">SEA-AD: Multiregion and Caudate datasets</span></a>
+(SEA-AD)</strong></p></li>
 </ul>
 </section>
 <section id="release-notes">
 <h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p><strong>[Relase (version 20260711), abc_atlas_access (v1.4.0)]</strong></p>
+<ul>
+<li><p>SEA-AD-Multiregion-10X</p>
+<ul>
+<li><p>Added 10 region SEA-AD dataset with taxonomy.</p></li>
+<li><p>8 Million single nuclei transcriptoms</p></li>
+</ul>
+</li>
+<li><p>SEA-AD-CaH-10X</p>
+<ul>
+<li><p>Added SEA-AD Caudate Nucleus 10X dataset with taxonomy.</p></li>
+<li><p>~800 thousand single nuclei transcriptoms</p></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p><strong>[Bug fix release (version 20260415), abc_atlas_access (v1.3.2)]</strong></p>
 <ul>
 <li><p>HMBA-10XMultiome-BG-Aligned</p>

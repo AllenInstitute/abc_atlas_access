@@ -15,3 +15,4 @@
 * [HMBA-MERSCOPE-QM23.50.001-BG: Macaque (315 genes)](HMBA-MERSCOPE-QM23.50.001-BG/gene_list.html)
 * [HMBA-MERSCOPE-CJ23.56.004-BG: Marmoset (300 genes)](HMBA-Xenium-CJ23.56.004-BG/gene_list.html)
 * [HMBA-Macaque-PatchSeq: Macaque (39670 genes)](HMBA-Macaque-PatchSeq/gene_list.html)
+* [SEA-AD: Multiregion and CaH (36601 genes)](SEA-AD-Multiregion-10X/gene_list.html)

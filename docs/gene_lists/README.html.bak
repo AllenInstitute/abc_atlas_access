@@ -147,8 +147,8 @@
       
     
     
-    <img src="../../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
-    <img src="../../_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="../../_static/allen_logo.png" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="../../_static/allen_logo.png" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
@@ -231,6 +231,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/SEA-AD-dataset.html">SEA-AD datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-Multiregion-taxonomy.html">SEA-AD - Multiregion taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-Multiregion-10X.html">SEA-AD - Multiregion single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-CaH-taxonomy.html">SEA-AD - Caudate Nucleus taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-CaH-10X.html">SEA-AD - Caudate Nucleus single nucleus transcriptomes</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="nav bd-sidenav">
@@ -294,6 +301,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_macaque_patchseq.html">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/SEA-AD-notebooks.html">SEA-AD - notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.html">SEA-AD Multiregion taxonomy and snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_multiregion_10X_RNASeq.html">SEA-AD Mutlitregion taxonomy and snRNASeq analysis: 10X gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_cah_clustering_analysis_and_annotation.html">SEA-AD CaH snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_cah_10X_RNASeq.html">SEA-AD CaH: 10X gene expression</a></li>
 </ul>
 </details></li>
 </ul>
@@ -520,6 +534,7 @@
 <li><p><a class="reference download internal" download="" href="../../_downloads/5f55f11294cc187b164df44691b7c195/gene_list.html"><span class="xref download myst">HMBA-MERSCOPE-QM23.50.001-BG: Macaque (315 genes)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/19896efdfde3ec6da29ba04cf7232fb6/gene_list.html"><span class="xref download myst">HMBA-MERSCOPE-CJ23.56.004-BG: Marmoset (300 genes)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/78ef038a034ce3a3396717b062db64ee/gene_list.html"><span class="xref download myst">HMBA-Macaque-PatchSeq: Macaque (39670 genes)</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/a16a22eb8defa5d737ff32eb07fa56f7/gene_list.html"><span class="xref download myst">SEA-AD: Multiregion and CaH (36601 genes)</span></a></p></li>
 </ul>
 </section>
 

@@ -147,8 +147,8 @@
       
     
     
-    <img src="../../_static/allen_logo.jpeg" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
-    <img src="../../_static/allen_logo.jpeg" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="../../_static/allen_logo.png" class="logo__image only-light" alt="Allen Brain Cell Atlas - Data Access - Home"/>
+    <img src="../../_static/allen_logo.png" class="logo__image only-dark pst-js-only" alt="Allen Brain Cell Atlas - Data Access - Home"/>
   
   
 </a></div>
@@ -231,6 +231,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/SEA-AD-dataset.html">SEA-AD datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-Multiregion-taxonomy.html">SEA-AD - Multiregion taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-Multiregion-10X.html">SEA-AD - Multiregion single nucleus transcriptomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-CaH-taxonomy.html">SEA-AD - Caudate Nucleus taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-CaH-10X.html">SEA-AD - Caudate Nucleus single nucleus transcriptomes</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">NOTEBOOKS</span></p>
 <ul class="nav bd-sidenav">
@@ -294,6 +301,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_macaque_patchseq.html">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/SEA-AD-notebooks.html">SEA-AD - notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.html">SEA-AD Multiregion taxonomy and snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_multiregion_10X_RNASeq.html">SEA-AD Mutlitregion taxonomy and snRNASeq analysis: 10X gene expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_cah_clustering_analysis_and_annotation.html">SEA-AD CaH snRNASeq analysis: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/sea-ad_cah_10X_RNASeq.html">SEA-AD CaH: 10X gene expression</a></li>
 </ul>
 </details></li>
 </ul>
@@ -512,6 +526,8 @@
 <li><p><a class="reference download internal" download="" href="../../_downloads/86eaff57e2ce477daaacf4449b8e9697/aging_cluster_redirect.html"><span class="xref download myst">Zeng-Aging-Mouse-WMB-taxonomy (CCN20230722+CS20241021)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/4782030c3325c0ea5f37e083df529c71/whb_cluster_redirect.html"><span class="xref download myst">WHB-taxonomy</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/f67ecb377ee98078d429d60bb8a96a4d/seaad_cluster_redirect.html"><span class="xref download myst">SEAAD-taxonomy</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/9be2a0ec6261071b3b711bd38f079616/seaad_multiregion_cluster_redirect.html"><span class="xref download myst">SEA-AD-Multiregion-taxonomy (CCN20260630)</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/9065a4258beac18da3e1606e3a018f1d/seaad_cah_cluster_redirect.html"><span class="xref download myst">SEA-AD-CaH-taxonomy (CCN20260701)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/f0a851e6af74941ad2f1577aa23e99cb/hmba-bg_cluster_redirect.html"><span class="xref download myst">HMBA-BG-taxonomy-CCN20250428</span></a></p></li>
 </ul>
 </section>

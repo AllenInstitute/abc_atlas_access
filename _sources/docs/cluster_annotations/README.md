@@ -7,4 +7,6 @@
 * [Zeng-Aging-Mouse-WMB-taxonomy (CCN20230722+CS20241021)](aging_cluster_redirect.html)
 * [WHB-taxonomy](whb_cluster_redirect.html)
 * [SEAAD-taxonomy](seaad_cluster_redirect.html)
+* [SEA-AD-Multiregion-taxonomy (CCN20260630)](seaad_multiregion_cluster_redirect.html)
+* [SEA-AD-CaH-taxonomy (CCN20260701)](seaad_cah_cluster_redirect.html)
 * [HMBA-BG-taxonomy-CCN20250428](hmba-bg_cluster_redirect.html)

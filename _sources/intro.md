@@ -36,6 +36,8 @@ The Early-Winter 2026 public beta data release includes:
   (ASAP)**
 * **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_dataset.md)
   (HMBA)**
+* **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-dataset.md)
+  (SEA-AD)**
 
 We provide a lightweight python object, the AbcProjectCache, to handle
 downloading of the data and managing different release versions for the user.
@@ -81,9 +83,18 @@ notebook.
   (ASAP)**
 * **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
   (HMBA)**
+* **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-notebooks.md)
+  (SEA-AD)**
 
 
 ## Release Notes
+* **[Relase (version 20260711), abc_atlas_access (v1.4.0)]**
+  * SEA-AD-Multiregion-10X
+    * Added 10 region SEA-AD dataset with taxonomy.
+    * 8 Million single nuclei transcriptoms
+  * SEA-AD-CaH-10X
+    * Added SEA-AD Caudate Nucleus 10X dataset with taxonomy.
+    * ~800 thousand single nuclei transcriptoms
 * **[Bug fix release (version 20260415), abc_atlas_access (v1.3.2)]**
   * HMBA-10XMultiome-BG-Aligned
     * Added more valid abc_sample_ids.
