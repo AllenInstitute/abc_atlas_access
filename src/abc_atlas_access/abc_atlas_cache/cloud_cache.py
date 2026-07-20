@@ -1416,7 +1416,7 @@ class S3CloudCache(CloudCacheBase):
                              total=object_info["Size"],
                              unit_scale=True,
                              unit_divisor=1000.,
-                             unit="MB")
+                             unit="B")
 
         while not self._file_exists(file_attributes):
             n_iter += 1
