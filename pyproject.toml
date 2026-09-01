@@ -7,7 +7,7 @@ name = "abc_atlas_access"
 version = "1.4.1"
 description = "A package for accessing/processing data from the ABC Atlas"
 dependencies = [
-  "anndata",
+  "anndata>=0.13.0",
   "boto3",
   "numpy",
   "pandas",
