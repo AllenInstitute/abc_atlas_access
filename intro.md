@@ -20,7 +20,7 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The Early-Winter 2026 public beta data release includes:
+The Fall 2026 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) (Evan Macosko, Hongkui Zeng)**
@@ -88,6 +88,12 @@ notebook.
 
 
 ## Release Notes
+* **[Relase (version 20260930), abc_atlas_access (v1.4.2)]**
+  * SEA-AD-CaH-Xenium
+    * Added approximately 1.5 million spatial transcriptomes with assigments
+    into the CaH taxonomy
+  * SEA-AD various
+    * Fixed bug in combined race column with missing Hispanic marking data.
 * **[Relase (version 20260711), abc_atlas_access (v1.4.0)]**
   * SEA-AD-Multiregion-10X
     * Added 10 region SEA-AD dataset with taxonomy.

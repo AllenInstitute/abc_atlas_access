@@ -63,6 +63,7 @@ parts:
         - file: descriptions/SEA-AD-Multiregion-10X
         - file: descriptions/SEA-AD-CaH-taxonomy
         - file: descriptions/SEA-AD-CaH-10X
+        - file: descriptions/SEA-AD-CaH-spatial
 
   - caption: NOTEBOOKS
     chapters:
@@ -123,6 +124,8 @@ parts:
         - file: notebooks/sea-ad_multiregion_10X_RNASeq
         - file: notebooks/sea-ad_cah_clustering_analysis_and_annotation
         - file: notebooks/sea-ad_cah_10X_RNASeq
+        - file: notebooks/sea-ad_cah_spatial_sections_and_taxonomy
+        - file: notebooks/sea-ad_cah_spatial_genes
 
   - caption: ADDITIONAL RESOURCES
     chapters:

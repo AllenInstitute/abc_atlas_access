@@ -1,19 +1,16 @@
-# SEA-AD - Caudate Nucleus single nucleus transcriptomes
+# SEA-AD - Caudate Nucleus spatial transcriptomes
 
-SEA-AD - Caudate Nucleus taxonomy is derived from a single nuclei transcriptomic
-dataset containing 886,037 nuclei from 41 donors.
+[INTRO TEXT]
 
-All associated metadata is publicly available as an AWS Public Dataset hosted
-on Amazon S3 and through the Allen Brain Cell Atlas Access (abc_atlas_access)
-package. 
+[SEA-AD CaH cell type taxonomy](https://alleninstitute.github.io/abc_atlas_access/notebooks/sea-ad_cah_clustering_analysis_and_annotation.html).
+
 
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset:
-
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/SEA-AD-CaH-10X/20260630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/SEA-AD-CaH-10X/20260630/) |21.7 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-10X/20260711/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-10X/20260711/) | 216.4 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/SEA-AD-CaH-Xenium/20260930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/SEA-AD-CaH-Xenium/20260930/) | 705.3 MB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-Xenium/20260930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-Xenium/20260930/) | 456.0 MB |
 
 
 Data is being shared under the CC BY NC 4.0 license.
@@ -23,8 +20,8 @@ Related resources:
 * Taxonomy derived from from the Caudate Nucleus, reusing Supertypes and Groups
   from the SEA-AD-Multiregion and the HMBA-BG taxonomies
   ([SEA-AD-CaH-taxonomy](SEA-AD-CaH-taxonomy.md))
-* 1.5 Million spatial transcriptomes in the Human Caudate
-  ([SEA-AD-CaH-spatial](SEA-AD-CaH-spatial.md))
+* Approximately 800 thousand single nuclei from the Human Caudate.
+  ([SEA-AD-CaH-10X](SEA-AD-CaH-10X.md))
 * Taxonomy derived from from the the SEA-AD Multiregion datasetCaudate Nucleus
   ([SEA-AD-Multiregion-taxonomy](SEA-AD-Multiregion-taxonomy.md))
 * Approximately 8 million single nuclei from 84 donors across 10 brain regions.
@@ -50,3 +47,4 @@ Associated notebooks:
   gene expression.
 * [**SEA-AD - Multiregion gene expression**](../notebooks/sea-ad_multiregion_10X_RNASeq.ipynb):
   Learn about gene expression across the SEA-AD - Multiregion data.
+

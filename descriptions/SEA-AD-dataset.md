@@ -9,3 +9,5 @@
   ([SEA-AD-CaH-taxonomy](SEA-AD-CaH-taxonomy.md))
 * Approximately 800 thousand single nuclei from the Human Caudate.
   ([SEA-AD-CaH-10X](SEA-AD-CaH-10X.md))
+* 1.5 Million spatial transcriptomes in the Human Caudate
+  ([SEA-AD-CaH-spatial](SEA-AD-CaH-spatial.md))
