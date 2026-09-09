@@ -94,6 +94,7 @@ notebook.
     into the CaH taxonomy
   * SEA-AD various
     * Fixed bug in combined race column with missing Hispanic marking data.
+    * Removed extra space in LSX Neighborhood name in SEA-AD-CaH-taxonomy
 * **[Relase (version 20260711), abc_atlas_access (v1.4.0)]**
   * SEA-AD-Multiregion-10X
     * Added 10 region SEA-AD dataset with taxonomy.
