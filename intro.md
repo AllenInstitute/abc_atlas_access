@@ -88,6 +88,11 @@ notebook.
 
 
 ## Release Notes
+* **[Relase (version 20261031), abc_atlas_access (v1.4.1)]**
+  * HMBA-10xMultiome-Cross-Species
+    * Updated taxonomy names and colors compared to release 20260711
+    * Updated name from HMBA-10xMultiome-Aligned to HMBA-10xMultiome-Cross-Species
+    * Additional NIMP nhash identifiers for library aliquots and marmoset donors added.
 * **[Relase (version 20260711), abc_atlas_access (v1.4.0)]**
   * SEA-AD-Multiregion-10X
     * Added 10 region SEA-AD dataset with taxonomy.
