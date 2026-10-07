@@ -33,8 +33,8 @@ The associated metadata is hosted in a AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-BG-taxonomy/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-taxonomy/20251031/) | 188.9 MB |
-| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-BG-taxonomy/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-BG-taxonomy/20250630/) | 2.1 GB |
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-BG-taxonomy/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-taxonomy/20261031/) | 188.9 MB |
+| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-BG-taxonomy/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-BG-taxonomy/20261031/) | 2.1 GB |
 
 Data is being shared under the CC BY NC 4.0 license.
 

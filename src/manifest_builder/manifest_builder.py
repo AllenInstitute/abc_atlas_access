@@ -255,6 +255,13 @@ def populate_datasets(
                         elif "-log2.h5ad" in bname:
                             tag = bname.split("-log2.h5ad")[0]
                             norm = "log2"
+                        elif "-log.h5ad" in bname:
+                            tag = bname.split("-log.h5ad")[0]
+                            norm = "log"
+                        elif "-ln.h5ad" in bname:
+                            tag = bname.split("-ln.h5ad")[0]
+                            norm = "ln"
+                        
 
                         if tag not in dataset_lookup[dataset][data_kind].keys():
                             dataset_lookup[dataset][data_kind][tag] = {}

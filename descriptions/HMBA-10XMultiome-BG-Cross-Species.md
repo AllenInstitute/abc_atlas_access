@@ -20,8 +20,8 @@ a AWS Public Dataset:
 
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20260331/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20260331/) | 30.7 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Cross-Species/20260415/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Cross-Species/20260415/) | 535.2 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20261031/) | 30.7 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Cross-Species/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Cross-Species/20261031/) | 535.2 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
