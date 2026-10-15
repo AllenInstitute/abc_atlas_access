@@ -33,14 +33,14 @@ The associated metadata is hosted in a AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-BG-taxonomy-CCN20250428/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-taxonomy-CCN20250428/20250630/) | 188.9 MB |
-| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-BG-taxonomy-CCN20250428/20250630/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-BG-taxonomy-CCN20250428/20250630/) | 2.1 GB |
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-BG-taxonomy/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-taxonomy/20261031/) | 188.9 MB |
+| MapMyCells resources | [s3://allen-brain-cell-atlas/mapmycells/HMBA-BG-taxonomy/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#mapmycells/HMBA-BG-taxonomy/20261031/) | 2.1 GB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
 Related resources :
 * ~2 million single cell transcriptomes with aligned genes across species.
-  ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
+  ([HMBA-10XMultiome-BG-Cross-Species](HMBA-10XMultiome-BG-Cross-Species.md))
 * Single cell transcriptomes for each individual species in the
   HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
@@ -58,7 +58,7 @@ Associated notebooks:
   visualization.
 [*notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb*]
 * [**10X scRNA-seq gene expression**](../notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb):
-  Interact with HMBA-BG 10X-Aligned gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
+  Interact with HMBA-BG 10X-Cross-Species gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
 * [**Spatial transcriptomic slab coordinates and annotation**](../notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb):
   Learn about the HMBA-BG spatial data/metadata structure and mapping to the BG taxonomy through example use
   cases and visualization.
