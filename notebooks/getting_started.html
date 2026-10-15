@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/getting_started';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Accessing 10x RNA-seq gene expression data" href="general_accessing_10x_snRNASeq_tutorial.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-cache">Using the cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">Downloading files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-data-files-or-metadata-files-in-a-directory">Downloading all data files or metadata files in a directory.</a></li>
@@ -550,7 +601,7 @@ No account or login is required. The S3 bucket is located here <a class="referen
 <p>Below we install the python library we will be using throughout to this python enviroment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;abc_atlas_access[notebooks] @ git+https://github.com/alleninstitute/abc_atlas_access.git&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">"abc_atlas_access[notebooks] @ git+https://github.com/alleninstitute/abc_atlas_access.git"</span>
 </pre></div>
 </div>
 </div>
@@ -605,7 +656,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;status&#39;: &#39;ok&#39;, &#39;restart&#39;: True}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'status': 'ok', 'restart': True}
 </pre></div>
 </div>
 </div>
@@ -626,7 +677,7 @@ Note: you may need to restart the kernel to use updated packages.
 <p>Users can also specify a download enabled or read only local cache explicitly by using the funcitons <code class="docutils literal notranslate"><span class="pre">from_s3_cache</span></code> and <code class="docutils literal notranslate"><span class="pre">from_local_cache</span></code> respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -634,7 +685,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20250531/manifest.json'
 </pre></div>
 </div>
 </div>
@@ -647,16 +698,16 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;releases/20230630/manifest.json&#39;,
- &#39;releases/20230830/manifest.json&#39;,
- &#39;releases/20231215/manifest.json&#39;,
- &#39;releases/20240330/manifest.json&#39;,
- &#39;releases/20240831/manifest.json&#39;,
- &#39;releases/20241115/manifest.json&#39;,
- &#39;releases/20241130/manifest.json&#39;,
- &#39;releases/20250131/manifest.json&#39;,
- &#39;releases/20250331/manifest.json&#39;,
- &#39;releases/20250531/manifest.json&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['releases/20230630/manifest.json',
+ 'releases/20230830/manifest.json',
+ 'releases/20231215/manifest.json',
+ 'releases/20240330/manifest.json',
+ 'releases/20240831/manifest.json',
+ 'releases/20241115/manifest.json',
+ 'releases/20241130/manifest.json',
+ 'releases/20250131/manifest.json',
+ 'releases/20250331/manifest.json',
+ 'releases/20250531/manifest.json']
 </pre></div>
 </div>
 </div>
@@ -665,12 +716,12 @@ Note: you may need to restart the kernel to use updated packages.
 <p>Below we show an example of loading an older manifest. Any of the strings returned by <code class="docutils literal notranslate"><span class="pre">list_manifest_file_names</span></code> will be valid manifests, however, we’ll stick to the current manifest for this tutorial to avoid confusion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">load_manifest</span><span class="p">(</span><span class="s1">&#39;releases/20230630/manifest.json&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;old manifest loaded:&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">load_manifest</span><span class="p">(</span><span class="s1">'releases/20230630/manifest.json'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"old manifest loaded:"</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span><span class="p">)</span>
 
 <span class="c1"># Return to the latest manifest</span>
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">load_latest_manifest</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after latest manifest loaded:&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"after latest manifest loaded:"</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -687,7 +738,7 @@ releases/20250531/manifest.json
 
 To see the differences between these manifests,run
 
-type.compare_manifests(&#39;releases/20250531/manifest.json&#39;, &#39;releases/20230630/manifest.json&#39;)
+type.compare_manifests('releases/20250531/manifest.json', 'releases/20230630/manifest.json')
 
 To see all of the manifest files currently downloaded onto your local system, run
 
@@ -704,7 +755,7 @@ releases/20250531/manifest.json
 which is newer than the most recent manifest file you have previously been working with
 releases/20250630/manifest.json
 It is possible that some data files have changed between these two data releases, which will force you to re-download those data files (currently downloaded files will not be overwritten). To continue using releases/20250630/manifest.json, run
-type.load_manifest(&#39;releases/20250630/manifest.json&#39;)
+type.load_manifest('releases/20250630/manifest.json')
   warnings.warn(msg, OutdatedManifestWarning)
 </pre></div>
 </div>
@@ -718,114 +769,114 @@ type.load_manifest(&#39;releases/20250630/manifest.json&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ASAP-PMDBS-10X&#39;,
- &#39;ASAP-PMDBS-taxonomy&#39;,
- &#39;Allen-CCF-2020&#39;,
- &#39;HMBA-10xMultiome-BG&#39;,
- &#39;HMBA-10xMultiome-BG-Aligned&#39;,
- &#39;HMBA-BG-taxonomy-CCN20250428&#39;,
- &#39;MERFISH-C57BL6J-638850&#39;,
- &#39;MERFISH-C57BL6J-638850-CCF&#39;,
- &#39;MERFISH-C57BL6J-638850-imputed&#39;,
- &#39;MERFISH-C57BL6J-638850-sections&#39;,
- &#39;SEAAD&#39;,
- &#39;SEAAD-taxonomy&#39;,
- &#39;WHB-10Xv3&#39;,
- &#39;WHB-taxonomy&#39;,
- &#39;WMB-10X&#39;,
- &#39;WMB-10XMulti&#39;,
- &#39;WMB-10Xv2&#39;,
- &#39;WMB-10Xv3&#39;,
- &#39;WMB-neighborhoods&#39;,
- &#39;WMB-taxonomy&#39;,
- &#39;Zeng-Aging-Mouse-10Xv3&#39;,
- &#39;Zeng-Aging-Mouse-WMB-taxonomy&#39;,
- &#39;Zhuang-ABCA-1&#39;,
- &#39;Zhuang-ABCA-1-CCF&#39;,
- &#39;Zhuang-ABCA-2&#39;,
- &#39;Zhuang-ABCA-2-CCF&#39;,
- &#39;Zhuang-ABCA-3&#39;,
- &#39;Zhuang-ABCA-3-CCF&#39;,
- &#39;Zhuang-ABCA-4&#39;,
- &#39;Zhuang-ABCA-4-CCF&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['ASAP-PMDBS-10X',
+ 'ASAP-PMDBS-taxonomy',
+ 'Allen-CCF-2020',
+ 'HMBA-10xMultiome-BG',
+ 'HMBA-10xMultiome-BG-Aligned',
+ 'HMBA-BG-taxonomy-CCN20250428',
+ 'MERFISH-C57BL6J-638850',
+ 'MERFISH-C57BL6J-638850-CCF',
+ 'MERFISH-C57BL6J-638850-imputed',
+ 'MERFISH-C57BL6J-638850-sections',
+ 'SEAAD',
+ 'SEAAD-taxonomy',
+ 'WHB-10Xv3',
+ 'WHB-taxonomy',
+ 'WMB-10X',
+ 'WMB-10XMulti',
+ 'WMB-10Xv2',
+ 'WMB-10Xv3',
+ 'WMB-neighborhoods',
+ 'WMB-taxonomy',
+ 'Zeng-Aging-Mouse-10Xv3',
+ 'Zeng-Aging-Mouse-WMB-taxonomy',
+ 'Zhuang-ABCA-1',
+ 'Zhuang-ABCA-1-CCF',
+ 'Zhuang-ABCA-2',
+ 'Zhuang-ABCA-2-CCF',
+ 'Zhuang-ABCA-3',
+ 'Zhuang-ABCA-3-CCF',
+ 'Zhuang-ABCA-4',
+ 'Zhuang-ABCA-4-CCF']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">'WMB-10Xv2'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;WMB-10Xv2-CTXsp/log2&#39;,
- &#39;WMB-10Xv2-CTXsp/raw&#39;,
- &#39;WMB-10Xv2-HPF/log2&#39;,
- &#39;WMB-10Xv2-HPF/raw&#39;,
- &#39;WMB-10Xv2-HY/log2&#39;,
- &#39;WMB-10Xv2-HY/raw&#39;,
- &#39;WMB-10Xv2-Isocortex-1/log2&#39;,
- &#39;WMB-10Xv2-Isocortex-1/raw&#39;,
- &#39;WMB-10Xv2-Isocortex-2/log2&#39;,
- &#39;WMB-10Xv2-Isocortex-2/raw&#39;,
- &#39;WMB-10Xv2-Isocortex-3/log2&#39;,
- &#39;WMB-10Xv2-Isocortex-3/raw&#39;,
- &#39;WMB-10Xv2-Isocortex-4/log2&#39;,
- &#39;WMB-10Xv2-Isocortex-4/raw&#39;,
- &#39;WMB-10Xv2-MB/log2&#39;,
- &#39;WMB-10Xv2-MB/raw&#39;,
- &#39;WMB-10Xv2-OLF/log2&#39;,
- &#39;WMB-10Xv2-OLF/raw&#39;,
- &#39;WMB-10Xv2-TH/log2&#39;,
- &#39;WMB-10Xv2-TH/raw&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['WMB-10Xv2-CTXsp/log2',
+ 'WMB-10Xv2-CTXsp/raw',
+ 'WMB-10Xv2-HPF/log2',
+ 'WMB-10Xv2-HPF/raw',
+ 'WMB-10Xv2-HY/log2',
+ 'WMB-10Xv2-HY/raw',
+ 'WMB-10Xv2-Isocortex-1/log2',
+ 'WMB-10Xv2-Isocortex-1/raw',
+ 'WMB-10Xv2-Isocortex-2/log2',
+ 'WMB-10Xv2-Isocortex-2/raw',
+ 'WMB-10Xv2-Isocortex-3/log2',
+ 'WMB-10Xv2-Isocortex-3/raw',
+ 'WMB-10Xv2-Isocortex-4/log2',
+ 'WMB-10Xv2-Isocortex-4/raw',
+ 'WMB-10Xv2-MB/log2',
+ 'WMB-10Xv2-MB/raw',
+ 'WMB-10Xv2-OLF/log2',
+ 'WMB-10Xv2-OLF/raw',
+ 'WMB-10Xv2-TH/log2',
+ 'WMB-10Xv2-TH/raw']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">'WMB-taxonomy'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cluster&#39;,
- &#39;cluster_annotation_term&#39;,
- &#39;cluster_annotation_term_set&#39;,
- &#39;cluster_annotation_term_with_counts&#39;,
- &#39;cluster_to_cluster_annotation_membership&#39;,
- &#39;cluster_to_cluster_annotation_membership_color&#39;,
- &#39;cluster_to_cluster_annotation_membership_pivoted&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['cluster',
+ 'cluster_annotation_term',
+ 'cluster_annotation_term_set',
+ 'cluster_annotation_term_with_counts',
+ 'cluster_to_cluster_annotation_membership',
+ 'cluster_to_cluster_annotation_membership_color',
+ 'cluster_to_cluster_annotation_membership_pivoted']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">'Allen-CCF-2020'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;annotation_10&#39;,
- &#39;annotation_25&#39;,
- &#39;annotation_boundary_10&#39;,
- &#39;annotation_boundary_25&#39;,
- &#39;average_template_10&#39;,
- &#39;average_template_25&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['annotation_10',
+ 'annotation_25',
+ 'annotation_boundary_10',
+ 'annotation_boundary_25',
+ 'average_template_10',
+ 'average_template_25']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_mapmycells_files</span><span class="p">(</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_mapmycells_files</span><span class="p">(</span><span class="s1">'WHB-10Xv3'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;precomputed_stats.siletti.training&#39;, &#39;query_markers.n10.20240221800&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['precomputed_stats.siletti.training', 'query_markers.n10.20240221800']
 </pre></div>
 </div>
 </div>
@@ -833,48 +884,48 @@ type.load_manifest(&#39;releases/20250630/manifest.json&#39;)
 <p>Before we start downloading data, we can check how much total data is in a given directory for both data files and metadata files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_expression_matrix_size</span><span class="p">(</span><span class="s1">&#39;WMB-10Xv2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_expression_matrix_size</span><span class="p">(</span><span class="s1">'WMB-10Xv2'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;104.16 GB&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'104.16 GB'
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata_size</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata_size</span><span class="p">(</span><span class="s1">'WMB-taxonomy'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;4.65 MB&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'4.65 MB'
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volume_size</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volume_size</span><span class="p">(</span><span class="s1">'Allen-CCF-2020'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;417.02 MB&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'417.02 MB'
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_mapmycells_size</span><span class="p">(</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_mapmycells_size</span><span class="p">(</span><span class="s1">'WHB-10Xv3'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;8.13 GB&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'8.13 GB'
 </pre></div>
 </div>
 </div>
@@ -889,28 +940,28 @@ type.load_manifest(&#39;releases/20250630/manifest.json&#39;)
 <p>The user should be warned that several directories are significant in size, &gt;100 GB. If a directory is over 10 GB in size total, the cache will warn the user when requesting to download the data in the directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="s1">'Allen-CCF-2020'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)]
+	 [PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz')]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">'WMB-taxonomy'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-taxonomy metadata files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+	 [PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv')]
 </pre></div>
 </div>
 </div>
@@ -918,20 +969,20 @@ type.load_manifest(&#39;releases/20250630/manifest.json&#39;)
 <p>Note that, after downloading the file successfully, running the <code class="docutils literal notranslate"><span class="pre">get_directory_data</span></code> or <code class="docutils literal notranslate"><span class="pre">get_directory_metadata</span></code> methods will return the list of the local paths without having to redownload the files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">&#39;WMB-taxonomy&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="s1">'Allen-CCF-2020'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="s1">'WMB-taxonomy'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"WMB-taxonomy metadata files:</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)] 
+	 [PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz')] 
 
 
 WMB-taxonomy metadata files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv&#39;)]
+	 [PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv')]
 </pre></div>
 </div>
 </div>
@@ -944,28 +995,28 @@ WMB-taxonomy metadata files:
 <h4>Downloading individual metadata files<a class="headerlink" href="#downloading-individual-metadata-files" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">'WMB-10X'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cell_metadata&#39;,
- &#39;cell_metadata_with_cluster_annotation&#39;,
- &#39;example_genes_all_cells_expression&#39;,
- &#39;gene&#39;,
- &#39;region_of_interest_metadata&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['cell_metadata',
+ 'cell_metadata_with_cluster_annotation',
+ 'example_genes_all_cells_expression',
+ 'gene',
+ 'region_of_interest_metadata']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10X'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'gene'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20241115/gene.csv&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/WMB-10X/20241115/gene.csv')
 </pre></div>
 </div>
 </div>
@@ -973,7 +1024,7 @@ WMB-taxonomy metadata files:
 <p>The cache can also return a dataframe for metadata objects. They are loaded with a generic index. Note that when using this method, it can accept additional argments that will be passed to the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">pandas.read_csv</a> method. Examples of this are used throughout the notebooks in this repo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10X'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'gene'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1102,12 +1153,12 @@ WMB-taxonomy metadata files:
 <h4>Downloading individual expression matrix files<a class="headerlink" href="#downloading-individual-expression-matrix-files" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">'WMB-10XMulti'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;WMB-10XMulti/log2&#39;, &#39;WMB-10XMulti/raw&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['WMB-10XMulti/log2', 'WMB-10XMulti/raw']
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1166,7 @@ WMB-taxonomy metadata files:
 <p>Note how <code class="docutils literal notranslate"><span class="pre">log2</span></code> and <code class="docutils literal notranslate"><span class="pre">raw</span></code> is added to the end of the file name returned by the above function and used below. If we were not to specify this in the input, the code will throw an error describing the ambiguity.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti/log2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10XMulti'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'WMB-10XMulti/log2'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1123,14 +1174,14 @@ WMB-taxonomy metadata files:
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WMB-10XMulti-log2.h5ad: 100%|██████████| 89.3M/89.3M [00:08&lt;00:00, 10.1MMB/s]  
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath('/Users/chris.morrison/src/data/abc_atlas/expression_matrices/WMB-10XMulti/20230830/WMB-10XMulti-log2.h5ad')
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10XMulti'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'WMB-10XMulti'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1138,13 +1189,13 @@ WMB-taxonomy metadata files:
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10XMulti'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'WMB-10XMulti'</span><span class="p">)</span>
 
 <span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:531,</span> in <span class="ni">AbcProjectCache.get_file_path</span><span class="nt">(self, directory, file_name, force_download, skip_hash_check)</span>
 <span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">528</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="p">)[</span><span class="s1">&#39;local_path&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="p">)[</span><span class="s1">'local_path'</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">530</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">531</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">532</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
@@ -1160,25 +1211,25 @@ WMB-taxonomy metadata files:
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">856</span>     <span class="n">skip_hash_check</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="g g-Whitespace">    </span><span class="mi">857</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="w">     </span><span class="sd">"""</span>
 <span class="g g-Whitespace">    </span><span class="mi">859</span><span class="sd">     Return the local path to a file, downloading the file</span>
 <span class="g g-Whitespace">    </span><span class="mi">860</span><span class="sd">     if necessary</span>
 <span class="sd">   (...)</span>
 <span class="g g-Whitespace">    </span><span class="mi">883</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">884</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span><span class="sd">     """</span>
 <span class="ne">--&gt; </span><span class="mi">885</span>     <span class="n">super_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">886</span>                                           <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">&#39;file_attributes&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="n">super_attributes</span><span class="p">[</span><span class="s1">'file_attributes'</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">888</span>     <span class="c1"># If the file exists, check that it was downloaded successfully.</span>
 
 <span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:444,</span> in <span class="ni">BasicLocalCache.get_file_path</span><span class="nt">(self, directory, file_name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_file_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span><span class="w">     </span><span class="sd">"""</span>
 <span class="g g-Whitespace">    </span><span class="mi">417</span><span class="sd">     Return the local path to a data file, and test for the</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span><span class="sd">     file&#39;s existence.</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span><span class="sd">     file's existence.</span>
 <span class="sd">   (...)</span>
 <span class="g g-Whitespace">    </span><span class="mi">442</span><span class="sd">         If the file cannot be downloaded</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span><span class="sd">     """</span>
 <span class="ne">--&gt; </span><span class="mi">444</span>     <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manifest</span><span class="o">.</span><span class="n">get_file_attributes</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">445</span>         <span class="n">directory</span><span class="o">=</span><span class="n">directory</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">446</span>         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span>
@@ -1188,22 +1239,22 @@ WMB-taxonomy metadata files:
 
 <span class="nn">File ~/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/manifest.py:265,</span> in <span class="ni">Manifest.get_file_attributes</span><span class="nt">(self, directory, file_name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">252</span>             <span class="n">file_attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_file_attributes</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span>                 <span class="n">remote_path</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span>                 <span class="n">version</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s2">&quot;version&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>                 <span class="n">remote_path</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">"files"</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s2">"url"</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>                 <span class="n">version</span><span class="o">=</span><span class="n">files_data</span><span class="p">[</span><span class="n">kind</span><span class="p">][</span><span class="s2">"files"</span><span class="p">][</span><span class="n">file_type</span><span class="p">][</span><span class="s2">"version"</span><span class="p">],</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">262</span>                 <span class="p">],</span>  <span class="c1"># noqa: E501</span>
 <span class="g g-Whitespace">    </span><span class="mi">263</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span>         <span class="k">elif</span> <span class="n">kind</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>         <span class="k">elif</span> <span class="n">kind</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">"files"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
 <span class="ne">--&gt; </span><span class="mi">265</span>             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>                 <span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> found in directory but multiple &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>                 <span class="sa">f</span><span class="s2">&quot;files found: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">. Please &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>                 <span class="s2">&quot;specify the file name as one of &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa: E501</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>                 <span class="sa">f</span><span class="s2">"File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> found in directory but multiple "</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>                 <span class="sa">f</span><span class="s2">"files found: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">. Please "</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>                 <span class="s2">"specify the file name as one of "</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>                 <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="p">[</span><span class="s1">'</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">'</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">files_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span><span class="si">}</span><span class="s2">"</span>  <span class="c1"># noqa: E501</span>
 <span class="g g-Whitespace">    </span><span class="mi">270</span>             <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">file_attributes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found in directory </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> not found in directory </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: &quot;File WMB-10XMulti found in directory but multiple files found: [&#39;log2&#39;, &#39;raw&#39;]. Please specify the file name as one of [&#39;WMB-10XMulti/log2&#39;, &#39;WMB-10XMulti/raw&#39;]&quot;
+<span class="ne">KeyError</span>: "File WMB-10XMulti found in directory but multiple files found: ['log2', 'raw']. Please specify the file name as one of ['WMB-10XMulti/log2', 'WMB-10XMulti/raw']"
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1268,7 @@ WMB-taxonomy metadata files:
 <p>For all methods that download files, the option exists to force the cache to redownload the file(s). This can be useful if the downloaded file has become corrupted or accidentially deleted/changed. Below are examples of using it while downloading an inividual file or a full directory of files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10X'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'gene'</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1346,8 +1397,8 @@ WMB-taxonomy metadata files:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen_ccf_list</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_image_volumes</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">force_download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Allen-CCF-2020 data files:</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">allen_ccf_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1361,7 +1412,7 @@ average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Allen-CCF-2020 data files:
-	 [PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz&#39;), PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz&#39;)]
+	 [PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz'), PosixPath('/Users/chris.morrison/src/data/abc_atlas/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz')]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1375,7 +1426,7 @@ average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00
 <p>When a download is completed, a hash of the downloaded file is computed and checked against the expected hash in the manifest. While this check is recommeneded it can add overhead to the download process. <code class="docutils literal notranslate"><span class="pre">skip_hash_check</span></code> allows the user to skip computing the hash and assume the download has been completed successfully.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-neighborhoods&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;UMAP20230830-TH-EPI-Glut&#39;</span><span class="p">,</span> <span class="n">skip_hash_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-neighborhoods'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'UMAP20230830-TH-EPI-Glut'</span><span class="p">,</span> <span class="n">skip_hash_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1480,7 +1531,7 @@ average_template_25.nii.gz: 100%|██████████| 33.0M/33.0M [00
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">skip_hash_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">get_directory_metadata</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">skip_hash_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1497,18 +1548,18 @@ parcellation_to_parcellation_term_membership_name.csv: 100%|██████�
 parcellation_to_parcellation_term_membership_red.csv: 100%|██████████| 16.0k/16.0k [00:00&lt;00:00, 240kMB/s]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv&#39;),
- PosixPath(&#39;/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv'),
+ PosixPath('/Users/chris.morrison/src/data/abc_atlas/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv')]
 </pre></div>
 </div>
 </div>
@@ -1583,7 +1634,7 @@ parcellation_to_parcellation_term_membership_red.csv: 100%|███████
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-cache">Using the cache</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-files">Downloading files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-all-data-files-or-metadata-files-in-a-directory">Downloading all data files or metadata files in a directory.</a></li>
@@ -1647,8 +1698,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

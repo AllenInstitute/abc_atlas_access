@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/general_accessing_10x_snRNASeq_tutorial';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using cells selected in the ABC Atlas with Gene Expression data." href="abc_atlas_selection_example.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-specific-genes-from-the-data">Loading specific genes from the data</a></li>
 </ul>
@@ -548,7 +599,7 @@
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -556,7 +607,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20250531/manifest.json'
 </pre></div>
 </div>
 </div>
@@ -568,9 +619,9 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'WHB-10Xv3'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">cell</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -736,7 +787,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-10Xv3&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;gene_identifier&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WHB-10Xv3'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'gene'</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'gene_identifier'</span><span class="p">)</span>
 <span class="n">gene</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -815,7 +866,7 @@
 <p>Below, we specify a select set of genes from the data that we’ll load into our output data frame. These are the same genes that are available in the example file <code class="docutils literal notranslate"><span class="pre">example_genes_all_cells_expression</span></code> in the WHB-10Xv3 metadata directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SLC17A6&#39;</span><span class="p">,</span> <span class="s1">&#39;SLC17A7&#39;</span><span class="p">,</span> <span class="s1">&#39;SLC32A1&#39;</span><span class="p">,</span> <span class="s1">&#39;PTPRC&#39;</span><span class="p">,</span> <span class="s1">&#39;PLP1&#39;</span><span class="p">,</span> <span class="s1">&#39;AQP4&#39;</span><span class="p">,</span> <span class="s1">&#39;TTR&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'SLC17A6'</span><span class="p">,</span> <span class="s1">'SLC17A7'</span><span class="p">,</span> <span class="s1">'SLC32A1'</span><span class="p">,</span> <span class="s1">'PTPRC'</span><span class="p">,</span> <span class="s1">'PLP1'</span><span class="p">,</span> <span class="s1">'AQP4'</span><span class="p">,</span> <span class="s1">'TTR'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -834,7 +885,7 @@ get_gene_data<span class=" -Color -Color-Blue">(</span>
     all_cells<span class=" -Color -Color-Blue">:</span> pandas<span class=" -Color -Color-Blue">.</span>core<span class=" -Color -Color-Blue">.</span>frame<span class=" -Color -Color-Blue">.</span>DataFrame<span class=" -Color -Color-Blue">,</span>
     all_genes<span class=" -Color -Color-Blue">:</span> pandas<span class=" -Color -Color-Blue">.</span>core<span class=" -Color -Color-Blue">.</span>frame<span class=" -Color -Color-Blue">.</span>DataFrame<span class=" -Color -Color-Blue">,</span>
     selected_genes<span class=" -Color -Color-Blue">:</span> List<span class=" -Color -Color-Blue">[</span>str<span class=" -Color -Color-Blue">],</span>
-    data_type<span class=" -Color -Color-Blue">:</span> str <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">&#39;log2&#39;,</span>
+    data_type<span class=" -Color -Color-Blue">:</span> str <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">'log2',</span>
     chunk_size<span class=" -Color -Color-Blue">:</span> int <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Cyan">8192</span><span class=" -Color -Color-Blue">,</span>
 <span class=" -Color -Color-Blue">)</span>
 <span class=" -Color -Color-Red">Docstring:</span>
@@ -859,9 +910,9 @@ all_genes: pandas.DataFrame
 selected_genes: list of strings
     List of gene_symbols that are a subset of those in the full genes
     DataFrame.
-data_type: str (Default: &quot;log2&quot;)
-    Kind of expression matrix to load either &quot;log2&quot; or &quot;raw&quot;. Defaults to
-    &quot;log2&quot;.
+data_type: str (Default: "log2")
+    Kind of expression matrix to load either "log2" or "raw". Defaults to
+    "log2".
 chunk_size: int (Default: 8192)
     Size of the chunk to load from the anndata files. Adjust this size if
     needed based on memory/file io. Default: 8192.
@@ -879,18 +930,18 @@ output_gene_data: pandas.DataFrame
 <p>The code commented out below will create a gene expression DataFrame over the full WHB dataset. Running this full process takes around 10 minutes to processes, however downloading the full data can take up to an hour depending on your download speed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
 <span class="sd">gene_data = get_gene_data(</span>
 <span class="sd">    abc_atlas_cache=abc_cache,</span>
 <span class="sd">    all_cells=cell,</span>
 <span class="sd">    all_genes=gene,</span>
 <span class="sd">    selected_genes=gene_names</span>
-<span class="sd">)&quot;&quot;&quot;</span>
+<span class="sd">)"""</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\ngene_data = get_gene_data(\n    abc_atlas_cache=abc_cache,\n    all_cells=cell,\n    all_genes=gene,\n    selected_genes=gene_names\n)&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'\ngene_data = get_gene_data(\n    abc_atlas_cache=abc_cache,\n    all_cells=cell,\n    all_genes=gene,\n    selected_genes=gene_names\n)'
 </pre></div>
 </div>
 </div>
@@ -898,7 +949,7 @@ output_gene_data: pandas.DataFrame
 <p>For a quicker example, we’ll load the Non-neurons from the WHB dataset only. This should take roughly a handful of minutes to complete and around 10 minutes download depending on your connection speed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nonneuron_cells</span> <span class="o">=</span> <span class="n">cell</span><span class="p">[</span><span class="n">cell</span><span class="p">[</span><span class="s1">&#39;feature_matrix_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;WHB-10Xv3-Nonneurons&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nonneuron_cells</span> <span class="o">=</span> <span class="n">cell</span><span class="p">[</span><span class="n">cell</span><span class="p">[</span><span class="s1">'feature_matrix_label'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'WHB-10Xv3-Nonneurons'</span><span class="p">]</span>
 <span class="n">gene_data</span> <span class="o">=</span> <span class="n">get_gene_data</span><span class="p">(</span>
     <span class="n">abc_atlas_cache</span><span class="o">=</span><span class="n">abc_cache</span><span class="p">,</span>
     <span class="n">all_cells</span><span class="o">=</span><span class="n">nonneuron_cells</span><span class="p">,</span>
@@ -1487,7 +1538,7 @@ total time taken: 265.621174
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-specific-genes-from-the-data">Loading specific genes from the data</a></li>
 </ul>
@@ -1540,8 +1591,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

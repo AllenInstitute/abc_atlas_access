@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/WHB_cluster_annotation_tutorial';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Whole Human Brain (WHB) 10x RNA-seq gene expression data (part 1)" href="WHB-10x_snRNASeq_tutorial_part_1.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subclusters">Subclusters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-annotation-term-sets">Cluster annotation term sets</a></li>
@@ -566,7 +617,7 @@
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -574,7 +625,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20250531/manifest.json'
 </pre></div>
 </div>
 </div>
@@ -584,15 +635,15 @@
 <p>Below we list the available metadata in the WHB-taxonomy directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">&#39;WHB-taxonomy&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="s1">'WHB-taxonomy'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cluster&#39;,
- &#39;cluster_annotation_term&#39;,
- &#39;cluster_annotation_term_set&#39;,
- &#39;cluster_to_cluster_annotation_membership&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['cluster',
+ 'cluster_annotation_term',
+ 'cluster_annotation_term_set',
+ 'cluster_to_cluster_annotation_membership']
 </pre></div>
 </div>
 </div>
@@ -602,7 +653,7 @@
 <p>Each of the final set of 3313 subclusters is associated with an alias and label. Each row of the dataframe represents a <em><strong>subcluster</strong></em> as defined in Siletti et al. 2023. Each <em>subcluster</em> has a <em>label</em> (string that is unique in the database), <em>cluster alias</em> (in this case a simple integer) and the <em>number of cells</em> that has been grouped into the cluster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-taxonomy&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WHB-taxonomy'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cluster</span><span class="p">))</span>
 <span class="n">cluster</span>
 </pre></div>
@@ -719,7 +770,7 @@
 <p>Each level of classification is represented as a <em><strong>cluster annotation term set</strong></em>. Each term set consists of a set of ordered terms. Each term set has a <em>label</em> (human readable string that is unique in the database), a <em>name</em>, <em>description</em> and <em>order</em> among the term sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-taxonomy&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term_set&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WHB-taxonomy'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster_annotation_term_set'</span><span class="p">)</span>
 <span class="n">term_set</span>
 </pre></div>
 </div>
@@ -787,8 +838,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print out description for each term_set</span>
 <span class="k">for</span> <span class="n">tsindex</span><span class="p">,</span> <span class="n">tsrow</span> <span class="ow">in</span> <span class="n">term_set</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tsrow</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tsrow</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">:</span><span class="se">\n</span><span class="s2">"</span> <span class="o">%</span> <span class="n">tsrow</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span> <span class="o">%</span> <span class="n">tsrow</span><span class="p">[</span><span class="s1">'description'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -818,7 +869,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>A <em><strong>cluster annotation term</strong></em> represents a group within a single level of classification. Each term object has a <em>label</em> (human readable string that is unique in the database), a <em>name</em>, which <em>cluster annotation term set</em> it belongs to and a <em>parent</em> or superclass if the term forms a hierarchy, an order within a <em>term set</em> and a <em>color</em> for visualization purposes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-taxonomy&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term&#39;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WHB-taxonomy'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster_annotation_term'</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">term</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -933,7 +984,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>We can use the groupby and count functions in pandas to tally the number of terms in each term set (classification level).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term</span><span class="p">[[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term</span><span class="p">[[</span><span class="s1">'label'</span><span class="p">,</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -991,7 +1042,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>The association between a <em><strong>subcluster</strong></em> and <em><strong>cluster annotation term</strong></em> is represented as a <em><strong>cluster to cluster annotation membership</strong></em> within the context of one <em><strong>cluster annotation term set</strong></em>. It is expected that a cluster in only associated with one term within a specific term set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WHB-taxonomy&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WHB-taxonomy'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster_to_cluster_annotation_membership'</span><span class="p">)</span>
 <span class="n">membership</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1089,8 +1140,8 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of clusters associated with each cluster annotation term</span>
-<span class="n">term_cluster_count</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">term_cluster_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">]</span>
+<span class="n">term_cluster_count</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">])[[</span><span class="s1">'cluster_alias'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">term_cluster_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'number_of_clusters'</span><span class="p">]</span>
 <span class="n">term_cluster_count</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1149,9 +1200,9 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join counts with the term dataframe</span>
-<span class="n">term_by_label</span> <span class="o">=</span> <span class="n">term</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+<span class="n">term_by_label</span> <span class="o">=</span> <span class="n">term</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'label'</span><span class="p">)</span>
 <span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">term_by_label</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_cluster_count</span><span class="p">)</span>
-<span class="n">term_with_counts</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_clusters&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_cells&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">term_with_counts</span><span class="p">[[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'cluster_annotation_term_set_name'</span><span class="p">,</span> <span class="s1">'number_of_clusters'</span><span class="p">,</span> <span class="s1">'number_of_cells'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1235,16 +1286,16 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
     
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ctype</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;clusters&#39;</span><span class="p">,</span> <span class="s1">&#39;cells&#39;</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ctype</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">'clusters'</span><span class="p">,</span> <span class="s1">'cells'</span><span class="p">]):</span>
 
-        <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
-        <span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
-        <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;number_of_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">]</span>
-        <span class="n">colors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'number_of_</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">]</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'color_hex_triplet'</span><span class="p">]</span>
         
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of </span><span class="si">%s</span><span class="s1"> by </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ctype</span><span class="p">,</span><span class="n">level</span><span class="p">)),</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Number of </span><span class="si">%s</span><span class="s1"> by </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">ctype</span><span class="p">,</span><span class="n">level</span><span class="p">)),</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
         
         <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
@@ -1260,15 +1311,15 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">term_with_counts</span>
-<span class="n">level</span> <span class="o">=</span> <span class="s1">&#39;neurotransmitter&#39;</span>
-<span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
+<span class="n">level</span> <span class="o">=</span> <span class="s1">'neurotransmitter'</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">,</span> <span class="s1">'neurotransmitter'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1283,7 +1334,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>Supercluster “Splatter” contains the largest number of subclusters (~1k), while “Oligodendrocyte” and “Upper-layer intratelencephalic” have the most cells.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">,</span> <span class="s1">&#39;supercluster&#39;</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">,</span> <span class="s1">'supercluster'</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1299,8 +1350,8 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>We can explore the relationship and distribution of clusters between term sets by creating a pivot table using pandas groupby fuunction. Each row of the resulting dataframe represents a cluster, each column represents a term set and the value in the table is the name of the term that has been associated with the cluster for that specific term set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;cluster_annotation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="n">term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="s1">'cluster_annotation_term_set_name'</span><span class="p">])[</span><span class="s1">'cluster_annotation_term_name'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="n">term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
 <span class="n">pivot</span>
 </pre></div>
 </div>
@@ -1423,9 +1474,9 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>We can also obtain a cluster annotation color pivot table in the same way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;#f9f9f9&#39;</span><span class="p">)</span>
-<span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
-<span class="n">color</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_color&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="s1">'cluster_annotation_term_set_name'</span><span class="p">])[</span><span class="s1">'color_hex_triplet'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'#f9f9f9'</span><span class="p">)</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">color</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'</span><span class="si">%s</span><span class="s1">_color'</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 <span class="n">color</span>
 </pre></div>
 </div>
@@ -1550,14 +1601,14 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distribution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
     
-    <span class="n">AxB</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">])[[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    <span class="n">AxB</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">]</span>
+    <span class="n">AxB</span> <span class="o">=</span> <span class="n">pivot</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">])[[</span><span class="s1">'cluster'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">AxB</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'number_of_clusters'</span><span class="p">]</span>
     <span class="n">AxB</span> <span class="o">=</span> <span class="n">AxB</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="n">B_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">AxB</span><span class="o">.</span><span class="n">columns</span><span class="p">)]</span>
-    <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="p">)</span>
-    <span class="n">term_by_name</span> <span class="o">=</span> <span class="n">term</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-    <span class="n">B_colors</span> <span class="o">=</span> <span class="n">term_by_name</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">B_names</span><span class="p">,</span> <span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">term</span><span class="p">[</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span> <span class="o">==</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">term_by_name</span> <span class="o">=</span> <span class="n">term</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span>
+    <span class="n">B_colors</span> <span class="o">=</span> <span class="n">term_by_name</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">B_names</span><span class="p">,</span> <span class="s1">'color_hex_triplet'</span><span class="p">]</span>
     
     <span class="k">return</span> <span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span>
 </pre></div>
@@ -1578,8 +1629,8 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
         <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">AxB</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">AxB</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="n">bottom</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">B_colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="n">bottom</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">AxB</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of </span><span class="si">%s</span><span class="s1"> in each </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">AxB</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">AxB</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Distribution of </span><span class="si">%s</span><span class="s1"> in each </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">AxB</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">AxB</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'center left'</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     
@@ -1593,7 +1644,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>Here is the distribution of neurotransmitter types at the supercluster level. Most contain more than one type with splatter showing the most diversity of neurotransmitter types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span> <span class="o">=</span> <span class="n">distribution</span><span class="p">(</span><span class="s1">&#39;supercluster&#39;</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span> <span class="o">=</span> <span class="n">distribution</span><span class="p">(</span><span class="s1">'supercluster'</span><span class="p">,</span> <span class="s1">'neurotransmitter'</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">stacked_bar_distribution</span><span class="p">(</span><span class="n">AxB</span><span class="p">,</span> <span class="n">B_names</span><span class="p">,</span> <span class="n">B_colors</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1614,13 +1665,13 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 <p>Term sets: supercluster, cluster, and subcluster forms a three level human whole brain taxonomy. We can visualized the taxonomy as a sunburst diagram that shows the single inheritance hierarchy through a series of rings, that are sliced for each annotation term. Each ring corresponds to a level in the hierarchy. We have ordered the rings so that the supercluster level is the outer most ring so that we can add in labels. Rings are sliced up and divided based on their hierarchical relationship to the parent slice. The angle of each slice is proportional to the number of clusters belonging to the term.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;supercluster&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="s1">&#39;subcluster&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'supercluster'</span><span class="p">,</span> <span class="s1">'cluster'</span><span class="p">,</span> <span class="s1">'subcluster'</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="k">for</span> <span class="n">lvl</span> <span class="ow">in</span> <span class="n">levels</span> <span class="p">:</span>
-    <span class="n">pred</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lvl</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span> <span class="o">==</span> <span class="n">lvl</span>
     <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
-    <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;parent_term_label&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'parent_term_label'</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">])</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1628,18 +1679,18 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lvl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">levels</span><span class="p">):</span>
     
-    <span class="k">if</span> <span class="n">lvl</span> <span class="o">==</span> <span class="s1">&#39;supercluster&#39;</span> <span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">],</span>
-               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">],</span>
-               <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+    <span class="k">if</span> <span class="n">lvl</span> <span class="o">==</span> <span class="s1">'supercluster'</span> <span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'number_of_clusters'</span><span class="p">],</span>
+               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'color_hex_triplet'</span><span class="p">],</span>
+               <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'name'</span><span class="p">],</span>
                <span class="n">rotatelabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                <span class="n">labeldistance</span><span class="o">=</span><span class="mf">1.025</span><span class="p">,</span>
                <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
                <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">else</span> <span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">],</span>
-               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">],</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'number_of_clusters'</span><span class="p">],</span>
+               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'color_hex_triplet'</span><span class="p">],</span>
                <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">size</span><span class="p">,</span>
                <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
                <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1721,7 +1772,7 @@ Neurotransmitter terms are assigned to clusters based on the expression (or lack
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subclusters">Subclusters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-annotation-term-sets">Cluster annotation term sets</a></li>
@@ -1790,8 +1841,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

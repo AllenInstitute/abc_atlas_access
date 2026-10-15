@@ -12,7 +12,7 @@ this includes:
 - 839,102 Macaque cells, 35,219 genes
 - 414,575 Marmoset cells, 35,787 genes
 
-This release also includes data for running [MapMyCells](https://portal.brain-map.org/atlases-and-data/bkp/mapmycells) for each of the currently released species using the associated [taxonomy](HMBA-BG-taxonomy-CCN20250428.md).
+This release also includes data for running [MapMyCells](https://portal.brain-map.org/atlases-and-data/bkp/mapmycells) for each of the currently released species using the associated [taxonomy](HMBA-BG-taxonomy.md).
 
 For more information on the dataset, please refer to the following webpage:
 [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).
@@ -31,9 +31,9 @@ Data is being shared under the CC BY NC 4.0 license.
 Related resources:
 * Taxonomy and Clustering analysis of ~2 million single cell
   transcriptomes from the aligned dataset.
-  ([HMBA-BG-taxonomy-CCN20250428](HMBA-BG-taxonomy-CCN20250428.md))
+  ([HMBA-BG-taxonomy](HMBA-BG-taxonomy.md))
 * ~2 million single cell transcriptomes with aligned genes across species.
-  ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
+  ([HMBA-10XMultiome-BG-Cross-Species](HMBA-10XMultiome-BG-Cross-Species.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
 * 717 Macaque Patch-Seq cells with summary electro-physiology and morphology features.
 ([HMBA-Macaque-PatchSeq-BG](HMBA-Macaque-PatchSeq-BG.md))
@@ -49,7 +49,7 @@ Associated notebooks:
   visualization.
 [*notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb*]
 * [**10X scRNA-seq gene expression**](../notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb):
-  Interact with HMBA-BG 10X-Aligned gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
+  Interact with HMBA-BG 10X-Cross-Species gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
 * [**Spatial transcriptomic slab coordinates and annotation**](../notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb):
   Learn about the HMBA-BG spatial data/metadata structure and mapping to the BG taxonomy through example use
   cases and visualization.

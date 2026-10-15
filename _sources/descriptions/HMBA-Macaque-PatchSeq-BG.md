@@ -18,12 +18,12 @@ Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
 * ~2 million single cell transcriptomes with aligned genes across species.
-  ([HMBA-10XMultiome-BG-Aligned](HMBA-10XMultiome-BG-Aligned.md))
+  ([HMBA-10XMultiome-BG-Cross-Species](HMBA-10XMultiome-BG-Cross-Species.md))
 * Single cell transcriptomes for each individual species in the
   HMBA-BG dataset.([HMBA-10XMultiome-BG](HMBA-10XMultiome-BG.md))
 * Taxonomy and Clustering analysis of ~2 million single cell
-  transcriptomes from the aligned dataset.
-  ([HMBA-BG-taxonomy-CCN20250428](HMBA-BG-taxonomy-CCN20250428.md))
+  transcriptomes from the cross-species dataset.
+  ([HMBA-BG-taxonomy](HMBA-BG-taxonomy.md))
 * Spatial transcriptomic data for three species and donors ([HMBA-Spatial-BG](HMBA-Spatial-BG.md))
 
 Associated notebooks:
@@ -37,7 +37,7 @@ Associated notebooks:
   visualization.
 [*notebooks/hmba_bg_clustering_analysis_and_annotation.ipynb*]
 * [**10X scRNA-seq gene expression**](../notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb):
-  Interact with HMBA-BG 10X-Aligned gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
+  Interact with HMBA-BG 10X-Cross-Species gene expression data. [*notebooks/hmba_bg_10X_snRNASeq_tutorial.ipynb*]
 * [**Spatial transcriptomic slab coordinates and annotation**](../notebooks/hmba_bg_spatial_slabs_and_taxonomy.ipynb):
   Learn about the HMBA-BG spatial data/metadata structure and mapping to the BG taxonomy through example use
   cases and visualization.

@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/merfish_tutorial_part_2b';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MERFISH whole brain spatial transcriptomics cells with imputed genes" href="merfish_imputed_genes_example.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-canonical-neurotransmitter-transporter-genes">Expression of canonical neurotransmitter transporter genes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain">Expression of Tachykinin 2 (Tac2) in the whole brain</a></li>
 </ul>
@@ -550,7 +601,7 @@
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -558,7 +609,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20250531/manifest.json'
 </pre></div>
 </div>
 </div>
@@ -567,12 +618,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata_with_cluster_annotation&#39;</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-           <span class="s2">&quot;neurotransmitter&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'MERFISH-C57BL6J-638850'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata_with_cluster_annotation'</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+           <span class="s2">"neurotransmitter"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="n">cell</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -581,11 +632,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;MERFISH-C57BL6J-638850&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;example_genes_all_cells_expression&#39;</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cell_label&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'MERFISH-C57BL6J-638850'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'example_genes_all_cells_expression'</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span>
-<span class="n">exp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">exp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -620,7 +671,7 @@
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span><span class="n">fig_height</span><span class="p">)</span>
 
-    <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">xlabs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
     <span class="n">ylabs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
 
@@ -635,7 +686,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc17a8&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a5&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a3&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a4&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Slc17a7'</span><span class="p">,</span> <span class="s1">'Slc17a6'</span><span class="p">,</span> <span class="s1">'Slc17a8'</span><span class="p">,</span> <span class="s1">'Slc32a1'</span><span class="p">,</span> <span class="s1">'Slc6a5'</span><span class="p">,</span> <span class="s1">'Slc6a3'</span><span class="p">,</span> <span class="s1">'Slc6a4'</span><span class="p">]</span>
 <span class="n">filtered</span> <span class="o">=</span> <span class="n">exp</span><span class="p">[</span><span class="n">ntgenes</span><span class="p">]</span>
 <span class="n">joined</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
 </pre></div>
@@ -644,7 +695,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">ntgenes</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">ntgenes</span><span class="p">,</span> <span class="s1">'neurotransmitter'</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="p">[</span><span class="n">ntgenes</span><span class="p">]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -658,7 +709,7 @@
 <p>Grouping expression by dissection region of interest shows that each of these genes have distinct spatial patterns. The MERFISH data allows us to visualize these patterns in anatomical context.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">ntgenes</span><span class="p">,</span> <span class="s1">&#39;brain_section_label&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">ntgenes</span><span class="p">,</span> <span class="s1">'brain_section_label'</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">)))]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -679,23 +730,23 @@
     
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">bsl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blist</span><span class="p">):</span>
         
-        <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;brain_section_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bsl</span><span class="p">]</span>
-        <span class="n">xx</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
-        <span class="n">yy</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'brain_section_label'</span><span class="p">]</span> <span class="o">==</span> <span class="n">bsl</span><span class="p">]</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span>
+        <span class="n">yy</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span>
         <span class="n">vv</span> <span class="o">=</span> <span class="n">filtered</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
         
         <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="p">:</span>
-            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
         <span class="k">else</span> <span class="p">:</span>
-            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">vv</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"."</span><span class="p">)</span>
             
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
         
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bsl</span><span class="p">))</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">bsl</span><span class="p">))</span>
         
     <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
@@ -707,8 +758,8 @@
 <p>We will use the aggregate by brain section table above to pick a four sections of interest and plot cells in those sections by neurotransmitter type and by each of the transporter genes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.51&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.31&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.19&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.01&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'C57BL6J-638850.51'</span><span class="p">,</span> <span class="s1">'C57BL6J-638850.31'</span><span class="p">,</span> <span class="s1">'C57BL6J-638850.19'</span><span class="p">,</span> <span class="s1">'C57BL6J-638850.01'</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'neurotransmitter_color'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -719,7 +770,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc17a7'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -730,7 +781,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc17a6'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -741,7 +792,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc17a8&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc17a8'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -752,7 +803,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc32a1'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -763,7 +814,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc6a5&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc6a5'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -774,7 +825,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc6a3&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc6a3'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -785,7 +836,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Slc6a4&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Slc6a4'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -801,10 +852,10 @@
 <p>In this example, we create a dataframe comprising expression values of Tac2 for all cells across the whole brain. As with the single brain section example, grouping expression by neurotransmitter show that Tac2 gene is enriched in cholinergic cell types. With the rest of brain included, we can observe that Tac2 is also enriched in Glut-GABA cell types as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tac2&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Tac2'</span><span class="p">]</span>
 <span class="n">filtered</span> <span class="o">=</span> <span class="n">exp</span><span class="p">[</span><span class="n">exgenes</span><span class="p">]</span>
 <span class="n">joined</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
-<span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">'neurotransmitter'</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -817,7 +868,7 @@
 <p>Grouping by class, shows that Tac2 is enriched in class “16 MH-LH Glut” with cells restricted to the medial (MH) and lateral (LH) habenula and a mixture of glutamatergic and cholinergic type and “06 CTX-CGE GABA” GABAergic cells originating from the caudal ganglionic eminence (CGE).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">'class'</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">class_list</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -831,7 +882,7 @@
 <p>At the next level, grouping by subclass reveals enrichment is highly anatomically localized cell types such as the medial habenula (MH), bed nuclei of the stria terminalis (BST), spinal nucleus of the trigeminal (SPVC), main olfactory blub (MOB), central amygdalar nucleus (CEA) and arcuate hypothalamic nucleus (ARH).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;subclass&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">'subclass'</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">subclass_list</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -845,7 +896,7 @@
 <p>The MERFISH data allows us to visualize these spatial pattern in anatomical context. We can aggregate Tac2 expression by brain section so that we can find 4 sections where the enriched expression is located. We then visualize cells in those section by Tac2 expression, neurotransmitter identity, cell type classes and subclasses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">&#39;brain_section_label&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agg</span> <span class="o">=</span> <span class="n">aggregate_by_metadata</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="n">exgenes</span><span class="p">,</span> <span class="s1">'brain_section_label'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">agg</span> <span class="o">=</span> <span class="n">agg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">index</span><span class="p">)))]</span>
 <span class="n">plot_heatmap</span><span class="p">(</span><span class="n">agg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -858,8 +909,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C57BL6J-638850.69&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.46&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.38&#39;</span><span class="p">,</span> <span class="s1">&#39;C57BL6J-638850.01&#39;</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;Tac2&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'C57BL6J-638850.69'</span><span class="p">,</span> <span class="s1">'C57BL6J-638850.46'</span><span class="p">,</span> <span class="s1">'C57BL6J-638850.38'</span><span class="p">,</span> <span class="s1">'C57BL6J-638850.01'</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'Tac2'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">magma_r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -870,7 +921,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;neurotransmitter_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'neurotransmitter_color'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -881,7 +932,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;class_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'class_color'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -892,7 +943,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">joined</span><span class="p">,</span> <span class="s1">'subclass_color'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -904,9 +955,9 @@
 <p>We can use the Tac2 aggregate by subclass table above and pick out the top 10 most enriched subclasses and plot only them on the same set of brain sections and observed that this set of subclasses is able recapitulate the expression pattern of Tac2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">subclass_list</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">joined</span><span class="p">[</span><span class="s1">&#39;subclass&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">subclass_list</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">joined</span><span class="p">[</span><span class="s1">'subclass'</span><span class="p">]]</span>
 <span class="n">filtered</span> <span class="o">=</span> <span class="n">joined</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">filtered</span><span class="p">,</span> <span class="s1">&#39;subclass_color&#39;</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sections</span><span class="p">(</span><span class="n">filtered</span><span class="p">,</span> <span class="s1">'subclass_color'</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -922,11 +973,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;088 BST Tac2 Gaba&#39;, &#39;145 MH Tac2 Glut&#39;,
-       &#39;083 CEA-BST Rai14 Pdyn Crh Gaba&#39;, &#39;258 SPVC Nmu Glut&#39;,
-       &#39;043 OB-mi Frmd7 Gaba&#39;, &#39;047 Sncg Gaba&#39;, &#39;082 CEA-BST Ebf1 Pdyn Gaba&#39;,
-       &#39;046 Vip Gaba&#39;, &#39;103 PVHd-DMH Lhx6 Gaba&#39;, &#39;126 ARH-PVp Tbx3 Glut&#39;],
-      dtype=&#39;object&#39;, name=&#39;subclass&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['088 BST Tac2 Gaba', '145 MH Tac2 Glut',
+       '083 CEA-BST Rai14 Pdyn Crh Gaba', '258 SPVC Nmu Glut',
+       '043 OB-mi Frmd7 Gaba', '047 Sncg Gaba', '082 CEA-BST Ebf1 Pdyn Gaba',
+       '046 Vip Gaba', '103 PVHd-DMH Lhx6 Gaba', '126 ARH-PVp Tbx3 Glut'],
+      dtype='object', name='subclass')
 </pre></div>
 </div>
 </div>
@@ -999,7 +1050,7 @@
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-canonical-neurotransmitter-transporter-genes">Expression of canonical neurotransmitter transporter genes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-of-tachykinin-2-tac2-in-the-whole-brain">Expression of Tachykinin 2 (Tac2) in the whole brain</a></li>
 </ul>
@@ -1050,8 +1101,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

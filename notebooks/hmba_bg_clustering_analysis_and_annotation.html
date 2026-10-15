@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/hmba_bg_clustering_analysis_and_annotation';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Human-Mammalian Brain - Basal Ganglia 10X snRANSeq analysis: gene expression" href="hmba_bg_10X_snRNASeq_tutorial.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor-and-library-metadata">Donor and Library metadata</a></li>
@@ -561,9 +612,9 @@
 <p><strong>Change the download_base variable to where you would like to download the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span>
-    <span class="n">cache_dir</span><span class="o">=</span><span class="n">download_base</span>
+    <span class="n">cache_dir</span><span class="o">=</span><span class="n">download_base</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -571,32 +622,43 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20260415/manifest.json&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:665: UserWarning: The manifest version recorded as last used for this cache -- releases/20261031/manifest.json-- is not a valid manifest for this dataset. Loading latest version -- releases/20260711/manifest.json -- instead.
+  warnings.warn(msg, UserWarning)
+/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/cloud_cache.py:697: OutdatedManifestWarning: You are loading
+releases/20260711/manifest.json
+which is newer than the most recent manifest file you have previously been working with
+releases/20261031/manifest.json
+It is possible that some data files have changed between these two data releases, which will force you to re-download those data files (currently downloaded files will not be overwritten). To continue using releases/20261031/manifest.json, run
+type.load_manifest('releases/20261031/manifest.json')
+  warnings.warn(msg, OutdatedManifestWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20261031/manifest.json'
 </pre></div>
 </div>
 </div>
 </div>
 <section id="data-overview">
 <h2>Data overview<a class="headerlink" href="#data-overview" title="Link to this heading">#</a></h2>
-<p>We’ll quickly walk through the data we will be using in this notebook. The HMBA-BG 10X datasets are located across several directories listed in the <code class="docutils literal notranslate"><span class="pre">ABCProjectCache</span></code>. In this notebook, we will be looking at the Aligned HMBA-BG 10X dataset. These data combine the there species with an aligned set of ~16k across the species. We will be using data and metadata from the following directories:</p>
+<p>We’ll quickly walk through the data we will be using in this notebook. The HMBA-BG 10X datasets are located across several directories listed in the <code class="docutils literal notranslate"><span class="pre">ABCProjectCache</span></code>. In this notebook, we will be looking at the Cross-Species HMBA-BG 10X dataset. These data combine the there species with an aligned set of ~16k across the species. We will be using data and metadata from the following directories:</p>
 <ul class="simple">
-<li><p>HMBA-10xMultiome-BG-Aligned</p></li>
-<li><p>HMBA-BG-taxonomy-CCN20250428</p></li>
+<li><p>HMBA-10xMultiome-BG-Cross-Species</p></li>
+<li><p>HMBA-BG-taxonomy</p></li>
 </ul>
 <p>Note that data for each individual species is available in the directory <code class="docutils literal notranslate"><span class="pre">HMBA-10xMultiome-BG</span></code>.</p>
-<p>Below we list the data and metadata in the HMBA-10xMultiome-BG-Aligned dataset.</p>
+<p>Below we list the data and metadata in the HMBA-10xMultiome-BG-Cross-Species dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HMBA-10xMultiome-BG-Aligned: gene expression data (h5ad)</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HMBA-10xMultiome-BG-Aligned: metadata (csv)</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"HMBA-10xMultiome-BG-Cross-Species: gene expression data (h5ad)</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-10xMultiome-BG-Cross-Species'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"HMBA-10xMultiome-BG-Cross-Species: metadata (csv)</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-10xMultiome-BG-Cross-Species'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-10xMultiome-BG-Aligned: gene expression data (h5ad)
-	 [&#39;HMBA-10xMultiome-BG-Aligned/log2&#39;, &#39;HMBA-10xMultiome-BG-Aligned/raw&#39;]
-HMBA-10xMultiome-BG-Aligned: metadata (csv)
-	 [&#39;cell_metadata&#39;, &#39;donor&#39;, &#39;example_gene_expression&#39;, &#39;gene&#39;, &#39;library&#39;, &#39;value_sets&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-10xMultiome-BG-Cross-Species: gene expression data (h5ad)
+	 ['HMBA-10xMultiome-BG-Cross-Species/log2', 'HMBA-10xMultiome-BG-Cross-Species/raw']
+HMBA-10xMultiome-BG-Cross-Species: metadata (csv)
+	 ['cell_metadata', 'donor', 'example_gene_expression', 'gene', 'library', 'value_sets']
 </pre></div>
 </div>
 </div>
@@ -604,13 +666,13 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
 <p>We will also use metadata from the HMBA-BG taxonomy directory. Below is the list of available files:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HMBA-BG-taxonomy-CCN20250428: metadata (csv)</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"HMBA-BG-taxonomy: metadata (csv)</span><span class="se">\n\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-BG-taxonomy-CCN20250428: metadata (csv)
-	 [&#39;abbreviation_term&#39;, &#39;cell_2d_embedding_coordinates&#39;, &#39;cell_to_cluster_membership&#39;, &#39;cluster&#39;, &#39;cluster_annotation_term&#39;, &#39;cluster_annotation_term_set&#39;, &#39;cluster_annotation_to_abbreviation_map&#39;, &#39;cluster_to_cluster_annotation_membership&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HMBA-BG-taxonomy: metadata (csv)
+	 ['abbreviation_term', 'cell_2d_embedding_coordinates', 'cell_to_cluster_membership', 'cluster', 'cluster_annotation_term', 'cluster_annotation_term_set', 'cluster_annotation_to_abbreviation_map', 'cluster_to_cluster_annotation_membership']
 </pre></div>
 </div>
 </div>
@@ -619,22 +681,23 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
 <h3>Cell metadata<a class="headerlink" href="#cell-metadata" title="Link to this heading">#</a></h3>
 <p>Essential cell metadata is stored as a CSV file that we load as a Pandas DataFrame. Each row represents one cell indexed by a <em>cell label</em>. The <em>cell label</em> is the concatenation of barcode and name of the sample. In this context, the sample is the <em>barcoded cell sample</em> that represents a single load into one port of the 10x Chromium. Note that cell barcodes are only unique within a single <em>barcoded cell sample</em> and that the same barcode can be reused. This metadata file contains cells across all species in the HMBA-BG dataset.</p>
 <p>Each cell is associated with a <em>library label</em>, <em>donor label</em>, <em>alignment_job_id</em>, <em>feature_matrix_label</em> and <em>dataset_label</em> identifying which data package this cell is part of. This metadata file will be combined with other metadata files that ship with this package to add information associated with the donor, UMAP coordinates, cluster assignments, and more.</p>
-<p>Below, we load the first of the metadata used in this tutorial. This represents the cell metadata for the aligned dataset.</p>
+<p>Below, we load the first of the metadata used in this tutorial. This represents the cell metadata for the Cross-Species dataset.</p>
 <p>The command we use below both downloads the data if it is not already available in the local cache and loads the data as a Pandas DataFrame. This pattern of loading metadata is repeated throughout the tutorials.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;cell_label&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of cells = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-10xMultiome-BG-Cross-Species'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata'</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">'cell_label'</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Number of cells = "</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
 <span class="n">cell</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (5) have mixed types. Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 449M/449M [00:22&lt;00:00, 20.0MMB/s]    
+/Users/chris.morrison/src/abc_atlas_access/src/abc_atlas_access/abc_atlas_cache/abc_project_cache.py:643: DtypeWarning: Columns (0: alignment_job_id) have mixed types. Specify dtype option on import or set low_memory=False.
   return pd.read_csv(path, **kwargs)
 </pre></div>
 </div>
@@ -694,8 +757,8 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.027027</td>
       <td>15259.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>38447b19-a5dc-4eca-9021-56ae191e8809</td>
     </tr>
     <tr>
@@ -707,8 +770,8 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.054795</td>
       <td>20645.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>3dc4dc1f-4b8a-4012-bb07-e3906ad70da0</td>
     </tr>
     <tr>
@@ -720,8 +783,8 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.000000</td>
       <td>2551.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>291d6ebf-ca70-4d9d-8dde-10fa841dba93</td>
     </tr>
     <tr>
@@ -733,8 +796,8 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.000000</td>
       <td>2341.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>12153419-9b49-4d5f-a10d-ddb7837a729d</td>
     </tr>
     <tr>
@@ -746,8 +809,8 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.027397</td>
       <td>8326.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>5716499d-d69d-489e-b4ed-6841b6ba051d</td>
     </tr>
   </tbody>
@@ -761,10 +824,10 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
     
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
         <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-        <span class="n">members</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">members</span> <span class="o">=</span> <span class="s1">''</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
             <span class="n">members</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">grouped</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of unique </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%d</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">),</span> <span class="n">members</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Number of unique </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%d</span><span class="s2"> </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped</span><span class="p">),</span> <span class="n">members</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -777,14 +840,14 @@ HMBA-10xMultiome-BG-Aligned: metadata (csv)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 680274 
-Number of unique donor_label = 22 [&#39;CJ23.56.002&#39;, &#39;CJ23.56.003&#39;, &#39;CJ24.56.001&#39;, &#39;CJ24.56.004&#39;, &#39;H18.30.001&#39;, &#39;H19.30.004&#39;, &#39;H20.30.001&#39;, &#39;H20.30.002&#39;, &#39;H21.30.004&#39;, &#39;H23.30.001&#39;, &#39;H24.30.001&#39;, &#39;H24.30.003&#39;, &#39;H24.30.004&#39;, &#39;H24.30.007&#39;, &#39;Q19.26.010&#39;, &#39;Q21.26.002&#39;, &#39;Q21.26.010&#39;, &#39;QM21.26.001&#39;, &#39;QM21.26.003&#39;, &#39;QM23.50.001&#39;, &#39;QM23.50.002&#39;, &#39;QM23.50.003&#39;]
+Number of unique donor_label = 22 ['CJ23.56.002', 'CJ23.56.003', 'CJ24.56.001', 'CJ24.56.004', 'H18.30.001', 'H19.30.004', 'H20.30.001', 'H20.30.002', 'H21.30.004', 'H23.30.001', 'H24.30.001', 'H24.30.003', 'H24.30.004', 'H24.30.007', 'Q19.26.010', 'Q21.26.002', 'Q21.26.010', 'QM21.26.001', 'QM21.26.003', 'QM23.50.001', 'QM23.50.002', 'QM23.50.003']
 Number of unique barcoded_cell_sample_label = 417 
 Number of unique library_label = 417 
 Number of unique alignment_job_id = 303 
 Number of unique doublet_score = 1422 
 Number of unique umi_count = 85704 
-Number of unique feature_matrix_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
-Number of unique dataset_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
+Number of unique feature_matrix_label = 1 ['HMBA-10xMultiome-BG-Cross-Species']
+Number of unique dataset_label = 1 ['HMBA-10xMultiome-BG-Cross-Species']
 Number of unique abc_sample_id = 1896133 
 </pre></div>
 </div>
@@ -797,14 +860,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">donor</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;donor&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;donor_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-10xMultiome-BG-Cross-Species'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'donor'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'donor_label'</span><span class="p">)</span>
 <span class="n">donor</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>donor.csv: 100%|██████████| 2.01k/2.01k [00:00&lt;00:00, 26.5kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -907,14 +973,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;library&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;library_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-10xMultiome-BG-Cross-Species'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'library'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'library_label'</span><span class="p">)</span>
 <span class="n">library</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>library.csv: 100%|██████████| 109k/109k [00:00&lt;00:00, 709kMB/s] 
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -947,9 +1016,13 @@ Number of unique abc_sample_id = 1896133
       <th>specimen_dissected_roi_nhash_id</th>
       <th>slab_label</th>
       <th>slab_nhash_id</th>
+      <th>RNA_aliquot_nhash_id</th>
+      <th>ATAC_aliquot_nhash_id_nimp</th>
     </tr>
     <tr>
       <th>library_label</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -983,6 +1056,8 @@ Number of unique abc_sample_id = 1896133
       <td>RI-KHNKLI464991</td>
       <td>QM23.50.003.CX.08</td>
       <td>SL-HHOIKA892526</td>
+      <td>LA-LXVEUM541384PNNKKM266702</td>
+      <td>LA-TARYWR624745BBGGCK580995</td>
     </tr>
     <tr>
       <th>L8XR_220428_02_A05</th>
@@ -1000,6 +1075,8 @@ Number of unique abc_sample_id = 1896133
       <td>RI-VYYVBV771518</td>
       <td>QM21.26.001.CX.44</td>
       <td>SL-MCUMVX579790</td>
+      <td>LA-RNSEIM617503BZDAJF787974</td>
+      <td>LA-PIQRSO826916FCJCKL744478</td>
     </tr>
     <tr>
       <th>L8XR_220428_02_C04</th>
@@ -1017,6 +1094,8 @@ Number of unique abc_sample_id = 1896133
       <td>RI-IMHMMG443226</td>
       <td>Q19.26.010.CX.42</td>
       <td>SL-XYBXSZ613335</td>
+      <td>LA-IHJMHI295497BZDAJF787974</td>
+      <td>LA-QSKILG275772FCJCKL744478</td>
     </tr>
     <tr>
       <th>L8XR_240705_01_A06</th>
@@ -1034,6 +1113,8 @@ Number of unique abc_sample_id = 1896133
       <td>RI-XZUAVY396052</td>
       <td>H24.30.003.CX.14</td>
       <td>SL-OSUTGV807183</td>
+      <td>LA-EBDPMM615369PUROBV238013</td>
+      <td>LA-IBDPMP801373NYZVTV539505</td>
     </tr>
     <tr>
       <th>L8XR_240919_21_B05</th>
@@ -1051,6 +1132,8 @@ Number of unique abc_sample_id = 1896133
       <td>RI-XVBWXT892729</td>
       <td>H21.30.004.CX.18</td>
       <td>SL-XWIWGI246585</td>
+      <td>LA-GUPMNR700763BUYXYZ657714</td>
+      <td>LA-FBDLSM349285HDFNUO141234</td>
     </tr>
   </tbody>
 </table>
@@ -1059,8 +1142,8 @@ Number of unique abc_sample_id = 1896133
 <p>We combine these into an extended cell metadata table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">donor</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;donor_label&#39;</span><span class="p">)</span>
-<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;library_label&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_library_table&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">donor</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'donor_label'</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'library_label'</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_library_table'</span><span class="p">)</span>
 
 <span class="k">del</span> <span class="n">cell</span>
 </pre></div>
@@ -1070,7 +1153,7 @@ Number of unique abc_sample_id = 1896133
 <p>Below we use a pandas <code class="docutils literal notranslate"><span class="pre">groupby</span></code> to show the number of cells from each species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species_genus&#39;</span><span class="p">)[[</span><span class="s1">&#39;feature_matrix_label&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'species_genus'</span><span class="p">)[[</span><span class="s1">'feature_matrix_label'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1120,7 +1203,7 @@ Number of unique abc_sample_id = 1896133
 <p>We can also use the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function to show the number of cells in each region of interest extracted from the BG.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region_of_interest_name&#39;</span><span class="p">)[[</span><span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'region_of_interest_name'</span><span class="p">)[[</span><span class="s1">'region_of_interest_label'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1242,14 +1325,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_sets</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-10xMultiome-BG-Aligned&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;value_sets&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-10xMultiome-BG-Cross-Species'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'value_sets'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'label'</span><span class="p">)</span>
 <span class="n">value_sets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 4.16k/4.16k [00:00&lt;00:00, 24.6kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1346,7 +1432,7 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extract_value_set</span><span class="p">(</span><span class="n">cell_metadata_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">input_value_set</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">input_value_set_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add color and order columns to the cell metadata dataframe based on the input</span>
+<span class="w">    </span><span class="sd">"""Add color and order columns to the cell metadata dataframe based on the input</span>
 <span class="sd">    value set.</span>
 
 <span class="sd">    Columns are added as {input_value_set_label}_color and {input_value_set_label}_order.</span>
@@ -1359,13 +1445,13 @@ Number of unique abc_sample_id = 1896133
 <span class="sd">        DataFrame containing the value set information.</span>
 <span class="sd">    input_value_set_label : str</span>
 <span class="sd">        The the column name to extract color and order information for. will be added to the cell metadata.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
-        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
-    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
-        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
-    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">&#39;order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="sd">    """</span>
+    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
+        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">'field'</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">'color_hex_triplet'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">cell_metadata_df</span><span class="p">[</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">input_value_set_label</span><span class="si">}</span><span class="s1">_order'</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_value_set</span><span class="p">[</span>
+        <span class="n">input_value_set</span><span class="p">[</span><span class="s1">'field'</span><span class="p">]</span> <span class="o">==</span> <span class="n">input_value_set_label</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cell_metadata_df</span><span class="p">[</span><span class="n">input_value_set_label</span><span class="p">]][</span><span class="s1">'order'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
@@ -1374,13 +1460,13 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add region of interest color and order</span>
-<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">)</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">'region_of_interest_label'</span><span class="p">)</span>
 <span class="c1"># Add species common name color and order</span>
-<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_genus&#39;</span><span class="p">)</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">'species_genus'</span><span class="p">)</span>
 <span class="c1"># Add species scientific name color and order</span>
-<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;species_scientific_name&#39;</span><span class="p">)</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">'species_scientific_name'</span><span class="p">)</span>
 <span class="c1"># Add donor sex color and order</span>
-<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">&#39;donor_sex&#39;</span><span class="p">)</span>
+<span class="n">extract_value_set</span><span class="p">(</span><span class="n">cell_extended</span><span class="p">,</span> <span class="n">value_sets</span><span class="p">,</span> <span class="s1">'donor_sex'</span><span class="p">)</span>
 <span class="n">cell_extended</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1415,8 +1501,8 @@ Number of unique abc_sample_id = 1896133
       <th>dataset_label</th>
       <th>abc_sample_id</th>
       <th>...</th>
-      <th>slab_label</th>
-      <th>slab_nhash_id</th>
+      <th>RNA_aliquot_nhash_id</th>
+      <th>ATAC_aliquot_nhash_id_nimp</th>
       <th>region_of_interest_label_color</th>
       <th>region_of_interest_label_order</th>
       <th>species_genus_color</th>
@@ -1461,12 +1547,12 @@ Number of unique abc_sample_id = 1896133
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.027027</td>
       <td>15259.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>38447b19-a5dc-4eca-9021-56ae191e8809</td>
       <td>...</td>
-      <td>H24.30.001.CX.18</td>
-      <td>SL-IKLFNM543824</td>
+      <td>LA-LYWUSS193215JGVXQQ169778</td>
+      <td>LA-XXUAAR612733RODDAG166614</td>
       <td>#53DB33</td>
       <td>15</td>
       <td>#377eb8</td>
@@ -1485,12 +1571,12 @@ Number of unique abc_sample_id = 1896133
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.054795</td>
       <td>20645.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>3dc4dc1f-4b8a-4012-bb07-e3906ad70da0</td>
       <td>...</td>
-      <td>H24.30.001.CX.18</td>
-      <td>SL-IKLFNM543824</td>
+      <td>LA-LYWUSS193215JGVXQQ169778</td>
+      <td>LA-XXUAAR612733RODDAG166614</td>
       <td>#53DB33</td>
       <td>15</td>
       <td>#377eb8</td>
@@ -1509,12 +1595,12 @@ Number of unique abc_sample_id = 1896133
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.000000</td>
       <td>2551.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>291d6ebf-ca70-4d9d-8dde-10fa841dba93</td>
       <td>...</td>
-      <td>H24.30.001.CX.18</td>
-      <td>SL-IKLFNM543824</td>
+      <td>LA-LYWUSS193215JGVXQQ169778</td>
+      <td>LA-XXUAAR612733RODDAG166614</td>
       <td>#53DB33</td>
       <td>15</td>
       <td>#377eb8</td>
@@ -1533,12 +1619,12 @@ Number of unique abc_sample_id = 1896133
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.000000</td>
       <td>2341.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>12153419-9b49-4d5f-a10d-ddb7837a729d</td>
       <td>...</td>
-      <td>H24.30.001.CX.18</td>
-      <td>SL-IKLFNM543824</td>
+      <td>LA-LYWUSS193215JGVXQQ169778</td>
+      <td>LA-XXUAAR612733RODDAG166614</td>
       <td>#53DB33</td>
       <td>15</td>
       <td>#377eb8</td>
@@ -1557,12 +1643,12 @@ Number of unique abc_sample_id = 1896133
       <td>8a4bf81821a0f425be8ba9c15dfad6b509020312</td>
       <td>0.027397</td>
       <td>8326.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
       <td>5716499d-d69d-489e-b4ed-6841b6ba051d</td>
       <td>...</td>
-      <td>H24.30.001.CX.18</td>
-      <td>SL-IKLFNM543824</td>
+      <td>LA-LYWUSS193215JGVXQQ169778</td>
+      <td>LA-XXUAAR612733RODDAG166614</td>
       <td>#53DB33</td>
       <td>15</td>
       <td>#377eb8</td>
@@ -1574,7 +1660,7 @@ Number of unique abc_sample_id = 1896133
     </tr>
   </tbody>
 </table>
-<p>5 rows × 40 columns</p>
+<p>5 rows × 42 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1585,14 +1671,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_2d_embedding_coordinates</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_2d_embedding_coordinates&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_2d_embedding_coordinates'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">cell_2d_embedding_coordinates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_2d_embedding_coordinates.csv: 100%|██████████| 86.7M/86.7M [00:21&lt;00:00, 4.02MMB/s]  
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1676,7 +1765,7 @@ Number of unique abc_sample_id = 1896133
     <span class="n">colorbar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">sizes</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>
  <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Plot a scatter plot of the UMAP coordinates.</span>
 
 <span class="sd">    Parameters</span>
@@ -1703,22 +1792,22 @@ Number of unique abc_sample_id = 1896133
 <span class="sd">        whether to add a colorbar to the plot. Default is False.</span>
 <span class="sd">    sizes : array-like, optional</span>
 <span class="sd">        sizes of the points to plot. If None, all points will have the same size.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">sizes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">sizes</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">sizes</span><span class="p">)</span>
+        <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">sizes</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">cc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">sizes</span><span class="p">)</span>
+        <span class="n">scatt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cc</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">sizes</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
-        <span class="n">unique_label_colors</span> <span class="o">=</span> <span class="p">(</span><span class="n">labels</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="n">cc</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-        <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_color</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">label_color</span> <span class="ow">in</span> <span class="n">unique_label_colors</span><span class="p">])</span>
-        <span class="n">unique_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_color</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">label_color</span> <span class="ow">in</span> <span class="n">unique_label_colors</span><span class="p">])</span>
+        <span class="n">unique_label_colors</span> <span class="o">=</span> <span class="p">(</span><span class="n">labels</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="n">cc</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="n">unique_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_color</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">label_color</span> <span class="ow">in</span> <span class="n">unique_label_colors</span><span class="p">])</span>
+        <span class="n">unique_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">label_color</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">label_color</span> <span class="ow">in</span> <span class="n">unique_label_colors</span><span class="p">])</span>
 
         <span class="k">if</span> <span class="n">term_orders</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">unique_order</span> <span class="o">=</span> <span class="n">term_orders</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -1745,82 +1834,82 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_genus_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_genus&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_genus_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'species_genus_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'species_genus'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'species_genus_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;species_genus&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"species_genus"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7bae15a068ff80e4eddf14e4174b93f1932551db64575a965daf0d664f79cae8.png" src="../_images/7bae15a068ff80e4eddf14e4174b93f1932551db64575a965daf0d664f79cae8.png" />
+<img alt="../_images/9b3931e2b9f02228ced427f7c5f232409acb60ea441afaf4f2709eb90d1db0d4.png" src="../_images/9b3931e2b9f02228ced427f7c5f232409acb60ea441afaf4f2709eb90d1db0d4.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_scientific_name_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_scientific_name&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;species_scientific_name_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'species_scientific_name_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'species_scientific_name'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'species_scientific_name_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;species_scientific_name&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"species_scientific_name"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d2d4f8c8ae5dfc8ea6918a18e36f0cf1319159fd9362d003e5e8556193a0d114.png" src="../_images/d2d4f8c8ae5dfc8ea6918a18e36f0cf1319159fd9362d003e5e8556193a0d114.png" />
+<img alt="../_images/67f1a2ea310c06081747e5eda63a1c60163e5d346bee0152e1a4a2427ea6c3e0.png" src="../_images/67f1a2ea310c06081747e5eda63a1c60163e5d346bee0152e1a4a2427ea6c3e0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;donor_sex_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;donor_sex&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;donor_sex_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'donor_sex_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'donor_sex'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'donor_sex_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;donor_sex&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"donor_sex"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dec5aa1eb5df8c7a1f072adc08485769c19c1331fb92fb152662ef6592417911.png" src="../_images/dec5aa1eb5df8c7a1f072adc08485769c19c1331fb92fb152662ef6592417911.png" />
+<img alt="../_images/457b52f7574ef956e9a97c454286e892dd27166c35728e6d078f29f1b00717e5.png" src="../_images/457b52f7574ef956e9a97c454286e892dd27166c35728e6d078f29f1b00717e5.png" />
 </div>
 </div>
 <p>Below we show the region of interest for the three species. Note, however, that Marmoset does not have fine grained ROIs available and is marked as <code class="docutils literal notranslate"><span class="pre">Br</span> <span class="pre">-</span> <span class="pre">Brain</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;region_of_interest_label_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;region_of_interest_label&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;region_of_interest_label_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'region_of_interest_label_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'region_of_interest_label'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'region_of_interest_label_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;region_of_interest_label&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"region_of_interest_label"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ee08d6fb7e60398047eb8e43cc7fc00e33e5b5ea529f73caad3eaa87b9cef75e.png" src="../_images/ee08d6fb7e60398047eb8e43cc7fc00e33e5b5ea529f73caad3eaa87b9cef75e.png" />
+<img alt="../_images/8e70fb874c18bc21974f490128451b0663c003be338bb928add8a2ce517634b5.png" src="../_images/8e70fb874c18bc21974f490128451b0663c003be338bb928add8a2ce517634b5.png" />
 </div>
 </div>
 </section>
@@ -1832,15 +1921,18 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">:</span> <span class="s1">&#39;Int64&#39;</span><span class="p">}</span>
-<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster'</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">'number_of_cells'</span><span class="p">:</span> <span class="s1">'Int64'</span><span class="p">}</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'cluster_annotation_term_label'</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">)</span>
 <span class="n">cluster</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 79.9k/79.9k [00:00&lt;00:00, 394kMB/s] 
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1902,14 +1994,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_annotation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term_set&#39;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster_annotation_term_set'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'cluster_annotation_term_label'</span><span class="p">})</span>
 <span class="n">cluster_annotation_term_set</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term_set.csv: 100%|██████████| 223/223 [00:00&lt;00:00, 2.28kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1978,14 +2073,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_annotation_term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_annotation_term&#39;</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster_annotation_term'</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'label'</span><span class="p">:</span> <span class="s1">'cluster_annotation_term_label'</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">)</span>
 <span class="n">cluster_annotation_term</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_annotation_term.csv: 100%|██████████| 207k/207k [00:00&lt;00:00, 921kMB/s]  
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2033,20 +2131,8 @@ Number of unique abc_sample_id = 1896133
       <td>Nonneuron</td>
       <td>CCN20250428_LEVEL_0</td>
       <td>Neighborhood</td>
-      <td>#a8afa5</td>
+      <td>#f2ca7d</td>
       <td>1</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>CS20250428_NEIGH_0000</th>
-      <td>Glut Sero Dopa</td>
-      <td>CCN20250428_LEVEL_0</td>
-      <td>Neighborhood</td>
-      <td>#91f4bb</td>
-      <td>2</td>
       <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2077,12 +2163,24 @@ Number of unique abc_sample_id = 1896133
       <td>NaN</td>
     </tr>
     <tr>
-      <th>CS20250428_CLASS_0000</th>
-      <td>Astro-Epen</td>
+      <th>CS20250428_NEIGH_0000</th>
+      <td>Glut Sero Dopa</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#91f4bb</td>
+      <td>2</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CS20250428_CLASS_0010</th>
+      <td>OPC-Oligo</td>
       <td>CCN20250428_LEVEL_1</td>
       <td>Class</td>
-      <td>#401e66</td>
-      <td>1</td>
+      <td>#8605d4</td>
+      <td>3</td>
       <td>1</td>
       <td>CS20250428_NEIGH_0001</td>
       <td>Nonneuron</td>
@@ -2096,22 +2194,25 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_to_cluster_annotation_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cluster_to_cluster_annotation_membership&#39;</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cluster_to_cluster_annotation_membership'</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">)</span>
 <span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">cluster_to_cluster_annotation_membership</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-    <span class="n">cluster</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)[[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]],</span>
-    <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span>
+    <span class="n">cluster</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cluster_alias'</span><span class="p">)[[</span><span class="s1">'number_of_cells'</span><span class="p">]],</span>
+    <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span>
 <span class="p">)</span>
-<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_annotation_term</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_anno_term&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">membership_with_cluster_info</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_annotation_term</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_anno_term'</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">membership_groupby</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
-    <span class="p">[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="n">membership_with_cluster_info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster_to_cluster_annotation_membership.csv: 100%|██████████| 569k/569k [00:00&lt;00:00, 1.63MMB/s] 
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2131,10 +2232,11 @@ Number of unique abc_sample_id = 1896133
     <tr style="text-align: right;">
       <th></th>
       <th>cluster_annotation_term_label</th>
-      <th>cluster_annotation_term_set_label</th>
-      <th>cluster_alias</th>
+      <th>Unnamed: 0</th>
       <th>cluster_annotation_term_set_name</th>
       <th>cluster_annotation_term_name</th>
+      <th>cluster_alias</th>
+      <th>cluster_annotation_term_set_label</th>
       <th>number_of_cells</th>
       <th>name</th>
       <th>cluster_annotation_term_set_label_anno_term</th>
@@ -2150,93 +2252,98 @@ Number of unique abc_sample_id = 1896133
   <tbody>
     <tr>
       <th>0</th>
-      <td>CS20250428_CLUST_0161</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Human-143</td>
-      <td>Cluster</td>
-      <td>Human-143</td>
-      <td>91</td>
-      <td>Human-143</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Cluster</td>
-      <td>#4ac0ed</td>
+      <td>CS20250428_NEIGH_0001</td>
       <td>0</td>
-      <td>4</td>
-      <td>CS20250428_GROUP_0039</td>
-      <td>Astrocyte</td>
-      <td>CCN20250428_LEVEL_3</td>
+      <td>Neighborhood</td>
+      <td>Nonneuron</td>
+      <td>Human-7</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>1893</td>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#f2ca7d</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>CS20250428_CLUST_0162</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Human-145</td>
-      <td>Cluster</td>
-      <td>Human-145</td>
-      <td>1783</td>
-      <td>Human-145</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Cluster</td>
-      <td>#8af851</td>
+      <td>CS20250428_NEIGH_0001</td>
       <td>1</td>
-      <td>4</td>
-      <td>CS20250428_GROUP_0039</td>
-      <td>Astrocyte</td>
-      <td>CCN20250428_LEVEL_3</td>
+      <td>Neighborhood</td>
+      <td>Nonneuron</td>
+      <td>Human-14</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>58596</td>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#f2ca7d</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>CS20250428_CLUST_0163</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Human-146</td>
-      <td>Cluster</td>
-      <td>Human-146</td>
-      <td>172</td>
-      <td>Human-146</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Cluster</td>
-      <td>#d1dd68</td>
+      <td>CS20250428_NEIGH_0001</td>
       <td>2</td>
-      <td>4</td>
-      <td>CS20250428_GROUP_0039</td>
-      <td>Astrocyte</td>
-      <td>CCN20250428_LEVEL_3</td>
+      <td>Neighborhood</td>
+      <td>Nonneuron</td>
+      <td>Human-28</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>1492</td>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#f2ca7d</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>CS20250428_CLUST_0164</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Human-149</td>
-      <td>Cluster</td>
-      <td>Human-149</td>
-      <td>2649</td>
-      <td>Human-149</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Cluster</td>
-      <td>#95daf6</td>
+      <td>CS20250428_NEIGH_0001</td>
       <td>3</td>
-      <td>4</td>
-      <td>CS20250428_GROUP_0039</td>
-      <td>Astrocyte</td>
-      <td>CCN20250428_LEVEL_3</td>
+      <td>Neighborhood</td>
+      <td>Nonneuron</td>
+      <td>Human-31</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>3350</td>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#f2ca7d</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>CS20250428_CLUST_0165</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Human-150</td>
-      <td>Cluster</td>
-      <td>Human-150</td>
-      <td>1359</td>
-      <td>Human-150</td>
-      <td>CCN20250428_LEVEL_4</td>
-      <td>Cluster</td>
-      <td>#26827e</td>
+      <td>CS20250428_NEIGH_0001</td>
       <td>4</td>
-      <td>4</td>
-      <td>CS20250428_GROUP_0039</td>
-      <td>Astrocyte</td>
-      <td>CCN20250428_LEVEL_3</td>
+      <td>Neighborhood</td>
+      <td>Nonneuron</td>
+      <td>Human-143</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>91</td>
+      <td>Nonneuron</td>
+      <td>CCN20250428_LEVEL_0</td>
+      <td>Neighborhood</td>
+      <td>#f2ca7d</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -2245,11 +2352,11 @@ Number of unique abc_sample_id = 1896133
 <p>From the membership table, we create three tables via a <code class="docutils literal notranslate"><span class="pre">groupby</span></code>. First the name of each cluster and its parents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># term_sets = abc_cache.get_metadata_dataframe(directory=&#39;WHB-taxonomy&#39;, file_name=&#39;cluster_annotation_term_set&#39;).set_index(&#39;label&#39;)</span>
-<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">cluster_details</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
-<span class="n">cluster_details</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;Other&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">cluster_details</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># term_sets = abc_cache.get_metadata_dataframe(directory='WHB-taxonomy', file_name='cluster_annotation_term_set').set_index('label')</span>
+<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">'cluster_annotation_term_name'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_details</span> <span class="o">=</span> <span class="n">cluster_details</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'Other'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cluster_details</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'Neighborhood'</span><span class="p">,</span> <span class="s1">'Class'</span><span class="p">,</span> <span class="s1">'Subclass'</span><span class="p">,</span> <span class="s1">'Group'</span><span class="p">,</span> <span class="s1">'Cluster'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">cluster_details</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2336,14 +2443,14 @@ Number of unique abc_sample_id = 1896133
 <p>Next the plotting order of each of the clusters and their parents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_order</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;term_order&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">cluster_order</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_order</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">'term_order'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_order</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'Neighborhood'</span><span class="p">,</span> <span class="s1">'Class'</span><span class="p">,</span> <span class="s1">'Subclass'</span><span class="p">,</span> <span class="s1">'Group'</span><span class="p">,</span> <span class="s1">'Cluster'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">cluster_order</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
-    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">:</span> <span class="s1">&#39;Neighborhood_order&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="s1">&#39;Class_order&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;Subclass&#39;</span><span class="p">:</span> <span class="s1">&#39;Subclass_order&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="s1">&#39;Group_order&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;Cluster&#39;</span><span class="p">:</span> <span class="s1">&#39;Cluster_order&#39;</span><span class="p">},</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Neighborhood'</span><span class="p">:</span> <span class="s1">'Neighborhood_order'</span><span class="p">,</span>
+             <span class="s1">'Class'</span><span class="p">:</span> <span class="s1">'Class_order'</span><span class="p">,</span>
+             <span class="s1">'Subclass'</span><span class="p">:</span> <span class="s1">'Subclass_order'</span><span class="p">,</span>
+             <span class="s1">'Group'</span><span class="p">:</span> <span class="s1">'Group_order'</span><span class="p">,</span>
+             <span class="s1">'Cluster'</span><span class="p">:</span> <span class="s1">'Cluster_order'</span><span class="p">},</span>
     <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 <span class="n">cluster_order</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2432,9 +2539,9 @@ Number of unique abc_sample_id = 1896133
 <p>Finally, the colors we will use to plot for each of the unique taxons at all levels.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">cluster_colors</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span>
-<span class="n">cluster_colors</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">membership_groupby</span><span class="p">[</span><span class="s1">'color_hex_triplet'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">cluster_colors</span> <span class="o">=</span> <span class="n">cluster_colors</span><span class="p">[</span><span class="n">cluster_annotation_term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span>
+<span class="n">cluster_colors</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'Neighborhood'</span><span class="p">,</span> <span class="s1">'Class'</span><span class="p">,</span> <span class="s1">'Subclass'</span><span class="p">,</span> <span class="s1">'Group'</span><span class="p">,</span> <span class="s1">'Cluster'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">cluster_colors</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2522,14 +2629,17 @@ Number of unique abc_sample_id = 1896133
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_to_cluster_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">&#39;HMBA-BG-taxonomy-CCN20250428&#39;</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_to_cluster_membership&#39;</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">)</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-taxonomy'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_to_cluster_membership'</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">cell_to_cluster_membership</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 111M/111M [00:07&lt;00:00, 14.2MMB/s]   
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2590,10 +2700,10 @@ Number of unique abc_sample_id = 1896133
 <p>We merge this table with information from our clusters. Note again that not all clusters are associated into the taxonomy hence we use an left join here to use only those clusters with annotations. These un-annotated clusters are in part what make up the Adjacent taxons described in <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">HMBA-BG spatial notebook</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cell_to_cluster_membership</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_cell_to_cluster_membership&#39;</span><span class="p">)</span>
-<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
-<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_color&#39;</span><span class="p">)</span>
-<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cell_to_cluster_membership</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_cell_to_cluster_membership'</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_color'</span><span class="p">)</span>
+<span class="n">cell_extended</span> <span class="o">=</span> <span class="n">cell_extended</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 
 <span class="k">del</span> <span class="n">cell_to_cluster_membership</span>
 
@@ -2669,94 +2779,94 @@ Number of unique abc_sample_id = 1896133
   </thead>
   <tbody>
     <tr>
-      <th>AAAGGCTCAGCTACGT-P0008_2</th>
-      <td>AAAGGCTCAGCTACGT</td>
-      <td>CJ23.56.002</td>
-      <td>P0008_2</td>
-      <td>LPLCXR_231024_1_G6</td>
-      <td>231224</td>
+      <th>AAGGAAGCAATCTCTC-P0071_3</th>
+      <td>AAGGAAGCAATCTCTC</td>
+      <td>CJ24.56.001</td>
+      <td>P0071_3</td>
+      <td>LPLCXR_241111_1_A04</td>
+      <td>250114</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>042e9d1a-d56c-4556-8829-f7ae90559c1a</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>a0514638-7ec0-40f1-93d4-fd5daffba25e</td>
       <td>...</td>
-      <td>#a8afa5</td>
-      <td>#401e66</td>
-      <td>#401e66</td>
-      <td>#195f8d</td>
-      <td>#9c3de0</td>
-      <td>1</td>
-      <td>36</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
+      <td>#19613b</td>
+      <td>#d0b83c</td>
+      <td>#253c8c</td>
+      <td>#aec7e8</td>
+      <td>#1697ca</td>
+      <td>10</td>
+      <td>1213</td>
+      <td>53</td>
+      <td>3</td>
+      <td>32</td>
     </tr>
     <tr>
-      <th>AGGTGAGGTCAGGCAT-2370_C03</th>
-      <td>AGGTGAGGTCAGGCAT</td>
-      <td>H24.30.001</td>
-      <td>2370_C03</td>
-      <td>L8XR_240815_01_F06</td>
-      <td>a26d08904b8a440c93694baea94a094ccddb0474</td>
-      <td>0.013699</td>
-      <td>37176.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>ff6a4f7b-9248-4698-800a-1f3e09d39a6b</td>
+      <th>ACCCTGTTCGGCCAGT-P0063_2</th>
+      <td>ACCCTGTTCGGCCAGT</td>
+      <td>CJ24.56.001</td>
+      <td>P0063_2</td>
+      <td>LPLCXR_240927_1_A11</td>
+      <td>250114</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>a9beda47-f2e5-4fc8-95d1-2232f2c99a33</td>
       <td>...</td>
       <td>#19613b</td>
       <td>#d0b83c</td>
       <td>#1655f2</td>
       <td>#1f77b4</td>
-      <td>#e77ae0</td>
+      <td>#df2e18</td>
       <td>10</td>
-      <td>1050</td>
+      <td>1063</td>
       <td>50</td>
       <td>3</td>
       <td>31</td>
     </tr>
     <tr>
-      <th>ACCCGCTGTGTTTCAC-897_A03</th>
-      <td>ACCCGCTGTGTTTCAC</td>
-      <td>QM21.26.003</td>
-      <td>897_A03</td>
-      <td>L8XR_211028_02_D09</td>
-      <td>b5ec3031069e481049e6a57a736b42f4514d51f8</td>
-      <td>0.060000</td>
-      <td>6887.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>bed82a9c-cd0d-4509-975c-7b61a165a1dc</td>
+      <th>AGTGTTTCATGGTTAT-1724_A06</th>
+      <td>AGTGTTTCATGGTTAT</td>
+      <td>QM23.50.001</td>
+      <td>1724_A06</td>
+      <td>L8XR_230601_21_H03</td>
+      <td>167f168e2a7b4ace846f1eb9c3d006c7ffd19004</td>
+      <td>0.000000</td>
+      <td>2752.0</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>4f83e8e8-810b-415b-a317-e9042ff28b6b</td>
       <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#1655f2</td>
-      <td>#339933</td>
-      <td>#1b8c83</td>
-      <td>10</td>
-      <td>1120</td>
-      <td>51</td>
+      <td>#f2ca7d</td>
+      <td>#aa6dec</td>
+      <td>#761646</td>
+      <td>#cbfc1e</td>
+      <td>#a23159</td>
+      <td>2</td>
+      <td>103</td>
+      <td>4</td>
+      <td>1</td>
       <td>3</td>
-      <td>31</td>
     </tr>
     <tr>
-      <th>GGTAGGAGTCATCATC-2103_D02</th>
-      <td>GGTAGGAGTCATCATC</td>
-      <td>QM23.50.003</td>
-      <td>2103_D02</td>
-      <td>L8XR_240307_02_E04</td>
-      <td>f008f9c799f3d5584b644a584b8c9941f40fc570</td>
+      <th>GGTTATATCCTTAGTT-911_A03</th>
+      <td>GGTTATATCCTTAGTT</td>
+      <td>Q21.26.010</td>
+      <td>911_A03</td>
+      <td>L8XR_211104_02_A11</td>
+      <td>56a3779592d1a5f694aed91af2c315df789dd3fb</td>
       <td>0.000000</td>
-      <td>4360.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>83dda5c9-8f7e-415a-8e8b-809e974a6848</td>
+      <td>6327.0</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>2a689bb5-b5ea-4c76-927d-5bb070900cfa</td>
       <td>...</td>
-      <td>#a8afa5</td>
-      <td>#594a26</td>
-      <td>#594a26</td>
-      <td>#594a26</td>
+      <td>#f2ca7d</td>
+      <td>#8605d4</td>
+      <td>#def476</td>
+      <td>#401e66</td>
       <td>#69e4a2</td>
       <td>3</td>
       <td>163</td>
@@ -2765,32 +2875,32 @@ Number of unique abc_sample_id = 1896133
       <td>7</td>
     </tr>
     <tr>
-      <th>CTCATTTAGGCTAGAA-2368_B02</th>
-      <td>CTCATTTAGGCTAGAA</td>
-      <td>H24.30.001</td>
-      <td>2368_B02</td>
-      <td>L8XR_240815_01_D05</td>
-      <td>0bde255f925875e8c2710673628ac8259c4e44ec</td>
-      <td>0.000000</td>
-      <td>4294.0</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>HMBA-10xMultiome-BG-Aligned</td>
-      <td>11528690-d563-4079-b995-c1cf6ee52cac</td>
+      <th>TAGCGGACATCCTAGA-897_C03</th>
+      <td>TAGCGGACATCCTAGA</td>
+      <td>Q21.26.010</td>
+      <td>897_C03</td>
+      <td>L8XR_211028_02_G09</td>
+      <td>650318981f258e811a11fe58f28018e0b5a3cd44</td>
+      <td>0.022222</td>
+      <td>10418.0</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>HMBA-10xMultiome-BG-Cross-Species</td>
+      <td>cacdaa5a-0386-4a4b-8963-6f57bbd4777f</td>
       <td>...</td>
-      <td>#a8afa5</td>
-      <td>#995C60</td>
-      <td>#995C60</td>
-      <td>#995C60</td>
-      <td>#475713</td>
-      <td>2</td>
-      <td>92</td>
-      <td>4</td>
-      <td>1</td>
+      <td>#19613b</td>
+      <td>#cd0f13</td>
+      <td>#967be5</td>
+      <td>#d3489a</td>
+      <td>#5b8a05</td>
+      <td>9</td>
+      <td>845</td>
+      <td>40</td>
       <td>3</td>
+      <td>26</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 59 columns</p>
+<p>5 rows × 61 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -2801,58 +2911,60 @@ Number of unique abc_sample_id = 1896133
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of unique cell_barcode = 680274 
-Number of unique donor_label = 22 [&#39;CJ23.56.002&#39;, &#39;CJ23.56.003&#39;, &#39;CJ24.56.001&#39;, &#39;CJ24.56.004&#39;, &#39;H18.30.001&#39;, &#39;H19.30.004&#39;, &#39;H20.30.001&#39;, &#39;H20.30.002&#39;, &#39;H21.30.004&#39;, &#39;H23.30.001&#39;, &#39;H24.30.001&#39;, &#39;H24.30.003&#39;, &#39;H24.30.004&#39;, &#39;H24.30.007&#39;, &#39;Q19.26.010&#39;, &#39;Q21.26.002&#39;, &#39;Q21.26.010&#39;, &#39;QM21.26.001&#39;, &#39;QM21.26.003&#39;, &#39;QM23.50.001&#39;, &#39;QM23.50.002&#39;, &#39;QM23.50.003&#39;]
+Number of unique donor_label = 22 ['CJ23.56.002', 'CJ23.56.003', 'CJ24.56.001', 'CJ24.56.004', 'H18.30.001', 'H19.30.004', 'H20.30.001', 'H20.30.002', 'H21.30.004', 'H23.30.001', 'H24.30.001', 'H24.30.003', 'H24.30.004', 'H24.30.007', 'Q19.26.010', 'Q21.26.002', 'Q21.26.010', 'QM21.26.001', 'QM21.26.003', 'QM23.50.001', 'QM23.50.002', 'QM23.50.003']
 Number of unique barcoded_cell_sample_label = 417 
 Number of unique library_label = 417 
 Number of unique alignment_job_id = 303 
 Number of unique doublet_score = 1422 
 Number of unique umi_count = 85704 
-Number of unique feature_matrix_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
-Number of unique dataset_label = 1 [&#39;HMBA-10xMultiome-BG-Aligned&#39;]
+Number of unique feature_matrix_label = 1 ['HMBA-10xMultiome-BG-Cross-Species']
+Number of unique dataset_label = 1 ['HMBA-10xMultiome-BG-Cross-Species']
 Number of unique abc_sample_id = 1896133 
-Number of unique donor_species = 4 [&#39;NCBITaxon:9483&#39;, &#39;NCBITaxon:9544&#39;, &#39;NCBITaxon:9545&#39;, &#39;NCBITaxon:9606&#39;]
-Number of unique species_scientific_name = 4 [&#39;Callithrix jacchus&#39;, &#39;Homo sapiens&#39;, &#39;Macaca mulatta&#39;, &#39;Macaca nemestrina&#39;]
-Number of unique species_genus = 3 [&#39;Human&#39;, &#39;Macaque&#39;, &#39;Marmoset&#39;]
-Number of unique donor_sex = 2 [&#39;Female&#39;, &#39;Male&#39;]
-Number of unique donor_age = 20 [&#39;10 yrs&#39;, &#39;11 yrs&#39;, &#39;14 yrs&#39;, &#39;18 yrs&#39;, &#39;19 yrs&#39;, &#39;2.0 yrs&#39;, &#39;25 yrs&#39;, &#39;38 yrs&#39;, &#39;4.0 yrs&#39;, &#39;44 yrs&#39;, &#39;5 yrs&#39;, &#39;5.4 yrs&#39;, &#39;50 yrs&#39;, &#39;57 yrs&#39;, &#39;58 yrs&#39;, &#39;6 yrs&#39;, &#39;6.6 yrs&#39;, &#39;60 yrs&#39;, &#39;61 yrs&#39;, &#39;7 yrs&#39;]
+Number of unique donor_species = 4 ['NCBITaxon:9483', 'NCBITaxon:9544', 'NCBITaxon:9545', 'NCBITaxon:9606']
+Number of unique species_scientific_name = 4 ['Callithrix jacchus', 'Homo sapiens', 'Macaca mulatta', 'Macaca nemestrina']
+Number of unique species_genus = 3 ['Human', 'Macaque', 'Marmoset']
+Number of unique donor_sex = 2 ['Female', 'Male']
+Number of unique donor_age = 20 ['10 yrs', '11 yrs', '14 yrs', '18 yrs', '19 yrs', '2.0 yrs', '25 yrs', '38 yrs', '4.0 yrs', '44 yrs', '5 yrs', '5.4 yrs', '50 yrs', '57 yrs', '58 yrs', '6 yrs', '6.6 yrs', '60 yrs', '61 yrs', '7 yrs']
 Number of unique donor_age_value = 20 [1.95890411, 3.956284153, 5.0, 5.391780822, 6.0, 6.555924845, 7.0, 10.0, 11.0, 14.0, 18.0, 19.0, 25.0, 38.0, 44.0, 50.0, 57.0, 58.0, 60.0, 61.0]
-Number of unique donor_age_unit = 1 [&#39;years&#39;]
-Number of unique donor_nhash_id = 18 [&#39;DO-CDHB6032&#39;, &#39;DO-CYPH5324&#39;, &#39;DO-DZDZ2547&#39;, &#39;DO-EDVH3478&#39;, &#39;DO-ELEX3409&#39;, &#39;DO-HHOI8925&#39;, &#39;DO-IJUP7054&#39;, &#39;DO-IKLF5438&#39;, &#39;DO-KEEN9676&#39;, &#39;DO-LQEV7887&#39;, &#39;DO-MCUM5797&#39;, &#39;DO-OSUT8071&#39;, &#39;DO-SSTM7863&#39;, &#39;DO-TTGU1761&#39;, &#39;DO-TWCQ9791&#39;, &#39;DO-VVYV1997&#39;, &#39;DO-XWIW2465&#39;, &#39;DO-XYBX6133&#39;]
-Number of unique library_method = 1 [&#39;10xMultiome;GEX&#39;]
+Number of unique donor_age_unit = 1 ['years']
+Number of unique donor_nhash_id = 22 ['DO-CDHB6032', 'DO-CYPH5324', 'DO-DZDZ2547', 'DO-EDVH3478', 'DO-ELEX3409', 'DO-HHOI8925', 'DO-IJUP7054', 'DO-IKLF5438', 'DO-KEEN9676', 'DO-KKLW5964', 'DO-LQEV7887', 'DO-MCUM5797', 'DO-NOUP1048', 'DO-OSUT8071', 'DO-PWVO1989', 'DO-RLGX3443', 'DO-SSTM7863', 'DO-TTGU1761', 'DO-TWCQ9791', 'DO-VVYV1997', 'DO-XWIW2465', 'DO-XYBX6133']
+Number of unique library_method = 1 ['10xMultiome;GEX']
 Number of unique library_nhash_id = 294 
 Number of unique barcoded_cell_sample_label_library_table = 417 
 Number of unique enrichment_population = 83 
-Number of unique cell_specimen_type = 1 [&#39;Nuclei&#39;]
-Number of unique parcellation_term_identifier = 20 [&#39;DHBA:10155&#39;, &#39;DHBA:10334&#39;, &#39;DHBA:10335&#39;, &#39;DHBA:10336&#39;, &#39;DHBA:10337&#39;, &#39;DHBA:10338&#39;, &#39;DHBA:10339&#39;, &#39;DHBA:10340&#39;, &#39;DHBA:10341&#39;, &#39;DHBA:10342&#39;, &#39;DHBA:10343&#39;, &#39;DHBA:10344&#39;, &#39;DHBA:10345&#39;, &#39;DHBA:10466&#39;, &#39;DHBA:11537&#39;, &#39;DHBA:11538&#39;, &#39;DHBA:12251&#39;, &#39;DHBA:12261&#39;, &#39;DHBA:146034742&#39;, &#39;DHBA:146034754&#39;]
-Number of unique region_of_interest_name = 20 [&#39;Ventral pallidus&#39;, &#39;body of caudate&#39;, &#39;brain&#39;, &#39;caudal putamen&#39;, &#39;caudate nucleus&#39;, &#39;core of nucleus accumbens&#39;, &#39;external segment of globus pallidus&#39;, &#39;globus pallidus&#39;, &#39;head of caudate&#39;, &#39;internal segment of globus pallidus&#39;, &#39;nucleus accumbens&#39;, &#39;peri-caudate ependymal and subependymal zone&#39;, &#39;posteroventral putamen&#39;, &#39;putamen&#39;, &#39;rostral putamen&#39;, &#39;shell of nucleus accumbens&#39;, &#39;substantia nigra&#39;, &#39;subthalamic nucleus&#39;, &#39;tail of caudate&#39;, &#39;ventral tegmental area&#39;]
-Number of unique region_of_interest_label = 20 [&#39;Br&#39;, &#39;Ca&#39;, &#39;CaB&#39;, &#39;CaH&#39;, &#39;CaT&#39;, &#39;Eca&#39;, &#39;GP&#39;, &#39;GPe&#39;, &#39;GPi&#39;, &#39;NAC&#39;, &#39;NACc&#39;, &#39;NACs&#39;, &#39;Pu&#39;, &#39;PuC&#39;, &#39;PuPV&#39;, &#39;PuR&#39;, &#39;SN&#39;, &#39;STH&#39;, &#39;VTA&#39;, &#39;VeP&#39;]
-Number of unique anatomical_division_label = 2 [&#39;Basal ganglia&#39;, &#39;Brain&#39;]
-Number of unique donor_label_library_table = 22 [&#39;CJ23.56.002&#39;, &#39;CJ23.56.003&#39;, &#39;CJ24.56.001&#39;, &#39;CJ24.56.004&#39;, &#39;H18.30.001&#39;, &#39;H19.30.004&#39;, &#39;H20.30.001&#39;, &#39;H20.30.002&#39;, &#39;H21.30.004&#39;, &#39;H23.30.001&#39;, &#39;H24.30.001&#39;, &#39;H24.30.003&#39;, &#39;H24.30.004&#39;, &#39;H24.30.007&#39;, &#39;Q19.26.010&#39;, &#39;Q21.26.002&#39;, &#39;Q21.26.010&#39;, &#39;QM21.26.001&#39;, &#39;QM21.26.003&#39;, &#39;QM23.50.001&#39;, &#39;QM23.50.002&#39;, &#39;QM23.50.003&#39;]
+Number of unique cell_specimen_type = 1 ['Nuclei']
+Number of unique parcellation_term_identifier = 20 ['DHBA:10155', 'DHBA:10334', 'DHBA:10335', 'DHBA:10336', 'DHBA:10337', 'DHBA:10338', 'DHBA:10339', 'DHBA:10340', 'DHBA:10341', 'DHBA:10342', 'DHBA:10343', 'DHBA:10344', 'DHBA:10345', 'DHBA:10466', 'DHBA:11537', 'DHBA:11538', 'DHBA:12251', 'DHBA:12261', 'DHBA:146034742', 'DHBA:146034754']
+Number of unique region_of_interest_name = 20 ['Ventral pallidus', 'body of caudate', 'brain', 'caudal putamen', 'caudate nucleus', 'core of nucleus accumbens', 'external segment of globus pallidus', 'globus pallidus', 'head of caudate', 'internal segment of globus pallidus', 'nucleus accumbens', 'peri-caudate ependymal and subependymal zone', 'posteroventral putamen', 'putamen', 'rostral putamen', 'shell of nucleus accumbens', 'substantia nigra', 'subthalamic nucleus', 'tail of caudate', 'ventral tegmental area']
+Number of unique region_of_interest_label = 20 ['Br', 'Ca', 'CaB', 'CaH', 'CaT', 'Eca', 'GP', 'GPe', 'GPi', 'NAC', 'NACc', 'NACs', 'Pu', 'PuC', 'PuPV', 'PuR', 'SN', 'STH', 'VTA', 'VeP']
+Number of unique anatomical_division_label = 2 ['Basal ganglia', 'Brain']
+Number of unique donor_label_library_table = 22 ['CJ23.56.002', 'CJ23.56.003', 'CJ24.56.001', 'CJ24.56.004', 'H18.30.001', 'H19.30.004', 'H20.30.001', 'H20.30.002', 'H21.30.004', 'H23.30.001', 'H24.30.001', 'H24.30.003', 'H24.30.004', 'H24.30.007', 'Q19.26.010', 'Q21.26.002', 'Q21.26.010', 'QM21.26.001', 'QM21.26.003', 'QM23.50.001', 'QM23.50.002', 'QM23.50.003']
 Number of unique specimen_dissected_roi_label = 289 
 Number of unique specimen_dissected_roi_nhash_id = 289 
 Number of unique slab_label = 123 
 Number of unique slab_nhash_id = 123 
-Number of unique region_of_interest_label_color = 20 [&#39;#0010d9&#39;, &#39;#0060ff&#39;, &#39;#00bfa0&#39;, &#39;#00bfff&#39;, &#39;#53DB33&#39;, &#39;#7AE361&#39;, &#39;#89522A&#39;, &#39;#907991&#39;, &#39;#9BA2FF&#39;, &#39;#9b19f5&#39;, &#39;#A7DB33&#39;, &#39;#B8003A&#39;, &#39;#C29515&#39;, &#39;#E0E0E0&#39;, &#39;#E60049&#39;, &#39;#c941a7&#39;, &#39;#e6d800&#39;, &#39;#fe0ccf&#39;, &#39;#ff6b9a&#39;, &#39;#ffa300&#39;]
+Number of unique RNA_aliquot_nhash_id = 417 
+Number of unique ATAC_aliquot_nhash_id_nimp = 417 
+Number of unique region_of_interest_label_color = 20 ['#0010d9', '#0060ff', '#00bfa0', '#00bfff', '#53DB33', '#7AE361', '#89522A', '#907991', '#9BA2FF', '#9b19f5', '#A7DB33', '#B8003A', '#C29515', '#E0E0E0', '#E60049', '#c941a7', '#e6d800', '#fe0ccf', '#ff6b9a', '#ffa300']
 Number of unique region_of_interest_label_order = 20 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-Number of unique species_genus_color = 3 [&#39;#377eb8&#39;, &#39;#4daf4a&#39;, &#39;#FF5F5D&#39;]
+Number of unique species_genus_color = 3 ['#377eb8', '#4daf4a', '#FF5F5D']
 Number of unique species_genus_order = 3 [1, 2, 3]
-Number of unique species_scientific_name_color = 4 [&#39;#377eb8&#39;, &#39;#4daf4a&#39;, &#39;#FF5F5D&#39;, &#39;#b2df8a&#39;]
+Number of unique species_scientific_name_color = 4 ['#377eb8', '#4daf4a', '#FF5F5D', '#b2df8a']
 Number of unique species_scientific_name_order = 4 [1, 2, 3, 4]
-Number of unique donor_sex_color = 2 [&#39;#565353&#39;, &#39;#ADC4C3&#39;]
+Number of unique donor_sex_color = 2 ['#565353', '#ADC4C3']
 Number of unique donor_sex_order = 2 [1, 2]
 Number of unique x = 1844471 
 Number of unique y = 1820193 
 Number of unique cluster_alias = 1435 
 Number of unique cluster_label = 1435 
-Number of unique Neighborhood = 4 [&#39;Glut Sero Dopa&#39;, &#39;Nonneuron&#39;, &#39;Subpallium GABA&#39;, &#39;Subpallium GABA-Glut&#39;]
-Number of unique Class = 12 [&#39;Astro-Epen&#39;, &#39;CN CGE GABA&#39;, &#39;CN GABA-Glut&#39;, &#39;CN LGE GABA&#39;, &#39;CN MGE GABA&#39;, &#39;Cx GABA&#39;, &#39;F M GABA&#39;, &#39;F M Glut&#39;, &#39;Immune&#39;, &#39;M Dopa&#39;, &#39;OPC-Oligo&#39;, &#39;Vascular&#39;]
+Number of unique Neighborhood = 4 ['Glut Sero Dopa', 'Nonneuron', 'Subpallium GABA', 'Subpallium GABA-Glut']
+Number of unique Class = 12 ['Astro-Epen', 'CN CGE GABA', 'CN GABA-Glut', 'CN LGE GABA', 'CN MGE GABA', 'Cx GABA', 'F M GABA', 'F M Glut', 'Immune', 'M Dopa', 'OPC-Oligo', 'Vascular']
 Number of unique Subclass = 36 
 Number of unique Group = 61 
 Number of unique Cluster = 1435 
-Number of unique Neighborhood_color = 4 [&#39;#19613b&#39;, &#39;#7e1d19&#39;, &#39;#91f4bb&#39;, &#39;#a8afa5&#39;]
-Number of unique Class_color = 12 [&#39;#0433b4&#39;, &#39;#1c8d83&#39;, &#39;#26e8bb&#39;, &#39;#401e66&#39;, &#39;#594a26&#39;, &#39;#7d0f09&#39;, &#39;#995C60&#39;, &#39;#a8afa5&#39;, &#39;#cd0f13&#39;, &#39;#ce4c27&#39;, &#39;#d0b83c&#39;, &#39;#ebb3a7&#39;]
+Number of unique Neighborhood_color = 4 ['#19613b', '#7e1d19', '#91f4bb', '#f2ca7d']
+Number of unique Class_color = 12 ['#0433b4', '#1c8d83', '#26e8bb', '#6ec0da', '#7d0f09', '#8605d4', '#aa6dec', '#cba5ec', '#cd0f13', '#ce4c27', '#d0b83c', '#ebb3a7']
 Number of unique Subclass_color = 36 
-Number of unique Group_color = 61 
+Number of unique Group_color = 59 
 Number of unique Cluster_color = 1434 
 Number of unique Class_order = 12 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 Number of unique Cluster_order = 1435 
@@ -2870,81 +2982,81 @@ Number of unique Subclass_order = 36
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Neighborhood_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Neighborhood_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Neighborhood_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Neighborhood_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Neighborhood&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Neighborhood"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ec93b7aa58839a8fbce62e9f2d4af1405506d7bbfc46ecd653e2c087ca94c4e3.png" src="../_images/ec93b7aa58839a8fbce62e9f2d4af1405506d7bbfc46ecd653e2c087ca94c4e3.png" />
+<img alt="../_images/c35d04cab1669870e14d848a6846d2675f5ae8bb3456daaf6e2115fd15083e7a.png" src="../_images/c35d04cab1669870e14d848a6846d2675f5ae8bb3456daaf6e2115fd15083e7a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Class_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Class_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Class_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Class'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Class_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Class&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Class"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d732ef5ba906e7988a6b857f93920c2833b78316f174596d732d5c1fd1144d55.png" src="../_images/d732ef5ba906e7988a6b857f93920c2833b78316f174596d732d5c1fd1144d55.png" />
+<img alt="../_images/da9e3c8c33a6438b9d027a5a2a91e51ef2d2729d42e350ccc6ac27993eb3d008.png" src="../_images/da9e3c8c33a6438b9d027a5a2a91e51ef2d2729d42e350ccc6ac27993eb3d008.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Subclass_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Subclass&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Subclass_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Subclass_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Subclass'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Subclass_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Subclass&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Subclass"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f325138d5595d26e1c0f59f6d743212d8ddd3be2f0912b98534ce726fe429ea4.png" src="../_images/f325138d5595d26e1c0f59f6d743212d8ddd3be2f0912b98534ce726fe429ea4.png" />
+<img alt="../_images/778d36e007c35a4d1314049e1236e49b5a5deb7aa4535c62ad9379f53248e72d.png" src="../_images/778d36e007c35a4d1314049e1236e49b5a5deb7aa4535c62ad9379f53248e72d.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_umap</span><span class="p">(</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Group_color&#39;</span><span class="p">],</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">],</span>
-    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">&#39;Group_order&#39;</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span>
+    <span class="n">cell_extended</span><span class="p">[</span><span class="s1">'y'</span><span class="p">],</span>
+    <span class="n">cc</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Group_color'</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Group'</span><span class="p">],</span>
+    <span class="n">term_orders</span><span class="o">=</span><span class="n">cell_extended</span><span class="p">[</span><span class="s1">'Group_order'</span><span class="p">],</span>
     <span class="n">fig_width</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
     <span class="n">fig_height</span><span class="o">=</span><span class="mi">18</span>
 <span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Group&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Group"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/38d319ab04daabff4f984819b52c03652c3bd5c44f842c7a213d24cec37abf8d.png" src="../_images/38d319ab04daabff4f984819b52c03652c3bd5c44f842c7a213d24cec37abf8d.png" />
+<img alt="../_images/5c2e7c862c92242edc2641b77fab315f07afbe57b5941f1658100dcd852d4fb9.png" src="../_images/5c2e7c862c92242edc2641b77fab315f07afbe57b5941f1658100dcd852d4fb9.png" />
 </div>
 </div>
 <p>Note that we do not plot the cluster level here. Comparison of the clusters across species is not recommended and any cross species analysis should use the Group level at the lowest. Clusters should only be used when looking at individual species as we do below.</p>
@@ -2958,21 +3070,21 @@ Number of unique Subclass_order = 36
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of clusters associated with each cluster annotation term</span>
 
 <span class="n">species_term_with_counts</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Macaque&#39;</span><span class="p">,</span> <span class="s1">&#39;Marmoset&#39;</span><span class="p">,</span> <span class="s1">&#39;All&#39;</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">species</span> <span class="o">==</span> <span class="s1">&#39;All&#39;</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">'Human'</span><span class="p">,</span> <span class="s1">'Macaque'</span><span class="p">,</span> <span class="s1">'Marmoset'</span><span class="p">,</span> <span class="s1">'All'</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">species</span> <span class="o">==</span> <span class="s1">'All'</span><span class="p">:</span>
         <span class="n">species_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">membership_with_cluster_info</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">species_mask</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
+        <span class="n">species_mask</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="s1">'cluster_alias'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
 
     <span class="n">term_cluster_count</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="n">species_mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
-        <span class="p">[</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">]</span>
-    <span class="p">)[[</span><span class="s1">&#39;cluster_alias&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    <span class="n">term_cluster_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_clusters&#39;</span><span class="p">]</span>
+        <span class="p">[</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">]</span>
+    <span class="p">)[[</span><span class="s1">'cluster_alias'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">term_cluster_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'number_of_clusters'</span><span class="p">]</span>
 
     <span class="n">term_cell_count</span> <span class="o">=</span> <span class="n">membership_with_cluster_info</span><span class="p">[</span><span class="n">species_mask</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
-        <span class="p">[</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">]</span>
-    <span class="p">)[[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="n">term_cell_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">]</span>
+        <span class="p">[</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">]</span>
+    <span class="p">)[[</span><span class="s1">'number_of_cells'</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">term_cell_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'number_of_cells'</span><span class="p">]</span>
 
     <span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">cluster_annotation_term</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_cluster_count</span><span class="p">)</span>
     <span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_cell_count</span><span class="p">)</span>
@@ -2986,36 +3098,36 @@ Number of unique Subclass_order = 36
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fig_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">8.5</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the number of cells by the specified level.</span>
+<span class="w">    </span><span class="sd">"""Plot the number of cells by the specified level.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    df : pd.DataFrame</span>
 <span class="sd">        DataFrame containing cluster annotation terms with counts.</span>
 <span class="sd">    level : str</span>
-<span class="sd">        The level of the taxonomy to plot (e.g., &#39;Neighborhood&#39;, &#39;Class&#39;, &#39;Subclass&#39;, &#39;Group&#39;, &#39;Cluster&#39;).</span>
+<span class="sd">        The level of the taxonomy to plot (e.g., 'Neighborhood', 'Class', 'Subclass', 'Group', 'Cluster').</span>
 <span class="sd">    fig_width : float, optional</span>
 <span class="sd">        Width of the figure in inches. Default is 8.5.</span>
 <span class="sd">    fig_height : float, optional</span>
 <span class="sd">        Height of the figure in inches. Default is 4.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">fig_width</span><span class="p">,</span> <span class="n">fig_height</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ctype</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;clusters&#39;</span><span class="p">,</span> <span class="s1">&#39;cells&#39;</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ctype</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">'clusters'</span><span class="p">,</span> <span class="s1">'cells'</span><span class="p">]):</span>
 
-        <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
-        <span class="n">sort_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;term_order&#39;</span><span class="p">])</span>
-        <span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
-        <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;number_of_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
-        <span class="n">colors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">)</span>
+        <span class="n">sort_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'term_order'</span><span class="p">])</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'number_of_</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pred</span><span class="p">][</span><span class="s1">'color_hex_triplet'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sort_order</span><span class="p">]</span>
         
         <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of </span><span class="si">%s</span><span class="s1"> by </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ctype</span><span class="p">,</span><span class="n">level</span><span class="p">))</span>
-        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">ctype</span> <span class="o">==</span> <span class="s1">&#39;cells&#39;</span><span class="p">:</span>
-            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Number of </span><span class="si">%s</span><span class="s1"> by </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">ctype</span><span class="p">,</span><span class="n">level</span><span class="p">))</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Number of </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="n">ctype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ctype</span> <span class="o">==</span> <span class="s1">'cells'</span><span class="p">:</span>
+            <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
         
         <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
@@ -3028,17 +3140,17 @@ Number of unique Subclass_order = 36
 <p>Now let’s plot the counts for each of the taxonomy levels above Cluster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Macaque&#39;</span><span class="p">,</span> <span class="s1">&#39;Marmoset&#39;</span><span class="p">]:</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">species_term_with_counts</span><span class="p">[</span><span class="n">species</span><span class="p">],</span> <span class="s1">&#39;Class&#39;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'Human'</span><span class="p">,</span> <span class="s1">'Macaque'</span><span class="p">,</span> <span class="s1">'Marmoset'</span><span class="p">]:</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">bar_plot_by_level_and_type</span><span class="p">(</span><span class="n">species_term_with_counts</span><span class="p">[</span><span class="n">species</span><span class="p">],</span> <span class="s1">'Class'</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">species</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/62283c290c7b4c2084e6cd45f3c9ef78902e6b35a16caf8bb69560e66f4e7bb6.png" src="../_images/62283c290c7b4c2084e6cd45f3c9ef78902e6b35a16caf8bb69560e66f4e7bb6.png" />
-<img alt="../_images/a2218a7681f07890e668775b9d164df215ebf4f39809206d747a61437f1ec42f.png" src="../_images/a2218a7681f07890e668775b9d164df215ebf4f39809206d747a61437f1ec42f.png" />
-<img alt="../_images/6b19d6438311611d0145cd9c4eda8d1ec6108746b324ca59e9fef67f40c3aedc.png" src="../_images/6b19d6438311611d0145cd9c4eda8d1ec6108746b324ca59e9fef67f40c3aedc.png" />
+<img alt="../_images/d3cc3695cd482d7871d8e05358657c631ec789d17f0fed2608ec7c03c781d62e.png" src="../_images/d3cc3695cd482d7871d8e05358657c631ec789d17f0fed2608ec7c03c781d62e.png" />
+<img alt="../_images/a12ca0d64d4b3780938c2a36c5ab88eb5d68f4d806957cbd287e43683886593a.png" src="../_images/a12ca0d64d4b3780938c2a36c5ab88eb5d68f4d806957cbd287e43683886593a.png" />
+<img alt="../_images/a4a036592ac343d77eda73a6dfdef4f6ef079a5b7815c2f079c4f525d114d425.png" src="../_images/a4a036592ac343d77eda73a6dfdef4f6ef079a5b7815c2f079c4f525d114d425.png" />
 </div>
 </div>
 </section>
@@ -3047,22 +3159,22 @@ Number of unique Subclass_order = 36
 <p>Term sets: Neighborhood, Class, Subclass, and Group define the cross-species taxonomy. We can visualize the taxonomy as a sunburst diagram that shows the single inheritance hierarchy through a series of rings, that are sliced for each annotation term. Each ring corresponds to a level in the hierarchy. We have ordered the rings so that the Neighborhood level. Rings are divided based on their hierarchical relationship to the parent slice. We use the number of cells in each taxon to define the angle of the taxon in the sunburst diagram.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Neighborhood&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Subclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Group&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">,</span> <span class="s1">'Class'</span><span class="p">,</span> <span class="s1">'Subclass'</span><span class="p">,</span> <span class="s1">'Group'</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="c1"># Copy the term order of the parent into each of the level below it.</span>
-<span class="n">all_term_with_counts</span> <span class="o">=</span> <span class="n">species_term_with_counts</span><span class="p">[</span><span class="s1">&#39;All&#39;</span><span class="p">]</span>
-<span class="n">all_term_with_counts</span><span class="p">[</span><span class="s1">&#39;parent_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">all_term_with_counts</span> <span class="o">=</span> <span class="n">species_term_with_counts</span><span class="p">[</span><span class="s1">'All'</span><span class="p">]</span>
+<span class="n">all_term_with_counts</span><span class="p">[</span><span class="s1">'parent_order'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span>
 <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;parent_term_label&#39;</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'parent_term_label'</span><span class="p">]):</span>
         <span class="k">continue</span>
-    <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s1">&#39;parent_order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;parent_term_label&#39;</span><span class="p">]][</span><span class="s1">&#39;term_order&#39;</span><span class="p">]</span>
+    <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="s1">'parent_order'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">'parent_term_label'</span><span class="p">]][</span><span class="s1">'term_order'</span><span class="p">]</span>
 
 <span class="n">all_term_with_counts</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">lvl</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">:</span>
-    <span class="n">pred</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="p">[</span><span class="s1">&#39;cluster_annotation_term_set_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">lvl</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="p">[</span><span class="s1">'cluster_annotation_term_set_name'</span><span class="p">]</span> <span class="o">==</span> <span class="n">lvl</span>
     <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_term_with_counts</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
-    <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;parent_order&#39;</span><span class="p">,</span> <span class="s1">&#39;term_order&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'parent_order'</span><span class="p">,</span> <span class="s1">'term_order'</span><span class="p">])</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -3070,28 +3182,28 @@ Number of unique Subclass_order = 36
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lvl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">levels</span><span class="p">):</span>
     
-    <span class="k">if</span> <span class="n">lvl</span> <span class="o">==</span> <span class="s1">&#39;Neighborhood&#39;</span><span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">],</span>
-               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">],</span>
-               <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+    <span class="k">if</span> <span class="n">lvl</span> <span class="o">==</span> <span class="s1">'Neighborhood'</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'number_of_cells'</span><span class="p">],</span>
+               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'color_hex_triplet'</span><span class="p">],</span>
+               <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'name'</span><span class="p">],</span>
                <span class="n">rotatelabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                <span class="n">labeldistance</span><span class="o">=</span><span class="mf">1.025</span><span class="p">,</span>
                <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
                <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">else</span> <span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;number_of_cells&#39;</span><span class="p">],</span>
-               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">],</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'number_of_cells'</span><span class="p">],</span>
+               <span class="n">colors</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">lvl</span><span class="p">][</span><span class="s1">'color_hex_triplet'</span><span class="p">],</span>
                <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">size</span><span class="p">,</span>
                <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
                <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cluster_annotation_term_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">all_term_with_counts</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cluster_annotation_term_label'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/29f14deff4e6d6ee00ba29395d99f1d3f8902d70ad087dca3bb340eee84cd62e.png" src="../_images/29f14deff4e6d6ee00ba29395d99f1d3f8902d70ad087dca3bb340eee84cd62e.png" />
+<img alt="../_images/5ab5f4ecbe5d251b2e5188b826acc26b19a7f7b37127a1459ffcd79c85b68153.png" src="../_images/5ab5f4ecbe5d251b2e5188b826acc26b19a7f7b37127a1459ffcd79c85b68153.png" />
 </div>
 </div>
 <p>In the next tutorial, we show how to access and use <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_10X_snRNASeq_tutorial.html">HMBA-BG gene expression data</a>.</p>
@@ -3165,7 +3277,7 @@ Number of unique Subclass_order = 36
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-metadata">Cell metadata</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donor-and-library-metadata">Donor and Library metadata</a></li>
@@ -3227,8 +3339,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

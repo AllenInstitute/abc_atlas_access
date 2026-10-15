@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/10x_snRNASeq_tutorial_part_2a';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="10x RNA-seq gene expression data (part 2b)" href="10x_snRNASeq_tutorial_part_2b.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a></li>
 </ul>
@@ -548,7 +599,7 @@
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -556,15 +607,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20250531/manifest.json'
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10X&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;cell_metadata&#39;</span><span class="p">)</span>
-<span class="n">cell</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell_label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cell</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10X'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata'</span><span class="p">)</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -575,8 +626,8 @@
 <p>For each subset, there are two h5ad files one storing the raw counts and the other log normalization of it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrices</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;dataset_label&#39;</span><span class="p">,</span> <span class="s1">&#39;feature_matrix_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;library_label&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">matrices</span><span class="o">.</span><span class="n">columns</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cell_count&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrices</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'dataset_label'</span><span class="p">,</span> <span class="s1">'feature_matrix_label'</span><span class="p">])[[</span><span class="s1">'library_label'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">matrices</span><span class="o">.</span><span class="n">columns</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">'cell_count'</span><span class="p">]</span>
 <span class="n">matrices</span>
 </pre></div>
 </div>
@@ -721,19 +772,19 @@
 <p>A cleaner example of loading data from the expression matricies can be found in the <code class="docutils literal notranslate"><span class="pre">general_accessing_10x_snRNASeq_tutorial.ipynb</span></code> notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_expression_matrix_files</span><span class="p">(</span><span class="s1">'WMB-10XMulti'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;WMB-10XMulti/log2&#39;, &#39;WMB-10XMulti/raw&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['WMB-10XMulti/log2', 'WMB-10XMulti/raw']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;WMB-10XMulti/log2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'WMB-10XMulti'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'WMB-10XMulti/log2'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -746,7 +797,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">backed</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
 <span class="n">gene</span> <span class="o">=</span> <span class="n">ad</span><span class="o">.</span><span class="n">var</span>
 </pre></div>
 </div>
@@ -754,8 +805,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Slc17a7&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc17a6&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc17a8&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc32a1&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a5&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc18a3&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a3&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a4&#39;</span><span class="p">,</span> <span class="s1">&#39;Slc6a2&#39;</span><span class="p">]</span>
-<span class="n">exgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tac2&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Slc17a7'</span><span class="p">,</span> <span class="s1">'Slc17a6'</span><span class="p">,</span> <span class="s1">'Slc17a8'</span><span class="p">,</span> <span class="s1">'Slc32a1'</span><span class="p">,</span> <span class="s1">'Slc6a5'</span><span class="p">,</span> <span class="s1">'Slc18a3'</span><span class="p">,</span> <span class="s1">'Slc6a3'</span><span class="p">,</span> <span class="s1">'Slc6a4'</span><span class="p">,</span> <span class="s1">'Slc6a2'</span><span class="p">]</span>
+<span class="n">exgenes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Tac2'</span><span class="p">]</span>
 <span class="n">gnames</span> <span class="o">=</span> <span class="n">ntgenes</span> <span class="o">+</span> <span class="n">exgenes</span>
 <span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="ow">in</span> <span class="n">gnames</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gene</span><span class="o">.</span><span class="n">gene_symbol</span><span class="p">]</span>
 <span class="n">gene_filtered</span> <span class="o">=</span> <span class="n">gene</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
@@ -848,16 +899,16 @@
     
     <span class="nb">print</span><span class="p">(</span><span class="n">mp</span><span class="p">)</span>
     
-    <span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">mp</span> <span class="o">+</span> <span class="s1">&#39;/log2&#39;</span><span class="p">)</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">mp</span> <span class="o">+</span> <span class="s1">'/log2'</span><span class="p">)</span>
     
-    <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">&#39;feature_matrix_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mp</span><span class="p">)</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">'feature_matrix_label'</span><span class="p">]</span> <span class="o">==</span> <span class="n">mp</span><span class="p">)</span>
     <span class="n">cell_filtered</span> <span class="o">=</span> <span class="n">cell</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
     
     <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">backed</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ad</span> <span class="o">=</span> <span class="n">anndata</span><span class="o">.</span><span class="n">read_h5ad</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">backed</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
     <span class="n">exp</span> <span class="o">=</span> <span class="n">ad</span><span class="p">[</span><span class="n">cell_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">gene_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
     <span class="n">gdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">exp</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">gene_filtered</span><span class="o">.</span><span class="n">index</span> <span class="p">]</span> <span class="o">=</span> <span class="n">exp</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; - time taken: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" - time taken: "</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
     
     <span class="n">ad</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">del</span> <span class="n">ad</span>
@@ -867,7 +918,7 @@
     <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">:</span>
        <span class="k">break</span>
         
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total time taken: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">total_start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"total time taken: "</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">total_start</span><span class="p">)</span>
     
 </pre></div>
 </div>
@@ -973,7 +1024,7 @@ total time taken:  173.31038500000003
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-expression-matrices">Gene expression matrices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example use cases</a></li>
 </ul>
@@ -1024,8 +1075,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

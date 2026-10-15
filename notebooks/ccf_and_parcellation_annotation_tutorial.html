@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
@@ -40,10 +40,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -62,6 +62,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/ccf_and_parcellation_annotation_tutorial';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MERFISH CCF mapped coordinates" href="merfish_ccf_registration_tutorial.html" />
@@ -69,20 +70,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -108,7 +115,51 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -224,8 +275,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../descriptions/HMBA-BG_dataset.html">Human-Mammalian Brain - Basal Ganglia: Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy-CCN20250428.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Aligned.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Aligned gene expression across species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
@@ -513,7 +564,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-template-and-parcellations">Reference template and parcellations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-structures-and-parcellation-annotation">Anatomical structures and parcellation annotation</a></li>
@@ -563,7 +614,7 @@
 <p><strong>Change the download_base variable to where you have downloaded the data in your system.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../../data/abc_atlas&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/abc_atlas'</span><span class="p">)</span>
 <span class="n">abc_cache</span> <span class="o">=</span> <span class="n">AbcProjectCache</span><span class="o">.</span><span class="n">from_cache_dir</span><span class="p">(</span><span class="n">download_base</span><span class="p">)</span>
 
 <span class="n">abc_cache</span><span class="o">.</span><span class="n">current_manifest</span>
@@ -571,7 +622,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;releases/20250531/manifest.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20250531/manifest.json'
 </pre></div>
 </div>
 </div>
@@ -583,32 +634,32 @@
 <p>There are 3 volumetric data files associated with AllenCCFv3. The “average_template_10” volume is the anatomical template of the CCF constructed as the shape and intensity average of 1675 specime brains. The “annotation_10” volume is the parcellation of the brain with respect to a heirachical partonomy of anatomical structures. The “annotation_boundary_10” volume is a mask that identifies all the voxel with on the boundary of a parcellation to support data visualization. The volumes are stored in compressed NIFTI (.nii.gz) format. In this notebook  uses the <a class="reference external" href="https://simpleitk.org/">SimpleITK</a> library to open the volume.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc_cache</span><span class="o">.</span><span class="n">list_image_volume_files</span><span class="p">(</span><span class="s1">'Allen-CCF-2020'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;annotation_10&#39;,
- &#39;annotation_25&#39;,
- &#39;annotation_boundary_10&#39;,
- &#39;annotation_boundary_25&#39;,
- &#39;average_template_10&#39;,
- &#39;average_template_25&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['annotation_10',
+ 'annotation_25',
+ 'annotation_boundary_10',
+ 'annotation_boundary_25',
+ 'average_template_10',
+ 'average_template_25']
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;average_template_10&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'average_template_10'</span><span class="p">)</span>
 <span class="n">average_template_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">average_template_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">average_template_image</span><span class="p">)</span>
 
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'annotation_10'</span><span class="p">)</span>
 <span class="n">annotation_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_image</span><span class="p">)</span>
 
-<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_file_path</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'annotation_boundary_10'</span><span class="p">)</span>
 <span class="n">annotation_boundary_image</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">ReadImage</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">annotation_boundary_array</span> <span class="o">=</span> <span class="n">sitk</span><span class="o">.</span><span class="n">GetArrayViewFromImage</span><span class="p">(</span><span class="n">annotation_boundary_image</span><span class="p">)</span>
 </pre></div>
@@ -620,10 +671,10 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to print out image information</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">image_info</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;size: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetSize</span><span class="p">()</span><span class="si">}</span><span class="s1"> voxels&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;spacing: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetSpacing</span><span class="p">()</span><span class="si">}</span><span class="s1"> mm&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;direction: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetDirection</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;origin: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetOrigin</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'size: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetSize</span><span class="p">()</span><span class="si">}</span><span class="s1"> voxels'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'spacing: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetSpacing</span><span class="p">()</span><span class="si">}</span><span class="s1"> mm'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'direction: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetDirection</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'origin: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">GetOrigin</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -648,7 +699,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spacing</span> <span class="o">=</span> <span class="n">average_template_image</span><span class="o">.</span><span class="n">GetSpacing</span><span class="p">()</span>
 <span class="n">voxel_volume</span> <span class="o">=</span> <span class="n">spacing</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">spacing</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">spacing</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;voxel volume in mm^3:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%0.2E</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">voxel_volume</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"voxel volume in mm^3:"</span><span class="p">,</span> <span class="s2">"</span><span class="si">%0.2E</span><span class="s2">"</span> <span class="o">%</span> <span class="n">voxel_volume</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -668,7 +719,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
         <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="nb">slice</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
     <span class="k">else</span> <span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="nb">slice</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
 </pre></div>
 </div>
@@ -679,7 +730,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zindex</span> <span class="o">=</span> <span class="mi">720</span>
 <span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">average_template_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;average_template&#39;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'average_template'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -692,7 +743,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'annotation_10'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -705,7 +756,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_boundary_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_boundary_10&#39;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'annotation_boundary_10'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -723,9 +774,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>The annotation volume represents tiling of set of parcellations. Each row of the parcellation dataframe has a label (human readable string that is unique in the database), a parcellation index representing the value in the annotation volume and the number of voxel and volume of that parcellation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation&#39;</span><span class="p">)</span>
-<span class="n">parcellation</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of parcellations:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'parcellation'</span><span class="p">)</span>
+<span class="n">parcellation</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'parcellation_index'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"number of parcellations:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation</span><span class="p">))</span>
 <span class="n">parcellation</span>
 </pre></div>
 </div>
@@ -841,9 +892,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>For the purpose of ABC atlas visualization and analysis, we have created a simplifed 5 level anatomical heirarchy. Each of these level is represented as a parcellation term set. Each term set consists of a set of ordered terms. Each term set has a label (human readable string that is unique in the database), a name, description and order among the term sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_term_set&#39;</span><span class="p">)</span>
-<span class="n">parcellation_term_set</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of term sets:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term_set</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term_set</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'parcellation_term_set'</span><span class="p">)</span>
+<span class="n">parcellation_term_set</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'label'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"number of term sets:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term_set</span><span class="p">))</span>
 <span class="n">parcellation_term_set</span>
 </pre></div>
 </div>
@@ -936,9 +987,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>A parcellation term represents an anatomical structure at a single heirarchy level. Each term has a label (human readable string that is unique in the database), a name, acronym, reference atlas color as hex triplet or as RGB values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_term&#39;</span><span class="p">)</span>
-<span class="n">parcellation_term</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of terms:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">'parcellation_term'</span><span class="p">)</span>
+<span class="n">parcellation_term</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'label'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"number of terms:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term</span><span class="p">))</span>
 <span class="n">parcellation_term</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1056,9 +1107,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>A parcellation is a member of at most one parcellation term set. This membership is represented as a row in the parcellation term set memership dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term_set_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span>
-                                                                    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_term_set_membership&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of memberships:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term_set_membership</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_term_set_membership</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span>
+                                                                    <span class="n">file_name</span><span class="o">=</span><span class="s1">'parcellation_term_set_membership'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"number of memberships:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_term_set_membership</span><span class="p">))</span>
 <span class="n">parcellation_term_set_membership</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1137,9 +1188,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>The association between a parcellation and parcellation term is represented as “parcellation to parcellation term membership” within the context of anatomical structure level.  It is expected that a parcellation in only associated with one term within a specific term set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_annotation</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;Allen-CCF-2020&#39;</span><span class="p">,</span>
-                                                           <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;parcellation_to_parcellation_term_membership&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of memberships:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_annotation</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation_annotation</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'Allen-CCF-2020'</span><span class="p">,</span>
+                                                           <span class="n">file_name</span><span class="o">=</span><span class="s1">'parcellation_to_parcellation_term_membership'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"number of memberships:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parcellation_annotation</span><span class="p">))</span>
 <span class="n">parcellation_annotation</span>
 </pre></div>
 </div>
@@ -1409,9 +1460,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of parcellation associated with each parcellation term</span>
-<span class="n">term_parcellation_count</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_term_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">term_parcellation_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">]</span>
-<span class="n">term_parcellation_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">term_parcellation_count</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'parcellation_term_label'</span><span class="p">])[[</span><span class="s1">'parcellation_index'</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">term_parcellation_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'number_of_parcellations'</span><span class="p">]</span>
+<span class="n">term_parcellation_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'number_of_parcellations'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">term_parcellation_count</span>
 </pre></div>
 </div>
@@ -1495,8 +1546,8 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of voxels associated with each parcellation term</span>
-<span class="n">term_voxel_count</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_term_label&#39;</span><span class="p">])[[</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span><span class="s1">&#39;volume_mm3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">term_voxel_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">term_voxel_count</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'parcellation_term_label'</span><span class="p">])[[</span><span class="s1">'voxel_count'</span><span class="p">,</span><span class="s1">'volume_mm3'</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">term_voxel_count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'voxel_count'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">term_voxel_count</span>
 </pre></div>
 </div>
@@ -1593,10 +1644,10 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join counts with the term dataframe</span>
-<span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">parcellation_term</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_parcellation_count</span><span class="p">[</span><span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
-<span class="n">term_with_counts</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;label&#39;</span>
-<span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_voxel_count</span><span class="p">[[</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span><span class="s1">&#39;volume_mm3&#39;</span><span class="p">]])</span>
-<span class="n">term_with_counts</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_parcellations&#39;</span><span class="p">,</span> <span class="s1">&#39;voxel_count&#39;</span><span class="p">,</span> <span class="s1">&#39;volume_mm3&#39;</span><span class="p">]]</span>
+<span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">parcellation_term</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_parcellation_count</span><span class="p">[</span><span class="s1">'number_of_parcellations'</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+<span class="n">term_with_counts</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'label'</span>
+<span class="n">term_with_counts</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">term_voxel_count</span><span class="p">[[</span><span class="s1">'voxel_count'</span><span class="p">,</span><span class="s1">'volume_mm3'</span><span class="p">]])</span>
+<span class="n">term_with_counts</span><span class="p">[[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'number_of_parcellations'</span><span class="p">,</span> <span class="s1">'voxel_count'</span><span class="p">,</span> <span class="s1">'volume_mm3'</span><span class="p">]]</span>
 <span class="n">term_with_counts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1732,10 +1783,10 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># validate that term with the same acronym have the same number of voxels</span>
-<span class="n">alist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">])</span>
+<span class="n">alist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">term_with_counts</span><span class="p">[</span><span class="s1">'acronym'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">alist</span> <span class="p">:</span>
-    <span class="n">filtered</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="n">term_with_counts</span><span class="p">[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">aa</span><span class="p">]</span>
-    <span class="n">vlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;voxel_count&#39;</span><span class="p">])</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">term_with_counts</span><span class="p">[</span><span class="n">term_with_counts</span><span class="p">[</span><span class="s1">'acronym'</span><span class="p">]</span> <span class="o">==</span> <span class="n">aa</span><span class="p">]</span>
+    <span class="n">vlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">filtered</span><span class="p">[</span><span class="s1">'voxel_count'</span><span class="p">])</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">vlist</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span> <span class="n">vlist</span><span class="p">)</span>
 </pre></div>
@@ -1749,8 +1800,8 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>We can explore the relationship and distribution of parcellations between term sets by creating a pivot table using pandas groupby fuunction. Each row of the resulting dataframe represents a parcellation, each column represents a term set and the value in the table is the name of the term that has been associated with the cluster for that specific term set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span><span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;parcellation_term_acronym&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'parcellation_index'</span><span class="p">,</span><span class="s1">'parcellation_term_set_name'</span><span class="p">])[</span><span class="s1">'parcellation_term_acronym'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">pivot</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
 <span class="n">pivot</span>
 </pre></div>
 </div>
@@ -1885,8 +1936,8 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;parcellation_term_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'parcellation_index'</span><span class="p">,</span> <span class="s1">'parcellation_term_set_name'</span><span class="p">])[</span><span class="s1">'parcellation_term_name'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
 <span class="n">name</span>
 </pre></div>
 </div>
@@ -2022,9 +2073,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <p>We can also obtain parcellation term color pivot tables in the same way</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="s1">&#39;color_hex_triplet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
-<span class="n">color</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_color&#39;</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'parcellation_index'</span><span class="p">,</span> <span class="s1">'parcellation_term_set_name'</span><span class="p">])[</span><span class="s1">'color_hex_triplet'</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
+<span class="n">color</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'</span><span class="si">%s</span><span class="s1">_color'</span> <span class="o">%</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 <span class="n">color</span>
 </pre></div>
 </div>
@@ -2160,10 +2211,10 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span> <span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;parcellation_index&#39;</span><span class="p">,</span> <span class="s1">&#39;parcellation_term_set_name&#39;</span><span class="p">])[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="c1"># order columns</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">]</span> <span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">parcellation_annotation</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'parcellation_index'</span><span class="p">,</span> <span class="s1">'parcellation_term_set_name'</span><span class="p">])[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">parcellation_term_set</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]]</span> <span class="c1"># order columns</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
     <span class="n">channels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span>
 </pre></div>
 </div>
@@ -2171,7 +2222,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span><span class="p">[</span><span class="s1">'red'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2313,9 +2364,9 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
     <span class="n">sshape</span> <span class="o">=</span> <span class="n">zslice</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">colorized</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">sshape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sshape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">]):</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">sshape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sshape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-        <span class="n">temp</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">channels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">zslice</span><span class="o">.</span><span class="n">flat</span><span class="p">[:],</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_color&#39;</span> <span class="o">%</span> <span class="n">term_set</span><span class="p">]</span>
+        <span class="n">temp</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">channels</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">zslice</span><span class="o">.</span><span class="n">flat</span><span class="p">[:],</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">_color'</span> <span class="o">%</span> <span class="n">term_set</span><span class="p">]</span>
         <span class="n">colorized</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
 
     <span class="k">return</span> <span class="n">colorized</span>
@@ -2328,7 +2379,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zindex</span> <span class="o">=</span> <span class="mi">720</span>
 <span class="n">zslice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">annotation_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">zindex</span><span class="p">])</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">zslice</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;annotation_10&#39;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'annotation_10'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2339,7 +2390,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;organ&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">'organ'</span>
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
@@ -2353,7 +2404,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;category&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">'category'</span>
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
@@ -2367,7 +2418,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;division&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">'division'</span>
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
@@ -2381,7 +2432,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;structure&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">'structure'</span>
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
@@ -2395,7 +2446,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">&#39;substructure&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">term_set</span> <span class="o">=</span> <span class="s1">'substructure'</span>
 <span class="n">colorized</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="n">zslice</span><span class="p">,</span> <span class="n">term_set</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_section</span><span class="p">(</span><span class="n">colorized</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">term_set</span><span class="p">)</span>
@@ -2476,7 +2527,7 @@ origin: (5.695000171661377, -5.349999904632568, 5.21999979019165)
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-overview">Data Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-template-and-parcellations">Reference template and parcellations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-structures-and-parcellation-annotation">Anatomical structures and parcellation annotation</a></li>
@@ -2539,8 +2590,8 @@ By Allen Institute
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
