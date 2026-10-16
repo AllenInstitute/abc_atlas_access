@@ -88,6 +88,15 @@ notebook.
 
 
 ## Release Notes
+* **[Relase (version 20261101), abc_atlas_access (v1.4.2)]**
+  * Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.
+    * Updated Marmoset slab plane coordinates and geojsons from new
+      spatial transform.
+  * Update directory names to include species instead of ID for clarity:
+    * HMBA-MERSCOPE-H22.30.001-BG -> HMBA-BG-MERSCOPE-Human
+    * HMBA-MERSCOPE-QM23.50.001-BG -> HMBA-BG-MERSCOPE-Macaque
+    * HMBA-Xenium-CJ23.56.004-BG -> HMBA-BG-Xenium-Marmoset
+  * ~ 2000k new cells for Human
 * **[Relase (version 20261031), abc_atlas_access (v1.4.1)]**
   * HMBA-10xMultiome-Cross-Species
     * Updated taxonomy names and colors compared to release 20260711
