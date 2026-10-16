@@ -17,10 +17,7 @@ For more information on the taxonomy, please refer to the following webpage: [Hu
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset. We'll describe each component below.
 
-The three species are broken up by their donor ID. These are:
-- Human: H22.30.001
-- Macaque: QM23.50.001
-- Marmoset: CJ23.56.004
+The three species are broken into individual directories by species name.
 
 Each release directory also includes the name of the  platform used, either MERSCOPE (Human and Macaque) or
 Xenium (Marmoset).
