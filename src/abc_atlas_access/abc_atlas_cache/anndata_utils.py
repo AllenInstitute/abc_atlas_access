@@ -95,11 +95,11 @@ def get_gene_data(
         for chunk, min_idx, max_idx in expression_data.chunked_X(
                 chunk_size=chunk_size):
             cell_indexes = obs.index[min_idx:max_idx]
-            cell_mask = cell_indexes.isin(all_cells.index)
-            subcell_indexes = cell_indexes[cell_mask]
-            num_processed_cells += len(subcell_indexes)
-
-            chunk = chunk.toarray()[cell_mask, :][:, gene_mask]
+            temp_data = pd.DataFrame(
+                chunk.toarray()[:, gene_mask],
+                columns=gene_filtered.index,
+                index=cell_indexes
+            )
 
             if output_gene_data is None:
                 output_gene_data = pd.DataFrame(
@@ -108,8 +108,17 @@ def get_gene_data(
                     dtype=chunk.dtype
                 )
 
+            intersected_cell_indexes = output_gene_data.index.intersection(
+                cell_indexes
+            )
             output_gene_data.loc[
-                    subcell_indexes, gene_filtered.index] = chunk
+                intersected_cell_indexes,
+                gene_filtered.index
+            ] = temp_data.loc[
+                intersected_cell_indexes,
+                gene_filtered.index
+            ]
+            num_processed_cells += len(intersected_cell_indexes)
 
         expression_data.file.close()
         del expression_data  # Clean up our loaded file.
