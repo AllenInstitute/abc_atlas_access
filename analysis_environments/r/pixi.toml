@@ -1,0 +1,24 @@
+[workspace]
+name = "abc-atlas-analysis-r"
+description = "R environment for ABC Atlas analysis scripts that read the cloud-native (zarr) data"
+channels = ["conda-forge", "bioconda"]
+platforms = ["osx-arm64", "osx-64", "linux-64"]
+
+[dependencies]
+r-base = ">=4.4"
+# reading the data: parquet cell/gene tables (arrow) and zarr v3 stores (Rarr, installed by `setup`)
+r-arrow = "*"
+r-jsonlite = "*"
+r-remotes = "*"
+# plotting used by the generated scripts and examples
+r-ggplot2 = "*"
+r-patchwork = "*"
+# toolchain for building Rarr from source
+compilers = "*"
+make = "*"
+pkg-config = "*"
+
+[tasks]
+# Rarr >= 2.1 reads Zarr v3 with sharding; until that reaches a Bioconductor release it comes from GitHub
+setup = "Rscript -e 'if (!requireNamespace(\"Rarr\", quietly = TRUE) || packageVersion(\"Rarr\") < \"2.1\") remotes::install_github(\"Huber-group-EMBL/Rarr\", upgrade = \"never\")'"
+check = { cmd = "Rscript check_setup.R", depends-on = ["setup"] }
