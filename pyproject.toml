@@ -40,3 +40,8 @@ test = [
     "moto",
     "pytest"
 ]
+# read the cloud datasets directly (abc_atlas_access.cloud); zarr 3 needs Python 3.11 or later
+cloud = [
+    "obstore>=0.8; python_version >= '3.11'",
+    "zarr>=3.1; python_version >= '3.11'",
+]

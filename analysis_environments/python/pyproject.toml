@@ -4,6 +4,8 @@ version = "0.1.0"
 description = "Python environment for ABC Atlas analysis scripts that read the cloud-native (zarr) data"
 requires-python = ">=3.11"
 dependencies = [
+    # abc_atlas_access.cloud: open, filter and load the cloud datasets (installed from this repository)
+    "abc_atlas_access[cloud]",
     # reading the data: AnnData stores in zarr v3 on cloud storage, and their parquet cell/gene tables
     "anndata[lazy]>=0.12",
     "zarr>=3.1",
@@ -23,3 +25,6 @@ dependencies = [
 
 [tool.uv]
 package = false
+
+[tool.uv.sources]
+abc_atlas_access = { path = "../..", editable = true }

@@ -168,7 +168,29 @@ In the stores, `X` is dense log2(CPM + 1) expression. The `var.parquet` tables h
 `gene_index` column, which is the column of `X` for each gene. Files can also be fetched over HTTPS
 at `https://storage.googleapis.com/abc-atlas-data-refactor/<path>`.
 
-A minimal read in Python:
+The easiest way in from Python is `abc_atlas_access.cloud`, installed with
+`pip install "abc_atlas_access[cloud] @ git+https://github.com/AllenInstitute/abc_atlas_access@forrestc/analysis-environments/20261017"`
+and included in the `python/` environment above. It reads only the columns, cells and genes you ask for:
+
+```python
+from abc_atlas_access.cloud import list_datasets, open_dataset, from_view_spec, concat
+
+list_datasets()                                           # what is available
+ds = open_dataset("MERFISH-C57BL6J-638850-imputed")
+ds.categories("subclass", pattern="L5 ET")                # valid filter values
+cells = ds.select(parcellation_division="HPF", neurotransmitter="GABA",   # AND across keywords,
+                  ranges={"Sst": (2, None)})                               # OR within a list
+cells.obs(["subclass", "supertype"])                      # pandas
+cells.expression(["Sst", "Pvalb", "Vip"])                 # pandas, cells x genes
+adata = cells.to_anndata(genes=["Sst", "Pvalb"], obs_columns=["supertype"], obsm="spatial")  # AnnData
+
+view = from_view_spec("my_view.json")                     # a view exported from the ABC Atlas
+```
+
+`ds.root` and `ds.X` give the underlying zarr group and array. `concat({"10Xv3": a, "Macosko": b})`
+joins AnnData objects from different datasets on their Ensembl gene ids.
+
+A minimal read without the library:
 
 ```python
 import io, obstore, pandas as pd, zarr
