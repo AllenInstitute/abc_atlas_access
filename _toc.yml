@@ -57,6 +57,11 @@ parts:
         - file: descriptions/HMBA-10XMultiome-BG
         - file: descriptions/HMBA-Spatial-BG
         - file: descriptions/HMBA-Macaque-PatchSeq-BG
+    - file: descriptions/HMBA-Subcortex-dataset
+      sections:
+        - file: descriptions/HMBA-Subcortex-taxonomy
+        - file: descriptions/HMBA-Subcortex-10XMultiome
+        - file: descriptions/HMBA-Subcortex-Spatial
     - file: descriptions/SEA-AD-dataset
       sections:
         - file: descriptions/SEA-AD-Multiregion-taxonomy
@@ -117,6 +122,12 @@ parts:
         - file: notebooks/hmba_bg_spatial_slabs_and_taxonomy
         - file: notebooks/hmba_bg_spatial_genes
         - file: notebooks/hmba_bg_macaque_patchseq
+    - file: descriptions/HMBA-Subcortex-notebooks
+      sections:
+        - file: notebooks/hmba_subcortex_clustering_analysis_and_annotation
+        - file: notebooks/hmba_subcortex_10X_RNASeq
+        - file: notebooks/hmba_subcortex_spatial_slabs_and_taxonomy
+        - file: notebooks/hmba_subcortex_spatial_genes
     - file: descriptions/SEA-AD-notebooks
       sections:
         - file: notebooks/sea-ad_multiregion_clustering_analysis_and_annotation
