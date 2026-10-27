@@ -90,6 +90,8 @@ notebook.
 ## Release Notes
 * **[Relase (version 20261101), abc_atlas_access (v1.4.2)]**
   * Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.
+    * Updated Marmoset slab plane coordinates and geojsons from new
+      spatial transform.
   * Update directory names to include species instead of ID for clarity:
     * HMBA-MERSCOPE-H22.30.001-BG -> HMBA-MERSCOPE-BG-Human
     * HMBA-MERSCOPE-QM23.50.001-BG -> HMBA-MERSCOPE-BG-Macaque
