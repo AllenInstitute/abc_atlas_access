@@ -26,6 +26,9 @@ validate our taxonomy through marker gene expression analysis, comparison with
 previously published taxonomies, and self-projection, ensuring the accuracy and
 robustness of each level in the taxonomic hierarchy across all the species.
 
+Note that the taxonomy has some new names for Subclass and Groups (around 16 total)
+and colors in this latest release (20261031) compared to release 20260711.
+
 For more information on the dataset, please refer to the following webpage:
 [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).
 
