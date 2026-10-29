@@ -33,7 +33,8 @@ The following links contain metadata tables summarizing the cells, specimens the
 | Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-BG-Human/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-BG-Human/20261101/) | 4.2 GB |
 | Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-BG-Macaque/20261101](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-BG-Macaque/20261101/) | 2.5 GB |
 | Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-BG-Marmoset/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Xenium-BG-Marmoset/20261101/) | 1.2 GB |
-You can find descriptions of the columns on the Resources page under [Metadata Descriptions](../docs/supplemental_metadata_descriptions/README.md).
+You can find descriptions of the columns on the Resources page under [Metadata Descriptions](https://github.com/AllenInstitute/abc_atlas_access/blob/u/morriscb/hmbabgSpatialUpdate/docs/supplemental_metadata_descriptions/hmba_bg_column_descriptions.csv). Descriptions for additional metadata previous to version 20261101 can be
+found [here](https://github.com/AllenInstitute/abc_atlas_access/blob/main/docs/supplemental_metadata_descriptions/README.md).
 
 The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data.”
 | Component | Current Version | Size    |
