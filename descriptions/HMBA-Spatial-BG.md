@@ -1,18 +1,16 @@
-# Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species
+# Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species
 
 Data and metadata for the spatial component of the Human and Mammalian Brain Atlas - Basal Ganglia (HMBA-BG) dataset.
 
 The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context
 of action selection, motor learning and emotional state, whose coarse functional organization is
-well-described in the literature. Although single-cell RNA-Seq studies have greatly enhanced our
+well-described in the literature. Although single-cell and single-nucleus RNA-seq studies have greatly enhanced our
 understanding of cellular diversity in the brain, the exact spatial distribution of cell types within the
-brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium
-enabling spatial profiling of hundreds of genes for each cell, and the mapping the cells to the
-[consensus basal ganglia cell type taxonomy](https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html).
+brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium enables spatial profiling of hundreds of genes for each cell and mapping the spatial cells to the [consensus basal ganglia cell type taxonomy](https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html).
 
 These data form the basis of the cross species [Basal Ganglia (BG) taxonomy](HMBA-BG-taxonomy.md).
 
-For more information on the taxonomy, please refer to the following webpage: [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).. Additionally, you can see the associated notebooks linked at the end of this page.
+For more information on the taxonomy, please refer to the following webpage: [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia). Additionally, you can see the associated notebooks linked at the end of this page.
 
 The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset. We'll describe each component below.
@@ -22,24 +20,20 @@ The three species are broken into individual directories by species name.
 Each release directory also includes the name of the  platform used, either MERSCOPE (Human and Macaque) or
 Xenium (Marmoset).
 
-Below are links to the directories containing h5ad files of the expression
-matrixes for each species both the raw counts and the log2 of the counts per
-million for each cell.
+Below are links to the directories containing h5ad files of the expression matrixes for each species both the raw counts, batch normalized counts, and natural log transformed batch normalized counts for each cell or nucleus.
 | Component | Current Version | Size    |
 |---|--|---------|
 | Human: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-BG-Human/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-BG-Human/20251101/) | 1.34 GB |
 | Macaque: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-BG-Macaque/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-BG-Macaque/20261101/) | 1.52 GB |
 | Marmoset: Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20261101/) | 0.61 GB |
 
-The following links contain metadata tables summarizing the cells, specimens the cells originate from, donors,
-and coordinates. For more information on how the metadata is laid out and examples on using and joining the
-different tables, see the the spatial notebooks linked below. For the metadata, a supplementary table
-of quality control and other metrics is available. You can find descriptions of the columns on the Resources page under [Supplemental Metadata Descriptions](../docs/supplemental_metadata_descriptions/README.md).
+The following links contain metadata tables summarizing the cells, specimens the cells/nuclei originate from, donors, coordinates, and visualization boundaries.
 | Component | Current Version | Size    |
 |---|--|---------|
 | Human: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-BG-Human/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-BG-Human/20261101/) | 4.2 GB |
 | Macaque: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-BG-Macaque/20261101](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-BG-Macaque/20261101/) | 2.5 GB |
 | Marmoset: Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-BG-Marmoset/20261101/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Xenium-BG-Marmoset/20261101/) | 1.2 GB |
+You can find descriptions of the columns on the Resources page under [Metadata Descriptions](../docs/supplemental_metadata_descriptions/README.md).
 
 The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data.”
 | Component | Current Version | Size    |
