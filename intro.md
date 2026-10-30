@@ -93,9 +93,9 @@ notebook.
     * Updated Marmoset slab plane coordinates and geojsons from new
       spatial transform.
   * Update directory names to include species instead of ID for clarity:
-    * HMBA-MERSCOPE-H22.30.001-BG -> HMBA-MERSCOPE-BG-Human
-    * HMBA-MERSCOPE-QM23.50.001-BG -> HMBA-MERSCOPE-BG-Macaque
-    * HMBA-Xenium-CJ23.56.004-BG -> HMBA-Xenium-BG-Marmoset
+    * HMBA-MERSCOPE-H22.30.001-BG -> HMBA-BG-MERSCOPE-Human
+    * HMBA-MERSCOPE-QM23.50.001-BG -> HMBA-BG-MERSCOPE-Macaque
+    * HMBA-Xenium-CJ23.56.004-BG -> HMBA-BG-Xenium-Marmoset
   * ~ 2000k new cells for Human
 * **[Relase (version 20261031), abc_atlas_access (v1.4.1)]**
   * HMBA-10xMultiome-Cross-Species
