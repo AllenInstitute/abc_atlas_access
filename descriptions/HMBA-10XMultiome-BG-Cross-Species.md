@@ -15,7 +15,8 @@ These data from the basis of the cross species [Basal Ganglia (BG) taxonomy](HMB
 For more information on the dataset, please refer to the following webpage:
 [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).
 
-The expression matrices and associated metadata are hosted on AWS S3 bucket as
+The expression matrices for both raw counts and log normalzied data as well as
+the associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset:
 
 | Component | Current Version | Size    |
