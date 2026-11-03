@@ -15,13 +15,14 @@ These data from the basis of the cross species [Basal Ganglia (BG) taxonomy](HMB
 For more information on the dataset, please refer to the following webpage:
 [Human and Mammalian Brain Atlas Release: Basal Ganglia](https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia).
 
-The expression matrices and associated metadata are hosted on AWS S3 bucket as
+The expression matrices for both raw counts and log normalzied data as well as
+the associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset:
 
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20261031/) | 30.7 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Cross-Species/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Cross-Species/20261031/) | 535.2 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-10xMultiome-BG-Cross-Species/20261031/) | 29.1 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-10xMultiome-BG-Cross-Species/20261031/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-10xMultiome-BG-Cross-Species/20261031/) | 648.1 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
