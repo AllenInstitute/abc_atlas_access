@@ -278,7 +278,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
@@ -369,8 +369,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental metadata</a></li>
 </ul>
 </details></li>
 </ul>
@@ -597,7 +597,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-spatial-transcriptomic-slab-coordinates-and-annotation">
 <h1>Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-spatial-transcriptomic-slab-coordinates-and-annotation" title="Link to this heading">#</a></h1>
-<p>The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context of action selection, motor learning and emotional state, whose coarse functional organization is well-described in the literature. Although single-cell RNA-Seq studies have greatly enhanced our understanding of cellular diversity in the brain, the exact spatial distribution of cell types within the brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium enables spatial profiling of hundreds of genes for each cell, enabling mapping of the cells to the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">consensus basal ganglia cell type taxonomy</a>.</p>
+<p>The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context of action selection, motor learning and emotional state, whose coarse functional organization is well-described in the literature. Although single-cell and single-nucleus RNA-seq studies have greatly enhanced our understanding of cellular diversity in the brain, the exact spatial distribution of cell types within the brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium enables spatial profiling of hundreds of genes for each cell, enabling mapping of the cells to the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">consensus basal ganglia cell type taxonomy</a>.</p>
 <p>In this notebook, we walk through the data available in this release and show how they are joined together to enable analyses at the cell level.</p>
 <p>You need to be connected to the internet to run this notebook and have run through the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/getting_started.html">getting started notebook</a>.</p>
 <div class="cell docutils container">
@@ -630,7 +630,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20261031/manifest.json'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'releases/20261101/manifest.json'
 </pre></div>
 </div>
 </div>
@@ -647,7 +647,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dataset_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span><span class="p">,</span> <span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span> <span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">]:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dataset_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'HMBA-BG-MERSCOPE-Human'</span><span class="p">,</span> <span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span> <span class="s1">'HMBA-BG-Xenium-Marmoset'</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dataset: </span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">metadata_files</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">list_metadata_files</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Metadata files: </span><span class="si">{</span><span class="n">metadata_files</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -657,17 +657,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset: HMBA-MERSCOPE-H22.30.001-BG
-Metadata files: ['ccf_coordinates', 'cell_anatomical_annotations', 'cell_metadata', 'cell_supplemental_metadata', 'cell_to_cluster_membership', 'donor', 'example_gene_expression', 'gene', 'mmc_results', 'slab_plane_coordinates', 'specimen_metadata', 'value_sets', 'visualization']
-Expression matrix files: ['MERSCOPE-H22.30.001-BG/log2', 'MERSCOPE-H22.30.001-BG/raw']
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset: HMBA-BG-MERSCOPE-Human
+Metadata files: ['additional_cell_metadata', 'cell_anatomical_annotations', 'cell_metadata', 'cirro_spatial_grid', 'donor', 'example_gene_expression', 'gene', 'mmc_results', 'slab_plane_coordinates', 'specimen_metadata', 'value_sets', 'visualization']
+Expression matrix files: ['MERSCOPE-H22.30.001-BG-batch-normalized/ln', 'MERSCOPE-H22.30.001-BG-batch-normalized/raw', 'MERSCOPE-H22.30.001-BG/raw']
 
-Dataset: HMBA-MERSCOPE-QM23.50.001-BG
-Metadata files: ['cell_anatomical_annotations', 'cell_metadata', 'cell_supplemental_metadata', 'cell_to_cluster_membership', 'donor', 'example_gene_expression', 'gene', 'mmc_results', 'slab_plane_coordinates', 'specimen_metadata', 'value_sets', 'visualization']
-Expression matrix files: ['MERSCOPE-QM23.50.001-BG/log2', 'MERSCOPE-QM23.50.001-BG/raw']
+Dataset: HMBA-BG-MERSCOPE-Macaque
+Metadata files: ['additional_cell_metadata', 'cell_anatomical_annotations', 'cell_metadata', 'cirro_spatial_grid', 'donor', 'example_gene_expression', 'gene', 'mmc_results', 'slab_plane_coordinates', 'specimen_metadata', 'value_sets', 'visualization']
+Expression matrix files: ['MERSCOPE-QM23.50.001-BG-batch-normalized/ln', 'MERSCOPE-QM23.50.001-BG-batch-normalized/raw', 'MERSCOPE-QM23.50.001-BG/raw']
 
-Dataset: HMBA-Xenium-CJ23.56.004-BG
-Metadata files: ['cell_anatomical_annotations', 'cell_metadata', 'cell_supplemental_metadata', 'cell_to_cluster_membership', 'donor', 'example_gene_expression', 'gene', 'mmc_results', 'slab_plane_coordinates', 'specimen_metadata', 'value_sets', 'visualization']
-Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/raw']
+Dataset: HMBA-BG-Xenium-Marmoset
+Metadata files: ['additional_cell_metadata', 'ccf_coordinates', 'cell_anatomical_annotations', 'cell_metadata', 'cirro_spatial_grid', 'donor', 'donor_coordinates', 'example_gene_expression', 'gene', 'mmc_results', 'rotated_coordinates', 'slab_plane_coordinates', 'specimen_metadata', 'value_sets', 'visualization']
+Expression matrix files: ['Xenium-CJ23.56.004-BG-batch-normalized/ln', 'Xenium-CJ23.56.004-BG-batch-normalized/raw', 'Xenium-CJ23.56.004-BG/raw']
 </pre></div>
 </div>
 </div>
@@ -680,15 +680,18 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Human'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata'</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">},</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
-<span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">human_cell_metadata</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 1.16G/1.16G [00:50&lt;00:00, 22.8MMB/s]   
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -709,16 +712,26 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th></th>
       <th>brain_section_label</th>
       <th>brain_section_barcode</th>
-      <th>segmentation_job_id</th>
       <th>x_experiment</th>
       <th>y_experiment</th>
+      <th>segmentation_job_id</th>
+      <th>cell_volume</th>
+      <th>total_counts</th>
+      <th>total_counts_genes</th>
+      <th>total_counts_genes_batch_normalized</th>
+      <th>n_unique_genes</th>
       <th>qc_pass</th>
+      <th>abc_atlas_visualization</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
-      <th>abc_sample_id</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -732,82 +745,213 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   </thead>
   <tbody>
     <tr>
-      <th>1324989690_1-20250227</th>
-      <td>H22.30.001.CX.17.03.03.03</td>
-      <td>1324989690</td>
+      <th>1315611012_1-20250227</th>
+      <td>H22.30.001.CX.16.02.03.03</td>
+      <td>1315611012</td>
+      <td>4687.0664</td>
+      <td>2342.8290</td>
       <td>sis_cellpose_v1</td>
-      <td>7564.9175</td>
-      <td>1985.1162</td>
+      <td>78.062865</td>
+      <td>26</td>
+      <td>26</td>
+      <td>48.419523</td>
+      <td>13</td>
       <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>ddc7b0c5-1bb0-4f02-a1e4-ddacac84c9aa</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1324989690_2-20250227</th>
-      <td>H22.30.001.CX.17.03.03.03</td>
-      <td>1324989690</td>
+      <th>1315611012_2-20250227</th>
+      <td>H22.30.001.CX.16.02.03.03</td>
+      <td>1315611012</td>
+      <td>4939.2110</td>
+      <td>2343.9695</td>
       <td>sis_cellpose_v1</td>
-      <td>7553.6514</td>
-      <td>1986.4812</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>52d3e787-0140-42d2-b7cf-026f398cb597</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>5</td>
+      <td>9.311447</td>
+      <td>5</td>
+      <td>False</td>
+      <td>False</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1324989690_3-20250227</th>
-      <td>H22.30.001.CX.17.03.03.03</td>
-      <td>1324989690</td>
+      <th>1315611012_3-20250227</th>
+      <td>H22.30.001.CX.16.02.03.03</td>
+      <td>1315611012</td>
+      <td>4788.4240</td>
+      <td>2343.7327</td>
       <td>sis_cellpose_v1</td>
-      <td>7687.5170</td>
-      <td>1987.5452</td>
+      <td>8.110529</td>
+      <td>11</td>
+      <td>11</td>
+      <td>20.485183</td>
+      <td>7</td>
       <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>4af7a7a0-823a-47bd-bbe5-344ddd70cc9e</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1324989690_4-20250227</th>
-      <td>H22.30.001.CX.17.03.03.03</td>
-      <td>1324989690</td>
+      <th>1315611012_4-20250227</th>
+      <td>H22.30.001.CX.16.02.03.03</td>
+      <td>1315611012</td>
+      <td>4974.0500</td>
+      <td>2352.2866</td>
       <td>sis_cellpose_v1</td>
-      <td>7574.2090</td>
-      <td>1999.2940</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>a4455148-9d49-41b7-8750-00d7a3fb225e</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>4</td>
+      <td>7.449157</td>
+      <td>4</td>
+      <td>False</td>
+      <td>False</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1324989690_5-20250227</th>
-      <td>H22.30.001.CX.17.03.03.03</td>
-      <td>1324989690</td>
+      <th>1315611012_5-20250227</th>
+      <td>H22.30.001.CX.16.02.03.03</td>
+      <td>1315611012</td>
+      <td>4681.3800</td>
+      <td>2346.6519</td>
       <td>sis_cellpose_v1</td>
-      <td>7432.2330</td>
-      <td>1999.0550</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>5</td>
+      <td>9.311447</td>
+      <td>5</td>
+      <td>False</td>
+      <td>False</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1384732733_104386-20250227</th>
+      <td>H22.30.001.CX.20.02.03.01</td>
+      <td>1384732733</td>
+      <td>8903.6710</td>
+      <td>2691.2349</td>
+      <td>sis_cellpose_v1</td>
+      <td>38.255657</td>
+      <td>46</td>
+      <td>46</td>
+      <td>65.389384</td>
+      <td>26</td>
       <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>41946bab-3c5a-4890-ae7b-cbffcab06c3e</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
+    </tr>
+    <tr>
+      <th>1384732733_104387-20250227</th>
+      <td>H22.30.001.CX.20.02.03.01</td>
+      <td>1384732733</td>
+      <td>8999.2290</td>
+      <td>2791.0234</td>
+      <td>sis_cellpose_v1</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1.421508</td>
+      <td>1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
+    </tr>
+    <tr>
+      <th>1384732733_104388-20250227</th>
+      <td>H22.30.001.CX.20.02.03.01</td>
+      <td>1384732733</td>
+      <td>8899.7460</td>
+      <td>2821.3567</td>
+      <td>sis_cellpose_v1</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4.264525</td>
+      <td>3</td>
+      <td>False</td>
+      <td>False</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
+    </tr>
+    <tr>
+      <th>1384732733_104389-20250227</th>
+      <td>H22.30.001.CX.20.02.03.01</td>
+      <td>1384732733</td>
+      <td>9038.0340</td>
+      <td>2646.0881</td>
+      <td>sis_cellpose_v1</td>
+      <td>37.946513</td>
+      <td>20</td>
+      <td>20</td>
+      <td>28.430167</td>
+      <td>16</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
+    </tr>
+    <tr>
+      <th>1384732733_104390-20250227</th>
+      <td>H22.30.001.CX.20.02.03.01</td>
+      <td>1384732733</td>
+      <td>9122.9000</td>
+      <td>2747.7932</td>
+      <td>sis_cellpose_v1</td>
+      <td>26.485758</td>
+      <td>18</td>
+      <td>18</td>
+      <td>25.587150</td>
+      <td>8</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Human</td>
+      <td>MERSCOPE-H22.30.001-BG-batch-normalized</td>
     </tr>
   </tbody>
 </table>
+<p>5429191 rows × 14 columns</p>
 </div></div></div>
 </div>
 <p>Load the Macaque cells.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata'</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">},</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 725M/725M [00:30&lt;00:00, 23.4MMB/s]    
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -828,16 +972,26 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th></th>
       <th>brain_section_label</th>
       <th>brain_section_barcode</th>
-      <th>segmentation_job_id</th>
       <th>x_experiment</th>
       <th>y_experiment</th>
+      <th>segmentation_job_id</th>
+      <th>cell_volume</th>
+      <th>total_counts</th>
+      <th>total_counts_genes</th>
+      <th>total_counts_genes_batch_normalized</th>
+      <th>n_unique_genes</th>
       <th>qc_pass</th>
+      <th>abc_atlas_visualization</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
-      <th>abc_sample_id</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -851,64 +1005,89 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   </thead>
   <tbody>
     <tr>
-      <th>1291813781_1-20250227</th>
-      <td>QM23.50.001.CX.44.03.07.02</td>
-      <td>1291813781</td>
+      <th>1291814091_147-20250227</th>
+      <td>QM23.50.001.CX.44.01.05.01</td>
+      <td>1291814091</td>
+      <td>4432.6885</td>
+      <td>3979.6113</td>
       <td>sis_cellpose_v1</td>
-      <td>6328.8564</td>
-      <td>271.71730</td>
-      <td>False</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>NaN</td>
+      <td>756.243171</td>
+      <td>330</td>
+      <td>330</td>
+      <td>636.778305</td>
+      <td>83</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Macaque</td>
+      <td>MERSCOPE-QM23.50.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1291813781_2-20250227</th>
-      <td>QM23.50.001.CX.44.03.07.02</td>
-      <td>1291813781</td>
+      <th>1291814091_157-20250227</th>
+      <td>QM23.50.001.CX.44.01.05.01</td>
+      <td>1291814091</td>
+      <td>4430.7207</td>
+      <td>3986.3145</td>
       <td>sis_cellpose_v1</td>
-      <td>6313.3560</td>
-      <td>297.27830</td>
-      <td>False</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>NaN</td>
+      <td>564.354610</td>
+      <td>326</td>
+      <td>326</td>
+      <td>629.059780</td>
+      <td>69</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Macaque</td>
+      <td>MERSCOPE-QM23.50.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1291813781_3-20250227</th>
-      <td>QM23.50.001.CX.44.03.07.02</td>
-      <td>1291813781</td>
+      <th>1291814091_169-20250227</th>
+      <td>QM23.50.001.CX.44.01.05.01</td>
+      <td>1291814091</td>
+      <td>4377.2495</td>
+      <td>4001.7097</td>
       <td>sis_cellpose_v1</td>
-      <td>6323.7240</td>
-      <td>297.38340</td>
-      <td>False</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>NaN</td>
+      <td>167.832120</td>
+      <td>62</td>
+      <td>62</td>
+      <td>119.637136</td>
+      <td>34</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Macaque</td>
+      <td>MERSCOPE-QM23.50.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1291813781_4-20250227</th>
-      <td>QM23.50.001.CX.44.03.07.02</td>
-      <td>1291813781</td>
+      <th>1291814091_180-20250227</th>
+      <td>QM23.50.001.CX.44.01.05.01</td>
+      <td>1291814091</td>
+      <td>4399.9390</td>
+      <td>4017.4290</td>
       <td>sis_cellpose_v1</td>
-      <td>6370.7470</td>
-      <td>377.92710</td>
-      <td>False</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>NaN</td>
+      <td>400.366153</td>
+      <td>231</td>
+      <td>231</td>
+      <td>445.744813</td>
+      <td>77</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Macaque</td>
+      <td>MERSCOPE-QM23.50.001-BG-batch-normalized</td>
     </tr>
     <tr>
-      <th>1291813781_5-20250227</th>
-      <td>QM23.50.001.CX.44.03.07.02</td>
-      <td>1291813781</td>
+      <th>1291814091_181-20250227</th>
+      <td>QM23.50.001.CX.44.01.05.01</td>
+      <td>1291814091</td>
+      <td>4392.6035</td>
+      <td>4016.5780</td>
       <td>sis_cellpose_v1</td>
-      <td>6375.0240</td>
-      <td>386.81006</td>
-      <td>False</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>NaN</td>
+      <td>308.688416</td>
+      <td>203</td>
+      <td>203</td>
+      <td>391.715139</td>
+      <td>70</td>
+      <td>True</td>
+      <td>True</td>
+      <td>HMBA-BG-MERSCOPE-Macaque</td>
+      <td>MERSCOPE-QM23.50.001-BG-batch-normalized</td>
     </tr>
   </tbody>
 </table>
@@ -918,15 +1097,18 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-Xenium-Marmoset'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_metadata'</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">},</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_metadata.csv: 100%|██████████| 378M/378M [00:22&lt;00:00, 16.5MMB/s]    
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -947,16 +1129,32 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th></th>
       <th>brain_section_label</th>
       <th>brain_section_barcode</th>
-      <th>segmentation_job_id</th>
       <th>x_experiment</th>
       <th>y_experiment</th>
+      <th>segmentation_job_id</th>
+      <th>segmentation_method</th>
+      <th>cell_area</th>
+      <th>nucleus_area</th>
+      <th>n_nuclei_in_cell</th>
+      <th>total_counts</th>
+      <th>total_counts_genes</th>
+      <th>total_counts_genes_batch_normalized</th>
+      <th>n_unique_genes</th>
       <th>qc_pass</th>
+      <th>abc_atlas_visualization</th>
       <th>dataset_label</th>
       <th>feature_matrix_label</th>
-      <th>abc_sample_id</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -973,61 +1171,101 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>1382042951_abmkfncc-1-20250227</th>
       <td>CJ23.56.004.CX.42.01.06</td>
       <td>1382042951</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>5923.492676</td>
-      <td>6160.654297</td>
+      <td>5923.4927</td>
+      <td>6160.6543</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by boundary stain (ATP1A1+CD45+E-Cad...</td>
+      <td>123.005630</td>
+      <td>72.566090</td>
+      <td>1</td>
+      <td>354</td>
+      <td>354</td>
+      <td>270.073610</td>
+      <td>111</td>
       <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>c8c08d8c-5147-4d03-b6f4-ca7bf4d0b8d1</td>
+      <td>True</td>
+      <td>HMBA-BG-Xenium-Marmoset</td>
+      <td>Xenium-CJ23.56.004-BG-batch-normalized</td>
     </tr>
     <tr>
       <th>1382042951_abmmdgea-1-20250227</th>
       <td>CJ23.56.004.CX.42.01.06</td>
       <td>1382042951</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>6137.572266</td>
-      <td>6217.075684</td>
+      <td>6137.5723</td>
+      <td>6217.0757</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by boundary stain (ATP1A1+CD45+E-Cad...</td>
+      <td>46.194847</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>193</td>
+      <td>193</td>
+      <td>147.243522</td>
+      <td>93</td>
       <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>f10bad2c-9cc7-44bf-bd7e-4e61d28121bd</td>
+      <td>True</td>
+      <td>HMBA-BG-Xenium-Marmoset</td>
+      <td>Xenium-CJ23.56.004-BG-batch-normalized</td>
     </tr>
     <tr>
       <th>1382042951_abmojfce-1-20250227</th>
       <td>CJ23.56.004.CX.42.01.06</td>
       <td>1382042951</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>5802.674805</td>
-      <td>5614.007812</td>
+      <td>5802.6750</td>
+      <td>5614.0080</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by boundary stain (ATP1A1+CD45+E-Cad...</td>
+      <td>52.652190</td>
+      <td>19.462345</td>
+      <td>2</td>
+      <td>313</td>
+      <td>313</td>
+      <td>238.793898</td>
+      <td>122</td>
       <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>080466ff-3dea-44f1-b6e2-7892e8c12c95</td>
+      <td>True</td>
+      <td>HMBA-BG-Xenium-Marmoset</td>
+      <td>Xenium-CJ23.56.004-BG-batch-normalized</td>
     </tr>
     <tr>
       <th>1382042951_abmomnim-1-20250227</th>
       <td>CJ23.56.004.CX.42.01.06</td>
       <td>1382042951</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>5805.942383</td>
-      <td>5599.325684</td>
+      <td>5805.9424</td>
+      <td>5599.3257</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by boundary stain (ATP1A1+CD45+E-Cad...</td>
+      <td>35.492813</td>
+      <td>14.766094</td>
+      <td>1</td>
+      <td>161</td>
+      <td>161</td>
+      <td>122.830088</td>
+      <td>73</td>
       <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>cee3bf8b-a159-42d1-983a-ac149b9edda9</td>
+      <td>True</td>
+      <td>HMBA-BG-Xenium-Marmoset</td>
+      <td>Xenium-CJ23.56.004-BG-batch-normalized</td>
     </tr>
     <tr>
       <th>1382042951_aeiamgga-1-20250227</th>
       <td>CJ23.56.004.CX.42.01.06</td>
       <td>1382042951</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>6291.268066</td>
-      <td>6068.720215</td>
+      <td>6291.2680</td>
+      <td>6068.7200</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by boundary stain (ATP1A1+CD45+E-Cad...</td>
+      <td>167.800630</td>
+      <td>66.921560</td>
+      <td>2</td>
+      <td>603</td>
+      <td>602</td>
+      <td>459.277721</td>
+      <td>137</td>
       <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>3f24c46e-9ab1-4a54-a6fc-591f752edb48</td>
+      <td>True</td>
+      <td>HMBA-BG-Xenium-Marmoset</td>
+      <td>Xenium-CJ23.56.004-BG-batch-normalized</td>
     </tr>
   </tbody>
 </table>
@@ -1040,7 +1278,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_specimen</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Human'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'specimen_metadata'</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'brain_section_label'</span><span class="p">)</span>
@@ -1049,6 +1287,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>specimen_metadata.csv: 100%|██████████| 21.4k/21.4k [00:00&lt;00:00, 322kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1077,7 +1318,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>section_set_base_ordinal</th>
       <th>brain_block_label</th>
       <th>brain_block_number</th>
-      <th>brain_slab_label</th>
+      <th>...</th>
       <th>brain_slab_ordinal</th>
       <th>brain_slab_thickness</th>
       <th>hemisphere</th>
@@ -1087,9 +1328,11 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>slab_plane_ordinal</th>
       <th>slab_plane_label</th>
       <th>slab_plane_order</th>
+      <th>slab_z_order</th>
     </tr>
     <tr>
       <th>brain_section_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1125,7 +1368,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>72</td>
       <td>H22.30.001.BS.3.01</td>
       <td>1</td>
-      <td>H22.30.001.BS.3</td>
+      <td>...</td>
       <td>2</td>
       <td>4.0</td>
       <td>right</td>
@@ -1135,6 +1378,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>1</td>
       <td>H22.30.001.BS.3.Plane.01</td>
       <td>20201</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>H22.30.001.BS.3.01.03.02</th>
@@ -1148,7 +1392,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>107</td>
       <td>H22.30.001.BS.3.01</td>
       <td>1</td>
-      <td>H22.30.001.BS.3</td>
+      <td>...</td>
       <td>2</td>
       <td>4.0</td>
       <td>right</td>
@@ -1158,6 +1402,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>3</td>
       <td>H22.30.001.BS.3.Plane.03</td>
       <td>20203</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>H22.30.001.BS.3.02.01.02</th>
@@ -1171,7 +1416,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>35</td>
       <td>H22.30.001.BS.3.02</td>
       <td>2</td>
-      <td>H22.30.001.BS.3</td>
+      <td>...</td>
       <td>2</td>
       <td>4.0</td>
       <td>right</td>
@@ -1181,6 +1426,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>1</td>
       <td>H22.30.001.BS.3.Plane.01</td>
       <td>20201</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>H22.30.001.BS.3.02.03.03</th>
@@ -1194,7 +1440,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>143</td>
       <td>H22.30.001.BS.3.02</td>
       <td>2</td>
-      <td>H22.30.001.BS.3</td>
+      <td>...</td>
       <td>2</td>
       <td>4.0</td>
       <td>right</td>
@@ -1204,6 +1450,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>3</td>
       <td>H22.30.001.BS.3.Plane.03</td>
       <td>20203</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>H22.30.001.CX.13.01.03.02</th>
@@ -1217,7 +1464,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>141</td>
       <td>H22.30.001.CX.13.01</td>
       <td>1</td>
-      <td>H22.30.001.CX.13</td>
+      <td>...</td>
       <td>13</td>
       <td>4.0</td>
       <td>right</td>
@@ -1227,16 +1474,18 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>5</td>
       <td>H22.30.001.CX.13.Plane.05</td>
       <td>11305</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 <p>The Macaque specimen table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_specimen</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'specimen_metadata'</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'brain_section_label'</span><span class="p">)</span>
@@ -1245,6 +1494,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>specimen_metadata.csv: 100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 384kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1273,7 +1525,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>section_set_base_ordinal</th>
       <th>brain_block_label</th>
       <th>brain_block_number</th>
-      <th>brain_slab_label</th>
+      <th>...</th>
       <th>brain_slab_ordinal</th>
       <th>brain_slab_thickness</th>
       <th>hemisphere</th>
@@ -1283,9 +1535,11 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>slab_plane_ordinal</th>
       <th>slab_plane_label</th>
       <th>slab_plane_order</th>
+      <th>slab_z_order</th>
     </tr>
     <tr>
       <th>brain_section_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1321,7 +1575,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>131</td>
       <td>QM23.50.001.CX.42.01</td>
       <td>1</td>
-      <td>QM23.50.001.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>4.0</td>
       <td>right</td>
@@ -1331,6 +1585,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>5</td>
       <td>QM23.50.001.CX.42.Plane.05</td>
       <td>14205</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>QM23.50.001.CX.42.01.05.03</th>
@@ -1344,7 +1599,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>231</td>
       <td>QM23.50.001.CX.42.01</td>
       <td>1</td>
-      <td>QM23.50.001.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>4.0</td>
       <td>right</td>
@@ -1354,6 +1609,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>3</td>
       <td>QM23.50.001.CX.42.Plane.03</td>
       <td>14203</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>QM23.50.001.CX.42.02.03.02</th>
@@ -1367,7 +1623,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>132</td>
       <td>QM23.50.001.CX.42.02</td>
       <td>2</td>
-      <td>QM23.50.001.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>4.0</td>
       <td>right</td>
@@ -1377,6 +1633,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>5</td>
       <td>QM23.50.001.CX.42.Plane.05</td>
       <td>14205</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>QM23.50.001.CX.42.02.05.03</th>
@@ -1390,7 +1647,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>231</td>
       <td>QM23.50.001.CX.42.02</td>
       <td>2</td>
-      <td>QM23.50.001.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>4.0</td>
       <td>right</td>
@@ -1400,6 +1657,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>3</td>
       <td>QM23.50.001.CX.42.Plane.03</td>
       <td>14203</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>QM23.50.001.CX.42.02.07.03</th>
@@ -1413,7 +1671,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>331</td>
       <td>QM23.50.001.CX.42.02</td>
       <td>2</td>
-      <td>QM23.50.001.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>4.0</td>
       <td>right</td>
@@ -1423,16 +1681,18 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>1</td>
       <td>QM23.50.001.CX.42.Plane.01</td>
       <td>14201</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 <p>And finally the Marmoset specimen table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_specimen</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-Xenium-Marmoset'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'specimen_metadata'</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'brain_section_label'</span><span class="p">)</span>
@@ -1441,6 +1701,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>specimen_metadata.csv: 100%|██████████| 10.6k/10.6k [00:00&lt;00:00, 124kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1469,7 +1732,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>section_set_base_ordinal</th>
       <th>brain_block_label</th>
       <th>brain_block_number</th>
-      <th>brain_slab_label</th>
+      <th>...</th>
       <th>brain_slab_ordinal</th>
       <th>brain_slab_thickness</th>
       <th>hemisphere</th>
@@ -1479,9 +1742,11 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <th>slab_plane_ordinal</th>
       <th>slab_plane_label</th>
       <th>slab_plane_order</th>
+      <th>slab_z_order</th>
     </tr>
     <tr>
       <th>brain_section_label</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1517,7 +1782,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>1</td>
       <td>CJ23.56.004.CX.42</td>
       <td>42</td>
-      <td>CJ23.56.004.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>5.0</td>
       <td>right</td>
@@ -1527,6 +1792,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>1</td>
       <td>CJ23.56.004.CX.42.Plane.01</td>
       <td>14201</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>CJ23.56.004.CX.42.02.06</th>
@@ -1540,7 +1806,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>21</td>
       <td>CJ23.56.004.CX.42</td>
       <td>42</td>
-      <td>CJ23.56.004.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>5.0</td>
       <td>right</td>
@@ -1550,6 +1816,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>2</td>
       <td>CJ23.56.004.CX.42.Plane.02</td>
       <td>14202</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>CJ23.56.004.CX.42.03.07</th>
@@ -1563,7 +1830,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>41</td>
       <td>CJ23.56.004.CX.42</td>
       <td>42</td>
-      <td>CJ23.56.004.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>5.0</td>
       <td>right</td>
@@ -1573,6 +1840,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>3</td>
       <td>CJ23.56.004.CX.42.Plane.03</td>
       <td>14203</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>CJ23.56.004.CX.42.04.06</th>
@@ -1586,7 +1854,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>61</td>
       <td>CJ23.56.004.CX.42</td>
       <td>42</td>
-      <td>CJ23.56.004.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>5.0</td>
       <td>right</td>
@@ -1596,6 +1864,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>4</td>
       <td>CJ23.56.004.CX.42.Plane.04</td>
       <td>14204</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>CJ23.56.004.CX.42.05.06</th>
@@ -1609,7 +1878,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>81</td>
       <td>CJ23.56.004.CX.42</td>
       <td>42</td>
-      <td>CJ23.56.004.CX.42</td>
+      <td>...</td>
       <td>42</td>
       <td>5.0</td>
       <td>right</td>
@@ -1619,9 +1888,11 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>5</td>
       <td>CJ23.56.004.CX.42.Plane.05</td>
       <td>14205</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 <p>Join the specimen tables with the cell metadata for each species.</p>
@@ -1648,7 +1919,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_cell_slab_plane_coordinates</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Human'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'slab_plane_coordinates'</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
@@ -1657,6 +1928,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slab_plane_coordinates.csv: 100%|██████████| 680M/680M [00:36&lt;00:00, 18.5MMB/s]    
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1675,12 +1949,16 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>slab_plane_label</th>
+      <th>x_slab_pixel</th>
+      <th>y_slab_pixel</th>
       <th>x_slab_mm</th>
       <th>y_slab_mm</th>
+      <th>slab_plane_label</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1688,34 +1966,44 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   </thead>
   <tbody>
     <tr>
-      <th>1324989690_1-20250227</th>
-      <td>H22.30.001.CX.17.Plane.03</td>
-      <td>28.232720</td>
-      <td>79.516699</td>
+      <th>1315611012_1-20250227</th>
+      <td>1148.461025</td>
+      <td>3098.882230</td>
+      <td>22.969220</td>
+      <td>61.977645</td>
+      <td>H22.30.001.CX.16.Plane.03</td>
     </tr>
     <tr>
-      <th>1324989690_2-20250227</th>
-      <td>H22.30.001.CX.17.Plane.03</td>
-      <td>28.242950</td>
-      <td>79.520359</td>
+      <th>1315611012_2-20250227</th>
+      <td>1156.057947</td>
+      <td>3109.691747</td>
+      <td>23.121159</td>
+      <td>62.193835</td>
+      <td>H22.30.001.CX.16.Plane.03</td>
     </tr>
     <tr>
-      <th>1324989690_3-20250227</th>
-      <td>H22.30.001.CX.17.Plane.03</td>
-      <td>28.129210</td>
-      <td>79.461518</td>
+      <th>1315611012_3-20250227</th>
+      <td>1151.497108</td>
+      <td>3103.241802</td>
+      <td>23.029942</td>
+      <td>62.064836</td>
+      <td>H22.30.001.CX.16.Plane.03</td>
     </tr>
     <tr>
-      <th>1324989690_4-20250227</th>
-      <td>H22.30.001.CX.17.Plane.03</td>
-      <td>28.231203</td>
-      <td>79.500081</td>
+      <th>1315611012_4-20250227</th>
+      <td>1156.782462</td>
+      <td>3111.448269</td>
+      <td>23.135649</td>
+      <td>62.228965</td>
+      <td>H22.30.001.CX.16.Plane.03</td>
     </tr>
     <tr>
-      <th>1324989690_5-20250227</th>
-      <td>H22.30.001.CX.17.Plane.03</td>
-      <td>28.352236</td>
-      <td>79.561696</td>
+      <th>1315611012_5-20250227</th>
+      <td>1148.136335</td>
+      <td>3098.762477</td>
+      <td>22.962727</td>
+      <td>61.975250</td>
+      <td>H22.30.001.CX.16.Plane.03</td>
     </tr>
   </tbody>
 </table>
@@ -1724,15 +2012,18 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_slab_plane_coordinates</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'slab_plane_coordinates'</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">},</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">macaque_cell_slab_plane_coordinates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slab_plane_coordinates.csv: 100%|██████████| 438M/438M [00:17&lt;00:00, 24.5MMB/s]    
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1751,12 +2042,18 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>slab_plane_label</th>
+      <th>x_slab_pixel</th>
+      <th>y_slab_pixel</th>
       <th>x_slab_mm</th>
       <th>y_slab_mm</th>
+      <th>registration_subset_label</th>
+      <th>slab_plane_label</th>
     </tr>
     <tr>
       <th>cell_label</th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1764,34 +2061,49 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   </thead>
   <tbody>
     <tr>
-      <th>1291813781_1-20250227</th>
-      <td>QM23.50.001.CX.44.Plane.07</td>
-      <td>49.982522</td>
-      <td>35.779509</td>
+      <th>1291814091_147-20250227</th>
+      <td>2031.897028</td>
+      <td>1110.876577</td>
+      <td>40.637941</td>
+      <td>22.217532</td>
+      <td>None/NA</td>
+      <td>QM23.50.001.CX.44.Plane.05</td>
     </tr>
     <tr>
-      <th>1291813781_2-20250227</th>
-      <td>QM23.50.001.CX.44.Plane.07</td>
-      <td>49.986300</td>
-      <td>35.748134</td>
+      <th>1291814091_157-20250227</th>
+      <td>2031.616827</td>
+      <td>1111.085137</td>
+      <td>40.632337</td>
+      <td>22.221703</td>
+      <td>None/NA</td>
+      <td>QM23.50.001.CX.44.Plane.05</td>
     </tr>
     <tr>
-      <th>1291813781_3-20250227</th>
-      <td>QM23.50.001.CX.44.Plane.07</td>
-      <td>49.976306</td>
-      <td>35.751906</td>
+      <th>1291814091_169-20250227</th>
+      <td>2029.018004</td>
+      <td>1110.091872</td>
+      <td>40.580360</td>
+      <td>22.201837</td>
+      <td>None/NA</td>
+      <td>QM23.50.001.CX.44.Plane.05</td>
     </tr>
     <tr>
-      <th>1291813781_4-20250227</th>
-      <td>QM23.50.001.CX.44.Plane.07</td>
-      <td>49.896221</td>
-      <td>35.688888</td>
+      <th>1291814091_180-20250227</th>
+      <td>2029.451516</td>
+      <td>1111.402151</td>
+      <td>40.589030</td>
+      <td>22.228043</td>
+      <td>None/NA</td>
+      <td>QM23.50.001.CX.44.Plane.05</td>
     </tr>
     <tr>
-      <th>1291813781_5-20250227</th>
-      <td>QM23.50.001.CX.44.Plane.07</td>
-      <td>49.888261</td>
-      <td>35.681598</td>
+      <th>1291814091_181-20250227</th>
+      <td>2029.184113</td>
+      <td>1111.147536</td>
+      <td>40.583682</td>
+      <td>22.222951</td>
+      <td>None/NA</td>
+      <td>QM23.50.001.CX.44.Plane.05</td>
     </tr>
   </tbody>
 </table>
@@ -1800,7 +2112,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_cell_slab_plane_coordinates</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-Xenium-Marmoset'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'slab_plane_coordinates'</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"cell_label"</span><span class="p">:</span> <span class="nb">str</span><span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
@@ -1809,6 +2121,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slab_plane_coordinates.csv: 100%|██████████| 131M/131M [00:06&lt;00:00, 20.3MMB/s]   
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1827,16 +2142,14 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>brain_section_label</th>
-      <th>x_rotated_um</th>
-      <th>y_rotated_um</th>
-      <th>slab_plane_label</th>
+      <th>x_slab_pixel</th>
+      <th>y_slab_pixel</th>
       <th>x_slab_mm</th>
       <th>y_slab_mm</th>
+      <th>slab_plane_label</th>
     </tr>
     <tr>
       <th>cell_label</th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1847,48 +2160,43 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   <tbody>
     <tr>
       <th>1382042951_abmkfncc-1-20250227</th>
-      <td>CJ23.56.004.CX.42.01.06</td>
-      <td>2935.931563</td>
-      <td>-7974.969447</td>
+      <td>1117.5521</td>
+      <td>659.85284</td>
+      <td>22.351042</td>
+      <td>13.197058</td>
       <td>CJ23.56.004.CX.42.Plane.01</td>
-      <td>22.351041</td>
-      <td>13.197057</td>
     </tr>
     <tr>
       <th>1382042951_abmmdgea-1-20250227</th>
-      <td>CJ23.56.004.CX.42.01.06</td>
-      <td>2760.454341</td>
-      <td>-8109.955328</td>
+      <td>1108.0673</td>
+      <td>665.55994</td>
+      <td>22.161345</td>
+      <td>13.311200</td>
       <td>CJ23.56.004.CX.42.Plane.01</td>
-      <td>22.161344</td>
-      <td>13.311199</td>
     </tr>
     <tr>
       <th>1382042951_abmojfce-1-20250227</th>
-      <td>CJ23.56.004.CX.42.01.06</td>
-      <td>2835.431429</td>
-      <td>-7424.225350</td>
-      <td>CJ23.56.004.CX.42.Plane.01</td>
-      <td>22.313860</td>
+      <td>1115.6930</td>
+      <td>631.92270</td>
+      <td>22.313862</td>
       <td>12.638454</td>
+      <td>CJ23.56.004.CX.42.Plane.01</td>
     </tr>
     <tr>
       <th>1382042951_abmomnim-1-20250227</th>
-      <td>CJ23.56.004.CX.42.01.06</td>
-      <td>2826.728643</td>
-      <td>-7411.957363</td>
-      <td>CJ23.56.004.CX.42.Plane.01</td>
+      <td>1115.3304</td>
+      <td>631.26380</td>
       <td>22.306610</td>
       <td>12.625276</td>
+      <td>CJ23.56.004.CX.42.Plane.01</td>
     </tr>
     <tr>
       <th>1382042951_aeiamgga-1-20250227</th>
-      <td>CJ23.56.004.CX.42.01.06</td>
-      <td>2561.271672</td>
-      <td>-8032.767191</td>
+      <td>1098.6119</td>
+      <td>660.59240</td>
+      <td>21.972239</td>
+      <td>13.211849</td>
       <td>CJ23.56.004.CX.42.Plane.01</td>
-      <td>21.972238</td>
-      <td>13.211848</td>
     </tr>
   </tbody>
 </table>
@@ -1917,12 +2225,12 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 <section id="geojson-polygons">
 <h3>Geojson polygons<a class="headerlink" href="#geojson-polygons" title="Link to this heading">#</a></h3>
-<p>The dataset includes polygons outlining select regions of the Basal Ganglia, which can be plotted over slab coordinates. These polygon annotations were manually drawn using a combination of taxonomy cell types, select gene expression from the spatial transcriptomics gene panel, and cell segmentation stains with best attempts made to be consistent across species and planes. Manual annotations include the striatum (STR; encompasses the caudate, putamen, nucleus accumbens, and olfactory tubercle), the globus pallidus (GP) and it’s nested subregions the external (GPe) and internal (GPi) segments, the ventral pallidum (VeP), the substantia nigra (SN), and the subthalamic nucleus (STH). However, please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data and subset the data into more manageable, anatomically-related chunks. These polygons are provided in <a class="reference external" href="https://geojson.org/">geojson</a> format, and here we use the associated geojson python package to load the jsons for use in our visualization.</p>
+<p>The dataset includes polygons outlining select regions of the Basal Ganglia, which can be plotted over slab coordinates. These polygon annotations were manually drawn using a combination of taxonomy cell types, select gene expression from the spatial transcriptomics gene panel, and cell segmentation stains with best attempts made to be consistent across species and planes. Manual annotations include the striatum (STR; encompasses the caudate, putamen, nucleus accumbens, and olfactory tubercle), the globus pallidus (GP) and its nested subregions (the external (GPe) and internal (GPi) segments), the ventral pallidum (VeP), the substantia nigra (SN), and the subthalamic nucleus (STH).. However, please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data and subset the data into more manageable, anatomically-related chunks. These polygons are provided in <a class="reference external" href="https://geojson.org/">geojson</a> format, and here we use the associated geojson python package to load the jsons for use in our visualization.</p>
 <p>First though, we load the term set for these data. While these geojsons are manually drawn and not derived from the HOMBA, we do use the abbreviations and colors associated with these structures through their DHBA identifier when such an identifier exists. These colorings match those of the previous <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">HMBA-BG 10X tutorial</a>. We load these colors and identifiers below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_sets</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'value_sets'</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'label'</span><span class="p">)</span>
 <span class="n">pred</span> <span class="o">=</span> <span class="n">value_sets</span><span class="p">[</span><span class="s1">'field'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'parcellation_term_symbol'</span>
@@ -1932,6 +2240,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value_sets.csv: 100%|██████████| 3.98k/3.98k [00:00&lt;00:00, 38.3kMB/s]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1950,8 +2261,8 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>table</th>
       <th>field</th>
+      <th>table</th>
       <th>description</th>
       <th>order</th>
       <th>external_identifier</th>
@@ -1972,8 +2283,8 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   <tbody>
     <tr>
       <th>Basal ganglia and adjacent</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>Basal ganglia and adjacent</td>
       <td>1</td>
       <td>basal_ganglia_and_adjacent</td>
@@ -1982,71 +2293,71 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
     </tr>
     <tr>
       <th>STR</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>striatum</td>
       <td>2</td>
-      <td>DHBA:10333</td>
+      <td>HOMBA:10333</td>
       <td>Basal ganglia and adjacent</td>
       <td>#cd86cc</td>
     </tr>
     <tr>
       <th>GP</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>globus pallidus</td>
       <td>3</td>
-      <td>DHBA:10342</td>
+      <td>HOMBA:10342</td>
       <td>Basal ganglia and adjacent</td>
       <td>#7AE361</td>
     </tr>
     <tr>
       <th>GPe</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>external segment of globus pallidus</td>
       <td>4</td>
-      <td>DHBA:10343</td>
+      <td>HOMBA:10343</td>
       <td>Basal ganglia and adjacent</td>
       <td>#53DB33</td>
     </tr>
     <tr>
       <th>GPi</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>internal segment of globus pallidus</td>
       <td>5</td>
-      <td>DHBA:10344</td>
+      <td>HOMBA:10344</td>
       <td>Basal ganglia and adjacent</td>
       <td>#A7DB33</td>
     </tr>
     <tr>
       <th>VeP</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>ventral pallidus</td>
       <td>6</td>
-      <td>DHBA:10345</td>
+      <td>HOMBA:10345</td>
       <td>Basal ganglia and adjacent</td>
       <td>#9b19f5</td>
     </tr>
     <tr>
       <th>STH</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>subthalamic nucleus</td>
       <td>7</td>
-      <td>DHBA:10466</td>
+      <td>HOMBA:10466</td>
       <td>Basal ganglia and adjacent</td>
       <td>#907991</td>
     </tr>
     <tr>
       <th>SN</th>
-      <td>path</td>
       <td>parcellation_term_symbol</td>
+      <td>cell_anatomical_annotations</td>
       <td>substantia nigra</td>
       <td>8</td>
-      <td>DHBA:12251</td>
+      <td>HOMBA:12251</td>
       <td>Basal ganglia and adjacent</td>
       <td>#89522A</td>
     </tr>
@@ -2131,11 +2442,11 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <span class="sd">    """</span>
 
     <span class="k">if</span> <span class="n">species</span> <span class="o">==</span> <span class="s1">'macaque'</span><span class="p">:</span>
-        <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span>
     <span class="k">elif</span> <span class="n">species</span> <span class="o">==</span> <span class="s1">'marmoset'</span><span class="p">:</span>
-        <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">'HMBA-BG-Xenium-Marmoset'</span>
     <span class="k">elif</span> <span class="n">species</span> <span class="o">==</span> <span class="s1">'human'</span><span class="p">:</span>
-        <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">'HMBA-BG-MERSCOPE-Human'</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Invalid species'</span><span class="p">)</span>
 
@@ -2159,7 +2470,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_cell_anatomical_annotations</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Human'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_anatomical_annotations'</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">human_cell_anatomical_annotations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2167,6 +2478,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_anatomical_annotations.csv: 100%|██████████| 448M/448M [00:16&lt;00:00, 26.5MMB/s]    
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2210,7 +2524,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   </thead>
   <tbody>
     <tr>
-      <th>1321115602_1-20250227</th>
+      <th>1315611012_1-20250227</th>
       <td>True</td>
       <td>True</td>
       <td>False</td>
@@ -2222,7 +2536,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>STR</td>
     </tr>
     <tr>
-      <th>1321115602_2-20250227</th>
+      <th>1315611012_2-20250227</th>
       <td>True</td>
       <td>True</td>
       <td>False</td>
@@ -2234,7 +2548,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>STR</td>
     </tr>
     <tr>
-      <th>1321115602_3-20250227</th>
+      <th>1315611012_3-20250227</th>
       <td>True</td>
       <td>True</td>
       <td>False</td>
@@ -2246,7 +2560,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>STR</td>
     </tr>
     <tr>
-      <th>1321115602_4-20250227</th>
+      <th>1315611012_4-20250227</th>
       <td>True</td>
       <td>True</td>
       <td>False</td>
@@ -2258,7 +2572,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>STR</td>
     </tr>
     <tr>
-      <th>1321115602_5-20250227</th>
+      <th>1315611012_5-20250227</th>
       <td>True</td>
       <td>True</td>
       <td>False</td>
@@ -2276,7 +2590,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_anatomical_annotations</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_anatomical_annotations'</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">macaque_cell_anatomical_annotations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2284,6 +2598,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_anatomical_annotations.csv: 100%|██████████| 275M/275M [00:10&lt;00:00, 25.4MMB/s]   
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2327,7 +2644,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
   </thead>
   <tbody>
     <tr>
-      <th>1291813781_1-20250227</th>
+      <th>1291814091_147-20250227</th>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -2339,7 +2656,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>Basal ganglia and adjacent</td>
     </tr>
     <tr>
-      <th>1291813781_2-20250227</th>
+      <th>1291814091_157-20250227</th>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -2351,7 +2668,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>Basal ganglia and adjacent</td>
     </tr>
     <tr>
-      <th>1291813781_3-20250227</th>
+      <th>1291814091_169-20250227</th>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -2363,7 +2680,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>Basal ganglia and adjacent</td>
     </tr>
     <tr>
-      <th>1291813781_4-20250227</th>
+      <th>1291814091_180-20250227</th>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -2375,7 +2692,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
       <td>Basal ganglia and adjacent</td>
     </tr>
     <tr>
-      <th>1291813781_5-20250227</th>
+      <th>1291814091_181-20250227</th>
       <td>True</td>
       <td>False</td>
       <td>False</td>
@@ -2393,7 +2710,7 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_cell_anatomical_annotations</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-Xenium-Marmoset'</span><span class="p">,</span>
     <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_anatomical_annotations'</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 <span class="n">marmoset_cell_anatomical_annotations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2401,6 +2718,9 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_anatomical_annotations.csv: 100%|██████████| 116M/116M [00:04&lt;00:00, 24.6MMB/s]   
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2692,7 +3012,14 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c07117cfe47c72e46c77478da53c43dc06c61976207118cbd7888bd0eea5422.png" src="../_images/5c07117cfe47c72e46c77478da53c43dc06c61976207118cbd7888bd0eea5422.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H22.30.001.CX.16.Plane.07.geojson: 100%|██████████| 5.47k/5.47k [00:00&lt;00:00, 39.6kMB/s]
+H22.30.001.CX.17.Plane.07.geojson: 100%|██████████| 8.08k/8.08k [00:00&lt;00:00, 131kMB/s]
+H22.30.001.CX.19.Plane.07.geojson: 100%|██████████| 5.97k/5.97k [00:00&lt;00:00, 130kMB/s]
+H22.30.001.CX.20.Plane.03.geojson: 100%|██████████| 3.00k/3.00k [00:00&lt;00:00, 23.6kMB/s]
+H22.30.001.CX.20.Plane.05.geojson: 100%|██████████| 2.35k/2.35k [00:00&lt;00:00, 25.0kMB/s]
+</pre></div>
+</div>
+<img alt="../_images/4df19456b23d09fd10003888f4fca10e4dfd6e5808e3e066606e091af91d28ee.png" src="../_images/4df19456b23d09fd10003888f4fca10e4dfd6e5808e3e066606e091af91d28ee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2715,13 +3042,20 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c2bbf34196e83305ba102d6a2e5b8f7bbe56521ee8892dc18d26bb991d6c3f96.png" src="../_images/c2bbf34196e83305ba102d6a2e5b8f7bbe56521ee8892dc18d26bb991d6c3f96.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>QM23.50.001.CX.42.Plane.03.geojson: 100%|██████████| 2.33k/2.33k [00:00&lt;00:00, 40.5kMB/s]
+QM23.50.001.CX.43.Plane.07.geojson: 100%|██████████| 2.99k/2.99k [00:00&lt;00:00, 53.5kMB/s]
+QM23.50.001.CX.44.Plane.05.geojson: 100%|██████████| 5.53k/5.53k [00:00&lt;00:00, 91.0kMB/s]
+QM23.50.001.CX.45.Plane.05.geojson: 100%|██████████| 6.83k/6.83k [00:00&lt;00:00, 58.3kMB/s]
+QM23.50.001.CX.46.Plane.05.geojson: 100%|██████████| 5.00k/5.00k [00:00&lt;00:00, 95.0kMB/s]
+</pre></div>
+</div>
+<img alt="../_images/756397724003260a90d37f5c411c60c11ba1add127c918f5a9a2ba76f1de02b6.png" src="../_images/756397724003260a90d37f5c411c60c11ba1add127c918f5a9a2ba76f1de02b6.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_slab_list</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'CJ23.56.004.CX.42.Plane.05'</span><span class="p">,</span> <span class="s1">'CJ23.56.004.CX.42.Plane.13'</span><span class="p">,</span> <span class="s1">'CJ23.56.004.CX.43.Plane.05'</span><span class="p">,</span>
+    <span class="s1">'CJ23.56.004.CX.42.Plane.05'</span><span class="p">,</span> <span class="s1">'CJ23.56.004.CX.42.Plane.22'</span><span class="p">,</span> <span class="s1">'CJ23.56.004.CX.43.Plane.05'</span><span class="p">,</span>
     <span class="s1">'CJ23.56.004.CX.43.Plane.15'</span><span class="p">,</span> <span class="s1">'CJ23.56.004.CX.44.Plane.03'</span>
 <span class="p">]</span>
 <span class="n">color_type</span> <span class="o">=</span> <span class="s1">'parcellation_term_symbol_color'</span>
@@ -2738,7 +3072,14 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e5b0f2803e75264004373a5bb71533fce8646b0287a4a04dea3b8dfec18a694.png" src="../_images/2e5b0f2803e75264004373a5bb71533fce8646b0287a4a04dea3b8dfec18a694.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CJ23.56.004.CX.42.Plane.05.geojson: 100%|██████████| 6.43k/6.43k [00:00&lt;00:00, 53.2kMB/s]
+CJ23.56.004.CX.42.Plane.22.geojson: 100%|██████████| 7.33k/7.33k [00:00&lt;00:00, 68.0kMB/s]
+CJ23.56.004.CX.43.Plane.05.geojson: 100%|██████████| 12.2k/12.2k [00:00&lt;00:00, 308kMB/s]
+CJ23.56.004.CX.43.Plane.15.geojson: 100%|██████████| 9.98k/9.98k [00:00&lt;00:00, 127kMB/s]
+CJ23.56.004.CX.44.Plane.03.geojson: 100%|██████████| 5.76k/5.76k [00:00&lt;00:00, 85.0kMB/s]
+</pre></div>
+</div>
+<img alt="../_images/ada68e0b6998089df5b21d7737428e86e2d91f1ee6bce89a0d2717ec88746d9d.png" src="../_images/ada68e0b6998089df5b21d7737428e86e2d91f1ee6bce89a0d2717ec88746d9d.png" />
 </div>
 </div>
 </section>
@@ -2803,32 +3144,40 @@ Expression matrix files: ['Xenium-CJ23.56.004-BG/log2', 'Xenium-CJ23.56.004-BG/r
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster.csv: 100%|██████████| 79.9k/79.9k [00:00&lt;00:00, 878kMB/s]
+cluster_annotation_term_set.csv: 100%|██████████| 223/223 [00:00&lt;00:00, 3.22kMB/s]
+cluster_annotation_term.csv: 100%|██████████| 207k/207k [00:00&lt;00:00, 1.16MMB/s] 
+cluster_to_cluster_annotation_membership.csv: 100%|██████████| 569k/569k [00:00&lt;00:00, 3.94MMB/s] 
+</pre></div>
 </div>
-<p>Each of the three species has been mapped to the HMBA 10X taxonomy using MapMyCells. Below, we load the mapping of each cell to a taxonomy cluster. This mapping is the entry point into the taxonomy.</p>
+</div>
+</div>
+<p>Each of the three species has been mapped to the HMBA 10X taxonomy using MapMyCells. Below, we load the mapping of each cell into the taxonomy. The mmc_results contain quality metrics for the full mapping however, for this tutorial we will only utilize the mapping of cell -&gt; Cluster.</p>
 <p>Again, we load each species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_cell_to_cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-H22.30.001-BG'</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_to_cluster_membership'</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_mmc_results</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Human'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'mmc_results'</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 
-<span class="n">macaque_cell_to_cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_to_cluster_membership'</span><span class="p">,</span>
+<span class="n">macaque_mmc_results</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-MERSCOPE-Macaque'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'mmc_results'</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 
-<span class="n">marmoset_cell_to_cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_to_cluster_membership'</span><span class="p">,</span>
+<span class="n">marmoset_mmc_results</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-BG-Xenium-Marmoset'</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">'mmc_results'</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cell_to_cluster_membership.csv: 100%|██████████| 310M/310M [00:18&lt;00:00, 16.4MMB/s]    
-cell_to_cluster_membership.csv: 100%|██████████| 195M/195M [00:09&lt;00:00, 19.7MMB/s]   
-cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M [00:03&lt;00:00, 25.0MMB/s]  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mmc_results.csv: 100%|██████████| 898M/898M [00:40&lt;00:00, 22.3MMB/s]    
+mmc_results.csv: 100%|██████████| 514M/514M [00:25&lt;00:00, 20.3MMB/s]    
+mmc_results.csv: 100%|██████████| 215M/215M [00:09&lt;00:00, 21.9MMB/s]    
 </pre></div>
 </div>
 </div>
@@ -2871,16 +3220,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 </div>
-<p>Now we merge the cell type classification colors and order into our metadata for each species.</p>
+<p>Now we merge the cell type classification into the cell metadata. Note that we use the cluster_alias only here and load the full taxonomy colors and orders from the taxonomy itself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">human_cell_to_cluster</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">human_mmc_results</span><span class="p">[[</span><span class="s1">'Cluster'</span><span class="p">]])</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Cluster'</span><span class="p">:</span> <span class="s1">'cluster_alias'</span><span class="p">})</span>
 <span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 <span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_color'</span><span class="p">)</span>
 <span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 <span class="n">human_cell_metadata</span> <span class="o">=</span> <span class="n">fill_adjacent_data</span><span class="p">(</span><span class="n">human_cell_metadata</span><span class="p">)</span>
-
-<span class="k">del</span> <span class="n">human_cell_to_cluster</span>
 
 <span class="n">human_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -2907,14 +3254,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th></th>
       <th>brain_section_label</th>
       <th>brain_section_barcode</th>
-      <th>segmentation_job_id</th>
       <th>x_experiment</th>
       <th>y_experiment</th>
-      <th>qc_pass</th>
-      <th>dataset_label</th>
-      <th>feature_matrix_label</th>
-      <th>abc_sample_id</th>
-      <th>brain_section_barcode_specimen</th>
+      <th>segmentation_job_id</th>
+      <th>cell_volume</th>
+      <th>total_counts</th>
+      <th>total_counts_genes</th>
+      <th>total_counts_genes_batch_normalized</th>
+      <th>n_unique_genes</th>
       <th>...</th>
       <th>Neighborhood_color</th>
       <th>Class_color</th>
@@ -2954,113 +3301,113 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
   </thead>
   <tbody>
     <tr>
-      <th>1384732733_104390-20250227</th>
-      <td>H22.30.001.CX.20.02.03.01</td>
-      <td>1384732733</td>
+      <th>1326508078_47253-20250227</th>
+      <td>H22.30.001.CX.17.09.07.02</td>
+      <td>1326508078</td>
+      <td>2537.3235</td>
+      <td>7008.8370</td>
       <td>sis_cellpose_v1</td>
-      <td>9122.90000</td>
-      <td>2747.79320</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>1bb3cc09-224a-412b-8a09-59438370c64f</td>
-      <td>1384732733</td>
+      <td>153.942654</td>
+      <td>73</td>
+      <td>73</td>
+      <td>66.153050</td>
+      <td>36</td>
       <td>...</td>
       <td>#f2ca7d</td>
-      <td>#cba5ec</td>
-      <td>#51cd80</td>
-      <td>#5713c3</td>
-      <td>#8b3406</td>
-      <td>4</td>
-      <td>261</td>
-      <td>15</td>
+      <td>#6ec0da</td>
+      <td>#7f207a</td>
+      <td>#c96e0a</td>
+      <td>#f36c66</td>
       <td>1</td>
-      <td>11</td>
+      <td>74</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>1326494670_42591-20250227</th>
-      <td>H22.30.001.CX.17.07.07.02</td>
-      <td>1326494670</td>
+      <th>1326469674_61070-20250227</th>
+      <td>H22.30.001.CX.17.06.05.02</td>
+      <td>1326469674</td>
+      <td>1731.3826</td>
+      <td>7811.5690</td>
       <td>sis_cellpose_v1</td>
-      <td>623.67487</td>
-      <td>903.07245</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>3d211210-71d6-47f9-a88f-946f56c9ba8c</td>
-      <td>1326494670</td>
+      <td>494.349680</td>
+      <td>207</td>
+      <td>207</td>
+      <td>223.686463</td>
+      <td>44</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#8605d4</td>
       <td>#def476</td>
-      <td>#488edc</td>
-      <td>#a9de1a</td>
+      <td>#401e66</td>
+      <td>#6af4cf</td>
       <td>3</td>
-      <td>142</td>
-      <td>9</td>
+      <td>161</td>
+      <td>10</td>
       <td>1</td>
       <td>7</td>
     </tr>
     <tr>
-      <th>1326494670_42590-20250227</th>
-      <td>H22.30.001.CX.17.07.07.02</td>
-      <td>1326494670</td>
+      <th>1326469674_61071-20250227</th>
+      <td>H22.30.001.CX.17.06.05.02</td>
+      <td>1326469674</td>
+      <td>1529.1754</td>
+      <td>7808.3413</td>
       <td>sis_cellpose_v1</td>
-      <td>498.75037</td>
-      <td>902.13605</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>e059d8e7-29ce-48f9-9105-df1c9ba966c1</td>
-      <td>1326494670</td>
+      <td>46.788776</td>
+      <td>40</td>
+      <td>40</td>
+      <td>43.224437</td>
+      <td>25</td>
+      <td>...</td>
+      <td>#f2ca7d</td>
+      <td>#8605d4</td>
+      <td>#e3cba4</td>
+      <td>#922047</td>
+      <td>#6520f6</td>
+      <td>3</td>
+      <td>221</td>
+      <td>13</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1326469674_61072-20250227</th>
+      <td>H22.30.001.CX.17.06.05.02</td>
+      <td>1326469674</td>
+      <td>1677.0059</td>
+      <td>7816.4243</td>
+      <td>sis_cellpose_v1</td>
+      <td>226.519122</td>
+      <td>108</td>
+      <td>108</td>
+      <td>116.705980</td>
+      <td>31</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#8605d4</td>
       <td>#def476</td>
-      <td>#488edc</td>
-      <td>#7db606</td>
+      <td>#401e66</td>
+      <td>#6af4cf</td>
       <td>3</td>
-      <td>144</td>
-      <td>9</td>
+      <td>161</td>
+      <td>10</td>
       <td>1</td>
       <td>7</td>
     </tr>
     <tr>
-      <th>1326494670_42589-20250227</th>
-      <td>H22.30.001.CX.17.07.07.02</td>
-      <td>1326494670</td>
+      <th>1326469674_61073-20250227</th>
+      <td>H22.30.001.CX.17.06.05.02</td>
+      <td>1326469674</td>
+      <td>1569.8965</td>
+      <td>7821.2876</td>
       <td>sis_cellpose_v1</td>
-      <td>421.28458</td>
-      <td>900.51600</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>c017a97b-0c6a-41b0-b4b5-6f99e4a5759d</td>
-      <td>1326494670</td>
-      <td>...</td>
-      <td>#f2ca7d</td>
-      <td>#8605d4</td>
-      <td>#c68ae4</td>
-      <td>#f5e689</td>
-      <td>#8c2187</td>
-      <td>3</td>
-      <td>210</td>
-      <td>12</td>
-      <td>1</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>1326494670_42588-20250227</th>
-      <td>H22.30.001.CX.17.07.07.02</td>
-      <td>1326494670</td>
-      <td>sis_cellpose_v1</td>
-      <td>406.79843</td>
-      <td>899.12110</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-H22.30.001-BG</td>
-      <td>MERSCOPE-H22.30.001-BG</td>
-      <td>59579c65-2336-44e4-ae2e-284dd9766ed4</td>
-      <td>1326494670</td>
+      <td>616.443236</td>
+      <td>265</td>
+      <td>265</td>
+      <td>286.361897</td>
+      <td>53</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#8605d4</td>
@@ -3075,24 +3422,17 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
     </tr>
   </tbody>
 </table>
-<p>5 rows × 51 columns</p>
+<p>5 rows × 56 columns</p>
 </div></div></div>
 </div>
 <p>Load the Macaque and Marmoset data in the same way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_to_cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-MERSCOPE-QM23.50.001-BG'</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_to_cluster_membership'</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
-
-<span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">macaque_cell_to_cluster</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">macaque_mmc_results</span><span class="p">[[</span><span class="s1">'Cluster'</span><span class="p">]])</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Cluster'</span><span class="p">:</span> <span class="s1">'cluster_alias'</span><span class="p">})</span>
 <span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 <span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_color'</span><span class="p">)</span>
 <span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 <span class="n">macaque_cell_metadata</span> <span class="o">=</span> <span class="n">fill_adjacent_data</span><span class="p">(</span><span class="n">macaque_cell_metadata</span><span class="p">)</span>
-
-<span class="k">del</span> <span class="n">macaque_cell_to_cluster</span>
 
 <span class="n">macaque_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -3119,14 +3459,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th></th>
       <th>brain_section_label</th>
       <th>brain_section_barcode</th>
-      <th>segmentation_job_id</th>
       <th>x_experiment</th>
       <th>y_experiment</th>
-      <th>qc_pass</th>
-      <th>dataset_label</th>
-      <th>feature_matrix_label</th>
-      <th>abc_sample_id</th>
-      <th>brain_section_barcode_specimen</th>
+      <th>segmentation_job_id</th>
+      <th>cell_volume</th>
+      <th>total_counts</th>
+      <th>total_counts_genes</th>
+      <th>total_counts_genes_batch_normalized</th>
+      <th>n_unique_genes</th>
       <th>...</th>
       <th>Neighborhood_color</th>
       <th>Class_color</th>
@@ -3166,144 +3506,137 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
   </thead>
   <tbody>
     <tr>
-      <th>1291813781_1-20250227</th>
-      <td>QM23.50.001.CX.44.03.07.02</td>
-      <td>1291813781</td>
+      <th>1291814091_147-20250227</th>
+      <td>QM23.50.001.CX.44.01.05.01</td>
+      <td>1291814091</td>
+      <td>4432.6885</td>
+      <td>3979.6113</td>
       <td>sis_cellpose_v1</td>
-      <td>6328.8564</td>
-      <td>271.7173</td>
-      <td>False</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>NaN</td>
-      <td>1291813781</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#253c8c</td>
-      <td>#ff9896</td>
-      <td>#681364</td>
-      <td>10</td>
-      <td>1289</td>
-      <td>55</td>
-      <td>3</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>1291812338_13027-20250227</th>
-      <td>QM23.50.001.CX.43.01.11.03</td>
-      <td>1291812338</td>
-      <td>sis_cellpose_v1</td>
-      <td>8314.5330</td>
-      <td>2671.2260</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>6de019e9-4c63-470b-b474-3b8d23947d84</td>
-      <td>1291812338</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#79bdf4</td>
-      <td>#e377c2</td>
-      <td>#8f8307</td>
-      <td>10</td>
-      <td>1335</td>
-      <td>57</td>
-      <td>3</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>1291812338_13026-20250227</th>
-      <td>QM23.50.001.CX.43.01.11.03</td>
-      <td>1291812338</td>
-      <td>sis_cellpose_v1</td>
-      <td>8180.6080</td>
-      <td>2670.6003</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>288bf294-b18b-42e9-b0fc-84234c008a8a</td>
-      <td>1291812338</td>
-      <td>...</td>
-      <td>#19613b</td>
-      <td>#d0b83c</td>
-      <td>#1655f2</td>
-      <td>#d62728</td>
-      <td>#307e06</td>
-      <td>10</td>
-      <td>1166</td>
-      <td>52</td>
-      <td>3</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>1291812338_13025-20250227</th>
-      <td>QM23.50.001.CX.43.01.11.03</td>
-      <td>1291812338</td>
-      <td>sis_cellpose_v1</td>
-      <td>8336.7420</td>
-      <td>2667.5422</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>37da2f12-be8f-42a3-93ab-0a31ef0e4382</td>
-      <td>1291812338</td>
+      <td>756.243171</td>
+      <td>330</td>
+      <td>330</td>
+      <td>636.778305</td>
+      <td>83</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#8605d4</td>
       <td>#def476</td>
       <td>#488edc</td>
-      <td>#62620e</td>
+      <td>#a5e9f2</td>
       <td>3</td>
-      <td>146</td>
+      <td>149</td>
       <td>9</td>
       <td>1</td>
       <td>7</td>
     </tr>
     <tr>
-      <th>1291812338_13024-20250227</th>
-      <td>QM23.50.001.CX.43.01.11.03</td>
-      <td>1291812338</td>
+      <th>1291812419_27709-20250227</th>
+      <td>QM23.50.001.CX.43.01.05.02</td>
+      <td>1291812419</td>
+      <td>4813.3880</td>
+      <td>3526.3945</td>
       <td>sis_cellpose_v1</td>
-      <td>8315.9370</td>
-      <td>2664.6123</td>
-      <td>True</td>
-      <td>HMBA-MERSCOPE-QM23.50.001-BG</td>
-      <td>MERSCOPE-QM23.50.001-BG</td>
-      <td>dca478a5-0c68-451d-a832-80e977e075cb</td>
-      <td>1291812338</td>
+      <td>570.255755</td>
+      <td>129</td>
+      <td>128</td>
+      <td>142.601574</td>
+      <td>8</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#6ec0da</td>
       <td>#604f15</td>
       <td>#e16c95</td>
-      <td>#21e5fe</td>
+      <td>#83d8d6</td>
       <td>1</td>
-      <td>25</td>
+      <td>26</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1291812419_27708-20250227</th>
+      <td>QM23.50.001.CX.43.01.05.02</td>
+      <td>1291812419</td>
+      <td>4757.3520</td>
+      <td>3525.8088</td>
+      <td>sis_cellpose_v1</td>
+      <td>927.675333</td>
+      <td>432</td>
+      <td>430</td>
+      <td>479.052163</td>
+      <td>113</td>
+      <td>...</td>
+      <td>#f2ca7d</td>
+      <td>#6ec0da</td>
+      <td>#7f207a</td>
+      <td>#c96e0a</td>
+      <td>#1e975e</td>
+      <td>1</td>
+      <td>75</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1291812419_27707-20250227</th>
+      <td>QM23.50.001.CX.43.01.05.02</td>
+      <td>1291812419</td>
+      <td>5032.3677</td>
+      <td>3521.7780</td>
+      <td>sis_cellpose_v1</td>
+      <td>309.492010</td>
+      <td>270</td>
+      <td>270</td>
+      <td>300.800195</td>
+      <td>64</td>
+      <td>...</td>
+      <td>#f2ca7d</td>
+      <td>#8605d4</td>
+      <td>#def476</td>
+      <td>#401e66</td>
+      <td>#8ae6d9</td>
+      <td>3</td>
+      <td>167</td>
+      <td>10</td>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1291812419_27705-20250227</th>
+      <td>QM23.50.001.CX.43.01.05.02</td>
+      <td>1291812419</td>
+      <td>4802.1180</td>
+      <td>3520.3070</td>
+      <td>sis_cellpose_v1</td>
+      <td>710.057491</td>
+      <td>536</td>
+      <td>536</td>
+      <td>597.144091</td>
+      <td>96</td>
+      <td>...</td>
+      <td>#f2ca7d</td>
+      <td>#6ec0da</td>
+      <td>#604f15</td>
+      <td>#e16c95</td>
+      <td>#83d8d6</td>
+      <td>1</td>
+      <td>26</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 51 columns</p>
+<p>5 rows × 56 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_cell_to_cluster</span> <span class="o">=</span> <span class="n">abc_cache</span><span class="o">.</span><span class="n">get_metadata_dataframe</span><span class="p">(</span>
-    <span class="n">directory</span><span class="o">=</span><span class="s1">'HMBA-Xenium-CJ23.56.004-BG'</span><span class="p">,</span>
-    <span class="n">file_name</span><span class="o">=</span><span class="s1">'cell_to_cluster_membership'</span><span class="p">,</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'cell_label'</span><span class="p">)</span>
-
-<span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">marmoset_cell_to_cluster</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">marmoset_mmc_results</span><span class="p">[[</span><span class="s1">'Cluster'</span><span class="p">]])</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'Cluster'</span><span class="p">:</span> <span class="s1">'cluster_alias'</span><span class="p">})</span>
 <span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_details</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 <span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_colors</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">'_color'</span><span class="p">)</span>
 <span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cluster_order</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'cluster_alias'</span><span class="p">)</span>
 <span class="n">marmoset_cell_metadata</span> <span class="o">=</span> <span class="n">fill_adjacent_data</span><span class="p">(</span><span class="n">marmoset_cell_metadata</span><span class="p">)</span>
-
-<span class="k">del</span> <span class="n">marmoset_cell_to_cluster</span>
 
 <span class="n">marmoset_cell_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -3330,14 +3663,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th></th>
       <th>brain_section_label</th>
       <th>brain_section_barcode</th>
-      <th>segmentation_job_id</th>
       <th>x_experiment</th>
       <th>y_experiment</th>
-      <th>qc_pass</th>
-      <th>dataset_label</th>
-      <th>feature_matrix_label</th>
-      <th>abc_sample_id</th>
-      <th>brain_section_barcode_specimen</th>
+      <th>segmentation_job_id</th>
+      <th>segmentation_method</th>
+      <th>cell_area</th>
+      <th>nucleus_area</th>
+      <th>n_nuclei_in_cell</th>
+      <th>total_counts</th>
       <th>...</th>
       <th>Neighborhood_color</th>
       <th>Class_color</th>
@@ -3380,14 +3713,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th>1382042951_abmkfncc-1-20250227</th>
       <td>CJ23.56.004.CX.42.01.06</td>
       <td>1382042951</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>5923.492676</td>
-      <td>6160.654297</td>
-      <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>c8c08d8c-5147-4d03-b6f4-ca7bf4d0b8d1</td>
-      <td>1382042951</td>
+      <td>5923.4927</td>
+      <td>6160.6543</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by boundary stain (ATP1A1+CD45+E-Cad...</td>
+      <td>123.00563</td>
+      <td>72.566090</td>
+      <td>1</td>
+      <td>354</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#8605d4</td>
@@ -3404,14 +3737,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th>1386591529_oglkpmal-1-20250227</th>
       <td>CJ23.56.004.CX.43.01.07</td>
       <td>1386591529</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>10066.064453</td>
-      <td>9964.978516</td>
-      <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>899a0853-cb22-4b1f-a34c-6e2fad41acd2</td>
-      <td>1386591529</td>
+      <td>10066.0640</td>
+      <td>9964.9790</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by nucleus expansion of 5.0µm</td>
+      <td>289.45157</td>
+      <td>75.546410</td>
+      <td>1</td>
+      <td>95</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#aa6dec</td>
@@ -3428,14 +3761,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th>1386591529_oglkphgf-1-20250227</th>
       <td>CJ23.56.004.CX.43.01.07</td>
       <td>1386591529</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>10032.336914</td>
-      <td>9951.043945</td>
-      <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>1f87149d-55fe-4081-b6da-c2bf68189e48</td>
-      <td>1386591529</td>
+      <td>10032.3370</td>
+      <td>9951.0440</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by nucleus expansion of 5.0µm</td>
+      <td>250.75267</td>
+      <td>57.032345</td>
+      <td>1</td>
+      <td>190</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#8605d4</td>
@@ -3452,14 +3785,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th>1386591529_oglkpgff-1-20250227</th>
       <td>CJ23.56.004.CX.43.01.07</td>
       <td>1386591529</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>10078.684570</td>
-      <td>9936.422852</td>
-      <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>37a9464c-9dff-4823-a36a-42bb7ca37fef</td>
-      <td>1386591529</td>
+      <td>10078.6850</td>
+      <td>9936.4230</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by nucleus expansion of 5.0µm</td>
+      <td>237.34126</td>
+      <td>48.091408</td>
+      <td>1</td>
+      <td>121</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#cba5ec</td>
@@ -3476,14 +3809,14 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
       <th>1386591529_oglikmic-1-20250227</th>
       <td>CJ23.56.004.CX.43.01.07</td>
       <td>1386591529</td>
-      <td>xenium_cell_segmentation_kit_v1</td>
-      <td>9677.964844</td>
-      <td>11089.391602</td>
-      <td>True</td>
-      <td>HMBA-Xenium-CJ23.56.004-BG</td>
-      <td>Xenium-CJ23.56.004-BG</td>
-      <td>228d9fa6-bea9-4813-8c82-7285f1e5754b</td>
-      <td>1386591529</td>
+      <td>9677.9650</td>
+      <td>11089.3920</td>
+      <td>10X cell segmentation kit - default</td>
+      <td>Segmented by nucleus expansion of 5.0µm</td>
+      <td>233.14172</td>
+      <td>48.859066</td>
+      <td>1</td>
+      <td>99</td>
       <td>...</td>
       <td>#f2ca7d</td>
       <td>#aa6dec</td>
@@ -3498,7 +3831,7 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
     </tr>
   </tbody>
 </table>
-<p>5 rows × 51 columns</p>
+<p>5 rows × 59 columns</p>
 </div></div></div>
 </div>
 <p>Merging in the taxonomy allows one to select cells by the specific taxons they are associated with, as we will see in a function we create below.</p>
@@ -3512,7 +3845,7 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 <span class="c1"># filtered_human_metadata = human_cell_metadata[~(human_cell_metadata['Neighborhood'] == 'Adjacent')]</span>
 <span class="c1"># Filter out both adjacent and non-neuronal cells.</span>
 <span class="n">filtered_human_metadata</span> <span class="o">=</span> <span class="n">human_cell_metadata</span><span class="p">[</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">human_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Adjacent'</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">human_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Adjacent'</span><span class="p">,</span>
                    <span class="n">human_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Nonneuron'</span><span class="p">)</span>
 <span class="p">]</span>
 
@@ -3530,11 +3863,11 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6ab3ebf02193ebd6844a9c73bae1599d30cf2b0d1607910f17d92ed8e3f443b6.png" src="../_images/6ab3ebf02193ebd6844a9c73bae1599d30cf2b0d1607910f17d92ed8e3f443b6.png" />
-<img alt="../_images/3dd9424d55a7611c353c3e8d10e521d3d1e3364732171ea90a0a87700c94e796.png" src="../_images/3dd9424d55a7611c353c3e8d10e521d3d1e3364732171ea90a0a87700c94e796.png" />
-<img alt="../_images/bc5fad164d42fe3b9dbfc45a0e7db2fdc8a150c9536de5440acbd5864a9ad0d9.png" src="../_images/bc5fad164d42fe3b9dbfc45a0e7db2fdc8a150c9536de5440acbd5864a9ad0d9.png" />
-<img alt="../_images/e4c6d1981b695e25af12239a15e1f1f93bb04fa0e3487c83810d6fb26c780fb9.png" src="../_images/e4c6d1981b695e25af12239a15e1f1f93bb04fa0e3487c83810d6fb26c780fb9.png" />
-<img alt="../_images/5be6bb56013b74c3a86d8b110b1be490e270f762972cf91c6bf4b7a37a07317e.png" src="../_images/5be6bb56013b74c3a86d8b110b1be490e270f762972cf91c6bf4b7a37a07317e.png" />
+<img alt="../_images/1305272e0a1255d2c21b8749e4d4d00bd053c4ea5992e2579402bd23dba0b26c.png" src="../_images/1305272e0a1255d2c21b8749e4d4d00bd053c4ea5992e2579402bd23dba0b26c.png" />
+<img alt="../_images/0914223befbe19b00bcb930c28afd68b6e4113331f330873e1f4affb8c04e27c.png" src="../_images/0914223befbe19b00bcb930c28afd68b6e4113331f330873e1f4affb8c04e27c.png" />
+<img alt="../_images/70fcbd8fe3eeb73bf3f72762563715606e9637f94dcab3be6449f9da3d40f8fb.png" src="../_images/70fcbd8fe3eeb73bf3f72762563715606e9637f94dcab3be6449f9da3d40f8fb.png" />
+<img alt="../_images/ece867459a1d47d9b0a6e7b2563f8da74dd079a3645c9f1169aa56e9943ceb20.png" src="../_images/ece867459a1d47d9b0a6e7b2563f8da74dd079a3645c9f1169aa56e9943ceb20.png" />
+<img alt="../_images/f0db40688e97dd91ce927183a132bac123aa399d31f75512fb436d656acb8737.png" src="../_images/f0db40688e97dd91ce927183a132bac123aa399d31f75512fb436d656acb8737.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3543,7 +3876,7 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 <span class="c1"># filtered_macaque_metadata = macaque_cell_metadata[~(macaque_cell_metadata['Neighborhood'] == 'Adjacent')]</span>
 <span class="c1"># Filter out both adjacent and non-neuronal cells.</span>
 <span class="n">filtered_macaque_metadata</span> <span class="o">=</span> <span class="n">macaque_cell_metadata</span><span class="p">[</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">macaque_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Adjacent'</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">macaque_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Adjacent'</span><span class="p">,</span>
                    <span class="n">macaque_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Nonneuron'</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="k">for</span> <span class="n">color_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'Neighborhood_color'</span><span class="p">,</span> <span class="s1">'Class_color'</span><span class="p">,</span> <span class="s1">'Subclass_color'</span><span class="p">,</span> <span class="s1">'Group_color'</span><span class="p">,</span> <span class="s1">'Cluster_color'</span><span class="p">]:</span>
@@ -3560,11 +3893,11 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb88a2e1fe197eabe1874efac4b0f67ec7a0e35d56253839ce30f26b40cae315.png" src="../_images/eb88a2e1fe197eabe1874efac4b0f67ec7a0e35d56253839ce30f26b40cae315.png" />
-<img alt="../_images/03e89d7a82b48592618bc634b2bf6ae479c31a443aed1eedcb29f63c7a89cfa3.png" src="../_images/03e89d7a82b48592618bc634b2bf6ae479c31a443aed1eedcb29f63c7a89cfa3.png" />
-<img alt="../_images/9f5901cc3e4f23ece8a9504534b734fecb595016a7e1fca5b0a299a6ecea0dc7.png" src="../_images/9f5901cc3e4f23ece8a9504534b734fecb595016a7e1fca5b0a299a6ecea0dc7.png" />
-<img alt="../_images/0ed1e76561aaea9a9998154ec52c8fb8911a18b557306c03febe7209ccbab160.png" src="../_images/0ed1e76561aaea9a9998154ec52c8fb8911a18b557306c03febe7209ccbab160.png" />
-<img alt="../_images/24a11948d7766f4607a762933858f31fb3b118975650245ef810121846f6ffad.png" src="../_images/24a11948d7766f4607a762933858f31fb3b118975650245ef810121846f6ffad.png" />
+<img alt="../_images/903169b4236b32c6c3d135abf2ec9c03a2601b5b740b4d843d169eefc42429b3.png" src="../_images/903169b4236b32c6c3d135abf2ec9c03a2601b5b740b4d843d169eefc42429b3.png" />
+<img alt="../_images/737c94297d6c2763b92e6f388330017aed766bb21c78362648c4bce6d4a86723.png" src="../_images/737c94297d6c2763b92e6f388330017aed766bb21c78362648c4bce6d4a86723.png" />
+<img alt="../_images/06d9b6c80357e5767acf4669ba2683223f3522a0ec7c37e471b0648d9b6736a7.png" src="../_images/06d9b6c80357e5767acf4669ba2683223f3522a0ec7c37e471b0648d9b6736a7.png" />
+<img alt="../_images/590adefacb5c9dcd2926d0a0fb6a396622d1bdab4bce08da73191b378f6cac4d.png" src="../_images/590adefacb5c9dcd2926d0a0fb6a396622d1bdab4bce08da73191b378f6cac4d.png" />
+<img alt="../_images/3b42826e7d767a9d161fedd7df4536b043e8437384e8358ea761b38b0bdce5f5.png" src="../_images/3b42826e7d767a9d161fedd7df4536b043e8437384e8358ea761b38b0bdce5f5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3573,7 +3906,7 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 <span class="c1"># filtered_marmoset_metadata = marmoset_cell_metadata[~(marmoset_cell_metadata['Neighborhood'] == 'Adjacent')]</span>
 <span class="c1"># Filter out both adjacent and non-neuronal cells.</span>
 <span class="n">filtered_marmoset_metadata</span> <span class="o">=</span> <span class="n">marmoset_cell_metadata</span><span class="p">[</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">marmoset_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Adjacent'</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">marmoset_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Adjacent'</span><span class="p">,</span>
                    <span class="n">marmoset_cell_metadata</span><span class="p">[</span><span class="s1">'Neighborhood'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Nonneuron'</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="k">for</span> <span class="n">color_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'Neighborhood_color'</span><span class="p">,</span> <span class="s1">'Class_color'</span><span class="p">,</span> <span class="s1">'Subclass_color'</span><span class="p">,</span> <span class="s1">'Group_color'</span><span class="p">,</span> <span class="s1">'Cluster_color'</span><span class="p">]:</span>
@@ -3590,11 +3923,11 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0482cd104259754db54906041dcd48c6df2db9bd75ae32459414c77da7a0eaae.png" src="../_images/0482cd104259754db54906041dcd48c6df2db9bd75ae32459414c77da7a0eaae.png" />
-<img alt="../_images/9c402c4f93a3a028242220298ce88430456031d91df2bb4a3d691401a04089ad.png" src="../_images/9c402c4f93a3a028242220298ce88430456031d91df2bb4a3d691401a04089ad.png" />
-<img alt="../_images/a45e8fa8052b6b85d2cde10146e0af6bc98f5987f23e6349561f18a70582d4cc.png" src="../_images/a45e8fa8052b6b85d2cde10146e0af6bc98f5987f23e6349561f18a70582d4cc.png" />
-<img alt="../_images/9d45f52a90eacde743f4cfc049e25c771fc44d86af57545019fd50f03ea56475.png" src="../_images/9d45f52a90eacde743f4cfc049e25c771fc44d86af57545019fd50f03ea56475.png" />
-<img alt="../_images/1cd56b6cc387ade21694af6f524d6d83c4e8ef192b398c2c558d92ae6f6d30ba.png" src="../_images/1cd56b6cc387ade21694af6f524d6d83c4e8ef192b398c2c558d92ae6f6d30ba.png" />
+<img alt="../_images/2987cd574046f8d9000f87062f1a7c4a11fe096e4b367cc4cda278bb0c2142cf.png" src="../_images/2987cd574046f8d9000f87062f1a7c4a11fe096e4b367cc4cda278bb0c2142cf.png" />
+<img alt="../_images/8741737236bbff9738bb93498ba4d350d7f6a0d410ffc234a71cf5d0235e5b0d.png" src="../_images/8741737236bbff9738bb93498ba4d350d7f6a0d410ffc234a71cf5d0235e5b0d.png" />
+<img alt="../_images/33a5674182444ec6f5802663efe992593220a08eae285250bc347dccde65368e.png" src="../_images/33a5674182444ec6f5802663efe992593220a08eae285250bc347dccde65368e.png" />
+<img alt="../_images/0b2d53d4c80b58100fdb94048c77b2f9f87e6a40e23698b921aa451d407ec0fc.png" src="../_images/0b2d53d4c80b58100fdb94048c77b2f9f87e6a40e23698b921aa451d407ec0fc.png" />
+<img alt="../_images/1369496187568b3e002ca469a3f31b1f08cfd2afb687e014a88bf987bfb568b8.png" src="../_images/1369496187568b3e002ca469a3f31b1f08cfd2afb687e014a88bf987bfb568b8.png" />
 </div>
 </div>
 </section>
@@ -3735,11 +4068,11 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fb0c3442616e0471b7873017a0c4cf84fba3a40a9d6b13e9641eacecea8dbd10.png" src="../_images/fb0c3442616e0471b7873017a0c4cf84fba3a40a9d6b13e9641eacecea8dbd10.png" />
-<img alt="../_images/fdfcdaee2339ac072106897c48000090616602972068a74c91571dadcd2ba17d.png" src="../_images/fdfcdaee2339ac072106897c48000090616602972068a74c91571dadcd2ba17d.png" />
-<img alt="../_images/e9489fd54db330eada88e667323b183e4bbef5072697fd051e604f73e703acb3.png" src="../_images/e9489fd54db330eada88e667323b183e4bbef5072697fd051e604f73e703acb3.png" />
-<img alt="../_images/e1e1ae32040d29c5bab4e42b5b9d87f13fb25fdebefdd2f3ec1192cfe17fc996.png" src="../_images/e1e1ae32040d29c5bab4e42b5b9d87f13fb25fdebefdd2f3ec1192cfe17fc996.png" />
-<img alt="../_images/c9999b2f8fe52a248f856b157fd04a3ca83fd6baf8c68dcfde4c00e61b124e50.png" src="../_images/c9999b2f8fe52a248f856b157fd04a3ca83fd6baf8c68dcfde4c00e61b124e50.png" />
+<img alt="../_images/cc407fb37ab2ebf9ffab665ea79b4417c79e393e3a79c7a2bc9f541978412c46.png" src="../_images/cc407fb37ab2ebf9ffab665ea79b4417c79e393e3a79c7a2bc9f541978412c46.png" />
+<img alt="../_images/013d463406d482f0152a5b706028564157b180c8ce1d595dde53055bcee93198.png" src="../_images/013d463406d482f0152a5b706028564157b180c8ce1d595dde53055bcee93198.png" />
+<img alt="../_images/0cdb7ef8c75937539c25661912c03c2a2059dfaee92edad476865cfd5be7ae39.png" src="../_images/0cdb7ef8c75937539c25661912c03c2a2059dfaee92edad476865cfd5be7ae39.png" />
+<img alt="../_images/718fec8a64df3d0e00a2bb74280e9bd27256721b9de707b5bf10e8c6d5c59f77.png" src="../_images/718fec8a64df3d0e00a2bb74280e9bd27256721b9de707b5bf10e8c6d5c59f77.png" />
+<img alt="../_images/c363a9619962f3cac82d23f13105d99f73155dfe7bf2baefb3b55b23eb75fd41.png" src="../_images/c363a9619962f3cac82d23f13105d99f73155dfe7bf2baefb3b55b23eb75fd41.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3766,11 +4099,11 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f5a492dd27528ce7f6f9d0e1c3cbfd7e524ab2fdd41a7720cfdf3f8217edfe5a.png" src="../_images/f5a492dd27528ce7f6f9d0e1c3cbfd7e524ab2fdd41a7720cfdf3f8217edfe5a.png" />
-<img alt="../_images/d2d96df271cbf9c2268b8fe7a6882c0b9406925c9a0b8b0f26fd4b8d29f13a41.png" src="../_images/d2d96df271cbf9c2268b8fe7a6882c0b9406925c9a0b8b0f26fd4b8d29f13a41.png" />
-<img alt="../_images/5e93d7d0fff6a05d0bd0b86c9aebd3baeba015ede2e24a3a01d87a804d50342c.png" src="../_images/5e93d7d0fff6a05d0bd0b86c9aebd3baeba015ede2e24a3a01d87a804d50342c.png" />
-<img alt="../_images/39beb874bf9b53985ac1150fcc23e74e91fdaf5376a63170fe9e1c0af26c84db.png" src="../_images/39beb874bf9b53985ac1150fcc23e74e91fdaf5376a63170fe9e1c0af26c84db.png" />
-<img alt="../_images/31ef43010adf7b9f9053e62cf143e9af210b3df71900a7a692db655044798f92.png" src="../_images/31ef43010adf7b9f9053e62cf143e9af210b3df71900a7a692db655044798f92.png" />
+<img alt="../_images/6f093ae414af9e5d7e57a3c724111d93b7fa9dabd3147175de37bb698cac5c11.png" src="../_images/6f093ae414af9e5d7e57a3c724111d93b7fa9dabd3147175de37bb698cac5c11.png" />
+<img alt="../_images/47899a769dc70606a3700579766145f80339abc071f33016f101e3f1409e7268.png" src="../_images/47899a769dc70606a3700579766145f80339abc071f33016f101e3f1409e7268.png" />
+<img alt="../_images/4941762933914e20bfca7ba6554aa54b1ae58d6055eae0f0c5c0c9fd5943b3de.png" src="../_images/4941762933914e20bfca7ba6554aa54b1ae58d6055eae0f0c5c0c9fd5943b3de.png" />
+<img alt="../_images/bb9f427880d862979ada492eb8a3088590521a42b42a0119c4fc98de823c418e.png" src="../_images/bb9f427880d862979ada492eb8a3088590521a42b42a0119c4fc98de823c418e.png" />
+<img alt="../_images/98753e977f1dddf1599f01198d271e47f8a5e76d18b63796115f57247f7e8f7b.png" src="../_images/98753e977f1dddf1599f01198d271e47f8a5e76d18b63796115f57247f7e8f7b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3797,11 +4130,11 @@ cell_to_cluster_membership.csv: 100%|██████████| 88.1M/88.1M
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c43c4ee1570665803f7720394a6a69b07b6bacdb5d872dcfd8b5e906f9ec5eb9.png" src="../_images/c43c4ee1570665803f7720394a6a69b07b6bacdb5d872dcfd8b5e906f9ec5eb9.png" />
-<img alt="../_images/b1b483761b89212673e0dbb76bc32e2eec33e6bd65248c1f0d07aebdfbef84b9.png" src="../_images/b1b483761b89212673e0dbb76bc32e2eec33e6bd65248c1f0d07aebdfbef84b9.png" />
-<img alt="../_images/72c80d6136512cdcfe3a3196648e4e03c7b184f95d840063b172e5b26854bc3b.png" src="../_images/72c80d6136512cdcfe3a3196648e4e03c7b184f95d840063b172e5b26854bc3b.png" />
-<img alt="../_images/4a07256748bb0b307bf31361fbc31046defdad0ea650d4176a402ab96eedb446.png" src="../_images/4a07256748bb0b307bf31361fbc31046defdad0ea650d4176a402ab96eedb446.png" />
-<img alt="../_images/7ff7cb60404b8151db8ce254ca80f48b6982c36ca3e90735b561bf0cb605c029.png" src="../_images/7ff7cb60404b8151db8ce254ca80f48b6982c36ca3e90735b561bf0cb605c029.png" />
+<img alt="../_images/f6106f4eaa8f0d6f950cf28112925459115decd9a69e6b7696c5e32de8818af3.png" src="../_images/f6106f4eaa8f0d6f950cf28112925459115decd9a69e6b7696c5e32de8818af3.png" />
+<img alt="../_images/4e2f86fb250071ac60d69dfa41985269dc90f253388b49166b6ceeb597b17203.png" src="../_images/4e2f86fb250071ac60d69dfa41985269dc90f253388b49166b6ceeb597b17203.png" />
+<img alt="../_images/7168ee5df1298fd31c8a2656ee063ce3a11688dd8d8bdc75ba2ca9267261d17a.png" src="../_images/7168ee5df1298fd31c8a2656ee063ce3a11688dd8d8bdc75ba2ca9267261d17a.png" />
+<img alt="../_images/d55b51102bfd8fa27ab841a4709e3330754eb0fa26c2658f64cc19b8ec4d1ffb.png" src="../_images/d55b51102bfd8fa27ab841a4709e3330754eb0fa26c2658f64cc19b8ec4d1ffb.png" />
+<img alt="../_images/1fdf7ca85a59218506cf267b8ba1a9feff3f058afe5d23976f1f8c98f3166225.png" src="../_images/1fdf7ca85a59218506cf267b8ba1a9feff3f058afe5d23976f1f8c98f3166225.png" />
 </div>
 </div>
 <p>In the next tutorial, we will explore <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_spatial_genes.html">gene expression patterns across these spatial transcriptomics datasets</a>.</p>

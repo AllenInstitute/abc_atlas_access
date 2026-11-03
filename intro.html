@@ -281,7 +281,7 @@
 <li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
@@ -372,8 +372,8 @@
 <li class="toctree-l2"><a class="reference internal" href="docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/supplemental_metadata_descriptions/README.html">Supplemental metadata</a></li>
 </ul>
 </details></li>
 </ul>
@@ -670,6 +670,24 @@ mouse brain</span></a>
 <section id="release-notes">
 <h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p><strong>[Relase (version 20261101), abc_atlas_access (v1.4.2)]</strong></p>
+<ul>
+<li><p>Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.</p>
+<ul>
+<li><p>Updated Marmoset slab plane coordinates and geojsons from new
+spatial transform.</p></li>
+</ul>
+</li>
+<li><p>Update directory names to include species instead of ID for clarity:</p>
+<ul>
+<li><p>HMBA-MERSCOPE-H22.30.001-BG -&gt; HMBA-BG-MERSCOPE-Human</p></li>
+<li><p>HMBA-MERSCOPE-QM23.50.001-BG -&gt; HMBA-BG-MERSCOPE-Macaque</p></li>
+<li><p>HMBA-Xenium-CJ23.56.004-BG -&gt; HMBA-BG-Xenium-Marmoset</p></li>
+</ul>
+</li>
+<li><p>~ 2000k new cells for Human</p></li>
+</ul>
+</li>
 <li><p><strong>[Relase (version 20261031), abc_atlas_access (v1.4.1)]</strong></p>
 <ul>
 <li><p>HMBA-10xMultiome-Cross-Species</p>

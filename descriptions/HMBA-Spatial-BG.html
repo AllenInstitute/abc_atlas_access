@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species &#8212; Allen Brain Cell Atlas - Data Access</title>
+    <title>Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
   
@@ -274,7 +274,7 @@
 <li class="toctree-l2"><a class="reference internal" href="HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
@@ -365,8 +365,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../docs/cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/parcellation_annotations/README.html">Parcellation annotations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html">Supplemental metadata</a></li>
 </ul>
 </details></li>
 </ul>
@@ -549,7 +549,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</h1>
+    <h1>Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -563,31 +563,22 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-spatial-transcriptomics-cells-for-each-species">
-<h1>Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-spatial-transcriptomics-cells-for-each-species" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="human-mammalian-brain-basal-ganglia-spatial-transcriptomic-cells-and-nuclei-for-each-species">
+<h1>Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species<a class="headerlink" href="#human-mammalian-brain-basal-ganglia-spatial-transcriptomic-cells-and-nuclei-for-each-species" title="Link to this heading">#</a></h1>
 <p>Data and metadata for the spatial component of the Human and Mammalian Brain Atlas - Basal Ganglia (HMBA-BG) dataset.</p>
 <p>The basal ganglia are a set of subcortical structures critical for motor control, particularly in the context
 of action selection, motor learning and emotional state, whose coarse functional organization is
-well-described in the literature. Although single-cell RNA-Seq studies have greatly enhanced our
+well-described in the literature. Although single-cell and single-nucleus RNA-seq studies have greatly enhanced our
 understanding of cellular diversity in the brain, the exact spatial distribution of cell types within the
-brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium
-enabling spatial profiling of hundreds of genes for each cell, and the mapping the cells to the
-<a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">consensus basal ganglia cell type taxonomy</a>.</p>
+brain has been difficult to determine. Using spatial transcriptomics platforms such as MERSCOPE or Xenium enables spatial profiling of hundreds of genes for each cell and mapping the spatial cells to the <a class="reference external" href="https://alleninstitute.github.io/abc_atlas_access/notebooks/hmba_bg_clustering_analysis_and_annotation.html">consensus basal ganglia cell type taxonomy</a>.</p>
 <p>These data form the basis of the cross species <a class="reference internal" href="HMBA-BG-taxonomy.html"><span class="std std-doc">Basal Ganglia (BG) taxonomy</span></a>.</p>
-<p>For more information on the taxonomy, please refer to the following webpage: <a class="reference external" href="https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia">Human and Mammalian Brain Atlas Release: Basal Ganglia</a>.. Additionally, you can see the associated notebooks linked at the end of this page.</p>
+<p>For more information on the taxonomy, please refer to the following webpage: <a class="reference external" href="https://brain-map.org/consortia/hmba/hmba-release-basal-ganglia">Human and Mammalian Brain Atlas Release: Basal Ganglia</a>. Additionally, you can see the associated notebooks linked at the end of this page.</p>
 <p>The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset. We’ll describe each component below.</p>
-<p>The three species are broken up by their donor ID. These are:</p>
-<ul class="simple">
-<li><p>Human: H22.30.001</p></li>
-<li><p>Macaque: QM23.50.001</p></li>
-<li><p>Marmoset: CJ23.56.004</p></li>
-</ul>
+<p>The three species are broken into individual directories by species name.</p>
 <p>Each release directory also includes the name of the  platform used, either MERSCOPE (Human and Macaque) or
 Xenium (Marmoset).</p>
-<p>Below are links to the directories containing h5ad files of the expression
-matrixes for each species both the raw counts and the log2 of the counts per
-million for each cell.</p>
+<p>Below are links to the directories containing h5ad files of the expression matrixes for each species both the raw counts, batch normalized counts, and natural log transformed batch normalized counts for each cell or nucleus.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Component</p></th>
@@ -597,24 +588,21 @@ million for each cell.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Human: Expression Matrices</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-H22.30.001-BG/20250930/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-H22.30.001-BG/20250930/</a></p></td>
-<td><p>1.34 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-BG-MERSCOPE-Human/20261101/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-BG-MERSCOPE-Human/20261101/</a></p></td>
+<td><p>2.5 GB</p></td>
 </tr>
 <tr class="row-odd"><td><p>Macaque: Expression Matrices</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-MERSCOPE-QM23.50.001-BG/20250630/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-MERSCOPE-QM23.50.001-BG/20250630/</a></p></td>
-<td><p>1.52 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-BG-MERSCOPE-Macaque/20261101/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-BG-MERSCOPE-Macaque/20261101/</a></p></td>
+<td><p>5.2 GB</p></td>
 </tr>
 <tr class="row-even"><td><p>Marmoset: Expression Matrices</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20250630/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-Xenium-CJ23.56.004-BG/20250630/</a></p></td>
-<td><p>0.61 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-BG-Xenium-Marmoset/20261101/">s3://allen-brain-cell-atlas/expression_matrices/HMBA-BG-Xenium-Marmoset/20261101/</a></p></td>
+<td><p>860.0 MB</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>The following links contain metadata tables summarizing the cells, specimens the cells originate from, donors,
-and coordinates. For more information on how the metadata is laid out and examples on using and joining the
-different tables, see the the spatial notebooks linked below. For the metadata, a supplementary table
-of quality control and other metrics is available. You can find descriptions of the columns on the Resources page under <a class="reference internal" href="../docs/supplemental_metadata_descriptions/README.html"><span class="std std-doc">Supplemental Metadata Descriptions</span></a>.</p>
+<p>The following links contain metadata tables summarizing the cells, specimens the cells/nuclei originate from, donors, coordinates, and visualization boundaries.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Component</p></th>
@@ -624,20 +612,22 @@ of quality control and other metrics is available. You can find descriptions of 
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Human: Cell and gene metadata</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-H22.30.001-BG/20260228/">s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-H22.30.001-BG/20260228/</a></p></td>
-<td><p>4.2 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-MERSCOPE-Human/20261101/">s3://allen-brain-cell-atlas/metadata/HMBA-BG-MERSCOPE-Human/20261101/</a></p></td>
+<td><p>3.9 GB</p></td>
 </tr>
 <tr class="row-odd"><td><p>Macaque: Cell and gene metadata</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/">s3://allen-brain-cell-atlas/metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630</a></p></td>
-<td><p>2.5 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-MERSCOPE-Macaque/20261101/">s3://allen-brain-cell-atlas/metadata/HMBA-BG-MERSCOPE-Macaque/20261101</a></p></td>
+<td><p>2.6 GB</p></td>
 </tr>
 <tr class="row-even"><td><p>Marmoset: Cell and gene metadata</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/">s3://allen-brain-cell-atlas/metadata/HMBA-Xenium-CJ23.56.004-BG/20250630/</a></p></td>
-<td><p>1.2 GB</p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-BG-Xenium-Marmoset/20261101/">s3://allen-brain-cell-atlas/metadata/HMBA-BG-Xenium-Marmoset/20261101/</a></p></td>
+<td><p>1.3 GB</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>You can find descriptions of the columns on the Resources page under <a class="reference external" href="https://github.com/AllenInstitute/abc_atlas_access/blob/u/morriscb/hmbabgSpatialUpdate/docs/supplemental_metadata_descriptions/hmba_bg_column_descriptions.csv">Metadata Descriptions</a>. Descriptions for additional metadata previous to version 20261101 can be
+found <a class="reference external" href="https://github.com/AllenInstitute/abc_atlas_access/blob/u/morriscb/hmbabgSpatialUpdate/docs/supplemental_metadata_descriptions/hmba_additional_metadata_pre_20261101_release.md">here</a>.</p>
 <p>The links below contain geojson files that define the manually drawn polygons that represent anatomical annotation of select basal ganglia regions. These are used and tutorialized in the spatial notebooks linked at the bottom of this page. Please note that these polygons are not derived from registration to the Harmonized Ontology of Mammalian Brain Anatomy (HOMBA). They should instead be used as cellular groupings to orient the user in the anatomical context of the spatial transcriptomics data.”</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -648,15 +638,15 @@ of quality control and other metrics is available. You can find descriptions of 
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Human: Image volumes and polygons</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/">s3://allen-brain-cell-atlas/image_volumes/HMBA-MERSCOPE-H22.30.001-BG/20250630/</a></p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-BG-MERSCOPE-Human/20250630/">s3://allen-brain-cell-atlas/image_volumes/HMBA-BG-MERSCOPE-Human/20250630/</a></p></td>
 <td><p>86.6 KB</p></td>
 </tr>
 <tr class="row-odd"><td><p>Macaque: Image volumes and polygons</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-MERSCOPE-QM23.50.001-BG/20250630/">s3://allen-brain-cell-atlas/image_volumes/HMBA-MERSCOPE-QM23.50.001-BG/20250630/</a></p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-BG-MERSCOPE-Macaque/20250630/">s3://allen-brain-cell-atlas/image_volumes/HMBA-BG-MERSCOPE-Macaque/20250630/</a></p></td>
 <td><p>114.6 KB</p></td>
 </tr>
 <tr class="row-even"><td><p>Marmoset: Image volumes and polygons</p></td>
-<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-Xenium-CJ23.56.004-BG/20250630/">s3://allen-brain-cell-atlas/image_volumes/HMBA-Xenium-CJ23.56.004-BG/20250630/</a></p></td>
+<td><p><a class="reference external" href="https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-BG-Xenium-Marmoset/20261101/">s3://allen-brain-cell-atlas/image_volumes/HMBA-BG-Xenium-Marmoset/20261101/</a></p></td>
 <td><p>422.5 KB</p></td>
 </tr>
 </tbody>

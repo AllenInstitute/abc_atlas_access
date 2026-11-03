@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Supplemental Metadata Descriptions &#8212; Allen Brain Cell Atlas - Data Access</title>
+    <title>Supplemental metadata &#8212; Allen Brain Cell Atlas - Data Access</title>
   
   
   
@@ -65,8 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HMBA Basal Ganglia: Neuroglancer Views" href="../neuroglancer_hmba/README.html" />
-    <link rel="prev" title="Parcellation annotations" href="../parcellation_annotations/README.html" />
+    <link rel="prev" title="HMBA Basal Ganglia: Neuroglancer Views" href="../neuroglancer_hmba/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -153,10 +152,6 @@
     </div>
   
 
-  
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
   
 </div>
 
@@ -278,7 +273,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-BG-taxonomy.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: clustering and annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-10XMultiome-BG-Cross-Species.html">Human-Mammalian Brain - Basal Ganglia 10X snRNASeq data: Cross-Species gene expression across species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-10XMultiome-BG.html">Human-Mammalian Brain - Basal Ganglia 10X snRANSeq data: Individual species gene expression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomics cells for each species</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Spatial-BG.html">Human-Mammalian Brain - Basal Ganglia: spatial transcriptomic cells and nuclei for each species</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
@@ -369,8 +364,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../cluster_annotations/README.html">Cluster annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gene_lists/README.html">Gene lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../parcellation_annotations/README.html">Parcellation annotations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Supplemental Metadata Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroglancer_hmba/README.html">HMBA Basal Ganglia: Neuroglancer Views</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Supplemental metadata</a></li>
 </ul>
 </details></li>
 </ul>
@@ -542,9 +537,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -555,19 +548,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Supplemental Metadata Descriptions</h1>
+    <h1>Supplemental metadata</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hmba-spatial-basal-ganglia-data-supplemental-columns">HMBA Spatial Basal Ganglia data supplemental columns</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -577,49 +562,12 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="supplemental-metadata-descriptions">
-<h1>Supplemental Metadata Descriptions<a class="headerlink" href="#supplemental-metadata-descriptions" title="Link to this heading">#</a></h1>
-<section id="hmba-spatial-basal-ganglia-data-supplemental-columns">
-<h2>HMBA Spatial Basal Ganglia data supplemental columns<a class="headerlink" href="#hmba-spatial-basal-ganglia-data-supplemental-columns" title="Link to this heading">#</a></h2>
-<p>Below we list column names and descriptions for the columns available in the
-cell_supplemental_metadata table for the species in the spatial BG dataset.
-The cell_metadata tables includes a the column</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="supplemental-metadata">
+<h1>Supplemental metadata<a class="headerlink" href="#supplemental-metadata" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>‘qc_pass’: aggregate of any/all QC metrics used to filter out low-quality cells</p></li>
+<li><p><a class="reference external" href="https://github.com/AllenInstitute/abc_atlas_access/blob/u/morriscb/hmbabgSpatialUpdate/docs/supplemental_metadata_descriptions/hmba_bg_column_descriptions.csv">HMBA-BG Spatial</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AllenInstitute/abc_atlas_access/blob/u/morriscb/hmbabgSpatialUpdate/docs/supplemental_metadata_descriptions/hmba_additional_metadata_pre_20261101_release.md">HMBA-BG Spatial (pre ver. 20261101)</a></p></li>
 </ul>
-<p>Additionally in the slab_plane_coordinates table the additional columns
-[‘x_rotated_um’, ‘y_rotated_um’]: Unofficial transformation of [‘x’, ‘y’] that uses a manual midline annotation to correctly orient each section (dorsal up; midline left). These are retained for context
-however, users should use the <code class="docutils literal notranslate"><span class="pre">x/y_slab_mm</span></code> coordinates which line up with the manually annotated polygons.</p>
-<ul class="simple">
-<li><p>All species</p>
-<ul>
-<li><p>‘total_counts’: detected counts of all spots, includes both genes and any control probes or codewords (controls differ slightly between MERSCOPE and Xenium platforms; see individual species for breakdown)</p></li>
-<li><p>‘total_counts_genes’: detected counts of gene transcripts</p></li>
-</ul>
-</li>
-<li><p>Human (H22.30.001) &amp; Macaque (QM23.50.001):</p>
-<ul>
-<li><p>[‘total_counts_Blank’, ‘pct_counts_Blank’]: control for MERSCOPE platform</p></li>
-<li><p>‘n_genes_by_counts’: number of unique genes per cell</p></li>
-<li><p>[‘doublet_singlet_score_diff’, ‘doublet_diff_threshold’]: parameters related to SOLO doublet detection</p></li>
-<li><p>[‘blanks_filter’, ‘genes_filter’, ‘counts_filter’, ‘doublets_filter’]: QC pass boolean for each metric</p></li>
-<li><p>‘qc_pass_and_singlet’: boolean describing if a cell passed QC AND was predicted to be a singlet. Not usually used, but could be useful to have in the future.</p></li>
-</ul>
-</li>
-<li><p>Macaque (QM23.50.001):</p>
-<ul>
-<li><p>[‘incongruous_genes_pct’, ‘incongruous_pairs_pct’]: Segmentation QC metric on manually defined genes that shouldn’t be expressed together</p></li>
-</ul>
-</li>
-<li><p>Marmoset (CJ23.56.004):</p>
-<ul>
-<li><p>[‘total_counts_control_probe’, ‘total_counts_genomic_control’, ‘total_counts_control_codeword’, ‘total_counts_unassigned_codeword’, ‘total_counts_deprecated_codeword’]: controls for Xenium platform</p></li>
-<li><p>[‘cell_area’, ‘nucleus_area’, ‘nucleus_count’]: additional metadata generated by cell segmentation</p></li>
-<li><p>‘segmentation_method’: specifies which stain or method was used by the 10X Cell Segmentation Kit algorithm; categories include    [‘Segmented by boundary stain (ATP1A1+CD45+E-Cadherin)’, ‘Segmented by interior stain (18S)’, ‘Segmented by nucleus expansion of 5.0µm’]</p></li>
-</ul>
-</li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -653,22 +601,13 @@ however, users should use the <code class="docutils literal notranslate"><span c
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../parcellation_annotations/README.html"
+       href="../neuroglancer_hmba/README.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Parcellation annotations</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../neuroglancer_hmba/README.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">HMBA Basal Ganglia: Neuroglancer Views</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -676,23 +615,6 @@ however, users should use the <code class="docutils literal notranslate"><span c
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hmba-spatial-basal-ganglia-data-supplemental-columns">HMBA Spatial Basal Ganglia data supplemental columns</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
