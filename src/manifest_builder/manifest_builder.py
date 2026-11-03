@@ -316,7 +316,12 @@ if __name__ == "__main__":
         type=str,
         default=[
             "releases", "SEAAD-10X", "SEAAD-MERFISH", "Zhuang-C57BL6J", "neuroglancer",
-            "abc_kb_ingest"
+            "abc_kb_ingest",
+            "HMBA-10xMultiome-BG-Aligned", # Renamed to HMBA-10xMultiome-BG-Cross-Species
+            "HMBA-BG-taxonomy-CCN20250428", # Renamed to HMBA-BG-taxonomy
+            "HMBA-MERSCOPE-H22.30.001-BG", # HMBA-MERSCOPE-BG-Human
+            "HMBA-MERSCOPE-QM23.50.001-BG", # HMBA-MERSCOPE-BG-Macaque
+            "HMBA-Xenium-CJ23.56.004-BG", # HMBA-Xenium-BG-Marmoset
         ],
         help="Skip a given project for all directories that start with the "
         "given pattern. (e.g. SEAD will exclude all directories that "
