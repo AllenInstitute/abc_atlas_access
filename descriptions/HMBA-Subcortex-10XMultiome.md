@@ -1,6 +1,10 @@
-# Human-Mammalian Brain - Subcortex 10X snRNASeq data
+# Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: 10X snRNA-seq Data
 
-[INTRO TEXT, doesn't need to be fancy. I can just write a summary of how many nuclei/genes are in the dataset.]
+The Marmoset Subcortical Cell Atlas (MSCA), is a multiomic atlas of the common marmoset (Callithrix jacchus) subcortex that integrates single nucleus transcriptomics, chromatin accessibility, and spatial transcriptomics. Part of the Human and Mammalian Brain Atlas ([HMBA](https://brain-map.org/consortia/hmba)) effort within the NIH's BRAIN Initiative&reg; Cell Atlas Network ([BICAN](https://brain-bican.org/)), this dataset comprehensively samples key subcortical structures in the non-human primate, including the hippocampal formation, amygdala, olfactory areas, basal forebrain, thalamus, hypothalamus, midbrain, and major hindbrain structures (excluding cerebellar cortex). 
+
+The dataset includes the gene expression data from the snRNA-seq component of ~680k high-quality nuclei collected via 10x Multiome (paired snRNA-seq + ATAC-seq). The entire subcortex of four adult marmoset donors (2M, 2F) was sampled via contiguous tiles and resulted in ~680k cells passing rigorous quality control (QC). The data were clustered to resolve 1,737 transcriptomic Clusters. Coupled with the anatomical anchoring provided by the Xenium spatial transcriptomics dataset, these Clusters were hierarchically organized 212 Groups and 17 Classes to form a reference cell type taxonomy of the non-human primate subcortex.
+
+For more information on this dataset and the associated Xenium spatial transcriptomics data, please refer to the publication: [Dan, Turner, DeBerardine, et al. (2026). Spatial and regulatory organization of cell identity across the primate subcortex. Cell. https://doi.org/10.1016/j.cell.2026.10.007](https://doi.org/10.1016/j.cell.2026.10.007).
 
 The expression matrices for both raw counts and log normalized data as well as
 the associated metadata are hosted on AWS S3 bucket as
@@ -15,8 +19,8 @@ Data is being shared under the CC BY NC 4.0 license.
 
 Related resources:
 * Taxonomy and Clustering analysis of ~1 million single cell/nuclei
-  transcriptomes in Marmoset ([HMBA-Subcortex-taxonomy](HMBA-Subcortex-taxonomy.md))
-* Spatial transcriptomic data for the marmoset subcortex ([HMBA-Subcortex-Spatial](HMBA-Subcortex-Spatial.md))
+  transcriptomes in Marmoset ([HMBA-Subcortex-taxonomy-Marmoset](HMBA-Subcortex-taxonomy.md))
+* Spatial transcriptomic data for the marmoset subcortex ([HMBA-Subcortex-Spatial-Marmoset](HMBA-Subcortex-Spatial.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb):
