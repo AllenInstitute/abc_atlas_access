@@ -1,9 +1,13 @@
-# Human-Mammalian Brain - Subcortex: spatial transcriptomic cells and nuclei
+# Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: 10X Xenium Spatial Transcriptomics Data
 
-[INTRO TEXT]
+The Marmoset Subcortical Cell Atlas (MSCA), is a multiomic atlas of the common marmoset (Callithrix jacchus) subcortex that integrates single nucleus transcriptomics, chromatin accessibility, and spatial transcriptomics. Part of the Human and Mammalian Brain Atlas ([HMBA](https://brain-map.org/consortia/hmba)) effort within the NIH's BRAIN Initiative&reg; Cell Atlas Network ([BICAN](https://brain-bican.org/)), this dataset comprehensively samples key subcortical structures in the non-human primate, including the hippocampal formation, amygdala, olfactory areas, basal forebrain, thalamus, hypothalamus, midbrain, and major hindbrain structures (excluding cerebellar cortex). 
 
-The expression matrices for both raw counts, batch-normalized log normalized data as well as
-the associated metadata and geojson drawings define the subcortex are hosted on AWS S3 bucket as
+This cellular-resolution Xenium spatial transcriptomic dataset includes 5.6 million cells profiled from 47 coronal hemisections from a single adult male marmoset donor, sampling the rostral-caudal extent of subcortical structures. The spatial cells were mapped to the 1,737 snRNA-seq Clusters defined in the MSCA reference cell type taxonomy, and the resulting spatial localization of the Clusters provided anatomical anchoring and nomenclature to the Group and Class hierarchy levels of the MSCA taxonomy.
+
+For more information on this dataset and the associated 10X Multiome data, please refer to the publication: [Dan, Turner, DeBerardine, et al. (2026). Spatial and regulatory organization of cell identity across the primate subcortex. Cell. https://doi.org/10.1016/j.cell.2026.10.007](https://doi.org/10.1016/j.cell.2026.10.007).
+
+The expression matrices for raw counts, batch-normalized counts, and natural logarithm transformed batch-normalized counts, 
+as well as the associated cellular metadata and geojson polygons defining the hemisection outlines are hosted on AWS S3 bucket as
 a AWS Public Dataset:
 | Component | Current Version | Size    |
 |---|--|---------|
@@ -18,9 +22,9 @@ Data is being shared under the CC BY NC 4.0 license.
 
 
 Related resources:
-* Taxonomy and Clustering analysis of ~1 million single cell/nuclei
-  transcriptomes in Marmoset ([HMBA-Subcortex-taxonomy](HMBA-Subcortex-taxonomy.md))
-* Single cell/nuclei transcriptomes from that marmoset subcortex.([HMBA-Subcortex-10XMultiome](HMBA-Subcortex-10XMultiome.md))
+* Taxonomy and Clustering analysis of ~1 million single nuclei
+  transcriptomes in Marmoset ([HMBA-Subcortex-taxonomy-Marmoset](HMBA-Subcortex-taxonomy.md))
+* Single nuclei transcriptomes from that marmoset subcortex.([HMBA-Subcortex-10XMultiome-Marmoset](HMBA-Subcortex-10XMultiome.md))
 
 
 Associated notebooks:
