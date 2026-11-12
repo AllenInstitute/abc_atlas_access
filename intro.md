@@ -36,6 +36,8 @@ The current data release includes:
   (ASAP)**
 * **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_dataset.md)
   (HMBA)**
+* **[Human and Mammalian Brain - Subcortex Marmoset](descriptions/HMBA-Subcortex-Marmoset-dataset.md)
+  (HMBA)**
 * **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-dataset.md)
   (SEA-AD)**
 
@@ -81,7 +83,9 @@ notebook.
   (Kimberly Siletti)**
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_notebooks.md)
   (ASAP)**
-* **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
+* **[Human and Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
+  (HMBA)**
+* **[Human and Mammalian Brain - Subcortex Marmoset](descriptions/HMBA-Subcortex-Marmoset-notebooks.md)
   (HMBA)**
 * **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-notebooks.md)
   (SEA-AD)**
@@ -94,8 +98,9 @@ notebook.
     * 5,580,065 cells over the Marmoset subcortex. These data are a super-set
       of the Marmoset Basal Ganglia release.
   * Release Marmoset Subcortical taxonomy.
-    *  taxonomy of 1,737 transcriptomic Clusters, 212 Groups, and 17 Classes
-       derived form the ~680k snRNAseq data.
+    *  Three level taxonomy consisting of 1,737 transcriptomic Clusters, 212
+       Groups, and 17 Classes derived form the ~680k snRNAseq, Subcortex
+       Marmoset data.
 * **[Release (version 20261101), abc_atlas_access (v1.4.2)]**
   * Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.
     * Updated Marmoset slab plane coordinates and geojsons from new
