@@ -11,9 +11,9 @@ as well as the associated cellular metadata and geojson polygons defining the he
 a AWS Public Dataset:
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/metadata/HMBA-Subcortex-Xenium-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Subcortex-Xenium-Marmoset/20261130/) | 3.9 GB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-Subcortex-Xenium-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-Subcortex-Xenium-Marmoset/20261130/) | 3.9 GB |
 | Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Subcortex-Xenium-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Subcortex-Xenium-Marmoset/20261130/) | 3.9 GB |
-| Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumesHMBA-Subcortex-Xenium-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-Subcortex-Xenium-Marmoset/20261130/) | 86.6 KB |
+| Image volumes and polygons | [s3://allen-brain-cell-atlas/image_volumes/HMBA-Subcortex-Xenium-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#image_volumes/HMBA-Subcortex-Xenium-Marmoset/20261130/) | 86.6 KB |
 
 You can find descriptions of the columns on the Resources page under [Metadata Descriptions](https://github.com/AllenInstitute/abc_atlas_access/blob/u/morriscb/hmbabgSpatialUpdate/docs/supplemental_metadata_descriptions/hmba_bg_column_descriptions.csv)
 
