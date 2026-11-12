@@ -11,7 +11,7 @@ The associated metadata for the cell type taxonomy and files to run MapMyCells u
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Subcortex-taxonomy-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Subcortex-taxonomy-Marmoset/20261130/) | 189.0 MB |
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Subcortex-taxonomy-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Subcortex-taxonomy-Marmoset/20261130/) | 67.4 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 

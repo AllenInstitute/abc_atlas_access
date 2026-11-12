@@ -12,8 +12,8 @@ a AWS Public Dataset:
 
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-Subcortex-10xMultiome-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-Subcortex-10xMultiome-Marmoset/20261130/) | 29.1 GB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Subcortex-10xMultiome-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Subcortex-10xMultiome-Marmoset/20261130/) | 648.1 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/HMBA-Subcortex-10xMultiome-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/HMBA-Subcortex-10xMultiome-Marmoset/20261130/) | 12.6 GB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/HMBA-Subcortex-10xMultiome-Marmoset/20261130/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/HMBA-Subcortex-10xMultiome-Marmoset/20261130/) | 144.2 MB |
 
 Data is being shared under the CC BY NC 4.0 license.
 
