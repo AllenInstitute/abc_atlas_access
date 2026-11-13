@@ -20,7 +20,7 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The Early-Winter 2026 public beta data release includes:
+The current data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) (Evan Macosko, Hongkui Zeng)**
@@ -35,6 +35,8 @@ The Early-Winter 2026 public beta data release includes:
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_dataset.md)
   (ASAP)**
 * **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_dataset.md)
+  (HMBA)**
+* **[Human and Mammalian Brain - Subcortex Marmoset](descriptions/HMBA-Subcortex-Marmoset-dataset.md)
   (HMBA)**
 * **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-dataset.md)
   (SEA-AD)**
@@ -81,14 +83,25 @@ notebook.
   (Kimberly Siletti)**
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_notebooks.md)
   (ASAP)**
-* **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
+* **[Human and Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
+  (HMBA)**
+* **[Human and Mammalian Brain - Subcortex Marmoset](descriptions/HMBA-Subcortex-Marmoset-notebooks.md)
   (HMBA)**
 * **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-notebooks.md)
   (SEA-AD)**
 
 
 ## Release Notes
-* **[Relase (version 20261101), abc_atlas_access (v1.4.2)]**
+* **[Release (version 20261130), abc_atlas_access (v1.4.3)]**
+  * Release Marmoset Subcortical data, both snRNAseq and Xenium Spatial.
+    * 678,917 single nuclei in the Marmoset Subcortex from 4 donors.
+    * 5,580,065 cells over the Marmoset subcortex. These data are a super-set
+      of the Marmoset Basal Ganglia release.
+  * Release Marmoset Subcortical taxonomy.
+    *  Three level taxonomy consisting of 1,737 transcriptomic Clusters, 212
+       Groups, and 17 Classes derived form the ~680k snRNAseq, Subcortex
+       Marmoset data.
+* **[Release (version 20261101), abc_atlas_access (v1.4.2)]**
   * Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.
     * Updated Marmoset slab plane coordinates and geojsons from new
       spatial transform.
@@ -97,14 +110,14 @@ notebook.
     * HMBA-MERSCOPE-QM23.50.001-BG -> HMBA-BG-MERSCOPE-Macaque
     * HMBA-Xenium-CJ23.56.004-BG -> HMBA-BG-Xenium-Marmoset
   * ~ 2000k new cells for Human
-* **[Relase (version 20261031), abc_atlas_access (v1.4.1)]**
+* **[Release (version 20261031), abc_atlas_access (v1.4.1)]**
   * HMBA-10xMultiome-Cross-Species
     * Updated taxonomy names and colors compared to release 20260711
     * Updated name from HMBA-10xMultiome-Aligned to HMBA-10xMultiome-Cross-Species
     * Additional NIMP nhash identifiers for library aliquots and marmoset donors added.
   * SEA-AD-Multiregion-10X and SEA-AD-CaH-10X
     * Update Race value colors.
-* **[Relase (version 20260711), abc_atlas_access (v1.4.0)]**
+* **[Release (version 20260711), abc_atlas_access (v1.4.0)]**
   * SEA-AD-Multiregion-10X
     * Added 10 region SEA-AD dataset with taxonomy.
     * 8 Million single nuclei transcriptoms

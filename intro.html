@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -285,6 +285,12 @@
 <li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/HMBA-Subcortex-Marmoset-dataset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: Taxonomy and Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Subcortex-taxonomy-Marmoset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortical Cell Atlas (MSCA) Cell Type Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Subcortex-10XMultiome-Marmoset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: 10X snRNA-seq Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptions/HMBA-Subcortex-Spatial-Marmoset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: 10X Xenium Spatial Transcriptomics Data</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/SEA-AD-dataset.html">SEA-AD datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/SEA-AD-Multiregion-taxonomy.html">SEA-AD - Multiregion taxonomy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="descriptions/SEA-AD-Multiregion-10X.html">SEA-AD - Multiregion single nucleus transcriptomes</a></li>
@@ -355,6 +361,13 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_bg_macaque_patchseq.html">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/HMBA-Subcortex-Marmoset-notebooks.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_subcortex_marmoset_clustering_analysis_and_annotation.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex 10X snRNA-seq: Clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_subcortex_marmoset_10X_RNASeq.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex 10X snRNA-seq: Gene Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_subcortex_marmoset_spatial_slabs_and_taxonomy.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex Xenium Spatial Transcriptomics: Slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hmba_subcortex_marmoset_spatial_genes.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex Xenium Spatial Transcriptomics: Gene Expression</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="descriptions/SEA-AD-notebooks.html">SEA-AD - notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -601,7 +614,7 @@ S3 bucket as a AWS Public Dataset, <a class="reference external" href="https://a
 No account or login is required for access. <em><strong>The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.</strong></em></p>
-<p>The Early-Winter 2026 public beta data release includes:</p>
+<p>The current data release includes:</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="descriptions/WMB_dataset.html"><span class="std std-doc">Mouse whole-brain transcriptomic cell type atlas</span></a>
 (Hongkui Zeng)</strong></p></li>
@@ -617,6 +630,8 @@ example use cases.</strong></em></p>
 <li><p><strong><a class="reference internal" href="descriptions/ASAP-PMDBS_dataset.html"><span class="std std-doc">Human Postmortem-Derived Brain Sequencing Collection</span></a>
 (ASAP)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_dataset.html"><span class="std std-doc">Human-Mammalian Brain - Basal Ganglia</span></a>
+(HMBA)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/HMBA-Subcortex-Marmoset-dataset.html"><span class="std std-doc">Human and Mammalian Brain - Subcortex Marmoset</span></a>
 (HMBA)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/SEA-AD-dataset.html"><span class="std std-doc">SEA-AD: Multiregion and Caudate datasets</span></a>
 (SEA-AD)</strong></p></li>
@@ -661,7 +676,9 @@ mouse brain</span></a>
 (Kimberly Siletti)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/ASAP-PMDBS_notebooks.html"><span class="std std-doc">Human Postmortem-Derived Brain Sequencing Collection</span></a>
 (ASAP)</strong></p></li>
-<li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_notebooks.html"><span class="std std-doc">Human-Mammalian Brain - Basal Ganglia</span></a>
+<li><p><strong><a class="reference internal" href="descriptions/HMBA-BG_notebooks.html"><span class="std std-doc">Human and Mammalian Brain - Basal Ganglia</span></a>
+(HMBA)</strong></p></li>
+<li><p><strong><a class="reference internal" href="descriptions/HMBA-Subcortex-Marmoset-notebooks.html"><span class="std std-doc">Human and Mammalian Brain - Subcortex Marmoset</span></a>
 (HMBA)</strong></p></li>
 <li><p><strong><a class="reference internal" href="descriptions/SEA-AD-notebooks.html"><span class="std std-doc">SEA-AD: Multiregion and Caudate datasets</span></a>
 (SEA-AD)</strong></p></li>
@@ -670,7 +687,25 @@ mouse brain</span></a>
 <section id="release-notes">
 <h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>[Relase (version 20261101), abc_atlas_access (v1.4.2)]</strong></p>
+<li><p><strong>[Release (version 20261130), abc_atlas_access (v1.4.3)]</strong></p>
+<ul>
+<li><p>Release Marmoset Subcortical data, both snRNAseq and Xenium Spatial.</p>
+<ul>
+<li><p>678,917 single nuclei in the Marmoset Subcortex from 4 donors.</p></li>
+<li><p>5,580,065 cells over the Marmoset subcortex. These data are a super-set
+of the Marmoset Basal Ganglia release.</p></li>
+</ul>
+</li>
+<li><p>Release Marmoset Subcortical taxonomy.</p>
+<ul>
+<li><p>Three level taxonomy consisting of 1,737 transcriptomic Clusters, 212
+Groups, and 17 Classes derived form the ~680k snRNAseq, Subcortex
+Marmoset data.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>[Release (version 20261101), abc_atlas_access (v1.4.2)]</strong></p>
 <ul>
 <li><p>Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.</p>
 <ul>
@@ -688,7 +723,7 @@ spatial transform.</p></li>
 <li><p>~ 2000k new cells for Human</p></li>
 </ul>
 </li>
-<li><p><strong>[Relase (version 20261031), abc_atlas_access (v1.4.1)]</strong></p>
+<li><p><strong>[Release (version 20261031), abc_atlas_access (v1.4.1)]</strong></p>
 <ul>
 <li><p>HMBA-10xMultiome-Cross-Species</p>
 <ul>
@@ -704,7 +739,7 @@ spatial transform.</p></li>
 </li>
 </ul>
 </li>
-<li><p><strong>[Relase (version 20260711), abc_atlas_access (v1.4.0)]</strong></p>
+<li><p><strong>[Release (version 20260711), abc_atlas_access (v1.4.0)]</strong></p>
 <ul>
 <li><p>SEA-AD-Multiregion-10X</p>
 <ul>

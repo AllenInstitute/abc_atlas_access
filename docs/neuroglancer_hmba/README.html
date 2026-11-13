@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/simple_style.css?v=3aaed5dc" />
   
   <!-- So that users can add custom icons -->
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -282,6 +282,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Macaque-PatchSeq-BG.html">Human-Mammalian Brain - Basal Ganglia: Macaque Patch-seq cells multimodal data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/HMBA-Subcortex-Marmoset-dataset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: Taxonomy and Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Subcortex-taxonomy-Marmoset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortical Cell Atlas (MSCA) Cell Type Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Subcortex-10XMultiome-Marmoset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: 10X snRNA-seq Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../descriptions/HMBA-Subcortex-Spatial-Marmoset.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: 10X Xenium Spatial Transcriptomics Data</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/SEA-AD-dataset.html">SEA-AD datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-Multiregion-taxonomy.html">SEA-AD - Multiregion taxonomy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../descriptions/SEA-AD-Multiregion-10X.html">SEA-AD - Multiregion single nucleus transcriptomes</a></li>
@@ -352,6 +358,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_spatial_slabs_and_taxonomy.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomic slab coordinates and annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_spatial_genes.html">Human-Mammalian Brain - Basal Ganglia spatial transcriptomics gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_bg_macaque_patchseq.html">Human-Mammalian Brain - Basal Ganglia Patchseq</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/HMBA-Subcortex-Marmoset-notebooks.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex: Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_subcortex_marmoset_clustering_analysis_and_annotation.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex 10X snRNA-seq: Clustering and annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_subcortex_marmoset_10X_RNASeq.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex 10X snRNA-seq: Gene Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_subcortex_marmoset_spatial_slabs_and_taxonomy.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex Xenium Spatial Transcriptomics: Slab coordinates and annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/hmba_subcortex_marmoset_spatial_genes.html">Human and Mammalian Brain Atlas (HMBA) - Marmoset Subcortex Xenium Spatial Transcriptomics: Gene Expression</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../descriptions/SEA-AD-notebooks.html">SEA-AD - notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -666,10 +679,10 @@ This view preserves subject-specific anatomy before normalization to any common 
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">1 · Filter annotations by cell types</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic simple">
-<li><p class="sd-card-text">From the right pane, pick taxonomic cell types to show or hide (yellow box).</p></li>
-<li><p class="sd-card-text">To filter by taxonomic level, click the + or − buttons next to each taxonomic level (red box).</p></li>
-<li><p class="sd-card-text">If the right panel is not visible, right-click the <strong>cell_types</strong> tab on the top left.</p></li>
-<li><p class="sd-card-text">In that panel, select the <strong>seg</strong> tab.</p></li>
+<li><p>From the right pane, pick taxonomic cell types to show or hide (yellow box).</p></li>
+<li><p>To filter by taxonomic level, click the + or − buttons next to each taxonomic level (red box).</p></li>
+<li><p>If the right panel is not visible, right-click the <strong>cell_types</strong> tab on the top left.</p></li>
+<li><p>In that panel, select the <strong>seg</strong> tab.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/cell_types.png"><img alt="Selecting cell types in the seg tab" src="../../_images/cell_types.png" style="width: 300px;" />
 </a>
@@ -678,9 +691,9 @@ This view preserves subject-specific anatomy before normalization to any common 
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">2 · Color annotations by taxonomic level – set annotation size &amp; opacity</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Select the <strong>cells</strong> tab from the top left, then choose the <strong>rendering</strong> tab in the right pane.</p></li>
-<li><p class="sd-card-text">Choose a taxonomic level for coloring with the <strong>level_color_selector</strong>:</p>
-<p class="sd-card-text">• <strong>1:</strong> Neighborhood<br />
+<li><p>Select the <strong>cells</strong> tab from the top left, then choose the <strong>rendering</strong> tab in the right pane.</p></li>
+<li><p>Choose a taxonomic level for coloring with the <strong>level_color_selector</strong>:</p>
+<p>• <strong>1:</strong> Neighborhood<br />
 • <strong>2:</strong> Class<br />
 • <strong>3:</strong> Subclass<br />
 • <strong>4:</strong> Group (default)</p>
@@ -689,7 +702,7 @@ This view preserves subject-specific anatomy before normalization to any common 
 <a class="reference internal image-reference" href="../../_images/annotation_taxonomic_colors.png"><img alt="Taxonomic coloring examples" src="../../_images/annotation_taxonomic_colors.png" style="width: 800px;" />
 </a>
 <ol class="arabic simple" start="3">
-<li><p class="sd-card-text">Adjust <strong>annotation size</strong> and <strong>opacity</strong>.</p></li>
+<li><p>Adjust <strong>annotation size</strong> and <strong>opacity</strong>.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/annotation_rendering.png"><img alt="Rendering tab with taxonomic coloring, size, and opacity" src="../../_images/annotation_rendering.png" style="width: 300px;" />
 </a>
@@ -699,12 +712,12 @@ This view preserves subject-specific anatomy before normalization to any common 
 <span class="sd-summary-text">3 · View annotation metadata</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To see metadata for an annotation:</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Click the hamburger icon (third icon) from the top right to toggle <em>Selection Details Panel</em>.</p></li>
+<li><p>Click the hamburger icon (third icon) from the top right to toggle <em>Selection Details Panel</em>.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/selection_icon.png"><img alt="Toggle Selection Details Panel icon" src="../../_images/selection_icon.png" style="width: 200px;" />
 </a>
 <ol class="arabic simple" start="2">
-<li><p class="sd-card-text">Mouse over an annotation to view its metadata from the right panel.</p></li>
+<li><p>Mouse over an annotation to view its metadata from the right panel.</p></li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/annotation_metadata.png"><img alt="Viewing annotation metadata" src="../../_images/annotation_metadata.png" style="width: 300px;" />
 </a>
@@ -714,9 +727,9 @@ This view preserves subject-specific anatomy before normalization to any common 
 <span class="sd-summary-text">4 · Align view with cell sections by tilting cross-section plane</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Tilting the cross-section plane helps match views to cell section planes.</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Click inside a view (coronal, transverse, sagittal) to focus it.</p></li>
-<li><p class="sd-card-text">Rotate with keys: <strong>e</strong> (left) and <strong>r</strong> (right).</p></li>
-<li><p class="sd-card-text">Or hold <strong>Shift</strong> and drag with the mouse to tilt across all axes.</p></li>
+<li><p>Click inside a view (coronal, transverse, sagittal) to focus it.</p></li>
+<li><p>Rotate with keys: <strong>e</strong> (left) and <strong>r</strong> (right).</p></li>
+<li><p>Or hold <strong>Shift</strong> and drag with the mouse to tilt across all axes.</p></li>
 </ol>
 <p class="sd-card-text"><em>Before tilting</em></p>
 <img alt="Before tilting cross-section plane" src="../../_images/crosssection_before.png" />
