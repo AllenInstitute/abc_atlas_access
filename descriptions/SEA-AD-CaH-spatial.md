@@ -9,8 +9,8 @@ The expression matrices and associated metadata are hosted on AWS S3 bucket as
 a AWS Public Dataset:
 | Component | Current Version | Size    |
 |---|--|---------|
-| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/SEA-AD-CaH-Xenium/20260930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/SEA-AD-CaH-Xenium/20260930/) | 705.3 MB |
-| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-Xenium/20260930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-Xenium/20260930/) | 456.0 MB |
+| Expression Matrices | [s3://allen-brain-cell-atlas/expression_matrices/SEA-AD-CaH-Xenium/20260930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#expression_matrices/SEA-AD-CaH-Xenium/20261201/) | 705.3 MB |
+| Cell and gene metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-Xenium/20260930/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-Xenium/20261201/) | 456.0 MB |
 
 
 Data is being shared under the CC BY NC 4.0 license.

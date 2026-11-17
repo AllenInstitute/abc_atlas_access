@@ -88,20 +88,38 @@ notebook.
 
 
 ## Release Notes
-* **[Relase (version 20260930), abc_atlas_access (v1.4.2)]**
+* **[Release (version 20260930), abc_atlas_access (v1.4.2)]**
   * SEA-AD-CaH-Xenium
     * Added approximately 1.5 million spatial transcriptomes with assigments
     into the CaH taxonomy
   * SEA-AD various
     * Fixed bug in combined race column with missing Hispanic marking data.
     * Removed extra space in LSX Neighborhood name in SEA-AD-CaH-taxonomy
-* **[Relase (version 20260711), abc_atlas_access (v1.4.0)]**
-  * SEA-AD-Multiregion-10X
-    * Added 10 region SEA-AD dataset with taxonomy.
-    * 8 Million single nuclei transcriptoms
-  * SEA-AD-CaH-10X
-    * Added SEA-AD Caudate Nucleus 10X dataset with taxonomy.
-    * ~800 thousand single nuclei transcriptoms
+* **[Release (version 20261130), abc_atlas_access (v1.4.3)]**
+  * Release Marmoset Subcortical data, both snRNAseq and Xenium Spatial.
+    * 678,917 single nuclei in the Marmoset Subcortex from 4 donors.
+    * 5,580,065 cells over the Marmoset subcortex. These data are a super-set
+      of the Marmoset Basal Ganglia release.
+  * Release Marmoset Subcortical taxonomy.
+    *  Three level taxonomy consisting of 1,737 transcriptomic Clusters, 212
+       Groups, and 17 Classes derived form the ~680k snRNAseq, Subcortex
+       Marmoset data.
+* **[Release (version 20261101), abc_atlas_access (v1.4.2)]**
+  * Update HMBA-BG spatial data to latest release and HMBA-BG taxonomy.
+    * Updated Marmoset slab plane coordinates and geojsons from new
+      spatial transform.
+  * Update directory names to include species instead of ID for clarity:
+    * HMBA-MERSCOPE-H22.30.001-BG -> HMBA-BG-MERSCOPE-Human
+    * HMBA-MERSCOPE-QM23.50.001-BG -> HMBA-BG-MERSCOPE-Macaque
+    * HMBA-Xenium-CJ23.56.004-BG -> HMBA-BG-Xenium-Marmoset
+  * ~ 2000k new cells for Human
+* **[Release (version 20261031), abc_atlas_access (v1.4.1)]**
+  * HMBA-10xMultiome-Cross-Species
+    * Updated taxonomy names and colors compared to release 20260711
+    * Updated name from HMBA-10xMultiome-Aligned to HMBA-10xMultiome-Cross-Species
+    * Additional NIMP nhash identifiers for library aliquots and marmoset donors added.
+  * SEA-AD-Multiregion-10X and SEA-AD-CaH-10X
+    * Update Race value colors.
 * **[Bug fix release (version 20260415), abc_atlas_access (v1.3.2)]**
   * HMBA-10XMultiome-BG-Aligned
     * Added more valid abc_sample_ids.

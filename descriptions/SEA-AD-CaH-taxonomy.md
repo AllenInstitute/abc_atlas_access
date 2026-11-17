@@ -12,8 +12,8 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-taxonomy/20260711/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-taxonomy/20260711/) | 79.3 MB |
-
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-taxonomy/20261201/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-taxonomy/20261201/) | 79.3 MB |
+ß
 
 Data is being shared under the CC BY NC 4.0 license.
 
