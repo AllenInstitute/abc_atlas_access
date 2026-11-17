@@ -30,19 +30,25 @@ Related resources:
   ([SEA-AD-CaH-taxonomy](SEA-AD-CaH-taxonomy.md))
 * Approximately 800 thousand single nuclei from the Human Caudate.
   ([SEA-AD-CaH-10X](SEA-AD-CaH-10X.md))
+* 1.5 Million spatial transcriptomes in the Human Caudate
+  ([SEA-AD-CaH-spatial](SEA-AD-CaH-spatial.md))
 
 Associated notebooks:
 * [**Getting started**](../notebooks/getting_started.ipynb): learn how to use the manifest.json file to
   facilitate data download and usage.
 * [**Accessing 10X gene expression data**](../notebooks/general_accessing_10x_snRNASeq_tutorial.ipynb):
   learn how to load individual genes from the 10X expression data.
-* [**SEA-AD - Multiregion Cluster analysis and annotation**](../notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.ipynb):
-  Learn about the SEA-AD - Multiregion integrated taxonomy derived from 10X
-  gene expression.
-* [**SEA-AD - Multiregion gene expression**](../notebooks/sea-ad_multiregion_10X_RNASeq.ipynb):
-  Learn about gene expression across the SEA-AD - Multiregion data.
 * [**SEA-AD - Caudate Nucleus Cluster analysis and annotation**](../notebooks/sea-ad_cah_clustering_analysis_and_annotation.ipynb):
   Learn about the SEA-AD - Caudate Nucleus integrated taxonomy derived from 10X
   gene expression.
 * [**SEA-AD - Caudate Nucleus gene expression**](../notebooks/sea-ad_cah_10X_RNASeq.ipynb):
   Learn about gene expression across the SEA-AD - Caudate Nucleus data.
+* [**SEA-AD - Caudate Nucleus Spatial Transcriptomic Cluster analysis and annotation**](../notebooks/sea-ad_cah_spatial_sections_and_taxonomy.ipynb):
+  Learn about the SEA-AD - Caudate Nucleus spatial dataset and how it maps onto the integrated taxonomy derived from the 10X gene expression.
+* [**SEA-AD - Caudate Nucleus Spatial Transcriptomic gene expression**](../notebooks/sea-ad_cah_spatial_genes.ipynb):
+  Learn about sptial gene expression across the SEA-AD - Caudate Nucleus data.
+* [**SEA-AD - Multiregion Cluster analysis and annotation**](../notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.ipynb):
+  Learn about the SEA-AD - Multiregion integrated taxonomy derived from 10X
+  gene expression.
+* [**SEA-AD - Multiregion gene expression**](../notebooks/sea-ad_multiregion_10X_RNASeq.ipynb):
+  Learn about gene expression across the SEA-AD - Multiregion data.

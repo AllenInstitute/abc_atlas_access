@@ -23,6 +23,8 @@ Related resources:
 * Taxonomy derived from from the Caudate Nucleus, reusing Supertypes and Groups
   from the SEA-AD-Multiregion and the HMBA-BG taxonomies
   ([SEA-AD-CaH-taxonomy](SEA-AD-CaH-taxonomy.md))
+* 1.5 Million spatial transcriptomes in the Human Caudate
+  ([SEA-AD-CaH-spatial](SEA-AD-CaH-spatial.md))
 * Taxonomy derived from from the the SEA-AD Multiregion datasetCaudate Nucleus
   ([SEA-AD-Multiregion-taxonomy](SEA-AD-Multiregion-taxonomy.md))
 * Approximately 8 million single nuclei from 84 donors across 10 brain regions.
@@ -39,6 +41,10 @@ Associated notebooks:
   gene expression.
 * [**SEA-AD - Caudate Nucleus gene expression**](../notebooks/sea-ad_cah_10X_RNASeq.ipynb):
   Learn about gene expression across the SEA-AD - Caudate Nucleus data.
+* [**SEA-AD - Caudate Nucleus Spatial Transcriptomic Cluster analysis and annotation**](../notebooks/sea-ad_cah_spatial_sections_and_taxonomy.ipynb):
+  Learn about the SEA-AD - Caudate Nucleus spatial dataset and how it maps onto the integrated taxonomy derived from the 10X gene expression.
+* [**SEA-AD - Caudate Nucleus Spatial Transcriptomic gene expression**](../notebooks/sea-ad_cah_spatial_genes.ipynb):
+  Learn about sptial gene expression across the SEA-AD - Caudate Nucleus data.
 * [**SEA-AD - Multiregion Cluster analysis and annotation**](../notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.ipynb):
   Learn about the SEA-AD - Multiregion integrated taxonomy derived from 10X
   gene expression.

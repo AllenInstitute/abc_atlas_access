@@ -20,7 +20,7 @@ No account or login is required for access. ***The purpose of this repo is to
 provide an overview of the available data, how to download and use it through
 example use cases.***
 
-The current data release includes:
+The Fall 2026 public beta data release includes:
 * **[Mouse whole-brain transcriptomic cell type atlas](descriptions/WMB_dataset.md)
   (Hongkui Zeng)**
 * **[Consensus Whole Mouse Brain cell type atlas](descriptions/Consensus-WMB-dataset.md) (Evan Macosko, Hongkui Zeng)**
@@ -35,8 +35,6 @@ The current data release includes:
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_dataset.md)
   (ASAP)**
 * **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_dataset.md)
-  (HMBA)**
-* **[Human and Mammalian Brain - Subcortex Marmoset](descriptions/HMBA-Subcortex-Marmoset-dataset.md)
   (HMBA)**
 * **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-dataset.md)
   (SEA-AD)**
@@ -83,15 +81,20 @@ notebook.
   (Kimberly Siletti)**
 * **[Human Postmortem-Derived Brain Sequencing Collection](descriptions/ASAP-PMDBS_notebooks.md)
   (ASAP)**
-* **[Human and Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
-  (HMBA)**
-* **[Human and Mammalian Brain - Subcortex Marmoset](descriptions/HMBA-Subcortex-Marmoset-notebooks.md)
+* **[Human-Mammalian Brain - Basal Ganglia](descriptions/HMBA-BG_notebooks.md)
   (HMBA)**
 * **[SEA-AD: Multiregion and Caudate datasets](descriptions/SEA-AD-notebooks.md)
   (SEA-AD)**
 
 
 ## Release Notes
+* **[Release (version 20260930), abc_atlas_access (v1.4.2)]**
+  * SEA-AD-CaH-Xenium
+    * Added approximately 1.5 million spatial transcriptomes with assigments
+    into the CaH taxonomy
+  * SEA-AD various
+    * Fixed bug in combined race column with missing Hispanic marking data.
+    * Removed extra space in LSX Neighborhood name in SEA-AD-CaH-taxonomy
 * **[Release (version 20261130), abc_atlas_access (v1.4.3)]**
   * Release Marmoset Subcortical data, both snRNAseq and Xenium Spatial.
     * 678,917 single nuclei in the Marmoset Subcortex from 4 donors.
@@ -117,13 +120,6 @@ notebook.
     * Additional NIMP nhash identifiers for library aliquots and marmoset donors added.
   * SEA-AD-Multiregion-10X and SEA-AD-CaH-10X
     * Update Race value colors.
-* **[Release (version 20260711), abc_atlas_access (v1.4.0)]**
-  * SEA-AD-Multiregion-10X
-    * Added 10 region SEA-AD dataset with taxonomy.
-    * 8 Million single nuclei transcriptoms
-  * SEA-AD-CaH-10X
-    * Added SEA-AD Caudate Nucleus 10X dataset with taxonomy.
-    * ~800 thousand single nuclei transcriptoms
 * **[Bug fix release (version 20260415), abc_atlas_access (v1.3.2)]**
   * HMBA-10XMultiome-BG-Aligned
     * Added more valid abc_sample_ids.

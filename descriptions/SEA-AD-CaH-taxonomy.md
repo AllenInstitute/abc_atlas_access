@@ -12,8 +12,8 @@ The associated metadata is hosted on AWS S3 bucket as a AWS Public Dataset:
 
 | Component              | Current Version | Size   |
 |------------------------|--|--------|
-| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-taxonomy/20260711/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-taxonomy/20260711/) | 79.3 MB |
-
+| Cell taxonomy metadata | [s3://allen-brain-cell-atlas/metadata/SEA-AD-CaH-taxonomy/20261201/](https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/index.html#metadata/SEA-AD-CaH-taxonomy/20261201/) | 79.3 MB |
+ß
 
 Data is being shared under the CC BY NC 4.0 license.
 
@@ -21,6 +21,8 @@ Data is being shared under the CC BY NC 4.0 license.
 Related resources:
 * Approximately 800 thousand single nuclei from the Human Caudate.
   ([SEA-AD-CaH-10X](SEA-AD-CaH-10X.md))
+* 1.5 Million spatial transcriptomes in the Human Caudate
+  ([SEA-AD-CaH-spatial](SEA-AD-CaH-spatial.md))
 * Taxonomy derived from from the the SEA-AD Multiregion datasetCaudate Nucleus
   ([SEA-AD-Multiregion-taxonomy](SEA-AD-Multiregion-taxonomy.md))
 * Approximately 8 million single nuclei from 84 donors across 10 brain regions.
@@ -37,6 +39,10 @@ Associated notebooks:
   gene expression.
 * [**SEA-AD - Caudate Nucleus gene expression**](../notebooks/sea-ad_cah_10X_RNASeq.ipynb):
   Learn about gene expression across the SEA-AD - Caudate Nucleus data.
+* [**SEA-AD - Caudate Nucleus Spatial Transcriptomic Cluster analysis and annotation**](../notebooks/sea-ad_cah_spatial_sections_and_taxonomy.ipynb):
+  Learn about the SEA-AD - Caudate Nucleus spatial dataset and how it maps onto the integrated taxonomy derived from the 10X gene expression.
+* [**SEA-AD - Caudate Nucleus Spatial Transcriptomic gene expression**](../notebooks/sea-ad_cah_spatial_genes.ipynb):
+  Learn about sptial gene expression across the SEA-AD - Caudate Nucleus data.
 * [**SEA-AD - Multiregion Cluster analysis and annotation**](../notebooks/sea-ad_multiregion_clustering_analysis_and_annotation.ipynb):
   Learn about the SEA-AD - Multiregion integrated taxonomy derived from 10X
   gene expression.
